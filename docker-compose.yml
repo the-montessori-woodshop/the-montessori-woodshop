@@ -1,6 +1,6 @@
 version: "3"
 services:
-  app:
+  medusa-backend:
     build: ./medusa-backend
     depends_on:
       - postgres
@@ -8,11 +8,11 @@ services:
       - "9000:9000"
     command: npm run docker:start
     volumes:
-      - .:/app/db
-      - /app/medusa/node_modules
+      - .:/medusa-backend/db
+      - /medusa-backend/medusa/node_modules
 
   postgres:
-    image: postgres:10.4
+    image: postgres:14
     ports:
       - "35432:5432"
 
@@ -22,7 +22,7 @@ services:
     expose:
       - 6379
 
-  client:
-    build: ./admin
+  medusa-admin:
+    build: ./medusa-admin
     volumes:
-      - ./admin/src:/app/admin/src # Links the source files to the running container
+      - ./medusa-admin/src:/app/medusa-admin/src # Links the source files to the running container
