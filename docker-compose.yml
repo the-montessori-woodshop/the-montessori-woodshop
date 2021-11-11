@@ -34,9 +34,7 @@ services:
     build:
       context: ./packages/medusa-admin
       dockerfile: Dockerfile
-    volumes:
-      - ./admin/src:/app/admin/src
     env_file:
       - ./.env
     ports:
-      - "7000:7000"
+      - "7000:80"
