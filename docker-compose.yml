@@ -1,14 +1,28 @@
-version: "3.7"
-
+version: "3"
 services:
-  redis:
-    image: "redis:alpine"
+  app:
+    build: ./backend
+    depends_on:
+      - postgres
+    ports:
+      - "9000:9000"
+    command: npm run docker:start
+    volumes:
+      - .:/app/db
+      - /app/medusa/node_modules
 
   postgres:
-    image: alpine:latest
-    build: ./postgis
-    restart: always
+    image: postgres:10.4
     ports:
-      - "5432:5432"
+      - "35432:5432"
+
+  redis:
+    image: redis
+    container_name: cache
+    expose:
+      - 6379
+
+  client:
+    build: ./admin
     volumes:
-      - "./pgdata:/var/lib/postgresql/data"
+      - ./admin/src:/app/admin/src # Links the source files to the running container
