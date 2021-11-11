@@ -1,0 +1,12 @@
+@mixin button {
+  border: 0;
+}
+
+.primary {
+  @include button;
+  background-color: var(--color-primary);
+}
+.secondary {
+  @include button;
+  background-color: var(--color-secondary);
+}

@@ -1,10 +1,17 @@
 {
-  "name": "the-montessori-woodshop",
+  "name": "@woodshop/the-montessori-woodshop",
   "version": "1.0.0",
   "description": "Monorepo for the montessori woodshop medusa + next-js online store",
   "main": "index.js",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "components:build": "yarn workspace @woodshop/components build",
+    "components:dev": "yarn workspace @woodshop/components dev"
+  },
+  "workspaces": {
+    "packages": [
+      "components/**"
+    ]
   },
   "repository": {
     "type": "git",
