@@ -14,10 +14,7 @@
   },
   "workspaces": {
     "packages": [
-      "components/**",
-      "medusa-admin/**",
-      "medusa-backend/**",
-      "storefront/**"
+      "packages/**"
     ]
   },
   "repository": {
