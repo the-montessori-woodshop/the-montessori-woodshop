@@ -1,3 +1,8 @@
+const path = require("path");
+require("dotenv").config({
+  path: path.resolve(__dirname, "../.env"),
+});
+
 // This is the place to include plugins. See API documentation for a thorough guide on plugins.
 const plugins = [
   `medusa-fulfillment-manual`,
@@ -12,6 +17,8 @@ const plugins = [
   //   },
   // },
 ];
+
+console.log(process.env);
 
 module.exports = {
   projectConfig: {

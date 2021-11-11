@@ -1,28 +1,39 @@
 version: "3"
 services:
-  medusa-backend:
+  backend:
     build: ./medusa-backend
     depends_on:
       - postgres
     ports:
       - "9000:9000"
-    command: npm run docker:start
+    command: npm run start
     volumes:
       - .:/medusa-backend/db
       - /medusa-backend/medusa/node_modules
+    environment:
+      PORT: 9000
+    env_file:
+      - ./.env
 
   postgres:
     image: postgres:14
     ports:
       - "35432:5432"
+    env_file:
+      - ./.env
 
   redis:
     image: redis
     container_name: cache
     expose:
       - 6379
+    env_file:
+      - ./.env
 
-  medusa-admin:
+  admin:
     build: ./medusa-admin
+    container_name: admin
     volumes:
       - ./medusa-admin/src:/app/medusa-admin/src # Links the source files to the running container
+    env_file:
+      - ./.env

@@ -5,7 +5,7 @@ WORKDIR /app/medusa
 
 COPY package.json ./
 
-RUN yarn install --loglevel=error --frozen-lockfile
+RUN yarn install --loglevel=error --frozen-lockfile --production
 
 COPY . .
 
@@ -14,4 +14,5 @@ RUN npm run build &> /dev/null
 EXPOSE 9000
 RUN apt-get update && apt-get install -f -y postgresql-client
 
-CMD bash check-db.sh
+# CMD bash check-db.sh
+CMD yarn start

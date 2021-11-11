@@ -1,5 +1,5 @@
 {
-  "name": "@woodshop/medusa",
+  "name": "@woodshop/backend",
   "version": "0.0.1",
   "description": "The Medusa backend store for the Montessori Woodshop storefront.",
   "author": "Drew DeCarme (drew@themontessoriwoodshop.com)",
@@ -8,11 +8,13 @@
     "seed": "medusa seed -f ./data/seed.json",
     "docker:start": "bash check-db.sh",
     "build": "babel src -d dist --extensions \".ts,.js\"",
-    "dev": "medusa develop"
+    "dev": "medusa develop",
+    "start": "medusa start"
   },
   "dependencies": {
     "@medusajs/medusa": "^1.1.49",
     "@medusajs/medusa-cli": "^1.1.22",
+    "dotenv": "^10.0.0",
     "medusa-fulfillment-manual": "^1.1.26",
     "medusa-interfaces": "^1.1.27",
     "medusa-payment-manual": "^1.0.8",

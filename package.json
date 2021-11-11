@@ -6,11 +6,18 @@
   "private": true,
   "scripts": {
     "components:build": "yarn workspace @woodshop/components build",
-    "components:dev": "yarn workspace @woodshop/components dev"
+    "components:dev": "yarn workspace @woodshop/components dev",
+    "admin:build": "yarn workspace @woodshop/admin build",
+    "admin:start": "yarn workspace @woodshop/admin serve",
+    "backend:build": "yarn workspace @woodshop/backend build",
+    "backend:start": "yarn workspace @woodshop/backend start"
   },
   "workspaces": {
     "packages": [
-      "components/**"
+      "components/**",
+      "medusa-admin/**",
+      "medusa-backend/**",
+      "storefront/**"
     ]
   },
   "repository": {
