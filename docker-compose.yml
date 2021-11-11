@@ -1,7 +1,7 @@
 version: "3"
 services:
   app:
-    build: ./backend
+    build: ./medusa-backend
     depends_on:
       - postgres
     ports:
