@@ -1,7 +1,9 @@
 version: "3"
 services:
   backend:
-    build: ./packages/medusa-backend
+    build:
+      context: ./packages/medusa-backend
+      dockerfile: Dockerfile
     depends_on:
       - postgres
     ports:
@@ -29,10 +31,12 @@ services:
       - ./.env
 
   admin:
-    build: ./packages/medusa-admin
+    build:
+      context: ./packages/medusa-admin
+      dockerfile: Dockerfile
     volumes:
       - ./admin/src:/app/admin/src
     env_file:
       - ./.env
     ports:
-      - "7000:80"
+      - "7000:7000"
