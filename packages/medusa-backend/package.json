@@ -4,6 +4,12 @@
   "description": "The Medusa backend store for the Montessori Woodshop storefront.",
   "author": "Drew DeCarme (drew@themontessoriwoodshop.com)",
   "license": "MIT",
+  "private": true,
+  "workspaces": {
+    "nohoist": [
+      "**"
+    ]
+  },
   "scripts": {
     "seed": "medusa seed -f ./data/seed.json",
     "docker:start": "bash check-db.sh",

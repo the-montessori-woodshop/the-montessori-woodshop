@@ -1066,7 +1066,7 @@
     "@babel/plugin-transform-react-jsx-development" "^7.16.0"
     "@babel/plugin-transform-react-pure-annotations" "^7.16.0"
 
-"@babel/preset-typescript@^7.12.1", "@babel/preset-typescript@^7.14.5":
+"@babel/preset-typescript@^7.12.1", "@babel/preset-typescript@^7.14.5", "@babel/preset-typescript@^7.16.0":
   version "7.16.0"
   resolved "https://registry.yarnpkg.com/@babel/preset-typescript/-/preset-typescript-7.16.0.tgz#b0b4f105b855fb3d631ec036cdc9d1ffd1fa5eac"
   integrity sha512-txegdrZYgO9DlPbv+9QOVpMnKbOtezsLHWsnsRF4AjbSIsVaujrq1qg8HK0mxQpWv0jnejt0yEoW1uWpvbrDTg==
@@ -1925,10 +1925,10 @@
   resolved "https://registry.yarnpkg.com/@mdx-js/util/-/util-2.0.0-next.8.tgz#66ecc27b78e07a3ea2eb1a8fc5a99dfa0ba96690"
   integrity sha512-T0BcXmNzEunFkuxrO8BFw44htvTPuAoKbLvTG41otyZBDV1Rs+JMddcUuaP5vXpTWtgD3grhcrPEwyx88RUumQ==
 
-"@medusajs/medusa-cli@^1.1.22":
-  version "1.1.22"
-  resolved "https://registry.yarnpkg.com/@medusajs/medusa-cli/-/medusa-cli-1.1.22.tgz#2eab914d8b3288f1adf2978fac0842cd4cb60f03"
-  integrity sha512-h2b2KTOCO/CfNLphMeYyKX2dFduFPcc/xBtzWk+ynCzTX6NhAH54wCgvPkIoX/hpq/RqtXRU513Uk1tBQV467g==
+"@medusajs/medusa-cli@^1.1.22", "@medusajs/medusa-cli@^1.1.23":
+  version "1.1.23"
+  resolved "https://registry.yarnpkg.com/@medusajs/medusa-cli/-/medusa-cli-1.1.23.tgz#d7272a21c02f9fa3cbe1dc8f9e2840cdd0e1d2f9"
+  integrity sha512-rqjDFd8hM9Q3rvuxwetv28jp3xHzH5Nt5J129JPCk9Sd8Rj6x2lVbKPbULNwgQ6hk8OsXjOQF2hPEyRt+vJL3A==
   dependencies:
     "@babel/polyfill" "^7.8.7"
     "@babel/runtime" "^7.9.6"
@@ -1947,7 +1947,7 @@
     joi-objectid "^3.0.1"
     meant "^1.0.1"
     medusa-core-utils "^0.1.27"
-    medusa-telemetry "^0.0.9"
+    medusa-telemetry "^0.0.10"
     netrc-parser "^3.1.6"
     open "^8.0.6"
     ora "^5.4.1"
@@ -1969,12 +1969,12 @@
     axios "^0.21.0"
 
 "@medusajs/medusa@^1.1.49":
-  version "1.1.53"
-  resolved "https://registry.yarnpkg.com/@medusajs/medusa/-/medusa-1.1.53.tgz#46aadea611dde532a8c91f2cc4f87366d02667e6"
-  integrity sha512-cQPQ0UviU2xNHSckyE3tk5QrrsKcNTu2vzk/WKMwTZ6SvtqXNKgnzgW2mXV3j+pkGOIGHDF27/+prqWN9ADZ6w==
+  version "1.1.54"
+  resolved "https://registry.yarnpkg.com/@medusajs/medusa/-/medusa-1.1.54.tgz#1ed0faeb5b699d470df1f8e2b3f84e1278f96986"
+  integrity sha512-mhvnkN/xUhP6TRUOVPvK6x7TSxXfsEtQ/P1q/ojNAmTaZSaUNXmkITt1cGTftjhDyAIOLk3BxF1q8AGF1Lf/Ig==
   dependencies:
     "@hapi/joi" "^16.1.8"
-    "@medusajs/medusa-cli" "^1.1.22"
+    "@medusajs/medusa-cli" "^1.1.23"
     "@types/lodash" "^4.14.168"
     awilix "^4.2.3"
     body-parser "^1.19.0"
@@ -5410,9 +5410,9 @@ babel-preset-gatsby@^0.12.3:
     gatsby-legacy-polyfills "^0.7.1"
 
 babel-preset-medusa-package@^1.1.13:
-  version "1.1.17"
-  resolved "https://registry.yarnpkg.com/babel-preset-medusa-package/-/babel-preset-medusa-package-1.1.17.tgz#1c2d11c8891fb97693c3cb40f110faa80f6466be"
-  integrity sha512-cYkHr4Q5ZkOlz5lIqQEr6omw5l/KszL7vjicWGmJ0pj+2eAEi7gMtrDmoMEKhx2XbVSaT1zBxN/IzllVVP268w==
+  version "1.1.18"
+  resolved "https://registry.yarnpkg.com/babel-preset-medusa-package/-/babel-preset-medusa-package-1.1.18.tgz#6a491ae387cf43a318835a5cb9620215b6af5155"
+  integrity sha512-BJJSbe7jh2qeuQEhMDbyZoWxEsMdENCXKc8lmfZpvPZtjcWNYHEuRqLJ1GdIEz2uYh+1RcPn5yk6xbjVHquV5g==
   dependencies:
     "@babel/plugin-proposal-class-properties" "^7.12.1"
     "@babel/plugin-proposal-decorators" "^7.12.1"
@@ -5421,6 +5421,7 @@ babel-preset-medusa-package@^1.1.13:
     "@babel/plugin-transform-instanceof" "^7.12.1"
     "@babel/plugin-transform-runtime" "^7.12.1"
     "@babel/preset-env" "^7.12.7"
+    "@babel/preset-typescript" "^7.16.0"
     babel-plugin-transform-typescript-metadata "^0.3.1"
     core-js "^3.7.0"
 
@@ -13865,10 +13866,10 @@ medusa-payment-stripe@^1.1.30:
     medusa-core-utils "^1.1.26"
     stripe "^8.50.0"
 
-medusa-telemetry@^0.0.9:
-  version "0.0.9"
-  resolved "https://registry.yarnpkg.com/medusa-telemetry/-/medusa-telemetry-0.0.9.tgz#f98b4c3353d9498d8b3597aba75c21b9fedc0088"
-  integrity sha512-GMziF5PBB00fSC7SX3um52eI9ajEVqjl7Uvej0beBbZL4tn66f0qy0RiKB9Am3pwE2bU43CnIBXntuidGQCPIQ==
+medusa-telemetry@^0.0.10:
+  version "0.0.10"
+  resolved "https://registry.yarnpkg.com/medusa-telemetry/-/medusa-telemetry-0.0.10.tgz#86fb85048b9e41d0d91f156d590dd519a872077d"
+  integrity sha512-kskCT4YjCvv8C38qF+zJY9C/fARtHH5cpl2WlxHblBAQY3KXCGBSXLlsgPRT28VIkuDQOZGDjHLg3o+w2XqNPw==
   dependencies:
     axios "^0.21.1"
     axios-retry "^3.1.9"

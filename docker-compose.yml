@@ -1,17 +1,15 @@
 version: "3"
 services:
   backend:
-    build: ./medusa-backend
+    build: ./packages/medusa-backend
     depends_on:
       - postgres
     ports:
       - "9000:9000"
-    command: npm run start
+    command: yarn start
     volumes:
-      - .:/medusa-backend/db
-      - /medusa-backend/medusa/node_modules
-    environment:
-      PORT: 9000
+      - .:/backend/db
+      - /backend/medusa/node_modules
     env_file:
       - ./.env
 
@@ -24,16 +22,17 @@ services:
 
   redis:
     image: redis
-    container_name: cache
+    container_name: redis
     expose:
       - 6379
     env_file:
       - ./.env
 
   admin:
-    build: ./medusa-admin
-    container_name: admin
+    build: ./packages/medusa-admin
     volumes:
-      - ./medusa-admin/src:/app/medusa-admin/src # Links the source files to the running container
+      - ./admin/src:/app/admin/src
     env_file:
       - ./.env
+    ports:
+      - "7000:8000"
