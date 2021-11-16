@@ -1,6 +1,6 @@
 version: "3"
 services:
-  backend:
+  app:
     build:
       context: ./packages/medusa-backend
       dockerfile: Dockerfile
@@ -10,8 +10,8 @@ services:
       - "9000:9000"
     command: yarn start
     volumes:
-      - .:/backend/db
-      - /backend/medusa/node_modules
+      - .:/app/db
+      - /app/medusa/node_modules
     env_file:
       - ./.env
 
@@ -24,7 +24,6 @@ services:
 
   redis:
     image: redis
-    container_name: redis
     expose:
       - 6379
     env_file:

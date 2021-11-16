@@ -4,7 +4,7 @@ build-store:
 	docker-compose build backend admin
 
 run-store:
-	docker-compose up postgres redis backend admin
+	docker-compose up postgres redis admin
 
-build-and-run-store:
+build-run-store:
 	make build-store && make run-store

@@ -12,7 +12,6 @@
   },
   "scripts": {
     "seed": "medusa seed -f ./data/seed.json",
-    "docker:start": "bash check-db.sh",
     "build": "babel src -d dist --extensions \".ts,.js\"",
     "dev": "medusa develop",
     "start": "medusa start"
