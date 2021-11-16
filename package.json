@@ -10,7 +10,9 @@
     "admin:build": "yarn workspace @woodshop/admin build",
     "admin:start": "yarn workspace @woodshop/admin serve",
     "backend:build": "yarn workspace @woodshop/backend build",
-    "backend:start": "yarn workspace @woodshop/backend start"
+    "backend:start": "yarn workspace @woodshop/backend start",
+    "store:build": "yarn backend:build && yarn admin:build && docker-compose build backend admin",
+    "store:run": "docker-compose up -d"
   },
   "workspaces": {
     "packages": [

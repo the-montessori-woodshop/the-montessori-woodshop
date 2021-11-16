@@ -63,7 +63,7 @@
     "@storybook/addons": "^5.3.19",
     "@storybook/react": "^5.3.19",
     "babel-loader": "^8.1.0",
-    "prettier": "2.0.5"
+    "prettier": "^2.4.1"
   },
   "scripts": {
     "build": "gatsby build",

@@ -8,4 +8,4 @@ COPY . .
 EXPOSE 9000
 RUN apt-get update && apt-get install -f -y postgresql-client
 
-CMD yarn start
+CMD yarn seed
