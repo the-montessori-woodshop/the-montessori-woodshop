@@ -5,27 +5,24 @@
   "author": "Drew DeCarme (drew@themontessoriwoodshop.com)",
   "license": "MIT",
   "private": true,
-  "workspaces": {
-    "nohoist": [
-      "**"
-    ]
-  },
   "scripts": {
-    "seed": "medusa seed -f ./data/seed.json",
-    "build": "babel src -d dist --extensions \".ts,.js\"",
-    "dev": "medusa develop",
-    "start": "medusa start",
-    "migrate": "medusa migrations run"
+    "build": "yarn babel src -d dist --extensions \".ts,.js\"",
+    "dev": "yarn medusa develop",
+    "start": "yarn medusa start",
+    "migrate": "yarn medusa migrations run",
+    "serve": "yarn medusa migrations run && yarn medusa start",
+    "version": "yarn medusa version"
   },
   "dependencies": {
-    "@medusajs/medusa": "^1.1.49",
-    "@medusajs/medusa-cli": "^1.1.22",
+    "@medusajs/medusa": "^1.1.57",
+    "@medusajs/medusa-cli": "^1.1.23",
     "dotenv": "^10.0.0",
     "medusa-fulfillment-manual": "^1.1.26",
     "medusa-interfaces": "^1.1.27",
     "medusa-payment-manual": "^1.0.8",
     "medusa-payment-stripe": "^1.1.30",
     "mongoose": "^5.13.3",
+    "pg": "^8.7.1",
     "typeorm": "^0.2.36"
   },
   "repository": "https://github.com/medusajs/medusa-starter-default.git",

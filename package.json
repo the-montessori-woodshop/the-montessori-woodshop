@@ -9,10 +9,13 @@
     "components:dev": "yarn workspace @woodshop/components dev",
     "admin:build": "yarn workspace @woodshop/admin build",
     "admin:start": "yarn workspace @woodshop/admin serve",
+    "admin:docker": "yarn docker build @woodshop/admin --file packages/medusa-admin/Dockerfile",
     "backend:build": "yarn workspace @woodshop/backend build",
+    "backend:migrate": "yarn workspace @woodshop/backend migrate",
     "backend:start": "yarn workspace @woodshop/backend start",
+    "backend:docker": "yarn docker build --copy .env @woodshop/backend --file ./docker.backend.Dockerfile --progress=plain",
     "store:build": "yarn backend:build && yarn admin:build && docker-compose build backend admin",
-    "store:run": "docker-compose up -d"
+    "store:run": "docker-compose up"
   },
   "workspaces": {
     "packages": [
@@ -35,5 +38,12 @@
   "bugs": {
     "url": "https://github.com/the-montessori-woodshop/the-montessori-woodshop/issues"
   },
-  "homepage": "https://github.com/the-montessori-woodshop/the-montessori-woodshop#readme"
+  "homepage": "https://github.com/the-montessori-woodshop/the-montessori-woodshop#readme",
+  "packageManager": "yarn@3.1.0",
+  "devDependencies": {
+    "@medusajs/medusa": "^1.1.57",
+    "eslint": "^8.3.0",
+    "prettier": "^2.4.1",
+    "typescript": "^4.5.2"
+  }
 }

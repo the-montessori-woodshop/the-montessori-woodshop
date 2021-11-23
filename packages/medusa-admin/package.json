@@ -4,11 +4,6 @@
   "description": "A proprietary Admin system to manage Medusa Stores",
   "version": "0.1.0",
   "author": "Drew DeCarme (drew@themontessoriwoodshop.com)",
-  "workspaces": {
-    "nohoist": [
-      "**"
-    ]
-  },
   "resolutions": {
     "devcert": "1.1.0"
   },

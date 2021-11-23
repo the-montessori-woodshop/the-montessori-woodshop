@@ -1,0 +1,32 @@
+FROM node:16.13.0 as builder
+WORKDIR /app
+
+# copy only the package.json file so yarn set version can
+# correctly download its modules for berry without overwriting
+# the existing yarnrc and cache files. If the rc is added now,
+# yarn will attempt to use the berry module without it being
+# installed.
+COPY package.json .
+COPY packages/medusa-backend packages/medusa-backend
+
+RUN yarn set version berry
+
+COPY .pnp.cjs .
+COPY .pnp.loader.mjs .
+COPY .yarnrc.yml .
+COPY yarn.lock .
+COPY .yarn .yarn
+
+RUN yarn install
+
+# Build the app
+RUN yarn workspace @woodshop/backend build
+
+# RUN ls --all
+# RUN ls packages/medusa-backend
+# RUN cat packages/medusa-backend/package.json
+
+# CMD yarn backend:migrate
+
+# ENTRYPOINT ["sh", "/app/entrypoint.sh"]
+
