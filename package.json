@@ -41,9 +41,13 @@
   "homepage": "https://github.com/the-montessori-woodshop/the-montessori-woodshop#readme",
   "packageManager": "yarn@3.1.0",
   "devDependencies": {
-    "@medusajs/medusa": "^1.1.57",
     "eslint": "^8.3.0",
     "prettier": "^2.4.1",
     "typescript": "^4.5.2"
+  },
+  "dependencies": {
+    "@medusajs/medusa": "^1.1.57",
+    "medusa-interfaces": "^1.1.31",
+    "typeorm": "^0.2.41"
   }
 }

@@ -1,19 +1,18 @@
 version: "3"
 services:
   backend:
-    image: backend
+    image: medusa
     build:
       context: ./
-      dockerfile: Dockerfile.backend
+      dockerfile: ./packages/medusa-backend/Dockerfile
     depends_on:
       - postgres
       - redis
     ports:
       - "9000:9000"
-    command: bash -c "yarn workspace @woodshop/backend migrate"
     volumes:
-      - .:/app/db
-      - /app/medusa/node_modules
+      # - .:/app/db
+      - /app
     env_file:
       - ./.env
 
