@@ -23,9 +23,5 @@ RUN yarn install
 # Build the app
 RUN yarn workspace @woodshop/backend build
 
-RUN ls --all
-RUN ls /app/.yarn/cache --all
-RUN cat /app/packages/medusa-backend/package.json
-
 ENTRYPOINT ["sh", "/app/entrypoint.sh"]
 
