@@ -6428,11 +6428,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@woodshop/the-montessori-woodshop@workspace:."
   dependencies:
-    "@medusajs/medusa": ^1.1.57
     eslint: ^8.3.0
-    medusa-interfaces: ^1.1.31
     prettier: ^2.4.1
-    typeorm: ^0.2.41
     typescript: ^4.5.2
   languageName: unknown
   linkType: soft

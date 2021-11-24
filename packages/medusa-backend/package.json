@@ -6,10 +6,10 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "build": "yarn babel src -d dist --extensions \".ts,.js\"",
-    "dev": "yarn medusa develop",
-    "start": "yarn medusa start",
-    "migrate": "yarn medusa migrations run",
+    "build": "babel src -d dist --extensions \".ts,.js\"",
+    "dev": "medusa develop",
+    "start": "medusa start",
+    "migrate": "medusa migrations run",
     "serve": "yarn medusa migrations run && yarn medusa start",
     "version": "yarn medusa version"
   },
