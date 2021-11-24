@@ -11,9 +11,9 @@
   },
   "dependencies": {
     "@medusajs/medusa-js": "^1.0.5",
-    "@stripe/react-stripe-js": "^1.4.1",
-    "@stripe/stripe-js": "^1.15.1",
-    "axios": "^0.21.3",
+    "@stripe/react-stripe-js": "^1.6.0",
+    "@stripe/stripe-js": "^1.21.1",
+    "axios": "^0.24.0",
     "formik": "^2.2.9",
     "next": "^11.1.2",
     "react": "17.0.2",
@@ -23,7 +23,7 @@
     "yup": "^0.32.9"
   },
   "devDependencies": {
-    "eslint": "7.29.0",
-    "eslint-config-next": "11.0.0"
+    "eslint": "7.32.0",
+    "eslint-config-next": "11.1.2"
   }
 }
