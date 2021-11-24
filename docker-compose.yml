@@ -29,12 +29,12 @@ services:
     env_file:
       - ./.env
 
-  # admin:
-  #   image: admin
-  #   build:
-  #     context: ./
-  #     dockerfile: Dockerfile.admin
-  #   env_file:
-  #     - ./.env
-  #   ports:
-  #     - "7000:80"
+  admin:
+    image: admin
+    build:
+      context: ./
+      dockerfile: ./packages/medusa-admin/Dockerfile
+    env_file:
+      - ./.env
+    ports:
+      - "7000:80"

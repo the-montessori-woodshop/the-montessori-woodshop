@@ -6335,6 +6335,7 @@ __metadata:
     gatsby-plugin-svgr: ^2.0.2
     gatsby-source-filesystem: ^2.3.8
     gatsby-transformer-sharp: ^2.5.3
+    lodash: ^4.17.21
     moment: ^2.27.0
     prettier: ^2.4.1
     prop-types: ^15.7.2

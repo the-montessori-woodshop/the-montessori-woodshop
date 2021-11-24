@@ -9593,6 +9593,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["gatsby-plugin-svgr", "virtual:90d56d09fc6a75428c908476b61acbb730b32531bdd6305252e504f602d959391ca08638dc4c90f4946acad0d7d58000af73e350ec0d6d65c846d40998d62be2#npm:2.1.0"],
             ["gatsby-source-filesystem", "virtual:90d56d09fc6a75428c908476b61acbb730b32531bdd6305252e504f602d959391ca08638dc4c90f4946acad0d7d58000af73e350ec0d6d65c846d40998d62be2#npm:2.11.1"],
             ["gatsby-transformer-sharp", "virtual:90d56d09fc6a75428c908476b61acbb730b32531bdd6305252e504f602d959391ca08638dc4c90f4946acad0d7d58000af73e350ec0d6d65c846d40998d62be2#npm:2.12.1"],
+            ["lodash", "npm:4.17.21"],
             ["moment", "npm:2.29.1"],
             ["prettier", "npm:2.4.1"],
             ["prop-types", "npm:15.7.2"],
