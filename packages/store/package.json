@@ -22,6 +22,7 @@
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^2.2.2",
+    "@miniflare/core": "^2.0.0-next.1",
     "@remix-run/dev": "latest",
     "@remix-run/server-runtime": "^1.0.6",
     "@types/react": "^17.0.24",
