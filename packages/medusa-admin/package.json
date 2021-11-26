@@ -4,16 +4,13 @@
   "description": "A proprietary Admin system to manage Medusa Stores",
   "version": "0.1.0",
   "author": "Drew DeCarme (drew@themontessoriwoodshop.com)",
-  "resolutions": {
-    "devcert": "1.1.0"
-  },
   "dependencies": {
     "@emotion/core": "^10.1.1",
     "@emotion/styled": "^10.0.27",
+    "@material-ui/core": "^4.12.3",
     "@material-ui/icons": "^4.11.2",
     "@rebass/forms": "^4.0.6",
     "@rebass/preset": "^4.0.5",
-    "@storybook/theming": "^5.3.21",
     "@svgr/webpack": "^5.5.0",
     "axios": "^0.24.0",
     "copy-to-clipboard": "^3.3.1",
@@ -53,13 +50,9 @@
   },
   "devDependencies": {
     "@babel/core": "^7.16.0",
-    "@storybook/addon-actions": "^5.3.21",
-    "@storybook/addon-backgrounds": "^5.3.21",
-    "@storybook/addon-links": "^5.3.21",
-    "@storybook/addons": "^5.3.21",
-    "@storybook/react": "^5.3.21",
     "babel-loader": "^8.2.3",
-    "prettier": "^2.4.1"
+    "prettier": "^2.4.1",
+    "webpack": "^5.64.4"
   },
   "scripts": {
     "build": "gatsby build",

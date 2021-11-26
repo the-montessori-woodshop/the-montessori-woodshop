@@ -13,15 +13,15 @@
     "backend:build": "yarn workspace @woodshop/backend build",
     "backend:migrate": "yarn workspace @woodshop/backend migrate",
     "backend:start": "yarn workspace @woodshop/backend start",
-    "backend:docker": "yarn docker build --copy .env @woodshop/backend --file ./docker.backend.Dockerfile --progress=plain",
-    "store:build": "yarn backend:build && yarn admin:build && docker-compose build backend admin",
-    "store:run": "docker-compose up"
+    "store:dev": "yarn workspace @woodshop/store dev",
+    "store:start": "yarn workspace @woodshop/store start"
   },
-  "workspaces": {
-    "packages": [
-      "packages/**"
-    ]
-  },
+  "workspaces": [
+    "packages/components",
+    "packages/medusa-admin",
+    "packages/medusa-backend",
+    "packages/store"
+  ],
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/the-montessori-woodshop/the-montessori-woodshop.git"
