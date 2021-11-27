@@ -3138,7 +3138,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@miniflare/core@npm:2.0.0-rc.2, @miniflare/core@npm:^2.0.0-rc.2":
+"@miniflare/core@npm:2.0.0-rc.2":
   version: 2.0.0-rc.2
   resolution: "@miniflare/core@npm:2.0.0-rc.2"
   dependencies:
@@ -5587,9 +5587,9 @@ __metadata:
     react: ^17.0.2
     react-collapse: ^5.1.1
     react-collapsible: ^2.8.4
-    react-country-flag: ^2.3.0
+    react-country-flag: ^2.3.1
     react-datepicker: ^3.8.0
-    react-dom: ^16.14.0
+    react-dom: ^17.0.2
     react-dropzone: ^11.4.2
     react-helmet: ^6.1.0
     react-hook-form: ^6.15.8
@@ -5654,7 +5654,6 @@ __metadata:
   resolution: "@woodshop/store@workspace:packages/store"
   dependencies:
     "@cloudflare/workers-types": ^3.2.0
-    "@miniflare/core": ^2.0.0-rc.2
     "@remix-run/cloudflare-workers": ^1.0.6
     "@remix-run/dev": ^1.0.6
     "@remix-run/react": ^1.0.6
@@ -19949,7 +19948,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-country-flag@npm:^2.3.0":
+"react-country-flag@npm:^2.3.1":
   version: 2.3.1
   resolution: "react-country-flag@npm:2.3.1"
   peerDependencies:
@@ -20018,20 +20017,6 @@ __metadata:
   peerDependencies:
     react: 17.0.2
   checksum: 1c1eaa3bca7c7228d24b70932e3d7c99e70d1d04e13bb0843bbf321582bc25d7961d6b8a6978a58a598af2af496d1cedcfb1bf65f6b0960a0a8161cb8dab743c
-  languageName: node
-  linkType: hard
-
-"react-dom@npm:^16.14.0":
-  version: 16.14.0
-  resolution: "react-dom@npm:16.14.0"
-  dependencies:
-    loose-envify: ^1.1.0
-    object-assign: ^4.1.1
-    prop-types: ^15.6.2
-    scheduler: ^0.19.1
-  peerDependencies:
-    react: ^16.14.0
-  checksum: 5a5c49da0f106b2655a69f96c622c347febcd10532db391c262b26aec225b235357d9da1834103457683482ab1b229af7a50f6927a6b70e53150275e31785544
   languageName: node
   linkType: hard
 
@@ -21202,16 +21187,6 @@ __metadata:
   dependencies:
     xmlchars: ^2.1.1
   checksum: 3b69918c013fffae51c561f629a0f620c02dba70f762dab38f3cd92676dfe5edf1f0a523ca567882838f1a80e26e4671a8c2c689afa05c68f45a78261445aba0
-  languageName: node
-  linkType: hard
-
-"scheduler@npm:^0.19.1":
-  version: 0.19.1
-  resolution: "scheduler@npm:0.19.1"
-  dependencies:
-    loose-envify: ^1.1.0
-    object-assign: ^4.1.1
-  checksum: 73e185a59e2ff5aa3609f5b9cb97ddd376f89e1610579d29939d952411ca6eb7a24907a4ea4556569dacb931467a1a4a56d94fe809ef713aa76748642cd96a6c
   languageName: node
   linkType: hard
 
