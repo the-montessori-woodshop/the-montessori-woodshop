@@ -1,1 +1,53 @@
-{"clientTcpRtt":6,"longitude":"-75.69460","latitude":"39.77930","tlsCipher":"AEAD-AES256-GCM-SHA384","continent":"NA","asn":701,"clientAcceptEncoding":"br, gzip, deflate","country":"US","tlsClientAuth":{"certIssuerDNLegacy":"","certIssuerSKI":"","certSubjectDNRFC2253":"","certSubjectDNLegacy":"","certFingerprintSHA256":"","certNotBefore":"","certSKI":"","certSerial":"","certIssuerDN":"","certVerified":"NONE","certNotAfter":"","certSubjectDN":"","certPresented":"0","certRevoked":"0","certIssuerSerial":"","certIssuerDNRFC2253":"","certFingerprintSHA1":""},"tlsExportedAuthenticator":{"clientFinished":"d7238372e47498de5e3a712c9305b7b0b7b3b1d3b5f2a63210281f709ab7fbfef763dd161aac7b53dd6d7b68bcbfcf75","clientHandshake":"b8e81250b21834c0d8e3b89fff2d9332700f83d0b7519401491db5cbfcda6fd38aa290f6bb0035556fd337958a46df6b","serverHandshake":"f130e1583eeac6a04653ce03c8d00ad19121f8c18aa6adea246ba40f19f06660e5f3472a2a1742862ef417c8db9aeaff","serverFinished":"fd84f608d9298f9f1f28871e92c4718b80af1efdfc823647b9614be228c107822d751e8a69197eecf8ca8bc309473ef1"},"tlsVersion":"TLSv1.3","colo":"EWR","timezone":"America/New_York","city":"Hockessin","httpProtocol":"HTTP/1.1","edgeRequestKeepAliveStatus":1,"requestPriority":"","botManagement":{"staticResource":false,"verifiedBot":false,"score":1},"clientTrustScore":1,"region":"Delaware","regionCode":"DE","asOrganization":"Verizon Fios","metroCode":"504","postalCode":"19707"}
+{
+  "clientTcpRtt": 6,
+  "longitude": "-75.69460",
+  "latitude": "39.77930",
+  "tlsCipher": "AEAD-AES256-GCM-SHA384",
+  "continent": "NA",
+  "asn": 701,
+  "clientAcceptEncoding": "br, gzip, deflate",
+  "country": "US",
+  "tlsClientAuth": {
+    "certIssuerDNLegacy": "",
+    "certIssuerSKI": "",
+    "certSubjectDNRFC2253": "",
+    "certSubjectDNLegacy": "",
+    "certFingerprintSHA256": "",
+    "certNotBefore": "",
+    "certSKI": "",
+    "certSerial": "",
+    "certIssuerDN": "",
+    "certVerified": "NONE",
+    "certNotAfter": "",
+    "certSubjectDN": "",
+    "certPresented": "0",
+    "certRevoked": "0",
+    "certIssuerSerial": "",
+    "certIssuerDNRFC2253": "",
+    "certFingerprintSHA1": ""
+  },
+  "tlsExportedAuthenticator": {
+    "clientFinished": "d7238372e47498de5e3a712c9305b7b0b7b3b1d3b5f2a63210281f709ab7fbfef763dd161aac7b53dd6d7b68bcbfcf75",
+    "clientHandshake": "b8e81250b21834c0d8e3b89fff2d9332700f83d0b7519401491db5cbfcda6fd38aa290f6bb0035556fd337958a46df6b",
+    "serverHandshake": "f130e1583eeac6a04653ce03c8d00ad19121f8c18aa6adea246ba40f19f06660e5f3472a2a1742862ef417c8db9aeaff",
+    "serverFinished": "fd84f608d9298f9f1f28871e92c4718b80af1efdfc823647b9614be228c107822d751e8a69197eecf8ca8bc309473ef1"
+  },
+  "tlsVersion": "TLSv1.3",
+  "colo": "EWR",
+  "timezone": "America/New_York",
+  "city": "Hockessin",
+  "httpProtocol": "HTTP/1.1",
+  "edgeRequestKeepAliveStatus": 1,
+  "requestPriority": "",
+  "botManagement": {
+    "staticResource": false,
+    "verifiedBot": false,
+    "score": 1
+  },
+  "clientTrustScore": 1,
+  "region": "Delaware",
+  "regionCode": "DE",
+  "asOrganization": "Verizon Fios",
+  "metroCode": "504",
+  "postalCode": "19707"
+}
