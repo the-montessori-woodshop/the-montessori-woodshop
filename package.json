@@ -9,6 +9,7 @@
     "components:dev": "yarn workspace @woodshop/components dev",
     "admin:update": "git submodule update --remote --merge",
     "admin:build": "yarn workspace admin build",
+    "admin:push": "git push --recurse-submodules=check",
     "admin:start": "yarn workspace admin serve",
     "admin:docker": "yarn docker build admin --file packages/medusa-admin/Dockerfile",
     "backend:build": "yarn workspace backend build",
