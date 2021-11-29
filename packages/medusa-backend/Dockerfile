@@ -3,21 +3,18 @@ FROM node:16.13.0
 WORKDIR /app/medusa
 
 COPY package.json /app/medusa/package.json
-COPY packages/medusa-backend /app/medusa/packages/medusa-backend
 COPY packages/medusa-backend/entrypoint.sh /app/medusa/entrypoint.sh
 
-RUN yarn set version berry
+COPY packages/medusa-backend/src /app/medusa/packages/medusa-backend/src
+COPY packages/medusa-backend/uploads /app/medusa/packages/medusa-backend/uploads
+COPY packages/medusa-backend/.babelrc.js /app/medusa/packages/medusa-backend/.babelrc.js
+COPY packages/medusa-backend/medusa-config.js /app/medusa/packages/medusa-backend/medusa-config.js
+COPY packages/medusa-backend/package.json /app/medusa/packages/medusa-backend/package.json
 
-COPY .pnp.cjs /app/medusa/.pnp.cjs
-COPY .pnp.loader.mjs /app/medusa/.pnp.loader.mjs
-COPY .yarnrc.yml /app/medusa/.yarnrc.yml
-COPY yarn.lock /app/medusa/yarn.lock
-COPY .yarn /app/medusa/.yarn
-
-RUN yarn install
+RUN npm install --no-package-lock --only production
 
 # Build the app
-RUN yarn workspace @woodshop/backend build
+RUN npm run build --workspace backend
 
 ENTRYPOINT ["sh", "/app/medusa/entrypoint.sh"]
 

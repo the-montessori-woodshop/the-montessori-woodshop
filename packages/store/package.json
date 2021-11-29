@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "@woodshop/store",
+  "name": "store",
   "description": "",
   "license": "",
   "scripts": {

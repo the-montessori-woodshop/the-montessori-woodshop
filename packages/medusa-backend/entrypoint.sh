@@ -1,15 +1,11 @@
 #!/bin/sh
 
-cd /app
-
-echo "Yarn Version:"
-yarn --version
-
-echo "Installing dependencies..."
-npm install --no-package-lock --only production
-# yarn install
+cd /app/medusa
 
 echo "Running migrations..."
-# yarn workspace @woodshop/backend migrate
-npm run migrate --workspace @woodshop/backend
-npm run start --workspace @woodshop/backend
+# yarn workspace backend migrate
+npm run migrate --workspace backend
+
+echo "Starting medusa..."
+# yarn workspace backend migrate
+npm run start --workspace backend

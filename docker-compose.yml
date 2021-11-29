@@ -1,7 +1,7 @@
 version: "3"
 services:
   backend:
-    image: medusa
+    image: woodshop:medusa
     build:
       context: ./
       dockerfile: ./packages/medusa-backend/Dockerfile
@@ -30,7 +30,7 @@ services:
       - ./.env
 
   admin:
-    image: admin
+    image: woodshop:admin
     build:
       context: ./
       dockerfile: ./packages/medusa-admin/Dockerfile

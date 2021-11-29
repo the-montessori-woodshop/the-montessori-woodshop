@@ -1,5 +1,5 @@
 {
-  "name": "@woodshop/the-montessori-woodshop",
+  "name": "the-montessori-woodshop",
   "version": "1.0.0",
   "description": "Monorepo for the montessori woodshop medusa + next-js online store",
   "main": "index.js",
@@ -7,21 +7,21 @@
   "scripts": {
     "components:build": "yarn workspace @woodshop/components build",
     "components:dev": "yarn workspace @woodshop/components dev",
-    "admin:build": "yarn workspace @woodshop/admin build",
-    "admin:start": "yarn workspace @woodshop/admin serve",
-    "admin:docker": "yarn docker build @woodshop/admin --file packages/medusa-admin/Dockerfile",
-    "backend:build": "yarn workspace @woodshop/backend build",
-    "backend:migrate": "yarn workspace @woodshop/backend migrate",
-    "backend:start": "yarn workspace @woodshop/backend start",
-    "store:dev": "yarn workspace @woodshop/store dev",
-    "store:start": "yarn workspace @woodshop/store start"
+    "admin:update": "git submodule update --remote --merge",
+    "admin:build": "yarn workspace admin build",
+    "admin:start": "yarn workspace admin serve",
+    "admin:docker": "yarn docker build admin --file packages/medusa-admin/Dockerfile",
+    "backend:build": "yarn workspace backend build",
+    "backend:migrate": "yarn workspace backend migrate",
+    "backend:start": "yarn workspace backend start",
+    "store:dev": "yarn workspace store dev",
+    "store:start": "yarn workspace store start"
   },
-  "workspaces": [
-    "packages/components",
-    "packages/medusa-admin",
-    "packages/medusa-backend",
-    "packages/store"
-  ],
+  "workspaces": {
+    "packages": [
+      "packages/**"
+    ]
+  },
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/the-montessori-woodshop/the-montessori-woodshop.git"

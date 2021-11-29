@@ -1,5 +1,5 @@
 {
-  "name": "@woodshop/backend",
+  "name": "backend",
   "version": "0.0.1",
   "description": "The Medusa backend store for the Montessori Woodshop storefront.",
   "author": "Drew DeCarme (drew@themontessoriwoodshop.com)",
@@ -14,8 +14,12 @@
     "version": "yarn medusa version"
   },
   "dependencies": {
+    "@babel/cli": "^7.16.0",
+    "@babel/core": "^7.16.0",
+    "@babel/preset-typescript": "^7.16.0",
     "@medusajs/medusa": "^1.1.57",
     "@medusajs/medusa-cli": "^1.1.23",
+    "babel-preset-medusa-package": "^1.1.18",
     "dotenv": "^10.0.0",
     "medusa-fulfillment-manual": "^1.1.30",
     "medusa-interfaces": "^1.1.31",
@@ -31,12 +35,5 @@
     "ecommerce",
     "headless",
     "medusa"
-  ],
-  "devDependencies": {
-    "@babel/cli": "^7.16.0",
-    "@babel/core": "^7.16.0",
-    "@babel/preset-typescript": "^7.16.0",
-    "babel-preset-medusa-package": "^1.1.18",
-    "prettier": "^2.5.0"
-  }
+  ]
 }
