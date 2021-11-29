@@ -11,6 +11,9 @@ services:
         destination: /a
     domains:
       - admin.themontessoriwoodshop.com
+    envVars:
+      - key: SKIP_INSTALL_DEPS
+        value: true
 
   # Redis
   - type: pserv
