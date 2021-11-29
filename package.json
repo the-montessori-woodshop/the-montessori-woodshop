@@ -11,7 +11,6 @@
     "admin:build": "yarn workspace admin build",
     "admin:push": "git push --recurse-submodules=check",
     "admin:start": "yarn workspace admin serve",
-    "admin:docker": "yarn docker build admin --file packages/medusa-admin/Dockerfile",
     "backend:build": "yarn workspace backend build",
     "backend:migrate": "yarn workspace backend migrate",
     "backend:start": "yarn workspace backend start",

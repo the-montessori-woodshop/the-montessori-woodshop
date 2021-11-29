@@ -2,6 +2,7 @@
 node_modules/
 lib/
 .parcel-cache
+.env.production
 
 
 # Yarn w/ Zero Installs
