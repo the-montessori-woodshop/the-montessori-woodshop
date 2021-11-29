@@ -35,5 +35,8 @@
     "ecommerce",
     "headless",
     "medusa"
-  ]
+  ],
+  "engines": {
+    "node": "16.13.0"
+  }
 }
