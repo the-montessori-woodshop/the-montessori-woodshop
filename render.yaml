@@ -35,7 +35,7 @@ services:
       maxInstances: 3
       targetMemoryPercent: 60
       targetCPUPercent: 60
-    buildCommand: yarn backend:build
+    buildCommand: yarn install && yarn backend:build
     startCommand: yarn backend:migrate && yarn backend:start
     envVars:
       - key: MEDUSA_PORT
