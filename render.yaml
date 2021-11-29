@@ -3,7 +3,7 @@ services:
   - type: web
     name: admin
     env: static
-    buildCommand: yarn install --immutable --immutable-cache --check-cache && yarn admin:build
+    buildCommand: yarn admin:build
     staticPublishPath: packages/medusa-admin/public
     routes:
       - type: rewrite
@@ -35,7 +35,7 @@ services:
       maxInstances: 3
       targetMemoryPercent: 60
       targetCPUPercent: 60
-    buildCommand: yarn install --immutable --immutable-cache --check-cache && yarn backend:build
+    buildCommand: yarn backend:build
     startCommand: yarn backend:migrate && yarn backend:start
     envVars:
       - key: MEDUSA_PORT
