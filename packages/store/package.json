@@ -1,6 +1,7 @@
 {
   "private": true,
   "name": "store",
+  "version": "1.0.0",
   "description": "",
   "license": "",
   "scripts": {
