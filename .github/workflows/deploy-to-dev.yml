@@ -33,5 +33,5 @@ jobs:
         run: yarn install --frozen-lockfile
       - name: Test
         run: yarn workspace store test
-      - name: Build
+      - name: Deploy to PROD
         run: yarn workspace store deploy:dev
