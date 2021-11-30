@@ -1,10 +1,9 @@
-name = "remix-cloudflare-workers"
+name = "woodshop"
 type = "javascript"
-
-zone_id = ""
-account_id = ""
-route = ""
-workers_dev = true
+usage_model = "unbound"
+zone_id = "ebeb335a5410105683a9e7bc11251d1c" # no risk at exposing this
+account_id = "68fa4421d84bfcddbd9311a7d57aa419" # no risk at exposing this
+compatibility_date = "2021-11-30"
 
 [site]
 bucket = "./public"
@@ -16,3 +15,19 @@ watch_dir = "build/index.js"
 
 [build.upload]
 format="service-worker"
+
+[dev]
+ip = "0.0.0.0"
+port = 9000
+local_protocol="http"
+upstream_protocol="https"
+
+[env.develop]
+name = "woodshop_dev"
+route = "dev.themontessoriwoodshop.com/*"
+
+[env.production]
+name = "woodshop_prod"
+route = "themontessoriwoodshop.com/*"
+
+

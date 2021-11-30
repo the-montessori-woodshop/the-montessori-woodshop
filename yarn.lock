@@ -1138,6 +1138,15 @@
   resolved "https://registry.yarnpkg.com/@cloudflare/workers-types/-/workers-types-3.2.0.tgz#df300466f5f8a03b205bdd533990017b0538496e"
   integrity sha512-y0+f7QeB5/fMMdU0wSwvBB18yE9kAD2s7Wben8a4uI4f/EJyE+eJrai5QO52Pq8EmWP0vRpKqZh0qU857WhY2A==
 
+"@cloudflare/wrangler@^1.19.5":
+  version "1.19.5"
+  resolved "https://registry.yarnpkg.com/@cloudflare/wrangler/-/wrangler-1.19.5.tgz#96e7d90276a94fbda6e55af17be3701bcc0552ec"
+  integrity sha512-fVyJfzS2FNETmdIQAZRf1Zgq9uuFHfHQtLgUSMC/FKCkRxNN2wES/F1/PYn5OXQqnYkUZf1dKW3xoLi5lY4U0Q==
+  dependencies:
+    axios "^0.21.1"
+    rimraf "^3.0.2"
+    tar "^6.1.10"
+
 "@dabh/diagnostics@^2.0.2":
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/@dabh/diagnostics/-/diagnostics-2.0.2.tgz#290d08f7b381b8f94607dc8f471a12c675f9db31"
@@ -19672,7 +19681,7 @@ tar@^4:
     safe-buffer "^5.2.1"
     yallist "^3.1.1"
 
-tar@^6.0.2:
+tar@^6.0.2, tar@^6.1.10:
   version "6.1.11"
   resolved "https://registry.yarnpkg.com/tar/-/tar-6.1.11.tgz#6760a38f003afa1b2ffd0ffe9e9abbd0eab3d621"
   integrity sha512-an/KZQzQUkZCkuoAA64hM92X0Urb6VpRhAFllDzz44U2mcD5scmT3zBc4VgVpkugF580+DQn8eAFSyoQt0tznA==

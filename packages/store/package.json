@@ -3,15 +3,21 @@
   "name": "store",
   "version": "1.0.0",
   "description": "",
-  "license": "",
+  "license": "MIT",
+  "workspaces": {
+    "nohoist": [
+      "**"
+    ]
+  },
   "scripts": {
     "build": "yarn setup && remix build",
     "dev": "yarn setup && remix watch",
     "setup": "remix setup cloudflare-workers",
     "build:worker": "esbuild --define:process.env.NODE_ENV='\"production\"' --minify --bundle --sourcemap --outdir=dist ./worker",
     "dev:worker": "esbuild --define:process.env.NODE_ENV='\"development\"' --bundle --sourcemap --outdir=dist ./worker",
-    "start": "miniflare --build-command \"npm run dev:worker\" --watch",
-    "deploy": "npm run build && wrangler publish"
+    "start": "miniflare --build-command \"yarn dev:worker\" --watch",
+    "deploy:prod": "yarn build && wrangler publish",
+    "deploy:dev": "yarn build && wrangler publish --env develop"
   },
   "dependencies": {
     "@remix-run/cloudflare-workers": "^1.0.6",
@@ -24,6 +30,7 @@
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^3.2.0",
+    "@cloudflare/wrangler": "^1.19.5",
     "@remix-run/dev": "^1.0.6",
     "@remix-run/server-runtime": "^1.0.6",
     "@types/react": "^17.0.37",
