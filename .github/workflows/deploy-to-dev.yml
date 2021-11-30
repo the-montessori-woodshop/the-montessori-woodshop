@@ -34,4 +34,4 @@ jobs:
       - name: Test
         run: yarn workspace store test
       - name: Deploy to DEV
-        run: yarn workspace store deploy:dev
+        run: CF_ACCOUNT_ID=${{ secrets.CF_ACCOUNT_ID }} CF_API_TOKEN=${{ secrets.CF_API_TOKEN }} yarn workspace store deploy:dev
