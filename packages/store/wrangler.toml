@@ -16,6 +16,9 @@ watch_dir = "build/index.js"
 [build.upload]
 format="service-worker"
 
+[vars]
+MEDUSA_URL = "http://localhost:9000"
+
 [dev]
 ip = "0.0.0.0"
 port = 9000
@@ -26,8 +29,17 @@ upstream_protocol="https"
 name = "woodshop_dev"
 route = "dev.themontessoriwoodshop.com/*"
 
+[env.develop.vars]
+MEDUSA_URL = "https://dev.store.themontessoriwoodshop.com"
+
 [env.production]
 name = "woodshop_prod"
 route = "themontessoriwoodshop.com/*"
+
+[env.production.vars]
+MEDUSA_URL = "https://store.themontessoriwoodshop.com"
+
+
+
 
 

@@ -44,6 +44,8 @@ services:
     startCommand: yarn backend:migrate && yarn backend:start
     plan: starter
     previewPlan: starter
+    domains:
+      - medusa.themontessoriwoodshop.com
     envVars:
       - key: MEDUSA_PORT
         value: 9000

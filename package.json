@@ -5,6 +5,7 @@
   "main": "index.js",
   "private": true,
   "scripts": {
+    "postinstall": "yarn workspace store setup",
     "components:build": "yarn workspace @woodshop/components build",
     "components:dev": "yarn workspace @woodshop/components dev",
     "admin:update": "git submodule update --remote --merge",
@@ -40,11 +41,6 @@
   },
   "homepage": "https://github.com/the-montessori-woodshop/the-montessori-woodshop#readme",
   "packageManager": "yarn@3.1.1",
-  "devDependencies": {
-    "eslint": "^8.3.0",
-    "prettier": "^2.5.0",
-    "typescript": "^4.5.2"
-  },
   "engines": {
     "node": "16.13.0"
   }
