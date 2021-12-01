@@ -1,3 +1,4 @@
+previewsEnabled: true
 services:
   # Gatsby Admin
   - type: web
@@ -5,6 +6,8 @@ services:
     env: static
     buildCommand: yarn admin:build
     staticPublishPath: packages/medusa-admin/public
+    plan: starter
+    previewPlan: starter
     routes:
       - type: rewrite
         source: "/a/*"
@@ -19,6 +22,8 @@ services:
   - type: pserv
     name: redis
     env: docker
+    plan: starter
+    previewPlan: starter
     dockerfilePath: ./redis/Dockerfile
     dockerContext: ./redis/
     disk:
@@ -37,13 +42,17 @@ services:
       targetCPUPercent: 60
     buildCommand: yarn install && yarn backend:build
     startCommand: yarn backend:migrate && yarn backend:start
+    plan: starter
+    previewPlan: starter
     envVars:
       - key: MEDUSA_PORT
         value: 9000
       - key: MEDUSA_ADMIN_CORS
         value: admin.themontessoriwoodshop.com
+        previewValue: dev.admin.themontessoriwoodshop.com
       - key: MEDUSA_STORE_CORS
         value: themontessoriwoodshop.com
+        previewValue: dev.themontessoriwoodshop.com
       - key: MEDUSA_DATABASE_URL
         fromDatabase:
           name: postgres
@@ -58,17 +67,23 @@ services:
           name: redis
           type: pserv
           property: port
+      - fromGroup: auth-secrets
+
+# Env Var Groups
+envVarGroups:
+  - name: auth-secrets
+    envVars:
       - key: JWT_SECRET
         sync: false
       - key: COOKIE_SECRET
         sync: false
-
 
 # Postgres DB
 databases:
   - name: postgres
     databaseName: woodshop
     plan: starter
+    previewPlan: starter
     user: app_user
     region: oregon
     postgresMajorVersion: 14

@@ -8,6 +8,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    environment: development
     steps:
       - uses: actions/checkout@v2
       - name: Use Node.js
@@ -29,4 +30,6 @@ jobs:
       - name: Test
         run: yarn workspace store test
       - name: Build
-        run: yarn workspace store build:worker
+        run: yarn workspace store build
+      # - name: Deploy to DEV
+      #   run: CF_ACCOUNT_ID=${{ secrets.CF_ACCOUNT_ID }} CF_API_TOKEN=${{ secrets.CF_API_TOKEN }} yarn workspace store deploy:dev
