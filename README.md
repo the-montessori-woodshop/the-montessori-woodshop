@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://themontessoriwoodshop.com">
-    <img alt="Medusa" src="./packages/storefront/public/logo-wordmark.png" width="300"/>
+    <img alt="Medusa" src="./packages/store/public/logo-wordmark.png" width="300"/>
   </a>
 </p>
 <h1 align="center">
