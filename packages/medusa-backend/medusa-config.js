@@ -7,6 +7,14 @@ require("dotenv").config({
 const plugins = [
   `medusa-fulfillment-manual`,
   `medusa-payment-manual`,
+  {
+    resolve: `medusa-plugin-contentful`,
+    options: {
+      space_id: process.env.CONTENTFUL_SPACE_ID,
+      access_token: process.env.CONTENTFUL_ACCESS_TOKEN,
+      environment: process.env.CONTENTFUL_ENV,
+    },
+  },
   // Uncomment to add Stripe support.
   // You can create a Stripe account via: https://stripe.com
   // {

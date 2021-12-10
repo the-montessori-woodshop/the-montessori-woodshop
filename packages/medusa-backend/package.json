@@ -6,6 +6,9 @@
   "license": "MIT",
   "private": true,
   "scripts": {
+    "migrate:contentful": "./contentful-migrations/index.js",
+    "import:contentful": "contentful space import --space-id $CONTENTFUL_SPACE_ID --mt $CONTENTFUL_ACCESS_TOKEN --content-file  ./data/contentful-seed.json",
+    "seed:contentful": "dotenv-run-script .env -- import:contentful",
     "build": "babel src -d dist --extensions \".ts,.js\"",
     "dev": "medusa develop",
     "start": "medusa start",
@@ -21,10 +24,12 @@
     "@medusajs/medusa-cli": "^1.1.23",
     "babel-preset-medusa-package": "^1.1.18",
     "dotenv": "^10.0.0",
+    "dotenv-run-script": "^0.2.0",
     "medusa-fulfillment-manual": "^1.1.30",
     "medusa-interfaces": "^1.1.31",
     "medusa-payment-manual": "^1.0.12",
     "medusa-payment-stripe": "^1.1.34",
+    "medusa-plugin-contentful": "^1.1.37",
     "mongoose": "^5.13.13",
     "pg": "^8.7.1",
     "typeorm": "^0.2.41"
@@ -38,5 +43,9 @@
   ],
   "engines": {
     "node": "16.13.0"
+  },
+  "devDependencies": {
+    "contentful-cli": "^1.9.36",
+    "contentful-migration": "^4.6.0"
   }
 }
