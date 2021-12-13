@@ -4,7 +4,7 @@ services:
   - type: web
     name: admin
     env: static
-    buildCommand: yarn admin:build
+    buildCommand: yarn workspace admin build
     staticPublishPath: packages/medusa-admin/public
     plan: starter
     previewPlan: starter
@@ -40,8 +40,8 @@ services:
       maxInstances: 3
       targetMemoryPercent: 60
       targetCPUPercent: 60
-    buildCommand: yarn install && yarn backend:build
-    startCommand: yarn backend:migrate && yarn backend:start
+    buildCommand: yarn install && yarn workspace medusa build
+    startCommand: yarn workspace medusa migrate && yarn workspace medusa start
     plan: starter
     previewPlan: starter
     domains:
