@@ -7,6 +7,13 @@ require("dotenv").config({
 const plugins = [
   `medusa-fulfillment-manual`,
   `medusa-payment-manual`,
+  {
+    resolve: `medusa-file-cloudflare-images`,
+    options: {
+      accountId: process.env.CF_ACCOUNT_ID,
+      apiToken: process.env.CF_IMAGE_API_TOKEN,
+    },
+  },
   // Uncomment to add Stripe support.
   // You can create a Stripe account via: https://stripe.com
   // {

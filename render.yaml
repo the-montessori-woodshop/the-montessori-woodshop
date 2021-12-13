@@ -1,4 +1,4 @@
-previewsEnabled: true
+previewsEnabled: false
 services:
   # Gatsby Admin
   - type: web
