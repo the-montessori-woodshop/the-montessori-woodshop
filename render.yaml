@@ -4,7 +4,7 @@ services:
   - type: web
     name: admin
     env: static
-    buildCommand: yarn workspace admin build
+    buildCommand: yarn install && yarn workspace admin build
     staticPublishPath: packages/medusa-admin/public
     plan: starter
     previewPlan: starter
