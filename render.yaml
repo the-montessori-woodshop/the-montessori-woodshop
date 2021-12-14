@@ -1,23 +1,5 @@
 previewsEnabled: false
 services:
-  # Gatsby Admin
-  - type: web
-    name: admin
-    env: static
-    buildCommand: yarn install && yarn workspace admin build
-    staticPublishPath: packages/medusa-admin/public
-    plan: starter
-    previewPlan: starter
-    routes:
-      - type: rewrite
-        source: "/a/*"
-        destination: /a
-    domains:
-      - admin.themontessoriwoodshop.com
-    envVars:
-      - key: SKIP_INSTALL_DEPS
-        value: true
-
   # Redis
   - type: pserv
     name: redis
