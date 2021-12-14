@@ -1,11 +1,9 @@
-previewsEnabled: false
 services:
   # Redis
   - type: pserv
     name: redis
     env: docker
     plan: starter
-    previewPlan: starter
     dockerfilePath: ./redis/Dockerfile
     dockerContext: ./redis/
     disk:
@@ -13,7 +11,7 @@ services:
       mountPath: /var/lib/redis
       sizeGB: 10
 
-  # Medusa Backend
+  # Medusa
   - type: web
     name: medusa
     env: node
@@ -25,7 +23,6 @@ services:
     buildCommand: yarn install && yarn workspace medusa build
     startCommand: yarn workspace medusa migrate && yarn workspace medusa start
     plan: starter
-    previewPlan: starter
     domains:
       - store.themontessoriwoodshop.com
     envVars:
@@ -33,10 +30,8 @@ services:
         value: 9000
       - key: MEDUSA_ADMIN_CORS
         value: admin.themontessoriwoodshop.com
-        # previewValue: dev.admin.themontessoriwoodshop.com
       - key: MEDUSA_STORE_CORS
         value: themontessoriwoodshop.com
-        # previewValue: dev.themontessoriwoodshop.com
       - key: MEDUSA_DATABASE_URL
         fromDatabase:
           name: postgres
@@ -67,7 +62,6 @@ databases:
   - name: postgres
     databaseName: woodshop
     plan: starter
-    previewPlan: starter
     user: app_user
     region: oregon
     postgresMajorVersion: 14
