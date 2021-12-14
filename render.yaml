@@ -29,9 +29,9 @@ services:
       - key: MEDUSA_PORT
         value: 9000
       - key: MEDUSA_ADMIN_CORS
-        value: admin.themontessoriwoodshop.com
+        value: https://admin.themontessoriwoodshop.com
       - key: MEDUSA_STORE_CORS
-        value: themontessoriwoodshop.com
+        value: https://themontessoriwoodshop.com
       - key: MEDUSA_DATABASE_URL
         fromDatabase:
           name: postgres
