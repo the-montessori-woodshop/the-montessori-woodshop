@@ -27,16 +27,16 @@ services:
     plan: starter
     previewPlan: starter
     domains:
-      - medusa.themontessoriwoodshop.com
+      - store.themontessoriwoodshop.com
     envVars:
       - key: MEDUSA_PORT
         value: 9000
       - key: MEDUSA_ADMIN_CORS
         value: admin.themontessoriwoodshop.com
-        previewValue: dev.admin.themontessoriwoodshop.com
+        # previewValue: dev.admin.themontessoriwoodshop.com
       - key: MEDUSA_STORE_CORS
         value: themontessoriwoodshop.com
-        previewValue: dev.themontessoriwoodshop.com
+        # previewValue: dev.themontessoriwoodshop.com
       - key: MEDUSA_DATABASE_URL
         fromDatabase:
           name: postgres
