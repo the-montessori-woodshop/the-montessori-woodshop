@@ -14,10 +14,10 @@ COPY packages/medusa/.babelrc.js /app/medusa/packages/medusa/.babelrc.js
 COPY packages/medusa/medusa-config.js /app/medusa/packages/medusa/medusa-config.js
 COPY packages/medusa/package.json /app/medusa/packages/medusa/package.json
 
-RUN yarn install --frozen-lockfile --production=true
+RUN yarn install --frozen-lockfile --production
 
 # Build the app
-RUN yarn workspace medusa-file-cloudflare-images build
+# RUN yarn workspace medusa-file-cloudflare-images build
 RUN yarn workspace medusa build
 
 ENTRYPOINT ["sh", "/app/medusa/entrypoint.sh"]
