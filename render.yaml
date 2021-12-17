@@ -1,29 +1,9 @@
-previewsEnabled: true
 services:
-  # Gatsby Admin
-  - type: web
-    name: admin
-    env: static
-    buildCommand: yarn admin:build
-    staticPublishPath: packages/medusa-admin/public
-    plan: starter
-    previewPlan: starter
-    routes:
-      - type: rewrite
-        source: "/a/*"
-        destination: /a
-    domains:
-      - admin.themontessoriwoodshop.com
-    envVars:
-      - key: SKIP_INSTALL_DEPS
-        value: true
-
   # Redis
   - type: pserv
     name: redis
     env: docker
     plan: starter
-    previewPlan: starter
     dockerfilePath: ./redis/Dockerfile
     dockerContext: ./redis/
     disk:
@@ -31,7 +11,7 @@ services:
       mountPath: /var/lib/redis
       sizeGB: 10
 
-  # Medusa Backend
+  # Medusa
   - type: web
     name: medusa
     env: node
@@ -40,21 +20,18 @@ services:
       maxInstances: 3
       targetMemoryPercent: 60
       targetCPUPercent: 60
-    buildCommand: yarn install && yarn backend:build
-    startCommand: yarn backend:migrate && yarn backend:start
+    buildCommand: yarn install && yarn workspace medusa-file-cloudflare-images build && yarn workspace medusa build
+    startCommand: yarn workspace medusa migrate && yarn workspace medusa start
     plan: starter
-    previewPlan: starter
     domains:
-      - medusa.themontessoriwoodshop.com
+      - store.themontessoriwoodshop.com
     envVars:
       - key: MEDUSA_PORT
         value: 9000
       - key: MEDUSA_ADMIN_CORS
-        value: admin.themontessoriwoodshop.com
-        previewValue: dev.admin.themontessoriwoodshop.com
+        value: https://admin.themontessoriwoodshop.com
       - key: MEDUSA_STORE_CORS
-        value: themontessoriwoodshop.com
-        previewValue: dev.themontessoriwoodshop.com
+        value: https://themontessoriwoodshop.com
       - key: MEDUSA_DATABASE_URL
         fromDatabase:
           name: postgres
@@ -70,6 +47,7 @@ services:
           type: pserv
           property: port
       - fromGroup: auth-secrets
+      - fromGroup: cloudflare
 
 # Env Var Groups
 envVarGroups:
@@ -79,13 +57,20 @@ envVarGroups:
         sync: false
       - key: COOKIE_SECRET
         sync: false
+  - name: cloudflare
+    envVars:
+      - key: CF_ZONE_ID
+        sync: false
+      - key: CF_ACCOUNT_ID
+        sync: false
+      - key: CF_IMAGE_API_TOKEN
+        sync: false
 
 # Postgres DB
 databases:
   - name: postgres
     databaseName: woodshop
     plan: starter
-    previewPlan: starter
     user: app_user
     region: oregon
     postgresMajorVersion: 14

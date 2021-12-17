@@ -5,7 +5,6 @@
   "main": "index.js",
   "private": true,
   "scripts": {
-    "postinstall": "yarn workspace store setup",
     "components:build": "yarn workspace @woodshop/components build",
     "components:dev": "yarn workspace @woodshop/components dev",
     "admin:update": "git submodule update --remote --merge",

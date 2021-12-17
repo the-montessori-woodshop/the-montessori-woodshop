@@ -1,10 +1,10 @@
 version: "3"
 services:
-  backend:
-    image: woodshop:medusa
+  medusa:
+    image: medusa
     build:
       context: ./
-      dockerfile: ./packages/medusa-backend/Dockerfile
+      dockerfile: ./packages/medusa/Dockerfile
     depends_on:
       - postgres
       - redis
@@ -30,7 +30,7 @@ services:
       - ./.env
 
   admin:
-    image: woodshop:admin
+    image: admin
     build:
       context: ./
       dockerfile: ./packages/medusa-admin/Dockerfile
