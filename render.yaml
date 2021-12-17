@@ -20,7 +20,7 @@ services:
       maxInstances: 3
       targetMemoryPercent: 60
       targetCPUPercent: 60
-    buildCommand: yarn install && yarn workspace medusa build
+    buildCommand: yarn install && yarn workspace medusa-file-cloudflare-images build && yarn workspace medusa build
     startCommand: yarn workspace medusa migrate && yarn workspace medusa start
     plan: starter
     domains:
