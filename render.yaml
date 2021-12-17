@@ -47,6 +47,7 @@ services:
           type: pserv
           property: port
       - fromGroup: auth-secrets
+      - fromGroup: cloudflare
 
 # Env Var Groups
 envVarGroups:
@@ -55,6 +56,14 @@ envVarGroups:
       - key: JWT_SECRET
         sync: false
       - key: COOKIE_SECRET
+        sync: false
+  - name: cloudflare
+    envVars:
+      - key: CF_ZONE_ID
+        sync: false
+      - key: CF_ACCOUNT_ID
+        sync: false
+      - key: CF_IMAGE_API_TOKEN
         sync: false
 
 # Postgres DB
