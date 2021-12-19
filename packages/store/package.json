@@ -2,52 +2,37 @@
   "private": true,
   "name": "store",
   "version": "1.0.0",
-  "sideEffects": false,
-  "main": "dist/worker.js",
-  "description": "",
-  "license": "MIT",
+  "description": "The Montessori Woodshop's storefront.",
+  "license": "Apache-2.0",
+  "scripts": {
+    "build": "cross-env NODE_ENV=production remix build",
+    "dev": "cross-env NODE_ENV=development run-p dev:*",
+    "postinstall": "remix setup cloudflare-pages",
+    "dev:remix": "remix watch",
+    "dev:wrangler": "wrangler pages dev ./public --watch ./build",
+    "start": "npm run dev:wrangler"
+  },
+  "dependencies": {
+    "@remix-run/react": "^1.1.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "remix": "^1.1.1",
+    "@remix-run/cloudflare-pages": "^1.1.1"
+  },
+  "devDependencies": {
+    "@remix-run/dev": "^1.1.1",
+    "@types/react": "^17.0.24",
+    "@types/react-dom": "^17.0.9",
+    "typescript": "^4.1.2",
+    "@cloudflare/workers-types": "^3.2.0",
+    "cross-env": "^7.0.3",
+    "esbuild": "0.13.14",
+    "npm-run-all": "^4.1.5",
+    "wrangler": "alpha"
+  },
   "engines": {
     "node": ">=14"
   },
-  "workspaces": {
-    "nohoist": [
-      "**"
-    ]
-  },
-  "scripts": {
-    "build": "yarn setup && remix build",
-    "dev": "yarn setup && remix watch",
-    "setup": "remix setup cloudflare-workers",
-    "build:worker": "esbuild --define:process.env.NODE_ENV='\"production\"' --minify --bundle --sourcemap --outdir=dist ./worker",
-    "dev:worker": "esbuild --define:process.env.NODE_ENV='\"development\"' --bundle --sourcemap --outdir=dist ./worker",
-    "start": "miniflare --build-command \"yarn dev:worker\" --watch",
-    "deploy:prod": "yarn build && wrangler publish",
-    "deploy:dev": "yarn build && wrangler publish --env develop",
-    "test": "echo \"Add some tests when you can ;)\""
-  },
-  "resolutions": {
-    "axios": "^0.24.0"
-  },
-  "dependencies": {
-    "@medusajs/medusa-js": "^1.0.5",
-    "@remix-run/cloudflare-workers": "^1.0.6",
-    "@remix-run/react": "^1.0.6",
-    "axios": "^0.24.0",
-    "cron-schedule": "^3.0.4",
-    "node-cron": "^3.0.0",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "remix": "^1.0.6"
-  },
-  "devDependencies": {
-    "@cloudflare/workers-types": "^3.2.0",
-    "@cloudflare/wrangler": "^1.19.5",
-    "@remix-run/dev": "^1.0.6",
-    "@remix-run/server-runtime": "^1.0.6",
-    "@types/react": "^17.0.37",
-    "@types/react-dom": "^17.0.11",
-    "esbuild": "0.14.0",
-    "miniflare": "2.0.0-rc.2",
-    "typescript": "^4.5.2"
-  }
+  "sideEffects": false,
+  "main": "dist/worker.js"
 }
