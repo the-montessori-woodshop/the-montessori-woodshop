@@ -33,7 +33,7 @@ jobs:
         with:
           source-directory: '.'
           destination-github-username: 'drewdecarme'
-          destination-repository-name: 'woodshop-admin'
+          destination-repository-name: 'the-montessori-woodshop/woodshop-admin'
           user-email: drew@themontessoriwoodshop.com
           target-branch: main
           
@@ -45,6 +45,6 @@ jobs:
         with:
           source-directory: '.'
           destination-github-username: 'drewdecarme'
-          destination-repository-name: 'woodshop-admin'
+          destination-repository-name: 'the-montessori-woodshop/woodshop-store'
           user-email: drew@themontessoriwoodshop.com
           target-branch: main
