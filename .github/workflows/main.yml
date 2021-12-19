@@ -32,9 +32,9 @@ jobs:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
           source-directory: '.'
-          destination-github-username: 'drewdecarme'
-          destination-repository-name: 'the-montessori-woodshop/woodshop-admin'
-          user-email: drew@themontessoriwoodshop.com
+          destination-github-username: 'the-montessori-woodshop'
+          destination-repository-name: 'woodshop-admin'
+          user-email: drewdecarme@gmail.com
           target-branch: main
           
       # Copies all of the files to the `woodshop-storefront` repo
@@ -44,7 +44,7 @@ jobs:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
           source-directory: '.'
-          destination-github-username: 'drewdecarme'
-          destination-repository-name: 'the-montessori-woodshop/woodshop-store'
-          user-email: drew@themontessoriwoodshop.com
+          destination-github-username: 'the-montessori-woodshop'
+          destination-repository-name: 'woodshop-store'
+          user-email: drewdecarme@gmail.com
           target-branch: main
