@@ -35,6 +35,8 @@ jobs:
           destination-github-username: 'the-montessori-woodshop'
           destination-repository-name: 'woodshop-admin'
           user-email: drewdecarme@gmail.com
+          user-name: drewdecarme
+          commit-message: See ORIGIN_COMMIT from $GITHUB_REF
           target-branch: main
           
       # Copies all of the files to the `woodshop-storefront` repo
@@ -46,5 +48,9 @@ jobs:
           source-directory: '.'
           destination-github-username: 'the-montessori-woodshop'
           destination-repository-name: 'woodshop-store'
+          user-email: drewdecarme@gmail.com
+          user-name: drewdecarme
+          commit-message: See ORIGIN_COMMIT from $GITHUB_REF
+          target-branch: main
           user-email: drewdecarme@gmail.com
           target-branch: main
