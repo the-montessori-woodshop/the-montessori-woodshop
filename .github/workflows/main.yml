@@ -34,7 +34,7 @@ jobs:
           source-directory: '.'
           destination-github-username: 'the-montessori-woodshop'
           destination-repository-name: 'woodshop-admin'
-          user-name: Drew DeCarme
+          user-name: 'Drew DeCarme'
           commit-message: See ORIGIN_COMMIT from $GITHUB_REF
           target-branch: main
           
@@ -47,6 +47,6 @@ jobs:
           source-directory: '.'
           destination-github-username: 'the-montessori-woodshop'
           destination-repository-name: 'woodshop-store'
-          user-name: Drew DeCarme
+          user-name: 'Drew DeCarme'
           commit-message: See ORIGIN_COMMIT from $GITHUB_REF
           target-branch: main
