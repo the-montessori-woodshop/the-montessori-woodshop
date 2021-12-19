@@ -52,5 +52,3 @@ jobs:
           user-name: drewdecarme
           commit-message: See ORIGIN_COMMIT from $GITHUB_REF
           target-branch: main
-          user-email: drewdecarme@gmail.com
-          target-branch: main
