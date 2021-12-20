@@ -26,30 +26,11 @@ jobs:
       - name: Checkout monorepo
         uses: actions/checkout@v2
 
-      # Copies all of the files to the `woodshop-admin` repo
-      # - name: Push to Admin
-      #   uses: cpina/github-action-push-to-another-repository@main
-      #   env:
-      #     API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
-      #   with:
-      #     source-directory: '.'
-      #     destination-github-username: 'the-montessori-woodshop'
-      #     destination-repository-name: 'woodshop-admin'
-      #     user-email: drewdecarme@gmail.com
-      #     commit-message: See ORIGIN_COMMIT from $GITHUB_REF
-      #     target-branch: main
-      #     target-directory: mirror
-          
-      # Copies all of the files to the `woodshop-storefront` repo
-      # - name: Push to Storefront
-      #   uses: cpina/github-action-push-to-another-repository@main
-      #   env:
-      #     API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
-      #   with:
-      #     source-directory: '.'
-      #     destination-github-username: 'the-montessori-woodshop'
-      #     destination-repository-name: 'woodshop-store'
-      #     user-email: drewdecarme@gmail.com
-      #     commit-message: See ORIGIN_COMMIT from $GITHUB_REF
-      #     target-branch: main
-      #     target-directory: mirror
+      # Clone the admin repo and fetch the latest commit
+      - name: Push to Admin
+        uses: ./.github/actions/mirror-monorepo
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+        with:
+          user-email: drewdecarme@gmail.com
+          user-name: drewdecarme
