@@ -9,14 +9,14 @@ CLONE_DIR=$(mktemp -d)
 echo "[+] Cloning destination git repository 'the-montessori-woodshop/woodshop-admin'"
 
 # Setup git
-git config --global user.email "$USER_EMAIL"
-git config --global user.name "$USER_NAME"
+git config --global user.email drewdecarme@gmail.com
+git config --global user.name Drew DeCarme
 
 {
-	git clone --single-branch --branch main "https://$USER_NAME:$API_TOKEN_GITHUB@github.com/the-montessori-woodshop/woodshop-admin.git" "mirror"
+	git clone --single-branch --branch main "https://drewdecarme:$API_TOKEN_GITHUB@github.com/the-montessori-woodshop/woodshop-admin.git" "mirror"
 } || {
 	echo "::error::Could not clone the destination repository. Command:"
-	echo "::error::git clone --single-branch --branch main https://$USER_NAME:the_api_token@github.com/the-montessori-woodshop/woodshop-admin.git mirror"
+	echo "::error::git clone --single-branch --branch main https://drewdecarme:the_api_token@github.com/the-montessori-woodshop/woodshop-admin.git mirror"
 	echo "::error::(Note that the USER_NAME and API_TOKEN_GITHUB is redacted by GitHub)"
 	echo "::error::Please verify that the target repository exist AND that it contains the destination branch name, and is accesible by the API_TOKEN_GITHUB"
 	exit 1
@@ -66,4 +66,4 @@ git diff-index --quiet HEAD || git commit --message "$COMMIT_MESSAGE"
 
 echo "[+] Pushing git commit"
 # --set-upstream: sets de branch when pushing to a branch that does not exist
-git push "https://$USER_NAME:$API_TOKEN_GITHUB@github.com/the-montessori-woodshop/wodshop_admin.git" --set-upstream "main"
+git push "https://drewdecarme:$API_TOKEN_GITHUB@github.com/the-montessori-woodshop/wodshop_admin.git" --set-upstream "main"
