@@ -28,17 +28,14 @@ TEMP_DIR=$(mktemp -d)
 
 mv "$CLONE_DIR/.git" "$TEMP_DIR/.git"
 
-echo "[+] Deleting mirror/"
+echo "[+] Deleting clone dir/"
 rm -rf "$CLONE_DIR"
 
-echo "[+] Creating (now empty) mirror/"
-mkdir -p "mirror"
+echo "[+] Creating (now empty) clone dir/"
+mkdir -p "$CLONE_DIR"
 
 echo "[+] Listing Current Directory Location"
 ls -al
-
-echo "[+] Listing root Location"
-ls -al /
 
 echo "[+] Moving files and directories..."
 mv "$TEMP_DIR/.git" "$CLONE_DIR/.git"
