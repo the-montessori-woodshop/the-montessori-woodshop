@@ -25,10 +25,17 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      # Copies all of the files to the `woodshop-admin` repo
-      # - name: Push to Admin
-      #   env:
-      #     API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+      # Clone the admin repo and fetch the latest commit
+      - name: Push to Admin
+        uses: .github/actions/copy-to-admin
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+        # with:
+        #   source-directory: '.'
+        #   destination-github-username: 'the-montessori-woodshop'
+        #   destination-repository-name: 'woodshop-admin'
+        #   user-email: drewdecarme@gmail.com
+        #   target-branch: main
           
       # Copies all of the files to the `woodshop-storefront` repo
       # - name: Push to Storefront
