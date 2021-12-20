@@ -13,10 +13,10 @@ git config --global user.email drewdecarme@gmail.com
 git config --global user.name Drew DeCarme
 
 {
-	git clone --single-branch --branch main "https://drewdecarme:$API_TOKEN_GITHUB@github.com/the-montessori-woodshop/woodshop-admin.git" "mirror"
+	git clone --single-branch --branch main "https://drewdecarme:$API_TOKEN_GITHUB@github.com/the-montessori-woodshop/woodshop-admin.git" "$CLONE_DIR"
 } || {
 	echo "::error::Could not clone the destination repository. Command:"
-	echo "::error::git clone --single-branch --branch main https://drewdecarme:the_api_token@github.com/the-montessori-woodshop/woodshop-admin.git mirror"
+	echo "::error::git clone --single-branch --branch main https://drewdecarme:the_api_token@github.com/the-montessori-woodshop/woodshop-admin.git $CLONE_DIR"
 	echo "::error::(Note that the USER_NAME and API_TOKEN_GITHUB is redacted by GitHub)"
 	echo "::error::Please verify that the target repository exist AND that it contains the destination branch name, and is accesible by the API_TOKEN_GITHUB"
 	exit 1
@@ -29,7 +29,7 @@ TEMP_DIR=$(mktemp -d)
 mv "$CLONE_DIR/.git" "$TEMP_DIR/.git"
 
 echo "[+] Deleting mirror/"
-rm -rf "mirror"
+rm -rf "$CLONE_DIR"
 
 echo "[+] Creating (now empty) mirror/"
 mkdir -p "mirror"
