@@ -2,7 +2,7 @@
 
 USER_EMAIL="$1"
 USER_NAME="$2"
-REPO_NAME="$2"
+REPO_NAME="$3"
 
 set -e  # if a command fails it stops the execution
 set -u  # script fails if trying to access to an undefined variable
