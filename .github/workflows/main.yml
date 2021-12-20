@@ -23,8 +23,8 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - name: Checkout monorepo
-        uses: actions/checkout@v2
+      # - name: Checkout monorepo
+      #   uses: actions/checkout@v2
 
       # Clone the admin repo and fetch the latest commit
       - name: Push to Admin
