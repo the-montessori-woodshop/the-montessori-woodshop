@@ -6,7 +6,7 @@ name: CI
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
-    branches: [ main ]
+    branches: [ "feat/ci" ]
   pull_request:
     branches: [ main ]
 
@@ -27,24 +27,18 @@ jobs:
 
       # Copies all of the files to the `woodshop-admin` repo
       - name: Push to Admin
-        uses: cpina/github-action-push-to-another-repository@main
+        uses: ../actions/copy-to-admin
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
-        with:
-          source-directory: '.'
-          destination-github-username: 'the-montessori-woodshop'
-          destination-repository-name: 'woodshop-admin'
-          user-email: drewdecarme@gmail.com
-          target-branch: main
           
       # Copies all of the files to the `woodshop-storefront` repo
-      - name: Push to Storefront
-        uses: cpina/github-action-push-to-another-repository@main
-        env:
-          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
-        with:
-          source-directory: '.'
-          destination-github-username: 'the-montessori-woodshop'
-          destination-repository-name: 'woodshop-store'
-          user-email: drewdecarme@gmail.com
-          target-branch: main
+      # - name: Push to Storefront
+      #   uses: cpina/github-action-push-to-another-repository@main
+      #   env:
+      #     API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+      #   with:
+      #     source-directory: '.'
+      #     destination-github-username: 'the-montessori-woodshop'
+      #     destination-repository-name: 'woodshop-store'
+      #     user-email: drewdecarme@gmail.com
+      #     target-branch: main

@@ -1,0 +1,11 @@
+name: Push to admin directory
+description: >-
+  Pushes certain files from the monorepo to the admin directory
+  to be deployed on Cloudflare pages
+        
+runs:
+  using: docker
+  image: Dockerfile
+branding:
+  icon: git-commit
+  color: green
