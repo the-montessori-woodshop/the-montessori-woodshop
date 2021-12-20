@@ -26,10 +26,9 @@ jobs:
       - uses: actions/checkout@v2
 
       # Copies all of the files to the `woodshop-admin` repo
-      - name: Push to Admin
-        uses: ./.github/actions/copy-to-admin
-        env:
-          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+      # - name: Push to Admin
+      #   env:
+      #     API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
           
       # Copies all of the files to the `woodshop-storefront` repo
       # - name: Push to Storefront
