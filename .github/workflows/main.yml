@@ -27,7 +27,7 @@ jobs:
 
       # Clone the admin repo and fetch the latest commit
       - name: Push to Admin
-        uses: .github/actions/copy-to-admin
+        uses: ./.github/actions/copy-to-admin
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         # with:
