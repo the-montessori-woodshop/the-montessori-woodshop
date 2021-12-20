@@ -38,6 +38,7 @@ jobs:
           user-email: drewdecarme@gmail.com
           commit-message: See ORIGIN_COMMIT from $GITHUB_REF
           target-branch: main
+          target-directory: mirror
           
       # Copies all of the files to the `woodshop-storefront` repo
       - name: Push to Storefront
@@ -51,3 +52,4 @@ jobs:
           user-email: drewdecarme@gmail.com
           commit-message: See ORIGIN_COMMIT from $GITHUB_REF
           target-branch: main
+          target-directory: mirror
