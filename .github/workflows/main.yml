@@ -30,12 +30,9 @@ jobs:
         uses: ./.github/actions/copy-to-admin
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
-        # with:
-        #   source-directory: '.'
-        #   destination-github-username: 'the-montessori-woodshop'
-        #   destination-repository-name: 'woodshop-admin'
-        #   user-email: drewdecarme@gmail.com
-        #   target-branch: main
+        with:
+          user-email: drewdecarme@gmail.com
+          user-name: drewdecarme
           
       # Copies all of the files to the `woodshop-storefront` repo
       # - name: Push to Storefront

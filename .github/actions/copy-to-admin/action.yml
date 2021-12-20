@@ -1,7 +1,7 @@
 name: Push directory to another repository directory
 description: >-
   Copy's this repo into another downstream repo
-# inputs:
+inputs:
   # source-before-directory:
   #   description: Source before directory from the origin directory
   #   required: false
@@ -14,19 +14,18 @@ description: >-
   # destination-repository-name:
   #   description: Destination repository
   #   required: true
-  # user-email:
-  #   description: Email for the git commit
-  #   required: true
+  user-email:
+    description: Email for the git commit
+    required: true
   # github-server:
   #   description: 'Github server'
   #   default: 'github.com'
   #   required: false
-  # user-name:
-  #   description: >-
-  #     [Optional] Name for the git commit. Defaults to the destination
-  #     username/organization name
-  #   required: false
-  #   default: ''
+  user-name:
+    description: >-
+      [Optional] Name for the git commit. Defaults to the destination
+      username/organization name
+    required: true
   # destination-repository-username:
   #   description: '[Optional] Username/organization for the destination repository'
   #   required: false
@@ -51,14 +50,14 @@ description: >-
 runs:
   using: docker
   image: Dockerfile
-  # args:
+  args:
     # - '${{ inputs.source-before-directory }}'
     # - '${{ inputs.source-directory }}'
     # - '${{ inputs.destination-github-username }}'
     # - '${{ inputs.destination-repository-name }}'
     # - '${{ inputs.github-server }}'
-    # - '${{ inputs.user-email }}'
-    # - '${{ inputs.user-name }}'
+    - '${{ inputs.user-email }}'
+    - '${{ inputs.user-name }}'
     # - '${{ inputs.destination-repository-username }}'
     # - '${{ inputs.target-branch }}'
     # - '${{ inputs.commit-message }}'
