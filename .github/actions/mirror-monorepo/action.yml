@@ -9,12 +9,16 @@ inputs:
       [Optional] Name for the git commit. Defaults to the destination
       username/organization name
     required: true
+  repo-name:
+    description: The repo that should be cloned and cherry picked from
+    required: true
 runs:
   using: docker
   image: Dockerfile
   args:
     - '${{ inputs.user-email }}'
     - '${{ inputs.user-name }}'
+    - '${{ inputs.repo-name }}'
 branding:
   icon: git-commit
   color: green

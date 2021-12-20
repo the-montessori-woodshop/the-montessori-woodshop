@@ -34,3 +34,4 @@ jobs:
         with:
           user-email: drewdecarme@gmail.com
           user-name: drewdecarme
+          repo-name: woodshop-admin
