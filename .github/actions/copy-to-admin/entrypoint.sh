@@ -40,6 +40,7 @@ ls -al
 echo "[+] Moving files and directories..."
 mv "$TEMP_DIR/.git" "$CLONE_DIR/.git"
 mv "package.json" "$CLONE_DIR/package.json"
+mkdir "$CLONE_DIR/packages/medusa-admin"
 cp -ra "packages/medusa-admin"/. "$CLONE_DIR/packages/medusa-admin"
 
 cd "$CLONE_DIR"
