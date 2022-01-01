@@ -1,0 +1,15 @@
+$libPrefix: woodshop;
+
+@mixin makeClass($element, $variant: false) {
+  .#{$libPrefix} {
+    &.#{$element} {
+      @if ($variant) {
+        &.#{$variant} {
+          @content;
+        }
+      } @else {
+        @content;
+      }
+    }
+  }
+}

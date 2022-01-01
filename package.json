@@ -39,8 +39,13 @@
     "url": "https://github.com/the-montessori-woodshop/the-montessori-woodshop/issues"
   },
   "homepage": "https://github.com/the-montessori-woodshop/the-montessori-woodshop#readme",
-  "packageManager": "yarn@3.1.1",
+  "packageManager": "yarn@3.2.0-rc.9",
   "engines": {
     "node": "16.13.0"
+  },
+  "dependencies": {
+    "eslint": "^8.6.0",
+    "prettier": "^2.5.1",
+    "typescript": "^4.5.4"
   }
 }

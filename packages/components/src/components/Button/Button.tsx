@@ -1,26 +1,33 @@
-import clsx from "clsx";
+import "./Button.scss";
+
 import React from "react";
 
-import * as ButtonStyle from "./Button.scss";
+import { makeClass } from "../../theme";
 
 export type ButtonProps = React.DetailedHTMLProps<
   React.ButtonHTMLAttributes<HTMLButtonElement>,
   HTMLButtonElement
 > & {
-  cxVariant?: "primary" | "secondary" | "text";
+  cxVariant?: "primary" | "secondary";
+  cxColor?: "text" | "contained";
 };
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   function Button(
-    { cxVariant = "primary", className, children, ...restProps },
+    {
+      cxVariant = "primary",
+      cxColor = "contained",
+      className,
+      children,
+      ...restProps
+    },
     ref
   ) {
     return (
       <button
         ref={ref}
-        className={clsx(className, {
-          [ButtonStyle.primary]: cxVariant === "primary",
-          [ButtonStyle.secondary]: cxVariant === "secondary"
+        className={makeClass(className, "button", {
+          [`${cxVariant}-${cxColor}`]: true
         })}
         {...restProps}
       >
