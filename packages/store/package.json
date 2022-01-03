@@ -27,13 +27,13 @@
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^3.3.0",
-    "@cloudflare/wrangler": "^1.19.6",
     "@remix-run/dev": "^1.1.1",
     "@types/react": "^17.0.38",
     "@types/react-dom": "^17.0.11",
     "cross-env": "^7.0.3",
     "esbuild": "0.14.10",
     "npm-run-all": "^4.1.5",
-    "typescript": "^4.5.4"
+    "typescript": "^4.5.4",
+    "wrangler": "beta"
   }
 }
