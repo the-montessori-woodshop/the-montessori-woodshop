@@ -8,21 +8,26 @@ export type ButtonProps = React.DetailedHTMLProps<
   React.ButtonHTMLAttributes<HTMLButtonElement>,
   HTMLButtonElement
 > & {
-  cxVariant?: "primary" | "secondary";
-  cxColor?: "text" | "contained";
+  cxVariant?: "text" | "contained";
+  cxColor?: "primary" | "secondary";
 };
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   function Button(
     {
-      cxVariant = "primary",
-      cxColor = "contained",
+      cxVariant = "contained",
+      cxColor = "primary",
       className,
       children,
       ...restProps
     },
     ref
   ) {
+    console.log(
+      makeClass(className, "button", {
+        [`${cxVariant}-${cxColor}`]: true
+      })
+    );
     return (
       <button
         ref={ref}

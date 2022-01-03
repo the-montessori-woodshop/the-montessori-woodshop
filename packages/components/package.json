@@ -6,28 +6,8 @@
   "types": "dist/types/index.d.ts",
   "type": "module",
   "sideEffects": false,
-  "exports": {
-    "./package.json": "./package.json",
-    ".": {
-      "import": "./lib/index.mjs",
-      "require": "./lib/index.cjs",
-      "types": "./lib/index.d.ts"
-    },
-    "./styles": {
-      "import": "./lib/index.css",
-      "require": "./lib/index.css"
-    },
-    "./theme": {
-      "import": "./theme/index.css",
-      "require": "./theme/index.css"
-    }
-  },
-  "files": [
-    "lib/**",
-    "theme/**"
-  ],
   "scripts": {
-    "theme:build": "sass src/theme/index.scss dist/styles/theme.css",
+    "theme:build": "sass --embed-source-map src/theme/index.scss css/theme.css",
     "types": "tsc --project tsconfig.types.json",
     "bundle": "rollup --config rollup.config.cjs",
     "build": "yarn bundle && yarn theme:build && yarn types"

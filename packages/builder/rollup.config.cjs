@@ -41,8 +41,7 @@ module.exports = function ({
         : rollupNodeResolve.nodeResolve(),
       rollupSummary(),
       rollupScss({
-        output: path.resolve(rootDir, "./dist/styles/index.css"),
-        sourceMap: true,
+        output: path.resolve(rootDir, "./css/styles.css"),
         processor: () => postcss([autoprefixer()]),
         sass,
         outputStyle: "compressed"

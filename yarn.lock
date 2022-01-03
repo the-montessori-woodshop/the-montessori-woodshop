@@ -2561,21 +2561,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cloudflare/pages-functions-compiler@npm:0.3.8":
-  version: 0.3.8
-  resolution: "@cloudflare/pages-functions-compiler@npm:0.3.8"
-  dependencies:
-    acorn: ^8.4.1
-    acorn-walk: ^8.1.1
-    commander: ^8.1.0
-    esbuild: 0.14.1
-    path-to-regexp: ^6.2.0
-  bin:
-    plinko: bin/plinko.mjs
-  checksum: 586b9377882e4c8bd387925494f6b22e9e60a356b57d44159a2ca91f27fb9abbb83296aa38b304f0d65760f012d538e20911de39f781caecc51f91dc0c901bee
-  languageName: node
-  linkType: hard
-
 "@cloudflare/workers-types@npm:^3.3.0":
   version: 3.3.0
   resolution: "@cloudflare/workers-types@npm:3.3.0"
@@ -6743,13 +6728,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"acorn-walk@npm:^8.1.1":
-  version: 8.2.0
-  resolution: "acorn-walk@npm:8.2.0"
-  checksum: 1715e76c01dd7b2d4ca472f9c58968516a4899378a63ad5b6c2d668bba8da21a71976c14ec5f5b75f887b6317c4ae0b897ab141c831d741dc76024d8745f1ad1
-  languageName: node
-  linkType: hard
-
 "acorn@npm:8.5.0":
   version: 8.5.0
   resolution: "acorn@npm:8.5.0"
@@ -9242,13 +9220,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"commander@npm:^8.1.0":
-  version: 8.3.0
-  resolution: "commander@npm:8.3.0"
-  checksum: 0f82321821fc27b83bd409510bb9deeebcfa799ff0bf5d102128b500b7af22872c0c92cb6a0ebc5a4cf19c6b550fba9cedfa7329d18c6442a625f851377bacf0
-  languageName: node
-  linkType: hard
-
 "common-tags@npm:^1.8.0, common-tags@npm:^1.8.2":
   version: 1.8.2
   resolution: "common-tags@npm:1.8.2"
@@ -9667,7 +9638,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cron-schedule@npm:^3.0.4":
+"cron-schedule@npm:*, cron-schedule@npm:^3.0.4":
   version: 3.0.4
   resolution: "cron-schedule@npm:3.0.4"
   checksum: 9ab85e39fa2ce7a6fdfd532bc5fcde0b1de526f02adce28f3d43d29306c9e5a649dfa4ed27ef292df40b72dc064f4ef7218aebe3569ff75cdf1a3fbbf697b257
@@ -24496,7 +24467,7 @@ __metadata:
     react-dom: ^17.0.2
     remix: ^1.1.1
     typescript: ^4.5.4
-    wrangler: beta
+    wrangler: pages
   languageName: unknown
   linkType: soft
 
@@ -27297,14 +27268,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"wrangler@npm:beta":
-  version: 0.0.6
-  resolution: "wrangler@npm:0.0.6"
+"wrangler@npm:pages":
+  version: 0.0.0-8ab7d2e
+  resolution: "wrangler@npm:0.0.0-8ab7d2e"
   dependencies:
-    "@cloudflare/pages-functions-compiler": 0.3.8
     esbuild: 0.14.1
     fsevents: ~2.3.2
     miniflare: 2.0.0-rc.4
+    path-to-regexp: ^6.2.0
     semiver: ^1.1.0
   dependenciesMeta:
     fsevents:
@@ -27312,7 +27283,7 @@ __metadata:
   bin:
     wrangler: bin/wrangler.js
     wrangler2: bin/wrangler.js
-  checksum: b62ac8bbb461a47b930d4a6d2600d7c6b0be560ca86cec25b6807cd0d8566055f9b54192d333f6f4fea6a152e7c58ecb74212f28021a17f647c6286e901879e1
+  checksum: bcbf04dc99b146d8bb428618bbc513dacd209198068b6a17ee4c2fd03f658af2489f32b5a433903b3a354f43836564b11e646a9097bc10f31aaacfc695a461db
   languageName: node
   linkType: hard
 
