@@ -117,17 +117,18 @@ module.exports = __webpack_require__(/*! ./lib/axios */ "./lib/axios.js");
 "use strict";
 
 
-var utils = __webpack_require__(/*! ../utils */ "./lib/utils.js");
-var settle = __webpack_require__(/*! ../core/settle */ "./lib/core/settle.js");
-var buildURL = __webpack_require__(/*! ../helpers/buildURL */ "./lib/helpers/buildURL.js");
+var utils = __webpack_require__(/*! ./../utils */ "./lib/utils.js");
+var settle = __webpack_require__(/*! ./../core/settle */ "./lib/core/settle.js");
+var buildURL = __webpack_require__(/*! ./../helpers/buildURL */ "./lib/helpers/buildURL.js");
 var buildFullPath = __webpack_require__(/*! ../core/buildFullPath */ "./lib/core/buildFullPath.js");
-var isURLSameOrigin = __webpack_require__(/*! ../helpers/isURLSameOrigin */ "./lib/helpers/isURLSameOrigin.js");
+var isURLSameOrigin = __webpack_require__(/*! ./../helpers/isURLSameOrigin */ "./lib/helpers/isURLSameOrigin.js");
 var createError = __webpack_require__(/*! ../core/createError */ "./lib/core/createError.js");
 
 module.exports = function fetchAdapter(config) {
   return new Promise(function dispatchFetchRequest(resolve, reject) {
-    var requestData = config.data || null;
+    var requestData = config.data;
     var requestHeaders = config.headers;
+    var responseType = config.responseType || "json";
 
     // HTTP basic authentication
     if (config.auth) {
@@ -180,7 +181,7 @@ module.exports = function fetchAdapter(config) {
     // This is only done if running in a standard browser environment.
     // Specifically not if we're in a web worker, or react-native.
     if (utils.isStandardBrowserEnv()) {
-      var cookies = __webpack_require__(/*! ../helpers/cookies */ "./lib/helpers/cookies.js");
+      var cookies = __webpack_require__(/*! ./../helpers/cookies */ "./lib/helpers/cookies.js");
 
       // Add xsrf header
       var xsrfValue =
@@ -198,108 +199,114 @@ module.exports = function fetchAdapter(config) {
     var request = new Request(
       buildURL(fullPath, config.params, config.paramsSerializer)
     );
-    var operation = fetch(
-      request,
-      Object.assign(
-        {},
-        init,
-        Object.assign(
-          {},
-          {
-            method: config.method.toUpperCase(),
-            body: requestData,
-            headers: headers,
-          },
-          config.fetchOptions || {}
-        )
-      )
-    );
+    var method = config.method.toUpperCase();
+    var body = method !== "GET" ? requestData : null;
+    const fetchRequest = fetch(request, {
+      ...init,
+      method,
+      body,
+      headers,
+      ...(config.fetchOptions || {}),
+    });
 
     listenForTimeout();
-    operation.then(
-      function fetchFollowup(response) {
-        // protocol-level error
-        if (!response.ok) {
-          if (utils.isFormData(requestData)) {
-            delete requestHeaders["Content-Type"]; // Let the browser set it
-          }
 
-          // Prepare the response
-          var responseHeaders = response.headers;
-          var responseData = null;
-          if (!!config.responseType) {
-            switch (config.responseType) {
-              case "text":
-                responseData = response.text();
-                break;
-              case "json":
-                responseData = response.json();
-                break;
-              case "blob":
-                responseData = response.blob();
-                break;
-              default:
-                response.text();
-                break;
-            }
-          }
+    const processJsonResponse = (jsonPromise, axiosResponse) => {
+      jsonPromise.then((data) => {
+        settle(resolve, reject, {
+          ...axiosResponse,
+          data: JSON.stringify(data),
+        });
+      });
+    };
 
-          var axiosResponse = {
-            data: responseData,
-            status: response.status,
-            statusText: response.statusText,
-            headers: responseHeaders,
-            config: config,
-            request: request,
-          };
+    const processBlobResponse = (blobPromise, axiosResponse) => {
+      blobPromise.then((blob) => {
+        let objectURL = URL.createObjectURL(blob);
+        settle(resolve, reject, {
+          ...axiosResponse,
+          data: objectURL,
+        });
+      });
+    };
 
-          // we're good to go
-          settle(resolve, reject, axiosResponse);
-        } else {
-          if (response.status >= 500) {
-            reject(
-              createError(
-                "Server-side error: " +
-                  response.status +
-                  " / " +
-                  response.statusText,
-                config,
-                response.statusText,
-                request,
-                response
-              )
-            );
-          } else if (response.status >= 400) {
-            reject(
-              createError(
-                "Client-side error: " +
-                  response.status +
-                  " / " +
-                  response.statusText,
-                config,
-                response.statusText,
-                request,
-                response
-              )
-            );
-          } else {
-            reject(
-              createError(
-                "Unknown error",
-                config,
-                response.statusText,
-                request,
-                response
-              )
-            );
-          }
+    const processTextResponse = (textPromise, axiosResponse) => {
+      textPromise.then((data) => {
+        settle(resolve, reject, {
+          ...axiosResponse,
+          data,
+        });
+      });
+    };
+
+    fetchRequest.then((response) => {
+      if (response.ok) {
+        if (utils.isFormData(requestData)) {
+          delete requestHeaders["Content-Type"];
         }
-      },
-      function handleFetchError(err) {
-        // outright send/transport error
-        reject(createError("Network Error", config, null, err));
+
+        const baseResponse = {
+          status: response.status,
+          statusText: response.statusText,
+          headers: response.headers,
+          config,
+          request,
+        };
+
+        if (responseType === "json") {
+          return processJsonResponse(response.json(), baseResponse);
+        }
+
+        if (responseType === "blob") {
+          return processBlobResponse(response.blob(), baseResponse);
+        }
+
+        if (responseType === "text") {
+          return processTextResponse(response.text(), baseResponse);
+        }
       }
-    );
+
+      if (response.status >= 500) {
+        reject(
+          createError(
+            "Server-side error: " +
+              response.status +
+              " / " +
+              response.statusText,
+            config,
+            response.statusText,
+            request,
+            response
+          )
+        );
+      } else if (response.status >= 400) {
+        reject(
+          createError(
+            "Client-side error: " +
+              response.status +
+              " / " +
+              response.statusText,
+            config,
+            response.statusText,
+            request,
+            response
+          )
+        );
+      } else {
+        reject(
+          createError(
+            "Unknown error",
+            config,
+            response.statusText,
+            request,
+            response
+          )
+        );
+      }
+    }),
+      (error) => {
+        reject(createError(`Network Error: ${error}`, config, null, request));
+      };
   });
 };
 
@@ -1130,7 +1137,7 @@ function throwIfCancellationRequested(config) {
   }
 
   if (config.signal && config.signal.aborted) {
-    throw new Cancel('canceled');
+    throw new Cancel("canceled");
   }
 }
 
@@ -1162,7 +1169,7 @@ module.exports = function dispatchRequest(config) {
   );
 
   utils.forEach(
-    ['delete', 'get', 'head', 'post', 'put', 'patch', 'common'],
+    ["delete", "get", "head", "post", "put", "patch", "common"],
     function cleanHeaderConfig(method) {
       delete config.headers[method];
     }
@@ -1170,35 +1177,38 @@ module.exports = function dispatchRequest(config) {
 
   var adapter = config.adapter || defaults.adapter;
 
-  return adapter(config).then(function onAdapterResolution(response) {
-    throwIfCancellationRequested(config);
-
-    // Transform response data
-    response.data = transformData.call(
-      config,
-      response.data,
-      response.headers,
-      config.transformResponse
-    );
-
-    return response;
-  }, function onAdapterRejection(reason) {
-    if (!isCancel(reason)) {
+  return adapter(config).then(
+    function onAdapterResolution(response) {
       throwIfCancellationRequested(config);
 
       // Transform response data
-      if (reason && reason.response) {
-        reason.response.data = transformData.call(
-          config,
-          reason.response.data,
-          reason.response.headers,
-          config.transformResponse
-        );
-      }
-    }
+      response.data = transformData.call(
+        config,
+        response.data,
+        response.headers,
+        config.transformResponse
+      );
 
-    return Promise.reject(reason);
-  });
+      return response;
+    },
+    function onAdapterRejection(reason) {
+      if (!isCancel(reason)) {
+        throwIfCancellationRequested(config);
+
+        // Transform response data
+        if (reason && reason.response) {
+          reason.response.data = transformData.call(
+            config,
+            reason.response.data,
+            reason.response.headers,
+            config.transformResponse
+          );
+        }
+      }
+
+      return Promise.reject(reason);
+    }
+  );
 };
 
 
