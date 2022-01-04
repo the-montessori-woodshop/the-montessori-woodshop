@@ -1,52 +1,33 @@
 {
   "name": "@woodshop/components",
   "version": "1.0.0",
-  "source": "src/components/index.ts",
-  "main": "lib/index.cjs",
-  "module": "lib/index.mjs",
-  "types": "lib/types.d.ts",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/types/index.d.ts",
   "type": "module",
   "sideEffects": false,
-  "exports": {
-    "./package.json": "./package.json",
-    ".": {
-      "import": "./lib/index.mjs",
-      "require": "./lib/index.cjs",
-      "types": "./lib/index.d.ts"
-    },
-    "./styles": {
-      "import": "./lib/index.css",
-      "require": "./lib/index.css"
-    },
-    "./theme": {
-      "import": "./theme/index.css",
-      "require": "./theme/index.css"
-    }
-  },
-  "files": [
-    "lib/**",
-    "theme/**"
-  ],
   "scripts": {
-    "theme:build": "sass src/theme/index.scss theme/index.css",
-    "dev": "parcel watch",
-    "build": "parcel build && yarn theme:build"
+    "theme:build": "sass --embed-source-map src/theme/index.scss css/theme.css",
+    "types": "tsc",
+    "bundle": "rollup --config rollup.config.cjs",
+    "build": "yarn bundle && yarn theme:build && yarn types"
   },
   "devDependencies": {
-    "@parcel/packager-ts": "^2.0.1",
-    "@parcel/transformer-sass": "^2.0.1",
-    "@parcel/transformer-typescript-tsc": "^2.0.1",
-    "@parcel/transformer-typescript-types": "^2.0.1",
-    "@types/react": "^17.0.37",
+    "@types/react": "^17.0.38",
     "@types/react-dom": "^17.0.11",
-    "autoprefixer": "^10.4.0",
-    "eslint": "7.32.0",
-    "eslint-plugin-react": "^7.27.1",
-    "parcel": "^2.0.1",
-    "postcss": "^8.4.4",
-    "typescript": "^4.5.2"
+    "@typescript-eslint/eslint-plugin": "^5.8.1",
+    "@typescript-eslint/parser": "^5.8.1",
+    "@woodshop/builder": "workspace:^",
+    "clsx": "^1.1.1",
+    "eslint": "8.5.0",
+    "eslint-plugin-react": "^7.28.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "rollup": "^2.62.0",
+    "sass": "^1.45.2",
+    "typescript": "^4.5.4"
   },
-  "dependencies": {
+  "peerDependencies": {
     "clsx": "^1.1.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"

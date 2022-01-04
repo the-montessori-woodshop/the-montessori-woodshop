@@ -37,4 +37,4 @@ services:
     env_file:
       - ./.env
     ports:
-      - "7000:80"
+      - "7001:80"

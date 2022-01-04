@@ -1,12 +1,22 @@
+import stylesUrl from "@woodshop/components/css/styles.css";
+import themeUrl from "@woodshop/components/css/theme.css";
 import {
   Links,
+  LinksFunction,
   LiveReload,
   Meta,
   Outlet,
   Scripts,
-  ScrollRestoration
+  ScrollRestoration,
 } from "remix";
 import type { MetaFunction } from "remix";
+
+export const links: LinksFunction = () => {
+  return [
+    { rel: "stylesheet", href: stylesUrl },
+    { rel: "stylesheet", href: themeUrl },
+  ];
+};
 
 export const meta: MetaFunction = () => {
   return { title: "New Remix App" };
