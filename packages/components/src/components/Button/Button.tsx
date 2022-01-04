@@ -23,11 +23,6 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     },
     ref
   ) {
-    console.log(
-      makeClass(className, "button", {
-        [`${cxVariant}-${cxColor}`]: true
-      })
-    );
     return (
       <button
         ref={ref}

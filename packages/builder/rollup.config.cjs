@@ -26,7 +26,8 @@ module.exports = function ({
       {
         file: path.resolve(rootDir, "./dist/esm/index.mjs"),
         format: "es",
-        sourcemap: true
+        sourcemap: true,
+        preserveModules: true
       }
     ],
     external: ["react", "react-dom"],

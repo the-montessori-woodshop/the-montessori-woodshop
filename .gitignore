@@ -1,7 +1,5 @@
 .env
 node_modules/
-lib/
-.parcel-cache
 .env.production
 
 

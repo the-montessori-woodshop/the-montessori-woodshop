@@ -1,12 +1,24 @@
 import { Button } from "@woodshop/components";
+import { medusaClient } from "../../clients/medusa-client";
+import { type LoaderFunction, useLoaderData } from "remix";
+
+export let loader: LoaderFunction = async () => {
+  const { response, ...data } = await medusaClient.products.list();
+  return data;
+};
 
 export default function Index() {
+  const data = useLoaderData();
+
+  console.log(data);
+
   return (
     <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.4" }}>
       <h1>Welcome to Remix</h1>
       <Button cxVariant="text" cxColor="secondary">
         hello
       </Button>
+
       <ul>
         <li>
           <a

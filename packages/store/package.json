@@ -18,6 +18,7 @@
     "start": "npm run dev:wrangler"
   },
   "dependencies": {
+    "@medusajs/medusa-js": "^1.0.9",
     "@remix-run/cloudflare-pages": "^1.1.1",
     "@remix-run/react": "^1.1.1",
     "@woodshop/components": "workspace:^",
