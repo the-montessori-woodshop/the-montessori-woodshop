@@ -3,7 +3,7 @@ const path = require("path");
 const rollup = require("rollup");
 const rollupJson = require("@rollup/plugin-json");
 const rollupNodeResolve = require("@rollup/plugin-node-resolve");
-const rollupTypescript = require("@rollup/plugin-typescript");
+const esbuild = require("rollup-plugin-esbuild");
 const rollupExternals = require("rollup-plugin-node-externals");
 const rollupSummary = require("rollup-plugin-summary");
 const rollupScss = require("rollup-plugin-scss");
@@ -19,12 +19,12 @@ module.exports = function ({
     input: path.resolve(rootDir, "./src/index.ts"),
     output: [
       {
-        file: path.resolve(rootDir, "./dist/cjs/index.cjs"),
+        file: path.resolve(rootDir, "./dist/index.cjs"),
         format: "cjs",
         sourcemap: true
       },
       {
-        file: path.resolve(rootDir, "./dist/esm/index.mjs"),
+        dir: path.resolve(rootDir, "./dist"),
         format: "es",
         sourcemap: true,
         preserveModules: true
@@ -33,9 +33,12 @@ module.exports = function ({
     external: ["react", "react-dom"],
     plugins: [
       rollupJson(),
-      rollupTypescript({
+      esbuild.default({
         sourceMap: true,
-        outputToFilesystem: true
+        minify: true,
+        target: "esnext",
+        jsx: "transform",
+        tsconfig: path.resolve(rootDir, "./tsconfig.json")
       }),
       excludeExternalDependenciesFromBundle
         ? rollupExternals()

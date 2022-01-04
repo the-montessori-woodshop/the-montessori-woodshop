@@ -1,14 +1,14 @@
 {
   "name": "@woodshop/components",
   "version": "1.0.0",
-  "main": "dist/cjs/index.cjs",
-  "module": "dist/esm/index.mjs",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
   "types": "dist/types/index.d.ts",
   "type": "module",
   "sideEffects": false,
   "scripts": {
     "theme:build": "sass --embed-source-map src/theme/index.scss css/theme.css",
-    "types": "tsc --project tsconfig.types.json",
+    "types": "tsc",
     "bundle": "rollup --config rollup.config.cjs",
     "build": "yarn bundle && yarn theme:build && yarn types"
   },
