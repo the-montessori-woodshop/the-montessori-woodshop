@@ -1,12 +1,12 @@
 version: "3"
 services:
-  medusa:
-    image: medusa
+  store_api:
+    image: store_api
+    container_name: store_api
     build:
       context: ./
       dockerfile: ./packages/medusa/Dockerfile
     depends_on:
-      - postgres
       - redis
     ports:
       - "9000:9000"
@@ -15,15 +15,22 @@ services:
     env_file:
       - ./.env
 
-  postgres:
+  content_db:
     image: postgres:14
+    container_name: content_db
     ports:
-      - "35432:5432"
-    env_file:
-      - ./.env
+      - "5439:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=content_db
+    # volumes: 
+    #   - ./postgres-data:/var/lib/postgresql/data
+
 
   redis:
     image: redis
+    container_name: redis
     expose:
       - 6379
     env_file:
@@ -31,6 +38,7 @@ services:
 
   admin:
     image: admin
+    container_name: admin
     build:
       context: ./
       dockerfile: ./packages/medusa-admin/Dockerfile

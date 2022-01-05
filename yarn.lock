@@ -3684,6 +3684,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@prisma/engines@npm:3.7.0-31.8746e055198f517658c08a0c426c7eec87f5a85f":
+  version: 3.7.0-31.8746e055198f517658c08a0c426c7eec87f5a85f
+  resolution: "@prisma/engines@npm:3.7.0-31.8746e055198f517658c08a0c426c7eec87f5a85f"
+  checksum: 82ef728857ae2e978d159d57b0135f419b02a6c69b9d6d08630619d0e0018314c8c5ee5608f8a6fe4b911656b7a1c5795698cb856a16c27039642f12cd2a7163
+  languageName: node
+  linkType: hard
+
 "@qiwi/npm-registry-client@npm:^8.9.1":
   version: 8.9.1
   resolution: "@qiwi/npm-registry-client@npm:8.9.1"
@@ -6719,10 +6726,10 @@ __metadata:
 
 "axios@file:./packages/axios-fetch::locator=the-montessori-woodshop%40workspace%3A.":
   version: 0.24.0
-  resolution: "axios@file:./packages/axios-fetch#./packages/axios-fetch::hash=91dbd0&locator=the-montessori-woodshop%40workspace%3A."
+  resolution: "axios@file:./packages/axios-fetch#./packages/axios-fetch::hash=49eca5&locator=the-montessori-woodshop%40workspace%3A."
   dependencies:
     follow-redirects: ^1.14.4
-  checksum: b6fd2a6edd3cd522bc5988fd31a8b3b7683adcdf590b1c69ea6ff2a20012a5a790b7f993216df247d1023ba77749fb06f81bee88077e9f9c497a7cebba6a8e53
+  checksum: bfbd56b48c65cd3e845b86cfb1cd194ac2449dca47b04f4928ac78041203b099408bdfa9316478116b2b85d7fed0b768b2efc3a81bd41a58b2380435bbbf9f4f
   languageName: node
   linkType: hard
 
@@ -9834,13 +9841,6 @@ __metadata:
   dependencies:
     assert-plus: ^1.0.0
   checksum: 3634c249570f7f34e3d34f866c93f866c5b417f0dd616275decae08147dcdf8fccfaa5947380ccfb0473998ea3a8057c0b4cd90c875740ee685d0624b2983598
-  languageName: node
-  linkType: hard
-
-"data-uri-to-buffer@npm:^4.0.0":
-  version: 4.0.0
-  resolution: "data-uri-to-buffer@npm:4.0.0"
-  checksum: a010653869abe8bb51259432894ac62c52bf79ad761d418d94396f48c346f2ae739c46b254e8bb5987bded8a653d467db1968db3a69bab1d33aa5567baa5cfc7
   languageName: node
   linkType: hard
 
@@ -12995,15 +12995,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fetch-blob@npm:^3.1.2":
-  version: 3.1.3
-  resolution: "fetch-blob@npm:3.1.3"
-  dependencies:
-    web-streams-polyfill: ^3.0.3
-  checksum: 7be20e9c9a936601c280ef3cfed1968dbcfb35e31564b9bdc807b48de73587cd358b7c3965a3f03483f5268dc373ae8526608947750f22eb214e20c94efab9c1
-  languageName: node
-  linkType: hard
-
 "figgy-pudding@npm:^3.5.1":
   version: 3.5.2
   resolution: "figgy-pudding@npm:3.5.2"
@@ -13489,15 +13480,6 @@ __metadata:
   version: 0.2.2
   resolution: "format@npm:0.2.2"
   checksum: 646a60e1336250d802509cf24fb801e43bd4a70a07510c816fa133aa42cdbc9c21e66e9cc0801bb183c5b031c9d68be62e7fbb6877756e52357850f92aa28799
-  languageName: node
-  linkType: hard
-
-"formdata-polyfill@npm:^4.0.10":
-  version: 4.0.10
-  resolution: "formdata-polyfill@npm:4.0.10"
-  dependencies:
-    fetch-blob: ^3.1.2
-  checksum: 82a34df292afadd82b43d4a740ce387bc08541e0a534358425193017bf9fb3567875dc5f69564984b1da979979b70703aa73dee715a17b6c229752ae736dd9db
   languageName: node
   linkType: hard
 
@@ -19511,7 +19493,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"medusa-file-cloudflare-images@0.0.1, medusa-file-cloudflare-images@workspace:packages/medusa-file-cloudflare-images":
+"medusa-file-cloudflare-images@workspace:^, medusa-file-cloudflare-images@workspace:packages/medusa-file-cloudflare-images":
   version: 0.0.0-use.local
   resolution: "medusa-file-cloudflare-images@workspace:packages/medusa-file-cloudflare-images"
   dependencies:
@@ -19522,6 +19504,7 @@ __metadata:
     chokidar: ^3.5.2
     client-sessions: ^0.8.0
     cross-env: ^7.0.3
+    esbuild: ^0.14.10
     eslint: ^8.5.0
     express: ^4.17.2
     form-data: ^4.0.0
@@ -19530,7 +19513,7 @@ __metadata:
     medusa-core-utils: ^1.1.31
     medusa-interfaces: ^1.1.32
     medusa-test-utils: ^1.1.34
-    node-fetch: 3.1.0
+    node-fetch: 2.6.6
     regenerator-runtime: ^0.13.9
     typeorm: ^0.2.41
     typescript: ^4.5.4
@@ -19627,13 +19610,14 @@ __metadata:
     "@medusajs/medusa-cli": ^1.1.26
     babel-preset-medusa-package: ^1.1.19
     dotenv: ^10.0.0
-    medusa-file-cloudflare-images: 0.0.1
+    medusa-file-cloudflare-images: "workspace:^"
     medusa-fulfillment-manual: ^1.1.30
     medusa-interfaces: ^1.1.32
     medusa-payment-manual: ^1.0.12
     medusa-payment-stripe: ^1.1.34
     mongoose: ^6.1.4
     pg: ^8.7.1
+    prisma: ^3.7.0
     query-string: ^7.0.1
     typeorm: ^0.2.41
   languageName: unknown
@@ -20996,18 +20980,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"node-fetch@npm:3.1.0":
-  version: 3.1.0
-  resolution: "node-fetch@npm:3.1.0"
-  dependencies:
-    data-uri-to-buffer: ^4.0.0
-    fetch-blob: ^3.1.2
-    formdata-polyfill: ^4.0.10
-  checksum: 23b5977554d21b72d7d99145d00bcf06e463fa621bf0afc276ad121a79509a133f38c7e470b34aad45d4032d3315bf5584ff6a1cb83e8f01be7a44cc7ac72693
-  languageName: node
-  linkType: hard
-
-"node-fetch@npm:^2.5.0, node-fetch@npm:^2.6.1, node-fetch@npm:^2.6.6":
+"node-fetch@npm:2.6.6, node-fetch@npm:^2.5.0, node-fetch@npm:^2.6.1, node-fetch@npm:^2.6.6":
   version: 2.6.6
   resolution: "node-fetch@npm:2.6.6"
   dependencies:
@@ -23504,6 +23477,18 @@ __metadata:
   bin:
     printj: ./bin/printj.njs
   checksum: 1c0c66844545415e339356ad62009cdc467819817b1e0341aba428087a1414d46b84089edb4e77ef24705829f8aae6349724b9c7bd89d8690302b2de7a89b315
+  languageName: node
+  linkType: hard
+
+"prisma@npm:^3.7.0":
+  version: 3.7.0
+  resolution: "prisma@npm:3.7.0"
+  dependencies:
+    "@prisma/engines": 3.7.0-31.8746e055198f517658c08a0c426c7eec87f5a85f
+  bin:
+    prisma: build/index.js
+    prisma2: build/index.js
+  checksum: fd68e98f5012ff6a454c39510e230bea517e8c69a639463595d07aa4e0c8e0c1670c4e01374de888feb8f2d18e57afc6142d6b7348540def85fe1ee892690fe3
   languageName: node
   linkType: hard
 
@@ -29172,13 +29157,6 @@ __metadata:
   version: 1.2.1
   resolution: "weak-lru-cache@npm:1.2.1"
   checksum: 2e26bd78bc97a4d3fec63e3185c3cee92bbfd4ae2fc41c7eb129f83b990339ecb47baa09423eecba26626af878ba872d5916421a4343efdfa4e514145dc45438
-  languageName: node
-  linkType: hard
-
-"web-streams-polyfill@npm:^3.0.3":
-  version: 3.2.0
-  resolution: "web-streams-polyfill@npm:3.2.0"
-  checksum: e23ad0649392fa0159dbfc6bb27474c308c3f332d9078cfef3c06c154165bef18732c5814126147c6c712f604216ddc950c171c854e3821f020e0d2d721a5958
   languageName: node
   linkType: hard
 

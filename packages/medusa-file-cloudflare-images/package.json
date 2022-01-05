@@ -6,10 +6,12 @@
   "author": "Drew DeCarme (drewdecarme@gmail.com)",
   "license": "MIT",
   "scripts": {
-    "build": "swc src -d .",
-    "build:ci": "swc src -d .",
+    "bundle": "esbuild src/services/** --outdir=services --format=cjs --target=esnext",
+    "bundle-swc": "swc src -d .",
+    "build": "yarn bundle",
+    "build:ci": "yarn bundle",
     "prepare": "yarn build",
-    "dev": "swc src --watch -d .",
+    "dev": "yarn bundle --watch",
     "test": "jest"
   },
   "peerDependencies": {
@@ -20,6 +22,7 @@
     "chokidar": "^3.5.2",
     "client-sessions": "^0.8.0",
     "cross-env": "^7.0.3",
+    "esbuild": "^0.14.10",
     "eslint": "^8.5.0",
     "jest": "^27.4.5",
     "typescript": "^4.5.4"
@@ -34,7 +37,7 @@
     "medusa-core-utils": "^1.1.31",
     "medusa-interfaces": "^1.1.32",
     "medusa-test-utils": "^1.1.34",
-    "node-fetch": "3.1.0",
+    "node-fetch": "2.6.6",
     "regenerator-runtime": "^0.13.9",
     "typeorm": "^0.2.41"
   }

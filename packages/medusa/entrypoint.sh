@@ -1,7 +1,5 @@
 #!/bin/sh
 
-cd /app/medusa
-
 echo "Running migrations..."
 yarn workspace medusa migrate
 # npm run migrate --workspace medusa
