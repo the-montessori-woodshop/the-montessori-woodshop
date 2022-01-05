@@ -10,7 +10,8 @@
     "theme:build": "sass --embed-source-map src/theme/index.scss css/theme.css",
     "types": "tsc",
     "bundle": "rollup --config rollup.config.cjs",
-    "build": "yarn bundle && yarn theme:build && yarn types"
+    "build": "yarn bundle && yarn theme:build && yarn types",
+    "build:ci": "npm run bundle && npm run types & npm run theme:build"
   },
   "devDependencies": {
     "@types/react": "^17.0.38",

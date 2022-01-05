@@ -4,9 +4,6 @@
   "description": "Webpack builds to be used throughout different projects for different reasons",
   "main": "./rollup.config.cjs",
   "module": "./rollup.config.cjs",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/machineq/asset-tracker.git"

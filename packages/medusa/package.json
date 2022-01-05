@@ -7,6 +7,7 @@
   "private": true,
   "scripts": {
     "build": "babel src -d dist --extensions \".ts,.js\"",
+    "build:ci": "babel src -d dist --extensions \".ts,.js\"",
     "dev": "medusa develop",
     "start": "medusa start",
     "migrate": "medusa migrations run",

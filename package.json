@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "yarn workspace store dev",
     "build": "yarn workspaces foreach -ptiv run build",
-    "build:ci": "",
+    "build:ci": "bash scripts/build-ci.sh",
     "components:build": "yarn workspace @woodshop/components build",
     "components:dev": "yarn workspace @woodshop/components dev",
     "admin:update": "git submodule update --remote --merge",
@@ -22,7 +22,13 @@
   },
   "workspaces": {
     "packages": [
-      "packages/**"
+      "packages/axios-fetch",
+      "packages/builder",
+      "packages/components",
+      "packages/medusa-file-cloudflare-images",
+      "packages/medusa",
+      "packages/medusa-admin",
+      "packages/store"
     ]
   },
   "repository": {
