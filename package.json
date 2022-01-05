@@ -22,13 +22,7 @@
   },
   "workspaces": {
     "packages": [
-      "packages/axios-fetch",
-      "packages/builder",
-      "packages/components",
-      "packages/medusa-file-cloudflare-images",
-      "packages/medusa",
-      "packages/medusa-admin",
-      "packages/store"
+      "packages/**"
     ]
   },
   "repository": {

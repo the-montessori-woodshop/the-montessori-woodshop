@@ -1592,6 +1592,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@cloudflare/wrangler@npm:^1.19.7":
+  version: 1.19.7
+  resolution: "@cloudflare/wrangler@npm:1.19.7"
+  dependencies:
+    axios: ^0.21.1
+    rimraf: ^3.0.2
+    tar: ^6.1.10
+  bin:
+    wrangler: run-wrangler.js
+    wrangler1: run-wrangler.js
+  checksum: 74b0ab81f722978e805032b124a90e644c34578abfde6a2105dd564345af9a4512d602c45fe305e64051f6a94b1784f3a9b532fc785df80c74dc8b8a14782d2a
+  languageName: node
+  linkType: hard
+
 "@dabh/diagnostics@npm:^2.0.2":
   version: 2.0.2
   resolution: "@dabh/diagnostics@npm:2.0.2"
@@ -8920,6 +8934,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"content-api@workspace:packages/content-api":
+  version: 0.0.0-use.local
+  resolution: "content-api@workspace:packages/content-api"
+  dependencies:
+    "@cloudflare/workers-types": ^3.3.0
+    "@cloudflare/wrangler": ^1.19.7
+    esbuild: ^0.14.10
+    esbuild-loader: ^2.18.0
+    prisma: ^3.7.0
+    typescript: ^4.5.4
+    webpack: ^5.65.0
+  languageName: unknown
+  linkType: soft
+
 "content-disposition@npm:0.5.4, content-disposition@npm:^0.5.2":
   version: 0.5.4
   resolution: "content-disposition@npm:0.5.4"
@@ -11317,6 +11345,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"esbuild-loader@npm:^2.18.0":
+  version: 2.18.0
+  resolution: "esbuild-loader@npm:2.18.0"
+  dependencies:
+    esbuild: ^0.14.6
+    joycon: ^3.0.1
+    json5: ^2.2.0
+    loader-utils: ^2.0.0
+    tapable: ^2.2.0
+    webpack-sources: ^2.2.0
+  peerDependencies:
+    webpack: ^4.40.0 || ^5.0.0
+  checksum: 744b9f8c8fadece3feb3eb50d4dcacafd9e528be0f4c345188ba9f549a6384bd34e3fba66d22df25ec240bb7edbff4da2787d621299f134255f22c868196d091
+  languageName: node
+  linkType: hard
+
 "esbuild-netbsd-64@npm:0.13.14":
   version: 0.13.14
   resolution: "esbuild-netbsd-64@npm:0.13.14"
@@ -11567,7 +11611,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"esbuild@npm:0.14.10, esbuild@npm:^0.14.10":
+"esbuild@npm:0.14.10, esbuild@npm:^0.14.10, esbuild@npm:^0.14.6":
   version: 0.14.10
   resolution: "esbuild@npm:0.14.10"
   dependencies:
@@ -17755,7 +17799,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"json5@npm:^2.1.2":
+"json5@npm:^2.1.2, json5@npm:^2.2.0":
   version: 2.2.0
   resolution: "json5@npm:2.2.0"
   dependencies:
@@ -26083,7 +26127,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"source-list-map@npm:^2.0.0":
+"source-list-map@npm:^2.0.0, source-list-map@npm:^2.0.1":
   version: 2.0.1
   resolution: "source-list-map@npm:2.0.1"
   checksum: 806efc6f75e7cd31e4815e7a3aaf75a45c704871ea4075cb2eb49882c6fca28998f44fc5ac91adb6de03b2882ee6fb02f951fdc85e6a22b338c32bfe19557938
@@ -27160,7 +27204,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tar@npm:^6.0.2, tar@npm:^6.1.0, tar@npm:^6.1.2":
+"tar@npm:^6.0.2, tar@npm:^6.1.0, tar@npm:^6.1.10, tar@npm:^6.1.2":
   version: 6.1.11
   resolution: "tar@npm:6.1.11"
   dependencies:
@@ -29160,6 +29204,16 @@ __metadata:
     source-list-map: ^2.0.0
     source-map: ~0.6.1
   checksum: 37463dad8d08114930f4bc4882a9602941f07c9f0efa9b6bc78738cd936275b990a596d801ef450d022bb005b109b9f451dd087db2f3c9baf53e8e22cf388f79
+  languageName: node
+  linkType: hard
+
+"webpack-sources@npm:^2.2.0":
+  version: 2.3.1
+  resolution: "webpack-sources@npm:2.3.1"
+  dependencies:
+    source-list-map: ^2.0.1
+    source-map: ^0.6.1
+  checksum: 6fd67f2274a84c5f51ad89767112ec8b47727134bf0f2ba0cff458c970f18966939a24128bdbddba621cd66eeb2bef0552642a9333cd8e54514f7b2a71776346
   languageName: node
   linkType: hard
 
