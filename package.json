@@ -6,6 +6,8 @@
   "private": true,
   "scripts": {
     "dev": "yarn workspace store dev",
+    "build": "yarn workspaces foreach -ptiv run build",
+    "build:ci": "bash scripts/build-ci.sh",
     "components:build": "yarn workspace @woodshop/components build",
     "components:dev": "yarn workspace @woodshop/components dev",
     "admin:update": "git submodule update --remote --merge",
@@ -20,7 +22,13 @@
   },
   "workspaces": {
     "packages": [
-      "packages/**"
+      "packages/axios-fetch",
+      "packages/builder",
+      "packages/components",
+      "packages/medusa-file-cloudflare-images",
+      "packages/medusa",
+      "packages/medusa-admin",
+      "packages/store"
     ]
   },
   "repository": {
@@ -40,7 +48,7 @@
     "url": "https://github.com/the-montessori-woodshop/the-montessori-woodshop/issues"
   },
   "homepage": "https://github.com/the-montessori-woodshop/the-montessori-woodshop#readme",
-  "packageManager": "yarn@3.2.0-rc.9",
+  "packageManager": "yarn@3.1.1",
   "engines": {
     "node": "16.13.0"
   },

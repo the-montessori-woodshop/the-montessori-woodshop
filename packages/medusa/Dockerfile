@@ -1,24 +1,23 @@
 FROM node:16.13.0
 
-WORKDIR /app/medusa
+WORKDIR /usr/src/app
 
-COPY package.json /app/medusa/package.json
-COPY packages/medusa/entrypoint.sh /app/medusa/entrypoint.sh
+# Copy the yarn requirements (previously node modules)
+# COPY .pnp.cjs                                 .
+# COPY .pnp.loader.mjs                          .
+COPY .yarnrc.yml                                .
+COPY package.json                               .
+COPY yarn.lock                                  .
+COPY .yarn                                      ./.yarn
+COPY package.json                               ./package.json
 
-COPY packages/medusa-file-cloudflare-images /app/medusa/packages/medusa-file-cloudflare-images
+COPY packages/axios-fetch                       ./packages/axios-fetch
+COPY packages/medusa-file-cloudflare-images     ./packages/medusa-file-cloudflare-images
+COPY packages/medusa                            ./packages/medusa
+COPY packages/medusa/entrypoint.sh              ./entrypoint.sh
 
-COPY packages/medusa/src /app/medusa/packages/medusa/src
-COPY packages/medusa/uploads /app/medusa/packages/medusa/uploads
-COPY packages/medusa/data /app/medusa/packages/medusa/data
-COPY packages/medusa/.babelrc.js /app/medusa/packages/medusa/.babelrc.js
-COPY packages/medusa/medusa-config.js /app/medusa/packages/medusa/medusa-config.js
-COPY packages/medusa/package.json /app/medusa/packages/medusa/package.json
+RUN yarn install
+RUN yarn build
 
-RUN yarn install --frozen-lockfile --production
-
-# Build the app
-# RUN yarn workspace medusa-file-cloudflare-images build
-RUN yarn workspace medusa build
-
-ENTRYPOINT ["sh", "/app/medusa/entrypoint.sh"]
+ENTRYPOINT ["sh", "./entrypoint.sh"]
 

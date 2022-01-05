@@ -14,17 +14,20 @@ services:
   # Medusa
   - type: web
     name: medusa
-    env: node
-    scaling:
-      minInstances: 1
-      maxInstances: 3
-      targetMemoryPercent: 60
-      targetCPUPercent: 60
-    buildCommand: yarn install && yarn workspace medusa-file-cloudflare-images build && yarn workspace medusa build
-    startCommand: yarn workspace medusa migrate && yarn workspace medusa start
+    env: docker
     plan: starter
+    dockerfilePath: ./packages/medusa/Dockerfile
+    dockerContext: .
     domains:
       - store.themontessoriwoodshop.com
+    envVars:
+      - fromGroup: medusa
+      - fromGroup: auth-secrets
+      - fromGroup: cloudflare
+
+# Env Var Groups
+envVarGroups:
+  - name: medusa
     envVars:
       - key: MEDUSA_PORT
         value: 9000
@@ -46,11 +49,6 @@ services:
           name: redis
           type: pserv
           property: port
-      - fromGroup: auth-secrets
-      - fromGroup: cloudflare
-
-# Env Var Groups
-envVarGroups:
   - name: auth-secrets
     envVars:
       - key: JWT_SECRET
@@ -68,12 +66,35 @@ envVarGroups:
 
 # Postgres DB
 databases:
-  - name: postgres
+  # Content DBs
+  - name: content_db__DEV
     databaseName: woodshop
-    plan: starter
-    user: app_user
+    plan: free
+    user: content_user
     region: oregon
     postgresMajorVersion: 14
+  - name: content_db__PROD
+    databaseName: woodshop
+    plan: starter
+    user: content_user
+    region: oregon
+    postgresMajorVersion: 14
+  # Medusa Store DBs
+  - name: store_db__DEV
+    plan: free
+    databaseName: store_db
+    user: store_user
+    region: oregon
+    postgresMajorVersion: 14
+  - name: store_db__PROD
+    plan: starter
+    databaseName: store_db
+    user: store_user
+    region: oregon
+    postgresMajorVersion: 14
+    
+
+
 
 
 
