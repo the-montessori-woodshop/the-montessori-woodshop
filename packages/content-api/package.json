@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "The content DB used to add meta information and data to the products that are added to the medusa store",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "publish": "wrangler publish"
   },
   "repository": {
     "type": "git",
