@@ -8938,6 +8938,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "content-api@workspace:packages/content-api"
   dependencies:
+    "@cloudflare/workers-types": ^3.3.0
     "@cloudflare/wrangler": ^1.19.7
     esbuild: ^0.14.10
     esbuild-loader: ^2.18.0
