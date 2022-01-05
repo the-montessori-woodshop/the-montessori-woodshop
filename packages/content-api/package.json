@@ -1,8 +1,7 @@
 {
-  "name": "content-db",
+  "name": "content-api",
   "version": "1.0.0",
   "description": "The content DB used to add meta information and data to the products that are added to the medusa store",
-  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -16,7 +15,13 @@
     "url": "https://github.com/the-montessori-woodshop/the-montessori-woodshop/issues"
   },
   "homepage": "https://github.com/the-montessori-woodshop/the-montessori-woodshop#readme",
-  "dependencies": {
-    "prisma": "^3.7.0"
+  "devDependencies": {
+    "@cloudflare/workers-types": "^3.3.0",
+    "@cloudflare/wrangler": "^1.19.7",
+    "esbuild": "^0.14.10",
+    "esbuild-loader": "^2.18.0",
+    "prisma": "^3.7.0",
+    "typescript": "^4.5.4",
+    "webpack": "^5.65.0"
   }
 }

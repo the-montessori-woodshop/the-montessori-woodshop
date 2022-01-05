@@ -63,6 +63,9 @@ envVarGroups:
         sync: false
       - key: CF_IMAGE_API_TOKEN
         sync: false
+  - name: content
+    envVars:
+      - key: CONTENT_DB_URL
 
 # Postgres DB
 databases:
