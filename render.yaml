@@ -24,20 +24,9 @@ services:
       - fromGroup: medusa
       - fromGroup: auth-secrets
       - fromGroup: cloudflare
-
-# Env Var Groups
-envVarGroups:
-  - name: medusa
-    envVars:
-      - key: MEDUSA_PORT
-        value: 9000
-      - key: MEDUSA_ADMIN_CORS
-        value: https://admin.themontessoriwoodshop.com
-      - key: MEDUSA_STORE_CORS
-        value: https://themontessoriwoodshop.com
       - key: MEDUSA_DATABASE_URL
         fromDatabase:
-          name: postgres
+          name: store_db__PROD
           property: connectionString
       - key: MEDUSA_REDIS_HOST
         fromService:
@@ -49,6 +38,17 @@ envVarGroups:
           name: redis
           type: pserv
           property: port
+
+# Env Var Groups
+envVarGroups:
+  - name: medusa
+    envVars:
+      - key: MEDUSA_PORT
+        value: 9000
+      - key: MEDUSA_ADMIN_CORS
+        value: https://admin.themontessoriwoodshop.com
+      - key: MEDUSA_STORE_CORS
+        value: https://themontessoriwoodshop.com
   - name: auth-secrets
     envVars:
       - key: JWT_SECRET
