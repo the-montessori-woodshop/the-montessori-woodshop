@@ -18,10 +18,6 @@ services:
     plan: starter
     dockerfilePath: ./packages/medusa/Dockerfile
     dockerContext: .
-    disk:
-      name: medusa-data
-      mountPath: var/lib/medusa
-      sizeGB: 10
     domains:
       - store.themontessoriwoodshop.com
     envVars:
@@ -70,25 +66,27 @@ envVarGroups:
 
 # Postgres DB
 databases:
-  - name: content_db_DEV
+  # Content DBs
+  - name: content_db__DEV
     databaseName: woodshop
     plan: free
     user: content_user
     region: oregon
     postgresMajorVersion: 14
-  - name: content_db_PROD
+  - name: content_db__PROD
     databaseName: woodshop
     plan: starter
     user: content_user
     region: oregon
     postgresMajorVersion: 14
-  - name: store_db_DEV
+  # Medusa Store DBs
+  - name: store_db__DEV
     plan: free
     databaseName: store_db
     user: store_user
     region: oregon
     postgresMajorVersion: 14
-  - name: store_db_PROD
+  - name: store_db__PROD
     plan: starter
     databaseName: store_db
     user: store_user
