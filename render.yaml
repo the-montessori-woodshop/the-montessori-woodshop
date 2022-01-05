@@ -66,7 +66,7 @@ envVarGroups:
   - name: content
     envVars:
       - key: CONTENT_DB_URL
-      - sync: false
+        sync: false
 
 # Postgres DB
 databases:
