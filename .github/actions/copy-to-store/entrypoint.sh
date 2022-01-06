@@ -20,9 +20,10 @@ mkdir tmp
 cp -r ./woodshop-store/.git ./tmp/.git
 rm -rf ./woodshop-store
 
-cp -r ./packages/store ./tmp
-mkdir ./tmp/packages
-cp -r ./packages/components ./tmp/packages/components
+cd tmp
+cp -r ../packages/store .
+mkdir ./packages
+cp -r ../packages/components ./packages/components
 
 cd tmp
 
