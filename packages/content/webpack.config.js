@@ -1,7 +1,7 @@
 const path = require("path");
 
 module.exports = {
-  entry: "./src/index.ts",
+  entry: path.resolve(__dirname, "./src/index.ts"),
   output: {
     filename: "worker.js",
     path: path.join(__dirname, "dist")
@@ -15,6 +15,7 @@ module.exports = {
       "@prisma/client$": require.resolve("@prisma/client")
     }
   },
+  context: __dirname,
   mode: "development",
   // Wrangler doesn't like eval which devtools use in development.
   devtool: "none",
@@ -27,7 +28,7 @@ module.exports = {
         options: {
           loader: "ts",
           target: "esnext",
-          tsconfigRaw: path.resolve(__dirname, "./tsconfig.json")
+          tsconfigRaw: require("./tsconfig.json")
         }
       }
     ]
