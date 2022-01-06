@@ -10,10 +10,11 @@ set -u  # script fails if trying to access to an undefined variable
 git config --global user.email "$USER_EMAIL"
 git config --global user.name "$USER_NAME"
 
-mkdir temp
+
 git clone --single-branch --branch main "https://$USER_NAME:$API_TOKEN_GITHUB@github.com/the-montessori-woodshop/woodshop-store.git"
 
-cd temp
+cd woodshop-store
+shopt -s extglob
 rm -v !(".git")
 cp -r ../packages/store .
 cp -r ../packages/components ./packages/components
