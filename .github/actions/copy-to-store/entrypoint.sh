@@ -11,11 +11,11 @@ git config --global user.email "$USER_EMAIL"
 git config --global user.name "$USER_NAME"
 git clone --single-branch --branch main "https://$USER_NAME:$API_TOKEN_GITHUB@github.com/the-montessori-woodshop/woodshop-store.git"
 
+rm -r ./woodshop-store/packages/components
+cp -r ./packages/components ./woodshop-store/packages/components
+
 cd "woodshop-store"
 git fetch https://github.com/the-montessori-woodshop/the-montessori-woodshop.git main && git merge FETCH_HEAD --allow-unrelated-histories
-
-rm -r ./packages/components
-cp -r ../packages/components ./packages/components
 
 git commit -m "chore: Replace components"
 git push -u "https://$USER_NAME:$API_TOKEN_GITHUB@github.com/the-montessori-woodshop/woodshop-store.git" main
