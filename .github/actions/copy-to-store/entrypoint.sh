@@ -22,7 +22,7 @@ mkdir tmp/packages
 cp -r packages/components tmp/packages/components
 
 cd tmp
-npm install
+# npm install
 
 ls -all
 
