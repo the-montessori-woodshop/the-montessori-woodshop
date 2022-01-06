@@ -9,17 +9,21 @@ set -u  # script fails if trying to access to an undefined variable
 
 git config --global user.email "$USER_EMAIL"
 git config --global user.name "$USER_NAME"
+
+mkdir temp
 git clone --single-branch --branch main "https://$USER_NAME:$API_TOKEN_GITHUB@github.com/the-montessori-woodshop/woodshop-store.git"
 
-ls -all
+cd temp
+rm -v !(".git")
+cp -r ../packages/store .
+cp -r ../packages/components ./packages/components
 
-rm -r ./woodshop-store/packages/components
-cp -r ./packages/components ./woodshop-store/packages/components
-
-cd "woodshop-store"
-git fetch https://github.com/the-montessori-woodshop/the-montessori-woodshop.git main && git merge FETCH_HEAD --allow-unrelated-histories
-
-git commit -m "chore: Replace components"
+git commit -m "Updates from: $GITHUB_SHA"
 git push -u "https://$USER_NAME:$API_TOKEN_GITHUB@github.com/the-montessori-woodshop/woodshop-store.git" main
 
-# ls -all
+# cd "woodshop-store"
+# rm -r ./packages/components
+# cp -r ../packages/components ./packages/components
+# git commit -m "chore: Replace components"
+
+# git fetch https://github.com/the-montessori-woodshop/the-montessori-woodshop.git main && git merge FETCH_HEAD --allow-unrelated-histories
