@@ -17,10 +17,11 @@ mkdir tmp
 cp -r ./woodshop-store/.git ./tmp/.git
 rm -rf ./woodshop-store
 
+cp -a packages/store/. temp/
+mkdir temp/packages
+cp -r packages/components temp/packages/components
+
 cd tmp
-cp -r ../packages/store .
-mkdir ./packages
-cp -r ../packages/components ./packages/components
 
 ls -all
 
