@@ -11,14 +11,14 @@
     "types": "tsc",
     "bundle": "rollup --config rollup.config.cjs",
     "build": "yarn bundle && yarn theme:build && yarn types",
-    "build:ci": "npm run bundle && npm run types & npm run theme:build"
+    "build:npm": "npm run bundle && npm run types & npm run theme:build"
   },
   "devDependencies": {
     "@types/react": "^17.0.38",
     "@types/react-dom": "^17.0.11",
     "@typescript-eslint/eslint-plugin": "^5.8.1",
     "@typescript-eslint/parser": "^5.8.1",
-    "@woodshop/builder": "^1.0.0",
+    "@woodshop/builder": "file:../builder",
     "clsx": "^1.1.1",
     "eslint": "8.5.0",
     "eslint-plugin-react": "^7.28.0",
