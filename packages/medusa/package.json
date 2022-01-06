@@ -30,7 +30,6 @@
     "medusa-payment-stripe": "^1.1.34",
     "mongoose": "^6.1.4",
     "pg": "^8.7.1",
-    "prisma": "^3.7.0",
     "query-string": "^7.0.1",
     "typeorm": "^0.2.41"
   },

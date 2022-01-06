@@ -1,10 +1,11 @@
 {
-  "name": "content-api",
+  "name": "content",
   "version": "1.0.0",
   "description": "The content DB used to add meta information and data to the products that are added to the medusa store",
   "scripts": {
     "publish": "wrangler publish",
     "generate": "prisma generate",
+    "migrate-dev": "prisma migrate dev",
     "dev": "wrangler dev"
   },
   "repository": {

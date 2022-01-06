@@ -5,7 +5,7 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = env("CONTENT_DB_DATA_PROXY_URL")
+  url      = env("DB_QUERY_STRING")
 }
 
 model Log {
