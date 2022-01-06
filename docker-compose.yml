@@ -1,4 +1,4 @@
-version: "3"
+version: "3.8"
 services:
   store_api:
     image: store_api
@@ -7,36 +7,34 @@ services:
       context: ./
       dockerfile: ./packages/medusa/Dockerfile
     depends_on:
+      - store_db
       - redis
     ports:
       - "9000:9000"
-    volumes:
-      - /app
+
     env_file:
       - ./.env
 
   store_db:
     image: postgres:14
-    container_name: store_db
     ports:
-      - "5433:5432"
+      - "5432:5432"
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
       POSTGRES_DB: store_db
-      POSTGRES_HOST_AUTH_METHOD: trust
 
   content_db:
     image: postgres:14
     container_name: content_db
     ports:
-      - "5434:5432"
+      - "5432:5432"
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
       POSTGRES_DB: content_db
       POSTGRES_HOST_AUTH_METHOD: trust
-
+    
   redis:
     image: redis
     container_name: redis

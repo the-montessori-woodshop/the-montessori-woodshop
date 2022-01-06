@@ -27,7 +27,7 @@ const plugins = [
 
 module.exports = {
   projectConfig: {
-    redis_url: `redis://${process.env.MEDUSA_REDIS_HOST}:${process.env.MEDUSA_REDIS_PORT}`,
+    redis_url: process.env.MEDUSA_REDIS_URL,
     database_url: process.env.MEDUSA_DATABASE_URL,
     database_type: "postgres",
     store_cors: process.env.MEDUSA_STORE_CORS,
