@@ -13,12 +13,15 @@ git config --global user.name "$USER_NAME"
 
 git clone --single-branch --branch main "https://$USER_NAME:$API_TOKEN_GITHUB@github.com/the-montessori-woodshop/woodshop-store.git"
 
-mkdir tmp
-cp -r /woodshop-store/.git /tmp/.git
-rm -rf /woodshop-store
+ls -all
+ls woodshop-store -all
 
-cp -r /packages/store /tmp
-cp -r /packages/components tmp/packages/components
+mkdir tmp
+cp -r ./woodshop-store/.git ./tmp/.git
+rm -rf ./woodshop-store
+
+cp -r ./packages/store ./tmp
+cp -r ./packages/components ./tmp/packages/components
 
 cd tmp
 
