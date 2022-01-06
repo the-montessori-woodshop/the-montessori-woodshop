@@ -14,7 +14,7 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  build:
+  copy_to_store:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -23,16 +23,6 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Checkout monorepo
         uses: actions/checkout@v2
-
-      # Clone the admin repo and fetch the latest commit
-      - name: Copy to `woodshop-admin`
-        uses: ./.github/actions/mirror-monorepo
-        env:
-          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
-        with:
-          user-email: drewdecarme@gmail.com
-          user-name: drewdecarme
-          repo-name: woodshop-admin
 
       # Clone the store repo and fetch the latest commit
       - name: Copy to `woodshop-store`
@@ -43,3 +33,23 @@ jobs:
           user-email: drewdecarme@gmail.com
           user-name: drewdecarme
           repo-name: woodshop-store
+  # This workflow contains a single job called "build"
+  copy_to_admin:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: Checkout monorepo
+        uses: actions/checkout@v2
+
+      # Clone the admin repo and fetch the latest commit
+      # - name: Copy to `woodshop-admin`
+      #   uses: ./.github/actions/mirror-monorepo
+      #   env:
+      #     API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+      #   with:
+      #     user-email: drewdecarme@gmail.com
+      #     user-name: drewdecarme
+      #     repo-name: woodshop-admin
