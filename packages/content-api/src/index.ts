@@ -8,7 +8,6 @@ addEventListener("fetch", (event) => {
 async function handleEvent(event: FetchEvent): Promise<Response> {
   const { request } = event;
 
-  // waitUntil method is used for sending logs, after response is sent
   event.waitUntil(
     prisma.log.create({
       data: {

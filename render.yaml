@@ -72,13 +72,19 @@ envVarGroups:
 databases:
   # Content DBs
   - name: content_db__DEV
-    databaseName: woodshop
+    databaseName: content_db
+    plan: free
+    user: content_user
+    region: oregon
+    postgresMajorVersion: 14
+  - name: content_db__SHADOW
+    databaseName: content_db
     plan: free
     user: content_user
     region: oregon
     postgresMajorVersion: 14
   - name: content_db__PROD
-    databaseName: woodshop
+    databaseName: content_db
     plan: starter
     user: content_user
     region: oregon
