@@ -13,10 +13,14 @@ git config --global user.name "$USER_NAME"
 
 git clone --single-branch --branch main "https://$USER_NAME:$API_TOKEN_GITHUB@github.com/the-montessori-woodshop/woodshop-store.git"
 
-cd woodshop-store
-find . ! -name "*.git" -exec rm -r {} \;
-cp -r ../packages/store .
-cp -r ../packages/components ./packages/components
+mkdir tmp
+cp -r /woodshop-store/.git /tmp/.git
+rm -rf /woodshop-store
+
+cp -r /packages/store /tmp
+cp -r /packages/components tmp/packages/components
+
+cd tmp
 
 git add .
 git commit -m "Updates from: $GITHUB_SHA"
