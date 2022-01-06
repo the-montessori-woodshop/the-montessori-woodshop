@@ -14,8 +14,7 @@ git config --global user.name "$USER_NAME"
 git clone --single-branch --branch main "https://$USER_NAME:$API_TOKEN_GITHUB@github.com/the-montessori-woodshop/woodshop-store.git"
 
 cd woodshop-store
-shopt -s extglob
-rm -v !(".git")
+find . -type f ! -name '*.git' -delete
 cp -r ../packages/store .
 cp -r ../packages/components ./packages/components
 
