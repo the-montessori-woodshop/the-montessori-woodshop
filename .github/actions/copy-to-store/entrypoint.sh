@@ -18,7 +18,7 @@ cp -r ./woodshop-store/.git ./tmp/.git
 rm -rf ./woodshop-store
 
 cd tmp
-cp ../packages/store .
+cp -r ../packages/store .
 mkdir ./packages
 cp -r ../packages/components ./packages/components
 
