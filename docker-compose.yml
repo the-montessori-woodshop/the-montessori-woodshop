@@ -11,12 +11,12 @@ services:
       - redis
     ports:
       - "9000:9000"
-
     env_file:
       - ./.env
 
   store_db:
     image: postgres:14
+    container_name: store_db
     ports:
       - "5432:5432"
     environment:
@@ -28,7 +28,7 @@ services:
     image: postgres:14
     container_name: content_db
     ports:
-      - "5432:5432"
+      - "5434:5432"
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
