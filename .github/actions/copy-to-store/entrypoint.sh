@@ -17,11 +17,12 @@ mkdir tmp
 cp -r ./woodshop-store/.git ./tmp/.git
 rm -rf ./woodshop-store
 
-cp -a packages/store/. temp/
-mkdir temp/packages
-cp -r packages/components temp/packages/components
+cp -a packages/store/. tmp/
+mkdir tmp/packages
+cp -r packages/components tmp/packages/components
 
 cd tmp
+npm install
 
 ls -all
 
