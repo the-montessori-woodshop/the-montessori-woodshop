@@ -11,6 +11,8 @@ git config --global user.email "$USER_EMAIL"
 git config --global user.name "$USER_NAME"
 git clone --single-branch --branch main "https://$USER_NAME:$API_TOKEN_GITHUB@github.com/the-montessori-woodshop/woodshop-store.git"
 
+ls -all
+
 rm -r ./woodshop-store/packages/components
 cp -r ./packages/components ./woodshop-store/packages/components
 
