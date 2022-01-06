@@ -25,18 +25,18 @@ jobs:
         uses: actions/checkout@v2
 
       # Clone the admin repo and fetch the latest commit
-      - name: Copy to `woodshop-admin`
-        uses: ./.github/actions/mirror-monorepo
-        env:
-          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
-        with:
-          user-email: drewdecarme@gmail.com
-          user-name: drewdecarme
-          repo-name: woodshop-admin
+      # - name: Copy to `woodshop-admin`
+      #   uses: ./.github/actions/mirror-monorepo
+      #   env:
+      #     API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+      #   with:
+      #     user-email: drewdecarme@gmail.com
+      #     user-name: drewdecarme
+      #     repo-name: woodshop-admin
 
       # Clone the store repo and fetch the latest commit
       - name: Copy to `woodshop-store`
-        uses: ./.github/actions/mirror-monorepo
+        uses: ./.github/actions/copy-to-store
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
