@@ -18,6 +18,7 @@ find . -type f ! -name '*.git' -delete
 cp -r ../packages/store .
 cp -r ../packages/components ./packages/components
 
+git add .
 git commit -m "Updates from: $GITHUB_SHA"
 git push -u "https://$USER_NAME:$API_TOKEN_GITHUB@github.com/the-montessori-woodshop/woodshop-store.git" main
 
