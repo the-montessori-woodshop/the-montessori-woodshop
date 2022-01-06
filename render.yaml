@@ -26,7 +26,7 @@ services:
       - fromGroup: cloudflare
       - key: MEDUSA_DATABASE_URL
         fromDatabase:
-          name: store_db__PROD
+          name: store_db
           property: connectionString
       - key: MEDUSA_REDIS_HOST
         fromService:
@@ -70,33 +70,13 @@ envVarGroups:
 
 # Postgres DB
 databases:
-  # Content DBs
-  - name: content_db__DEV
-    databaseName: content_db
-    plan: free
-    user: content_user
-    region: oregon
-    postgresMajorVersion: 14
-  - name: content_db__SHADOW
-    databaseName: content_db
-    plan: free
-    user: content_user
-    region: oregon
-    postgresMajorVersion: 14
-  - name: content_db__PROD
+  - name: content_db
     databaseName: content_db
     plan: starter
     user: content_user
     region: oregon
     postgresMajorVersion: 14
-  # Medusa Store DBs
-  - name: store_db__DEV
-    plan: free
-    databaseName: store_db
-    user: store_user
-    region: oregon
-    postgresMajorVersion: 14
-  - name: store_db__PROD
+  - name: store_db
     plan: starter
     databaseName: store_db
     user: store_user
