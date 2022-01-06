@@ -25,8 +25,6 @@ cp -r ../packages/store .
 mkdir ./packages
 cp -r ../packages/components ./packages/components
 
-cd tmp
-
 git add .
 git commit -m "Updates from: $GITHUB_SHA"
 git push -u "https://$USER_NAME:$API_TOKEN_GITHUB@github.com/the-montessori-woodshop/woodshop-store.git" main
