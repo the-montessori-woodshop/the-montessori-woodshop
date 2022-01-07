@@ -3,8 +3,13 @@ import { medusaClient } from "../../clients/medusa-client";
 import { type LoaderFunction, useLoaderData } from "remix";
 
 export let loader: LoaderFunction = async () => {
-  const { response, ...data } = await medusaClient.products.list();
-  return data;
+  try {
+    const data = await medusaClient.products.list();
+    return data;
+  } catch (error) {
+    console.log("ERROR", error);
+    throw new Error(error as string);
+  }
 };
 
 export default function Index() {
@@ -15,6 +20,7 @@ export default function Index() {
   return (
     <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.4" }}>
       <h1>Welcome to Remix</h1>
+      <pre>{JSON.stringify(data, null, 4)}</pre>
       <Button cxVariant="text" cxColor="primary">
         hello
       </Button>

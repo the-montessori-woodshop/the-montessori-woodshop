@@ -6,42 +6,82 @@ var buildURL = require("./../helpers/buildURL");
 var buildFullPath = require("../core/buildFullPath");
 var isURLSameOrigin = require("./../helpers/isURLSameOrigin");
 var createError = require("../core/createError");
+const cookies = require("./../helpers/cookies");
+
+const createRequestHeaders = (config) => {
+  const requestHeaders = new Headers();
+
+  if (config.auth) {
+    var username = config.auth.username || "";
+    var password = config.auth.password || "";
+    config.headers.Authorization =
+      "Basic " + buf.toString("base64")(username + ":" + password);
+  }
+
+  for (var key in config.headers) {
+    if (config.headers.hasOwnProperty(key)) {
+      requestHeaders.append(key, config.headers[key]);
+    }
+  }
+  requestHeaders.append(
+    "Access-Control-Allow-Credentials",
+    config.withCredentials
+  );
+
+  return requestHeaders;
+};
+
+const createRequestMethod = (config) => config.method.toUpperCase();
+
+const createRequestBody = (config) => {
+  const method = createRequestMethod(config);
+  if (method !== "GET") {
+    return config.data;
+  }
+  return null;
+};
+
+const createRequestCredentials = (config) => {
+  const baseValue = config.withCredentials ? "include" : "same-origin";
+  const credentials =
+    process.env.NODE_ENV === "production" ? undefined : baseValue;
+  return credentials;
+};
+
+const createRequestUrl = (config) => {
+  var fullPath = buildFullPath(config.baseURL, config.url);
+  const requestUrl = buildURL(fullPath, config.params, config.paramsSerializer);
+  return requestUrl;
+};
+
+const createRequestAborter = (config, reject) => {
+  // prep abort controller
+  var aborter = new AbortController();
+  if (config.cancelToken) {
+    // Handle cancellation
+    config.cancelToken.promise.then(function onCanceled(cancel) {
+      aborter.abort();
+      reject(cancel);
+    });
+  }
+};
 
 module.exports = function fetchAdapter(config) {
-  return new Promise(function dispatchFetchRequest(resolve, reject) {
-    var requestData = config.data;
-    var requestHeaders = config.headers;
+  return new Promise(function fetchAdapterPromise(resolve, reject) {
     var responseType = config.responseType || "json";
 
-    // HTTP basic authentication
-    if (config.auth) {
-      var username = config.auth.username || "";
-      var password = config.auth.password || "";
-      requestHeaders.Authorization = "Basic " + btoa(username + ":" + password);
-    }
-
-    var init = {};
-
-    // Add withCredentials to request if needed
-    if (!utils.isUndefined(config.withCredentials)) {
-      init.credentials = "include";
-    }
-
-    // prep abort controller
-    var aborter = new AbortController();
-    if (config.cancelToken) {
-      // Handle cancellation
-      config.cancelToken.promise.then(function onCanceled(cancel) {
-        aborter.abort();
-        reject(cancel);
-      });
-    }
+    const requestBody = createRequestBody(config);
+    const requestHeaders = createRequestHeaders(config);
+    const requestMethod = createRequestMethod(config);
+    // const requestCredentials = createRequestCredentials(config);
+    const requestUrl = createRequestUrl(config);
+    const requestAborter = createRequestAborter(config, reject);
 
     // setup timeout listener
     function listenForTimeout() {
       if (!!config.timeout) {
         setTimeout(function popTimeout() {
-          aborter.abort();
+          requestAborter.abort();
           reject(
             createError(timeoutErrorMessage, config, "ECONNABORTED", config)
           );
@@ -49,48 +89,31 @@ module.exports = function fetchAdapter(config) {
       }
     }
 
-    // copy headers in
-    var headers = new Headers();
-    for (var key in requestHeaders) {
-      if (requestHeaders.hasOwnProperty(key)) {
-        headers.append(key, requestHeaders[key]);
-      }
-    }
-
-    // build the target URL
-    var fullPath = buildFullPath(config.baseURL, config.url);
-
     // Add xsrf header
     // This is only done if running in a standard browser environment.
     // Specifically not if we're in a web worker, or react-native.
     if (utils.isStandardBrowserEnv()) {
-      var cookies = require("./../helpers/cookies");
-
       // Add xsrf header
       var xsrfValue =
-        (config.withCredentials || isURLSameOrigin(fullPath)) &&
+        (config.withCredentials || isURLSameOrigin(requestUrl)) &&
         config.xsrfCookieName
           ? cookies.read(config.xsrfCookieName)
           : undefined;
 
       if (xsrfValue) {
-        requestHeaders[config.xsrfHeaderName] = xsrfValue;
+        requestHeaders.append(config.xsrfHeaderName, xsrfValue);
       }
     }
 
-    // kick off the fetch
-    var request = new Request(
-      buildURL(fullPath, config.params, config.paramsSerializer)
-    );
-    var method = config.method.toUpperCase();
-    var body = method !== "GET" ? requestData : null;
-    const fetchRequest = fetch(request, {
-      ...init,
-      method,
-      body,
-      headers,
-      ...(config.fetchOptions || {}),
+    // Create the request
+    const request = new Request(requestUrl, {
+      body: requestBody,
+      method: requestMethod,
+      // credentials: undefined,
+      headers: requestHeaders,
     });
+
+    const fetchRequest = fetch(request);
 
     listenForTimeout();
 
@@ -124,7 +147,7 @@ module.exports = function fetchAdapter(config) {
 
     fetchRequest.then((response) => {
       if (response.ok) {
-        if (utils.isFormData(requestData)) {
+        if (utils.isFormData(requestBody)) {
           delete requestHeaders["Content-Type"];
         }
 

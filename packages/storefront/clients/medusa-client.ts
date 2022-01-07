@@ -1,6 +1,9 @@
 import Medusa from "@medusajs/medusa-js";
 
 export const medusaClient = new Medusa({
-  baseUrl: "http://localhost:9000",
+  baseUrl:
+    process.env.NODE_ENV !== "production"
+      ? "http://localhost:9000"
+      : "https://store.themontessoriwoodshop.com",
   maxRetries: 2,
 });
