@@ -26487,9 +26487,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"store@workspace:packages/store":
+"storefront@workspace:packages/storefront":
   version: 0.0.0-use.local
-  resolution: "store@workspace:packages/store"
+  resolution: "storefront@workspace:packages/storefront"
   dependencies:
     "@cloudflare/workers-types": ^3.3.0
     "@medusajs/medusa-js": ^1.0.9

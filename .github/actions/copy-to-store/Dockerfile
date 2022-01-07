@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM node:17.3.0-alpine
 
 RUN apk add --no-cache git
 

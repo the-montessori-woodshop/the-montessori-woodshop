@@ -44,7 +44,7 @@
   "homepage": "https://github.com/the-montessori-woodshop/the-montessori-woodshop#readme",
   "packageManager": "yarn@3.1.1",
   "engines": {
-    "node": "16.13.0"
+    "node": "17.3.0"
   },
   "resolutions": {
     "axios": "file:./packages/axios-fetch"

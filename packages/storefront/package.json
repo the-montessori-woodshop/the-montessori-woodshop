@@ -1,21 +1,26 @@
 {
   "private": true,
-  "name": "store",
+  "name": "storefront",
   "version": "1.0.0",
   "description": "The Montessori Woodshop's storefront.",
   "main": "dist/worker.js",
   "sideEffects": false,
   "license": "Apache-2.0",
   "engines": {
-    "node": ">=14"
+    "node": ">=17.3.0"
   },
   "workspaces": {
     "packages": [
-      "packages/components"
+      "packages/**"
     ]
   },
   "overrides": {
-    "axios": "file:./packages/axios-fetch"
+    "@medusajs/medusa-js": {
+      "axios": "file:./packages/axios-fetch",
+      "retry-axios": {
+        "axios": "file:./packages/axios-fetch"
+      }
+    }
   },
   "scripts": {
     "build": "yarn postinstall && cross-env NODE_ENV=production remix build",
