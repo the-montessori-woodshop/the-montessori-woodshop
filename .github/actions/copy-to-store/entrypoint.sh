@@ -20,6 +20,7 @@ rm -rf ./woodshop-store
 cp -a packages/store/. tmp/
 mkdir tmp/packages
 cp -r packages/components tmp/packages/components
+cp -r packages/builder tmp/packages/builder
 
 cd tmp
 # npm install
