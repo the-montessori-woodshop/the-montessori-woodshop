@@ -21,6 +21,7 @@ cp -a packages/store/. tmp/
 mkdir tmp/packages
 cp -r packages/components tmp/packages/components
 cp -r packages/builder tmp/packages/builder
+cp -r packages/axios-fetch tmp/packages/axios-fetch
 
 cd tmp
 # npm install

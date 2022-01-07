@@ -14,6 +14,9 @@
       "packages/components"
     ]
   },
+  "overrides": {
+    "axios": "file:./packages/axios-fetch"
+  },
   "scripts": {
     "build": "yarn postinstall && cross-env NODE_ENV=production remix build",
     "build:npm": "npm run postinstall && cross-env NODE_ENV=production remix build",
