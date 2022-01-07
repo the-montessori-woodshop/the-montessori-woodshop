@@ -4,7 +4,7 @@ import { type LoaderFunction, useLoaderData } from "remix";
 
 export let loader: LoaderFunction = async () => {
   try {
-    const data = await medusaClient.products.list();
+    const { response, ...data } = await medusaClient.products.list();
     return data;
   } catch (error) {
     console.log("ERROR", error);
