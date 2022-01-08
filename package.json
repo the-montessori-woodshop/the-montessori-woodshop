@@ -5,7 +5,7 @@
   "main": "index.js",
   "private": true,
   "scripts": {
-    "dev": "yarn workspace store dev",
+    "dev": "yarn workspace storefront dev",
     "build": "yarn workspaces foreach -ptiv run build",
     "build:ci": "bash scripts/build-ci.sh",
     "components:build": "yarn workspace @woodshop/components build",

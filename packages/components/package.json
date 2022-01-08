@@ -16,16 +16,16 @@
   "devDependencies": {
     "@types/react": "^17.0.38",
     "@types/react-dom": "^17.0.11",
-    "@typescript-eslint/eslint-plugin": "^5.8.1",
-    "@typescript-eslint/parser": "^5.8.1",
+    "@typescript-eslint/eslint-plugin": "^5.9.0",
+    "@typescript-eslint/parser": "^5.9.0",
     "@woodshop/builder": "file:../builder",
     "clsx": "^1.1.1",
-    "eslint": "8.5.0",
+    "eslint": "8.6.0",
     "eslint-plugin-react": "^7.28.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "rollup": "^2.62.0",
-    "sass": "^1.45.2",
+    "rollup": "^2.63.0",
+    "sass": "^1.47.0",
     "typescript": "^4.5.4"
   },
   "peerDependencies": {
