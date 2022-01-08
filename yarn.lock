@@ -4511,19 +4511,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/addon-postcss@npm:^2.0.0":
-  version: 2.0.0
-  resolution: "@storybook/addon-postcss@npm:2.0.0"
-  dependencies:
-    "@storybook/node-logger": ^6.1.14
-    css-loader: ^3.6.0
-    postcss: ^7.0.35
-    postcss-loader: ^4.2.0
-    style-loader: ^1.3.0
-  checksum: 3dee9003a5fa3d6348c093308b3264d58d415be06b01092c1f62e52a22c3a44f4575a49f3960fbc0f211de0608728fdb139fa0501897221fed5ffc04cd11fa09
-  languageName: node
-  linkType: hard
-
 "@storybook/addon-toolbars@npm:6.4.9":
   version: 6.4.9
   resolution: "@storybook/addon-toolbars@npm:6.4.9"
@@ -5116,15 +5103,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/csf@npm:^0.0.1":
-  version: 0.0.1
-  resolution: "@storybook/csf@npm:0.0.1"
-  dependencies:
-    lodash: ^4.17.15
-  checksum: fb57fa028b08a51edf44e1a2bf4be40a4607f5c6ccb58aae8924f476a42b9bbd61a0ad521cfc82196f23e6a912caae0a615e70a755e6800b284c91c509fd2de6
-  languageName: node
-  linkType: hard
-
 "@storybook/manager-webpack4@npm:6.4.9":
   version: 6.4.9
   resolution: "@storybook/manager-webpack4@npm:6.4.9"
@@ -5175,53 +5153,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/manager-webpack5@npm:^6.4.9":
-  version: 6.4.9
-  resolution: "@storybook/manager-webpack5@npm:6.4.9"
-  dependencies:
-    "@babel/core": ^7.12.10
-    "@babel/plugin-transform-template-literals": ^7.12.1
-    "@babel/preset-react": ^7.12.10
-    "@storybook/addons": 6.4.9
-    "@storybook/core-client": 6.4.9
-    "@storybook/core-common": 6.4.9
-    "@storybook/node-logger": 6.4.9
-    "@storybook/theming": 6.4.9
-    "@storybook/ui": 6.4.9
-    "@types/node": ^14.0.10
-    babel-loader: ^8.0.0
-    case-sensitive-paths-webpack-plugin: ^2.3.0
-    chalk: ^4.1.0
-    core-js: ^3.8.2
-    css-loader: ^5.0.1
-    express: ^4.17.1
-    file-system-cache: ^1.0.5
-    find-up: ^5.0.0
-    fs-extra: ^9.0.1
-    html-webpack-plugin: ^5.0.0
-    node-fetch: ^2.6.1
-    read-pkg-up: ^7.0.1
-    regenerator-runtime: ^0.13.7
-    resolve-from: ^5.0.0
-    style-loader: ^2.0.0
-    telejson: ^5.3.2
-    terser-webpack-plugin: ^5.0.3
-    ts-dedent: ^2.0.0
-    util-deprecate: ^1.0.2
-    webpack: ^5.9.0
-    webpack-dev-middleware: ^4.1.0
-    webpack-virtual-modules: ^0.4.1
-  peerDependencies:
-    react: ^16.8.0 || ^17.0.0
-    react-dom: ^16.8.0 || ^17.0.0
-  peerDependenciesMeta:
-    typescript:
-      optional: true
-  checksum: 9e7336671191d8a379d0ba291b5b6e91da90b21ebb588dc6cbb6f6d4574c873289f4635379199d977e6e6f72a126136fcf5a8d4462e3e0ed14304c1a09c64d61
-  languageName: node
-  linkType: hard
-
-"@storybook/node-logger@npm:6.4.9, @storybook/node-logger@npm:^6.1.14":
+"@storybook/node-logger@npm:6.4.9":
   version: 6.4.9
   resolution: "@storybook/node-logger@npm:6.4.9"
   dependencies:
@@ -5240,17 +5172,6 @@ __metadata:
   dependencies:
     core-js: ^3.8.2
   checksum: 3d4e6c53970c98c7bcbee3521c1872dd5de5639be9249e2c748ca3e028583471f9a57b2e0e6745f9aa554166b9bbf45baee4d768dac81c6c48b5640ce5706fcc
-  languageName: node
-  linkType: hard
-
-"@storybook/preset-scss@npm:^1.0.3":
-  version: 1.0.3
-  resolution: "@storybook/preset-scss@npm:1.0.3"
-  peerDependencies:
-    css-loader: "*"
-    sass-loader: "*"
-    style-loader: "*"
-  checksum: 4f1cf1f57a4cd277d76afad5fc4f677436dc3ae3753ce549a6395c0aa9f3d9cf58e9d04c7f8b2cccd2e01929ae563764cca03c016c7e3fed4044a6409e8ca8cd
   languageName: node
   linkType: hard
 
@@ -6616,7 +6537,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/experimental-utils@npm:5.9.0, @typescript-eslint/experimental-utils@npm:^5.3.0":
+"@typescript-eslint/experimental-utils@npm:5.9.0":
   version: 5.9.0
   resolution: "@typescript-eslint/experimental-utils@npm:5.9.0"
   dependencies:
@@ -7113,7 +7034,7 @@ __metadata:
 
 "@woodshop/builder@file:../builder::locator=%40woodshop%2Fcomponents%40workspace%3Apackages%2Fcomponents":
   version: 1.0.0
-  resolution: "@woodshop/builder@file:../builder#../builder::hash=a73bde&locator=%40woodshop%2Fcomponents%40workspace%3Apackages%2Fcomponents"
+  resolution: "@woodshop/builder@file:../builder#../builder::hash=6384fd&locator=%40woodshop%2Fcomponents%40workspace%3Apackages%2Fcomponents"
   dependencies:
     "@rollup/plugin-json": ^4.1.0
     "@rollup/plugin-node-resolve": ^13.1.3
@@ -7129,7 +7050,7 @@ __metadata:
     sass: ^1.47.0
     tslib: ^2.3.1
     typescript: ^4.5.4
-  checksum: e23ab63ebdffcd919d0a764e6cb64fa96da79148fbe472ac1588e5d138928e9d532355ae6f2842fe52cf0cd610f7d0be6ac9973f68d1b64f3323baaf9e70b641
+  checksum: 65936dba8a9518ab5b4a4252ebcf88bfac74f07308d762cc0d02111e7d3f112f9740170039d3da3f90a146e3e7d626cbab1f42a356aa9c8026048efa58aae7af
   languageName: node
   linkType: hard
 
@@ -7154,40 +7075,22 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@woodshop/components@^1.0.0, @woodshop/components@workspace:packages/components":
+"@woodshop/components@^1.0.0, @woodshop/components@workspace:^, @woodshop/components@workspace:packages/components":
   version: 0.0.0-use.local
   resolution: "@woodshop/components@workspace:packages/components"
   dependencies:
-    "@babel/core": ^7.16.7
-    "@mdx-js/react": ^1.6.22
-    "@storybook/addon-actions": ^6.4.9
-    "@storybook/addon-docs": ^6.4.9
-    "@storybook/addon-essentials": ^6.4.9
-    "@storybook/addon-links": ^6.4.9
-    "@storybook/addon-postcss": ^2.0.0
-    "@storybook/builder-webpack5": ^6.4.9
-    "@storybook/manager-webpack5": ^6.4.9
-    "@storybook/preset-scss": ^1.0.3
-    "@storybook/react": ^6.4.9
     "@types/react": ^17.0.38
     "@types/react-dom": ^17.0.11
     "@typescript-eslint/eslint-plugin": ^5.9.0
     "@typescript-eslint/parser": ^5.9.0
     "@woodshop/builder": "file:../builder"
-    babel-loader: ^8.2.3
     clsx: ^1.1.1
-    css-loader: ^6.5.1
     eslint: 8.6.0
     eslint-plugin-react: ^7.28.0
-    eslint-plugin-storybook: ^0.5.5
     react: ^17.0.2
     react-dom: ^17.0.2
     rollup: ^2.63.0
-    sass: ^1.47.0
-    sass-loader: ^12.4.0
-    style-loader: ^3.3.1
     typescript: ^4.5.4
-    webpack: ^5.65.0
   peerDependencies:
     clsx: ^1.1.1
     react: ^17.0.2
@@ -10697,24 +10600,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"css-loader@npm:^6.5.1":
-  version: 6.5.1
-  resolution: "css-loader@npm:6.5.1"
-  dependencies:
-    icss-utils: ^5.1.0
-    postcss: ^8.2.15
-    postcss-modules-extract-imports: ^3.0.0
-    postcss-modules-local-by-default: ^4.0.0
-    postcss-modules-scope: ^3.0.0
-    postcss-modules-values: ^4.0.0
-    postcss-value-parser: ^4.1.0
-    semver: ^7.3.5
-  peerDependencies:
-    webpack: ^5.0.0
-  checksum: 5a3bedecb468038f09673d25c32d8db5b0baa6c38820253c54ce4c56c27a2250d5d5b4bace77dd5e20ba0a569604eb759362bab4e3128e7db2229e40857d4aca
-  languageName: node
-  linkType: hard
-
 "css-minimizer-webpack-plugin@npm:^2.0.0":
   version: 2.0.0
   resolution: "css-minimizer-webpack-plugin@npm:2.0.0"
@@ -11468,6 +11353,27 @@ __metadata:
   checksum: fa05e18324510d7283f55862f3161c6759a3f2f8dbce491a2fc14c8324c498286c54282c1f0e933cb930da8419b30679389499b919122952a4f8592362ef4615
   languageName: node
   linkType: hard
+
+"docs@workspace:packages/docs":
+  version: 0.0.0-use.local
+  resolution: "docs@workspace:packages/docs"
+  dependencies:
+    "@babel/core": ^7.16.7
+    "@mdx-js/react": ^1.6.22
+    "@storybook/addon-actions": ^6.4.9
+    "@storybook/addon-docs": ^6.4.9
+    "@storybook/addon-essentials": ^6.4.9
+    "@storybook/addon-links": ^6.4.9
+    "@storybook/builder-webpack5": ^6.4.9
+    "@storybook/react": ^6.4.9
+    "@woodshop/components": "workspace:^"
+    babel-loader: ^8.2.3
+    react: ^17.0.2
+    react-dom: ^17.0.2
+    typescript: ^4.5.4
+    webpack: ^5.65.0
+  languageName: unknown
+  linkType: soft
 
 "doctrine@npm:^2.1.0":
   version: 2.1.0
@@ -12899,19 +12805,6 @@ __metadata:
   peerDependencies:
     eslint: ^3 || ^4 || ^5 || ^6 || ^7 || ^8
   checksum: 90293d0fd53bb1f735ffd32141cdd211fb1120c9f7bbe5342f9e923261a39e52a2b2575d4e46c9cd77d257f42db4a99b8b339689fc5b5c1c26048929f69b1784
-  languageName: node
-  linkType: hard
-
-"eslint-plugin-storybook@npm:^0.5.5":
-  version: 0.5.5
-  resolution: "eslint-plugin-storybook@npm:0.5.5"
-  dependencies:
-    "@storybook/csf": ^0.0.1
-    "@typescript-eslint/experimental-utils": ^5.3.0
-    requireindex: ^1.1.0
-  peerDependencies:
-    eslint: ">=6"
-  checksum: 97160cdda0d2540acc41f8926dff3187b705fbafb821d92fcd5e6793d7298955e1267eaa423af3ae101ac7bf8930d31bfb9c6e0a01cd90eedf83039d57adb4cf
   languageName: node
   linkType: hard
 
@@ -25216,13 +25109,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"requireindex@npm:^1.1.0":
-  version: 1.2.0
-  resolution: "requireindex@npm:1.2.0"
-  checksum: 50d8b10a1ff1fdf6aea7a1870bc7bd238b0fb1917d8d7ca17fd03afc38a65dcd7a8a4eddd031f89128b5f0065833d5c92c4fef67f2c04e8624057fe626c9cf94
-  languageName: node
-  linkType: hard
-
 "requires-port@npm:^1.0.0":
   version: 1.0.0
   resolution: "requires-port@npm:1.0.0"
@@ -25656,28 +25542,6 @@ __metadata:
   dependencies:
     sparse-bitfield: ^3.0.3
   checksum: 4fdc0b70fb5e523f977de405e12cca111f1f10dd68a0cfae0ca52c1a7919a94d1556598ba2d35f447655c3b32879846c77f9274c90806f6673248ae3cea6ee43
-  languageName: node
-  linkType: hard
-
-"sass-loader@npm:^12.4.0":
-  version: 12.4.0
-  resolution: "sass-loader@npm:12.4.0"
-  dependencies:
-    klona: ^2.0.4
-    neo-async: ^2.6.2
-  peerDependencies:
-    fibers: ">= 3.1.0"
-    node-sass: ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0
-    sass: ^1.3.0
-    webpack: ^5.0.0
-  peerDependenciesMeta:
-    fibers:
-      optional: true
-    node-sass:
-      optional: true
-    sass:
-      optional: true
-  checksum: 0f7ca3633e7f61c412b0628766a9b57cb15f68def45e4303e68eb2f3a0722aec231956fbfd118489d93c997ab605470e89de8e3f7d6776830cc6366d9657d618
   languageName: node
   linkType: hard
 
@@ -27000,15 +26864,6 @@ __metadata:
   peerDependencies:
     webpack: ^4.0.0 || ^5.0.0
   checksum: 21425246a5a8f14d1625a657a3a56f8a323193fa341a71af818a2ed2a429efa2385a328b4381cf2f12c2d0e6380801eb9e0427ed9c3a10ff95c86e383184d632
-  languageName: node
-  linkType: hard
-
-"style-loader@npm:^3.3.1":
-  version: 3.3.1
-  resolution: "style-loader@npm:3.3.1"
-  peerDependencies:
-    webpack: ^5.0.0
-  checksum: 470feef680f59e2fce4d6601b5c55b88c01ad8d1dd693c528ffd591ff5fd7c01a4eff3bdbe62f26f847d6bd2430c9ab594be23307cfe7a3446ab236683f0d066
   languageName: node
   linkType: hard
 

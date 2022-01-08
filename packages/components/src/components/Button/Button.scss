@@ -1,25 +1,25 @@
-@import "../../theme/_utils";
+@import "../../styles/index.scss";
 
 @mixin button {
   border: 0;
 }
 
-@include makeClass("button", "text-primary") {
+@include makeClass("button", "text.primary") {
   @include button;
   background-color: var(--color-primary);
 }
 
-@include makeClass("button", "text-secondary") {
+@include makeClass("button", "text.secondary") {
   @include button;
   background-color: var(--color-secondary);
 }
 
-@include makeClass("button", "contained-primary") {
+@include makeClass("button", "contained.primary") {
   @include button;
   color: var(--color-primary);
 }
 
-@include makeClass("button", "contained-secondary") {
+@include makeClass("button", "contained.secondary") {
   @include button;
   color: var(--color-secondary);
 }
