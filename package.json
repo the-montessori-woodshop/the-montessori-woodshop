@@ -47,7 +47,8 @@
     "node": "17.3.0"
   },
   "resolutions": {
-    "axios": "file:./packages/axios-fetch"
+    "axios": "file:./packages/axios-fetch",
+    "postcss": "8"
   },
   "dependencies": {
     "eslint": "^8.6.0",
