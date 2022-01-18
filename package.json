@@ -8,17 +8,7 @@
     "dev": "yarn workspace storefront dev",
     "build": "yarn workspaces foreach -ptiv run build",
     "build:ci": "bash scripts/build-ci.sh",
-    "components:build": "yarn workspace @woodshop/components build",
-    "components:dev": "yarn workspace @woodshop/components dev",
-    "admin:update": "git submodule update --remote --merge",
-    "admin:build": "yarn workspace admin build",
-    "admin:push": "git push --recurse-submodules=check",
-    "admin:start": "yarn workspace admin serve",
-    "backend:build": "yarn workspace backend build",
-    "backend:migrate": "yarn workspace backend migrate",
-    "backend:start": "yarn workspace backend start",
-    "store:dev": "yarn workspace store dev",
-    "store:start": "yarn workspace store start"
+    "components:dev": "yarn workspace @woodshop/components dev & yarn workspace docs dev"
   },
   "workspaces": {
     "packages": [
@@ -47,10 +37,11 @@
     "node": "17.3.0"
   },
   "resolutions": {
-    "axios": "file:./packages/axios-fetch"
+    "axios": "file:./packages/axios-fetch",
+    "postcss": "8"
   },
   "dependencies": {
-    "eslint": "^8.6.0",
+    "eslint": "^8.7.0",
     "prettier": "^2.5.1",
     "typescript": "^4.5.4"
   }

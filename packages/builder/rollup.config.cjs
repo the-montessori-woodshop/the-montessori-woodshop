@@ -48,6 +48,7 @@ module.exports = function ({
         output: path.resolve(rootDir, "./css/styles.css"),
         processor: () => postcss([autoprefixer()]),
         sass,
+        sourceMap: true,
         outputStyle: "compressed"
       })
     ].filter(Boolean)
