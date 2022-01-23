@@ -1,4 +1,20 @@
 :root {
-  --color-primary: blue;
-  --color-secondary: green;
+  --font-size: 16px;
+  --font-family: "Open Sans", sans-serif;
+  --font-family-heading: "Bitter", serif;
+
+  // Color
+  --color-primary: #6f381e;
+  --color-secondary: #e6c084;
+
+  --color-white: white;
+  --color-grey1: #fcfcfc;
+  --color-grey2: #f8f8f8;
+  --color-grey3: #e7e7e7;
+  --color-grey4: #c0c0c0;
+  --color-grey5: #706e6e;
+  --color-black: #3e3b39;
+
+  --color-textPrimary: var(--color-black);
+  --color-textSecondary: var(--color-grey5);
 }

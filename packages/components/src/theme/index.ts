@@ -1,6 +1,6 @@
 import clsx, { ClassDictionary } from "clsx";
 
-export const libPrefix = "woodshop";
+export const libPrefix = "v9WS7";
 
 /**
  * Creates a className string that should be used

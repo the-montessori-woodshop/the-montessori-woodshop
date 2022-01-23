@@ -2,24 +2,45 @@
 
 @mixin button {
   border: 0;
+  min-width: makeRem(144);
+  padding-left: makeRem(24);
+  padding-right: makeRem(24);
+  border-radius: makeRem(2);
+  font-weight: bold;
+  cursor: pointer;
 }
 
 @include makeClass("button", "text.primary") {
   @include button;
-  background-color: var(--color-primary);
+  color: var(--color-primary);
+  background: transparent;
 }
 
 @include makeClass("button", "text.secondary") {
   @include button;
-  background-color: var(--color-secondary);
+  color: var(--color-secondary);
+  background: transparent;
 }
 
 @include makeClass("button", "contained.primary") {
   @include button;
-  color: var(--color-primary);
+  background-color: var(--color-primary);
+  color: var(--color-white);
 }
 
 @include makeClass("button", "contained.secondary") {
   @include button;
-  color: var(--color-secondary);
+  background-color: var(--color-secondary);
+  color: var(--color-black);
+}
+
+@include makeClass("button", "large") {
+  @include typCopyBody1;
+  height: makeRem(44);
+  font-size: makeRem(16);
+}
+
+@include makeClass("button", "small") {
+  height: makeRem(32);
+  font-size: makeRem(12);
 }

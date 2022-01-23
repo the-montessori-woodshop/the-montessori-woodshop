@@ -1,0 +1,24 @@
+@mixin typCopy {
+  font-family: var(--font-family);
+}
+
+@mixin typCopyBody2 {
+  @include typCopy;
+  font-size: makeRem(14);
+}
+
+@mixin typCopyBody1 {
+  @include typCopy;
+  font-size: makeRem(16);
+}
+
+@mixin typCopyCaption {
+  @include typCopy;
+  font-size: makeRem(14);
+}
+
+@mixin typCopyOverline {
+  @include typCopy;
+  font-size: makeRem(16);
+  text-transform: uppercase;
+}

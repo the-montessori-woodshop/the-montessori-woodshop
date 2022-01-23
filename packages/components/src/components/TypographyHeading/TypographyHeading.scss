@@ -1,0 +1,50 @@
+@import "../../styles/index.scss";
+
+@mixin subtitle {
+  font-family: var(--font-family);
+}
+
+@mixin heading {
+  font-family: var(--font-family-heading);
+}
+
+@mixin h1 {
+  @include heading;
+  font-size: makeRem(90);
+}
+
+@mixin h2 {
+  @include heading;
+  font-size: makeRem(70);
+}
+
+@mixin h3 {
+  @include heading;
+  font-size: makeRem(50);
+}
+
+@mixin h4 {
+  @include heading;
+  font-size: makeRem(50);
+}
+
+@mixin h5 {
+  @include heading;
+  font-size: makeRem(40);
+}
+
+@mixin h6 {
+  @include heading;
+  font-size: makeRem(20);
+}
+
+// Variants
+@include makeClass("typ-heading", "subtitle1") {
+  @include subtitle;
+  color: var(--color-textPrimary);
+}
+
+@include makeClass("typ-heading", "subtitle1") {
+  @include subtitle;
+  color: var(--color-textPrimary);
+}

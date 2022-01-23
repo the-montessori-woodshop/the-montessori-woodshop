@@ -1,0 +1,43 @@
+@import "../../styles/index.scss";
+
+// Variants
+@include makeClass("typ-copy", "body1") {
+  @include typCopyBody1;
+  color: var(--color-textPrimary);
+}
+
+@include makeClass("typ-copy", "body2") {
+  @include typCopyBody2;
+  color: var(--color-textPrimary);
+}
+
+@include makeClass("typ-copy", "caption") {
+  @include typCopyCaption;
+  color: var(--color-textSecondary);
+}
+
+@include makeClass("typ-copy", "overline") {
+  @include typCopyOverline;
+  color: var(--color-textSecondary);
+}
+
+// Colors
+@include makeClass("typ-copy", "textPrimary") {
+  color: var(--color-textPrimary);
+}
+
+@include makeClass("typ-copy", "textSecondary") {
+  color: var(--color-textSecondary);
+}
+
+@include makeClass("typ-copy", "danger") {
+  color: var(--color-danger);
+}
+
+@include makeClass("typ-copy", "warning") {
+  color: var(--color-warning);
+}
+
+@include makeClass("typ-copy", "success") {
+  color: var(--color-success);
+}

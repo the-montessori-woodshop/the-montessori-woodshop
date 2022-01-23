@@ -10,27 +10,67 @@ export default {
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 
-export const Primary = Template.bind({});
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
-Primary.args = {
-  cxColor: "secondary",
-  cxVariant: "text",
-  children: "Text!",
+export const Contained_Primary_Large = Template.bind({});
+Contained_Primary_Large.args = {
+  cxColor: "primary",
+  cxVariant: "contained",
+  cxSize: "large",
+  children: "Primary Conatined Large Button",
 };
 
-// export const Secondary = Template.bind({});
-// Secondary.args = {
-//   label: "Button",
-// };
+export const Contained_Secondary_Large = Template.bind({});
+Contained_Secondary_Large.args = {
+  cxVariant: "contained",
+  cxColor: "secondary",
+  cxSize: "large",
+  children: "Secondary Conatined Large Button",
+};
 
-// export const Large = Template.bind({});
-// Large.args = {
-//   size: "large",
-//   label: "Button",
-// };
+export const Text_Primary_Large = Template.bind({});
+Text_Primary_Large.args = {
+  cxVariant: "text",
+  cxColor: "primary",
+  cxSize: "large",
+  children: "Secondary Text Large Button",
+};
 
-// export const Small = Template.bind({});
-// Small.args = {
-//   size: "small",
-//   label: "Button",
-// };
+export const Text_Secondary_Large = Template.bind({});
+Text_Secondary_Large.args = {
+  cxVariant: "text",
+  cxColor: "secondary",
+  cxSize: "large",
+  children: "Secondary Text Large Button",
+};
+
+// Small
+export const Contained_Primary_Small = Template.bind({});
+Contained_Primary_Small.args = {
+  cxColor: "primary",
+  cxVariant: "contained",
+  cxSize: "small",
+  children: "Primary Conatined small Button",
+};
+
+export const Contained_Secondary_Small = Template.bind({});
+Contained_Secondary_Small.args = {
+  cxVariant: "contained",
+  cxColor: "secondary",
+  cxSize: "small",
+  children: "Secondary Conatined small Button",
+};
+
+export const Text_Primary_Small = Template.bind({});
+Text_Primary_Small.args = {
+  cxVariant: "text",
+  cxColor: "primary",
+  cxSize: "small",
+  children: "Secondary Text small Button",
+};
+
+export const Text_Secondary_Small = Template.bind({});
+Text_Secondary_Small.args = {
+  cxVariant: "text",
+  cxColor: "secondary",
+  cxSize: "small",
+  children: "Secondary Text small Button",
+};

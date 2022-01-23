@@ -4,12 +4,10 @@ import React from "react";
 
 import { makeClass } from "../../theme";
 
-export type ButtonProps = React.DetailedHTMLProps<
-  React.ButtonHTMLAttributes<HTMLButtonElement>,
-  HTMLButtonElement
-> & {
+export type ButtonProps = JSX.IntrinsicElements["button"] & {
   cxVariant?: "text" | "contained";
   cxColor?: "primary" | "secondary" | "danger" | "warning";
+  cxSize?: "large" | "small";
 };
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
@@ -17,6 +15,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     {
       cxVariant = "contained",
       cxColor = "primary",
+      cxSize = "large",
       className,
       children,
       ...restProps
@@ -27,10 +26,9 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       <button
         ref={ref}
         className={makeClass(className, "button", {
-          primary: cxColor === "primary",
-          secondary: cxColor === "secondary",
-          text: cxVariant === "text",
-          contained: cxVariant === "contained"
+          [cxColor]: true,
+          [cxVariant]: true,
+          [cxSize]: true
         })}
         {...restProps}
       >
