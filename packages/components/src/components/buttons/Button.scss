@@ -35,7 +35,7 @@
 }
 
 @include makeClass("button", "large") {
-  @include typCopyBody1;
+  @include typ-copy-body1;
   height: makeRem(44);
   font-size: makeRem(16);
 }

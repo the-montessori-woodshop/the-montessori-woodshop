@@ -1,24 +1,88 @@
-@mixin typCopy {
+@mixin typ-copy {
+  font-family: var(--font-family);
+  line-height: var(--font-line-height);
+  max-width: 65ch;
+}
+
+@mixin typ-copy-body1 {
+  @include typ-copy;
+  font-size: makeRem(16);
+  color: var(--color-textPrimary);
+}
+
+@mixin typ-copy-body2 {
+  @include typ-copy;
+  font-size: makeRem(14);
+  color: var(--color-textSecondary);
+}
+
+@mixin typ-copy-caption {
+  @include typ-copy;
+  font-size: makeRem(14);
+  color: var(--color-textSecondary);
+}
+
+@mixin typ-copy-overline {
+  @include typ-copy;
+  font-size: makeRem(16);
+  text-transform: uppercase;
+  color: var(--color-textSecondary);
+}
+
+/**
+
+Bitter @ Major Third (1.250) scale w/ 16px base HTML
+*/
+
+@mixin typ-heading {
+  font-family: var(--font-family-heading);
+  line-height: var(--font-line-height-heading);
+  color: var(--color-textPrimary);
+  margin: 3rem 0 1.38rem;
+  font-weight: 400;
+}
+
+@mixin typ-heading-h1 {
+  @include typ-heading;
+  margin-top: 0;
+  font-size: 3.052rem;
+}
+
+@mixin typ-heading-h2 {
+  @include typ-heading;
+  font-size: 2.441rem;
+}
+
+@mixin typ-heading-h3 {
+  @include typ-heading;
+  font-size: 1.953rem;
+}
+
+@mixin typ-heading-h4 {
+  @include typ-heading;
+  font-size: 1.563rem;
+}
+
+@mixin typ-heading-h5 {
+  @include typ-heading;
+  font-size: 1.25rem;
+}
+
+@mixin typ-heading-h6 {
+  @include typ-heading;
+  font-size: 1rem;
+}
+
+@mixin typ-heading-subtitle {
   font-family: var(--font-family);
 }
 
-@mixin typCopyBody2 {
-  @include typCopy;
-  font-size: makeRem(14);
+@mixin typ-heading-subtitle1 {
+  @include typ-heading;
+  color: var(--color-textPrimary);
 }
 
-@mixin typCopyBody1 {
-  @include typCopy;
-  font-size: makeRem(16);
-}
-
-@mixin typCopyCaption {
-  @include typCopy;
-  font-size: makeRem(14);
-}
-
-@mixin typCopyOverline {
-  @include typCopy;
-  font-size: makeRem(16);
-  text-transform: uppercase;
+@mixin typ-heading-subtitle2 {
+  @include typ-heading;
+  color: var(--color-textPrimary);
 }

@@ -2,23 +2,19 @@
 
 // Variants
 @include makeClass("typ-copy", "body1") {
-  @include typCopyBody1;
-  color: var(--color-textPrimary);
+  @include typ-copy-body1;
 }
 
 @include makeClass("typ-copy", "body2") {
-  @include typCopyBody2;
-  color: var(--color-textPrimary);
+  @include typ-copy-body2;
 }
 
 @include makeClass("typ-copy", "caption") {
-  @include typCopyCaption;
-  color: var(--color-textSecondary);
+  @include typ-copy-caption;
 }
 
 @include makeClass("typ-copy", "overline") {
-  @include typCopyOverline;
-  color: var(--color-textSecondary);
+  @include typ-copy-overline;
 }
 
 // Colors

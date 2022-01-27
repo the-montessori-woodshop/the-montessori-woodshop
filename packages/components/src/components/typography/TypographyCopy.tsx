@@ -1,6 +1,6 @@
 import "./TypographyCopy.scss";
 
-import React, { useMemo } from "react";
+import React, { memo, useMemo } from "react";
 
 import { makeClass } from "../../theme";
 
@@ -14,10 +14,10 @@ export type TypographyCopyProps = (
   cxColor?: "textPrimary" | "textSecondary" | "danger" | "warning" | "success";
 };
 
-export const TypographyCopy = React.forwardRef<
+const TypographyCopyFC = React.forwardRef<
   HTMLParagraphElement | HTMLDivElement,
   TypographyCopyProps
->(function TypographyCopy(
+>(function TypographyCopyFC(
   {
     cxNode = "div",
     cxVariant = "body1",
@@ -59,3 +59,5 @@ export const TypographyCopy = React.forwardRef<
     </div>
   );
 });
+
+export const TypographyCopy = memo(TypographyCopyFC);

@@ -3,7 +3,7 @@ import { Button } from "@woodshop/components";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "Atoms / Button",
+  title: "Atoms / Buttons / Button",
   component: Button,
 } as ComponentMeta<typeof Button>;
 
@@ -26,23 +26,6 @@ Contained_Secondary_Large.args = {
   children: "Secondary Conatined Large Button",
 };
 
-export const Text_Primary_Large = Template.bind({});
-Text_Primary_Large.args = {
-  cxVariant: "text",
-  cxColor: "primary",
-  cxSize: "large",
-  children: "Secondary Text Large Button",
-};
-
-export const Text_Secondary_Large = Template.bind({});
-Text_Secondary_Large.args = {
-  cxVariant: "text",
-  cxColor: "secondary",
-  cxSize: "large",
-  children: "Secondary Text Large Button",
-};
-
-// Small
 export const Contained_Primary_Small = Template.bind({});
 Contained_Primary_Small.args = {
   cxColor: "primary",
@@ -57,6 +40,22 @@ Contained_Secondary_Small.args = {
   cxColor: "secondary",
   cxSize: "small",
   children: "Secondary Conatined small Button",
+};
+
+export const Text_Primary_Large = Template.bind({});
+Text_Primary_Large.args = {
+  cxVariant: "text",
+  cxColor: "primary",
+  cxSize: "large",
+  children: "Secondary Text Large Button",
+};
+
+export const Text_Secondary_Large = Template.bind({});
+Text_Secondary_Large.args = {
+  cxVariant: "text",
+  cxColor: "secondary",
+  cxSize: "large",
+  children: "Secondary Text Large Button",
 };
 
 export const Text_Primary_Small = Template.bind({});

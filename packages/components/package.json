@@ -11,7 +11,7 @@
     "bundle": "rollup --config rollup.config.cjs",
     "build": "yarn bundle && yarn theme:build && yarn types",
     "build:npm": "npm run bundle && npm run types & npm run theme:build",
-    "dev": "yarn bundle --watch & yarn theme:build --watch"
+    "dev": "yarn bundle --watch & yarn theme:build --watch & tsc --watch"
   },
   "devDependencies": {
     "@types/react": "^17.0.38",

@@ -3,7 +3,7 @@ import { TypographyCopy } from "@woodshop/components";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "Atoms / Typography - Copy",
+  title: "Atoms / Typography / TypCopy",
   component: TypographyCopy,
 } as ComponentMeta<typeof TypographyCopy>;
 
@@ -15,23 +15,27 @@ const Template: ComponentStory<typeof TypographyCopy> = (args) => (
 export const body1 = Template.bind({});
 body1.args = {
   cxVariant: "body1",
-  children: "Primary Conatined Large Button",
+  children:
+    "Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Cras justo odio, dapibus ac facilisis in, egestas eget quam.",
 };
 
 export const body2 = Template.bind({});
 body2.args = {
   cxVariant: "body2",
-  children: "Primary Conatined Large Button",
+  children:
+    "Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Cras justo odio, dapibus ac facilisis in, egestas eget quam.",
 };
 
 export const caption = Template.bind({});
 caption.args = {
   cxVariant: "caption",
-  children: "Primary Conatined Large Button",
+  children:
+    "Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Cras justo odio, dapibus ac facilisis in, egestas eget quam.",
 };
 
 export const overline = Template.bind({});
 overline.args = {
   cxVariant: "overline",
-  children: "Primary Conatined Large Button",
+  children:
+    "Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Cras justo odio, dapibus ac facilisis in, egestas eget quam.",
 };

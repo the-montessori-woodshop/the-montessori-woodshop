@@ -4,33 +4,25 @@ import React, { useMemo } from "react";
 
 import { makeClass } from "../../theme";
 
-type HeadingNodes = "h1" | "h2" | "h3" | "h4" | "h5";
+type HeadingNodes = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 
 export type TypographyHeadingProps = JSX.IntrinsicElements[HeadingNodes] & {
-  cxNode?: HeadingNodes;
-  cxVariant: HeadingNodes | "subtitle1" | "subtitle2";
+  cxNode: HeadingNodes;
+  cxVariant?: HeadingNodes | "subtitle1" | "subtitle2";
 };
 
 export const TypographyHeading = React.forwardRef<
   HTMLHeadingElement,
   TypographyHeadingProps
 >(function TypographyHeading(
-  {
-    cxNode = "h1",
-    cxVariant = "h1",
-    className: clsNme,
-    children,
-    ...restProps
-  },
+  { cxNode = "h1", cxVariant, className: clsNme, children, ...restProps },
   ref
 ) {
-  const className = useMemo(
-    () =>
-      makeClass(clsNme, "typ-heading", {
-        cxVariant
-      }),
-    []
-  );
+  const className = useMemo(() => {
+    return makeClass(clsNme, "typ-heading", {
+      [cxVariant || cxNode]: true
+    });
+  }, []);
 
   if (cxNode === "h2") {
     return (
