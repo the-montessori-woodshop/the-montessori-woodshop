@@ -1,7 +1,8 @@
 @import "../styles/index.scss";
 
 // label
-@include makeClass("GMi0Qu") {
+@include makeClass("aVnIs0") {
+  display: inline-block;
   display: flex;
   align-content: center;
 
@@ -11,7 +12,7 @@
 }
 
 // checkbox input
-@include makeClass("tKJfta") {
+@include makeClass("G3LKFQ") {
   position: absolute;
   margin: 0;
   padding: 0;
@@ -32,9 +33,9 @@
     &:before {
       content: "";
       position: absolute;
-      border: makeRem(1) solid var(--color-grey3);
+      border: makeRem(2) solid var(--color-grey3);
       background-color: var(--color-white);
-      border-radius: makeRem(2);
+      border-radius: 50%;
       height: makeRem(16);
       width: makeRem(16);
       margin-left: makeRem(-8);
@@ -46,8 +47,8 @@
 
   &:checked + span {
     &::before {
+      border-width: makeRem(4);
       border-color: var(--color-primary);
-      background-color: var(--color-primary);
     }
 
     & > * {
