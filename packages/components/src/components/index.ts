@@ -7,6 +7,7 @@ export * from "./InputWrapper";
 export * from "./InputText";
 export * from "./InputTextarea";
 export * from "./InputNumber";
+export * from "./InputCheckbox";
 
 export * from "./TypographyCopy";
 export * from "./TypographyHeading";
