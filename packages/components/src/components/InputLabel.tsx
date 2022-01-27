@@ -2,11 +2,11 @@ import "./InputLabel.scss";
 
 import React, { forwardRef, memo } from "react";
 
-import { makeClass } from "../../theme";
+import { makeClass } from "../theme";
 
 export type InputLabelProps = JSX.IntrinsicElements["label"] & {
   cxSize?: "default" | "small";
-  error?: "";
+  error?: string;
 };
 
 const InputLabelFC = forwardRef<HTMLLabelElement, InputLabelProps>(

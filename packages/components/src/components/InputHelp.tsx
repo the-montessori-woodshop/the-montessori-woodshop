@@ -2,7 +2,7 @@ import "./InputHelp.scss";
 
 import React, { forwardRef, memo } from "react";
 
-import { makeClass } from "../../theme";
+import { makeClass } from "../theme";
 
 export type InputHelpProps = JSX.IntrinsicElements["div"] & {
   error?: boolean | string;

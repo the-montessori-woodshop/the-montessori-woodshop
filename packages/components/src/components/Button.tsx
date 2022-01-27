@@ -2,7 +2,7 @@ import "./Button.scss";
 
 import React from "react";
 
-import { makeClass } from "../../theme";
+import { makeClass } from "../theme";
 
 export type ButtonProps = JSX.IntrinsicElements["button"] & {
   cxVariant?: "text" | "contained";

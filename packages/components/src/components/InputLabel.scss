@@ -1,4 +1,4 @@
-@import "../../styles/index.scss";
+@import "../styles/index.scss";
 
 @include makeClass("Ahgo42vh") {
   @include typ-copy;
@@ -6,6 +6,8 @@
   cursor: pointer;
   font-weight: bold;
   color: var(--color-black);
+  display: block;
+  width: auto;
 }
 
 @include makeClass("Ahgo42vh", "s-lg") {

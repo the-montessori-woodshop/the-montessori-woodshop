@@ -2,7 +2,7 @@ import "./InputWrapper.scss";
 
 import React, { forwardRef } from "react";
 
-import { makeClass } from "../../theme";
+import { makeClass } from "../theme";
 
 export type InputWrapperProps = JSX.IntrinsicElements["div"];
 

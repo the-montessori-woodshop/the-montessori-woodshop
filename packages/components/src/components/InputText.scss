@@ -1,10 +1,10 @@
-@import "../../styles/index.scss";
+@import "../styles/index.scss";
 
 @mixin input-text {
   @include typ-copy-body1;
   width: 100%;
-  padding-left: makeRem(14);
-  padding-right: makeRem(14);
+  padding-left: makeRem(16);
+  padding-right: makeRem(16);
   border: makeRem(1) solid var(--color-grey3);
   border-radius: makeRem(2);
   background-color: var(--color-grey2);

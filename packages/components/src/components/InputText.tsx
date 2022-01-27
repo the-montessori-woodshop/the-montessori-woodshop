@@ -2,7 +2,7 @@ import "./InputText.scss";
 
 import React, { forwardRef, memo } from "react";
 
-import { makeClass } from "../../theme";
+import { makeClass } from "../theme";
 
 export type InputTextProps = Omit<JSX.IntrinsicElements["input"], "type"> & {
   cxSize?: "default" | "small";
