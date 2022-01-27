@@ -6,7 +6,6 @@
   padding-left: makeRem(24);
   padding-right: makeRem(24);
   border-radius: makeRem(2);
-  font-weight: bold;
   cursor: pointer;
 }
 
@@ -38,6 +37,7 @@
   @include typ-copy-body1;
   height: makeRem(44);
   font-size: makeRem(16);
+  font-weight: bold;
 }
 
 @include makeClass("button", "small") {

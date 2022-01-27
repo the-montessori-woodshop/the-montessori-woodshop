@@ -1,0 +1,32 @@
+@import "../../styles/index.scss";
+
+@mixin input-text {
+  @include typ-copy-body1;
+  width: 100%;
+  padding-left: makeRem(14);
+  padding-right: makeRem(14);
+  border: 1px solid var(--color-grey3);
+
+  &:focus {
+    border-color: var(--color-primary);
+  }
+}
+
+@include makeClass("input-text", "lg") {
+  @include input-text;
+  height: makeRem(56);
+}
+
+@include makeClass("input-text", "sm") {
+  @include input-text;
+  height: makeRem(44);
+}
+
+@include makeClass("input-text", "error") {
+  color: var(--color-danger);
+  border: 1px solid var(--color-danger);
+
+  &:focus {
+    border-color: var(--color-danger);
+  }
+}

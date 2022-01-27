@@ -1,0 +1,10 @@
+@import "../../styles/index.scss";
+
+@include makeClass("input-wrapper") {
+  position: relative;
+  &:focus-within {
+    label {
+      color: var(--color-primary);
+    }
+  }
+}
