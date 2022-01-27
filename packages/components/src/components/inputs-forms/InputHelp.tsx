@@ -1,44 +1,37 @@
-// import { MQColorPalette, makeRem } from "@machineq/components";
-// import { forwardRef, memo } from "react";
-// import styled from "styled-components";
+import "./InputHelp.scss";
 
-// export type InputHelpProps = JSX.IntrinsicElements["div"] & {
-//   $mqError?: boolean;
-//   $mqColor?: MQColorPalette;
-// };
+import React, { forwardRef, memo } from "react";
 
-// const StyledInputHelp = styled.div<InputHelpProps>`
-//   background: ${({ theme }) => theme.palette.mq.color.white.value};
-//   z-index: 10;
-//   font-size: ${makeRem(12)};
-//   padding-left: ${makeRem(12)};
-//   padding-top: ${makeRem(8)};
+import { makeClass } from "../../theme";
 
-//   color: ${({ theme, $mqError = false, $mqColor }) => {
-//     if ($mqError) {
-//       return theme.palette.mq.color["danger"].value;
-//     }
-//     if ($mqColor) {
-//       return theme.palette.mq.color[$mqColor].value;
-//     }
-//     return $mqColor;
-//   }};
-// `;
+export type InputHelpProps = JSX.IntrinsicElements["div"] & {
+  error?: boolean | string;
+  cxSize?: "default" | "small";
+};
 
-// const InputHelpFC = forwardRef<HTMLDivElement, InputHelpProps>(
-//   function InputHelpFC({ children, ...props }, ref) {
-//     if (!children) {
-//       return null;
-//     }
+const InputHelpFC = forwardRef<HTMLDivElement, InputHelpProps>(
+  function InputHelpFC(
+    { className, children, cxSize = "default", error, ...props },
+    ref
+  ) {
+    if (!children) {
+      return null;
+    }
 
-//     return (
-//       <StyledInputHelp {...props} ref={ref}>
-//         {children}
-//       </StyledInputHelp>
-//     );
-//   }
-// );
+    return (
+      <div
+        className={makeClass(className, "pwt64he", {
+          error: !!error,
+          "s-lg": cxSize === "default",
+          "s-sm": cxSize === "small"
+        })}
+        {...props}
+        ref={ref}
+      >
+        {children}
+      </div>
+    );
+  }
+);
 
-// export const InputHelp = memo(InputHelpFC);
-
-export {};
+export const InputHelp = memo(InputHelpFC);

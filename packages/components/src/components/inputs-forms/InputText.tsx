@@ -6,13 +6,21 @@ import { makeClass } from "../../theme";
 
 export type InputTextProps = Omit<JSX.IntrinsicElements["input"], "type"> & {
   cxSize?: "default" | "small";
+  cxAlignment?: "left" | "center";
   cxError?: boolean;
   type?: "text" | "number";
 };
 
 const InputTextFC = forwardRef<HTMLInputElement, InputTextProps>(
   function InputTextFC(
-    { className, type = "text", cxSize = "default", cxError, ...props },
+    {
+      className,
+      type = "text",
+      cxSize = "default",
+      cxAlignment = "left",
+      cxError,
+      ...props
+    },
     ref
   ) {
     return (
@@ -20,9 +28,10 @@ const InputTextFC = forwardRef<HTMLInputElement, InputTextProps>(
         {...props}
         ref={ref}
         type={type}
-        className={makeClass(className, "input-text", {
-          lg: cxSize === "default",
-          sm: cxSize === "small",
+        className={makeClass(className, "UOD95", {
+          "s-lg": cxSize === "default",
+          "s-sm": cxSize === "small",
+          "a-center": cxAlignment === "center",
           error: cxError
         })}
       />

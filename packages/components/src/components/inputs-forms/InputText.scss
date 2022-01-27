@@ -5,28 +5,43 @@
   width: 100%;
   padding-left: makeRem(14);
   padding-right: makeRem(14);
-  border: 1px solid var(--color-grey3);
+  border: makeRem(1) solid var(--color-grey3);
+  border-radius: makeRem(2);
+  background-color: var(--color-grey2);
 
-  &:focus {
+  &:focus,
+  &:active {
     border-color: var(--color-primary);
+    outline: none;
+  }
+
+  &::placeholder {
+    color: var(--color-grey4);
   }
 }
 
-@include makeClass("input-text", "lg") {
+@include makeClass("UOD95") {
   @include input-text;
-  height: makeRem(56);
 }
 
-@include makeClass("input-text", "sm") {
-  @include input-text;
+@include makeClass("UOD95", "s-lg") {
   height: makeRem(44);
 }
 
-@include makeClass("input-text", "error") {
+@include makeClass("UOD95", "s-sm") {
+  height: makeRem(36);
+  font-size: makeRem(14);
+}
+
+@include makeClass("UOD95", "error") {
   color: var(--color-danger);
-  border: 1px solid var(--color-danger);
+  border-color: var(--color-danger);
 
   &:focus {
     border-color: var(--color-danger);
   }
+}
+
+@include makeClass("UOD95", "a-center") {
+  text-align: center;
 }
