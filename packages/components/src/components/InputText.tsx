@@ -10,7 +10,7 @@ export type InputTextProps = Omit<JSX.IntrinsicElements["input"], "type"> & {
   cxSize?: "default" | "small";
   cxAlignment?: "left" | "center";
   cxError?: boolean;
-  type?: "text" | "number";
+  type?: "text" | "number" | "search";
   StartIcon?: SVGIconComponent;
   EndIcon?: SVGIconComponent;
 };
