@@ -1,0 +1,9 @@
+@import "../styles/index.scss";
+
+@include makeClass("TmuIxd") {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include makeColorClass;
+}

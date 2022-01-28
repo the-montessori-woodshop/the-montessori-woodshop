@@ -12,3 +12,18 @@ export const makeClass = (
   element: string,
   variants?: ClassDictionary
 ) => clsx(className, libPrefix, element, variants);
+
+export type ColorScheme =
+  | "primary"
+  | "secondary"
+  | "danger"
+  | "warning"
+  | "success"
+  | "white"
+  | "grey1"
+  | "grey2"
+  | "grey3"
+  | "grey4"
+  | "grey5"
+  | "black"
+  | "inherit";

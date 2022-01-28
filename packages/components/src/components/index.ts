@@ -1,6 +1,8 @@
 // Atoms
 export * from "./Button";
 
+export * from "./Icon";
+
 export * from "./InputHelp";
 export * from "./InputLabel";
 export * from "./InputWrapper";

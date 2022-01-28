@@ -21,6 +21,7 @@
     "@storybook/manager-webpack5": "^6.4.13",
     "@storybook/react": "^6.4.13",
     "@woodshop/components": "workspace:^",
+    "@woodshop/icons": "workspace:^",
     "babel-loader": "^8.2.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
