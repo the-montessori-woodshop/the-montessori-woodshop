@@ -31,3 +31,25 @@ export const incrementingSizes = () => {
     </>
   );
 };
+
+export const incrementingSizesWColors = () => {
+  return (
+    <>
+      <Icon cxTitle="pencil">
+        <Pencil />
+      </Icon>
+      <Icon cxTitle="pencil" cxSize={32} cxColor="grey5">
+        <Pencil />
+      </Icon>
+      <Icon cxTitle="pencil" cxSize={36} cxColor="grey3">
+        <Pencil />
+      </Icon>
+      <Icon cxTitle="pencil" cxSize={40} cxColor="danger">
+        <Pencil />
+      </Icon>
+      <Icon cxTitle="pencil" cxSize={44} cxColor="success">
+        <Pencil />
+      </Icon>
+    </>
+  );
+};

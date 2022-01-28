@@ -1,3 +1,5 @@
+import "./Icon.scss";
+
 import React, { forwardRef, memo, useMemo } from "react";
 
 import { createColorMap } from "../styles";
@@ -70,6 +72,7 @@ export const IconFC = forwardRef<HTMLDivElement, IconProps>(function IconFC(
     cxTitleId,
     className,
     svgProps,
+    style,
     ...restProps
   },
   ref
@@ -91,11 +94,12 @@ export const IconFC = forwardRef<HTMLDivElement, IconProps>(function IconFC(
     );
   }, [cxTitle, cxTitleId, accessibility, svgProps, children]);
 
-  const style = useMemo<React.CSSProperties>(
+  const containerStyle = useMemo<React.CSSProperties>(
     () => ({
       height: `${cxSize / 16}rem`,
       width: `${cxSize / 16}rem`,
-      fontSize: `${cxSize / 16}rem`
+      fontSize: `${cxSize / 16}rem`,
+      ...style
     }),
     [cxSize]
   );
@@ -104,7 +108,7 @@ export const IconFC = forwardRef<HTMLDivElement, IconProps>(function IconFC(
     <div
       {...restProps}
       ref={ref}
-      style={style}
+      style={containerStyle}
       className={makeClass(className, "TmuIxd", {
         ...createColorMap(cxColor)
       })}

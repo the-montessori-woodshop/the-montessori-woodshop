@@ -45,3 +45,14 @@
 @include makeClass("UOD95", "a-center") {
   text-align: center;
 }
+
+@include makeClass("UOD95", "i-start") {
+  padding-left: makeRem(8 + 24 + 8);
+}
+
+@include makeClass("cOwWyv") {
+  position: absolute;
+  left: makeRem(8);
+  top: 50%;
+  margin-top: makeRem(-12);
+}
