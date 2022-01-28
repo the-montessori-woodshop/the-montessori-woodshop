@@ -1,5 +1,6 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import { Button } from "@woodshop/components";
+import { Button, Icon } from "@woodshop/components";
+import { Pencil } from "@woodshop/icons";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -9,6 +10,20 @@ export default {
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
+
+export const base = Template.bind({});
+base.args = {
+  children: "just a regular button",
+};
+
+export const buttonWithIcon = Template.bind({});
+buttonWithIcon.args = {
+  children: (
+    <Icon cxTitle="pencil-icon">
+      <Pencil />
+    </Icon>
+  ),
+};
 
 export const Contained_Primary_Large = Template.bind({});
 Contained_Primary_Large.args = {

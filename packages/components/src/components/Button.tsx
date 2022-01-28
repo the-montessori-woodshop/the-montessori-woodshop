@@ -13,9 +13,9 @@ export type ButtonProps = JSX.IntrinsicElements["button"] & {
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   function Button(
     {
-      cxVariant = "contained",
+      cxVariant,
       cxColor = "primary",
-      cxSize = "large",
+      cxSize,
       className,
       children,
       ...restProps
@@ -25,10 +25,12 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     return (
       <button
         ref={ref}
-        className={makeClass(className, "button", {
+        className={makeClass(className, "zSIzYI", {
           [cxColor]: true,
-          [cxVariant]: true,
-          [cxSize]: true
+          "v-text": cxVariant === "text",
+          "v-contained": cxVariant === "contained",
+          "s-lg": cxSize === "large",
+          "s-sm": cxSize === "small"
         })}
         {...restProps}
       >

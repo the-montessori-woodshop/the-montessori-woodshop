@@ -2,45 +2,62 @@
 
 @mixin button {
   border: 0;
+  background: 0;
+  margin: 0;
+  padding: 0;
+  min-width: makeRem(44);
+  min-height: makeRem(44);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+@mixin button-variant {
+  @include button;
   min-width: makeRem(144);
   padding-left: makeRem(24);
   padding-right: makeRem(24);
   border-radius: makeRem(2);
-  cursor: pointer;
 }
 
-@include makeClass("button", "text.primary") {
+@include makeClass("zSIzYI") {
   @include button;
+}
+
+@include makeClass("zSIzYI", "v-text.primary") {
+  @include button-variant;
   color: var(--color-primary);
   background: transparent;
 }
 
-@include makeClass("button", "text.secondary") {
-  @include button;
+@include makeClass("zSIzYI", "v-text.secondary") {
+  @include button-variant;
   color: var(--color-secondary);
   background: transparent;
 }
 
-@include makeClass("button", "contained.primary") {
-  @include button;
+@include makeClass("zSIzYI", "v-contained.primary") {
+  @include button-variant;
   background-color: var(--color-primary);
   color: var(--color-white);
 }
 
-@include makeClass("button", "contained.secondary") {
-  @include button;
+@include makeClass("zSIzYI", "v-contained.secondary") {
+  @include button-variant;
   background-color: var(--color-secondary);
   color: var(--color-black);
 }
 
-@include makeClass("button", "large") {
+@include makeClass("zSIzYI", "s-lg") {
   @include typ-copy-body1;
   height: makeRem(44);
   font-size: makeRem(16);
   font-weight: bold;
 }
 
-@include makeClass("button", "small") {
+@include makeClass("zSIzYI", "s-sm") {
   height: makeRem(32);
   font-size: makeRem(12);
+  font-weight: bold;
 }
