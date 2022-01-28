@@ -8,6 +8,7 @@
   border: makeRem(1) solid var(--color-grey3);
   border-radius: makeRem(2);
   background-color: var(--color-grey2);
+  max-width: 100%;
 
   &:focus,
   &:active {
@@ -50,9 +51,23 @@
   padding-left: makeRem(8 + 24 + 8);
 }
 
-@include makeClass("cOwWyv") {
+@include makeClass("UOD95", "i-end") {
+  padding-right: makeRem(8 + 24 + 8);
+}
+
+// Input Icon
+@mixin input-icon {
   position: absolute;
-  left: makeRem(8);
   top: 50%;
   margin-top: makeRem(-12);
+}
+
+@include makeClass("cOwWyv", "start") {
+  @include input-icon;
+  left: makeRem(8);
+}
+
+@include makeClass("cOwWyv", "end") {
+  @include input-icon;
+  right: makeRem(8);
 }

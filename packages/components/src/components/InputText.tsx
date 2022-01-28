@@ -12,6 +12,7 @@ export type InputTextProps = Omit<JSX.IntrinsicElements["input"], "type"> & {
   cxError?: boolean;
   type?: "text" | "number";
   StartIcon?: SVGIconComponent;
+  EndIcon?: SVGIconComponent;
 };
 
 const InputTextFC = forwardRef<HTMLInputElement, InputTextProps>(
@@ -23,6 +24,7 @@ const InputTextFC = forwardRef<HTMLInputElement, InputTextProps>(
       cxAlignment = "left",
       cxError,
       StartIcon,
+      EndIcon,
       ...props
     },
     ref
@@ -33,9 +35,28 @@ const InputTextFC = forwardRef<HTMLInputElement, InputTextProps>(
           <Icon
             cxTitle="start-icon"
             accessibility="decorative"
-            className={makeClass(undefined, "cOwWyv")}
+            className={makeClass(undefined, "cOwWyv", {
+              start: true
+            })}
           >
             <StartIcon />
+          </Icon>
+        );
+      }
+      return null;
+    }, []);
+
+    const EndIconComponent = useMemo(() => {
+      if (EndIcon) {
+        return (
+          <Icon
+            cxTitle="end-icon"
+            accessibility="decorative"
+            className={makeClass(undefined, "cOwWyv", {
+              end: true
+            })}
+          >
+            <EndIcon />
           </Icon>
         );
       }
@@ -56,9 +77,11 @@ const InputTextFC = forwardRef<HTMLInputElement, InputTextProps>(
             "s-sm": cxSize === "small",
             "a-center": cxAlignment === "center",
             "i-start": !!StartIcon,
+            "i-end": !!EndIcon,
             error: cxError
           })}
         />
+        {EndIconComponent}
       </div>
     );
   }

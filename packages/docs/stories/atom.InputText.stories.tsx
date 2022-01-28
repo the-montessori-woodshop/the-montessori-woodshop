@@ -61,7 +61,12 @@ sizeSmall_wError_alignedCenter.args = {
   cxAlignment: "center",
 };
 
-export const wIcon = Template.bind({});
-wIcon.args = {
+export const wStartIcon = Template.bind({});
+wStartIcon.args = {
   StartIcon: Pencil,
+};
+
+export const wEndIcon = Template.bind({});
+wEndIcon.args = {
+  EndIcon: Pencil,
 };
