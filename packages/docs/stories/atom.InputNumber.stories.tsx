@@ -1,5 +1,6 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { InputNumber } from "@woodshop/components";
+import { Pencil } from "@woodshop/icons";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -58,4 +59,14 @@ export const sizeSmall_wError_alignedCenter = Template.bind({});
 sizeSmall_wError_alignedCenter.args = {
   ...sizeSmall_wError.args,
   cxAlignment: "center",
+};
+
+export const wStartIcon = Template.bind({});
+wStartIcon.args = {
+  StartIcon: Pencil,
+};
+
+export const wEndIcon = Template.bind({});
+wEndIcon.args = {
+  EndIcon: Pencil,
 };
