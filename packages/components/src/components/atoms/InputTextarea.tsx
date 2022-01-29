@@ -2,7 +2,7 @@ import "./InputTextarea.scss";
 
 import React, { forwardRef, memo } from "react";
 
-import { makeClass } from "../theme";
+import { makeClass } from "../../theme";
 
 export type InputTextareaProps = JSX.IntrinsicElements["textarea"] & {
   cxError?: boolean;

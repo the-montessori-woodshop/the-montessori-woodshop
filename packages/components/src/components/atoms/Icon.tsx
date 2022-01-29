@@ -2,8 +2,8 @@ import "./Icon.scss";
 
 import React, { forwardRef, memo, useMemo } from "react";
 
-import { createColorMap } from "../styles";
-import { ColorScheme, makeClass } from "../theme";
+import { createColorMap } from "../../styles";
+import { ColorScheme, makeClass } from "../../theme";
 
 export type IconProps = Omit<JSX.IntrinsicElements["div"], "title"> & {
   cxSize?: number;

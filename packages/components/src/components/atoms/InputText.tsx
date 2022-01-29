@@ -3,7 +3,7 @@ import "./InputText.scss";
 import { SVGIconComponent } from "@woodshop/icons";
 import React, { forwardRef, memo, useMemo } from "react";
 
-import { makeClass } from "../theme";
+import { makeClass } from "../../theme";
 import { Icon } from "./Icon";
 
 export type InputTextProps = Omit<JSX.IntrinsicElements["input"], "type"> & {

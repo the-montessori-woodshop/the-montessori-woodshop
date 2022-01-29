@@ -3,7 +3,7 @@ import "./InputCheckbox.scss";
 import { Checkmark } from "@woodshop/icons";
 import React, { forwardRef, memo } from "react";
 
-import { makeClass } from "../theme";
+import { makeClass } from "../../theme";
 import { Icon } from "./Icon";
 
 export type InputCheckboxProps = JSX.IntrinsicElements["input"];

@@ -2,7 +2,7 @@ import "./InputRadio.scss";
 
 import React, { forwardRef, memo } from "react";
 
-import { makeClass } from "../theme";
+import { makeClass } from "../../theme";
 
 export type InputRadioProps = JSX.IntrinsicElements["input"];
 

@@ -1,9 +1,12 @@
 import React, { forwardRef, memo, useMemo } from "react";
 
-import { InputHelp } from "./InputHelp";
-import { InputLabel } from "./InputLabel";
-import { InputSearch, InputSearchProps } from "./InputSearch";
-import { InputWrapper } from "./InputWrapper";
+import {
+  InputHelp,
+  InputLabel,
+  InputSearch,
+  InputSearchProps,
+  InputWrapper
+} from "../atoms";
 
 export type FormFieldSearchProps = Omit<
   InputSearchProps,

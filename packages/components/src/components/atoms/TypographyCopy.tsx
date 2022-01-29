@@ -2,7 +2,7 @@ import "./TypographyCopy.scss";
 
 import React, { memo, useMemo } from "react";
 
-import { makeClass } from "../theme";
+import { makeClass } from "../../theme";
 
 export type TypographyCopyProps = (
   | JSX.IntrinsicElements["p"]

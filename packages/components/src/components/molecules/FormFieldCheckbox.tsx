@@ -1,8 +1,11 @@
 import React, { forwardRef, memo, useMemo } from "react";
 
-import { InputCheckbox, InputCheckboxProps } from "./InputCheckbox";
-import { InputLabel } from "./InputLabel";
-import { InputWrapper } from "./InputWrapper";
+import {
+  InputCheckbox,
+  InputCheckboxProps,
+  InputLabel,
+  InputWrapper
+} from "../atoms";
 
 export type FormFieldCheckboxProps = Omit<InputCheckboxProps, "id"> & {
   id: string;

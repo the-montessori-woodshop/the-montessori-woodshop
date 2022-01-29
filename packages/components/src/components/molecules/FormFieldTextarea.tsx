@@ -1,9 +1,12 @@
 import React, { forwardRef, memo, useMemo } from "react";
 
-import { InputHelp } from "./InputHelp";
-import { InputLabel } from "./InputLabel";
-import { InputTextarea, InputTextareaProps } from "./InputTextarea";
-import { InputWrapper } from "./InputWrapper";
+import {
+  InputHelp,
+  InputLabel,
+  InputTextarea,
+  InputTextareaProps,
+  InputWrapper
+} from "../atoms";
 
 export type FormFieldTextareaProps = Omit<InputTextareaProps, "id"> & {
   id: string;
