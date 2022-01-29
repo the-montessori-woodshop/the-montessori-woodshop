@@ -1,0 +1,73 @@
+@import "../../styles/index.scss";
+
+@mixin input-text {
+  @include typ-copy-body1;
+  width: 100%;
+  padding-left: makeRem(16);
+  padding-right: makeRem(16);
+  border: makeRem(1) solid var(--color-grey3);
+  border-radius: makeRem(2);
+  background-color: var(--color-grey2);
+  max-width: 100%;
+
+  &:focus,
+  &:active {
+    border-color: var(--color-primary);
+    outline: none;
+  }
+
+  &::placeholder {
+    color: var(--color-grey4);
+  }
+}
+
+@include makeClass("UOD95") {
+  @include input-text;
+}
+
+@include makeClass("UOD95", "s-lg") {
+  height: makeRem(44);
+}
+
+@include makeClass("UOD95", "s-sm") {
+  height: makeRem(36);
+  font-size: makeRem(14);
+}
+
+@include makeClass("UOD95", "error") {
+  color: var(--color-danger);
+  border-color: var(--color-danger);
+
+  &:focus {
+    border-color: var(--color-danger);
+  }
+}
+
+@include makeClass("UOD95", "a-center") {
+  text-align: center;
+}
+
+@include makeClass("UOD95", "i-start") {
+  padding-left: makeRem(8 + 24 + 8);
+}
+
+@include makeClass("UOD95", "i-end") {
+  padding-right: makeRem(8 + 24 + 8);
+}
+
+// Input Icon
+@mixin input-icon {
+  position: absolute;
+  top: 50%;
+  margin-top: makeRem(-12);
+}
+
+@include makeClass("cOwWyv", "start") {
+  @include input-icon;
+  left: makeRem(8);
+}
+
+@include makeClass("cOwWyv", "end") {
+  @include input-icon;
+  right: makeRem(8);
+}

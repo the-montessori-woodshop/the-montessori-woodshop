@@ -1,0 +1,23 @@
+@import "../../styles/index.scss";
+
+@include makeClass("Ahgo42vh") {
+  @include typ-copy;
+  margin-bottom: makeRem(4);
+  cursor: pointer;
+  font-weight: bold;
+  color: var(--color-black);
+  display: block;
+  width: auto;
+}
+
+@include makeClass("Ahgo42vh", "s-lg") {
+  font-size: makeRem(14);
+}
+
+@include makeClass("Ahgo42vh", "s-sm") {
+  font-size: makeRem(12);
+}
+
+@include makeClass("Ahgo42vh", "error") {
+  color: var(--color-danger);
+}

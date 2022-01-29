@@ -1,4 +1,4 @@
-$libPrefix: woodshop;
+$libPrefix: v9WS7;
 
 @mixin makeClass($element, $variant: false) {
   .#{$libPrefix} {
@@ -12,4 +12,49 @@ $libPrefix: woodshop;
       }
     }
   }
+}
+
+@mixin makeColorClass {
+  .c- {
+    &primary {
+      color: var(--color-primary);
+    }
+    &secondary {
+      color: var(--color-secondary);
+    }
+    &danger {
+      color: var(--color-danger);
+    }
+    &warning {
+      color: var(--color-warning);
+    }
+    &success {
+      color: var(--color-success);
+    }
+    &white {
+      color: var(--color-white);
+    }
+    &grey1 {
+      color: var(--color-grey1);
+    }
+    &grey2 {
+      color: var(--color-grey2);
+    }
+    &grey3 {
+      color: var(--color-grey3);
+    }
+    &grey4 {
+      color: var(--color-grey4);
+    }
+    &grey5 {
+      color: var(--color-grey5);
+    }
+    &black {
+      color: var(--color-black);
+    }
+  }
+}
+
+@function makeRem($size) {
+  @return #{calc($size / 16)}rem;
 }
