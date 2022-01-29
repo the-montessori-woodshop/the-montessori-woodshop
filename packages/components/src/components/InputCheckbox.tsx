@@ -1,8 +1,10 @@
 import "./InputCheckbox.scss";
 
+import { Checkmark } from "@woodshop/icons";
 import React, { forwardRef, memo } from "react";
 
 import { makeClass } from "../theme";
+import { Icon } from "./Icon";
 
 export type InputCheckboxProps = JSX.IntrinsicElements["input"];
 
@@ -16,7 +18,11 @@ export const InputCheckboxFC = forwardRef<HTMLInputElement, InputCheckboxProps>(
           {...restProps}
           ref={ref}
         />
-        <span />
+        <span>
+          <Icon cxTitle="checkbox-check" cxColor="white" cxSize={16}>
+            <Checkmark />
+          </Icon>
+        </span>
         {children}
       </div>
     );

@@ -4,10 +4,6 @@
 @include makeClass("GMi0Qu") {
   display: flex;
   align-content: center;
-
-  * {
-    box-sizing: border-box;
-  }
 }
 
 // checkbox input
@@ -28,6 +24,9 @@
     height: makeRem(24);
     min-width: makeRem(24);
     margin-right: makeRem(16);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     &:before {
       content: "";
