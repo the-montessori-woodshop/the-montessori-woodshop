@@ -44,7 +44,7 @@ const constructAccesibilityProps = (
   type: IconProps["accessibility"],
   title: string | undefined
 ): Record<string, unknown> => {
-  if (type === "decorative" || "actionable") {
+  if (type === "decorative" || type === "actionable") {
     return {
       "aria-hidden": "true"
     };
