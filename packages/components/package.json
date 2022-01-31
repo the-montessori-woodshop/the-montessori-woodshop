@@ -12,7 +12,7 @@
     "build": "yarn bundle && yarn theme:build && yarn types",
     "build:npm": "npm run bundle && npm run types & npm run theme:build",
     "dev": "yarn bundle --watch & yarn theme:build --watch & tsc --watch",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "start-storybook -p 6006 & yarn theme:build --watch",
     "build-storybook": "build-storybook"
   },
   "devDependencies": {
