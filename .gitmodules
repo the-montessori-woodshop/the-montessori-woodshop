@@ -1,4 +1,0 @@
-[submodule "packages/medusa-admin"]
-	path = packages/medusa-admin
-	url = git@github.com:drewdecarme/medusa-admin.git
-	branch = master
