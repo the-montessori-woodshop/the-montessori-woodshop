@@ -8,7 +8,7 @@
     "dev": "yarn workspace storefront dev",
     "build": "yarn workspaces foreach -ptiv run build",
     "build:ci": "bash scripts/build-ci.sh",
-    "components:dev": "yarn workspace @woodshop/components storybook"
+    "storybook": "yarn workspace @woodshop/components storybook"
   },
   "workspaces": {
     "packages": [

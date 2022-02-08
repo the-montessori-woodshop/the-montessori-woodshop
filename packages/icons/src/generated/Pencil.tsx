@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Ref, SVGProps, forwardRef, memo } from "react";
+import { SVGProps, Ref, forwardRef, memo } from "react";
 interface SVGRProps {
   title?: string;
   titleId?: string;

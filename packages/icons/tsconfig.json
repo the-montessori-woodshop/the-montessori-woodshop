@@ -11,8 +11,6 @@
     "strict": true,
     "allowSyntheticDefaultImports": true,
     "moduleResolution": "node",
-    "incremental": true,
-    "tsBuildInfoFile": ".typescript.cache/.tsbuildinfo",
     "target": "esnext",
     "sourceMap": true,
     "jsx": "react",
