@@ -18,30 +18,15 @@ services:
     plan: starter
     dockerfilePath: ./packages/medusa/Dockerfile
     dockerContext: .
-    disk:
-      name: medusa-data
-      mountPath: var/lib/medusa
-      sizeGB: 10
     domains:
       - store.themontessoriwoodshop.com
     envVars:
       - fromGroup: medusa
       - fromGroup: auth-secrets
       - fromGroup: cloudflare
-
-# Env Var Groups
-envVarGroups:
-  - name: medusa
-    envVars:
-      - key: MEDUSA_PORT
-        value: 9000
-      - key: MEDUSA_ADMIN_CORS
-        value: https://admin.themontessoriwoodshop.com
-      - key: MEDUSA_STORE_CORS
-        value: https://themontessoriwoodshop.com
       - key: MEDUSA_DATABASE_URL
         fromDatabase:
-          name: postgres
+          name: store_db
           property: connectionString
       - key: MEDUSA_REDIS_HOST
         fromService:
@@ -53,6 +38,17 @@ envVarGroups:
           name: redis
           type: pserv
           property: port
+
+# Env Var Groups
+envVarGroups:
+  - name: medusa
+    envVars:
+      - key: MEDUSA_PORT
+        value: 9000
+      - key: MEDUSA_ADMIN_CORS
+        value: https://admin.themontessoriwoodshop.com
+      - key: MEDUSA_STORE_CORS
+        value: https://themontessoriwoodshop.com
   - name: auth-secrets
     envVars:
       - key: JWT_SECRET
@@ -67,28 +63,20 @@ envVarGroups:
         sync: false
       - key: CF_IMAGE_API_TOKEN
         sync: false
+  - name: content
+    envVars:
+      - key: CONTENT_DB_URL
+        sync: false
 
 # Postgres DB
 databases:
-  - name: content_db_DEV
-    databaseName: woodshop
-    plan: free
-    user: content_user
-    region: oregon
-    postgresMajorVersion: 14
-  - name: content_db_PROD
-    databaseName: woodshop
+  - name: content_db
+    databaseName: content_db
     plan: starter
     user: content_user
     region: oregon
     postgresMajorVersion: 14
-  - name: store_db_DEV
-    plan: free
-    databaseName: store_db
-    user: store_user
-    region: oregon
-    postgresMajorVersion: 14
-  - name: store_db_PROD
+  - name: store_db
     plan: starter
     databaseName: store_db
     user: store_user
