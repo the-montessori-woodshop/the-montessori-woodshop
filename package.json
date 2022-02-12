@@ -8,16 +8,17 @@
     "dev": "yarn workspace storefront dev",
     "build": "yarn workspaces foreach -ptiv run build",
     "build:ci": "bash scripts/build-ci.sh",
-    "storybook": "yarn workspace @woodshop/components storybook"
+    "storybook": "yarn workspace @woodshop/components storybook",
+    "clean": "npx rimraf ./**/node_modules & npx rimraf node_modules"
   },
   "workspaces": {
     "packages": [
       "packages/axios-fetch",
       "packages/builder",
+      "packages/icons",
       "packages/components",
-      "packages/medusa-file-cloudflare-images",
       "packages/medusa",
-      "packages/medusa-admin",
+      "packages/admin",
       "packages/store"
     ]
   },
