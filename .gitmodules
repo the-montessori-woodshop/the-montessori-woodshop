@@ -1,3 +1,0 @@
-[submodule "packages/medusa-admin"]
-	path = packages/medusa-admin
-	url = git@github.com:the-montessori-woodshop/admin.git
