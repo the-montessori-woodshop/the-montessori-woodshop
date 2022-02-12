@@ -41,7 +41,7 @@ module.exports = function ({
         tsconfig: path.resolve(rootDir, "./tsconfig.json")
       }),
       excludeExternalDependenciesFromBundle
-        ? rollupExternals()
+        ? rollupExternals.externals()
         : rollupNodeResolve.nodeResolve(),
       rollupSummary(),
       rollupScss({

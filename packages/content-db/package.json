@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/the-montessori-woodshop/the-montessori-woodshop#readme",
   "dependencies": {
-    "prisma": "^3.7.0"
+    "prisma": "^3.9.2"
   }
 }

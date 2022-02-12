@@ -9,17 +9,11 @@
     "build": "yarn workspaces foreach -ptiv run build",
     "build:ci": "bash scripts/build-ci.sh",
     "storybook": "yarn workspace @woodshop/components storybook",
-    "clean": "npx rimraf ./**/node_modules & npx rimraf node_modules"
+    "clean": "rimraf ./packages/**/node_modules && rimraf node_modules"
   },
   "workspaces": {
     "packages": [
-      "packages/axios-fetch",
-      "packages/builder",
-      "packages/icons",
-      "packages/components",
-      "packages/medusa",
-      "packages/admin",
-      "packages/store"
+      "packages/**"
     ]
   },
   "repository": {
@@ -48,8 +42,9 @@
     "postcss": "8"
   },
   "dependencies": {
-    "eslint": "^8.7.0",
+    "eslint": "^8.9.0",
     "prettier": "^2.5.1",
-    "typescript": "^4.5.4"
+    "rimraf": "^3.0.2",
+    "typescript": "^4.5.5"
   }
 }
