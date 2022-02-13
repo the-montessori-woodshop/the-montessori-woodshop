@@ -1,4 +1,4 @@
-import { Button } from "@woodshop/components";
+import { Button, TypographyHeading } from "@woodshop/components";
 import { medusaClient } from "../../clients/medusa-client";
 import { type LoaderFunction, useLoaderData } from "remix";
 
@@ -19,9 +19,11 @@ export default function Index() {
 
   return (
     <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.4" }}>
-      <h1>Welcome to Remix</h1>
+      <TypographyHeading cxNode="h1" cxVariant="h1">
+        Welcome to Remix
+      </TypographyHeading>
       <pre>{JSON.stringify(data, null, 4)}</pre>
-      <Button cxVariant="text" cxColor="primary">
+      <Button cxVariant="contained" cxColor="primary">
         hello
       </Button>
 

@@ -14,9 +14,6 @@
       "packages/**"
     ]
   },
-  "installConfig": {
-    "hoistingLimits": "workspaces"
-  },
   "overrides": {
     "@medusajs/medusa-js": {
       "axios": "file:./packages/axios-fetch",
