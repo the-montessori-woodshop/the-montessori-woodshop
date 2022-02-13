@@ -15,7 +15,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     {
       cxVariant,
       cxColor = "primary",
-      cxSize,
+      cxSize = "large",
       className,
       children,
       ...restProps

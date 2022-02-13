@@ -1,3 +1,4 @@
+import fontBitterUrl from "@woodshop/components/css/bitter.css";
 import stylesUrl from "@woodshop/components/css/styles.css";
 import themeUrl from "@woodshop/components/css/theme.css";
 import {
@@ -15,6 +16,7 @@ export const links: LinksFunction = () => {
   return [
     { rel: "stylesheet", href: stylesUrl },
     { rel: "stylesheet", href: themeUrl },
+    { rel: "stylesheet", href: fontBitterUrl },
   ];
 };
 

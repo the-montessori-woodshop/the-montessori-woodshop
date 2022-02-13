@@ -19,7 +19,7 @@ export default function Index() {
 
   return (
     <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.4" }}>
-      <TypographyHeading cxNode="h1" cxVariant="h1">
+      <TypographyHeading cxNode="h1" cxVariant="h2">
         Welcome to Remix
       </TypographyHeading>
       <pre>{JSON.stringify(data, null, 4)}</pre>
