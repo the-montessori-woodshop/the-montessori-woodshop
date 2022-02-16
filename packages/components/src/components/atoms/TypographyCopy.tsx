@@ -11,7 +11,13 @@ export type TypographyCopyProps = (
 ) & {
   cxNode?: "p" | "div" | "span";
   cxVariant?: "body1" | "body2" | "caption" | "overline";
-  cxColor?: "textPrimary" | "textSecondary" | "danger" | "warning" | "success";
+  cxColor?:
+    | "textPrimary"
+    | "textSecondary"
+    | "danger"
+    | "warning"
+    | "success"
+    | "inherit";
 };
 
 const TypographyCopyFC = React.forwardRef<
@@ -21,7 +27,7 @@ const TypographyCopyFC = React.forwardRef<
   {
     cxNode = "div",
     cxVariant = "body1",
-    cxColor = "textPrimary",
+    cxColor = "inherit",
     className: clsNme,
     children,
     ...restProps

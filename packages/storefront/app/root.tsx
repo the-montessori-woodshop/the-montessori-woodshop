@@ -1,4 +1,5 @@
 import fontBitterUrl from "@woodshop/components/css/bitter.css";
+import fontOpenSansUrl from "@woodshop/components/css/open-sans.css";
 import stylesUrl from "@woodshop/components/css/styles.css";
 import themeUrl from "@woodshop/components/css/theme.css";
 import { Footer } from "~/features/Footer";
@@ -19,6 +20,7 @@ export const links: LinksFunction = () => {
     { rel: "stylesheet", href: stylesUrl },
     { rel: "stylesheet", href: themeUrl },
     { rel: "stylesheet", href: fontBitterUrl },
+    { rel: "stylesheet", href: fontOpenSansUrl },
   ];
 };
 

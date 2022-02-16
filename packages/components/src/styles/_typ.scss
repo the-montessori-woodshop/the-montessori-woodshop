@@ -37,9 +37,9 @@ Bitter @ Major Third (1.250) scale w/ 16px base HTML
 @mixin typ-heading {
   font-family: var(--font-family-heading);
   line-height: var(--font-line-height-heading);
-  color: var(--color-textPrimary);
+  color: inherit;
+  font-weight: inherit;
   margin: 3rem 0 1.38rem;
-  font-weight: 400;
 }
 
 @mixin typ-heading-h1 {

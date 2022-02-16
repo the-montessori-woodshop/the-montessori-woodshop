@@ -1,0 +1,15 @@
+@import "../../../styles/index.scss";
+
+@include makeClass("lzPr5p") {
+  @include respond("mobile") {
+    & + & {
+      margin-top: makeRem(60);
+    }
+  }
+
+  @include respond("desktop") {
+    & + & {
+      margin-left: makeRem(60);
+    }
+  }
+}
