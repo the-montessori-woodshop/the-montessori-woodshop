@@ -1,5 +1,7 @@
 /theme
 lib
 dist
-css
 .typescript.cache
+
+css/*
+!css/bitter.css

@@ -33,23 +33,24 @@
     "start": "npm run dev:wrangler"
   },
   "dependencies": {
-    "@medusajs/medusa-js": "^1.0.10",
-    "@remix-run/cloudflare-pages": "^1.1.1",
-    "@remix-run/react": "^1.1.1",
+    "@medusajs/medusa-js": "^1.0.12",
+    "@remix-run/cloudflare-pages": "^1.1.3",
+    "@remix-run/react": "^1.1.3",
+    "@remix-run/server-runtime": "^1.1.3",
     "@woodshop/components": "^1.0.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "remix": "^1.1.1"
+    "remix": "^1.1.3"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^3.3.1",
-    "@remix-run/dev": "^1.1.1",
-    "@types/react": "^17.0.38",
+    "@remix-run/dev": "^1.1.3",
+    "@types/react": "^17.0.39",
     "@types/react-dom": "^17.0.11",
     "cross-env": "^7.0.3",
-    "esbuild": "0.14.11",
+    "esbuild": "0.14.21",
     "npm-run-all": "^4.1.5",
-    "typescript": "^4.5.4",
+    "typescript": "^4.5.5",
     "wrangler": "pages"
   }
 }

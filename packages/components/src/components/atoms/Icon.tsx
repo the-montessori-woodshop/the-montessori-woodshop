@@ -5,7 +5,7 @@ import React, { forwardRef, memo, useMemo } from "react";
 import { createColorMap } from "../../styles";
 import { ColorScheme, makeClass } from "../../theme";
 
-export type IconProps = Omit<JSX.IntrinsicElements["div"], "title"> & {
+export type IconProps = Omit<JSX.IntrinsicElements["div"], "title" | "css"> & {
   cxSize?: number;
   cxColor?: ColorScheme;
   cxTitle: string;
@@ -82,6 +82,11 @@ export const IconFC = forwardRef<HTMLDivElement, IconProps>(function IconFC(
       title: cxTitle,
       titleId: cxTitleId,
       preserveAspectRatio: "xMidYMid meet",
+      style: {
+        height: "inherit",
+        width: "inherit",
+        fontSize: "inherit"
+      },
       ...constructAccesibilityProps(accessibility, cxTitle),
       ...svgProps
     };

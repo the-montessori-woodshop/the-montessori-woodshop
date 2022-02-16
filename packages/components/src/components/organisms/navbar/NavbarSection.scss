@@ -1,0 +1,10 @@
+@import "../../../styles/index.scss";
+
+@include makeClass("MyRiqFV") {
+  display: flex;
+  align-items: center;
+
+  &.expand {
+    flex: 1;
+  }
+}

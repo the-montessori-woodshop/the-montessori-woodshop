@@ -1,0 +1,22 @@
+{
+  "name": "content-db",
+  "version": "1.0.0",
+  "description": "The content DB used to add meta information and data to the products that are added to the medusa store",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/the-montessori-woodshop/the-montessori-woodshop.git"
+  },
+  "author": "Drew DeCarme (drew@themontessoriwoodshop.com)",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/the-montessori-woodshop/the-montessori-woodshop/issues"
+  },
+  "homepage": "https://github.com/the-montessori-woodshop/the-montessori-woodshop#readme",
+  "dependencies": {
+    "prisma": "^3.9.2"
+  }
+}
