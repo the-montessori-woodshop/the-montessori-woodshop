@@ -16,26 +16,45 @@ export const Base = () => {
       <FooterSection>
         <FooterSectionTitle>The Montessori Woodshop, LLC</FooterSectionTitle>
         <FooterSectionContent>
+          <FooterSectionContentText>
+            Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis
+            vestibulum. Cras justo odio, dapibus ac facilisis in, egestas eget
+            quam. Cum sociis natoque penatibus et magnis dis parturient montes,
+            nascetur ridiculus mus. Vivamus sagittis lacus vel augue laoreet
+          </FooterSectionContentText>
+          <FooterSectionContentText>
+            Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis
+            vestibulum. Cras justo odio, dapibus ac facilisis in, egestas eget
+            quam. Cum sociis natoque penatibus et magnis dis parturient montes,
+            nascetur ridiculus mus. Vivamus sagittis lacus vel augue laoreet
+          </FooterSectionContentText>
+        </FooterSectionContent>
+      </FooterSection>
+      <FooterSection>
+        <FooterSectionTitle>About Us</FooterSectionTitle>
+        <FooterSectionContent>
           <FooterSectionContentText>Our Story</FooterSectionContentText>
           <FooterSectionContentText>Mission</FooterSectionContentText>
           <FooterSectionContentText>Craftsmanship</FooterSectionContentText>
         </FooterSectionContent>
       </FooterSection>
       <FooterSection>
-        <FooterSectionTitle>The montessori Woodshop, LLC</FooterSectionTitle>
+        <FooterSectionTitle>Privacy & Security</FooterSectionTitle>
         <FooterSectionContent>
           <FooterSectionContentText>
-            Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis
-            vestibulum. Cras justo odio, dapibus ac facilisis in, egestas eget
-            quam. Cum sociis natoque penatibus et magnis dis parturient montes,
-            nascetur ridiculus mus. Vivamus sagittis lacus vel augue laoreet
+            Shipping & Returns
           </FooterSectionContentText>
+        </FooterSectionContent>
+      </FooterSection>
+      <FooterSection>
+        <FooterSectionTitle>Support</FooterSectionTitle>
+        <FooterSectionContent>
           <FooterSectionContentText>
-            Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis
-            vestibulum. Cras justo odio, dapibus ac facilisis in, egestas eget
-            quam. Cum sociis natoque penatibus et magnis dis parturient montes,
-            nascetur ridiculus mus. Vivamus sagittis lacus vel augue laoreet
+            Shipping & Returns
           </FooterSectionContentText>
+          <FooterSectionContentText>FAQs</FooterSectionContentText>
+          <FooterSectionContentText>Warranty</FooterSectionContentText>
+          <FooterSectionContentText>Contact Us</FooterSectionContentText>
         </FooterSectionContent>
       </FooterSection>
     </Footer>
