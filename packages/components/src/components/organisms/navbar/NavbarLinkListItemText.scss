@@ -7,6 +7,7 @@
   font-family: var(--font-family-heading);
   font-size: makeRem(16);
   position: relative;
+  color: var(--color-black);
 
   &.isActive {
     font-weight: bold;

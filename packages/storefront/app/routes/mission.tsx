@@ -1,9 +1,9 @@
 import { Outlet } from "remix";
 
-export default function CheckoutRoute() {
+export default function MissionRoute() {
   return (
     <div>
-      CheckoutRoute
+      MissionRoute
       <Outlet />
     </div>
   );

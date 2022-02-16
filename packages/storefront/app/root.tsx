@@ -2,6 +2,9 @@ import {
   Icon,
   Navbar,
   NavbarAction,
+  NavbarLinkList,
+  NavbarLinkListItem,
+  NavbarLinkListItemText,
   NavbarLogo,
   NavbarSection,
 } from "@woodshop/components";
@@ -15,11 +18,14 @@ import {
   LinksFunction,
   LiveReload,
   Meta,
+  NavLink,
   Outlet,
   Scripts,
   ScrollRestoration,
 } from "remix";
 import type { MetaFunction } from "remix";
+
+import { NavbarLink } from "./components/NavbarLink";
 
 export const links: LinksFunction = () => {
   return [
@@ -63,25 +69,23 @@ export default function App() {
       <body>
         <Navbar>
           <NavbarSection>
-            <Link to="/">
-              <NavbarLogo src="/logo.png" alt="logo" />
-            </Link>
+            <NavbarLogo src="/logo.png" alt="logo" />
           </NavbarSection>
           <NavbarSection cxMain>
-            {/* <NavbarLinks>
-          <NavbarLinkItem>
-            <NavbarLinkText>Home</NavbarLinkText>
-          </NavbarLinkItem>
-          <NavbarLinkItem>
-            <NavbarLinkText>Mission</NavbarLinkText>
-          </NavbarLinkItem>
-          <NavbarLinkItem>
-            <NavbarLinkText>Shop</NavbarLinkText>
-          </NavbarLinkItem>
-          <NavbarLinkItem>
-            <NavbarLinkText>Blog</NavbarLinkText>
-          </NavbarLinkItem>
-        </NavbarLinks> */}
+            <NavbarLinkList>
+              <NavbarLinkListItem>
+                <NavbarLink to="/">Home</NavbarLink>
+              </NavbarLinkListItem>
+              <NavbarLinkListItem>
+                <NavbarLink to="/mission">Mission</NavbarLink>
+              </NavbarLinkListItem>
+              <NavbarLinkListItem>
+                <NavbarLink to="/shop">Shop</NavbarLink>
+              </NavbarLinkListItem>
+              <NavbarLinkListItem>
+                <NavbarLink to="/blog">Blog</NavbarLink>
+              </NavbarLinkListItem>
+            </NavbarLinkList>
           </NavbarSection>
           <NavbarSection>
             <NavbarAction>

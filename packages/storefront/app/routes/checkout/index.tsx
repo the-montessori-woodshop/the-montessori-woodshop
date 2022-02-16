@@ -1,9 +1,9 @@
 import { Outlet } from "remix";
 
-export default function CheckoutNested() {
+export default function CheckoutIndex() {
   return (
     <div>
-      checkout nested
+      CheckoutIndex
       <Outlet />
     </div>
   );
