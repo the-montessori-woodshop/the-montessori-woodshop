@@ -11,8 +11,7 @@ import React, {
 
 import { makeClass } from "../../../theme";
 import { Icon } from "../../atoms/Icon";
-import { NavbarLinkListItemText } from "./NavbarLinkListItemText";
-import { NavbarAction } from ".";
+import { NavbarAction } from "./NavbarAction";
 
 export type NavbarLinkListProps = JSX.IntrinsicElements["ul"];
 
