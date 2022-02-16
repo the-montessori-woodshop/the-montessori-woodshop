@@ -1,7 +1,16 @@
+import {
+  Icon,
+  Navbar,
+  NavbarAction,
+  NavbarLogo,
+  NavbarSection,
+} from "@woodshop/components";
 import fontBitterUrl from "@woodshop/components/css/bitter.css";
 import stylesUrl from "@woodshop/components/css/styles.css";
 import themeUrl from "@woodshop/components/css/theme.css";
+import { ShoppingCart, UserCircle } from "@woodshop/icons";
 import {
+  Link,
   Links,
   LinksFunction,
   LiveReload,
@@ -52,7 +61,45 @@ export default function App() {
         <Links />
       </head>
       <body>
-        <Outlet />
+        <Navbar>
+          <NavbarSection>
+            <Link to="/">
+              <NavbarLogo src="/logo.png" alt="logo" />
+            </Link>
+          </NavbarSection>
+          <NavbarSection cxMain>
+            {/* <NavbarLinks>
+          <NavbarLinkItem>
+            <NavbarLinkText>Home</NavbarLinkText>
+          </NavbarLinkItem>
+          <NavbarLinkItem>
+            <NavbarLinkText>Mission</NavbarLinkText>
+          </NavbarLinkItem>
+          <NavbarLinkItem>
+            <NavbarLinkText>Shop</NavbarLinkText>
+          </NavbarLinkItem>
+          <NavbarLinkItem>
+            <NavbarLinkText>Blog</NavbarLinkText>
+          </NavbarLinkItem>
+        </NavbarLinks> */}
+          </NavbarSection>
+          <NavbarSection>
+            <NavbarAction>
+              <Icon cxTitle="shopping-cart">
+                <ShoppingCart />
+              </Icon>
+            </NavbarAction>
+            <NavbarAction>
+              <Icon cxTitle="account">
+                <UserCircle />
+              </Icon>
+            </NavbarAction>
+          </NavbarSection>
+        </Navbar>
+        <main>
+          <Outlet />
+        </main>
+        <footer>footer</footer>
         <ScrollRestoration />
         <Scripts />
         {process.env.NODE_ENV === "development" && <LiveReload />}

@@ -1,0 +1,8 @@
+@import "../../../styles/index.scss";
+
+@include makeClass("BvnaOD") {
+  border: none;
+  background: none;
+  max-height: makeRem(56);
+  width: auto;
+}

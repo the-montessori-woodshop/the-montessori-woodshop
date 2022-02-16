@@ -22,10 +22,6 @@
   border-radius: makeRem(2);
 }
 
-@include makeClass("zSIzYI") {
-  @include button;
-}
-
 @include makeClass("zSIzYI", "v-text.primary") {
   @include button-variant;
   color: var(--color-primary);

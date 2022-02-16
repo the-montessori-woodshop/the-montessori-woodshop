@@ -1,0 +1,9 @@
+@import "../../../styles/index.scss";
+
+@include makeClass("Aj6DddsY") {
+  padding-left: makeRem(24);
+  padding-right: makeRem(24);
+  display: flex;
+  height: makeRem(100);
+  align-items: center;
+}
