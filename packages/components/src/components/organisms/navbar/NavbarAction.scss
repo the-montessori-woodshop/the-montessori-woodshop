@@ -11,8 +11,5 @@
 
   height: makeRem(44);
   width: makeRem(44);
-
-  & + & {
-    margin-left: makeRem(12);
-  }
+  margin-left: makeRem(12);
 }

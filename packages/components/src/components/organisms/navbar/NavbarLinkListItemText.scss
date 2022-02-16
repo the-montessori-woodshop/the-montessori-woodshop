@@ -1,0 +1,23 @@
+@import "../../../styles/index.scss";
+
+@include makeClass("EzUv7i") {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--font-family-heading);
+  font-size: makeRem(16);
+  position: relative;
+
+  &.isActive {
+    font-weight: bold;
+    &:after {
+      content: "";
+      position: absolute;
+      top: calc(100% + #{makeRem(12)});
+      left: 0;
+      right: 0;
+      height: makeRem(1);
+      background: var(--color-black);
+    }
+  }
+}

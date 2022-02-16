@@ -4,6 +4,9 @@ import React from "react";
 import { Icon } from "../../atoms/Icon";
 import { Navbar } from "./Navbar";
 import { NavbarAction } from "./NavbarAction";
+import { NavbarLinkList } from "./NavbarLinkList";
+import { NavbarLinkListItem } from "./NavbarLinkListItem";
+import { NavbarLinkListItemText } from "./NavbarLinkListItemText";
 import { NavbarLogo } from "./NavbarLogo";
 import { NavbarSection } from "./NavbarSection";
 
@@ -12,7 +15,7 @@ export default {
   title: "Organisms / Navbar"
 };
 
-export const Base = () => {
+export const WithoutLinks = () => {
   return (
     <Navbar>
       <NavbarSection>
@@ -33,6 +36,44 @@ export const Base = () => {
             <NavbarLinkText>Blog</NavbarLinkText>
           </NavbarLinkItem>
         </NavbarLinks> */}
+      </NavbarSection>
+      <NavbarSection>
+        <NavbarAction>
+          <Icon cxTitle="shopping-cart">
+            <ShoppingCart />
+          </Icon>
+        </NavbarAction>
+        <NavbarAction>
+          <Icon cxTitle="account">
+            <UserCircle />
+          </Icon>
+        </NavbarAction>
+      </NavbarSection>
+    </Navbar>
+  );
+};
+
+export const WithLinks = () => {
+  return (
+    <Navbar>
+      <NavbarSection>
+        <NavbarLogo src="/logo.png" alt="logo" />
+      </NavbarSection>
+      <NavbarSection cxMain>
+        <NavbarLinkList>
+          <NavbarLinkListItem>
+            <NavbarLinkListItemText>Home</NavbarLinkListItemText>
+          </NavbarLinkListItem>
+          <NavbarLinkListItem>
+            <NavbarLinkListItemText>Mission</NavbarLinkListItemText>
+          </NavbarLinkListItem>
+          <NavbarLinkListItem>
+            <NavbarLinkListItemText active>Shop</NavbarLinkListItemText>
+          </NavbarLinkListItem>
+          <NavbarLinkListItem>
+            <NavbarLinkListItemText>Blog</NavbarLinkListItemText>
+          </NavbarLinkListItem>
+        </NavbarLinkList>
       </NavbarSection>
       <NavbarSection>
         <NavbarAction>

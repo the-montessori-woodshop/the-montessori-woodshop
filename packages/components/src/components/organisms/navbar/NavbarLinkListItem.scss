@@ -1,0 +1,11 @@
+@import "../../../styles/index.scss";
+
+@include makeClass("XXvYRD") {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  & + & {
+    margin-left: makeRem(44);
+  }
+}

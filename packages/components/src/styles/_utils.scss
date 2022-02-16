@@ -58,3 +58,16 @@ $libPrefix: v9WS7;
 @function makeRem($size) {
   @return #{calc($size / 16)}rem;
 }
+
+@mixin respond($size) {
+  @if ($size == "mobile") {
+    @media only screen and (max-width: 600px) {
+      @content;
+    }
+  }
+  @if ($size == "desktop") {
+    @media only screen and (min-width: 601px) {
+      @content;
+    }
+  }
+}
