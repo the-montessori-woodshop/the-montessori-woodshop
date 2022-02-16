@@ -34,7 +34,7 @@ services:
       POSTGRES_PASSWORD: postgres
       POSTGRES_DB: content_db
       POSTGRES_HOST_AUTH_METHOD: trust
-    
+
   redis:
     image: redis
     container_name: redis
@@ -47,8 +47,8 @@ services:
     image: admin
     container_name: admin
     build:
-      context: ./
-      dockerfile: ./packages/medusa-admin/Dockerfile
+      context: ../woodshop-admin
+      dockerfile: ../woodshop-admin/Dockerfile
     env_file:
       - ./.env
     ports:
