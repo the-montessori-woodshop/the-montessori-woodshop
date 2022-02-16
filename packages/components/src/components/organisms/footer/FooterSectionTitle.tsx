@@ -1,10 +1,9 @@
 import "./FooterSectionTitle.scss";
 
-import React from "react";
-import { forwardRef } from "react";
+import React, { forwardRef } from "react";
 
 import { makeClass } from "../../../theme";
-import { TypographyHeading } from "../..";
+import { TypographyHeading } from "../../atoms/TypographyHeading";
 
 export type FooterSectionTitleProps = JSX.IntrinsicElements["div"];
 
