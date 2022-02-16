@@ -1,31 +1,18 @@
-import {
-  Icon,
-  Navbar,
-  NavbarAction,
-  NavbarLinkList,
-  NavbarLinkListItem,
-  NavbarLinkListItemText,
-  NavbarLogo,
-  NavbarSection,
-} from "@woodshop/components";
 import fontBitterUrl from "@woodshop/components/css/bitter.css";
 import stylesUrl from "@woodshop/components/css/styles.css";
 import themeUrl from "@woodshop/components/css/theme.css";
-import { ShoppingCart, UserCircle } from "@woodshop/icons";
+import { Footer } from "~/features/Footer";
+import { Header } from "~/features/Header";
 import {
-  Link,
   Links,
   LinksFunction,
   LiveReload,
   Meta,
-  NavLink,
   Outlet,
   Scripts,
   ScrollRestoration,
 } from "remix";
 import type { MetaFunction } from "remix";
-
-import { NavbarLink } from "./components/NavbarLink";
 
 export const links: LinksFunction = () => {
   return [
@@ -67,43 +54,11 @@ export default function App() {
         <Links />
       </head>
       <body>
-        <Navbar>
-          <NavbarSection>
-            <NavbarLogo src="/logo.png" alt="logo" />
-          </NavbarSection>
-          <NavbarSection cxMain>
-            <NavbarLinkList>
-              <NavbarLinkListItem>
-                <NavbarLink to="/">Home</NavbarLink>
-              </NavbarLinkListItem>
-              <NavbarLinkListItem>
-                <NavbarLink to="/mission">Mission</NavbarLink>
-              </NavbarLinkListItem>
-              <NavbarLinkListItem>
-                <NavbarLink to="/shop">Shop</NavbarLink>
-              </NavbarLinkListItem>
-              <NavbarLinkListItem>
-                <NavbarLink to="/blog">Blog</NavbarLink>
-              </NavbarLinkListItem>
-            </NavbarLinkList>
-          </NavbarSection>
-          <NavbarSection>
-            <NavbarAction>
-              <Icon cxTitle="shopping-cart">
-                <ShoppingCart />
-              </Icon>
-            </NavbarAction>
-            <NavbarAction>
-              <Icon cxTitle="account">
-                <UserCircle />
-              </Icon>
-            </NavbarAction>
-          </NavbarSection>
-        </Navbar>
+        <Header />
         <main>
           <Outlet />
         </main>
-        <footer>footer</footer>
+        <Footer />
         <ScrollRestoration />
         <Scripts />
         {process.env.NODE_ENV === "development" && <LiveReload />}
