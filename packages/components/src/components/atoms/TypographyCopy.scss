@@ -18,6 +18,9 @@
 }
 
 // Colors
+@include makeClass("typ-copy", "inherit") {
+  color: inherit;
+}
 @include makeClass("typ-copy", "textPrimary") {
   color: var(--color-textPrimary);
 }

@@ -1,16 +1,10 @@
-import {
-  Icon,
-  Navbar,
-  NavbarAction,
-  NavbarLogo,
-  NavbarSection,
-} from "@woodshop/components";
 import fontBitterUrl from "@woodshop/components/css/bitter.css";
+import fontOpenSansUrl from "@woodshop/components/css/open-sans.css";
 import stylesUrl from "@woodshop/components/css/styles.css";
 import themeUrl from "@woodshop/components/css/theme.css";
-import { ShoppingCart, UserCircle } from "@woodshop/icons";
+import { Footer } from "~/features/Footer";
+import { Header } from "~/features/Header";
 import {
-  Link,
   Links,
   LinksFunction,
   LiveReload,
@@ -26,6 +20,7 @@ export const links: LinksFunction = () => {
     { rel: "stylesheet", href: stylesUrl },
     { rel: "stylesheet", href: themeUrl },
     { rel: "stylesheet", href: fontBitterUrl },
+    { rel: "stylesheet", href: fontOpenSansUrl },
   ];
 };
 
@@ -56,50 +51,16 @@ export default function App() {
           sizes="16x16"
           href="/favicon-16x16.png"
         />
-        <link rel="manifest" href="/site.webmanifest"></link>
+        <link rel="manifest" href="/site.webmanifest" />
         <Meta />
         <Links />
       </head>
       <body>
-        <Navbar>
-          <NavbarSection>
-            <Link to="/">
-              <NavbarLogo src="/logo.png" alt="logo" />
-            </Link>
-          </NavbarSection>
-          <NavbarSection cxMain>
-            {/* <NavbarLinks>
-          <NavbarLinkItem>
-            <NavbarLinkText>Home</NavbarLinkText>
-          </NavbarLinkItem>
-          <NavbarLinkItem>
-            <NavbarLinkText>Mission</NavbarLinkText>
-          </NavbarLinkItem>
-          <NavbarLinkItem>
-            <NavbarLinkText>Shop</NavbarLinkText>
-          </NavbarLinkItem>
-          <NavbarLinkItem>
-            <NavbarLinkText>Blog</NavbarLinkText>
-          </NavbarLinkItem>
-        </NavbarLinks> */}
-          </NavbarSection>
-          <NavbarSection>
-            <NavbarAction>
-              <Icon cxTitle="shopping-cart">
-                <ShoppingCart />
-              </Icon>
-            </NavbarAction>
-            <NavbarAction>
-              <Icon cxTitle="account">
-                <UserCircle />
-              </Icon>
-            </NavbarAction>
-          </NavbarSection>
-        </Navbar>
+        <Header />
         <main>
           <Outlet />
         </main>
-        <footer>footer</footer>
+        <Footer />
         <ScrollRestoration />
         <Scripts />
         {process.env.NODE_ENV === "development" && <LiveReload />}

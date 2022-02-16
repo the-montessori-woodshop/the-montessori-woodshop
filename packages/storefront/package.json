@@ -38,6 +38,7 @@
     "@remix-run/react": "^1.1.3",
     "@remix-run/server-runtime": "^1.1.3",
     "@woodshop/components": "^1.0.0",
+    "@woodshop/icons": "^1.0.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "remix": "^1.1.3"

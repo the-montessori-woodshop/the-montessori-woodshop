@@ -6160,7 +6160,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@woodshop/icons@workspace:^, @woodshop/icons@workspace:packages/icons":
+"@woodshop/icons@^1.0.0, @woodshop/icons@workspace:^, @woodshop/icons@workspace:packages/icons":
   version: 0.0.0-use.local
   resolution: "@woodshop/icons@workspace:packages/icons"
   dependencies:
@@ -23968,6 +23968,7 @@ __metadata:
     "@types/react": ^17.0.39
     "@types/react-dom": ^17.0.11
     "@woodshop/components": ^1.0.0
+    "@woodshop/icons": ^1.0.0
     cross-env: ^7.0.3
     esbuild: 0.14.21
     npm-run-all: ^4.1.5

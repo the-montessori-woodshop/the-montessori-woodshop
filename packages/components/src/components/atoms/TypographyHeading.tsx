@@ -4,7 +4,7 @@ import React, { useMemo } from "react";
 
 import { makeClass } from "../../theme";
 
-type HeadingNodes = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+type HeadingNodes = "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "div";
 
 export type TypographyHeadingProps = JSX.IntrinsicElements[HeadingNodes] & {
   cxNode: HeadingNodes;
@@ -12,7 +12,7 @@ export type TypographyHeadingProps = JSX.IntrinsicElements[HeadingNodes] & {
 };
 
 export const TypographyHeading = React.forwardRef<
-  HTMLHeadingElement,
+  HTMLHeadingElement | HTMLDivElement,
   TypographyHeadingProps
 >(function TypographyHeading(
   { cxNode = "h1", cxVariant, className: clsNme, children, ...restProps },
@@ -53,6 +53,14 @@ export const TypographyHeading = React.forwardRef<
       <h5 className={className} {...restProps} ref={ref}>
         {children}
       </h5>
+    );
+  }
+
+  if (cxNode === "div") {
+    return (
+      <div className={className} {...restProps} ref={ref}>
+        {children}
+      </div>
     );
   }
 
