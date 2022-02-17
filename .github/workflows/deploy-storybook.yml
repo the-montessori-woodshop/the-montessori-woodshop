@@ -1,0 +1,24 @@
+name: Storybook Deploy
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    name: Deploy Storybook
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install
+        run: yarn install --immutable
+      - name: Build
+        run: yarn components-build
+      - name: Deploy
+        uses: cloudflare/wrangler-action@1.3.0
+        with:
+          apiToken: ${{ secrets.CF_API_TOKEN }}
+          workingDirectory: "./packages/components/"
+          environment: 'production'

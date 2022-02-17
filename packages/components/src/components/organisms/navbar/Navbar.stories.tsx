@@ -21,22 +21,7 @@ export const WithoutLinks = () => {
       <NavbarSection>
         <NavbarLogo src="/logo.png" alt="logo" />
       </NavbarSection>
-      <NavbarSection cxMain>
-        {/* <NavbarLinks>
-          <NavbarLinkItem>
-            <NavbarLinkText>Home</NavbarLinkText>
-          </NavbarLinkItem>
-          <NavbarLinkItem>
-            <NavbarLinkText>Mission</NavbarLinkText>
-          </NavbarLinkItem>
-          <NavbarLinkItem>
-            <NavbarLinkText>Shop</NavbarLinkText>
-          </NavbarLinkItem>
-          <NavbarLinkItem>
-            <NavbarLinkText>Blog</NavbarLinkText>
-          </NavbarLinkItem>
-        </NavbarLinks> */}
-      </NavbarSection>
+      <NavbarSection cxMain></NavbarSection>
       <NavbarSection>
         <NavbarAction>
           <Icon cxTitle="shopping-cart">

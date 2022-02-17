@@ -14,6 +14,10 @@
   font-family: var(--font-family);
 }
 
+button {
+  @include button;
+}
+
 @mixin button-variant {
   @include button;
   min-width: makeRem(144);

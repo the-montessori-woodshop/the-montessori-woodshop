@@ -6,3 +6,4 @@ dist
 css/*
 !css/bitter.css
 !css/open-sans.css
+storybook-static
