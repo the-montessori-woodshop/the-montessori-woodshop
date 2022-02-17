@@ -1684,7 +1684,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cloudflare/workers-types@npm:^3.2.0, @cloudflare/workers-types@npm:^3.4.0":
+"@cloudflare/workers-types@npm:^3.4.0":
   version: 3.4.0
   resolution: "@cloudflare/workers-types@npm:3.4.0"
   checksum: 03294ec6ce0494dc0e8a07fa9c2eb1edee674538d8bbf2bf21bbb4e05b23759e8d12bab6e938f558f0ea8d258b9f348145131b2a33816a6a62429f69bb927070
@@ -5450,7 +5450,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-dom@npm:^17.0.11, @types/react-dom@npm:^17.0.9":
+"@types/react-dom@npm:^17.0.11":
   version: 17.0.11
   resolution: "@types/react-dom@npm:17.0.11"
   dependencies:
@@ -5468,7 +5468,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:*, @types/react@npm:>=16, @types/react@npm:^17.0.24, @types/react@npm:^17.0.39":
+"@types/react@npm:*, @types/react@npm:>=16, @types/react@npm:^17.0.39":
   version: 17.0.39
   resolution: "@types/react@npm:17.0.39"
   dependencies:
@@ -23998,20 +23998,20 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "storefront@workspace:packages/storefront"
   dependencies:
-    "@cloudflare/workers-types": ^3.2.0
+    "@cloudflare/workers-types": ^3.4.0
     "@medusajs/medusa-js": ^1.0.12
     "@remix-run/cloudflare-pages": ^1.2.1
     "@remix-run/dev": ^1.2.1
     "@remix-run/react": ^1.2.1
-    "@types/react": ^17.0.24
-    "@types/react-dom": ^17.0.9
+    "@types/react": ^17.0.39
+    "@types/react-dom": ^17.0.11
     "@woodshop/components": "workspace:^"
     "@woodshop/icons": "workspace:^"
     cross-env: ^7.0.3
     react: ^17.0.2
     react-dom: ^17.0.2
     remix: ^1.2.1
-    typescript: ^4.1.2
+    typescript: ^4.5.5
     wrangler: beta
   languageName: unknown
   linkType: soft
@@ -25369,7 +25369,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:*, typescript@npm:^4.1.2, typescript@npm:^4.5.5":
+"typescript@npm:*, typescript@npm:^4.5.5":
   version: 4.5.5
   resolution: "typescript@npm:4.5.5"
   bin:
@@ -25379,7 +25379,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@*#~builtin<compat/typescript>, typescript@patch:typescript@^4.1.2#~builtin<compat/typescript>, typescript@patch:typescript@^4.5.5#~builtin<compat/typescript>":
+"typescript@patch:typescript@*#~builtin<compat/typescript>, typescript@patch:typescript@^4.5.5#~builtin<compat/typescript>":
   version: 4.5.5
   resolution: "typescript@patch:typescript@npm%3A4.5.5#~builtin<compat/typescript>::version=4.5.5&hash=493e53"
   bin:
