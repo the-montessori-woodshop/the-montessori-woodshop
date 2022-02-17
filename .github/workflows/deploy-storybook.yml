@@ -3,6 +3,7 @@ name: Storybook Deploy
 on:
   push:
     branches:
+      - main
       - feat/drawers
   workflow_dispatch:
 
