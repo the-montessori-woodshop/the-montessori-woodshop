@@ -25,7 +25,7 @@ export const links: LinksFunction = () => {
 };
 
 export const meta: MetaFunction = () => {
-  return { title: "New Remix App" };
+  return { title: "The Montessori Woodshop" };
 };
 
 export default function App() {

@@ -1,6 +1,16 @@
 import { Button, TypographyHeading } from "@woodshop/components";
-import { medusaClient } from "../../clients/medusa-client";
-import { type LoaderFunction, useLoaderData, Outlet } from "remix";
+import {
+  type LoaderFunction,
+  useLoaderData,
+  Outlet,
+  MetaFunction,
+} from "remix";
+import { medusaClient } from "~/clients/medusa-client";
+import { getPageTitle } from "~/utils/getPageTitle";
+
+export const meta: MetaFunction = () => {
+  return { title: getPageTitle("Mission") };
+};
 
 export let loader: LoaderFunction = async () => {
   try {

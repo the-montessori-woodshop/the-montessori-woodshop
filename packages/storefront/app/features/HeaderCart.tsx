@@ -11,21 +11,23 @@ import { ShoppingCart } from "@woodshop/icons";
 import { FC, memo } from "react";
 
 export const HeaderCart: FC = memo(function HeaderCart() {
-  const { dialogRef, handleClose, handleOpen } = useDialogRef();
+  const { dialogRef, handleOpen } = useDialogRef();
 
   return (
-    <NavbarAction onClick={handleOpen}>
-      <Icon cxTitle="shopping-cart">
-        <ShoppingCart />
-      </Icon>
+    <>
+      <NavbarAction onClick={handleOpen}>
+        <Icon cxTitle="shopping-cart">
+          <ShoppingCart />
+        </Icon>
+      </NavbarAction>
       <Drawer ref={dialogRef} openWidth={520}>
-        <DrawerHeader onClose={handleClose}>
+        <DrawerHeader>
           <TypographyHeading cxVariant="h2" cxNode="h2">
             Cart
           </TypographyHeading>
         </DrawerHeader>
         <DrawerBody>this be the body</DrawerBody>
       </Drawer>
-    </NavbarAction>
+    </>
   );
 });

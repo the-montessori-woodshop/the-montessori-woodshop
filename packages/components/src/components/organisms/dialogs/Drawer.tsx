@@ -28,6 +28,9 @@ const DrawerContent: FC<DrawerProps> = ({ children, openWidth = 300 }) => {
             right: device === "desktop" ? `-${openWidth}px` : "-100%"
           }}
           animate={{ opacity: 1, right: 0 }}
+          transition={{
+            type: "keyframes"
+          }}
           exit={{
             opacity: 0,
             right: device === "desktop" ? `-${openWidth}px` : "-100%"
