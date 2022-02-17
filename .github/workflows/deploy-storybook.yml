@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - feat/drawers
+  workflow_dispatch:
 
 jobs:
   deploy:
