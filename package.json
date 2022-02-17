@@ -39,7 +39,7 @@
     "node": "17.3.0"
   },
   "resolutions": {
-    "axios": "file:./packages/axios-fetch",
+    "axios": "workspace:./packages/axios-fetch",
     "postcss": "8"
   },
   "dependencies": {
