@@ -12,10 +12,12 @@
     "build:npm": "npm run bundle && npm run types & npm run theme:build",
     "dev": "yarn bundle --watch & yarn theme:build --watch & tsc --watch",
     "storybook": "start-storybook -p 6006 & yarn theme:build --watch",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "serve": "wrangler dev"
   },
   "devDependencies": {
     "@babel/core": "^7.17.2",
+    "@cloudflare/wrangler": "^1.19.8",
     "@mdx-js/react": "^2.0.0",
     "@storybook/addon-actions": "^6.4.19",
     "@storybook/addon-docs": "^6.4.19",
@@ -45,13 +47,14 @@
     "webpack": "^5.68.0"
   },
   "peerDependencies": {
-    "@woodshop/icons": "workspace:^",
+    "@woodshop/icons": "^1.0.0",
     "clsx": "^1.1.1",
+    "framer-motion": "^6.2.6",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
   "dependencies": {
-    "@woodshop/icons": "workspace:^",
+    "@woodshop/icons": "^1.0.0",
     "framer-motion": "^6.2.6",
     "react-scripts": "^5.0.0"
   },

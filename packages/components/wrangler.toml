@@ -1,0 +1,10 @@
+account_id = "68fa4421d84bfcddbd9311a7d57aa419"
+compatibility_date = "2022-02-17"
+compatibility_flags = []
+name = "site-worker"
+route = ''
+site = {bucket = "./storybook-static", entry-point = "workers-site"}
+type = "webpack"
+usage_model = ''
+workers_dev = true
+zone_id = 'ebeb335a5410105683a9e7bc11251d1c'

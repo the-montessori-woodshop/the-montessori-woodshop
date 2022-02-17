@@ -1674,6 +1674,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@cloudflare/kv-asset-handler@npm:~0.1.2":
+  version: 0.1.3
+  resolution: "@cloudflare/kv-asset-handler@npm:0.1.3"
+  dependencies:
+    mime: ^2.5.2
+  checksum: fbc23494baed3765f8517ae232be4612bf4bc13b412854a320000b98715020a78b32e4828f74fc80b6d400d2b7e7a833ffa0dd63a7354b94b7b738323c085356
+  languageName: node
+  linkType: hard
+
 "@cloudflare/workers-types@npm:^3.3.1":
   version: 3.3.1
   resolution: "@cloudflare/workers-types@npm:3.3.1"
@@ -6123,6 +6132,7 @@ __metadata:
   resolution: "@woodshop/components@workspace:packages/components"
   dependencies:
     "@babel/core": ^7.17.2
+    "@cloudflare/wrangler": ^1.19.8
     "@mdx-js/react": ^2.0.0
     "@storybook/addon-actions": ^6.4.19
     "@storybook/addon-docs": ^6.4.19
@@ -6138,7 +6148,7 @@ __metadata:
     "@typescript-eslint/eslint-plugin": ^5.11.0
     "@typescript-eslint/parser": ^5.11.0
     "@woodshop/builder": "file:../builder"
-    "@woodshop/icons": "workspace:^"
+    "@woodshop/icons": ^1.0.0
     babel-loader: ^8.2.3
     clsx: ^1.1.1
     eslint: 8.9.0
@@ -6154,14 +6164,15 @@ __metadata:
     typescript: ^4.5.5
     webpack: ^5.68.0
   peerDependencies:
-    "@woodshop/icons": "workspace:^"
+    "@woodshop/icons": ^1.0.0
     clsx: ^1.1.1
+    framer-motion: ^6.2.6
     react: ^17.0.2
     react-dom: ^17.0.2
   languageName: unknown
   linkType: soft
 
-"@woodshop/icons@^1.0.0, @woodshop/icons@workspace:^, @woodshop/icons@workspace:packages/icons":
+"@woodshop/icons@^1.0.0, @woodshop/icons@workspace:packages/icons":
   version: 0.0.0-use.local
   resolution: "@woodshop/icons@workspace:packages/icons"
   dependencies:
@@ -17856,7 +17867,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mime@npm:^2.4.4":
+"mime@npm:^2.4.4, mime@npm:^2.5.2":
   version: 2.6.0
   resolution: "mime@npm:2.6.0"
   bin:
@@ -26934,6 +26945,14 @@ __metadata:
   checksum: 8f8607506172f44c05490f3ccf13e5c1f430eeb9b6116a405919c186b8b17add13bbb22467a0dbcd18ec7fcb080709a15738182e0003c5fbe2144721ea00f357
   languageName: node
   linkType: hard
+
+"worker@workspace:packages/components/workers-site":
+  version: 0.0.0-use.local
+  resolution: "worker@workspace:packages/components/workers-site"
+  dependencies:
+    "@cloudflare/kv-asset-handler": ~0.1.2
+  languageName: unknown
+  linkType: soft
 
 "wrangler@npm:pages":
   version: 0.0.0-8ab7d2e
