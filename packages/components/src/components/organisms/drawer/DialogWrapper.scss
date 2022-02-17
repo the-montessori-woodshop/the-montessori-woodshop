@@ -1,0 +1,9 @@
+@import "../../../styles/index.scss";
+
+@include makeClass("r3p75np") {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  background: var(--color-white);
+  box-shadow: -6px 0 8px 5px rgba(0, 0, 0, 0.34);
+}

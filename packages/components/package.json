@@ -52,6 +52,7 @@
   },
   "dependencies": {
     "@woodshop/icons": "workspace:^",
+    "framer-motion": "^6.2.6",
     "react-scripts": "^5.0.0"
   },
   "eslintConfig": {

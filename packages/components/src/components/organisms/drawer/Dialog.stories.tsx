@@ -1,19 +1,21 @@
 import React from "react";
 
-import { Dialog, useDialogRef } from "./Dialog";
+import { Dialog } from "./Dialog";
+import { useDialogRef } from "./dialog.useDialogRef";
 
 export default {
-  title: "Organisms / Dialog"
+  title: "Organisms / Dialogs / Controls"
 };
 
 export const Base = () => {
-  const { dialogRef, open, close, toggle } = useDialogRef();
+  const { dialogRef, handleOpen, handleClose, handleToggle } = useDialogRef();
 
   return (
     <>
-      <button onClick={open}>open dialog</button>
-      <button onClick={close}>close dialog</button>
-      <button onClick={toggle}>toggle dialog</button>
+      <button onClick={handleOpen}>open dialog</button>
+      <button onClick={handleClose}>close dialog</button>
+      <button onClick={handleToggle}>toggle dialog</button>
+
       <Dialog ref={dialogRef}>testing...</Dialog>
     </>
   );

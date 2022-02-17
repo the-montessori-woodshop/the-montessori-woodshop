@@ -1,0 +1,11 @@
+@import "../../../styles/index.scss";
+
+@include makeClass("bfIid") {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0 makeRem(32);
+
+  @include respond("tablet") {
+    padding: 0 makeRem(60);
+  }
+}
