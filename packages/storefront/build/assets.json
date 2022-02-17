@@ -1,0 +1,141 @@
+{
+  "version": "483dc6f8",
+  "entry": {
+    "module": "/build/entry.client-I77GMSWP.js",
+    "imports": [
+      "/build/_shared/chunk-W7DOJYP4.js",
+      "/build/_shared/chunk-XYHJGELG.js",
+      "/build/_shared/chunk-RIESJ4IZ.js"
+    ]
+  },
+  "routes": {
+    "root": {
+      "id": "root",
+      "path": "",
+      "module": "/build/root-RUHU6LI5.js",
+      "imports": [
+        "/build/_shared/chunk-WR6BHYUO.js"
+      ],
+      "hasAction": false,
+      "hasLoader": false,
+      "hasCatchBoundary": false,
+      "hasErrorBoundary": false
+    },
+    "routes/blog": {
+      "id": "routes/blog",
+      "parentId": "root",
+      "path": "blog",
+      "module": "/build/routes/blog-NLQST4F5.js",
+      "imports": [
+        "/build/_shared/chunk-PCND6F3M.js"
+      ],
+      "hasAction": false,
+      "hasLoader": false,
+      "hasCatchBoundary": false,
+      "hasErrorBoundary": false
+    },
+    "routes/blog/index": {
+      "id": "routes/blog/index",
+      "parentId": "routes/blog",
+      "index": true,
+      "module": "/build/routes/blog/index-S66PVFK6.js",
+      "hasAction": false,
+      "hasLoader": false,
+      "hasCatchBoundary": false,
+      "hasErrorBoundary": false
+    },
+    "routes/checkout": {
+      "id": "routes/checkout",
+      "parentId": "root",
+      "path": "checkout",
+      "module": "/build/routes/checkout-QVD7GPEE.js",
+      "imports": [
+        "/build/_shared/chunk-PCND6F3M.js"
+      ],
+      "hasAction": false,
+      "hasLoader": false,
+      "hasCatchBoundary": false,
+      "hasErrorBoundary": false
+    },
+    "routes/checkout/index": {
+      "id": "routes/checkout/index",
+      "parentId": "routes/checkout",
+      "index": true,
+      "module": "/build/routes/checkout/index-OMRJ6SNA.js",
+      "hasAction": false,
+      "hasLoader": false,
+      "hasCatchBoundary": false,
+      "hasErrorBoundary": false
+    },
+    "routes/index": {
+      "id": "routes/index",
+      "parentId": "root",
+      "index": true,
+      "module": "/build/routes/index-CEF7ZLIK.js",
+      "imports": [
+        "/build/_shared/chunk-PCND6F3M.js"
+      ],
+      "hasAction": false,
+      "hasLoader": true,
+      "hasCatchBoundary": false,
+      "hasErrorBoundary": false
+    },
+    "routes/mission": {
+      "id": "routes/mission",
+      "parentId": "root",
+      "path": "mission",
+      "module": "/build/routes/mission-A72ZMUNO.js",
+      "imports": [
+        "/build/_shared/chunk-PCND6F3M.js"
+      ],
+      "hasAction": false,
+      "hasLoader": false,
+      "hasCatchBoundary": false,
+      "hasErrorBoundary": false
+    },
+    "routes/mission/index": {
+      "id": "routes/mission/index",
+      "parentId": "routes/mission",
+      "index": true,
+      "module": "/build/routes/mission/index-VMSE3YQ4.js",
+      "hasAction": false,
+      "hasLoader": false,
+      "hasCatchBoundary": false,
+      "hasErrorBoundary": false
+    },
+    "routes/shop": {
+      "id": "routes/shop",
+      "parentId": "root",
+      "path": "shop",
+      "module": "/build/routes/shop-RWN6Z5US.js",
+      "imports": [
+        "/build/_shared/chunk-PCND6F3M.js"
+      ],
+      "hasAction": false,
+      "hasLoader": false,
+      "hasCatchBoundary": false,
+      "hasErrorBoundary": false
+    },
+    "routes/shop/$productId": {
+      "id": "routes/shop/$productId",
+      "parentId": "routes/shop",
+      "path": ":productId",
+      "module": "/build/routes/shop/$productId-2NC5PSNS.js",
+      "hasAction": false,
+      "hasLoader": false,
+      "hasCatchBoundary": false,
+      "hasErrorBoundary": false
+    },
+    "routes/shop/index": {
+      "id": "routes/shop/index",
+      "parentId": "routes/shop",
+      "index": true,
+      "module": "/build/routes/shop/index-NTYFUYPF.js",
+      "hasAction": false,
+      "hasLoader": false,
+      "hasCatchBoundary": false,
+      "hasErrorBoundary": false
+    }
+  },
+  "url": "/build/manifest-483DC6F8.js"
+}
