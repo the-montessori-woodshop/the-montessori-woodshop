@@ -4,6 +4,7 @@
   flex: 1;
   overflow-y: auto;
   padding: 0 makeRem(32);
+  z-index: 1000000;
 
   @include respond("tablet") {
     padding: 0 makeRem(60);

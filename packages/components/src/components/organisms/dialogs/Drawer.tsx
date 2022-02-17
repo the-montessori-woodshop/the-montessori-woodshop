@@ -1,7 +1,7 @@
 import "./Drawer.scss";
 
 import { AnimatePresence, motion } from "framer-motion";
-import React, { FC, ReactNode, forwardRef } from "react";
+import React, { FC, ReactNode, forwardRef, memo } from "react";
 
 import { makeClass } from "../../../theme";
 import { useDevice } from "../../utils/useDevice";
@@ -19,7 +19,6 @@ const DrawerContent: FC<DrawerProps> = ({ children, openWidth = 300 }) => {
     <AnimatePresence>
       {isOpen && (
         <motion.div
-          key="drawer"
           className={makeClass(undefined, "r3p75np")}
           style={{
             width: device === "desktop" ? `${openWidth}px` : "100%"
@@ -40,7 +39,7 @@ const DrawerContent: FC<DrawerProps> = ({ children, openWidth = 300 }) => {
     </AnimatePresence>
   );
 };
-export const Drawer = forwardRef<DialogRef, DrawerProps>(function Drawer(
+export const DrawerFC = forwardRef<DialogRef, DrawerProps>(function DrawerFC(
   { children, ...props },
   ref
 ) {
@@ -50,3 +49,5 @@ export const Drawer = forwardRef<DialogRef, DrawerProps>(function Drawer(
     </Dialog>
   );
 });
+
+export const Drawer = memo(DrawerFC);

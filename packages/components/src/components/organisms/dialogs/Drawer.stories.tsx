@@ -12,7 +12,7 @@ export default {
 };
 
 export const Base = () => {
-  const { dialogRef, handleClose, handleOpen } = useDialogRef();
+  const { dialogRef, handleOpen } = useDialogRef();
 
   return (
     <>
@@ -21,7 +21,7 @@ export const Base = () => {
       </Button>
 
       <Drawer ref={dialogRef} openWidth={500}>
-        <DrawerHeader onClose={handleClose}>
+        <DrawerHeader>
           <TypographyHeading cxVariant="h2" cxNode="h2">
             Title
           </TypographyHeading>

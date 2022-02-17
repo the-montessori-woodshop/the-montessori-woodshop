@@ -1,6 +1,5 @@
 import "./Dialog.scss";
 
-import { AnimatePresence, motion } from "framer-motion";
 import React, {
   ReactNode,
   forwardRef,
@@ -13,7 +12,7 @@ import React, {
 } from "react";
 import ReactDOM from "react-dom";
 
-import { makeClass } from "../../../theme";
+import { DialogBackground } from "./DialogBackground";
 
 const dialogId = "dialog-portal";
 
@@ -26,6 +25,8 @@ export type DialogProps = { initIsOpen?: boolean; children: ReactNode };
 
 type DialogContextType = {
   isOpen: boolean;
+  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  close: () => void;
 };
 
 const DialogContext = React.createContext<DialogContextType | null>(null);
@@ -74,50 +75,35 @@ export const Dialog = forwardRef<DialogRef, DialogProps>(function Dialog(
     []
   );
 
-  useEffect(() => {
-    if (isOpen) {
-      document.body?.classList.add("dialog-disable");
-    } else {
-      document.body?.classList.remove("dialog-disable");
-    }
-  }, [isOpen]);
+  const close = useCallback(() => setIsOpen(false), []);
 
-  const handleEscape = useCallback(
-    (event: KeyboardEvent) => {
+  useEffect(() => {
+    function handleEscape(event: KeyboardEvent) {
       if (event.key === "Escape") {
         setIsOpen(false);
       }
-    },
-    [setIsOpen]
-  );
+    }
 
-  useEffect(() => {
-    if (isOpen) document.addEventListener("keydown", handleEscape, false);
+    if (isOpen) {
+      document.body?.classList.add("dialog-disable");
+      document.addEventListener("keydown", handleEscape, false);
+    } else {
+      document.body?.classList.remove("dialog-disable");
+    }
+
     return () => {
       document.removeEventListener("keydown", handleEscape, false);
     };
-  }, [handleEscape, isOpen]);
+  }, [isOpen]);
 
   if (!dialogContainerRef.current) {
     return null;
   }
 
   return ReactDOM.createPortal(
-    <DialogContext.Provider value={{ isOpen }}>
-      <AnimatePresence>
-        <motion.div
-          key="background"
-          className={makeClass(undefined, "Vmhmek", {
-            active: isOpen
-          })}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-        >
-          {children}
-        </motion.div>
-        {children}
-      </AnimatePresence>
+    <DialogContext.Provider value={{ isOpen, setIsOpen, close }}>
+      <DialogBackground />
+      {children}
     </DialogContext.Provider>,
     dialogContainerRef.current
   );
