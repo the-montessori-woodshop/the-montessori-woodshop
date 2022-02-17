@@ -12,18 +12,19 @@ export const meta: MetaFunction = () => {
   return { title: getPageTitle("Mission") };
 };
 
-export let loader: LoaderFunction = async () => {
-  try {
-    const { response, ...data } = await medusaClient.products.list();
-    return data;
-  } catch (error) {
-    console.log("ERROR", error);
-    throw new Error(error as string);
-  }
-};
+// export let loader: LoaderFunction = async () => {
+//   try {
+//     const { response, ...data } = await medusaClient.products.list();
+//     return data;
+//   } catch (error) {
+//     console.log("ERROR", error);
+//     throw new Error(error as string);
+//   }
+// };
 
 export default function Index() {
-  const data = useLoaderData();
+  // const data = useLoaderData();
+  const data = {};
 
   console.log(data);
 
