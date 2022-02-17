@@ -14,7 +14,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Install
-        run: yarn install
+        run: yarn install --immutable
       - name: Build
         run: yarn components-build
       - name: Deploy
