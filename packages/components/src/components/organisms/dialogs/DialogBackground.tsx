@@ -1,17 +1,19 @@
+import "./DialogBackground.scss";
+
 import { AnimatePresence, motion } from "framer-motion";
 import React, { FC } from "react";
 
 import { makeClass } from "../../../theme";
-import { useDialogContext } from "./Dialog";
+import { DialogContextType } from "./Dialog";
 
-export const DialogBackground: FC = () => {
-  const { isOpen, setIsOpen } = useDialogContext();
-
+export const DialogBackground: FC<
+  Pick<DialogContextType, "isOpen" | "close">
+> = ({ isOpen, close }) => {
   return (
     <AnimatePresence>
       {isOpen && (
         <motion.div
-          onClick={() => setIsOpen(false)}
+          onClick={close}
           className={makeClass(undefined, "Vmhmek", {
             active: isOpen
           })}

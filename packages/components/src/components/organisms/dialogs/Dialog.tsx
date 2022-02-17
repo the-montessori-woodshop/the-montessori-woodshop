@@ -1,5 +1,3 @@
-import "./Dialog.scss";
-
 import React, {
   ReactNode,
   forwardRef,
@@ -23,7 +21,7 @@ export type DialogRef = {
 };
 export type DialogProps = { initIsOpen?: boolean; children: ReactNode };
 
-type DialogContextType = {
+export type DialogContextType = {
   isOpen: boolean;
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
   close: () => void;
@@ -102,7 +100,7 @@ export const Dialog = forwardRef<DialogRef, DialogProps>(function Dialog(
 
   return ReactDOM.createPortal(
     <DialogContext.Provider value={{ isOpen, setIsOpen, close }}>
-      <DialogBackground />
+      <DialogBackground isOpen={isOpen} close={close} />
       {children}
     </DialogContext.Provider>,
     dialogContainerRef.current
