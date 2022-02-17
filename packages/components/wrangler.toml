@@ -10,4 +10,4 @@ site = { bucket = "./storybook-static", entry-point = "workers-site" }
 
 [env.production]
 workers_dev = false
-route = "*docs.themontessoriwoodshop.com/"
+route = "*docs.themontessoriwoodshop.com*"
