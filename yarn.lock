@@ -7116,10 +7116,10 @@ __metadata:
 
 "axios@file:./packages/axios-fetch::locator=the-montessori-woodshop%40workspace%3A.":
   version: 0.24.0
-  resolution: "axios@file:./packages/axios-fetch#./packages/axios-fetch::hash=52f62c&locator=the-montessori-woodshop%40workspace%3A."
+  resolution: "axios@file:./packages/axios-fetch#./packages/axios-fetch::hash=7cd3ca&locator=the-montessori-woodshop%40workspace%3A."
   dependencies:
     follow-redirects: ^1.14.8
-  checksum: db652582c89bda6cf571c42036a4b72ad2f076745b82766396ae49e8b34c927ae2e839fffa215eaf28f4ad0dbd0a8c426d69c3b3fe34243973d8f28b12dd9aca
+  checksum: b6650531d08515a6baec362f784edc6def6480f7e9e9230374a1a4b034f9e7daeb777cc4c6ea0c955b78ab8fbd93be0ac3b5fd902ff8941df5752b7be072e519
   languageName: node
   linkType: hard
 
