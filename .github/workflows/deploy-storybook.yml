@@ -1,0 +1,19 @@
+name: Storybook Deploy
+
+on:
+  push:
+    branches:
+      - feat/drawers
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    name: Deploy
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build dependencies
+        run: components-build
+      - name: Deploy Storybook to CF Workers
+        uses: cloudflare/wrangler-action@1.3.0
+        with:
+          apiToken: ${{ secrets.CF_API_TOKEN }}

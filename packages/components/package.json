@@ -13,7 +13,8 @@
     "dev": "yarn bundle --watch & yarn theme:build --watch & tsc --watch",
     "storybook": "start-storybook -p 6006 & yarn theme:build --watch",
     "build-storybook": "build-storybook",
-    "serve": "wrangler dev"
+    "serve-storybook": "wrangler dev",
+    "deploy-storybook": "wrangler publish"
   },
   "devDependencies": {
     "@babel/core": "^7.17.2",
