@@ -3,7 +3,7 @@ import { Outlet } from "remix";
 export default function BlogIndex() {
   return (
     <div>
-      BlogIndex
+      Sign In
       <Outlet />
     </div>
   );

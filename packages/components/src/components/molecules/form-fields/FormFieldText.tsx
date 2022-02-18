@@ -8,7 +8,7 @@ import {
   InputWrapper
 } from "../../atoms";
 
-export type FormFieldTextProps = Omit<InputTextProps, "id"> & {
+export type FormFieldTextProps = Omit<InputTextProps, "id" | "css"> & {
   id: string;
   label?: string;
   error?: string;
