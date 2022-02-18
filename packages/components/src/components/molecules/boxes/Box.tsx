@@ -17,7 +17,7 @@ export const Box = forwardRef<HTMLDivElement, BoxProps>(function Box(
   ref
 ) {
   return (
-    <section>
+    <div>
       {useMemo(
         () =>
           cxTitle && (
@@ -49,6 +49,6 @@ export const Box = forwardRef<HTMLDivElement, BoxProps>(function Box(
       >
         {children}
       </div>
-    </section>
+    </div>
   );
 });

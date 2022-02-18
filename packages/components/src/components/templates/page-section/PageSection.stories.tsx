@@ -29,6 +29,25 @@ export const SinglePane = () => {
   );
 };
 
+export const SinglePaneWBgMain = () => {
+  return (
+    <PageSection cxBackground="main">
+      <PageSectionPane>
+        <PageSectionPaneTitle>test title</PageSectionPaneTitle>
+        <PageSectionPaneContent>
+          <TypographyCopy>
+            Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum
+            nibh, ut fermentum massa justo sit amet risus. Sed posuere
+            consectetur est at lobortis. Nullam quis risus eget urna mollis
+            ornare vel eu leo. Duis mollis, est non commodo luctus, nisi erat
+            porttitor ligula, eget lacinia odio sem nec elit.
+          </TypographyCopy>
+        </PageSectionPaneContent>
+      </PageSectionPane>
+    </PageSection>
+  );
+};
+
 export const SplitPane = () => {
   return (
     <PageSection cxLayout="split-pane">

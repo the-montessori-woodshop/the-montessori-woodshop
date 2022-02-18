@@ -1,1 +1,1 @@
-export * from "./BackgroundFeature";
+export * from "./Background";
