@@ -11,6 +11,7 @@ import { ShoppingCart, UserCircle } from "@woodshop/icons";
 import { NavbarLink } from "~/components/NavbarLink";
 import { FC, memo } from "react";
 
+import { HeaderAccount } from "./HeaderAccount";
 import { HeaderCart } from "./HeaderCart";
 
 export const Header: FC = memo(function Header() {
@@ -38,11 +39,7 @@ export const Header: FC = memo(function Header() {
         </NavbarSection>
         <NavbarSection>
           <HeaderCart />
-          <NavbarAction>
-            <Icon cxTitle="account">
-              <UserCircle />
-            </Icon>
-          </NavbarAction>
+          <HeaderAccount />
         </NavbarSection>
       </Navbar>
     </header>
