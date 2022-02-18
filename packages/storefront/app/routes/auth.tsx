@@ -1,3 +1,4 @@
+import { RouteWrapper } from "~/components/RouteWrapper";
 import { getPageTitle } from "~/utils/getPageTitle";
 import { MetaFunction, Outlet } from "remix";
 
@@ -7,9 +8,9 @@ export const meta: MetaFunction = () => {
 
 export default function AuthRoute() {
   return (
-    <div>
+    <RouteWrapper>
       AuthRoute
       <Outlet />
-    </div>
+    </RouteWrapper>
   );
 }

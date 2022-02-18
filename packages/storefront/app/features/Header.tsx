@@ -1,13 +1,10 @@
 import {
-  Icon,
   Navbar,
-  NavbarAction,
   NavbarLinkList,
   NavbarLinkListItem,
   NavbarLogo,
   NavbarSection,
 } from "@woodshop/components";
-import { ShoppingCart, UserCircle } from "@woodshop/icons";
 import { NavbarLink } from "~/components/NavbarLink";
 import { FC, memo } from "react";
 
