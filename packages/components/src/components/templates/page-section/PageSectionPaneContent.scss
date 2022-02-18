@@ -1,0 +1,7 @@
+@import "../../../styles/index.scss";
+
+@include makeClass("CJOpU") {
+  & * {
+    margin: inherit;
+  }
+}

@@ -1,0 +1,32 @@
+@import "../../../styles/index.scss";
+
+@include makeClass("AUh4RFk") {
+  max-width: makeRem(1140);
+  padding: makeRem(24);
+  margin-left: auto;
+  margin-right: auto;
+
+  &.split {
+    & > * {
+      &:last-child {
+        margin-top: makeRem(84);
+      }
+    }
+  }
+
+  @include respond("desktop") {
+    padding: makeRem(84);
+
+    &.split {
+      display: flex;
+      justify-content: center;
+
+      & > * {
+        &:last-child {
+          margin-top: 0;
+          margin-left: makeRem(84);
+        }
+      }
+    }
+  }
+}

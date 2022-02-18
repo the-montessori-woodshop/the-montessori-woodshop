@@ -1,4 +1,12 @@
-import { Button, TypographyHeading } from "@woodshop/components";
+import {
+  Button,
+  PageSection,
+  PageSectionPane,
+  PageSectionPaneContent,
+  PageSectionPaneTitle,
+  TypographyCopy,
+  TypographyHeading,
+} from "@woodshop/components";
 import {
   type LoaderFunction,
   useLoaderData,
@@ -31,39 +39,68 @@ export default function Index() {
   return (
     <>
       <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.4" }}>
-        <TypographyHeading cxNode="h1" cxVariant="h2">
-          Welcome to Remix
-        </TypographyHeading>
-        <pre>{JSON.stringify(data, null, 4)}</pre>
-        <Button cxVariant="contained" cxColor="primary">
-          hello
-        </Button>
-
-        <ul>
-          <li>
-            <a
-              target="_blank"
-              href="https://remix.run/tutorials/blog"
-              rel="noreferrer"
-            >
-              15m Quickstart Blog Tutorial
-            </a>
-          </li>
-          <li>
-            <a
-              target="_blank"
-              href="https://remix.run/tutorials/jokes"
-              rel="noreferrer"
-            >
-              Deep Dive Jokes App Tutorial
-            </a>
-          </li>
-          <li>
-            <a target="_blank" href="https://remix.run/docs" rel="noreferrer">
-              Remix Docs
-            </a>
-          </li>
-        </ul>
+        <PageSection cxLayout="split-pane">
+          <PageSectionPane cxAlign="left">
+            <PageSectionPaneTitle>
+              Always handmade montessori staples that will last for generations.
+            </PageSectionPaneTitle>
+            <PageSectionPaneContent>
+              <TypographyCopy cxColor="textSecondary">
+                Take home an elegant and functional montessori piece that will
+                last as long as your child does
+              </TypographyCopy>
+            </PageSectionPaneContent>
+          </PageSectionPane>
+          <PageSectionPane>img here</PageSectionPane>
+        </PageSection>
+        <PageSection>
+          <PageSectionPane>
+            <PageSectionPaneTitle>
+              Join our mailing list for 10% off!
+            </PageSectionPaneTitle>
+            <PageSectionPaneContent>
+              <TypographyCopy cxColor="textSecondary">
+                Periodically, we’ll be releasing new products and updating you
+                on activities related to the business. Join today to receive 10%
+                off of your first purchase at the Montessori Woodshop!
+              </TypographyCopy>
+            </PageSectionPaneContent>
+          </PageSectionPane>
+        </PageSection>
+        <PageSection>
+          <PageSectionPane>
+            <PageSectionPaneTitle>The Mission</PageSectionPaneTitle>
+            <PageSectionPaneContent>
+              <TypographyCopy cxColor="textSecondary">
+                Read about our mission and our commitment to making generational
+                pieces
+              </TypographyCopy>
+            </PageSectionPaneContent>
+          </PageSectionPane>
+        </PageSection>
+        <PageSection cxLayout="split-pane">
+          <PageSectionPane>test</PageSectionPane>
+          <PageSectionPane cxAlign="left">
+            <PageSectionPaneTitle>The Nova Stool</PageSectionPaneTitle>
+            <PageSectionPaneContent>
+              <TypographyCopy cxColor="textSecondary" cxNode="p">
+                Named after my daughter, this stool merges function and style
+                into one uniuqe piece that is designed to last everykind of use
+                every day.
+              </TypographyCopy>
+              <TypographyCopy
+                cxColor="textSecondary"
+                cxNode="p"
+                style={{
+                  marginTop: "1rem",
+                }}
+              >
+                The design calls for stability without sacrificing the asthetic
+                that is sure to impress your child and make using it fun.
+              </TypographyCopy>
+            </PageSectionPaneContent>
+          </PageSectionPane>
+        </PageSection>
         <Outlet />
       </div>
     </>
