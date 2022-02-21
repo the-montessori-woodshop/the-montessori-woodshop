@@ -15,9 +15,12 @@ import {
 } from "remix";
 import type { MetaFunction } from "remix";
 
+import rootUrl from "./root.css";
+
 export const links: LinksFunction = () => {
   return [
     { rel: "stylesheet", href: stylesUrl },
+    { rel: "stylesheet", href: rootUrl },
     { rel: "stylesheet", href: themeUrl },
     { rel: "stylesheet", href: fontBitterUrl },
     { rel: "stylesheet", href: fontOpenSansUrl },
@@ -54,6 +57,7 @@ export default function App() {
         <link rel="manifest" href="/site.webmanifest" />
         <Meta />
         <Links />
+        {typeof document === "undefined" ? "__STYLES__" : null}
       </head>
       <body>
         <Header />

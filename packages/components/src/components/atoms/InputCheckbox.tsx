@@ -6,7 +6,7 @@ import React, { forwardRef, memo } from "react";
 import { makeClass } from "../../theme";
 import { Icon } from "./Icon";
 
-export type InputCheckboxProps = JSX.IntrinsicElements["input"];
+export type InputCheckboxProps = Omit<JSX.IntrinsicElements["input"], "css">;
 
 export const InputCheckboxFC = forwardRef<HTMLInputElement, InputCheckboxProps>(
   function InputCheckboxFC({ className, children, ...restProps }, ref) {

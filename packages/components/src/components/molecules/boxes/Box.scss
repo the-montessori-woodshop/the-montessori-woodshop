@@ -1,0 +1,16 @@
+@import "../../../styles/index.scss";
+
+// container
+@include makeClass("iZCGf") {
+  margin-top: makeRem(48);
+}
+
+@include makeClass("b3uNxd") {
+  padding: makeRem(24);
+  border-radius: makeRem(2);
+  border: makeRem(1) solid var(--color-grey3);
+
+  &.hasTitles {
+    margin-top: makeRem(16);
+  }
+}

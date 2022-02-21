@@ -6,11 +6,14 @@ import React, { forwardRef, memo, useMemo } from "react";
 import { makeClass } from "../../theme";
 import { Icon } from "./Icon";
 
-export type InputTextProps = Omit<JSX.IntrinsicElements["input"], "type"> & {
+export type InputTextProps = Omit<
+  JSX.IntrinsicElements["input"],
+  "type" | "css"
+> & {
   cxSize?: "default" | "small";
   cxAlignment?: "left" | "center";
   cxError?: boolean;
-  type?: "text" | "number" | "search";
+  type?: "text" | "number" | "search" | "email" | "password";
   StartIcon?: SVGIconComponent;
   EndIcon?: SVGIconComponent;
 };
