@@ -1,3 +1,5 @@
+@import "../styles/index.scss";
+
 :root {
   // Font & Typography
   --font-size: 16px;
@@ -25,7 +27,7 @@
   --color-textPrimary: var(--color-black);
   --color-textSecondary: var(--color-grey5);
 
-  --container-width-desktop: ;
+  --navbar-height: #{makeRem(100)};
 }
 
 html {

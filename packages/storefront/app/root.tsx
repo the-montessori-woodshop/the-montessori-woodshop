@@ -15,9 +15,12 @@ import {
 } from "remix";
 import type { MetaFunction } from "remix";
 
+import rootUrl from "./root.css";
+
 export const links: LinksFunction = () => {
   return [
     { rel: "stylesheet", href: stylesUrl },
+    { rel: "stylesheet", href: rootUrl },
     { rel: "stylesheet", href: themeUrl },
     { rel: "stylesheet", href: fontBitterUrl },
     { rel: "stylesheet", href: fontOpenSansUrl },

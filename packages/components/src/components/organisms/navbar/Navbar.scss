@@ -4,6 +4,6 @@
   padding-left: makeRem(24);
   padding-right: makeRem(24);
   display: flex;
-  height: makeRem(100);
+  height: var(--navbar-height);
   align-items: center;
 }
