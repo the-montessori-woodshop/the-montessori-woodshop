@@ -17,7 +17,7 @@ export const Box = forwardRef<HTMLDivElement, BoxProps>(function Box(
   ref
 ) {
   return (
-    <div>
+    <div className={makeClass(undefined, "iZCGf")}>
       {useMemo(
         () =>
           cxTitle && (

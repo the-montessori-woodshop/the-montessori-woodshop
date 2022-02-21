@@ -23,7 +23,8 @@
     position: relative;
     height: makeRem(24);
     min-width: makeRem(24);
-    margin-right: makeRem(16);
+    margin-right: makeRem(16) !important;
+    margin-left: 0 !important;
     display: flex;
     justify-content: center;
     align-items: center;

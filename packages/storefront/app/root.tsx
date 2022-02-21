@@ -57,6 +57,7 @@ export default function App() {
         <link rel="manifest" href="/site.webmanifest" />
         <Meta />
         <Links />
+        {typeof document === "undefined" ? "__STYLES__" : null}
       </head>
       <body>
         <Header />

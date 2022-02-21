@@ -1,18 +1,18 @@
 import { forwardRef } from "react";
+import styled from "styled-components";
 
 export type RouteWrapperProps = JSX.IntrinsicElements["div"];
 
+const SRouteWrapper = styled.div`
+  min-height: calc(100vh - var(--navbar-height));
+`;
+
 export const RouteWrapper = forwardRef<HTMLDivElement, RouteWrapperProps>(
-  function RouteWrapper({ children, style, className, ...restProps }, ref) {
+  function RouteWrapper({ children, style, ...restProps }, ref) {
     return (
-      <div
-        style={{ minHeight: "300px" }}
-        className={className}
-        ref={ref}
-        {...restProps}
-      >
+      <SRouteWrapper {...restProps} ref={ref}>
         {children}
-      </div>
+      </SRouteWrapper>
     );
   }
 );
