@@ -9,7 +9,7 @@ import { EmptyStateTitle } from "./EmptyStateTitle";
 export const EmptyCart: FC = () => {
   return (
     <EmptyState>
-      <Illustration cxTitle="unbox" cxSize={400}>
+      <Illustration cxTitle="unbox" cxSize={256}>
         <UnboxAlert />
       </Illustration>
       <EmptyStateTitle>Your cart is empty</EmptyStateTitle>
