@@ -8,6 +8,7 @@ import {
   useDialogRef,
 } from "@woodshop/components";
 import { ShoppingCart } from "@woodshop/icons";
+import { EmptyCart } from "~/components/EmptyCart";
 import { FC, memo } from "react";
 
 export const HeaderCart: FC = memo(function HeaderCart() {
@@ -26,7 +27,9 @@ export const HeaderCart: FC = memo(function HeaderCart() {
             Cart
           </TypographyHeading>
         </DrawerHeader>
-        <DrawerBody>this be the body</DrawerBody>
+        <DrawerBody>
+          <EmptyCart />
+        </DrawerBody>
       </Drawer>
     </>
   );
