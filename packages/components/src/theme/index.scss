@@ -28,6 +28,9 @@
   --color-textSecondary: var(--color-grey5);
 
   --navbar-height: #{makeRem(100)};
+
+  --breakpoint-tablet: 577px;
+  --breakpoint-desktop: 992px;
 }
 
 html {

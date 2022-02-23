@@ -27,3 +27,12 @@ export type ColorScheme =
   | "grey5"
   | "black"
   | "inherit";
+
+export type ResponsiveDevices = "tablet" | "desktop" | "mobile";
+export const breakpointMap: { [key in ResponsiveDevices]: number } = {
+  mobile: 0,
+  tablet: 577,
+  desktop: 992
+};
+
+export const makeRem = (pixel: number): string => `${pixel / 16}rem`;

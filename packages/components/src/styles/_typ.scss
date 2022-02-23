@@ -46,6 +46,7 @@ Bitter @ Major Third (1.250) scale w/ 16px base HTML
   @include typ-heading;
   margin-top: 0;
   font-size: 3.052rem;
+  font-weight: bold;
 }
 
 @mixin typ-heading-h2 {

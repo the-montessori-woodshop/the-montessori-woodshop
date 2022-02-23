@@ -66,12 +66,12 @@ $libPrefix: v9WS7;
     }
   }
   @if ($size == "tablet") {
-    @media only screen and (min-width: 577px) {
+    @media only screen and (min-width: var(--breakpoint-tablet)) {
       @content;
     }
   }
   @if ($size == "desktop") {
-    @media only screen and (min-width: 992px) {
+    @media only screen and (min-width: var(--breakpoint-desktop)) {
       @content;
     }
   }

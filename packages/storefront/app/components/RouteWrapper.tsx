@@ -1,16 +1,20 @@
 import { forwardRef } from "react";
 import styled from "styled-components";
 
-export type RouteWrapperProps = JSX.IntrinsicElements["div"];
+export type RouteWrapperProps = JSX.IntrinsicElements["div"] & {
+  full?: boolean;
+};
 
-const SRouteWrapper = styled.div`
+const SRouteWrapper = styled.div<{ $full: boolean }>`
   min-height: calc(100vh - var(--navbar-height));
+  height: ${({ $full }) =>
+    $full ? `calc(100vh - var(--navbar-height))` : "iniital"};
 `;
 
 export const RouteWrapper = forwardRef<HTMLDivElement, RouteWrapperProps>(
-  function RouteWrapper({ children, style, ...restProps }, ref) {
+  function RouteWrapper({ children, style, full = false, ...restProps }, ref) {
     return (
-      <SRouteWrapper {...restProps} ref={ref}>
+      <SRouteWrapper {...restProps} ref={ref} $full={full}>
         {children}
       </SRouteWrapper>
     );

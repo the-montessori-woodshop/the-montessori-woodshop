@@ -1,10 +1,64 @@
-import { Outlet } from "remix";
+import {
+  Button,
+  ButtonGroup,
+  Responsive,
+  TypographyHeading,
+  makeRem,
+} from "@woodshop/components";
+import {
+  PageLayoutPaneBody,
+  PageLayoutPaneHeader,
+} from "~/components/page-layout";
+import { PageLayoutPaneFooter } from "~/components/page-layout/PageLayoutPaneFooter";
+import styled from "styled-components";
+
+const SPage = styled.div`
+  width: 100%;
+  height: 100%;
+`;
+
+const CheckoutLayout = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+`;
+
+const CheckoutLayoutHead = styled.div`
+  padding-left: ${makeRem(24)};
+  padding-right: ${makeRem(24)};
+`;
+
+const CheckoutLayoutMain = styled.div`
+  flex: 1;
+  padding-left: ${makeRem(24)};
+  padding-right: ${makeRem(24)};
+`;
+
+const CheckoutLayoutFooter = styled.div`
+  background: var(--color-white);
+  box-shadow: 0 -4px 10px 2px rgba(214, 214, 214, 0.5);
+  padding-left: ${makeRem(24)};
+  padding-right: ${makeRem(24)};
+  height: ${makeRem(80)};
+  display: flex;
+  align-items: center;
+`;
 
 export default function CheckoutIndex() {
   return (
-    <div>
-      CheckoutIndex
-      <Outlet />
-    </div>
+    <>
+      <PageLayoutPaneHeader>
+        <TypographyHeading
+          cxVariant="h3"
+          cxNode="h2"
+          style={{ marginTop: "0" }}
+        >
+          Checkout
+        </TypographyHeading>
+      </PageLayoutPaneHeader>
+      <PageLayoutPaneBody>test body</PageLayoutPaneBody>
+      <PageLayoutPaneFooter>test footer</PageLayoutPaneFooter>
+    </>
   );
 }
