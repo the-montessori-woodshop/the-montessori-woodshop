@@ -7,8 +7,8 @@ export type RouteWrapperProps = JSX.IntrinsicElements["div"] & {
 
 const SRouteWrapper = styled.div<{ $full: boolean }>`
   min-height: calc(100vh - var(--navbar-height));
-  height: ${({ $full }) =>
-    $full ? `calc(100vh - var(--navbar-height))` : "iniital"};
+  padding-top: var(--navbar-height);
+  height: ${({ $full }) => ($full ? `100vh` : "initial")};
 `;
 
 export const RouteWrapper = forwardRef<HTMLDivElement, RouteWrapperProps>(

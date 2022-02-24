@@ -1,15 +1,14 @@
-import {
-  Button,
-  ButtonGroup,
-  Responsive,
-  TypographyHeading,
-  makeRem,
-} from "@woodshop/components";
+import { TypographyHeading, makeRem } from "@woodshop/components";
 import {
   PageLayoutPaneBody,
   PageLayoutPaneHeader,
 } from "~/components/page-layout";
 import { PageLayoutPaneFooter } from "~/components/page-layout/PageLayoutPaneFooter";
+import { CheckoutBreadcrumbs, CheckoutWizardHeader } from "~/features/checkout";
+import { CheckoutSteps } from "~/features/checkout/CheckoutSteps";
+import { CheckoutWizard } from "~/features/checkout/CheckoutWizard";
+import { CheckoutWizardBody } from "~/features/checkout/CheckoutWizardBody";
+import { CheckoutWizardFooter } from "~/features/checkout/CheckoutWizardFooter";
 import styled from "styled-components";
 
 const SPage = styled.div`
@@ -48,17 +47,17 @@ const CheckoutLayoutFooter = styled.div`
 export default function CheckoutIndex() {
   return (
     <>
-      <PageLayoutPaneHeader>
-        <TypographyHeading
-          cxVariant="h3"
-          cxNode="h2"
-          style={{ marginTop: "0" }}
-        >
-          Checkout
-        </TypographyHeading>
-      </PageLayoutPaneHeader>
-      <PageLayoutPaneBody>test body</PageLayoutPaneBody>
-      <PageLayoutPaneFooter>test footer</PageLayoutPaneFooter>
+      <CheckoutWizard>
+        <PageLayoutPaneHeader>
+          <CheckoutWizardHeader />
+        </PageLayoutPaneHeader>
+        <PageLayoutPaneBody>
+          <CheckoutWizardBody />
+        </PageLayoutPaneBody>
+        <PageLayoutPaneFooter>
+          <CheckoutWizardFooter />
+        </PageLayoutPaneFooter>
+      </CheckoutWizard>
     </>
   );
 }

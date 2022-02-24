@@ -16,7 +16,7 @@ export const Header: FC = memo(function Header() {
     <header>
       <Navbar>
         <NavbarSection>
-          <NavbarLogo src="/logo.png" alt="logo" />
+          <NavbarLogo src="/logo-512x512-transparent.png" alt="logo" />
         </NavbarSection>
         <NavbarSection cxMain>
           <NavbarLinkList>
