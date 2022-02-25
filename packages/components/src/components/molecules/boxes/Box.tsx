@@ -2,7 +2,7 @@ import "./Box.scss";
 
 import React, { forwardRef, useMemo } from "react";
 
-import { makeClass } from "../../../theme";
+import { makeClass, makeRem } from "../../../theme";
 import { TypographyCopy } from "../../atoms/TypographyCopy";
 import { TypographyHeading } from "../../atoms/TypographyHeading";
 
@@ -22,7 +22,7 @@ export const Box = forwardRef<HTMLDivElement, BoxProps>(function Box(
         () =>
           cxTitle && (
             <TypographyHeading
-              cxVariant="h4"
+              cxVariant="h5"
               cxNode="div"
               style={{ margin: 0, fontWeight: "bold" }}
             >
@@ -34,7 +34,13 @@ export const Box = forwardRef<HTMLDivElement, BoxProps>(function Box(
       {useMemo(
         () =>
           cxSubtitle && (
-            <TypographyCopy cxColor="textSecondary" cxNode="div">
+            <TypographyCopy
+              cxColor="textSecondary"
+              cxNode="div"
+              style={{
+                fontSize: makeRem(14)
+              }}
+            >
               {cxSubtitle}
             </TypographyCopy>
           ),

@@ -8,8 +8,10 @@ import {
 import { FC, memo, useMemo } from "react";
 import { useLocation } from "remix";
 
+import { useIsCheckout } from "./useIsCheckout";
+
 export const Footer: FC = memo(function Footer() {
-  const { pathname } = useLocation();
+  const isCheckout = useIsCheckout();
 
   const FooterContent = useMemo(
     () => (
@@ -65,7 +67,7 @@ export const Footer: FC = memo(function Footer() {
     []
   );
 
-  if (pathname.includes("checkout")) {
+  if (isCheckout) {
     return null;
   }
 

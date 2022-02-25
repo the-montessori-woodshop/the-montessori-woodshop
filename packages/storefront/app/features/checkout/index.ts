@@ -1,3 +1,3 @@
-export * from "./CheckoutBreadcrumbs";
-
 export * from "./CheckoutWizardHeader";
+export * from "./CheckoutWizardBody";
+export * from "./CheckoutWizard";

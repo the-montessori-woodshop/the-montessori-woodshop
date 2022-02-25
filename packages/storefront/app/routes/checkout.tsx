@@ -6,6 +6,7 @@ import {
   PageLayoutPaneHeader,
 } from "~/components/page-layout";
 import { RouteWrapper } from "~/components/RouteWrapper";
+import { CheckoutSummary } from "~/features/checkout/CheckoutSummary";
 import { getPageTitle } from "~/utils/getPageTitle";
 import { MetaFunction, Outlet } from "remix";
 
@@ -21,10 +22,13 @@ export default function CheckoutRoute() {
           <Outlet />
         </PageLayoutPane>
         <Responsive atOrGreaterThan="tablet">
-          <PageLayoutPane>
-            <PageLayoutPaneHeader>Summary</PageLayoutPaneHeader>
-            <PageLayoutPaneBody>summary info here</PageLayoutPaneBody>
-          </PageLayoutPane>
+          <CheckoutSummary
+            style={{
+              width: "360px",
+            }}
+          >
+            test body
+          </CheckoutSummary>
         </Responsive>
       </PageLayout>
     </RouteWrapper>

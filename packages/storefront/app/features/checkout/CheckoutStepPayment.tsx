@@ -1,5 +1,7 @@
 import { FC } from "react";
 
+import { CheckoutStepWrapper } from "./CheckoutStepWrapper";
+
 export const CheckoutStepPayment: FC = () => {
-  return <div>Payment</div>;
+  return <CheckoutStepWrapper></CheckoutStepWrapper>;
 };
