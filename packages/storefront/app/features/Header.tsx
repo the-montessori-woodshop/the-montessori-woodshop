@@ -55,33 +55,35 @@ export const Header: FC = memo(function Header() {
   const isCheckout = useIsCheckout();
 
   const HeaderComponent = useMemo(() => {
-    <SHeaderMain>
-      <Navbar>
-        <NavbarSection>
-          <NavbarLogo src="/logo-512x512-transparent.png" alt="logo" />
-        </NavbarSection>
-        <NavbarSection cxMain>
-          <NavbarLinkList>
-            <NavbarLinkListItem>
-              <NavbarLink to="/">Home</NavbarLink>
-            </NavbarLinkListItem>
-            <NavbarLinkListItem>
-              <NavbarLink to="/mission">Mission</NavbarLink>
-            </NavbarLinkListItem>
-            <NavbarLinkListItem>
-              <NavbarLink to="/shop">Shop</NavbarLink>
-            </NavbarLinkListItem>
-            <NavbarLinkListItem>
-              <NavbarLink to="/blog">Blog</NavbarLink>
-            </NavbarLinkListItem>
-          </NavbarLinkList>
-        </NavbarSection>
-        <NavbarSection>
-          <HeaderCart />
-          <HeaderAccount />
-        </NavbarSection>
-      </Navbar>
-    </SHeaderMain>;
+    return (
+      <SHeaderMain>
+        <Navbar>
+          <NavbarSection>
+            <NavbarLogo src="/logo-512x512-transparent.png" alt="logo" />
+          </NavbarSection>
+          <NavbarSection cxMain>
+            <NavbarLinkList>
+              <NavbarLinkListItem>
+                <NavbarLink to="/">Home</NavbarLink>
+              </NavbarLinkListItem>
+              <NavbarLinkListItem>
+                <NavbarLink to="/mission">Mission</NavbarLink>
+              </NavbarLinkListItem>
+              <NavbarLinkListItem>
+                <NavbarLink to="/shop">Shop</NavbarLink>
+              </NavbarLinkListItem>
+              <NavbarLinkListItem>
+                <NavbarLink to="/blog">Blog</NavbarLink>
+              </NavbarLinkListItem>
+            </NavbarLinkList>
+          </NavbarSection>
+          <NavbarSection>
+            <HeaderCart />
+            <HeaderAccount />
+          </NavbarSection>
+        </Navbar>
+      </SHeaderMain>
+    );
   }, []);
 
   if (isCheckout) {
@@ -116,5 +118,7 @@ export const Header: FC = memo(function Header() {
       </SHeaderCheckout>
     );
   }
+
+  console.log(HeaderComponent);
   return <>{HeaderComponent}</>;
 });

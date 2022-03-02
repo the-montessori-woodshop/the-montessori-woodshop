@@ -21,3 +21,23 @@ export const WithSubtitle = () => {
     </Box>
   );
 };
+
+export const LineSeparatedWTitle = () => {
+  return (
+    <Box cxTitle="this is the box title" cxVariant="line-separated">
+      this is a box
+    </Box>
+  );
+};
+
+export const LineSeparatedWSubtitle = () => {
+  return (
+    <Box
+      cxTitle="this is the box title"
+      cxSubtitle="this is the box subtitle"
+      cxVariant="line-separated"
+    >
+      this is a box
+    </Box>
+  );
+};

@@ -10,10 +10,18 @@ export type BoxProps = JSX.IntrinsicElements["div"] & {
   cxTitle?: string;
   cxSubtitle?: string;
   cxFull?: boolean;
+  cxVariant?: "enclosed" | "line-separated" | "dense" | "no-gutters";
 };
 
 export const Box = forwardRef<HTMLDivElement, BoxProps>(function Box(
-  { className, children, cxTitle, cxSubtitle, ...restProps },
+  {
+    className,
+    children,
+    cxTitle,
+    cxSubtitle,
+    cxVariant = "enclosed",
+    ...restProps
+  },
   ref
 ) {
   return (
@@ -49,7 +57,11 @@ export const Box = forwardRef<HTMLDivElement, BoxProps>(function Box(
       <div
         {...restProps}
         className={makeClass(className, "b3uNxd", {
-          hasTitles: cxTitle || cxSubtitle
+          hasTitles: cxTitle || cxSubtitle,
+          enclosed: cxVariant === "enclosed",
+          line: cxVariant === "line-separated",
+          dense: cxVariant === "dense",
+          flush: cxVariant === "no-gutters"
         })}
         ref={ref}
       >

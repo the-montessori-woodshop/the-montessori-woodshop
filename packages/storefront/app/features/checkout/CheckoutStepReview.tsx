@@ -1,5 +1,17 @@
+import { Box } from "@woodshop/components";
 import { FC } from "react";
 
+import { CheckoutStepWrapper } from "./CheckoutStepWrapper";
+
 export const CheckoutStepReview: FC = () => {
-  return <div>Review</div>;
+  return (
+    <CheckoutStepWrapper>
+      <Box>
+        <div>name</div>
+        <div>address</div>
+        <div>shipping method</div>
+        <div>payment method</div>
+      </Box>
+    </CheckoutStepWrapper>
+  );
 };

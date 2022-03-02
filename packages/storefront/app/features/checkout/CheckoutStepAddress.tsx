@@ -3,33 +3,28 @@ import {
   Button,
   ButtonGroup,
   FormFieldCheckbox,
-  FormFieldEmail,
   FormFieldGroup,
   FormFieldText,
-  makeRem,
 } from "@woodshop/components";
 import { FC } from "react";
 
 import { useCheckoutWizardContext } from "./checkout.useCheckoutWizardContex";
+import { CheckoutNextButton } from "./CheckoutNextButton";
+import { CheckoutStepActions } from "./CheckoutStepActions";
 import { CheckoutStepWrapper } from "./CheckoutStepWrapper";
 
 const NextButton = () => {
   const { goToStep } = useCheckoutWizardContext();
 
   return (
-    <Button
-      cxVariant="contained"
-      cxColor="primary"
+    <CheckoutNextButton
       onClick={goToStep({
         direction: "forward",
         stepName: "shipping",
       })}
-      style={{
-        height: makeRem(60),
-      }}
     >
       Continue to shipping
-    </Button>
+    </CheckoutNextButton>
   );
 };
 
@@ -60,12 +55,14 @@ export const CheckoutStepAddress: FC = () => {
       <Box
         cxTitle="Contact information"
         cxSubtitle="Already have an account? Log in"
+        cxVariant="line-separated"
       >
         <FormFieldText id="email-address" placeholder="Email address" />
       </Box>
       <Box
         cxTitle="Shipping address"
         cxSubtitle="We do not shop to P.O. Boxes."
+        cxVariant="line-separated"
       >
         <FormFieldGroup>
           <FormFieldText id="first_name" placeholder="First name" />
@@ -90,9 +87,9 @@ export const CheckoutStepAddress: FC = () => {
       </Box>
       <br />
       <br />
-      <ButtonGroup cxLayout="inline-fill">
+      <CheckoutStepActions>
         <NextButton />
-      </ButtonGroup>
+      </CheckoutStepActions>
     </CheckoutStepWrapper>
   );
 };
