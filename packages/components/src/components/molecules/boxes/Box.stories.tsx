@@ -1,43 +1,117 @@
 import React from "react";
 
 import { Box } from "./Box";
+import { BoxContent } from "./BoxContent";
+import { BoxHeader } from "./BoxHeader";
 
 export default {
   title: "Molocules / Box"
 };
 
 export const PlainBox = () => {
-  return <Box>this is a box</Box>;
+  return (
+    <Box>
+      <BoxContent>this is a box</BoxContent>
+    </Box>
+  );
 };
 
 export const WithTitle = () => {
-  return <Box cxTitle="this is the box title">this is a box</Box>;
+  return (
+    <Box>
+      <BoxHeader cxTitle="this is the box title" />
+      <BoxContent>this is a box</BoxContent>
+    </Box>
+  );
 };
 
 export const WithSubtitle = () => {
   return (
-    <Box cxTitle="this is the box title" cxSubtitle="this is the box subtitle">
-      this is a box
+    <Box>
+      <BoxHeader
+        cxTitle="this is the box title"
+        cxSubtitle="this is the box subtitle"
+      />
+      <BoxContent>this is a box</BoxContent>
     </Box>
   );
 };
 
 export const LineSeparatedWTitle = () => {
   return (
-    <Box cxTitle="this is the box title" cxVariant="line-separated">
-      this is a box
+    <Box>
+      <BoxHeader cxTitle="this is the box title" />
+      <BoxContent cxVariant="line-separated">this is a box</BoxContent>
     </Box>
   );
 };
 
 export const LineSeparatedWSubtitle = () => {
   return (
-    <Box
-      cxTitle="this is the box title"
-      cxSubtitle="this is the box subtitle"
-      cxVariant="line-separated"
-    >
-      this is a box
+    <Box>
+      <BoxHeader
+        cxTitle="this is the box title"
+        cxSubtitle="this is the box subtitle"
+      />
+      <BoxContent cxVariant="line-separated">this is a box</BoxContent>
+    </Box>
+  );
+};
+
+export const Dense = () => {
+  return (
+    <Box>
+      <BoxContent cxVariant="dense">this is a dense box</BoxContent>
+    </Box>
+  );
+};
+
+export const DenseWithTitle = () => {
+  return (
+    <Box>
+      <BoxHeader cxTitle="this is the box title" />
+      <BoxContent cxVariant="dense">this is a dense box</BoxContent>
+    </Box>
+  );
+};
+
+export const DenseWithTitleAndSubtitle = () => {
+  return (
+    <Box>
+      <BoxHeader
+        cxTitle="this is the box title"
+        cxSubtitle="this is the box subtitle"
+      />
+      <BoxContent cxVariant="dense">this is a dense box</BoxContent>
+    </Box>
+  );
+};
+
+export const NoGutters = () => {
+  return (
+    <Box>
+      <BoxContent cxVariant="no-gutters">gutterless box</BoxContent>
+    </Box>
+  );
+};
+
+export const NoGuttersWithTitle = () => {
+  return (
+    <Box>
+      <BoxHeader cxTitle="this is the box title" />
+      <BoxContent cxVariant="no-gutters">gutterless box</BoxContent>
+    </Box>
+  );
+};
+
+export const NoGuttersWithTitleAndSubtitle = () => {
+  return (
+    <Box>
+      <BoxHeader
+        cxTitle="this is the box title"
+        cxSubtitle="this is the box subtitle"
+      />
+      <BoxContent cxVariant="no-gutters">gutterless box</BoxContent>
     </Box>
   );
 };

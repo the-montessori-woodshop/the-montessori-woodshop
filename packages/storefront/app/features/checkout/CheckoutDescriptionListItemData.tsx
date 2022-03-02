@@ -25,16 +25,8 @@ export const CheckoutDescriptionListItemData: FC<{
       >
         {children}
       </TypographyCopy>
-      <Button
-        onClick={onClick}
-        // style={{
-        //   minHeight: makeRem(24),
-        //   minWidth: makeRem(24),
-        //   height: makeRem(24),
-        //   width: makeRem(24),
-        // }}
-      >
-        <Icon cxTitle="edit" cxSize={16}>
+      <Button onClick={onClick}>
+        <Icon cxTitle="edit" cxSize={20}>
           <Pencil />
         </Icon>
       </Button>

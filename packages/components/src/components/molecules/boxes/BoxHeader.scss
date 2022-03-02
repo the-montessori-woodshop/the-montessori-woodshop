@@ -1,0 +1,6 @@
+@import "../../../styles/index.scss";
+
+// box
+@include makeClass("fnEVud") {
+  padding-bottom: makeRem(8);
+}
