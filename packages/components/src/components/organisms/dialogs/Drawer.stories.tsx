@@ -1,7 +1,6 @@
 import React from "react";
 
 import { Button } from "../../atoms/Button";
-import { TypographyHeading } from "../../atoms/TypographyHeading";
 import { useDialogRef } from "./dialog.useDialogRef";
 import { Drawer } from "./Drawer";
 import { DrawerBody } from "./DrawerBody";
@@ -21,11 +20,7 @@ export const Base = () => {
       </Button>
 
       <Drawer ref={dialogRef} openWidth={500}>
-        <DrawerHeader>
-          <TypographyHeading cxVariant="h2" cxNode="h2">
-            Title
-          </TypographyHeading>
-        </DrawerHeader>
+        <DrawerHeader title="Title" />
         <DrawerBody>this be the body</DrawerBody>
       </Drawer>
     </>

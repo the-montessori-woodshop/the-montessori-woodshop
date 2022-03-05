@@ -1,4 +1,4 @@
-import React, { FC, useCallback, useEffect, useRef } from "react";
+import React, { FC, memo, useCallback, useEffect, useRef } from "react";
 
 import { ResponsiveDevices, breakpointMap as bm } from "../../../theme";
 
@@ -8,12 +8,12 @@ export type ResponseiveProps = {
   only?: ResponsiveDevices;
 };
 
-export const Responsive: FC<ResponseiveProps> = ({
+export const MediaQuery: FC<ResponseiveProps> = memo(function MediaQuery({
   atOrLessThan,
   atOrGreaterThan,
   only,
   children
-}) => {
+}) {
   const childRef = useRef<HTMLElement | null>(null);
   const hide = useCallback(() => {
     if (childRef.current) childRef.current.style.setProperty("display", "none");
@@ -94,4 +94,4 @@ export const Responsive: FC<ResponseiveProps> = ({
     ref: childRef,
     style: { display: "none" }
   });
-};
+});

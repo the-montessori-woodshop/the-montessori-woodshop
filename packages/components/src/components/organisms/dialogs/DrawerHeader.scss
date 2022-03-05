@@ -3,19 +3,16 @@
 @include makeClass("mh4nj") {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-end;
   position: relative;
-  padding: 0 makeRem(32);
+  padding: makeRem(24) makeRem(32);
 
   @include respond("tablet") {
     padding: 0 makeRem(60);
   }
 
   & > div {
-    position: absolute;
-    right: makeRem(24);
-    top: makeRem(24);
-    height: makeRem(44);
-    width: makeRem(44);
+    display: flex;
+    justify-content: space-between;
   }
 }

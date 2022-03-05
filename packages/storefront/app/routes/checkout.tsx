@@ -1,4 +1,4 @@
-import { Responsive } from "@woodshop/components";
+import { MediaQuery } from "@woodshop/components";
 import {
   PageLayout,
   PageLayoutPane,
@@ -21,7 +21,7 @@ export default function CheckoutRoute() {
         <PageLayoutPane>
           <Outlet />
         </PageLayoutPane>
-        <Responsive atOrGreaterThan="tablet">
+        <MediaQuery atOrGreaterThan="tablet">
           <CheckoutSummary
             style={{
               width: "360px",
@@ -29,7 +29,7 @@ export default function CheckoutRoute() {
           >
             test body
           </CheckoutSummary>
-        </Responsive>
+        </MediaQuery>
       </PageLayout>
     </RouteWrapper>
   );

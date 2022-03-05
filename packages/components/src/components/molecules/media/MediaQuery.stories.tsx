@@ -1,12 +1,12 @@
 import { ComponentMeta } from "@storybook/react";
 import React, { forwardRef } from "react";
 
-import { Responsive } from "./Responsive";
+import { MediaQuery } from "./MediaQuery";
 
 export default {
-  title: "Molecules / Media / Responsive",
-  component: Responsive
-} as ComponentMeta<typeof Responsive>;
+  title: "Molecules / Media / MediaQuery",
+  component: MediaQuery
+} as ComponentMeta<typeof MediaQuery>;
 
 const Content = forwardRef<HTMLDivElement, JSX.IntrinsicElements["div"]>(
   function Content({ children, ...restProps }, ref) {
@@ -29,40 +29,40 @@ const Content = forwardRef<HTMLDivElement, JSX.IntrinsicElements["div"]>(
 
 export const AtOrLessThanTablet = () => {
   return (
-    <Responsive atOrLessThan="tablet">
+    <MediaQuery atOrLessThan="tablet">
       <Content>This should only display at less than or tablet</Content>
-    </Responsive>
+    </MediaQuery>
   );
 };
 
 export const AtOrLessThanDesktop = () => {
   return (
-    <Responsive atOrLessThan="desktop">
+    <MediaQuery atOrLessThan="desktop">
       <Content>This should only display at less than or desktop</Content>
-    </Responsive>
+    </MediaQuery>
   );
 };
 
 export const AtOrGreaterThanDesktop = () => {
   return (
-    <Responsive atOrGreaterThan="desktop">
+    <MediaQuery atOrGreaterThan="desktop">
       <Content>This should only display at less than or tablet</Content>
-    </Responsive>
+    </MediaQuery>
   );
 };
 
 export const OnlyMobile = () => {
   return (
-    <Responsive only="mobile">
+    <MediaQuery only="mobile">
       <Content>This should only display on mobile</Content>
-    </Responsive>
+    </MediaQuery>
   );
 };
 
 export const OnlyTablet = () => {
   return (
-    <Responsive only="tablet">
+    <MediaQuery only="tablet">
       <Content>This should only display on tablet</Content>
-    </Responsive>
+    </MediaQuery>
   );
 };

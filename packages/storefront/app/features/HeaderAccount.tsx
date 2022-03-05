@@ -31,11 +31,7 @@ export const HeaderAccount: FC = () => {
         </Icon>
       </NavbarAction>
       <Drawer ref={dialogRef} openWidth={520}>
-        <DrawerHeader>
-          <TypographyHeading cxVariant="h2" cxNode="h2">
-            Account
-          </TypographyHeading>
-        </DrawerHeader>
+        <DrawerHeader title="Account" />
         <DrawerBody>
           <TypographyCopy>
             Please sign in to view the options associated with your account.

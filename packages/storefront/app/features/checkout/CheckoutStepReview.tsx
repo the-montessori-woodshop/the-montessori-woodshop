@@ -6,7 +6,7 @@ import {
   FormFieldGroup,
   FormFieldText,
   Icon,
-  Responsive,
+  MediaQuery,
   makeRem,
 } from "@woodshop/components";
 import { CheckmarkCircle } from "@woodshop/icons";
@@ -19,7 +19,7 @@ export const CheckoutStepReview: FC = () => {
   return (
     <CheckoutStepWrapper>
       <CheckoutOverview />
-      <Responsive atOrLessThan="tablet">
+      <MediaQuery atOrLessThan="tablet">
         <Box>
           <BoxHeader cxTitle="Coupon code / discount code" />
           <BoxContent cxVariant="line-separated">
@@ -40,7 +40,7 @@ export const CheckoutStepReview: FC = () => {
             </FormFieldGroup>
           </BoxContent>
         </Box>
-      </Responsive>
+      </MediaQuery>
     </CheckoutStepWrapper>
   );
 };

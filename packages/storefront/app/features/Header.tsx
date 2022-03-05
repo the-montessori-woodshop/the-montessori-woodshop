@@ -1,20 +1,17 @@
 import {
-  Button,
-  Icon,
   Navbar,
   NavbarLinkList,
   NavbarLinkListItem,
   NavbarLogo,
   NavbarSection,
-  TypographyCopy,
   makeRem,
 } from "@woodshop/components";
-import { ShoppingCart } from "@woodshop/icons";
 import { NavbarLink } from "~/components/NavbarLink";
 import { FC, memo, useMemo } from "react";
 import { Link } from "remix";
 import styled from "styled-components";
 
+import { CheckoutSummaryDrawer } from "./checkout/CheckoutSummaryDrawer";
 import { HeaderAccount } from "./HeaderAccount";
 import { HeaderCart } from "./HeaderCart";
 import { useIsCheckout } from "./useIsCheckout";
@@ -44,11 +41,6 @@ const SHeaderMain = styled.header`
   & + * {
     padding-top: var(--navbar-height);
   }
-`;
-
-const SButton = styled(Button)`
-  display: flex;
-  justify-content: "flex-end";
 `;
 
 export const Header: FC = memo(function Header() {
@@ -99,26 +91,10 @@ export const Header: FC = memo(function Header() {
             }}
           />
         </Link>
-        <SButton>
-          <Icon cxTitle="view-shopping-bag" cxSize={16}>
-            <ShoppingCart />
-          </Icon>
-          <TypographyCopy
-            cxVariant="caption"
-            style={{
-              fontWeight: "initial",
-              marginRight: makeRem(8),
-              marginLeft: makeRem(8),
-              fontSize: makeRem(12),
-            }}
-          >
-            Show order summary
-          </TypographyCopy>
-        </SButton>
+        <CheckoutSummaryDrawer />
       </SHeaderCheckout>
     );
   }
 
-  console.log(HeaderComponent);
   return <>{HeaderComponent}</>;
 });

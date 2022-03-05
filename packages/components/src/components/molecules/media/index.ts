@@ -1,1 +1,1 @@
-export * from "./Responsive";
+export * from "./MediaQuery";
