@@ -4,7 +4,6 @@ import {
   DrawerHeader,
   Icon,
   NavbarAction,
-  TypographyHeading,
   useDialogRef,
 } from "@woodshop/components";
 import { ShoppingCart } from "@woodshop/icons";
@@ -22,11 +21,7 @@ export const HeaderCart: FC = memo(function HeaderCart() {
         </Icon>
       </NavbarAction>
       <Drawer ref={dialogRef} openWidth={520}>
-        <DrawerHeader>
-          <TypographyHeading cxVariant="h2" cxNode="h2">
-            Cart
-          </TypographyHeading>
-        </DrawerHeader>
+        <DrawerHeader title="Cart" />
         <DrawerBody>
           <EmptyCart />
         </DrawerBody>

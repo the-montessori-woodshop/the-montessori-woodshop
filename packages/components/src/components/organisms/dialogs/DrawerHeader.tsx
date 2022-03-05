@@ -1,7 +1,7 @@
 import "./DrawerHeader.scss";
 
 import { Close } from "@woodshop/icons";
-import React, { forwardRef } from "react";
+import React, { forwardRef, useMemo } from "react";
 
 import { makeClass } from "../../../theme";
 import { Button } from "../../atoms/Button";
@@ -24,23 +24,23 @@ export const DrawerHeader = forwardRef<HTMLHeadElement, DrawerHeaderProps>(
         ref={ref}
       >
         <div>
-          <TypographyHeading
-            cxVariant="h3"
-            cxNode="h2"
-            style={{
-              marginTop: 0,
-              marginBottom: 0
-            }}
-          >
-            {title}
+          <TypographyHeading cxVariant="h2" cxNode="h2">
+            <strong>{title}</strong>
           </TypographyHeading>
           {children}
         </div>
-        <Button onClick={close}>
-          <Icon cxTitle="close-drawer" cxSize={44}>
-            <Close />
-          </Icon>
-        </Button>
+        {useMemo(
+          () => (
+            <div>
+              <Button onClick={close}>
+                <Icon cxTitle="close-drawer" cxSize={44}>
+                  <Close />
+                </Icon>
+              </Button>
+            </div>
+          ),
+          []
+        )}
       </header>
     );
   }
