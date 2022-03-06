@@ -6158,7 +6158,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@woodshop/builder@workspace:^, @woodshop/builder@workspace:packages/builder":
+"@woodshop/builder@^1.0.0, @woodshop/builder@workspace:packages/builder":
   version: 0.0.0-use.local
   resolution: "@woodshop/builder@workspace:packages/builder"
   dependencies:
@@ -6199,7 +6199,7 @@ __metadata:
     "@types/react-dom": ^17.0.11
     "@typescript-eslint/eslint-plugin": ^5.12.0
     "@typescript-eslint/parser": ^5.12.0
-    "@woodshop/builder": "workspace:^"
+    "@woodshop/builder": ^1.0.0
     "@woodshop/icons": ^1.0.0
     "@woodshop/illustrations": "workspace:^"
     babel-loader: ^8.2.3
@@ -6234,7 +6234,7 @@ __metadata:
     "@types/prettier": ^2.4.4
     "@types/react": ^17.0.39
     "@types/react-dom": ^17.0.11
-    "@woodshop/builder": "workspace:^"
+    "@woodshop/builder": ^1.0.0
     fs-extra: ^10.0.0
     prettier: ^2.5.1
     react: ^17.0.2
@@ -6254,7 +6254,7 @@ __metadata:
     "@types/prettier": ^2.4.4
     "@types/react": ^17.0.39
     "@types/react-dom": ^17.0.11
-    "@woodshop/builder": "workspace:^"
+    "@woodshop/builder": ^1.0.0
     fs-extra: ^10.0.0
     prettier: ^2.5.1
     react: ^17.0.2
