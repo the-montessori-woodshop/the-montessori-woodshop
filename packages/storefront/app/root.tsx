@@ -59,7 +59,11 @@ export default function App() {
         <Links />
         {typeof document === "undefined" ? "__STYLES__" : null}
       </head>
-      <body>
+      <body
+        style={{
+          minHeight: "100vh",
+        }}
+      >
         <Header />
         <main>
           <Outlet />

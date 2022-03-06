@@ -9,7 +9,7 @@
     "build": "yarn workspaces foreach -ptiv run build",
     "components-build": "yarn workspaces foreach -ptiv --no-private run build && yarn workspace @woodshop/components build-storybook",
     "build:ci": "bash scripts/build-ci.sh",
-    "storybook": "yarn workspace @woodshop/components storybook",
+    "components-dev": "yarn workspace @woodshop/components storybook",
     "clean": "rimraf ./packages/**/node_modules && rimraf node_modules"
   },
   "workspaces": {

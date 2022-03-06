@@ -2,9 +2,9 @@
 
 // label
 @include makeClass("aVnIs0") {
-  display: inline-block;
   display: flex;
   align-content: center;
+  width: 100%;
 
   * {
     box-sizing: border-box;

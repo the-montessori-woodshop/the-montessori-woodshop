@@ -1,0 +1,34 @@
+@import "../../../styles/index.scss";
+
+// box
+@include makeClass("b3uNxd") {
+  & + & {
+    margin-top: makeRem(48);
+  }
+
+  &.enclosed {
+    padding: makeRem(24);
+    border-radius: makeRem(2);
+    border: makeRem(1) solid var(--color-grey3);
+  }
+
+  &.line {
+    border-top: makeRem(1) solid var(--color-grey3);
+    padding-top: makeRem(24);
+  }
+
+  &.hasTitles {
+    margin-top: makeRem(8);
+  }
+
+  &.dense {
+    padding: makeRem(8);
+    border-radius: makeRem(2);
+    border: makeRem(1) solid var(--color-grey3);
+  }
+
+  &.flush {
+    border-radius: makeRem(2);
+    border: makeRem(1) solid var(--color-grey3);
+  }
+}

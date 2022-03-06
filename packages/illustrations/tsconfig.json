@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "lib": ["esnext"],
+    "noEmit": false,
+    "declaration": true,
+    "declarationMap": true,
+    "emitDeclarationOnly": true,
+    "esModuleInterop": true,
+    "downlevelIteration": true,
+    "skipDefaultLibCheck": true,
+    "strict": true,
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "node",
+    "target": "esnext",
+    "sourceMap": true,
+    "jsx": "react",
+    "skipLibCheck": true,
+    "declarationDir": "dist"
+  },
+  "include": ["src/index.ts"]
+}

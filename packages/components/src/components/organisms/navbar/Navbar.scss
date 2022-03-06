@@ -6,4 +6,12 @@
   display: flex;
   height: var(--navbar-height);
   align-items: center;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  width: 100%;
+  background-color: rgba(var(--color-white-rgba), 0.9);
+  box-shadow: 0 -1px 11px 8px var(--color-drop-shadow);
+  z-index: 10;
 }

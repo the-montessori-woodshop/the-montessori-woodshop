@@ -17,17 +17,26 @@
   --color-success: #2df20e;
 
   --color-white: white;
+  --color-white-rgba: 255, 255, 255;
   --color-grey1: #fcfcfc;
+  --color-grey1-rgba: 0, 0, 99;
   --color-grey2: #f8f8f8;
+  --color-grey2-rgba: 0, 0, 97;
   --color-grey3: #e7e7e7;
   --color-grey4: #c0c0c0;
   --color-grey5: #706e6e;
   --color-black: #3e3b39;
+  --color-black-rgba: 24, 8, 24;
+
+  --color-drop-shadow: rgba(48, 48, 78, 0.03);
 
   --color-textPrimary: var(--color-black);
   --color-textSecondary: var(--color-grey5);
 
   --navbar-height: #{makeRem(100)};
+
+  --breakpoint-tablet: 577px;
+  --breakpoint-desktop: 992px;
 }
 
 html {

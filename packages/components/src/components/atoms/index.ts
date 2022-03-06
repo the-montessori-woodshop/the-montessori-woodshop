@@ -2,6 +2,7 @@ export * from "./Button";
 export * from "./ButtonGroup";
 
 export * from "./Icon";
+export * from "./Illustration";
 
 export * from "./InputHelp";
 export * from "./InputLabel";

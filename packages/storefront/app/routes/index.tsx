@@ -41,7 +41,7 @@ export default function Index() {
 
   return (
     <RouteWrapper>
-      <PageSection cxLayout="split-pane">
+      <PageSection cxLayout="split-pane" cxBackground="main">
         <PageSectionPane cxAlign="left">
           <PageSectionPaneTitle>
             Always handmade montessori staples that will last for generations.

@@ -4,7 +4,7 @@ import React, { forwardRef, memo } from "react";
 
 import { makeClass } from "../../theme";
 
-export type InputRadioProps = JSX.IntrinsicElements["input"];
+export type InputRadioProps = Omit<JSX.IntrinsicElements["input"], "css">;
 
 export const InputRadioFC = forwardRef<HTMLInputElement, InputRadioProps>(
   function InputRadioFC({ className, children, ...restProps }, ref) {
