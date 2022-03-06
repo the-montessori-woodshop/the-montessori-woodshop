@@ -31,7 +31,6 @@ cp -r packages/axios-fetch tmp/packages/axios-fetch
 
 # Install the packages to create the lockfile to be used
 cd tmp
-npm install --global yarn
 yarn install
 yarn set version berry
 # npm install
