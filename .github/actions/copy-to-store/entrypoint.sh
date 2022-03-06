@@ -31,8 +31,8 @@ cp -r packages/axios-fetch tmp/packages/axios-fetch
 
 # Install the packages to create the lockfile to be used
 cd tmp
-npm install
-npm run build:ci
+# npm install
+# npm run build:ci
 
 # Add everything and then commit and push to the storefront
 # Any build mechanisms should be kicked off that are attached to this repo
