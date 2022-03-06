@@ -5,6 +5,7 @@ module.exports = {
   typescript: true,
   ignoreExisting: false,
   titleProp: true,
+  index: true,
   svgoConfig: {
     plugins: [
       {
