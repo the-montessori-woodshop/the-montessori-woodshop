@@ -24,14 +24,15 @@ rm -rf ./woodshop-storefront
 cp -a packages/storefront/. tmp/
 mkdir tmp/packages
 cp -r packages/components tmp/packages/components
+cp -r packages/icons tmp/packages/icons
+cp -r packages/illustrations tmp/packages/illustrations
 cp -r packages/builder tmp/packages/builder
 cp -r packages/axios-fetch tmp/packages/axios-fetch
 
 # Install the packages to create the lockfile to be used
 cd tmp
-yarn install
-# yarn version set berry
-# yarn install
+npm install
+npm run build:ci
 
 # Add everything and then commit and push to the storefront
 # Any build mechanisms should be kicked off that are attached to this repo
