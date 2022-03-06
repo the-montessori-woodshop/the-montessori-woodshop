@@ -49,6 +49,7 @@
   },
   "peerDependencies": {
     "@woodshop/icons": "^1.0.0",
+    "@woodshop/illustrations": "^1.0.0",
     "clsx": "^1.1.1",
     "framer-motion": "^6.2.6",
     "react": "^17.0.2",
@@ -56,7 +57,7 @@
   },
   "dependencies": {
     "@woodshop/icons": "^1.0.0",
-    "@woodshop/illustrations": "workspace:^",
+    "@woodshop/illustrations": "^1.0.0",
     "framer-motion": "^6.2.6",
     "react-scripts": "^5.0.0"
   },
