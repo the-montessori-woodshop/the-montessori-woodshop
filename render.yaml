@@ -70,16 +70,24 @@ envVarGroups:
 
 # Postgres DB
 databases:
+  # need a dev DB for the data proxy
+  - name: woodshop_db_dev
+    databaseName: woodshop_db
+    plan: free
+    user: woodshop_db_user
+    region: oregon
+    postgresMajorVersion: 14
   - name: woodshop_db
     databaseName: woodshop_db
     plan: starter
-    user: woodshop_user
+    user: woodshop_db_user
     region: oregon
     postgresMajorVersion: 14
+  # don't need a DEV DB since it's in docker
   - name: medusa_db
     plan: starter
     databaseName: medusa_db
-    user: medusa_user
+    user: medusa_db_user
     region: oregon
     postgresMajorVersion: 14
     
