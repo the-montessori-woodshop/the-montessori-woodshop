@@ -1,9 +1,13 @@
 name = "woodshop-api"
-type = "webpack"
+type = "javascript"
 route = ''
 zone_id = ''
 usage_model = ''
 compatibility_flags = []
 workers_dev = true
 compatibility_date = "2022-01-05"
-webpack_config = "webpack.config.js"
+[build]
+command = "yarn build"
+
+[build.upload]
+format = "service-worker"

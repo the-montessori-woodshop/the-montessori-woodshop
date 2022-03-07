@@ -5,7 +5,7 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = env("WOODSHOP_DB_QUERY_STRING")
+  url      = env("WOODSHOP_API_DATABASE_URL")
 }
 
 model Log {

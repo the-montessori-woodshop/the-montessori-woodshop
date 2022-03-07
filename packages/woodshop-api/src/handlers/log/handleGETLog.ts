@@ -2,7 +2,9 @@ import { PrismaClient } from "@prisma/client";
 
 import { HandleGETRequest } from "../../types";
 
-const prisma = new PrismaClient();
+const prisma = new PrismaClient({
+  errorFormat: "pretty"
+});
 
 const handleGETLog: HandleGETRequest = async (request) => {
   await prisma.log.create({
