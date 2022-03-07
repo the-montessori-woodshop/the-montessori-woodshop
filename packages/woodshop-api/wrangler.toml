@@ -1,13 +1,19 @@
+compatibility_date = "2022-01-05"
+compatibility_flags = []
+
 name = "woodshop-api"
 type = "javascript"
-route = ''
-zone_id = ''
 usage_model = ''
-compatibility_flags = []
+account_id = "68fa4421d84bfcddbd9311a7d57aa419"
 workers_dev = true
-compatibility_date = "2022-01-05"
+
 [build]
 command = "yarn build"
 
 [build.upload]
 format = "service-worker"
+
+[env.production]
+workers_dev = false
+zone_id = 'ebeb335a5410105683a9e7bc11251d1c'
+route = "https://api.woodshop.themontessoriwoodshop.com/"
