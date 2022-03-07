@@ -42,7 +42,7 @@
   "scripts": {
     "postinstall": "remix setup cloudflare-pages",
     "build": "cross-env NODE_ENV=production remix build",
-    "npm:build": "npm run postinstall && npm run build",
+    "build:ci": "npm run postinstall && yarn workspaces foreach -ptiv run build && yarn build",
     "dev:remix": "cross-env NODE_ENV=development remix watch",
     "dev:wrangler": "cross-env NODE_ENV=development wrangler pages dev ./public",
     "dev": "cross-env NODE_ENV=development remix build && yarn dev:remix & yarn dev:wrangler",
