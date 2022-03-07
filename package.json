@@ -9,6 +9,7 @@
     "build": "yarn workspaces foreach -ptiv run build",
     "components-build": "yarn workspaces foreach -ptiv --no-private run build && yarn workspace @woodshop/components build-storybook",
     "api-dev": "yarn workspace @woodshop/api dev",
+    "api-migrate-dev": "yarn workspace @woodshop/api migrate-dev",
     "build:ci": "bash scripts/build-ci.sh",
     "components-dev": "yarn workspace @woodshop/components storybook",
     "clean": "rimraf ./packages/**/node_modules && rimraf node_modules"

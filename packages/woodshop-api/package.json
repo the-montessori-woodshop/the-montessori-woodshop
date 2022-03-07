@@ -7,7 +7,8 @@
     "build": "yarn node ./scripts/build.js",
     "generate": "prisma generate",
     "migrate-dev": "prisma migrate dev",
-    "dev": "yarn generate && wrangler dev"
+    "migrate": "prisma migrate",
+    "dev": "yarn generate && wrangler dev --ip 127.0.0.1 --port 8888"
   },
   "main": "dist/worker.js",
   "repository": {

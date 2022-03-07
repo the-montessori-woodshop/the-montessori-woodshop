@@ -4,12 +4,13 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("WOODSHOP_API_DATABASE_URL")
+  provider          = "postgresql"
+  url               = env("WOODSHOP_API_DATABASE_URL")
+  shadowDatabaseUrl = env("WOODSHOP_API_SHADOW_DATABASE_URL")
 }
 
 model Log {
-  id      String @id @default(dbgenerated()) @map("_id")
+  id      String @id @default(dbgenerated())
   level   Level
   message String
   meta    Json
