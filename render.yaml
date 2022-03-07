@@ -19,7 +19,7 @@ services:
     dockerfilePath: ./packages/medusa-api/Dockerfile
     dockerContext: .
     domains:
-      - store.themontessoriwoodshop.com
+      - api.store.themontessoriwoodshop.com
     envVars:
       - fromGroup: medusa
       - fromGroup: auth-secrets
