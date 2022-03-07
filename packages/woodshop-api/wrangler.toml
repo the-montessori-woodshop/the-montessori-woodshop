@@ -1,0 +1,13 @@
+name = "woodshop-api"
+type = "javascript"
+route = ''
+zone_id = ''
+usage_model = ''
+compatibility_flags = []
+workers_dev = true
+compatibility_date = "2022-01-05"
+[build]
+command = "yarn build"
+
+[build.upload]
+format = "service-worker"

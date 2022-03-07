@@ -8,6 +8,7 @@
     "dev": "yarn workspace storefront dev",
     "build": "yarn workspaces foreach -ptiv run build",
     "components-build": "yarn workspaces foreach -ptiv --no-private run build && yarn workspace @woodshop/components build-storybook",
+    "api-dev": "yarn workspace @woodshop/api dev",
     "build:ci": "bash scripts/build-ci.sh",
     "components-dev": "yarn workspace @woodshop/components storybook",
     "clean": "rimraf ./packages/**/node_modules && rimraf node_modules"
@@ -43,9 +44,9 @@
     "postcss": "8"
   },
   "dependencies": {
-    "eslint": "^8.9.0",
+    "eslint": "^8.10.0",
     "prettier": "^2.5.1",
     "rimraf": "^3.0.2",
-    "typescript": "^4.5.5"
+    "typescript": "^4.6.2"
   }
 }

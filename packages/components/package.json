@@ -36,16 +36,16 @@
     "@woodshop/builder": "^1.0.0",
     "babel-loader": "^8.2.3",
     "clsx": "^1.1.1",
-    "eslint": "8.9.0",
-    "eslint-plugin-react": "^7.28.0",
+    "eslint": "8.10.0",
+    "eslint-plugin-react": "^7.29.3",
     "eslint-plugin-storybook": "^0.5.7",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-is": "^17.0.2",
-    "rollup": "^2.67.2",
-    "sass": "^1.49.7",
-    "typescript": "^4.5.5",
-    "webpack": "^5.69.1"
+    "rollup": "^2.70.0",
+    "sass": "^1.49.9",
+    "typescript": "^4.6.2",
+    "webpack": "^5.70.0"
   },
   "peerDependencies": {
     "@woodshop/icons": "^1.0.0",
@@ -58,7 +58,7 @@
   "dependencies": {
     "@woodshop/icons": "^1.0.0",
     "@woodshop/illustrations": "^1.0.0",
-    "framer-motion": "^6.2.6",
+    "framer-motion": "^6.2.8",
     "react-scripts": "^5.0.0"
   },
   "eslintConfig": {
