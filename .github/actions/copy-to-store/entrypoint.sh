@@ -17,6 +17,8 @@ git clone --single-branch --branch main "https://$USER_NAME:$API_TOKEN_GITHUB@gi
 # Then delete the storefront to replace it with the files and folders we want
 mkdir tmp
 cp -r ./woodshop-storefront/.git ./tmp/.git
+cp -r ./woodshop-storefront/.yarn ./tmp/.yarn
+cp -r ./woodshop-storefront/yarn.lock ./tmp/yarn.lock
 rm -rf ./woodshop-storefront
 
 # Copy the contents fo the storefront package into the tmp dir
@@ -24,12 +26,17 @@ rm -rf ./woodshop-storefront
 cp -a packages/storefront/. tmp/
 mkdir tmp/packages
 cp -r packages/components tmp/packages/components
+cp -r packages/icons tmp/packages/icons
+cp -r packages/illustrations tmp/packages/illustrations
 cp -r packages/builder tmp/packages/builder
 cp -r packages/axios-fetch tmp/packages/axios-fetch
 
 # Install the packages to create the lockfile to be used
 cd tmp
-npm install
+yarn install
+yarn set version berry
+# npm install
+# npm run build:ci
 
 # Add everything and then commit and push to the storefront
 # Any build mechanisms should be kicked off that are attached to this repo

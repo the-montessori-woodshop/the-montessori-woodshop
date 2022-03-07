@@ -8,9 +8,9 @@
     "@medusajs/medusa-js": "^1.0.12",
     "@remix-run/cloudflare-pages": "^1.2.1",
     "@remix-run/react": "^1.2.1",
-    "@woodshop/components": "workspace:^",
-    "@woodshop/icons": "workspace:^",
-    "@woodshop/illustrations": "workspace:^",
+    "@woodshop/components": "^1.0.0",
+    "@woodshop/icons": "^1.0.0",
+    "@woodshop/illustrations": "^1.0.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-is": "^17.0.2",
@@ -27,28 +27,26 @@
     "typescript": "^4.5.5",
     "wrangler": "pages"
   },
-  "engines": {
-    "node": ">=17.3.0"
-  },
   "workspaces": {
     "packages": [
       "packages/**"
     ]
   },
-  "overrides": {
-    "@medusajs/medusa-js": {
-      "axios": "file:./packages/axios-fetch",
-      "retry-axios": {
-        "axios": "file:./packages/axios-fetch"
-      }
-    }
+  "engines": {
+    "node": ">=17.3.0"
+  },
+  "resolutions": {
+    "axios": "workspace:./packages/axios-fetch",
+    "postcss": "8"
   },
   "scripts": {
     "postinstall": "remix setup cloudflare-pages",
     "build": "cross-env NODE_ENV=production remix build",
+    "build:ci": "npm run postinstall && yarn workspaces foreach -ptiv run build && yarn build",
     "dev:remix": "cross-env NODE_ENV=development remix watch",
     "dev:wrangler": "cross-env NODE_ENV=development wrangler pages dev ./public",
     "dev": "cross-env NODE_ENV=development remix build && yarn dev:remix & yarn dev:wrangler",
     "start": "cross-env NODE_ENV=production npm run dev:wrangler"
-  }
+  },
+  "packageManager": "yarn@3.2.0"
 }
