@@ -19,19 +19,19 @@
     "@babel/cli": "^7.17.3",
     "@babel/core": "^7.17.5",
     "@babel/preset-typescript": "^7.16.7",
-    "@medusajs/medusa": "^1.1.64",
-    "@medusajs/medusa-cli": "^1.1.27",
+    "@medusajs/medusa": "^1.2.1",
+    "@medusajs/medusa-cli": "^1.2.1",
     "babel-preset-medusa-package": "^1.1.19",
     "dotenv": "^16.0.0",
     "medusa-file-cloudflare-images": "^1.0.1",
     "medusa-fulfillment-manual": "^1.1.31",
-    "medusa-interfaces": "^1.1.34",
+    "medusa-interfaces": "^1.2.1",
     "medusa-payment-manual": "^1.0.16",
     "medusa-payment-stripe": "^1.1.38",
     "mongoose": "^6.2.2",
     "pg": "^8.7.3",
     "query-string": "^7.1.1",
-    "typeorm": "^0.2.43"
+    "typeorm": "^0.2.45"
   },
   "repository": "https://github.com/medusajs/medusa-starter-default.git",
   "keywords": [
