@@ -6158,6 +6158,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@woodshop/api@workspace:^, @woodshop/api@workspace:packages/woodshop-api":
+  version: 0.0.0-use.local
+  resolution: "@woodshop/api@workspace:packages/woodshop-api"
+  dependencies:
+    "@cloudflare/workers-types": ^3.4.0
+    "@cloudflare/wrangler": ^1.19.8
+    "@prisma/client": ^3.9.2
+    esbuild: ^0.14.22
+    esbuild-loader: ^2.18.0
+    itty-router: ^2.5.2
+    prisma: ^3.9.2
+    typescript: ^4.5.5
+    webpack: ^5.69.1
+  languageName: unknown
+  linkType: soft
+
 "@woodshop/builder@^1.0.0, @woodshop/builder@workspace:packages/builder":
   version: 0.0.0-use.local
   resolution: "@woodshop/builder@workspace:packages/builder"
@@ -6179,7 +6195,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@woodshop/components@^1.0.0, @woodshop/components@workspace:packages/components":
+"@woodshop/components@workspace:^, @woodshop/components@workspace:packages/components":
   version: 0.0.0-use.local
   resolution: "@woodshop/components@workspace:packages/components"
   dependencies:
@@ -6226,7 +6242,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@woodshop/icons@^1.0.0, @woodshop/icons@workspace:packages/icons":
+"@woodshop/icons@^1.0.0, @woodshop/icons@workspace:^, @woodshop/icons@workspace:packages/icons":
   version: 0.0.0-use.local
   resolution: "@woodshop/icons@workspace:packages/icons"
   dependencies:
@@ -6246,7 +6262,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@woodshop/illustrations@^1.0.0, @woodshop/illustrations@workspace:packages/illustrations":
+"@woodshop/illustrations@^1.0.0, @woodshop/illustrations@workspace:^, @woodshop/illustrations@workspace:packages/illustrations":
   version: 0.0.0-use.local
   resolution: "@woodshop/illustrations@workspace:packages/illustrations"
   dependencies:
@@ -9080,14 +9096,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"content-db@workspace:packages/content-db":
-  version: 0.0.0-use.local
-  resolution: "content-db@workspace:packages/content-db"
-  dependencies:
-    prisma: ^3.9.2
-  languageName: unknown
-  linkType: soft
-
 "content-disposition@npm:0.5.4":
   version: 0.5.4
   resolution: "content-disposition@npm:0.5.4"
@@ -9103,21 +9111,6 @@ __metadata:
   checksum: 3d93585fda985d1554eca5ebd251994327608d2e200978fdbfba21c0c679914d5faf266d17027de44b34a72c7b0745b18584ecccaa7e1fdfb6a68ac7114f12e0
   languageName: node
   linkType: hard
-
-"content@workspace:packages/content":
-  version: 0.0.0-use.local
-  resolution: "content@workspace:packages/content"
-  dependencies:
-    "@cloudflare/workers-types": ^3.4.0
-    "@cloudflare/wrangler": ^1.19.8
-    "@prisma/client": ^3.9.2
-    esbuild: ^0.14.22
-    esbuild-loader: ^2.18.0
-    prisma: ^3.9.2
-    typescript: ^4.5.5
-    webpack: ^5.69.1
-  languageName: unknown
-  linkType: soft
 
 "convert-source-map@npm:^1.1.0, convert-source-map@npm:^1.4.0, convert-source-map@npm:^1.5.0, convert-source-map@npm:^1.6.0, convert-source-map@npm:^1.7.0":
   version: 1.8.0
@@ -15384,6 +15377,13 @@ __metadata:
     es-get-iterator: ^1.0.2
     iterate-iterator: ^1.0.1
   checksum: 446a4181657df1872e5020713206806757157db6ab375dee05eb4565b66e1244d7a99cd36ce06862261ad4bd059e66ba8192f62b5d1ff41d788c3b61953af6c3
+  languageName: node
+  linkType: hard
+
+"itty-router@npm:^2.5.2":
+  version: 2.5.2
+  resolution: "itty-router@npm:2.5.2"
+  checksum: 714629d198f47d968fc7031e489f8b001d0b0f756fa16ba4a07d23731c277834ee1a58b253361e6b6e10fd25b2d8037bdee312098e9734012a0d251cef87c434
   languageName: node
   linkType: hard
 
@@ -24098,9 +24098,10 @@ __metadata:
     "@types/react": ^17.0.39
     "@types/react-dom": ^17.0.11
     "@types/styled-components": ^5.1.23
-    "@woodshop/components": ^1.0.0
-    "@woodshop/icons": ^1.0.0
-    "@woodshop/illustrations": ^1.0.0
+    "@woodshop/api": "workspace:^"
+    "@woodshop/components": "workspace:^"
+    "@woodshop/icons": "workspace:^"
+    "@woodshop/illustrations": "workspace:^"
     cross-env: ^7.0.3
     react: ^17.0.2
     react-dom: ^17.0.2

@@ -1,7 +1,7 @@
 node_modules
 
 /.cache
-/functions/**
+/functions/\[\[path\]\].js
 /public/build
 
 .yarn/*

@@ -1,4 +1,4 @@
-name = "content-api"
+name = "woodshop-api"
 type = "webpack"
 route = ''
 zone_id = ''

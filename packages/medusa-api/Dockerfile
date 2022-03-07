@@ -12,8 +12,8 @@ COPY .yarn                                      ./.yarn
 COPY package.json                               ./package.json
 
 COPY packages/axios-fetch                       ./packages/axios-fetch
-COPY packages/medusa                            ./packages/medusa
-COPY packages/medusa/entrypoint.sh              ./entrypoint.sh
+COPY packages/medusa-api                        ./packages/medusa-api
+COPY packages/medusa-api/entrypoint.sh          ./entrypoint.sh
 
 RUN yarn install
 RUN yarn build

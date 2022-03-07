@@ -1,5 +1,5 @@
 {
-  "name": "medusa",
+  "name": "medusa-api",
   "version": "0.0.1",
   "description": "The Medusa backend store for the Montessori Woodshop storefront.",
   "author": "Drew DeCarme (drew@themontessoriwoodshop.com)",

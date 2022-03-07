@@ -1,7 +1,7 @@
 {
-  "name": "content",
+  "name": "@woodshop/api",
   "version": "1.0.0",
-  "description": "The content DB used to add meta information and data to the products that are added to the medusa store",
+  "description": "The supporting API and Database Schema for The Montessori Woodshop storefront",
   "scripts": {
     "publish": "wrangler publish",
     "generate": "prisma generate",
@@ -28,6 +28,7 @@
     "webpack": "^5.69.1"
   },
   "dependencies": {
-    "@prisma/client": "^3.9.2"
+    "@prisma/client": "^3.9.2",
+    "itty-router": "^2.5.2"
   }
 }

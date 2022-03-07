@@ -13,10 +13,10 @@ services:
 
   # Medusa
   - type: web
-    name: medusa
+    name: medusa-api
     env: docker
     plan: starter
-    dockerfilePath: ./packages/medusa/Dockerfile
+    dockerfilePath: ./packages/medusa-api/Dockerfile
     dockerContext: .
     domains:
       - store.themontessoriwoodshop.com
@@ -26,7 +26,7 @@ services:
       - fromGroup: cloudflare
       - key: MEDUSA_DATABASE_URL
         fromDatabase:
-          name: store_db
+          name: medusa_db
           property: connectionString
       - key: MEDUSA_REDIS_HOST
         fromService:
@@ -70,15 +70,15 @@ envVarGroups:
 
 # Postgres DB
 databases:
-  - name: content_db
-    databaseName: content_db
+  - name: woodshop_db
+    databaseName: woodshop_db
     plan: starter
     user: content_user
     region: oregon
     postgresMajorVersion: 14
-  - name: store_db
+  - name: medusa_db
     plan: starter
-    databaseName: store_db
+    databaseName: medusa_db
     user: store_user
     region: oregon
     postgresMajorVersion: 14
