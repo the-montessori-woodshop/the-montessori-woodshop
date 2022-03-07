@@ -1,7 +1,5 @@
 require("./env");
 
-console.log(process.env);
-
 const esbuild = require("esbuild");
 const alias = require("esbuild-plugin-alias");
 const {

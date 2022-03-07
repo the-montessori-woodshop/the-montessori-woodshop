@@ -5,8 +5,8 @@
   "scripts": {
     "publish": "wrangler publish",
     "build": "yarn node ./scripts/build.js",
-    "generate": "yarn node ./scripts/env.js && PRISMA_CLIENT_ENGINE_TYPE=dataproxy prisma generate",
-    "migrate-dev": "yarn node ./scripts/env.js && prisma migrate dev",
+    "generate": "prisma generate",
+    "migrate-dev": "prisma migrate dev",
     "dev": "yarn generate && wrangler dev"
   },
   "main": "dist/worker.js",

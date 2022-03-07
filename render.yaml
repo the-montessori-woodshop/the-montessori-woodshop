@@ -73,13 +73,13 @@ databases:
   - name: woodshop_db
     databaseName: woodshop_db
     plan: starter
-    user: content_user
+    user: woodshop_user
     region: oregon
     postgresMajorVersion: 14
   - name: medusa_db
     plan: starter
     databaseName: medusa_db
-    user: store_user
+    user: medusa_user
     region: oregon
     postgresMajorVersion: 14
     
