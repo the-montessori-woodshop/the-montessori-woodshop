@@ -1684,7 +1684,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cloudflare/workers-types@npm:^3.4.0":
+"@cloudflare/workers-types@npm:3.4.0, @cloudflare/workers-types@npm:^3.4.0":
   version: 3.4.0
   resolution: "@cloudflare/workers-types@npm:3.4.0"
   checksum: 03294ec6ce0494dc0e8a07fa9c2eb1edee674538d8bbf2bf21bbb4e05b23759e8d12bab6e938f558f0ea8d258b9f348145131b2a33816a6a62429f69bb927070
@@ -2509,7 +2509,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@medusajs/medusa-js@npm:^1.1.1":
+"@medusajs/medusa-js@npm:1.1.1":
   version: 1.1.1
   resolution: "@medusajs/medusa-js@npm:1.1.1"
   dependencies:
@@ -3071,7 +3071,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@remix-run/cloudflare-pages@npm:^1.2.1":
+"@remix-run/cloudflare-pages@npm:1.2.1":
   version: 1.2.1
   resolution: "@remix-run/cloudflare-pages@npm:1.2.1"
   dependencies:
@@ -3082,7 +3082,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@remix-run/dev@npm:^1.2.1":
+"@remix-run/dev@npm:1.2.1":
   version: 1.2.1
   resolution: "@remix-run/dev@npm:1.2.1"
   dependencies:
@@ -3109,7 +3109,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@remix-run/react@npm:^1.2.1":
+"@remix-run/react@npm:1.2.1":
   version: 1.2.1
   resolution: "@remix-run/react@npm:1.2.1"
   dependencies:
@@ -5481,7 +5481,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-dom@npm:^17.0.11":
+"@types/react-dom@npm:17.0.11, @types/react-dom@npm:^17.0.11":
   version: 17.0.11
   resolution: "@types/react-dom@npm:17.0.11"
   dependencies:
@@ -5499,7 +5499,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:*, @types/react@npm:>=16, @types/react@npm:^17.0.39":
+"@types/react@npm:*, @types/react@npm:17.0.39, @types/react@npm:>=16, @types/react@npm:^17.0.39":
   version: 17.0.39
   resolution: "@types/react@npm:17.0.39"
   dependencies:
@@ -5591,7 +5591,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/styled-components@npm:^5.1.23":
+"@types/styled-components@npm:5.1.23":
   version: 5.1.23
   resolution: "@types/styled-components@npm:5.1.23"
   dependencies:
@@ -9363,7 +9363,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cross-env@npm:^7.0.3":
+"cross-env@npm:7.0.3":
   version: 7.0.3
   resolution: "cross-env@npm:7.0.3"
   dependencies:
@@ -22152,7 +22152,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-dom@npm:*, react-dom@npm:^17.0.2":
+"react-dom@npm:*, react-dom@npm:17.0.2, react-dom@npm:^17.0.2":
   version: 17.0.2
   resolution: "react-dom@npm:17.0.2"
   dependencies:
@@ -22414,7 +22414,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react@npm:*, react@npm:^17.0.2":
+"react@npm:*, react@npm:17.0.2, react@npm:^17.0.2":
   version: 17.0.2
   resolution: "react@npm:17.0.2"
   dependencies:
@@ -22853,7 +22853,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"remix@npm:^1.2.1":
+"remix@npm:1.2.1":
   version: 1.2.1
   resolution: "remix@npm:1.2.1"
   dependencies:
@@ -24434,24 +24434,24 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "storefront@workspace:packages/storefront"
   dependencies:
-    "@cloudflare/workers-types": ^3.4.0
-    "@medusajs/medusa-js": ^1.1.1
-    "@remix-run/cloudflare-pages": ^1.2.1
-    "@remix-run/dev": ^1.2.1
-    "@remix-run/react": ^1.2.1
-    "@types/react": ^17.0.39
-    "@types/react-dom": ^17.0.11
-    "@types/styled-components": ^5.1.23
+    "@cloudflare/workers-types": 3.4.0
+    "@medusajs/medusa-js": 1.1.1
+    "@remix-run/cloudflare-pages": 1.2.1
+    "@remix-run/dev": 1.2.1
+    "@remix-run/react": 1.2.1
+    "@types/react": 17.0.39
+    "@types/react-dom": 17.0.11
+    "@types/styled-components": 5.1.23
     "@woodshop/components": "workspace:^"
     "@woodshop/icons": "workspace:^"
     "@woodshop/illustrations": "workspace:^"
-    cross-env: ^7.0.3
-    react: ^17.0.2
-    react-dom: ^17.0.2
-    react-is: ^17.0.2
-    remix: ^1.2.1
-    styled-components: ^5.3.3
-    typescript: ^4.6.2
+    cross-env: 7.0.3
+    react: 17.0.2
+    react-dom: 17.0.2
+    react-is: 17.0.2
+    remix: 1.2.1
+    styled-components: 5.3.3
+    typescript: 4.6.2
     wrangler: pages
   languageName: unknown
   linkType: soft
@@ -24852,7 +24852,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"styled-components@npm:^5.3.3":
+"styled-components@npm:5.3.3":
   version: 5.3.3
   resolution: "styled-components@npm:5.3.3"
   dependencies:
@@ -25915,7 +25915,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:^4.6.2":
+"typescript@npm:4.6.2, typescript@npm:^4.6.2":
   version: 4.6.2
   resolution: "typescript@npm:4.6.2"
   bin:
@@ -25935,7 +25935,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@^4.6.2#~builtin<compat/typescript>":
+"typescript@patch:typescript@4.6.2#~builtin<compat/typescript>, typescript@patch:typescript@^4.6.2#~builtin<compat/typescript>":
   version: 4.6.2
   resolution: "typescript@patch:typescript@npm%3A4.6.2#~builtin<compat/typescript>::version=4.6.2&hash=bda367"
   bin:
