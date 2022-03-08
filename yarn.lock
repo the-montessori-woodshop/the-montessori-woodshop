@@ -6175,7 +6175,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@woodshop/api@workspace:^, @woodshop/api@workspace:packages/woodshop-api":
+"@woodshop/api@workspace:packages/woodshop-api":
   version: 0.0.0-use.local
   resolution: "@woodshop/api@workspace:packages/woodshop-api"
   dependencies:
@@ -24442,7 +24442,6 @@ __metadata:
     "@types/react": ^17.0.39
     "@types/react-dom": ^17.0.11
     "@types/styled-components": ^5.1.23
-    "@woodshop/api": "workspace:^"
     "@woodshop/components": "workspace:^"
     "@woodshop/icons": "workspace:^"
     "@woodshop/illustrations": "workspace:^"

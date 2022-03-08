@@ -8,7 +8,6 @@
     "@medusajs/medusa-js": "^1.1.1",
     "@remix-run/cloudflare-pages": "^1.2.1",
     "@remix-run/react": "^1.2.1",
-    "@woodshop/api": "workspace:^",
     "@woodshop/components": "workspace:^",
     "@woodshop/icons": "workspace:^",
     "@woodshop/illustrations": "workspace:^",
