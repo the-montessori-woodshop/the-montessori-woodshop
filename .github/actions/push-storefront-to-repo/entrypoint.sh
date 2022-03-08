@@ -1,8 +1,7 @@
 #!/bin/sh -l
 
-USER_EMAIL="$1"
-USER_NAME="$2"
-REPO_NAME="$3"
+USER_EMAIL="drewdecarme@gmail.com"
+USER_NAME="drewdecarme"
 
 set -e  # if a command fails it stops the execution
 set -u  # script fails if trying to access to an undefined variable
