@@ -49,10 +49,9 @@ jobs:
           workingDirectory: ./packages/woodshop-api/
 
   deploy_woodshop_storefront:
-    name: Woodshop Storefront - Push to repository
+    name: Storefront - Push to repository
     runs-on: ubuntu-latest
     environment: production
-    needs: deploy_woodshop_api
     steps:
       - name: Checkout monorepo
         uses: actions/checkout@v2
@@ -63,7 +62,7 @@ jobs:
 
   deploy_storybook:
     runs-on: ubuntu-latest
-    name: Build and Deploy - Storybook Docs
+    name: Storybook - Build & deploy
     environment: production
     steps:
       - uses: actions/checkout@v2
