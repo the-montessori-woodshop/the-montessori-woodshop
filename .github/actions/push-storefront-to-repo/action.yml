@@ -1,7 +1,7 @@
 name: Mirror the monorepo in other downstream repos
 description: Copy's this repo into another downstream repo
 inputs:
-  user-email:
+  userEmail:
     description: Email for the git commit
     required: true
   user-name:

@@ -11,4 +11,4 @@ site = { bucket = "./storybook-static", entry-point = "workers-site" }
 [env.production]
 workers_dev = false
 zone_id = 'ebeb335a5410105683a9e7bc11251d1c'
-route = "https://docs.themontessoriwoodshop.com/"
+route = "https://docs.themontessoriwoodshop.com/*"

@@ -1,8 +1,7 @@
 #!/bin/sh -l
 
-USER_EMAIL="$1"
-USER_NAME="$2"
-REPO_NAME="$3"
+USER_EMAIL="drewdecarme@gmail.com"
+USER_NAME="drewdecarme"
 
 set -e  # if a command fails it stops the execution
 set -u  # script fails if trying to access to an undefined variable
@@ -18,7 +17,6 @@ git clone --single-branch --branch main "https://$USER_NAME:$API_TOKEN_GITHUB@gi
 mkdir tmp
 cp -r ./woodshop-storefront/.git ./tmp/.git
 cp -r ./woodshop-storefront/.yarn ./tmp/.yarn
-cp -r ./woodshop-storefront/yarn.lock ./tmp/yarn.lock
 rm -rf ./woodshop-storefront
 
 # Copy the contents fo the storefront package into the tmp dir
@@ -32,11 +30,11 @@ cp -r packages/builder tmp/packages/builder
 cp -r packages/axios-fetch tmp/packages/axios-fetch
 
 # Install the packages to create the lockfile to be used
+# Create a blank yarn.lock to initilalize
 cd tmp
+touch yarn.lock
+yarn install --mode update-lockfile
 yarn plugin import workspace-tools
-yarn install
-# npm install
-# npm run build:ci
 
 # Add everything and then commit and push to the storefront
 # Any build mechanisms should be kicked off that are attached to this repo

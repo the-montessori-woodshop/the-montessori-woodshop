@@ -8,8 +8,11 @@
     "dev": "yarn workspace storefront dev",
     "build": "yarn workspaces foreach -ptiv run build",
     "components-build": "yarn workspaces foreach -ptiv --no-private run build && yarn workspace @woodshop/components build-storybook",
-    "api-dev": "yarn workspace @woodshop/api dev",
-    "build:ci": "bash scripts/build-ci.sh",
+    "api:dev": "yarn workspace @woodshop/api dev",
+    "api:migrate-dev": "yarn workspace @woodshop/api migrate-dev",
+    "api:migrate": "yarn workspace @woodshop/api migrate",
+    "api:push": "yarn workspace @woodshop/api push",
+    "api:build": "yarn workspace @woodshop/api build",
     "components-dev": "yarn workspace @woodshop/components storybook",
     "clean": "rimraf ./packages/**/node_modules && rimraf node_modules"
   },
