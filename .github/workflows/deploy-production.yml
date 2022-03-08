@@ -38,9 +38,7 @@ jobs:
         with:
           envkey_WOODSHOP_API_DATABASE_URL: ${{ secrets.WOODSHOP_API_DATABASE_URL }}
           directory: ./packages/woodshop-api/
-      - name: Build
-        run: yarn api:build
-      - name: Deploy
+      - name: Build & Deploy
         uses: cloudflare/wrangler-action@1.3.0
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
