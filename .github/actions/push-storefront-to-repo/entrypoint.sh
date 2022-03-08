@@ -31,8 +31,8 @@ cp -r packages/axios-fetch tmp/packages/axios-fetch
 
 # Install the packages to create the lockfile to be used
 cd tmp
-yarn plugin import workspace-tools
 yarn install
+yarn plugin import workspace-tools
 # npm install
 # npm run build:ci
 
