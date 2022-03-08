@@ -17,7 +17,6 @@ git clone --single-branch --branch main "https://$USER_NAME:$API_TOKEN_GITHUB@gi
 mkdir tmp
 cp -r ./woodshop-storefront/.git ./tmp/.git
 cp -r ./woodshop-storefront/.yarn ./tmp/.yarn
-cp -r ./woodshop-storefront/yarn.lock ./tmp/yarn.lock
 rm -rf ./woodshop-storefront
 
 # Copy the contents fo the storefront package into the tmp dir
