@@ -19,7 +19,6 @@ jobs:
       - name: Create .env file
         uses: SpicyPizza/create-envfile@v1.3.0
         with:
-          envkey_PRISMA_CLIENT_ENGINE_TYPE: ${{ secrets.PRISMA_CLIENT_ENGINE_TYPE }}
           envkey_WOODSHOP_API_DATABASE_URL: ${{ secrets.WOODSHOP_API_DATABASE_URL }}
           directory: ./packages/woodshop-api/
       - name: Migrate DB
@@ -37,7 +36,6 @@ jobs:
       - name: Create .env file
         uses: SpicyPizza/create-envfile@v1.3.0
         with:
-          envkey_PRISMA_CLIENT_ENGINE_TYPE: ${{ secrets.PRISMA_CLIENT_ENGINE_TYPE }}
           envkey_WOODSHOP_API_DATABASE_URL: ${{ secrets.WOODSHOP_API_DATABASE_URL }}
           directory: ./packages/woodshop-api/
       - name: Build
