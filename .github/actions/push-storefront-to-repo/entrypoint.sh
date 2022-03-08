@@ -33,7 +33,7 @@ cp -r packages/axios-fetch tmp/packages/axios-fetch
 # Create a blank yarn.lock to initilalize
 cd tmp
 touch yarn.lock
-yarn install
+yarn install --mode update-lockfile
 yarn plugin import workspace-tools
 
 # Add everything and then commit and push to the storefront
