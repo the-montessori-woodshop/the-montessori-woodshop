@@ -1,13 +1,13 @@
 import { Router } from "itty-router";
 
-import handleGETLog from "./log/handleGETLog";
-
-// import Posts from ".log/posts";
+import { handleGetPostById } from "./posts/handleGETPostById";
 
 const router = Router();
 
 router
-  .get("/api/log", handleGETLog)
+  // Posts
+  .get("/api/post/:id", handleGetPostById)
+  // .post("/api/post", handlePOSTPost)
   // .get("/api/posts", handleGETPosts)
   // .get("/api/posts/:id", handleGetPostById)
   .get("*", () => new Response("Not found", { status: 404 }));

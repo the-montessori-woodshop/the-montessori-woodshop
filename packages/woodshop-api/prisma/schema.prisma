@@ -9,15 +9,22 @@ datasource db {
   shadowDatabaseUrl = env("WOODSHOP_API_SHADOW_DATABASE_URL")
 }
 
-model Log {
-  id      String @id @default(dbgenerated())
-  level   Level
-  message String
-  meta    Json
+model Post {
+  id        Int     @id @default(autoincrement())
+  title     String
+  content   String?
+  published Boolean @default(false)
+  author    User?   @relation(fields: [authorId], references: [id])
+  authorId  Int?
 }
 
-enum Level {
-  Info
-  Warn
-  Error
+model User {
+  id        Int      @id @default(autoincrement())
+  name      String?
+  email     String?  @unique
+  createdAt DateTime @default(now()) @map(name: "created_at")
+  updatedAt DateTime @updatedAt @map(name: "updated_at")
+  posts     Post[]
+
+  @@map(name: "users")
 }
