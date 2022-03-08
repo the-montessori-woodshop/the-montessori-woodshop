@@ -41,7 +41,7 @@ jobs:
       - name: Build
         run: yarn api:build
       - name: Deploy
-        run: yarn workspace @woodshop/api CF_ACCOUNT_ID=${{ secrets.CF_ACCOUNT_ID }} CF_API_TOKEN=${{ secrets.CF_API_TOKEN }} wrangler publish --env production
+        run: CF_ACCOUNT_ID=${{ secrets.CF_ACCOUNT_ID }} CF_API_TOKEN=${{ secrets.CF_API_TOKEN }} yarn workspace @woodshop/api  wrangler publish --env production
 
 
   deploy_woodshop_storefront:

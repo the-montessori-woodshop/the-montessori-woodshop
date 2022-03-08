@@ -16,4 +16,4 @@ format = "service-worker"
 [env.production]
 workers_dev = false
 zone_id = 'ebeb335a5410105683a9e7bc11251d1c'
-route = "https://api.woodshop.themontessoriwoodshop.com/"
+route = "https://api.woodshop.themontessoriwoodshop.com/*"
