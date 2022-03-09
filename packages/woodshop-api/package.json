@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "description": "The supporting API and Database Schema for The Montessori Woodshop storefront",
   "scripts": {
+    "client:build": "yarn node ./scripts/build-client.mjs && tsc -p tsconfig.client.json",
+    "client:dev": "yarn node ./scripts/build-client.mjs --watch",
     "publish": "wrangler publish",
     "build": "yarn generate && yarn node ./scripts/build.js",
     "generate": "PRISMA_CLIENT_ENGINE_TYPE=dataproxy && prisma generate",
@@ -12,6 +14,7 @@
     "dev": "yarn generate && wrangler dev --ip 127.0.0.1 --port 8888"
   },
   "main": "dist/worker.js",
+  "types": "client/types/index.js",
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/the-montessori-woodshop/the-montessori-woodshop.git"

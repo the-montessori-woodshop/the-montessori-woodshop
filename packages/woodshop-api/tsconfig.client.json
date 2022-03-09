@@ -1,0 +1,25 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "module": "CommonJS",
+    "allowJs": false,
+    "noEmit": false,
+    "lib": ["esnext", "dom"],
+    "resolveJsonModule": true,
+    "preserveConstEnums": true,
+    "sourceMap": true,
+    "alwaysStrict": true,
+    "strict": true,
+    "outFile": "client/index.d.ts",
+    "emitDeclarationOnly": true,
+    "declaration": true,
+    "declarationMap": true,
+    "target": "esnext",
+    "moduleResolution": "Node",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "isolatedModules": false,
+    "skipLibCheck": true
+  },
+  "include": ["src/client/index.ts"]
+}
