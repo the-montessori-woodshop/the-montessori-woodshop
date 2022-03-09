@@ -7,8 +7,6 @@ export type HandleGETRequest<
   }
 ) => Promise<ResponseDataShape>;
 
-export type HandlePOSTRequest<RequestData, ResponseData> = (
-  request: FetchEvent["request"] & {
-    data: RequestData;
-  }
+export type HandlePOSTRequest<ResponseData> = (
+  request: FetchEvent["request"]
 ) => Promise<ResponseData>;

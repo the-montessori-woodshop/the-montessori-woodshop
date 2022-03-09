@@ -1,14 +1,16 @@
 import { Post, PrismaClient } from "@prisma/client";
 
 import { HandleGETRequest } from "../../types";
-import { createRequestHandler } from "../../utils/createRequestHandler";
+import { handleRoute } from "../../utils/handleRoute";
 
-const prisma = new PrismaClient();
+const prisma = new PrismaClient({
+  errorFormat: "pretty"
+});
 
 export type GET_PostByIdApiParams = { id: string };
 export type GET_PostByIdApiResponse = Post | null;
 
-const getPostById: HandleGETRequest<
+export const getPostById: HandleGETRequest<
   GET_PostByIdApiResponse,
   GET_PostByIdApiParams
 > = async ({ params: { id } }) => {
@@ -26,4 +28,4 @@ const getPostById: HandleGETRequest<
   }
 };
 
-export const handleGetPostById = createRequestHandler(getPostById);
+export const handleGetPostById = handleRoute(getPostById);

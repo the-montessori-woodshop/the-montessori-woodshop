@@ -1,21 +1,26 @@
 import { Post, PrismaClient } from "@prisma/client";
 
 import { HandlePOSTRequest } from "../../types";
-import { createRequestHandler } from "../../utils/createRequestHandler";
+import { handleRoute } from "../../utils/handleRoute";
 
-const prisma = new PrismaClient();
+const prisma = new PrismaClient({
+  errorFormat: "pretty"
+});
 
 export type POST_NewPostByIdApiRequest = Omit<Post, "id">;
 export type POST_NewPostByIdApiResponse = Post;
 
-export const createNewPost: HandlePOSTRequest<
-  POST_NewPostByIdApiRequest,
+export const postNewPost: HandlePOSTRequest<
   POST_NewPostByIdApiResponse
-> = async ({ data }) => {
+> = async (request) => {
+  const data = await request.json<POST_NewPostByIdApiRequest>();
+
   try {
     const post = await prisma.post.create({
       data: {
-        title: data.title
+        title: data.title,
+        content: data.content,
+        published: data.published
       }
     });
     return post;
@@ -24,4 +29,4 @@ export const createNewPost: HandlePOSTRequest<
   }
 };
 
-export const handlePostNewPost = createRequestHandler(createNewPost);
+export const handlePostNewPost = handleRoute(postNewPost);
