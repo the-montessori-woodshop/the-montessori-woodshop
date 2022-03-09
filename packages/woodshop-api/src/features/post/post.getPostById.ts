@@ -16,6 +16,7 @@ export const getPostById: HandleGETRequest<
 > = async ({ params: { id } }) => {
   if (!id) throw new Error(":id is required.");
   try {
+    await prisma.$connect();
     const post = await prisma.post.findUnique({
       where: {
         id: Number(id)

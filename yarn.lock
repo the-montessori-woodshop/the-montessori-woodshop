@@ -6515,7 +6515,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@woodshop/api@workspace:packages/woodshop-api":
+"@woodshop/api@workspace:^, @woodshop/api@workspace:packages/woodshop-api":
   version: 0.0.0-use.local
   resolution: "@woodshop/api@workspace:packages/woodshop-api"
   dependencies:
@@ -6527,7 +6527,7 @@ __metadata:
     esbuild-plugin-alias: ^0.2.1
     itty-router: ^2.5.2
     prisma: 3.10.0
-    typescript: ^4.6.2
+    typescript: next
   languageName: unknown
   linkType: soft
 
@@ -8007,6 +8007,7 @@ __metadata:
     "@remix-run/react": ^1.2.3
     "@types/react": ^17.0.24
     "@types/react-dom": ^17.0.9
+    "@woodshop/api": "workspace:^"
     cross-env: ^7.0.3
     eslint: ^8.9.0
     npm-run-all: ^4.1.5
@@ -8015,7 +8016,7 @@ __metadata:
     react-is: ^17.0.2
     remix: ^1.2.3
     styled-components: ^5.3.3
-    typescript: ^4.5.5
+    typescript: next
     wrangler: beta
   languageName: unknown
   linkType: soft
@@ -25938,7 +25939,7 @@ __metadata:
     eslint: ^8.10.0
     prettier: ^2.5.1
     rimraf: ^3.0.2
-    typescript: ^4.6.2
+    typescript: next
   languageName: unknown
   linkType: soft
 
@@ -26584,13 +26585,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:4.6.2, typescript@npm:^4.5.5, typescript@npm:^4.6.2":
+"typescript@npm:4.6.2, typescript@npm:^4.6.2":
   version: 4.6.2
   resolution: "typescript@npm:4.6.2"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
   checksum: 8a44ed7e6f6c4cb1ebe8cf236ecda2fb119d84dcf0fbd77e707b2dfea1bbcfc4e366493a143513ce7f57203c75da9d4e20af6fe46de89749366351046be7577c
+  languageName: node
+  linkType: hard
+
+"typescript@npm:next":
+  version: 4.7.0-dev.20220309
+  resolution: "typescript@npm:4.7.0-dev.20220309"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: f94775d28a3f5098b6cad0a8d9e22176fc431af2959e7cb0889173f1fbc3918249a61d1cfd76429833abad9d52ad4189a5212c184d73c95ac0ee81b114632f90
   languageName: node
   linkType: hard
 
@@ -26604,13 +26615,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@4.6.2#~builtin<compat/typescript>, typescript@patch:typescript@^4.5.5#~builtin<compat/typescript>, typescript@patch:typescript@^4.6.2#~builtin<compat/typescript>":
+"typescript@patch:typescript@4.6.2#~builtin<compat/typescript>, typescript@patch:typescript@^4.6.2#~builtin<compat/typescript>":
   version: 4.6.2
   resolution: "typescript@patch:typescript@npm%3A4.6.2#~builtin<compat/typescript>::version=4.6.2&hash=bda367"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
   checksum: 40b493a71747fb89fa70df104e2c4a5e284b43750af5bea024090a5261cefa387f7a9372411b13030f7bf5555cee4275443d08805642ae5c74ef76740854a4c7
+  languageName: node
+  linkType: hard
+
+"typescript@patch:typescript@next#~builtin<compat/typescript>":
+  version: 4.7.0-dev.20220309
+  resolution: "typescript@patch:typescript@npm%3A4.7.0-dev.20220309#~builtin<compat/typescript>::version=4.7.0-dev.20220309&hash=bda367"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: d23c159b62b6191d0536148af110d937a464db9756cdad210c122d5832a8b8011984f835f6fba2f7a7d9feb655c22f8d871ffc400846a864cc89973acc2c56fc
   languageName: node
   linkType: hard
 

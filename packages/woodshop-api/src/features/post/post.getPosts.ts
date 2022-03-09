@@ -15,6 +15,7 @@ export const getPosts: HandleGETRequest<
   GET_PostsApiParams
 > = async () => {
   try {
+    await prisma.$connect();
     const posts = await prisma.post.findMany();
     return posts;
   } catch (error) {

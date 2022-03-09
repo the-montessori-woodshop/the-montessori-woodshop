@@ -1,5 +1,6 @@
 import BaseResource from "../../client/Base.resource";
 import { GET_PostByIdApiResponse } from "./post.getPostById";
+import { GET_PostsApiResponse } from "./post.getPosts";
 import {
   POST_NewPostByIdApiRequest,
   POST_NewPostByIdApiResponse
@@ -22,7 +23,7 @@ export class PostResource extends BaseResource {
    */
   getPosts() {
     const url = "/api/post";
-    return this.client.request({
+    return this.client.request<GET_PostsApiResponse>({
       method: "GET",
       url
     });

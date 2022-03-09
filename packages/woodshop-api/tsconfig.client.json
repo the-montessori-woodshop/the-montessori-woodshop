@@ -10,16 +10,17 @@
     "sourceMap": true,
     "alwaysStrict": true,
     "strict": true,
-    "outFile": "client/index.d.ts",
+    "outDir": "./dist/client",
     "emitDeclarationOnly": true,
     "declaration": true,
+    "declarationDir": "./dist/client",
     "declarationMap": true,
     "target": "esnext",
     "moduleResolution": "Node",
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "isolatedModules": false,
+    "isolatedModules": true,
     "skipLibCheck": true
   },
-  "include": ["src/client/index.ts"]
+  "include": ["src/client"]
 }

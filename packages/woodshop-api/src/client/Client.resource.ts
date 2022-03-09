@@ -38,17 +38,17 @@ export class Client {
     // data,
     url
   }: WoodshopClientRequestConfig<D>): Promise<WoodshopClientResponse<R>> {
+    const fetchUrl = `${this.config.baseUrl}${url}`;
     const requestConfig = {
       method,
-      url: `${this.config.baseUrl}${url}`,
+      url: fetchUrl,
       headers: new Headers({
         Accept: "application/json",
         "Content-Type": "application/json"
-      }),
-      keepalive: true
+      })
     };
 
-    const res = await fetch(url, requestConfig);
+    const res = await fetch(fetchUrl, requestConfig);
     const data = await res.json<R>();
 
     return {

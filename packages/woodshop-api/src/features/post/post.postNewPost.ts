@@ -16,6 +16,7 @@ export const postNewPost: HandlePOSTRequest<
   const data = await request.json<POST_NewPostByIdApiRequest>();
 
   try {
+    await prisma.$connect();
     const post = await prisma.post.create({
       data: {
         title: data.title,

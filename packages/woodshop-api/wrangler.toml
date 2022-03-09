@@ -8,7 +8,7 @@ account_id = "68fa4421d84bfcddbd9311a7d57aa419"
 workers_dev = true
 
 [build]
-command = "yarn build"
+command = "yarn api:build"
 
 [build.upload]
 format = "service-worker"

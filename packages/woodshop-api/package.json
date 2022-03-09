@@ -3,18 +3,26 @@
   "version": "1.0.0",
   "description": "The supporting API and Database Schema for The Montessori Woodshop storefront",
   "scripts": {
-    "client:build": "yarn node ./scripts/build-client.mjs && tsc -p tsconfig.client.json",
-    "client:dev": "yarn node ./scripts/build-client.mjs --watch",
+    "client:build": "NODE_ENV=production yarn node ./scripts/build-client.mjs && tsc -p tsconfig.client.json",
+    "client:dev": "NODE_ENV=development yarn node ./scripts/build-client.mjs & tsc -p tsconfig.client.json",
     "publish": "wrangler publish",
-    "build": "yarn generate && yarn node ./scripts/build.js",
+    "api:build": "yarn generate && yarn node ./scripts/build.js",
+    "build": "yarn api:build & yarn client:build",
     "generate": "PRISMA_CLIENT_ENGINE_TYPE=dataproxy && prisma generate",
     "migrate-dev": "prisma migrate dev",
     "migrate": "prisma migrate status && prisma migrate deploy",
     "push": "prisma push",
-    "dev": "yarn generate && wrangler dev --ip 127.0.0.1 --port 8888"
+    "dev": "yarn client:dev & wrangler dev --ip 127.0.0.1 --port 8888"
   },
-  "main": "dist/worker.js",
-  "types": "client/types/index.js",
+  "main": "dist/worker/worker.js",
+  "exports": {
+    ".": "./dist/worker/worker.js",
+    "./client": {
+      "types": "./dist/client/client/index.d.ts",
+      "import": "./dist/client/client.js",
+      "default": "./dist/client/client.js"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/the-montessori-woodshop/the-montessori-woodshop.git"
@@ -32,7 +40,7 @@
     "esbuild": "^0.14.25",
     "esbuild-plugin-alias": "^0.2.1",
     "prisma": "3.10.0",
-    "typescript": "^4.6.2"
+    "typescript": "next"
   },
   "dependencies": {
     "@prisma/client": "3.10.0",
