@@ -3,10 +3,6 @@ import { Post, PrismaClient } from "@prisma/client";
 import { HandleGETRequest } from "../../types";
 import { handleRoute } from "../../utils/handleRoute";
 
-const prisma = new PrismaClient({
-  errorFormat: "pretty"
-});
-
 export type GET_PostByIdApiParams = { id: string };
 export type GET_PostByIdApiResponse = Post | null;
 
@@ -15,6 +11,10 @@ export const getPostById: HandleGETRequest<
   GET_PostByIdApiParams
 > = async ({ params: { id } }) => {
   if (!id) throw new Error(":id is required.");
+  const prisma = new PrismaClient({
+    errorFormat: "pretty"
+  });
+
   try {
     await prisma.$connect();
     const post = await prisma.post.findUnique({
