@@ -1,6 +1,6 @@
+import styled from "@emotion/styled";
 import { makeRem } from "@woodshop/components";
 import { NavLink } from "remix";
-import styled from "styled-components";
 
 export const BlogPostListItemLink = styled(NavLink)`
   padding: ${makeRem(16)} ${makeRem(24)};

@@ -1,5 +1,5 @@
+import styled from "@emotion/styled";
 import { makeRem } from "@woodshop/components";
-import styled from "styled-components";
 
 export type ChipProps = {
   variant: "draft" | "published";

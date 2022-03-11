@@ -6,7 +6,7 @@ import {
   TypographyCopy,
   TypographyHeading,
 } from "@woodshop/components";
-import styled from "styled-components";
+import styled from "@emotion/styled";
 import { BlogPostList } from "~/components/BlogPostList";
 import { BlogPostListItem } from "~/components/BlogPostListItem";
 import { BlogPostListItemLink } from "~/components/BlogPostListItemLink";

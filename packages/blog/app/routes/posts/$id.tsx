@@ -1,3 +1,4 @@
+import styled from "@emotion/styled";
 import { Button, Icon } from "@woodshop/components";
 import { Pencil, Send } from "@woodshop/icons";
 import client from "~/api";
@@ -6,7 +7,6 @@ import { PostCardBody } from "~/components/PostCardBody";
 import { PostCardChip } from "~/components/PostCardChip";
 import { PostCardHeader } from "~/components/PostCardHeader";
 import { LoaderFunction, useLoaderData } from "remix";
-import styled from "styled-components";
 
 export const loader: LoaderFunction = async ({ params }) => {
   if (!params.id) {

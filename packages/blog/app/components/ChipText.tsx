@@ -1,5 +1,5 @@
+import styled from "@emotion/styled";
 import { TypographyCopy, makeRem } from "@woodshop/components";
-import styled from "styled-components";
 
 export const ChipText = styled(TypographyCopy)`
   font-weight: bold;
