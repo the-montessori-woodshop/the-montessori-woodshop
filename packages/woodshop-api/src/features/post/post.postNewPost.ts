@@ -2,9 +2,10 @@ import { Post, PrismaClient } from "@prisma/client";
 
 import { HandlePOSTRequest } from "../../types";
 import { handleRoute } from "../../utils/handleRoute";
-
-export type POST_NewPostByIdApiRequest = Omit<Post, "id">;
-export type POST_NewPostByIdApiResponse = Post;
+import {
+  POST_NewPostByIdApiRequest,
+  POST_NewPostByIdApiResponse
+} from "./post.model";
 
 export const postNewPost: HandlePOSTRequest<
   POST_NewPostByIdApiResponse

@@ -1,10 +1,10 @@
 import BaseResource from "../../client/Base.resource";
-import { GET_PostByIdApiResponse } from "./post.getPostById";
-import { GET_PostsApiResponse } from "./post.getPosts";
 import {
+  GET_PostByIdApiResponse,
+  GET_PostsApiResponse,
   POST_NewPostByIdApiRequest,
   POST_NewPostByIdApiResponse
-} from "./post.postNewPost";
+} from "./post.model";
 
 export class PostResource extends BaseResource {
   /**

@@ -19,6 +19,7 @@
     "@woodshop/components": "workspace:^",
     "@woodshop/icons": "workspace:^",
     "@woodshop/illustrations": "workspace:^",
+    "clsx": "^1.1.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-is": "^17.0.2",

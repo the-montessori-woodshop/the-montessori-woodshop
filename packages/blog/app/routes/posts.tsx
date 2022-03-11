@@ -10,6 +10,10 @@ import styled from "styled-components";
 import { BlogPostList } from "~/components/BlogPostList";
 import { BlogPostListItem } from "~/components/BlogPostListItem";
 import { BlogPostListItemLink } from "~/components/BlogPostListItemLink";
+import { PostCardChip } from "~/components/PostCardChip";
+import { FC } from "react";
+
+import { Post } from "@woodshop/api/client";
 
 export const loader: LoaderFunction = async () => {
   const data = await client.post.getPosts();
@@ -40,7 +44,36 @@ const SSection = styled.section`
   padding: ${makeRem(24)};
 `;
 
-export default function Index() {
+const BlogPostLi: FC<Post> = (blogPost) => {
+  return (
+    <BlogPostListItem key={blogPost.id}>
+      <BlogPostListItemLink to={`/posts/${blogPost.id}`}>
+        <div>
+          <PostCardChip published={blogPost.published} />
+        </div>
+        <TypographyHeading
+          cxVariant="h6"
+          cxNode="div"
+          style={{
+            margin: 0,
+            fontWeight: "bold",
+          }}
+        >
+          {blogPost.title}
+        </TypographyHeading>
+        <TypographyCopy
+          style={{
+            fontSize: makeRem(12),
+          }}
+        >
+          {blogPost.content}
+        </TypographyCopy>
+      </BlogPostListItemLink>
+    </BlogPostListItem>
+  );
+};
+
+export default function Posts() {
   const { data } =
     useLoaderData<Awaited<ReturnType<typeof client.post.getPosts>>>();
 
@@ -55,27 +88,7 @@ export default function Index() {
         </SDiv>
         <BlogPostList>
           {data?.map((blogPost) => (
-            <BlogPostListItem key={blogPost.id}>
-              <BlogPostListItemLink to={`/posts/${blogPost.id}`}>
-                <TypographyHeading
-                  cxVariant="h6"
-                  cxNode="div"
-                  style={{
-                    margin: 0,
-                    fontWeight: "bold",
-                  }}
-                >
-                  {blogPost.title}
-                </TypographyHeading>
-                <TypographyCopy
-                  style={{
-                    fontSize: makeRem(12),
-                  }}
-                >
-                  {blogPost.content}
-                </TypographyCopy>
-              </BlogPostListItemLink>
-            </BlogPostListItem>
+            <BlogPostLi key={blogPost.id} {...blogPost} />
           ))}
         </BlogPostList>
       </SArticle>

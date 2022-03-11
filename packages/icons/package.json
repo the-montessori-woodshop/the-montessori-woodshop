@@ -5,7 +5,6 @@
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "sideEffects": false,
-  "type": "module",
   "scripts": {
     "generate": "yarn svgr --config-file=svgr.config.cjs svg",
     "docs": "yarn node ./scripts/create-docs.mjs && prettier --write ./ICONS.md",

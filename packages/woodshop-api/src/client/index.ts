@@ -1,4 +1,5 @@
 import { PostResource } from "../features/post/Post.resource";
+export * from "../features/post/post.model";
 
 import { Client, type ClientConfig } from "./Client.resource";
 

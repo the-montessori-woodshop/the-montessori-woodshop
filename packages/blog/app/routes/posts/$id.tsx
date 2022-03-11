@@ -1,10 +1,12 @@
+import { Button, Icon } from "@woodshop/components";
+import { Pencil, Send } from "@woodshop/icons";
 import client from "~/api";
-import { ChipDraft } from "~/components/ChipDraft";
-import { ChipPublished } from "~/components/ChipPublished";
 import { PostCard } from "~/components/PostCard";
 import { PostCardBody } from "~/components/PostCardBody";
+import { PostCardChip } from "~/components/PostCardChip";
 import { PostCardHeader } from "~/components/PostCardHeader";
 import { LoaderFunction, useLoaderData } from "remix";
+import styled from "styled-components";
 
 export const loader: LoaderFunction = async ({ params }) => {
   if (!params.id) {
@@ -15,17 +17,29 @@ export const loader: LoaderFunction = async ({ params }) => {
   return data;
 };
 
+const SDiv = styled.div`
+  display: flex;
+`;
+
 export default function PostSlug() {
   const { data } =
     useLoaderData<Awaited<ReturnType<typeof client.post.getPostById>>>();
   return (
     <PostCard>
       <PostCardHeader>
-        {data?.published ? (
-          <ChipPublished>Published</ChipPublished>
-        ) : (
-          <ChipDraft>Draft</ChipDraft>
-        )}
+        <PostCardChip published={data?.published} />
+        <SDiv>
+          <Button>
+            <Icon cxTitle="icon">
+              <Send />
+            </Icon>
+          </Button>
+          <Button>
+            <Icon cxTitle="icon">
+              <Pencil />
+            </Icon>
+          </Button>
+        </SDiv>
       </PostCardHeader>
       <PostCardBody>{data?.content}</PostCardBody>
     </PostCard>

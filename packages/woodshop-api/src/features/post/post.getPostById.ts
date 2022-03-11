@@ -2,9 +2,7 @@ import { Post, PrismaClient } from "@prisma/client";
 
 import { HandleGETRequest } from "../../types";
 import { handleRoute } from "../../utils/handleRoute";
-
-export type GET_PostByIdApiParams = { id: string };
-export type GET_PostByIdApiResponse = Post | null;
+import { GET_PostByIdApiParams, GET_PostByIdApiResponse } from "./post.model";
 
 export const getPostById: HandleGETRequest<
   GET_PostByIdApiResponse,

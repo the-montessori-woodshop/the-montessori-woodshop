@@ -2,9 +2,7 @@ import { Post, PrismaClient } from "@prisma/client";
 
 import { HandleGETRequest } from "../../types";
 import { handleRoute } from "../../utils/handleRoute";
-
-export type GET_PostsApiParams = Record<string, unknown>;
-export type GET_PostsApiResponse = Post[] | null;
+import { GET_PostsApiParams, GET_PostsApiResponse } from "./post.model";
 
 export const getPosts: HandleGETRequest<
   GET_PostsApiResponse,
