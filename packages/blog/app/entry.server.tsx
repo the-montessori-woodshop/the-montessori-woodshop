@@ -1,11 +1,10 @@
 import { CacheProvider } from "@emotion/react";
 // @ts-ignore
-import createEmotionServer from "@emotion/server/create-instance";
 import { renderToString } from "react-dom/server";
 import { RemixServer } from "remix";
 import type { EntryContext } from "remix";
 
-import ServerStyleContext from "./emotion/context.server";
+import ServerStyleContext, { createServer } from "./emotion/context.server";
 import createEmotionCache from "./emotion/createEmotionCache";
 
 export default function handleRequest(
@@ -15,7 +14,7 @@ export default function handleRequest(
   remixContext: EntryContext
 ) {
   const cache = createEmotionCache();
-  const { extractCriticalToChunks } = createEmotionServer(cache);
+  const { extractCriticalToChunks } = createServer(cache);
 
   const html = renderToString(
     <ServerStyleContext.Provider value={null}>
