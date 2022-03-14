@@ -1,18 +1,22 @@
-import "./PageSectionPaneContent.scss";
-
+import { styled } from "@linaria/react";
 import React, { forwardRef } from "react";
 
-import { makeClass } from "../../../theme";
-
 export type PageSectionPaneContentProps = JSX.IntrinsicElements["div"];
+
+const SPageSectionContent = styled.div`
+  & * {
+      margin: inherit;
+    }
+  }
+`;
 
 export const PageSectionPaneContent = forwardRef<
   HTMLDivElement,
   PageSectionPaneContentProps
->(function PageSectionPaneContent({ className, children, ...restProps }, ref) {
+>(function PageSectionPaneContent({ children, ...restProps }, ref) {
   return (
-    <div {...restProps} className={makeClass(className, "CJOpU")} ref={ref}>
+    <SPageSectionContent {...restProps} ref={ref}>
       {children}
-    </div>
+    </SPageSectionContent>
   );
 });

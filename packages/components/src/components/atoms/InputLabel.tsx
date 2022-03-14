@@ -1,8 +1,36 @@
-import "./InputLabel.scss";
-
+import { styled } from "@linaria/react";
+import clsx from "clsx";
 import React, { forwardRef, memo } from "react";
 
-import { makeClass } from "../../theme";
+import { makeClass, makeRem } from "../../theme/theme.utils";
+
+type CXSize = "default" | "small";
+const cxSizeAndError = makeClass<CXSize | "error">([
+  "default",
+  "small",
+  "error"
+]);
+
+const SLabel = styled.label`
+  font-family: var(--font-family);
+  line-height: var(--font-line-height);
+  margin-bottom: ${makeRem(4)};
+  cursor: pointer;
+  font-weight: bold;
+  color: var(--color-black);
+  display: block;
+  width: auto;
+
+  &${cxSizeAndError["default"]} {
+    font-size: ${makeRem(14)};
+  }
+  &${cxSizeAndError["default"]} {
+    font-size: ${makeRem(12)};
+  }
+  &${cxSizeAndError["error"]} {
+    color: var(--color-danger);
+  }
+`;
 
 export type InputLabelProps = JSX.IntrinsicElements["label"] & {
   cxSize?: "default" | "small";
@@ -15,17 +43,13 @@ const InputLabelFC = forwardRef<HTMLLabelElement, InputLabelProps>(
     ref
   ) {
     return (
-      <label
-        className={makeClass(className, "Ahgo42vh", {
-          "s-lg": cxSize === "default",
-          "s-sm": cxSize === "small",
-          error: !!error
-        })}
+      <SLabel
+        className={clsx(className, cxSize, error ? "error" : "")}
         {...props}
         ref={ref}
       >
         {children}
-      </label>
+      </SLabel>
     );
   }
 );

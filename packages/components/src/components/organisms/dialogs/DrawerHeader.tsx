@@ -3,7 +3,7 @@ import "./DrawerHeader.scss";
 import { Close } from "@woodshop/icons";
 import React, { forwardRef, useMemo } from "react";
 
-import { makeClass } from "../../../theme";
+import { makeClass } from "../../../theme/theme.utils";
 import { Button } from "../../atoms/Button";
 import { Icon } from "../../atoms/Icon";
 import { TypographyHeading } from "../../atoms/TypographyHeading";

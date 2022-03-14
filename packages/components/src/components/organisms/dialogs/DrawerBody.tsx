@@ -2,7 +2,7 @@ import "./DrawerBody.scss";
 
 import React, { forwardRef } from "react";
 
-import { makeClass } from "../../../theme";
+import { makeClass } from "../../../theme/theme.utils";
 
 export type DrawerBodyProps = JSX.IntrinsicElements["div"];
 

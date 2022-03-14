@@ -2,7 +2,7 @@ import "./Navbar.scss";
 
 import React from "react";
 
-import { makeClass } from "../../../theme";
+import { makeClass } from "../../../theme/theme.utils";
 
 export type NavProps = JSX.IntrinsicElements["nav"] & Record<string, unknown>;
 

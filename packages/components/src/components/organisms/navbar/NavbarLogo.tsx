@@ -2,7 +2,7 @@ import "./NavbarLogo.scss";
 
 import React, { forwardRef } from "react";
 
-import { makeClass } from "../../../theme";
+import { makeClass } from "../../../theme/theme.utils";
 
 export type NavbarLogoProps = JSX.IntrinsicElements["img"] & {
   src: string;

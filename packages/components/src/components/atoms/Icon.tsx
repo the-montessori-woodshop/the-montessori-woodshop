@@ -1,10 +1,56 @@
-import "./Icon.scss";
-
+import { styled } from "@linaria/react";
+import clsx from "clsx";
 import React, { forwardRef, memo } from "react";
 
-import { createColorMap } from "../../styles";
-import { ColorScheme, makeClass } from "../../theme";
+import { ColorScheme, cxColor } from "../../theme";
 import { useTransformIconProps } from "./icon.useTransformIconProps";
+
+const SIcon = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  path {
+    fill: inherit;
+  }
+
+  &${cxColor["black"]} {
+    fill: var(--color-black);
+  }
+  &${cxColor["white"]} {
+    fill: var(--color-white);
+  }
+  &${cxColor["primary"]} {
+    fill: var(--color-primary);
+  }
+  &${cxColor["secondary"]} {
+    fill: var(--color-secondary);
+  }
+  &${cxColor["grey1"]} {
+    fill: var(--color-grey1);
+  }
+  &${cxColor["grey2"]} {
+    fill: var(--color-grey2);
+  }
+  &${cxColor["grey3"]} {
+    fill: var(--color-grey3);
+  }
+  &${cxColor["grey4"]} {
+    fill: var(--color-grey4);
+  }
+  &${cxColor["grey5"]} {
+    fill: var(--color-grey5);
+  }
+  &${cxColor["success"]} {
+    fill: var(--color-success);
+  }
+  &${cxColor["warning"]} {
+    fill: var(--color-warning);
+  }
+  &${cxColor["danger"]} {
+    fill: var(--color-danger);
+  }
+`;
 
 export type IconProps = Omit<JSX.IntrinsicElements["div"], "title" | "css"> & {
   cxSize?: number;
@@ -49,16 +95,14 @@ export const IconFC = forwardRef<HTMLDivElement, IconProps>(function IconFC(
     useTransformIconProps(restProps);
 
   return (
-    <div
+    <SIcon
       {...iconContainerProps}
       ref={ref}
       style={iconContainerStyle}
-      className={makeClass(className, "TmuIxd", {
-        ...createColorMap(cxColor)
-      })}
+      className={clsx(className, cxColor)}
     >
       {IconComponent}
-    </div>
+    </SIcon>
   );
 });
 

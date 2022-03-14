@@ -2,7 +2,7 @@ import "./FooterSectionContentText.scss";
 
 import React, { forwardRef } from "react";
 
-import { makeClass } from "../../../theme";
+import { makeClass } from "../../../theme/theme.utils";
 import { TypographyCopy } from "../../atoms/TypographyCopy";
 
 export type FooterSectionContentTextProps = JSX.IntrinsicElements["div"];

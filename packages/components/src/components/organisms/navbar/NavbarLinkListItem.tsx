@@ -2,7 +2,7 @@ import "./NavbarLinkListItem.scss";
 
 import React, { forwardRef } from "react";
 
-import { makeClass } from "../../../theme";
+import { makeClass } from "../../../theme/theme.utils";
 
 export type NavbarLinkListItemProps = JSX.IntrinsicElements["li"];
 

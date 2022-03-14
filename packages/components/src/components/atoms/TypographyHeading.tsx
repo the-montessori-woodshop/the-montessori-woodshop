@@ -2,7 +2,7 @@ import "./TypographyHeading.scss";
 
 import React, { useMemo } from "react";
 
-import { makeClass } from "../../theme";
+import { makeClass } from "../../theme/theme.utils";
 
 type HeadingNodes = "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "div";
 

@@ -1,29 +1,31 @@
-import "./FormFieldRadioBoxText.scss";
-
+import { styled } from "@linaria/react";
 import React, { forwardRef } from "react";
 
-import { makeClass } from "../../../theme";
 import {
   TypographyCopy,
   TypographyCopyProps
 } from "../../atoms/TypographyCopy";
+
+const STyp = styled(TypographyCopy)`
+  font-weight: normal;
+  line-height: initial !important;
+`;
 
 export type FormFieldRadioBoxTextProps = TypographyCopyProps;
 
 export const FormFieldRadioBoxText = forwardRef<
   HTMLDivElement,
   FormFieldRadioBoxTextProps
->(function FormFieldRadioBoxText({ children, className, ...props }, ref) {
+>(function FormFieldRadioBoxText({ children, ...props }, ref) {
   return (
-    <TypographyCopy
+    <STyp
       cxVariant="body1"
       cxColor="textPrimary"
       cxNode="span"
-      className={makeClass(className, "Q9chE")}
       {...props}
       ref={ref}
     >
       {children}
-    </TypographyCopy>
+    </STyp>
   );
 });

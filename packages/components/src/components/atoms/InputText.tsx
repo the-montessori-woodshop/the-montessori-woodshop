@@ -1,17 +1,100 @@
-import "./InputText.scss";
-
+import { styled } from "@linaria/react";
 import { SVGIconComponent } from "@woodshop/icons";
+import clsx from "clsx";
 import React, { forwardRef, memo, useMemo } from "react";
 
-import { makeClass } from "../../theme";
+import { makeClass, makeRem } from "../../theme/theme.utils";
 import { Icon } from "./Icon";
+
+type CXSize = "default" | "small";
+type CXAlignment = "left" | "center";
+
+const cxSize = makeClass<CXSize>(["default", "small"]);
+const cxAlignment = makeClass<CXAlignment>(["left", "center"]);
+enum IconEnum {
+  start = ".i-start",
+  end = ".i-end"
+}
+
+const SInputContainer = styled.div`
+  position: relative;
+  display: inline-block;
+  width: 100%;
+`;
+const SInput = styled.input`
+  width: 100%;
+  padding-left: ${makeRem(16)};
+  padding-right: ${makeRem(16)};
+  border: ${makeRem(1)} solid var(--color-grey3);
+  border-radius: ${makeRem(2)};
+  background-color: var(--color-grey2);
+  max-width: 100%;
+
+  &:focus,
+  &:active {
+    border-color: var(--color-primary);
+    outline: none;
+  }
+
+  &::placeholder {
+    color: var(--color-grey4);
+  }
+
+  &${cxSize["default"]} {
+    height: ${makeRem(44)};
+  }
+
+  &${cxSize["small"]} {
+    height: ${makeRem(36)};
+    font-size: ${makeRem(14)};
+  }
+
+  &.error {
+    color: var(--color-danger);
+    border-color: var(--color-danger);
+
+    &:focus {
+      border-color: var(--color-danger);
+    }
+  }
+
+  &${cxAlignment["center"]} {
+    text-align: center;
+  }
+
+  &${cxAlignment["left"]} {
+    text-align: left;
+  }
+
+  &${IconEnum["start"]} {
+    padding-left: ${makeRem(8 + 24 + 8)};
+  }
+
+  &${IconEnum["end"]} {
+    padding-right: ${makeRem(8 + 24 + 8)};
+  }
+`;
+
+const SIcon = styled(Icon)`
+  position: absolute;
+  top: 50%;
+  margin-top: ${makeRem(-12)};
+
+  &${IconEnum.start} {
+    left: ${makeRem(8)};
+  }
+
+  &${IconEnum.end} {
+    right: ${makeRem(8)};
+  }
+`;
 
 export type InputTextProps = Omit<
   JSX.IntrinsicElements["input"],
   "type" | "css"
 > & {
-  cxSize?: "default" | "small";
-  cxAlignment?: "left" | "center";
+  cxSize?: CXSize;
+  cxAlignment?: CXAlignment;
   cxError?: boolean;
   type?: "text" | "number" | "search" | "email" | "password";
   StartIcon?: SVGIconComponent;
@@ -35,15 +118,13 @@ const InputTextFC = forwardRef<HTMLInputElement, InputTextProps>(
     const StartIconComponent = useMemo(() => {
       if (StartIcon) {
         return (
-          <Icon
+          <SIcon
             cxTitle="start-icon"
             accessibility="decorative"
-            className={makeClass(undefined, "cOwWyv", {
-              start: true
-            })}
+            className={IconEnum.start}
           >
             <StartIcon />
-          </Icon>
+          </SIcon>
         );
       }
       return null;
@@ -55,9 +136,7 @@ const InputTextFC = forwardRef<HTMLInputElement, InputTextProps>(
           <Icon
             cxTitle="end-icon"
             accessibility="decorative"
-            className={makeClass(undefined, "cOwWyv", {
-              end: true
-            })}
+            className={IconEnum.end}
           >
             <EndIcon />
           </Icon>
@@ -67,25 +146,20 @@ const InputTextFC = forwardRef<HTMLInputElement, InputTextProps>(
     }, []);
 
     return (
-      <div
-        style={{ position: "relative", display: "inline-block", width: "100%" }}
-      >
+      <SInputContainer>
         {StartIconComponent}
-        <input
+        <SInput
           {...props}
           ref={ref}
           type={type}
-          className={makeClass(className, "UOD95", {
-            "s-lg": cxSize === "default",
-            "s-sm": cxSize === "small",
-            "a-center": cxAlignment === "center",
-            "i-start": !!StartIcon,
-            "i-end": !!EndIcon,
+          className={clsx(className, cxSize, cxAlignment, {
+            [IconEnum.start]: !!StartIcon,
+            [IconEnum.end]: !!EndIcon,
             error: cxError
           })}
         />
         {EndIconComponent}
-      </div>
+      </SInputContainer>
     );
   }
 );

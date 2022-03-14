@@ -1,8 +1,8 @@
-import "./FormFieldRadioBox.scss";
-
+import { styled } from "@linaria/react";
+import clsx from "clsx";
 import React, { ReactNode, forwardRef, memo, useMemo } from "react";
 
-import { makeClass } from "../../../theme";
+import { makeRem } from "../../../theme/theme.utils";
 import { InputRadio, InputRadioProps } from "../../atoms/InputRadio";
 import { FormFieldRadioBoxText } from "./FormFieldRadioBoxText";
 
@@ -11,6 +11,53 @@ export type FormFieldRadioBoxProps = Omit<InputRadioProps, "id"> & {
   children: ReactNode;
   error?: string;
 };
+
+const SLabel = styled.label`
+  padding: 0 ${makeRem(16)};
+  height: ${makeRem(72)};
+  border-radius: ${makeRem(2)};
+  position: relative;
+  border: ${makeRem(1)} solid transparent;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+  input {
+    & ~ div {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      border-radius: ${makeRem(2)};
+      border: ${makeRem(1)} solid var(--color-grey3);
+      transition: all 0.1s ease-in-out;
+    }
+
+    &:checked {
+      & ~ div {
+        border: ${makeRem(2)} solid var(--color-primary);
+        box-shadow: 0 0 4px 0 rgba(var(--color-primary-rgba), 0.46);
+        border-radius: ${makeRem(2)};
+      }
+    }
+
+    &:hover {
+      &:not(:checked) {
+        & ~ div {
+          border: ${makeRem(1)} solid var(--color-grey4);
+          box-shadow: 0 0 4px 0 rgba(var(--color-grey4-rgba), 0.46);
+          border-radius: ${makeRem(2)};
+        }
+      }
+    }
+  }
+`;
+
+const SSpan = styled.span`
+  display: block;
+  width: 100%;
+`;
 
 /**
  * An opinonated implementation of the various Input components
@@ -31,24 +78,17 @@ const FormFieldRadioBoxFC = forwardRef<
   }, []);
 
   return (
-    <label
+    <SLabel
       htmlFor={id}
-      className={makeClass(className, "pk0ZQq", {
+      className={clsx(className, {
         error: !!error
       })}
     >
       <InputRadio id={id} {...restInputProps} ref={ref}>
-        <span
-          style={{
-            display: "block",
-            width: "100%"
-          }}
-        >
-          {Text}
-        </span>
+        <SSpan>{Text}</SSpan>
         <div />
       </InputRadio>
-    </label>
+    </SLabel>
   );
 });
 

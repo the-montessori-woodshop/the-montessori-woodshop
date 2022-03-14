@@ -9,7 +9,7 @@ import React, {
   useState
 } from "react";
 
-import { makeClass } from "../../../theme";
+import { makeClass } from "../../../theme/theme.utils";
 import { Icon } from "../../atoms/Icon";
 import { NavbarAction } from "./NavbarAction";
 

@@ -1,14 +1,12 @@
-@import "../styles/index.scss";
-
 :root {
-  // Font & Typography
+  /* Font & Typography */
   --font-size: 16px;
   --font-family: "Open Sans", sans-serif;
   --font-family-heading: "Bitter", serif;
   --font-line-height: 1.75;
   --font-line-height-heading: 1.3;
 
-  // Color
+  /* Color */
   --color-primary: #6f381e;
   --color-secondary: #e6c084;
 
@@ -33,8 +31,10 @@
   --color-textPrimary: var(--color-black);
   --color-textSecondary: var(--color-grey5);
 
-  --navbar-height: #{makeRem(100)};
+  /* Navbar (100px) */
+  --navbar-height: 6.25rem;
 
+  /* Breakpoints */
   --breakpoint-tablet: 577px;
   --breakpoint-desktop: 992px;
 }
@@ -51,10 +51,10 @@ body {
 
 * {
   box-sizing: border-box;
-  &::before,
-  &::after {
-    box-sizing: border-box;
-  }
+}
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 a {

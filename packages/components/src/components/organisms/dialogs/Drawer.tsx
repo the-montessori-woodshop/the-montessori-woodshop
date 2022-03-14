@@ -3,7 +3,7 @@ import "./Drawer.scss";
 import { AnimatePresence, motion } from "framer-motion";
 import React, { FC, ReactNode, forwardRef, memo } from "react";
 
-import { makeClass } from "../../../theme";
+import { makeClass } from "../../../theme/theme.utils";
 import { useDevice } from "../../utils/useDevice";
 import { Dialog, DialogRef, useDialogContext } from "./Dialog";
 

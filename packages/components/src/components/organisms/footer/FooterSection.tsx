@@ -3,7 +3,7 @@ import "./FooterSection.scss";
 import React from "react";
 import { forwardRef } from "react";
 
-import { makeClass } from "../../../theme";
+import { makeClass } from "../../../theme/theme.utils";
 
 export type FooterSectionProps = JSX.IntrinsicElements["div"];
 

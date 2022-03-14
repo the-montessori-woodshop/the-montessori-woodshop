@@ -2,7 +2,7 @@ import "./NavbarLinkListItemText.scss";
 
 import React, { forwardRef } from "react";
 
-import { makeClass } from "../../../theme";
+import { makeClass } from "../../../theme/theme.utils";
 
 export type NavbarLinkListItemTextProps = JSX.IntrinsicElements["div"] & {
   active?: boolean;

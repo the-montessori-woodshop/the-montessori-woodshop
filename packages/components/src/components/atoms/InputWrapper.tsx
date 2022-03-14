@@ -1,21 +1,23 @@
-import "./InputWrapper.scss";
-
+import { styled } from "@linaria/react";
 import React, { forwardRef } from "react";
-
-import { makeClass } from "../../theme";
 
 export type InputWrapperProps = JSX.IntrinsicElements["div"];
 
+const SDiv = styled.div`
+  position: relative;
+  &:focus-within {
+    label {
+      color: var(--color-primary);
+    }
+  }
+`;
+
 export const InputWrapper = forwardRef<HTMLDivElement, InputWrapperProps>(
-  function InputWrapper({ children, className, ...props }, ref) {
+  function InputWrapper({ children, ...props }, ref) {
     return (
-      <div
-        {...props}
-        ref={ref}
-        className={makeClass(className, "input-wrapper")}
-      >
+      <SDiv {...props} ref={ref}>
         {children}
-      </div>
+      </SDiv>
     );
   }
 );

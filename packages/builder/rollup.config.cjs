@@ -10,6 +10,9 @@ const rollupScss = require("rollup-plugin-scss");
 const autoprefixer = require("autoprefixer");
 const sass = require("sass");
 const postcss = require("postcss");
+const linaria = require("@linaria/rollup");
+const css = require("rollup-plugin-css-only");
+const babel = require("@rollup/plugin-babel");
 
 module.exports = function ({
   rootDir,
@@ -32,7 +35,6 @@ module.exports = function ({
     ],
     external: ["react", "react-dom"],
     plugins: [
-      rollupJson(),
       esbuild.default({
         sourceMap: true,
         minify: true,
@@ -40,6 +42,16 @@ module.exports = function ({
         jsx: "transform",
         tsconfig: path.resolve(rootDir, "./tsconfig.json")
       }),
+      linaria.default({
+        sourceMap: process.env.NODE_ENV !== "production"
+      }),
+      css({
+        output: "dist/linaria.css"
+      }),
+      babel.default({
+        configFile: path.resolve(__dirname, "./babel.config.js")
+      }),
+      rollupJson(),
       excludeExternalDependenciesFromBundle
         ? rollupExternals.externals()
         : rollupNodeResolve.nodeResolve(),

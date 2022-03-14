@@ -1,8 +1,7 @@
-import "./BoxHeader.scss";
-
+import { styled } from "@linaria/react";
 import React, { forwardRef, memo, useMemo } from "react";
 
-import { makeClass, makeRem } from "../../../theme";
+import { makeRem } from "../../../theme";
 import { TypographyCopy } from "../../atoms/TypographyCopy";
 import { TypographyHeading } from "../../atoms/TypographyHeading";
 
@@ -11,14 +10,14 @@ export type BoxHeaderProps = JSX.IntrinsicElements["header"] & {
   cxSubtitle?: string;
 };
 
+const SHeader = styled.header`
+  padding-bottom: ${makeRem(8)};
+`;
+
 const BoxHeaderFC = forwardRef<HTMLHeadingElement, BoxHeaderProps>(
-  function BoxTitleFC({ cxTitle, cxSubtitle, className, ...restProps }, ref) {
+  function BoxTitleFC({ cxTitle, cxSubtitle, ...restProps }, ref) {
     return (
-      <header
-        ref={ref}
-        {...restProps}
-        className={makeClass(className, "fnEVud")}
-      >
+      <SHeader ref={ref} {...restProps}>
         {useMemo(
           () =>
             cxTitle && (
@@ -47,7 +46,7 @@ const BoxHeaderFC = forwardRef<HTMLHeadingElement, BoxHeaderProps>(
             ),
           []
         )}
-      </header>
+      </SHeader>
     );
   }
 );

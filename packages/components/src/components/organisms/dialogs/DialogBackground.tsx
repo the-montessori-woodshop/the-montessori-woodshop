@@ -3,7 +3,7 @@ import "./DialogBackground.scss";
 import { AnimatePresence, motion } from "framer-motion";
 import React, { FC } from "react";
 
-import { makeClass } from "../../../theme";
+import { makeClass } from "../../../theme/theme.utils";
 import { DialogContextType } from "./Dialog";
 
 export const DialogBackground: FC<
