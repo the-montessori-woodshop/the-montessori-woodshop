@@ -29,7 +29,7 @@ const SButton = styled.button`
   margin: 0;
   padding: 0;
   min-width: ${makeRem(44)};
-  min-height: ${makeRem(44)};
+  height: ${makeRem(44)};
   display: flex;
   justify-content: center;
   align-items: center;
