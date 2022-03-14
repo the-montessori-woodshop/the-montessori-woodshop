@@ -38,8 +38,7 @@ const SButton = styled.button`
   line-height: var(--font-line-height);
   font-size: ${makeRem(16)};
 
-  ${cxVariant["contained"]},
-  ${cxVariant["text"]} {
+  &${cxVariant["contained"]}, &${cxVariant["text"]} {
     min-width: ${makeRem(144)};
     padding-left: ${makeRem(24)};
     padding-right: ${makeRem(24)};
@@ -47,49 +46,49 @@ const SButton = styled.button`
     color: var(--color-textPrimary);
   }
 
-  ${cxVariant["contained"]} {
-    ${cxColor["danger"]} {
+  &${cxVariant["contained"]} {
+    &${cxColor["danger"]} {
       background-color: var(--color-danger);
       color: var(--color-white);
     }
-    ${cxColor["primary"]} {
+    &${cxColor["primary"]} {
       background-color: var(--color-primary);
       color: var(--color-white);
     }
-    ${cxColor["secondary"]} {
+    &${cxColor["secondary"]} {
       background-color: var(--color-secondary);
       color: var(--color-textPrimary);
     }
-    ${cxColor["warning"]} {
+    &${cxColor["warning"]} {
       background-color: var(--color-warning);
       color: var(--color-white);
     }
   }
 
-  ${cxVariant["text"]} {
+  &${cxVariant["text"]} {
     background: transparent;
 
-    ${cxColor["primary"]} {
+    &${cxColor["primary"]} {
       color: var(--color-primary);
     }
-    ${cxColor["secondary"]} {
+    &${cxColor["secondary"]} {
       color: var(--color-secondary);
     }
-    ${cxColor["warning"]} {
+    &${cxColor["warning"]} {
       color: var(--color-warning);
     }
-    ${cxColor["danger"]} {
+    &${cxColor["danger"]} {
       color: var(--color-danger);
     }
   }
 
-  ${cxSize["large"]} {
+  &${cxSize["large"]} {
     height: ${makeRem(44)};
     font-size: ${makeRem(16)};
     font-weight: bold;
   }
 
-  ${cxSize["small"]} {
+  &${cxSize["small"]} {
     height: ${makeRem(32)};
     font-size: ${makeRem(12)};
     font-weight: bold;
