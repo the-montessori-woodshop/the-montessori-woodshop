@@ -5,13 +5,12 @@
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "theme:build": "sass src/theme/index.scss css/theme.css",
     "types": "tsc",
     "bundle": "yarn node ./scripts/build.js",
-    "build": "yarn bundle && yarn theme:build && yarn types",
-    "build:npm": "npm run bundle && npm run types & npm run theme:build",
-    "dev": "yarn bundle --watch & yarn theme:build --watch & tsc --watch",
-    "storybook": "start-storybook -p 6006 & yarn theme:build --watch",
+    "build": "yarn bundle && yarn types",
+    "build:npm": "npm run bundle && npm run types",
+    "dev": "yarn bundle --watch --watch & tsc --watch",
+    "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "serve-storybook": "wrangler dev",
     "deploy-storybook": "wrangler publish"
@@ -19,6 +18,8 @@
   "devDependencies": {
     "@babel/core": "^7.17.5",
     "@cloudflare/wrangler": "^1.19.8",
+    "@linaria/babel-preset": "^3.0.0-beta.15",
+    "@linaria/webpack-loader": "^3.0.0-beta.16",
     "@mdx-js/react": "^2.0.0",
     "@storybook/addon-actions": "^6.4.19",
     "@storybook/addon-docs": "^6.4.19",

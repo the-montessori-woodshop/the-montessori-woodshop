@@ -1,9 +1,7 @@
 import React, { FC, memo, useCallback, useEffect, useRef } from "react";
 
-import {
-  ResponsiveDevices,
-  breakpointMap as bm
-} from "../../../theme/theme.utils";
+import { ResponsiveDevices } from "../../../theme/theme.types";
+import { breakpointMap as bm } from "../../../theme/theme.utils";
 
 export type ResponseiveProps = {
   atOrLessThan?: Exclude<ResponsiveDevices, "mobile">;

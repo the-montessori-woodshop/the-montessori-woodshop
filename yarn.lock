@@ -2514,6 +2514,47 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@linaria/webpack-loader@npm:^3.0.0-beta.16":
+  version: 3.0.0-beta.17
+  resolution: "@linaria/webpack-loader@npm:3.0.0-beta.17"
+  dependencies:
+    "@linaria/webpack4-loader": ^3.0.0-beta.17
+    "@linaria/webpack5-loader": ^3.0.0-beta.17
+  checksum: a6f5514b9a150bde9cf9cae651d1928a863a68d713eb531696ddc33d7e05a907e0d6f89ee8e6b768a6aac0ebbaa465524a62675bf2a51985b9463d797c809073
+  languageName: node
+  linkType: hard
+
+"@linaria/webpack4-loader@npm:^3.0.0-beta.17":
+  version: 3.0.0-beta.17
+  resolution: "@linaria/webpack4-loader@npm:3.0.0-beta.17"
+  dependencies:
+    "@linaria/babel-preset": ^3.0.0-beta.17
+    "@linaria/logger": ^3.0.0-beta.15
+    enhanced-resolve: ^4.1.0
+    loader-utils: ^1.2.3
+    mkdirp: ^0.5.1
+  peerDependencies:
+    "@babel/core": ">=7"
+  checksum: 9c7460052980fbcf9ff9480b55500c16c45625a00747b839806cb79a63c15f47209acb2cebfbf24010f46a2f89e74a0475cbcad33b4e7cc543681228f52d045c
+  languageName: node
+  linkType: hard
+
+"@linaria/webpack5-loader@npm:^3.0.0-beta.17":
+  version: 3.0.0-beta.17
+  resolution: "@linaria/webpack5-loader@npm:3.0.0-beta.17"
+  dependencies:
+    "@linaria/babel-preset": ^3.0.0-beta.17
+    "@linaria/logger": ^3.0.0-beta.15
+    enhanced-resolve: ^5.3.1
+    loader-utils: ^2.0.0
+    mkdirp: ^0.5.1
+  peerDependencies:
+    "@babel/core": ">=7"
+    webpack: ">=5"
+  checksum: 550b6b8e38a696f74ff6e6cc911c74a3542af8877b7a6006b3ee3466443a1f8ee3d30bdd68b7f2f0f300f4f1e033455cf46026564e0692125a97649d6627185a
+  languageName: node
+  linkType: hard
+
 "@mdx-js/loader@npm:^1.6.22":
   version: 1.6.22
   resolution: "@mdx-js/loader@npm:1.6.22"
@@ -6708,7 +6749,9 @@ __metadata:
   dependencies:
     "@babel/core": ^7.17.5
     "@cloudflare/wrangler": ^1.19.8
+    "@linaria/babel-preset": ^3.0.0-beta.15
     "@linaria/react": ^3.0.0-beta.15
+    "@linaria/webpack-loader": ^3.0.0-beta.16
     "@mdx-js/react": ^2.0.0
     "@storybook/addon-actions": ^6.4.19
     "@storybook/addon-docs": ^6.4.19
@@ -11275,7 +11318,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"enhanced-resolve@npm:^4.5.0":
+"enhanced-resolve@npm:^4.1.0, enhanced-resolve@npm:^4.5.0":
   version: 4.5.0
   resolution: "enhanced-resolve@npm:4.5.0"
   dependencies:
@@ -11286,6 +11329,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"enhanced-resolve@npm:^5.3.1, enhanced-resolve@npm:^5.9.2":
+  version: 5.9.2
+  resolution: "enhanced-resolve@npm:5.9.2"
+  dependencies:
+    graceful-fs: ^4.2.4
+    tapable: ^2.2.0
+  checksum: 792b7a01abb4ee4433b658c71f92d5948675938e0c03cad1732abe843b87395f15cb880ace4f819f78ead94163278283afc79b8be63c0eddca8ab45f7d8c515d
+  languageName: node
+  linkType: hard
+
 "enhanced-resolve@npm:^5.8.3":
   version: 5.9.0
   resolution: "enhanced-resolve@npm:5.9.0"
@@ -11293,16 +11346,6 @@ __metadata:
     graceful-fs: ^4.2.4
     tapable: ^2.2.0
   checksum: 06435f52670229eb7fd8d92ea2d988a275f9a1b8c08b9023ba45767c6ed844bc87aa9c9c7e6d044eef99ad73fc3b066b78101163696e5c53121909e5bf8efe8b
-  languageName: node
-  linkType: hard
-
-"enhanced-resolve@npm:^5.9.2":
-  version: 5.9.2
-  resolution: "enhanced-resolve@npm:5.9.2"
-  dependencies:
-    graceful-fs: ^4.2.4
-    tapable: ^2.2.0
-  checksum: 792b7a01abb4ee4433b658c71f92d5948675938e0c03cad1732abe843b87395f15cb880ace4f819f78ead94163278283afc79b8be63c0eddca8ab45f7d8c515d
   languageName: node
   linkType: hard
 
