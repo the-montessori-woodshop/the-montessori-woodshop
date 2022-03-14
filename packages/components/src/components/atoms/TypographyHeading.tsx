@@ -1,8 +1,7 @@
-import "./TypographyHeading.scss";
-
-import React, { useMemo } from "react";
-
-import { makeClass } from "../../theme/theme.utils";
+import { css } from "@linaria/core";
+import { styled } from "@linaria/react";
+import clsx from "clsx";
+import React from "react";
 
 type HeadingNodes = "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "div";
 
@@ -11,62 +10,69 @@ export type TypographyHeadingProps = JSX.IntrinsicElements[HeadingNodes] & {
   cxVariant?: HeadingNodes | "subtitle1" | "subtitle2";
 };
 
+const SHeading = styled.h1`
+  font-family: var(--font-family-heading);
+  line-height: var(--font-line-height-heading);
+  color: inherit;
+  margin: 3rem 0 1.38rem;
+`;
+
+const CSS_H1 = css`
+  margin-top: 0;
+  font-size: 3.052rem;
+  font-weight: bold;
+`;
+const CSS_H2 = css`
+  font-size: 2.441rem;
+`;
+const CSS_H3 = css`
+  font-size: 1.953rem;
+  font-weight: bold;
+`;
+const CSS_H4 = css`
+  font-size: 1.563rem;
+`;
+const CSS_H5 = css`
+  font-size: 1.25rem;
+`;
+const CSS_H6 = css`
+  font-size: 1rem;
+`;
+const CSS_STitle1 = css`
+  font-family: var(--font-family);
+  color: var(--color-textPrimary);
+  font-size: 1.25rem;
+`;
+const CSS_STitle2 = css`
+  font-family: var(--font-family);
+  color: var(--color-textPrimary);
+  font-size: 1rem;
+`;
+
 export const TypographyHeading = React.forwardRef<
   HTMLHeadingElement | HTMLDivElement,
   TypographyHeadingProps
 >(function TypographyHeading(
-  { cxNode = "h1", cxVariant, className: clsNme, children, ...restProps },
+  { cxNode = "h1", cxVariant, className, children, ...restProps },
   ref
 ) {
-  const className = useMemo(() => {
-    return makeClass(clsNme, "typ-heading", {
-      [cxVariant || cxNode]: true
-    });
-  }, []);
-
-  if (cxNode === "h2") {
-    return (
-      <h2 className={className} {...restProps} ref={ref}>
-        {children}
-      </h2>
-    );
-  }
-
-  if (cxNode === "h3") {
-    return (
-      <h3 className={className} {...restProps} ref={ref}>
-        {children}
-      </h3>
-    );
-  }
-
-  if (cxNode === "h4") {
-    return (
-      <h4 className={className} {...restProps} ref={ref}>
-        {children}
-      </h4>
-    );
-  }
-
-  if (cxNode === "h5") {
-    return (
-      <h5 className={className} {...restProps} ref={ref}>
-        {children}
-      </h5>
-    );
-  }
-
-  if (cxNode === "div") {
-    return (
-      <div className={className} {...restProps} ref={ref}>
-        {children}
-      </div>
-    );
-  }
-
   return (
-    <h1 className={className} {...restProps} ref={ref}>
+    <SHeading
+      {...restProps}
+      ref={ref}
+      as={cxNode}
+      className={clsx(className, {
+        [CSS_H1]: cxVariant === "h1",
+        [CSS_H2]: cxVariant === "h2",
+        [CSS_H3]: cxVariant === "h3",
+        [CSS_H4]: cxVariant === "h4",
+        [CSS_H5]: cxVariant === "h5",
+        [CSS_H6]: cxVariant === "h6",
+        [CSS_STitle1]: cxVariant === "subtitle1",
+        [CSS_STitle2]: cxVariant === "subtitle2"
+      })}
+    >
       {children}
-    </h1>
+    </SHeading>
   );
 });

@@ -1,6 +1,7 @@
 const path = require("path");
 const linaria = require("@linaria/esbuild");
 const esbuild = require("esbuild");
+const { nodeExternalsPlugin } = require("esbuild-node-externals");
 
 const prod = process.env.NODE_ENV === "production";
 
@@ -17,12 +18,15 @@ module.exports = ({ rootDir, outputFormat = "mjs" }) => {
         ".js": `.${outputFormat}`
       },
       bundle: true,
-      minify: prod,
+      splitting: prod,
+      // minify: prod,
       sourcemap: true,
+      format: outputFormat === "mjs" ? "esm" : "cjs",
       target: outputFormat === "mjs" ? "esnext" : "commonjs",
       jsx: "transform",
       tsconfig: path.resolve(rootDir, "./tsconfig.json"),
       plugins: [
+        nodeExternalsPlugin(),
         linaria.default({
           sourceMap: prod,
           babelOptions: {

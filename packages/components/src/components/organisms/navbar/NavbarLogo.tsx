@@ -1,20 +1,26 @@
-import "./NavbarLogo.scss";
-
+import { styled } from "@linaria/react";
 import React, { forwardRef } from "react";
 
-import { makeClass } from "../../../theme/theme.utils";
+import { makeRem } from "../../../theme";
 
 export type NavbarLogoProps = JSX.IntrinsicElements["img"] & {
   src: string;
   alt: string;
 };
 
+const SImg = styled.img`
+  border: none;
+  background: none;
+  max-height: ${makeRem(56)};
+  width: auto;
+`;
+
 export const NavbarLogo = forwardRef<HTMLImageElement, NavbarLogoProps>(
-  function NavbarLogo({ children, className, ...props }, ref) {
+  function NavbarLogo({ children, ...props }, ref) {
     return (
-      <img className={makeClass(className, "BvnaOD")} {...props} ref={ref}>
+      <SImg {...props} ref={ref}>
         {children}
-      </img>
+      </SImg>
     );
   }
 );

@@ -23,7 +23,8 @@ const cxColor = makeClass<CXColor>([
   "success",
   "textPrimary",
   "textSecondary",
-  "warning"
+  "warning",
+  "inherit"
 ]);
 
 export type TypographyCopyProps = (
