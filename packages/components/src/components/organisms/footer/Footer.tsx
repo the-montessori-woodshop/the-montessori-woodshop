@@ -1,19 +1,30 @@
-import "./Footer.scss";
-
+import { styled } from "@linaria/react";
 import React from "react";
 import { forwardRef } from "react";
 
-import { makeClass } from "../../../theme/theme.utils";
+import { makeRem, makeResponsiveMedia } from "../../../theme/theme.utils";
 
 export type FooterProps = JSX.IntrinsicElements["footer"];
 
+const SFooter = styled.footer`
+  padding: ${makeRem(40)} ${makeRem(32)};
+  background: var(--color-primary);
+
+  ${makeResponsiveMedia("desktop")} {
+    padding: ${makeRem(64)} ${makeRem(60)};
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+`;
+
 export const Footer = forwardRef<HTMLElement, FooterProps>(function Footer(
-  { children, className, ...props },
+  { children, ...props },
   ref
 ) {
   return (
-    <footer {...props} className={makeClass(className, "iogigS8")} ref={ref}>
+    <SFooter {...props} ref={ref}>
       {children}
-    </footer>
+    </SFooter>
   );
 });

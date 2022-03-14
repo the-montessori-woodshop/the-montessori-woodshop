@@ -1,17 +1,27 @@
-import "./DrawerBody.scss";
-
+import { styled } from "@linaria/react";
 import React, { forwardRef } from "react";
 
-import { makeClass } from "../../../theme/theme.utils";
+import { makeRem, makeResponsiveMedia } from "../../../theme/theme.utils";
 
 export type DrawerBodyProps = JSX.IntrinsicElements["div"];
 
+const SDrawerBody = styled.div`
+  flex: 1;
+  overflow-y: auto;
+  padding: 0 ${makeRem(32)};
+  z-index: 1000000;
+
+  ${makeResponsiveMedia("tablet")} {
+    padding: 0 ${makeRem(60)};
+  }
+`;
+
 export const DrawerBody = forwardRef<HTMLDivElement, DrawerBodyProps>(
-  function DrawerBody({ children, className, ...restProps }, ref) {
+  function DrawerBody({ children, ...restProps }, ref) {
     return (
-      <div {...restProps} className={makeClass(className, "bfIid")} ref={ref}>
+      <SDrawerBody {...restProps} ref={ref}>
         {children}
-      </div>
+      </SDrawerBody>
     );
   }
 );

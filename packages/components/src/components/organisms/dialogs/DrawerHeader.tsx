@@ -1,9 +1,8 @@
-import "./DrawerHeader.scss";
-
+import { styled } from "@linaria/react";
 import { Close } from "@woodshop/icons";
 import React, { forwardRef, useMemo } from "react";
 
-import { makeClass } from "../../../theme/theme.utils";
+import { makeRem } from "../../../theme/theme.utils";
 import { Button } from "../../atoms/Button";
 import { Icon } from "../../atoms/Icon";
 import { TypographyHeading } from "../../atoms/TypographyHeading";
@@ -13,16 +12,36 @@ export type DrawerHeaderProps = JSX.IntrinsicElements["header"] & {
   title: string;
 };
 
+const SDrawerHeader = styled.header`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding: 0 ${makeRem(32)};
+
+  @include respond("tablet") {
+    padding: 0 ${makeRem(60)};
+  }
+
+  h2 {
+    margin-top: ${makeRem(32)} !important;
+  }
+
+  & > div:last-child {
+    position: absolute;
+    right: ${makeRem(24)};
+    top: ${makeRem(24)};
+    height: ${makeRem(24)};
+    width: ${makeRem(24)};
+  }
+`;
+
 export const DrawerHeader = forwardRef<HTMLHeadElement, DrawerHeaderProps>(
-  function DrawerHeader({ children, title, className, ...restProps }, ref) {
+  function DrawerHeader({ children, title, ...restProps }, ref) {
     const { close } = useDialogContext();
 
     return (
-      <header
-        {...restProps}
-        className={makeClass(className, "mh4nj")}
-        ref={ref}
-      >
+      <SDrawerHeader {...restProps} ref={ref}>
         <div>
           <TypographyHeading cxVariant="h2" cxNode="h2">
             <strong>{title}</strong>
@@ -41,7 +60,7 @@ export const DrawerHeader = forwardRef<HTMLHeadElement, DrawerHeaderProps>(
           ),
           []
         )}
-      </header>
+      </SDrawerHeader>
     );
   }
 );

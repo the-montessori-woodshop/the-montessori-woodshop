@@ -1,8 +1,30 @@
-import "./TypographyCopy.scss";
+import { styled } from "@linaria/react";
+import clsx from "clsx";
+import React, { memo } from "react";
 
-import React, { memo, useMemo } from "react";
+import { makeClass, makeRem } from "../../theme";
 
-import { makeClass } from "../../theme/theme.utils";
+type CXVariant = "body1" | "body2" | "caption" | "overline";
+type CXColor =
+  | "textPrimary"
+  | "textSecondary"
+  | "danger"
+  | "warning"
+  | "success"
+  | "inherit";
+const cxVariant = makeClass<CXVariant>([
+  "body1",
+  "body2",
+  "caption",
+  "overline"
+]);
+const cxColor = makeClass<CXColor>([
+  "danger",
+  "success",
+  "textPrimary",
+  "textSecondary",
+  "warning"
+]);
 
 export type TypographyCopyProps = (
   | JSX.IntrinsicElements["p"]
@@ -20,6 +42,51 @@ export type TypographyCopyProps = (
     | "inherit";
 };
 
+const STypographyCopy = styled.div`
+  font-family: var(--font-family);
+  line-height: var(--font-line-height);
+
+  &${cxVariant["body1"]} {
+    font-size: ${makeRem(16)};
+    color: var(--color-textPrimary);
+  }
+
+  &${cxVariant["body2"]} {
+    font-size: ${makeRem(14)};
+    color: var(--color-textSecondary);
+  }
+
+  &${cxVariant["caption"]} {
+    font-size: ${makeRem(12)};
+    color: var(--color-textPrimary);
+  }
+
+  &${cxVariant["overline"]} {
+    font-size: ${makeRem(12)};
+    text-transform: uppercase;
+    color: var(--color-textSecondary);
+  }
+
+  &${cxColor["danger"]} {
+    color: var(--color-danger);
+  }
+  &${cxColor["textPrimary"]} {
+    color: var(--color-textPrimary);
+  }
+  &${cxColor["textSecondary"]} {
+    color: var(--color-textSecondary);
+  }
+  &${cxColor["warning"]} {
+    color: var(--color-warning);
+  }
+  &${cxColor["success"]} {
+    color: var(--color-success);
+  }
+  &${cxColor["inherit"]} {
+    color: inherit;
+  }
+`;
+
 const TypographyCopyFC = React.forwardRef<
   HTMLParagraphElement | HTMLDivElement,
   TypographyCopyProps
@@ -28,41 +95,21 @@ const TypographyCopyFC = React.forwardRef<
     cxNode = "div",
     cxVariant = "body1",
     cxColor = "inherit",
-    className: clsNme,
+    className,
     children,
     ...restProps
   },
   ref
 ) {
-  const className = useMemo(
-    () =>
-      makeClass(clsNme, "typ-copy", {
-        [cxColor]: true,
-        [cxVariant]: true
-      }),
-    []
-  );
-
-  if (cxNode === "p") {
-    return (
-      <p className={className} {...restProps} ref={ref}>
-        {children}
-      </p>
-    );
-  }
-
-  if (cxNode === "span") {
-    return (
-      <span className={className} {...restProps} ref={ref}>
-        {children}
-      </span>
-    );
-  }
-
   return (
-    <div className={className} {...restProps} ref={ref}>
+    <STypographyCopy
+      {...restProps}
+      ref={ref}
+      as={cxNode}
+      className={clsx(className, cxVariant, cxColor)}
+    >
       {children}
-    </div>
+    </STypographyCopy>
   );
 });
 

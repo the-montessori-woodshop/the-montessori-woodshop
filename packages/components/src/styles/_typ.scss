@@ -1,34 +1,3 @@
-@mixin typ-copy {
-  font-family: var(--font-family);
-  line-height: var(--font-line-height);
-  max-width: 65ch;
-}
-
-@mixin typ-copy-body1 {
-  @include typ-copy;
-  font-size: makeRem(16);
-  color: var(--color-textPrimary);
-}
-
-@mixin typ-copy-body2 {
-  @include typ-copy;
-  font-size: makeRem(14);
-  color: var(--color-textSecondary);
-}
-
-@mixin typ-copy-caption {
-  @include typ-copy;
-  font-size: makeRem(14);
-  color: var(--color-textSecondary);
-}
-
-@mixin typ-copy-overline {
-  @include typ-copy;
-  font-size: makeRem(16);
-  text-transform: uppercase;
-  color: var(--color-textSecondary);
-}
-
 /**
 
 Bitter @ Major Third (1.250) scale w/ 16px base HTML
