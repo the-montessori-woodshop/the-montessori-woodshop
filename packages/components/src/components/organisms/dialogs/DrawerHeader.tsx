@@ -50,13 +50,11 @@ export const DrawerHeader = forwardRef<HTMLHeadElement, DrawerHeaderProps>(
         </div>
         {useMemo(
           () => (
-            <div>
-              <Button onClick={close}>
-                <Icon cxTitle="close-drawer" cxSize={44}>
-                  <Close />
-                </Icon>
-              </Button>
-            </div>
+            <Button onClick={close}>
+              <Icon cxTitle="close-drawer" cxSize={44}>
+                <Close />
+              </Icon>
+            </Button>
           ),
           []
         )}
