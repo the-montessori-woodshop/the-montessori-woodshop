@@ -2,7 +2,7 @@ import { styled } from "@linaria/react";
 import clsx from "clsx";
 import React from "react";
 
-import { makeClass, makeRem } from "../../theme/theme.utils";
+import { makeClass, makeRem } from "../../../theme/theme.utils";
 
 type CXVariant = "text" | "contained";
 type CXColor = "primary" | "secondary" | "danger" | "warning";

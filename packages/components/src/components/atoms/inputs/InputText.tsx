@@ -3,8 +3,8 @@ import { SVGIconComponent } from "@woodshop/icons";
 import clsx from "clsx";
 import React, { forwardRef, memo, useMemo } from "react";
 
-import { makeClass, makeRem } from "../../theme/theme.utils";
-import { Icon } from "./Icon";
+import { makeClass, makeRem } from "../../../theme/theme.utils";
+import { Icon } from "../icons-illustrations/Icon";
 
 type CXSize = "default" | "small";
 type CXAlignment = "left" | "center";
@@ -12,8 +12,8 @@ type CXAlignment = "left" | "center";
 const cxSize = makeClass<CXSize>(["default", "small"]);
 const cxAlignment = makeClass<CXAlignment>(["left", "center"]);
 enum IconEnum {
-  start = ".i-start",
-  end = ".i-end"
+  start = "i-start",
+  end = "i-end"
 }
 
 const SInputContainer = styled.div`
@@ -23,12 +23,14 @@ const SInputContainer = styled.div`
 `;
 const SInput = styled.input`
   width: 100%;
-  padding-left: ${makeRem(16)};
-  padding-right: ${makeRem(16)};
+  padding-left: ${makeRem(12)};
+  padding-right: ${makeRem(12)};
   border: ${makeRem(1)} solid var(--color-grey3);
   border-radius: ${makeRem(2)};
   background-color: var(--color-grey2);
   max-width: 100%;
+  font-size: ${makeRem(16)};
+  font-family: var(--font-family);
 
   &:focus,
   &:active {
@@ -66,12 +68,12 @@ const SInput = styled.input`
     text-align: left;
   }
 
-  &${IconEnum["start"]} {
-    padding-left: ${makeRem(8 + 24 + 8)};
+  &.${IconEnum["start"]} {
+    padding-left: ${makeRem(6 + 24 + 6)};
   }
 
-  &${IconEnum["end"]} {
-    padding-right: ${makeRem(8 + 24 + 8)};
+  &.${IconEnum["end"]} {
+    padding-right: ${makeRem(6 + 24 + 8)};
   }
 `;
 
@@ -80,12 +82,20 @@ const SIcon = styled(Icon)`
   top: 50%;
   margin-top: ${makeRem(-12)};
 
-  &${IconEnum.start} {
+  &.${IconEnum.start} {
     left: ${makeRem(8)};
   }
 
-  &${IconEnum.end} {
+  &.${IconEnum.end} {
     right: ${makeRem(8)};
+  }
+
+  &${cxSize["default"]} {
+    margin-top: ${makeRem(-12)};
+  }
+
+  &${cxSize["small"]} {
+    margin-top: ${makeRem(-9)};
   }
 `;
 
@@ -121,7 +131,9 @@ const InputTextFC = forwardRef<HTMLInputElement, InputTextProps>(
           <SIcon
             cxTitle="start-icon"
             accessibility="decorative"
-            className={IconEnum.start}
+            className={clsx(IconEnum.start, cxSize)}
+            cxColor="grey4"
+            cxSize={cxSize === "default" ? 24 : 18}
           >
             <StartIcon />
           </SIcon>
@@ -136,7 +148,9 @@ const InputTextFC = forwardRef<HTMLInputElement, InputTextProps>(
           <Icon
             cxTitle="end-icon"
             accessibility="decorative"
-            className={IconEnum.end}
+            className={clsx(IconEnum.start, cxSize)}
+            cxColor="grey4"
+            cxSize={cxSize === "default" ? 24 : 18}
           >
             <EndIcon />
           </Icon>

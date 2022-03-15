@@ -1,7 +1,7 @@
 import { styled } from "@linaria/react";
 import React, { forwardRef, memo } from "react";
 
-import { makeRem } from "../../theme/theme.utils";
+import { makeRem } from "../../../theme/theme.utils";
 
 const SInputContainer = styled.div`
   display: flex;

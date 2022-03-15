@@ -2,8 +2,8 @@ import { styled } from "@linaria/react";
 import React, { forwardRef, memo, useMemo } from "react";
 
 import { makeRem } from "../../../theme";
-import { TypographyCopy } from "../../atoms/TypographyCopy";
-import { TypographyHeading } from "../../atoms/TypographyHeading";
+import { TypographyCopy } from "../../atoms/typography/TypographyCopy";
+import { TypographyHeading } from "../../atoms/typography/TypographyHeading";
 
 export type BoxHeaderProps = JSX.IntrinsicElements["header"] & {
   cxTitle?: string;

@@ -2,8 +2,8 @@ import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { Pencil } from "@woodshop/icons";
 import React from "react";
 
+import { Icon } from "../icons-illustrations/Icon";
 import { Button } from "./Button";
-import { Icon } from "./Icon";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {

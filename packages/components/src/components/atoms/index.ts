@@ -1,20 +1,20 @@
-export * from "./Button";
-export * from "./ButtonGroup";
+export * from "./buttons/Button";
+export * from "./buttons/ButtonGroup";
 
-export * from "./Icon";
-export * from "./Illustration";
+export * from "./icons-illustrations/Icon";
+export * from "./icons-illustrations/Illustration";
 
-export * from "./InputHelp";
-export * from "./InputLabel";
-export * from "./InputWrapper";
-export * from "./InputText";
-export * from "./InputTextarea";
-export * from "./InputNumber";
-export * from "./InputPassword";
-export * from "./InputEmail";
-export * from "./InputCheckbox";
-export * from "./InputRadio";
-export * from "./InputSearch";
+export * from "./inputs/InputHelp";
+export * from "./inputs/InputLabel";
+export * from "./inputs/InputWrapper";
+export * from "./inputs/InputText";
+export * from "./inputs/InputTextarea";
+export * from "./inputs/InputNumber";
+export * from "./inputs/InputPassword";
+export * from "./inputs/InputEmail";
+export * from "./inputs/InputCheckbox";
+export * from "./inputs/InputRadio";
+export * from "./inputs/InputSearch";
 
-export * from "./TypographyCopy";
-export * from "./TypographyHeading";
+export * from "./typography/TypographyCopy";
+export * from "./typography/TypographyHeading";

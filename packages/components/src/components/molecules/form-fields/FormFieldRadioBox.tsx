@@ -3,7 +3,7 @@ import clsx from "clsx";
 import React, { ReactNode, forwardRef, memo, useMemo } from "react";
 
 import { makeRem } from "../../../theme/theme.utils";
-import { InputRadio, InputRadioProps } from "../../atoms/InputRadio";
+import { InputRadio, InputRadioProps } from "../../atoms/inputs/InputRadio";
 import { FormFieldRadioBoxText } from "./FormFieldRadioBoxText";
 
 export type FormFieldRadioBoxProps = Omit<InputRadioProps, "id"> & {

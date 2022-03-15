@@ -1,7 +1,7 @@
 import { styled } from "@linaria/react";
 import React, { forwardRef } from "react";
 
-import { TypographyHeading } from "../../atoms/TypographyHeading";
+import { TypographyHeading } from "../../atoms/typography/TypographyHeading";
 
 export type PageSectionPaneTitleProps = JSX.IntrinsicElements["div"];
 

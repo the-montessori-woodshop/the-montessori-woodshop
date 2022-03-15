@@ -2,7 +2,7 @@ import { styled } from "@linaria/react";
 import clsx from "clsx";
 import React, { forwardRef, memo } from "react";
 
-import { makeRem } from "../../theme/theme.utils";
+import { makeRem } from "../../../theme/theme.utils";
 
 export type InputTextareaProps = JSX.IntrinsicElements["textarea"] & {
   cxError?: boolean;

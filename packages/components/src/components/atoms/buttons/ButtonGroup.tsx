@@ -3,7 +3,7 @@ import clsx from "clsx";
 import React from "react";
 import { forwardRef } from "react";
 
-import { makeClass, makeRem } from "../../theme/theme.utils";
+import { makeClass, makeRem } from "../../../theme/theme.utils";
 
 type CXLayout = "stacked" | "inline" | "inline-fill";
 const cxLayout = makeClass<CXLayout>(["inline", "inline-fill", "stacked"]);

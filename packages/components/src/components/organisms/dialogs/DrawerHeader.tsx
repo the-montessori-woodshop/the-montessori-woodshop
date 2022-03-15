@@ -3,9 +3,9 @@ import { Close } from "@woodshop/icons";
 import React, { forwardRef, useMemo } from "react";
 
 import { makeRem } from "../../../theme/theme.utils";
-import { Button } from "../../atoms/Button";
-import { Icon } from "../../atoms/Icon";
-import { TypographyHeading } from "../../atoms/TypographyHeading";
+import { Button } from "../../atoms/buttons/Button";
+import { Icon } from "../../atoms/icons-illustrations/Icon";
+import { TypographyHeading } from "../../atoms/typography/TypographyHeading";
 import { useDialogContext } from "./Dialog";
 
 export type DrawerHeaderProps = JSX.IntrinsicElements["header"] & {

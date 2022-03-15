@@ -4,7 +4,7 @@ import React, { forwardRef } from "react";
 import {
   TypographyCopy,
   TypographyCopyProps
-} from "../../atoms/TypographyCopy";
+} from "../../atoms/typography/TypographyCopy";
 
 const STyp = styled(TypographyCopy)`
   font-weight: normal;

@@ -2,7 +2,7 @@ import { styled } from "@linaria/react";
 import clsx from "clsx";
 import React, { forwardRef, memo } from "react";
 
-import { makeClass, makeRem } from "../../theme/theme.utils";
+import { makeClass, makeRem } from "../../../theme/theme.utils";
 
 type CXSize = "default" | "small";
 const cxSizeAndError = makeClass<CXSize | "error">([
@@ -11,46 +11,51 @@ const cxSizeAndError = makeClass<CXSize | "error">([
   "error"
 ]);
 
-const SLabel = styled.label`
+const SDiv = styled.div`
   font-family: var(--font-family);
   line-height: var(--font-line-height);
-  margin-bottom: ${makeRem(4)};
-  cursor: pointer;
-  font-weight: bold;
-  color: var(--color-black);
-  display: block;
-  width: auto;
+  color: var(--color-textSecondary);
+  font-size: ${makeRem(14)};
 
   &${cxSizeAndError["default"]} {
     font-size: ${makeRem(14)};
+    padding-left: ${makeRem(12)};
+    padding-top: ${makeRem(8)};
   }
-  &${cxSizeAndError["default"]} {
+  &${cxSizeAndError["small"]} {
     font-size: ${makeRem(12)};
+    padding-left: ${makeRem(10)};
+    padding-top: ${makeRem(6)};
   }
   &${cxSizeAndError["error"]} {
     color: var(--color-danger);
   }
 `;
 
-export type InputLabelProps = JSX.IntrinsicElements["label"] & {
+export type InputHelpProps = JSX.IntrinsicElements["div"] & {
+  error?: boolean | string;
   cxSize?: "default" | "small";
-  error?: string;
 };
 
-const InputLabelFC = forwardRef<HTMLLabelElement, InputLabelProps>(
-  function InputLabelFC(
-    { children, className, cxSize = "default", error = false, ...props },
+const InputHelpFC = forwardRef<HTMLDivElement, InputHelpProps>(
+  function InputHelpFC(
+    { className, children, cxSize = "default", error, ...props },
     ref
   ) {
+    if (!children) {
+      return null;
+    }
+
     return (
-      <SLabel
+      <SDiv
         className={clsx(className, cxSize, error ? "error" : "")}
         {...props}
         ref={ref}
       >
         {children}
-      </SLabel>
+      </SDiv>
     );
   }
 );
-export const InputLabel = memo(InputLabelFC);
+
+export const InputHelp = memo(InputHelpFC);

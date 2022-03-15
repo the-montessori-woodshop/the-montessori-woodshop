@@ -2,8 +2,8 @@ import { styled } from "@linaria/react";
 import { Checkmark } from "@woodshop/icons";
 import React, { forwardRef, memo } from "react";
 
-import { makeRem } from "../../theme/theme.utils";
-import { Icon } from "./Icon";
+import { makeRem } from "../../../theme/theme.utils";
+import { Icon } from "../icons-illustrations/Icon";
 
 export type InputCheckboxProps = Omit<JSX.IntrinsicElements["input"], "css">;
 

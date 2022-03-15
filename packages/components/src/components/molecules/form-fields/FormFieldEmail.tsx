@@ -1,9 +1,9 @@
 import React, { forwardRef, memo, useMemo } from "react";
 
-import { InputEmail, InputEmailProps } from "../../atoms/InputEmail";
-import { InputHelp } from "../../atoms/InputHelp";
-import { InputLabel } from "../../atoms/InputLabel";
-import { InputWrapper } from "../../atoms/InputWrapper";
+import { InputEmail, InputEmailProps } from "../../atoms/inputs/InputEmail";
+import { InputHelp } from "../../atoms/inputs/InputHelp";
+import { InputLabel } from "../../atoms/inputs/InputLabel";
+import { InputWrapper } from "../../atoms/inputs/InputWrapper";
 
 export type FormFieldEmailProps = Omit<
   InputEmailProps,

@@ -61,6 +61,7 @@
     "@woodshop/icons": "^1.0.0",
     "@woodshop/illustrations": "^1.0.0",
     "framer-motion": "^6.2.8",
+    "polished": "^4.1.4",
     "react-scripts": "^5.0.0"
   },
   "eslintConfig": {

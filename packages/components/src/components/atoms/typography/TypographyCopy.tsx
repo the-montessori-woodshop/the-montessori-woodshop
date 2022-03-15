@@ -2,7 +2,7 @@ import { styled } from "@linaria/react";
 import clsx from "clsx";
 import React, { memo } from "react";
 
-import { makeClass, makeRem } from "../../theme";
+import { makeClass, makeRem } from "../../../theme";
 
 type CXVariant = "body1" | "body2" | "caption" | "overline";
 type CXColor =

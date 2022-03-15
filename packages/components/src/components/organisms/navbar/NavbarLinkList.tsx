@@ -10,7 +10,7 @@ import React, {
 } from "react";
 
 import { makeRem, makeResponsiveMedia } from "../../../theme/theme.utils";
-import { Icon } from "../../atoms/Icon";
+import { Icon } from "../../atoms/icons-illustrations/Icon";
 import { NavbarAction } from "./NavbarAction";
 
 export type NavbarLinkListProps = JSX.IntrinsicElements["ul"];

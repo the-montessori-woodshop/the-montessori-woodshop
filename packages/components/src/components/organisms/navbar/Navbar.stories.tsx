@@ -1,7 +1,7 @@
 import { ShoppingCart, UserCircle } from "@woodshop/icons";
 import React from "react";
 
-import { Icon } from "../../atoms/Icon";
+import { Icon } from "../../atoms/icons-illustrations/Icon";
 import { Navbar } from "./Navbar";
 import { NavbarAction } from "./NavbarAction";
 import { NavbarLinkList } from "./NavbarLinkList";

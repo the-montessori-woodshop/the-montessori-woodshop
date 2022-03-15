@@ -2,7 +2,7 @@ import { styled } from "@linaria/react";
 import React, { forwardRef } from "react";
 
 import { makeRem } from "../../../theme/theme.utils";
-import { TypographyHeading } from "../../atoms/TypographyHeading";
+import { TypographyHeading } from "../../atoms/typography/TypographyHeading";
 
 export type FooterSectionTitleProps = JSX.IntrinsicElements["div"];
 

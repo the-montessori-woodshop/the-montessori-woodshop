@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Button } from "../../atoms/Button";
+import { Button } from "../../atoms/buttons/Button";
 import { useDialogRef } from "./dialog.useDialogRef";
 import { Drawer } from "./Drawer";
 import { DrawerBody } from "./DrawerBody";

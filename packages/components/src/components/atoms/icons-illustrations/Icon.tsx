@@ -2,7 +2,7 @@ import { styled } from "@linaria/react";
 import clsx from "clsx";
 import React, { forwardRef, memo } from "react";
 
-import { ColorScheme, cxColor } from "../../theme";
+import { ColorScheme, cxColor } from "../../../theme";
 import { useTransformIconProps } from "./icon.useTransformIconProps";
 
 const SIcon = styled.div`
