@@ -47,7 +47,7 @@ const SSection = styled.section`
 const BlogPostLi: FC<Post> = (blogPost) => {
   return (
     <BlogPostListItem key={blogPost.id}>
-      <BlogPostListItemLink to={`/posts/${blogPost.id}`}>
+      <BlogPostListItemLink to={`editor/${blogPost.id}`}>
         <div>
           <PostCardChip published={blogPost.published} />
         </div>

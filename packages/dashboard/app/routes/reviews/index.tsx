@@ -1,9 +1,9 @@
 import { Outlet } from "remix";
 
-export default function EditorPage() {
+export default function ReviewsPage() {
   return (
     <div>
-      Editor Index
+      ReviewsPage
       <Outlet />
     </div>
   );

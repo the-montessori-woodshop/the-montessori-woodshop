@@ -1,9 +1,25 @@
 {
   "name": "@woodshop/components",
   "version": "1.0.0",
-  "main": "dist/index.cjs",
-  "module": "dist/index.js",
+  "main": "dist/index.mjs",
+  "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.mjs",
+      "import": "./dist/index.mjs",
+      "node": "./dist/index.mjs",
+      "require": "./dist/index.mjs"
+    },
+    "./fonts/*": "./fonts/*",
+    "./css": {
+      "default": "./dist/index.css",
+      "import": "./dist/index.css",
+      "node": "./dist/index.css",
+      "require": "./dist/index.css"
+    }
+  },
   "scripts": {
     "types": "tsc",
     "bundle": "yarn node ./scripts/build.js",

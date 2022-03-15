@@ -1,9 +1,9 @@
 import { Outlet } from "remix";
 
-export default function EditorPage() {
+export default function ImageGalleryRoute() {
   return (
     <div>
-      editor page
+      Image Gallery Header
       <Outlet />
     </div>
   );

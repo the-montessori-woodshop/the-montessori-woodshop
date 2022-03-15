@@ -1,5 +1,7 @@
 import { css } from "@linaria/core";
 
+import { makeRem } from "./theme.utils";
+
 export default css`
   :global() {
     :root {
@@ -36,11 +38,12 @@ export default css`
       --color-textSecondary: var(--color-grey5);
 
       /* Navbar (100px) */
-      --navbar-height: 6.25rem;
+      --navbar-height: ${makeRem(80)};
+      --sidenav-width: ${makeRem(80)};
 
       /* Breakpoints */
-      --breakpoint-tablet: 577px;
-      --breakpoint-desktop: 992px;
+      --breakpoint-tablet: ${makeRem(577)};
+      --breakpoint-desktop: ${makeRem(992)};
     }
 
     html {
@@ -65,6 +68,15 @@ export default css`
     a {
       text-decoration: none;
       color: inherit;
+    }
+
+    ul,
+    li {
+      margin: 0;
+      padding: 0;
+    }
+    li {
+      list-style-type: none;
     }
   }
 `;

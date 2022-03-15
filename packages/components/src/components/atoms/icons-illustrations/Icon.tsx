@@ -10,45 +10,44 @@ const SIcon = styled.div`
   justify-content: center;
   align-items: center;
 
-  path {
-    fill: inherit;
-  }
-
   &${cxColor["black"]} {
-    fill: var(--color-black);
+    color: var(--color-black);
   }
   &${cxColor["white"]} {
-    fill: var(--color-white);
+    color: var(--color-white);
   }
   &${cxColor["primary"]} {
-    fill: var(--color-primary);
+    color: var(--color-primary);
   }
   &${cxColor["secondary"]} {
-    fill: var(--color-secondary);
+    color: var(--color-secondary);
   }
   &${cxColor["grey1"]} {
-    fill: var(--color-grey1);
+    color: var(--color-grey1);
   }
   &${cxColor["grey2"]} {
-    fill: var(--color-grey2);
+    color: var(--color-grey2);
   }
   &${cxColor["grey3"]} {
-    fill: var(--color-grey3);
+    color: var(--color-grey3);
   }
   &${cxColor["grey4"]} {
-    fill: var(--color-grey4);
+    color: var(--color-grey4);
   }
   &${cxColor["grey5"]} {
-    fill: var(--color-grey5);
+    color: var(--color-grey5);
   }
   &${cxColor["success"]} {
-    fill: var(--color-success);
+    color: var(--color-success);
   }
   &${cxColor["warning"]} {
-    fill: var(--color-warning);
+    color: var(--color-warning);
   }
   &${cxColor["danger"]} {
-    fill: var(--color-danger);
+    color: var(--color-danger);
+  }
+  &${cxColor["inherit"]} {
+    color: inherit;
   }
 `;
 

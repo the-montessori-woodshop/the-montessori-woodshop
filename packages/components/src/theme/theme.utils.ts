@@ -15,7 +15,7 @@ export function makeClass<T extends string>(classNameValues: T[]) {
   return obj as unknown as Record<T, string>;
 }
 
-export const cxColor = makeClass<Exclude<ColorScheme, "inherit">>([
+export const cxColor = makeClass<ColorScheme>([
   "black",
   "white",
   "grey1",
@@ -27,7 +27,8 @@ export const cxColor = makeClass<Exclude<ColorScheme, "inherit">>([
   "secondary",
   "success",
   "warning",
-  "danger"
+  "danger",
+  "inherit"
 ]);
 
 export const makeRem = (pixel: number): string => `${pixel / 16}rem`;
