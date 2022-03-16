@@ -52,6 +52,8 @@ const SContent = styled.main`
   flex: 1;
   height: 100%;
   width: 100%;
+  display: flex;
+  flex-direction: column;
 `;
 
 const SideNavListItemLink: FC<NavLinkProps> = ({ children, ...restProps }) => {

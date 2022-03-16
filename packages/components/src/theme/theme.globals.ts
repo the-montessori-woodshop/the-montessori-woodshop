@@ -22,11 +22,11 @@ export default css`
 
       --color-white: white;
       --color-white-rgba: 255, 255, 255;
-      --color-grey1: #fcfcfc;
+      --color-grey1: #fcfcfc; // grey 3
       --color-grey1-rgba: 0, 0, 99;
       --color-grey2: #f8f8f8;
       --color-grey2-rgba: 0, 0, 97;
-      --color-grey3: #e7e7e7;
+      --color-grey3: #e7e7e7; // grey 2.5
       --color-grey4: #c0c0c0;
       --color-grey5: #706e6e;
       --color-black: #3e3b39;
@@ -37,9 +37,10 @@ export default css`
       --color-textPrimary: var(--color-black);
       --color-textSecondary: var(--color-grey5);
 
-      /* Navbar (100px) */
+      /* Navs */
       --navbar-height: ${makeRem(80)};
       --sidenav-width: ${makeRem(80)};
+      --topnav-height: ${makeRem(80)};
 
       /* Breakpoints */
       --breakpoint-tablet: ${makeRem(577)};
