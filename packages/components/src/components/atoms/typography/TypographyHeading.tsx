@@ -5,6 +5,7 @@ import React from "react";
 
 type HeadingNodes = "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "div";
 
+export type TypographyHeadingElement = HTMLHeadingElement | HTMLDivElement;
 export type TypographyHeadingProps = JSX.IntrinsicElements[HeadingNodes] & {
   cxNode: HeadingNodes;
   cxVariant?: HeadingNodes | "subtitle1" | "subtitle2";
@@ -50,7 +51,7 @@ const CSS_STitle2 = css`
 `;
 
 export const TypographyHeading = React.forwardRef<
-  HTMLHeadingElement | HTMLDivElement,
+  TypographyHeadingElement,
   TypographyHeadingProps
 >(function TypographyHeading(
   { cxNode = "h1", cxVariant, className, children, ...restProps },

@@ -5,7 +5,7 @@ import { forwardRef } from "react";
 
 import { makeRem } from "../../../theme";
 
-export type TabsListProps = JSX.IntrinsicElements["div"] & {
+export type TabPanelProps = JSX.IntrinsicElements["div"] & {
   /**
    * Refers to the tab element that controls the panel
    * Provides an accessible name for the tab panel.
@@ -19,7 +19,7 @@ const SDiv = styled.div`
   padding: ${makeRem(28)};
 `;
 
-export const TabPanel = forwardRef<HTMLDivElement, TabsListProps>(
+export const TabPanel = forwardRef<HTMLDivElement, TabPanelProps>(
   function TabPanel({ children, className, ...restProps }, ref) {
     return (
       <SDiv role="tablist" {...restProps} ref={ref} className={clsx(className)}>

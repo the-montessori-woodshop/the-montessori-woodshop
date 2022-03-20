@@ -28,6 +28,7 @@ export const STab = styled.button`
     height: ${makeRem(48)};
     border-radius: ${makeRem(4)};
     min-width: ${makeRem(200)};
+
     text-align: left;
 
     &.active {

@@ -113,7 +113,7 @@ export default function App() {
                   <Comment />
                 </Icon>
               </SideNavListItemLink>
-              <SideNavListItemLink to="/image-gallery">
+              <SideNavListItemLink to="/images">
                 <Icon cxTitle="images" cxSize={32}>
                   <ImageGallery />
                 </Icon>

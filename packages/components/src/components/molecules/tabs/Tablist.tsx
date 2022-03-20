@@ -4,7 +4,6 @@ import React from "react";
 import { forwardRef } from "react";
 
 import { makeClass, makeRem } from "../../../theme";
-import { STab } from "./Tab";
 import {
   TablistContextProvider,
   TablistContextProviderProps
@@ -40,19 +39,20 @@ const SDiv = styled.div`
       padding: ${makeRem(4)};
     }
 
-    & > ${STab} + ${STab} {
+    & > * + * {
       margin-left: ${makeRem(12)};
     }
   }
 
   &${cxLayout["vertical"]} {
     display: block;
+    font-size: ${makeRem(16)} !important;
 
-    ${STab} {
+    & > * {
       display: block;
     }
 
-    & > ${STab} + ${STab} {
+    & > * + * {
       margin-top: ${makeRem(12)};
     }
   }
