@@ -1,8 +1,10 @@
 import { Button, Icon, makeRem } from "@woodshop/components";
 import { Close } from "@woodshop/icons";
 import { ImagePane } from "~/components/ImagePane";
+import { ImagePaneContent } from "~/components/ImagePaneContent";
+import { PageTitle } from "~/components/PageTitle";
 import { useCallback } from "react";
-import { useNavigate } from "remix";
+import { Form, useNavigate } from "remix";
 
 export default function ImagesNew() {
   const navigate = useNavigate();
@@ -13,6 +15,7 @@ export default function ImagesNew() {
 
   return (
     <ImagePane>
+      <PageTitle>Upload new image</PageTitle>
       <Button
         onClick={close}
         style={{
@@ -25,6 +28,11 @@ export default function ImagesNew() {
           <Close />
         </Icon>
       </Button>
+      <ImagePaneContent>
+        <Form>
+          <input type="file" accept=".png" multiple={false} />
+        </Form>
+      </ImagePaneContent>
     </ImagePane>
   );
 }
