@@ -15,6 +15,10 @@
     "alwaysStrict": true,
     "strict": true,
     "outDir": "dist",
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["./src/*"]
+    },
     "types": ["@cloudflare/workers-types"]
   },
   "include": ["src"]

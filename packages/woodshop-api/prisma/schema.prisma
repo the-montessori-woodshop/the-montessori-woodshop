@@ -28,3 +28,12 @@ model User {
 
   @@map(name: "users")
 }
+
+model Image {
+  id         Int      @id @default(autoincrement())
+  title      String
+  url        String
+  service_id String
+  create_at  DateTime @default(now())
+  updated_at DateTime @updatedAt
+}

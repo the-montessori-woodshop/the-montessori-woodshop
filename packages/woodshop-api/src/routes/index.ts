@@ -1,5 +1,6 @@
 import { Router } from "itty-router";
 
+import { ImageRouter } from "../features/image/image.route";
 import { PostRouter } from "../features/post/post.route";
 
 const router = Router({ base: "/api" });
@@ -12,6 +13,7 @@ const errorHandler = (error: { message: string; status: number }) =>
 router
   // Router
   .all("/post/*", PostRouter.handle)
+  .all("/image/*", ImageRouter.handle)
   .get("*", () => new Response("Not found", { status: 404 }));
 
 export const handleRequest = (request: FetchEvent["request"]) =>
