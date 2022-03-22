@@ -2,11 +2,14 @@ import { PrismaClient } from "@prisma/client";
 
 import { HandleGETRequest } from "../../types/index";
 import { handleRoute } from "../../utils/handleRoute";
-import { GET_PostByIdApiParams, GET_PostByIdApiResponse } from "./post.model";
+import {
+  GET_ImageByIdApiParams,
+  GET_ImageByIdApiResponse
+} from "./image.model";
 
-export const getPostById: HandleGETRequest<
-  GET_PostByIdApiResponse,
-  GET_PostByIdApiParams
+export const getImageById: HandleGETRequest<
+  GET_ImageByIdApiResponse,
+  GET_ImageByIdApiParams
 > = async ({ params: { id } }) => {
   if (!id) throw new Error(":id is required.");
   const prisma = new PrismaClient({
@@ -15,16 +18,16 @@ export const getPostById: HandleGETRequest<
 
   try {
     await prisma.$connect();
-    const post = await prisma.post.findUnique({
+    const image = await prisma.image.findUnique({
       where: {
         id: Number(id)
       }
     });
-    return post;
+    return image;
   } catch (error) {
     // @ts-ignore
     throw new Error(error);
   }
 };
 
-export const handleGetPostById = handleRoute(getPostById);
+export const handleGetImageById = handleRoute(getImageById);

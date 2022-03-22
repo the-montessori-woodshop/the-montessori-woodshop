@@ -10,7 +10,7 @@ import React, {
 import { forwardRef } from "react";
 
 import { Icon, TypographyCopy } from "../../atoms";
-import { InputFile } from "../../atoms/inputs/InputFile";
+import { InputFile, InputFileProps } from "../../atoms/inputs/InputFile";
 
 const SLabel = styled.label`
   position: relative;
@@ -44,77 +44,77 @@ const SDiv2 = styled.div`
   }
 `;
 
-export const FormFieldImageDropzone = forwardRef<HTMLInputElement>(
-  function FormFieldImageDropzone(props, ref) {
-    const inputRef = useRef<HTMLInputElement>(null);
-    const imageRef = useRef<HTMLImageElement>(null);
-    const [isDragging, setIsDragging] = useState(false);
-    useImperativeHandle(ref, () => inputRef.current as HTMLInputElement);
+export type FormFieldImageDropzoneProps = InputFileProps;
 
-    const handleOnDrop = useCallback<DragEventHandler<HTMLLabelElement>>(
-      (e) => {
-        e.preventDefault();
+export const FormFieldImageDropzone = forwardRef<
+  HTMLInputElement,
+  FormFieldImageDropzoneProps
+>(function FormFieldImageDropzone(props, ref) {
+  const inputRef = useRef<HTMLInputElement>(null);
+  const imageRef = useRef<HTMLImageElement>(null);
+  const [isDragging, setIsDragging] = useState(false);
+  useImperativeHandle(ref, () => inputRef.current as HTMLInputElement);
 
-        if (inputRef.current && imageRef.current) {
-          inputRef.current.files = e.dataTransfer.files;
-          imageRef.current.src = URL.createObjectURL(inputRef.current.files[0]);
-          setIsDragging(false);
+  const handleOnDrop = useCallback<DragEventHandler<HTMLLabelElement>>((e) => {
+    e.preventDefault();
+
+    if (inputRef.current && imageRef.current) {
+      inputRef.current.files = e.dataTransfer.files;
+      inputRef.current.value = e.dataTransfer.files[0].name;
+      imageRef.current.src = URL.createObjectURL(inputRef.current.files[0]);
+      setIsDragging(false);
+    }
+  }, []);
+
+  const handleOnDragover = useCallback<DragEventHandler<HTMLLabelElement>>(
+    (e) => {
+      e.preventDefault();
+      setIsDragging(true);
+    },
+    []
+  );
+
+  const handleOnDragleave = useCallback<DragEventHandler<HTMLLabelElement>>(
+    (e) => {
+      e.preventDefault();
+      setIsDragging(false);
+    },
+    []
+  );
+
+  return (
+    <SLabel
+      onDragEnter={handleOnDragover}
+      onDragLeave={handleOnDragleave}
+      onDrop={handleOnDrop}
+      onDragOver={handleOnDragover}
+    >
+      <InputFile
+        {...props}
+        ref={inputRef}
+        style={
+          isDragging
+            ? {
+                borderColor: "var(--color-primary)"
+              }
+            : undefined
         }
-      },
-      []
-    );
-
-    const handleOnDragover = useCallback<DragEventHandler<HTMLLabelElement>>(
-      (e) => {
-        e.preventDefault();
-        setIsDragging(true);
-      },
-      []
-    );
-
-    const handleOnDragleave = useCallback<DragEventHandler<HTMLLabelElement>>(
-      (e) => {
-        e.preventDefault();
-        setIsDragging(false);
-      },
-      []
-    );
-
-    return (
-      <SLabel
-        onDragEnter={handleOnDragover}
-        onDragLeave={handleOnDragleave}
-        onDrop={handleOnDrop}
-        onDragOver={handleOnDragover}
-      >
-        <InputFile
-          {...props}
-          ref={inputRef}
-          accept=".png,.jpg"
-          style={
-            isDragging
-              ? {
-                  borderColor: "var(--color-primary)"
-                }
-              : undefined
-          }
-        />
-        <SDiv2>
-          <div>
-            <Icon
-              cxTitle="drag and drop an image file"
-              cxSize={32}
-              cxColor="grey4"
-            >
-              <FileImage />
-            </Icon>
-            <TypographyCopy cxVariant="caption" cxColor="textSecondary">
-              Drag and drop or select a .png or .jpg image
-            </TypographyCopy>
-          </div>
-        </SDiv2>
-        <Simg ref={imageRef} />
-      </SLabel>
-    );
-  }
-);
+      />
+      <SDiv2>
+        <div>
+          <Icon
+            cxTitle="drag and drop an image file"
+            cxSize={32}
+            cxColor="grey4"
+          >
+            <FileImage />
+          </Icon>
+          <TypographyCopy cxVariant="caption" cxColor="textSecondary">
+            Drag and drop or select a .png or .jpg image
+          </TypographyCopy>
+        </div>
+      </SDiv2>
+      <Simg ref={imageRef} />
+    </SLabel>
+  );
+});

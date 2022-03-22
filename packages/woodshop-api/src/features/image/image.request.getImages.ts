@@ -1,7 +1,7 @@
 import { Post, PrismaClient } from "@prisma/client";
-import { HandleGETRequest } from "~/types/index";
-import { handleRoute } from "~/utils/handleRoute";
 
+import { HandleGETRequest } from "../../types/index";
+import { handleRoute } from "../../utils/handleRoute";
 import { GET_ImagesApiParams, GET_ImagesApiResponse } from "./image.model";
 
 export const getImages: HandleGETRequest<

@@ -8,26 +8,22 @@ import {
   makeRem,
 } from "@woodshop/components";
 import { Copy, PlusSquare } from "@woodshop/icons";
-import { PageContainer } from "~/components/PageContainer";
-import { PageContent } from "~/components/PageContent";
 import { PageTitle } from "~/components/PageTitle";
-import { useCallback, useMemo } from "react";
+import { useCallback } from "react";
 import styled from "styled-components";
-import { type LoaderFunction, Outlet, useNavigate, useLoaderData } from "remix";
+import {
+  type LoaderFunction,
+  Outlet,
+  useNavigate,
+  useLoaderData,
+  NavLink,
+} from "remix";
 import api, { ApiResponse } from "~/api/index";
 import { ImagesGrid } from "~/components/ImagesGrid";
 import { ImagesGridNav } from "~/components/ImagesGridNav";
 import { ImagesGridMainTitle } from "~/components/ImagesGridMainTitle";
 import { ImagesGridMainContent } from "~/components/ImagesGridMainContent";
-
-const SDiv = styled.div`
-  display: flex;
-  height: 100%;
-`;
-
-const SDiv2 = styled.div`
-  flex: 1;
-`;
+import clsx from "clsx";
 
 const SDiv3 = styled.div`
   display: flex;
@@ -48,13 +44,19 @@ const SImg = styled.img`
   width: ${makeRem(300)};
   height: ${makeRem(200)};
   border-radius: ${makeRem(4)};
+  transition: all 0.15s ease-in-out;
+
+  &.active {
+    box-shadow: 0 2px 14px 5px var(--color-secondary);
+    border: ${makeRem(2)} solid var(--color-secondary);
+    transform: scale(1.1);
+  }
 `;
 
 const SUl = styled.ul`
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
-  height: ;
 `;
 
 const SLi = styled.li`
@@ -106,7 +108,15 @@ export default function ImageGalleryRoute() {
         <SUl>
           {data.map((img) => (
             <SLi key={img.service_id}>
-              <SImg src={img.url} alt={img.title} />
+              <NavLink to={`./${img.id}`}>
+                {({ isActive }) => (
+                  <SImg
+                    src={img.url}
+                    alt={img.title}
+                    className={clsx(isActive && "active")}
+                  />
+                )}
+              </NavLink>
             </SLi>
           ))}
         </SUl>

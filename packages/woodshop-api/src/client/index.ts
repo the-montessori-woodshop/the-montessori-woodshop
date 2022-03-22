@@ -1,7 +1,7 @@
-import { ImageResource } from "~/features/image/Image.resource";
-import { PostResource } from "~/features/post/Post.resource";
-export * from "~/features/post/post.model";
-export * from "~/features/image/image.model";
+import { ImageResource } from "../features/image/Image.resource";
+import { PostResource } from "../features/post/Post.resource";
+export * from "../features/post/post.model";
+export * from "../features/image/image.model";
 
 import { Client, type ClientConfig } from "./Client.resource";
 
