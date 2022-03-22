@@ -54,6 +54,7 @@ export const action: ActionFunction = async ({ request }) => {
 
 const SDiv = styled.div`
   display: flex;
+  margin-top: ${makeRem(16)};
   padding-bottom: ${makeRem(16)};
   border-bottom: ${makeRem(1)} solid var(--color-grey3);
 `;

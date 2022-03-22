@@ -24,8 +24,7 @@ import {
 
 export const action: ActionFunction = async ({ request }) => {
   const response = await api.image.createNewImage(request);
-  redirect(`/images/${response.data.id}`);
-  return response;
+  return redirect(`/images/${response.data.id}`);
 };
 
 export default function ImagesNew() {
