@@ -5,7 +5,7 @@ import React from "react";
 import { makeClass, makeRem } from "../../../theme/theme.utils";
 
 type CXVariant = "text" | "contained";
-type CXColor = "primary" | "secondary" | "danger" | "warning";
+type CXColor = "primary" | "secondary" | "danger" | "warning" | "success";
 type CXSize = "small" | "large";
 
 const cxVariant = makeClass<CXVariant>(["text", "contained"]);
@@ -13,7 +13,8 @@ const cxColor = makeClass<CXColor>([
   "primary",
   "secondary",
   "danger",
-  "warning"
+  "warning",
+  "success"
 ]);
 const cxSize = makeClass<CXSize>(["large", "small"]);
 
@@ -40,28 +41,37 @@ const SButton = styled.button`
 
   &${cxVariant["contained"]}, &${cxVariant["text"]} {
     min-width: ${makeRem(144)};
-    padding-left: ${makeRem(24)};
-    padding-right: ${makeRem(24)};
-    border-radius: ${makeRem(2)};
+    padding-left: ${makeRem(36)};
+    padding-right: ${makeRem(36)};
+    border-radius: ${makeRem(8)};
     color: var(--color-textPrimary);
   }
 
   &${cxVariant["contained"]} {
-    &${cxColor["danger"]} {
-      background-color: var(--color-danger);
-      color: var(--color-white);
-    }
     &${cxColor["primary"]} {
       background-color: var(--color-primary);
       color: var(--color-white);
+      box-shadow: 0 24px 44px -12px rgba(var(--color-primary-rgb), 0.35);
     }
     &${cxColor["secondary"]} {
       background-color: var(--color-secondary);
       color: var(--color-textPrimary);
+      box-shadow: 0 24px 44px -12px rgba(var(--color-secondary-rgb), 0.35);
+    }
+    &${cxColor["danger"]} {
+      background-color: var(--color-danger);
+      color: var(--color-white);
+      box-shadow: 0 24px 44px -12px rgba(var(--color-danger-rgb), 0.35);
     }
     &${cxColor["warning"]} {
       background-color: var(--color-warning);
       color: var(--color-white);
+      box-shadow: 0 24px 44px -12px rgba(var(--color-warning-rgb), 0.35);
+    }
+    &${cxColor["success"]} {
+      background-color: var(--color-success);
+      color: var(--color-textPrimary);
+      box-shadow: 0 24px 44px -12px rgba(var(--color-success-rgb), 0.35);
     }
   }
 
@@ -80,18 +90,21 @@ const SButton = styled.button`
     &${cxColor["danger"]} {
       color: var(--color-danger);
     }
+    &${cxColor["success"]} {
+      color: var(--color-success);
+    }
   }
 
   &${cxSize["large"]} {
     height: ${makeRem(44)};
     font-size: ${makeRem(16)};
-    font-weight: bold;
+    font-weight: 600;
   }
 
   &${cxSize["small"]} {
     height: ${makeRem(32)};
     font-size: ${makeRem(12)};
-    font-weight: bold;
+    font-weight: 600;
   }
 `;
 

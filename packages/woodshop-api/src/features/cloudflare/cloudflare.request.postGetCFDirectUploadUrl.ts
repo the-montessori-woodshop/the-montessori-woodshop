@@ -7,7 +7,7 @@ const CF_IMAGE_API_TOKEN = "LDQmG3OPnuf8e7XRhvp3OJFC49-0L1klY4WPJ0sn";
 
 export const postGetCFDirectUploadUrl: HandlePOSTRequest<
   CF_GetImageUploadUrlResponse
-> = async (request) => {
+> = async () => {
   try {
       const res = await fetch(
         `https://api.cloudflare.com/client/v4/accounts/${CF_ACCOUNT_ID}/images/v2/direct_upload`,

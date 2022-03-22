@@ -4,6 +4,7 @@ import React from "react";
 
 import { Icon } from "../icons-illustrations/Icon";
 import { Button } from "./Button";
+import { ButtonGroup } from "./ButtonGroup";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -26,6 +27,28 @@ buttonWithIcon.args = {
       <Pencil />
     </Icon>
   )
+};
+
+export const AllContainedLarge = () => {
+  return (
+    <ButtonGroup>
+      <Button cxVariant="contained" cxColor="primary">
+        Parturient Ullamcorper
+      </Button>
+      <Button cxVariant="contained" cxColor="secondary">
+        Parturient Ullamcorper
+      </Button>
+      <Button cxVariant="contained" cxColor="danger">
+        Parturient Ullamcorper
+      </Button>
+      <Button cxVariant="contained" cxColor="warning">
+        Parturient Ullamcorper
+      </Button>
+      <Button cxVariant="contained" cxColor="success">
+        Parturient Ullamcorper
+      </Button>
+    </ButtonGroup>
+  );
 };
 
 export const Contained_Primary_Large = Template.bind({});

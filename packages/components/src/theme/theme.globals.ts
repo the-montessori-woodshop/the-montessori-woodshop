@@ -14,11 +14,16 @@ export default css`
 
       /* Color */
       --color-primary: #6f381e;
+      --color-primary-rgb: 111, 56, 30;
       --color-secondary: #e6c084;
+      --color-secondary-rgb: 230, 192, 132;
 
       --color-danger: #fe1414;
+      --color-danger-rgb: $;
       --color-warning: #e8e812;
+      --color-warning-rgb: ;
       --color-success: #2df20e;
+      --color-success-rgb: ;
 
       --color-white: white;
       --color-white-rgba: 255, 255, 255;
