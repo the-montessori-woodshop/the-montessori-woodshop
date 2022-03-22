@@ -45,6 +45,11 @@ const SButton = styled.button`
     padding-right: ${makeRem(36)};
     border-radius: ${makeRem(8)};
     color: var(--color-textPrimary);
+    transition: all 0.05s ease-in-out;
+
+    &:active {
+      transform: scale(0.98);
+    }
   }
 
   &${cxVariant["contained"]} {

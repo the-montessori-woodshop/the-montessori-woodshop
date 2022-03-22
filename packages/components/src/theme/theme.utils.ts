@@ -59,3 +59,12 @@ export const createColorMap = (cxColor: ColorScheme) => ({
   "c-grey5": cxColor === "grey5",
   "c-black": cxColor === "black"
 });
+
+export const makeRgbToHex = (r: number, g: number, b: number) =>
+  "#" +
+  [r, g, b]
+    .map((x) => {
+      const hex = x.toString(16);
+      return hex.length === 1 ? "0" + hex : hex;
+    })
+    .join("");

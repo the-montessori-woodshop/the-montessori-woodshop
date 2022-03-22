@@ -19,11 +19,11 @@ export default css`
       --color-secondary-rgb: 230, 192, 132;
 
       --color-danger: #fe1414;
-      --color-danger-rgb: $;
+      --color-danger-rgb: 254, 20, 20;
       --color-warning: #e8e812;
-      --color-warning-rgb: ;
+      --color-warning-rgb: 232, 232, 18;
       --color-success: #2df20e;
-      --color-success-rgb: ;
+      --color-success-rgb: 45, 242, 14;
 
       --color-white: white;
       --color-white-rgba: 255, 255, 255;
