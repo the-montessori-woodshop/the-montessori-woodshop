@@ -37,10 +37,8 @@ export class ImageResource extends BaseResource {
   createNewImage(request: Request) {
     const url = "/api/image";
     return this.client.request<POST_NewImageApiResponse>({
-      // POST_NewImageApiRequest
       ...request,
       method: "POST",
-      // body: request.body,
       url
     });
   }

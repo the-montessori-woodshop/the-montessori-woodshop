@@ -15,14 +15,10 @@ export const postNewImage: HandlePOSTRequest<POST_NewImageApiResponse> = async (
   request
 ) => {
   try {
-    // console.log("here");
-    // console.log(JSON.stringify(request, null, 4));
-    // const requestFormText = await request.text();
-    // console.log(JSON.stringify(request.body));
     const body = await request.formData();
-    // console.log("after form data");
-    // const imgTitle = requestFormData.get("title") as string | null;
-    // console.log(imgTitle);
+    const imgTitle = body.get("title") as string | null;
+    body.delete("title");
+    console.log(imgTitle);
 
     // if (!imgTitle) {
     //   throw new Error("Title is required");
@@ -41,7 +37,7 @@ export const postNewImage: HandlePOSTRequest<POST_NewImageApiResponse> = async (
         body
       }
     );
-    const cfResponse = await cfRes.text();
+    const cfResponse = await cfRes.json<CF_ImageApiUploadResponse>();
     console.log(cfResponse);
     // const cfResponse = await cfRes.json<CF_ImageApiUploadResponse>();
     const prisma = new PrismaClient({
