@@ -10,7 +10,7 @@ import React, {
 import { forwardRef } from "react";
 
 import { Icon, TypographyCopy } from "../../atoms";
-import { InputFile, InputFileProps } from "../../atoms/inputs/InputFile";
+import { InputFile } from "../../atoms/inputs/InputFile";
 
 const SLabel = styled.label`
   position: relative;
@@ -44,7 +44,7 @@ const SDiv2 = styled.div`
   }
 `;
 
-export type FormFieldImageDropzoneProps = InputFileProps;
+export type FormFieldImageDropzoneProps = JSX.IntrinsicElements["input"];
 
 export const FormFieldImageDropzone = forwardRef<
   HTMLInputElement,
@@ -60,7 +60,6 @@ export const FormFieldImageDropzone = forwardRef<
 
     if (inputRef.current && imageRef.current) {
       inputRef.current.files = e.dataTransfer.files;
-      inputRef.current.value = e.dataTransfer.files[0].name;
       imageRef.current.src = URL.createObjectURL(inputRef.current.files[0]);
       setIsDragging(false);
     }
@@ -92,6 +91,7 @@ export const FormFieldImageDropzone = forwardRef<
       <InputFile
         {...props}
         ref={inputRef}
+        accept=".png,.jpg"
         style={
           isDragging
             ? {

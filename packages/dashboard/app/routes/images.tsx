@@ -41,8 +41,9 @@ const SDiv5 = styled.div`
 `;
 
 const SImg = styled.img`
-  width: ${makeRem(300)};
+  width: 100%;
   height: ${makeRem(200)};
+  object-fit: cover;
   border-radius: ${makeRem(4)};
   transition: all 0.15s ease-in-out;
 
@@ -54,9 +55,9 @@ const SImg = styled.img`
 `;
 
 const SUl = styled.ul`
-  display: flex;
-  justify-content: flex-start;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: ${`repeat(auto-fill, minmax(${makeRem(280)}, 1fr))`};
+  width: 100%;
 `;
 
 const SLi = styled.li`

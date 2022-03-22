@@ -7,4 +7,5 @@ export const ImagesGrid = styled.div`
     "main-title edit-title"
     "main-content edit-content";
   overflow: hidden;
+  grid-template-columns: 1fr auto;
 `;

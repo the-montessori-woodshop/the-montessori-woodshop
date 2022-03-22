@@ -13,18 +13,24 @@ import { ImagePaneContent } from "~/components/ImagePaneContent";
 import { ImagesGridEditContent } from "~/components/ImagesGridEditContent";
 import { ImagesGridEditTitle } from "~/components/ImagesGridEditTitle";
 import { PageTitle } from "~/components/PageTitle";
-import { useCallback, useRef } from "react";
-import { ActionFunction, Form, useNavigate, useTransition } from "remix";
+import { useCallback } from "react";
+import {
+  ActionFunction,
+  Form,
+  redirect,
+  useNavigate,
+  useTransition,
+} from "remix";
 
 export const action: ActionFunction = async ({ request }) => {
   const response = await api.image.createNewImage(request);
+  redirect(`/images/${response.data.id}`);
   return response;
 };
 
 export default function ImagesNew() {
   const navigate = useNavigate();
   const transition = useTransition();
-  const inputFileRef = useRef<HTMLInputElement | null>(null);
 
   const close = useCallback(() => {
     navigate("../");
@@ -51,7 +57,7 @@ export default function ImagesNew() {
         <ImagePaneContent>
           <Form method="post" encType="multipart/form-data">
             <FormFieldGroup>
-              <FormFieldImageDropzone name="file" ref={inputFileRef} />
+              <FormFieldImageDropzone name="file" />
               <FormFieldText id="title" name="title" label="Image title" />
             </FormFieldGroup>
             <br />

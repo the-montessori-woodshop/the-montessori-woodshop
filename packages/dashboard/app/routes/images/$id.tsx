@@ -1,8 +1,11 @@
 import {
   Button,
   ButtonGroup,
+  DescriptionList,
+  DescriptionListItem,
+  DescriptionListItemData,
+  DescriptionListItemTag,
   FormFieldGroup,
-  FormFieldImageDropzone,
   FormFieldText,
   Icon,
   InputText,
@@ -14,6 +17,7 @@ import { ImagePaneContent } from "~/components/ImagePaneContent";
 import { ImagesGridEditContent } from "~/components/ImagesGridEditContent";
 import { ImagesGridEditTitle } from "~/components/ImagesGridEditTitle";
 import { PageTitle } from "~/components/PageTitle";
+import { dateFactory } from "~/utils/date-factory";
 import { useCallback } from "react";
 import {
   ActionFunction,
@@ -24,12 +28,11 @@ import {
   useNavigate,
   useTransition,
 } from "remix";
+import styled from "styled-components";
 
 type LoaderData = ApiResponse<typeof api.image.getImageById>;
 
 export const loader: LoaderFunction = async ({ params }) => {
-  console.log(params);
-
   if (!params.id) {
     throw new Error("Paramater ID doesn't edist");
   }
@@ -49,6 +52,21 @@ export const action: ActionFunction = async ({ request }) => {
   return redirect(`/images/${image.id}`);
 };
 
+const SDiv = styled.div`
+  display: flex;
+  padding-bottom: ${makeRem(16)};
+  border-bottom: ${makeRem(1)} solid var(--color-grey3);
+`;
+
+const SImg = styled.img`
+  width: 30%;
+  height: auto;
+  margin-right: ${makeRem(16)};
+  border-radius: ${makeRem(4)};
+  object-fit: contain;
+  object-position: top;
+`;
+
 export default function ImagesIdPage() {
   const navigate = useNavigate();
   const transition = useTransition();
@@ -61,7 +79,7 @@ export default function ImagesIdPage() {
   return (
     <>
       <ImagesGridEditTitle>
-        <PageTitle>Edit an image</PageTitle>
+        <PageTitle>{data?.title}</PageTitle>
         <Button
           onClick={close}
           style={{
@@ -77,6 +95,35 @@ export default function ImagesIdPage() {
       </ImagesGridEditTitle>
       <ImagesGridEditContent>
         <ImagePaneContent>
+          <SDiv>
+            <SImg src={data?.url} alt={data?.title} />
+            <DescriptionList>
+              <DescriptionListItem>
+                <DescriptionListItemTag>Title</DescriptionListItemTag>
+                <DescriptionListItemData>{data?.title}</DescriptionListItemData>
+              </DescriptionListItem>
+              <DescriptionListItem>
+                <DescriptionListItemTag>Cloudflare ID</DescriptionListItemTag>
+                <DescriptionListItemData>
+                  {data?.service_id}
+                </DescriptionListItemData>
+              </DescriptionListItem>
+              <DescriptionListItem>
+                <DescriptionListItemTag>Created On</DescriptionListItemTag>
+                <DescriptionListItemData>
+                  {data?.create_at &&
+                    dateFactory(data?.create_at, "dateAndTime")}
+                </DescriptionListItemData>
+              </DescriptionListItem>
+              <DescriptionListItem>
+                <DescriptionListItemTag>Last updated</DescriptionListItemTag>
+                <DescriptionListItemData>
+                  {data?.updated_at &&
+                    dateFactory(data?.updated_at, "dateAndTime")}
+                </DescriptionListItemData>
+              </DescriptionListItem>
+            </DescriptionList>
+          </SDiv>
           <Form method="patch" action={`/images/${data?.id}`}>
             <FormFieldGroup>
               <InputText
@@ -86,7 +133,6 @@ export default function ImagesIdPage() {
                   display: "none",
                 }}
               />
-              <FormFieldImageDropzone />
               <FormFieldText
                 id="title"
                 name="title"
@@ -112,12 +158,12 @@ export default function ImagesIdPage() {
               }}
             >
               <Button
-                cxVariant="text"
-                cxColor="primary"
+                cxVariant="contained"
+                cxColor="danger"
                 type="button"
                 disabled={transition.state === "submitting"}
               >
-                Cancel
+                Delete
               </Button>
               <Button
                 cxVariant="contained"
