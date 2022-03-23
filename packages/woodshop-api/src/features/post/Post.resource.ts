@@ -39,7 +39,7 @@ export class PostResource extends BaseResource {
       POST_NewPostByIdApiRequest
     >({
       method: "POST",
-      data,
+      body: data,
       url
     });
   }

@@ -9,13 +9,13 @@ export type WoodshopClientRequestConfig<T = unknown> = T extends
   ? {
       method: ClientRequestMethod;
       url: string;
-      // headers?: Record<string, unknown>;
-      body: T;
+      headers?: Headers;
+      body: T | string;
     }
   : {
       method: ClientRequestMethod;
       url: string;
-      // headers?: Record<string, unknown>;
+      headers?: Headers;
     };
 
 export type WoodshopClientResponse<ResponseData> = {
@@ -37,10 +37,10 @@ export class Client {
   async request<R, D = unknown>({
     method,
     url,
-    // headers = {},
     ...restRequest
   }: WoodshopClientRequestConfig<D>): Promise<WoodshopClientResponse<R>> {
     const fetchUrl = `${this.config.baseUrl}${url}`;
+
     const requestConfig = {
       method,
       url: fetchUrl,
@@ -56,7 +56,6 @@ export class Client {
         data: resData
       };
     } catch (error) {
-      console.log(error);
       return {
         config: requestConfig,
         data: {} as unknown as R

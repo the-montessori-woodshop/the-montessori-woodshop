@@ -48,11 +48,14 @@ export class ImageResource extends BaseResource {
    */
   updateImage(id: string, body: PATCH_ImagesApiRequest) {
     const url = `/api/image/${id}`;
+    const headers = new Headers();
+    headers.append("Content-Type", "application/json");
     return this.client.request<PATCH_ImagesApiResponse, PATCH_ImagesApiRequest>(
       {
         method: "PATCH",
-        body,
-        url
+        body: JSON.stringify(body),
+        url,
+        headers
       }
     );
   }

@@ -8,7 +8,6 @@ import {
   FormFieldGroup,
   FormFieldText,
   Icon,
-  InputText,
   makeRem,
 } from "@woodshop/components";
 import { Close, Copy } from "@woodshop/icons";
@@ -43,13 +42,19 @@ export const loader: LoaderFunction = async ({ params }) => {
 
 export const action: ActionFunction = async ({ request }) => {
   const formData = await request.formData();
-  const { data: image } = await api.image.updateImage(
-    formData.get("id") as string,
-    {
-      title: formData.get("title") as string,
+  const id = formData.get("id") as string;
+  const title = formData.get("title") as string;
+  if (id && title) {
+    try {
+      const response = await api.image.updateImage(id, {
+        title,
+      });
+      return redirect(`/images/${response.data.id}`);
+    } catch (error) {
+      console.log(error);
     }
-  );
-  return redirect(`/images/${image.id}`);
+  }
+  return null;
 };
 
 const SDiv = styled.div`
@@ -125,15 +130,9 @@ export default function ImagesIdPage() {
               </DescriptionListItem>
             </DescriptionList>
           </SDiv>
-          <Form method="patch" action={`/images/${data?.id}`}>
+          <Form method="patch">
             <FormFieldGroup>
-              <InputText
-                name="id"
-                id="id"
-                style={{
-                  display: "none",
-                }}
-              />
+              <input type="hidden" name="id" value={data?.id} />
               <FormFieldText
                 id="title"
                 name="title"
