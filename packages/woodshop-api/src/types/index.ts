@@ -19,3 +19,12 @@ export type HandlePATCHRequest<
     params: Params;
   }
 ) => Promise<ResponseDataShape>;
+
+export type HandleDELETERequest<
+  ResponseDataShape = any,
+  Params = Record<string, unknown>
+> = (
+  request: FetchEvent["request"] & {
+    params: Params;
+  }
+) => Promise<ResponseDataShape>;

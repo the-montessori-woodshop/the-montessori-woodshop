@@ -23,6 +23,7 @@ import {
   Form,
   LoaderFunction,
   redirect,
+  useFormAction,
   useLoaderData,
   useNavigate,
   useTransition,
@@ -43,6 +44,7 @@ export const loader: LoaderFunction = async ({ params }) => {
 export const action: ActionFunction = async ({ request }) => {
   const formData = await request.formData();
   const id = formData.get("id") as string;
+
   const title = formData.get("title") as string;
   if (id && title) {
     try {
@@ -51,7 +53,7 @@ export const action: ActionFunction = async ({ request }) => {
       });
       return redirect(`/images/${response.data.id}`);
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   }
   return null;
@@ -130,7 +132,7 @@ export default function ImagesIdPage() {
               </DescriptionListItem>
             </DescriptionList>
           </SDiv>
-          <Form method="patch">
+          <Form method="post">
             <FormFieldGroup>
               <input type="hidden" name="id" value={data?.id} />
               <FormFieldText
@@ -160,7 +162,7 @@ export default function ImagesIdPage() {
               <Button
                 cxVariant="contained"
                 cxColor="danger"
-                type="button"
+                formAction={useFormAction(`delete`, "delete")}
                 disabled={transition.state === "submitting"}
               >
                 Delete

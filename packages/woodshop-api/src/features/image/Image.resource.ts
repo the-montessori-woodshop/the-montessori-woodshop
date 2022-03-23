@@ -1,5 +1,6 @@
 import BaseResource from "../../client/Base.resource";
 import {
+  DELETE_ImageApiResponse,
   GET_ImageByIdApiResponse,
   GET_ImagesApiResponse,
   PATCH_ImagesApiRequest,
@@ -58,5 +59,16 @@ export class ImageResource extends BaseResource {
         headers
       }
     );
+  }
+
+  /**
+   * Get's a Image by ID
+   */
+  delete(id: string | number) {
+    const url = `/api/image/${id}`;
+    return this.client.request<DELETE_ImageApiResponse>({
+      method: "DELETE",
+      url
+    });
   }
 }

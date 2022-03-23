@@ -1,5 +1,6 @@
 import { Router } from "itty-router";
 
+import { handleDeleteImage } from "./image.request.deleteImage";
 import { handleGetImageById } from "./image.request.getImageById";
 import { handleGetImages } from "./image.request.getImages";
 import { handlePatchImage } from "./image.request.patchImage";
@@ -12,4 +13,5 @@ ImageRouter
   .get("/", handleGetImages)
   .post("/", handlePostNewImage)
   .get("/:id", handleGetImageById)
-  .patch("/:id", handlePatchImage);
+  .patch("/:id", handlePatchImage)
+  .delete("/:id", handleDeleteImage);
