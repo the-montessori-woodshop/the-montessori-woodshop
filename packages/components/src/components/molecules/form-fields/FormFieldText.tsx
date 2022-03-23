@@ -1,4 +1,4 @@
-import React, { forwardRef, memo, useMemo } from "react";
+import React, { forwardRef, useMemo } from "react";
 
 import {
   InputHelp,
@@ -19,7 +19,7 @@ export type FormFieldTextProps = Omit<InputTextProps, "id" | "css"> & {
  * An opinonated implementation of the various Input components
  * to render text fields
  */
-const FormFieldTextFC = forwardRef<HTMLInputElement, FormFieldTextProps>(
+export const FormFieldText = forwardRef<HTMLInputElement, FormFieldTextProps>(
   function FormFieldTextFC({ id, label, error, help, ...restInputProps }, ref) {
     const Label = useMemo(() => {
       if (label) {
@@ -41,5 +41,3 @@ const FormFieldTextFC = forwardRef<HTMLInputElement, FormFieldTextProps>(
     );
   }
 );
-
-export const FormFieldText = memo(FormFieldTextFC);

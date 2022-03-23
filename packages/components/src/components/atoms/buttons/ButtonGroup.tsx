@@ -6,7 +6,9 @@ import { forwardRef } from "react";
 import { makeClass, makeRem } from "../../../theme/theme.utils";
 
 type CXLayout = "stacked" | "inline" | "inline-fill";
+type CXOrder = "default" | "reversed";
 const cxLayout = makeClass<CXLayout>(["inline", "inline-fill", "stacked"]);
+const cxOrder = makeClass<CXOrder>(["default", "reversed"]);
 
 const SButtonGroup = styled.div`
   &${cxLayout["stacked"]} {
@@ -19,6 +21,10 @@ const SButtonGroup = styled.div`
 
   &${cxLayout["inline"]}, &${cxLayout["inline-fill"]} {
     display: flex;
+
+    ${cxOrder["reversed"]} {
+      flex-direction: row-reverse;
+    }
 
     & > * {
       &:not(:first-child) {
@@ -40,16 +46,23 @@ const SButtonGroup = styled.div`
 
 export type ButtonGroupProps = JSX.IntrinsicElements["div"] & {
   cxLayout?: CXLayout;
+  cxOrder?: CXOrder;
 };
 
 export const ButtonGroup = forwardRef<HTMLDivElement, ButtonGroupProps>(
   function ButtonGroup(
-    { children, className, cxLayout = "stacked", ...restProps },
+    {
+      children,
+      className,
+      cxLayout = "stacked",
+      cxOrder = "reversed",
+      ...restProps
+    },
     ref
   ) {
     return (
       <SButtonGroup
-        className={clsx(className, cxLayout)}
+        className={clsx(className, cxLayout, cxOrder)}
         {...restProps}
         ref={ref}
       >

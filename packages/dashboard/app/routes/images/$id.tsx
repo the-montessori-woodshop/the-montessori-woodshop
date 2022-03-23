@@ -17,7 +17,7 @@ import { ImagesGridEditContent } from "~/components/ImagesGridEditContent";
 import { ImagesGridEditTitle } from "~/components/ImagesGridEditTitle";
 import { PageTitle } from "~/components/PageTitle";
 import { dateFactory } from "~/utils/date-factory";
-import { useCallback } from "react";
+import { useCallback, useEffect } from "react";
 import {
   ActionFunction,
   Form,
@@ -38,6 +38,9 @@ export const loader: LoaderFunction = async ({ params }) => {
   }
 
   const response = await api.image.getImageById(params.id);
+  if (!response.data?.id) {
+    return redirect("../images");
+  }
   return response;
 };
 
@@ -83,6 +86,8 @@ export default function ImagesIdPage() {
   const close = useCallback(() => {
     navigate("../");
   }, [navigate]);
+
+  useEffect(() => {}, [data?.id]);
 
   return (
     <>
@@ -132,7 +137,7 @@ export default function ImagesIdPage() {
               </DescriptionListItem>
             </DescriptionList>
           </SDiv>
-          <Form method="post">
+          <Form method="patch">
             <FormFieldGroup>
               <input type="hidden" name="id" value={data?.id} />
               <FormFieldText
@@ -140,12 +145,14 @@ export default function ImagesIdPage() {
                 name="title"
                 label="Image title"
                 defaultValue={data?.title}
+                key={data?.title}
               />
               <FormFieldText
                 id="url"
                 name="url"
                 label="Image url"
                 defaultValue={data?.url}
+                key={data?.url}
                 StartIcon={Copy}
                 readOnly
                 help="This is the URL where this image can be served. Click to copy."
@@ -153,20 +160,7 @@ export default function ImagesIdPage() {
             </FormFieldGroup>
             <br />
             <br />
-            <ButtonGroup
-              cxLayout="inline"
-              style={{
-                justifyContent: "flex-end",
-              }}
-            >
-              <Button
-                cxVariant="contained"
-                cxColor="danger"
-                formAction={useFormAction(`delete`, "delete")}
-                disabled={transition.state === "submitting"}
-              >
-                Delete
-              </Button>
+            <ButtonGroup cxLayout="inline" cxOrder="reversed">
               <Button
                 cxVariant="contained"
                 cxColor="primary"
@@ -174,6 +168,15 @@ export default function ImagesIdPage() {
                 disabled={transition.state === "submitting"}
               >
                 {transition.state === "submitting" ? "Loading..." : "Update"}
+              </Button>
+              <Button
+                cxVariant="text"
+                cxColor="danger"
+                formAction={useFormAction(`delete`)}
+                type="submit"
+                disabled={transition.state === "submitting"}
+              >
+                Delete
               </Button>
             </ButtonGroup>
           </Form>
