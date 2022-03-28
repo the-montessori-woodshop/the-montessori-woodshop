@@ -36,6 +36,31 @@ export default css`
       --color-grey5: #706e6e;
       --color-black: #3e3b39;
       --color-black-rgba: 24, 8, 24;
+      --color-gradient: linear-gradient(
+        335deg,
+        hsl(19deg 57% 28%) 0%,
+        hsl(20deg 58% 30%) 11%,
+        hsl(21deg 58% 32%) 18%,
+        hsl(21deg 58% 34%) 23%,
+        hsl(23deg 60% 36%) 28%,
+        hsl(23deg 60% 38%) 31%,
+        hsl(24deg 60% 40%) 35%,
+        hsl(25deg 60% 42%) 38%,
+        hsl(26deg 61% 44%) 41%,
+        hsl(27deg 61% 46%) 44%,
+        hsl(28deg 62% 48%) 46%,
+        hsl(28deg 62% 50%) 49%,
+        hsl(29deg 62% 52%) 52%,
+        hsl(30deg 63% 55%) 55%,
+        hsl(31deg 63% 56%) 58%,
+        hsl(32deg 64% 59%) 62%,
+        hsl(33deg 64% 61%) 66%,
+        hsl(33deg 64% 63%) 71%,
+        hsl(34deg 65% 65%) 76%,
+        hsl(35deg 66% 67%) 83%,
+        hsl(36deg 66% 69%) 90%,
+        hsl(37deg 66% 71%) 100%
+      );
 
       --color-drop-shadow: rgba(48, 48, 78, 0.03);
 

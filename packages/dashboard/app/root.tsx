@@ -2,14 +2,11 @@
 import stylesUrl from "@woodshop/components/css";
 import fontBitterUrl from "@woodshop/components/fonts/bitter.css";
 import fontOpenSansUrl from "@woodshop/components/fonts/open-sans.css";
-import { FC } from "react";
 import {
   Links,
   LinksFunction,
   LiveReload,
   Meta,
-  NavLink,
-  NavLinkProps,
   Outlet,
   Scripts,
   ScrollRestoration,
