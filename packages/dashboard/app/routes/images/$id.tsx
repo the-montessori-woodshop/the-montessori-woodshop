@@ -124,8 +124,8 @@ export default function ImagesIdPage() {
               <DescriptionListItem>
                 <DescriptionListItemTag>Created On</DescriptionListItemTag>
                 <DescriptionListItemData>
-                  {data?.create_at &&
-                    dateFactory(data?.create_at, "dateAndTime")}
+                  {data?.created_at &&
+                    dateFactory(data?.created_at, "dateAndTime")}
                 </DescriptionListItemData>
               </DescriptionListItem>
               <DescriptionListItem>

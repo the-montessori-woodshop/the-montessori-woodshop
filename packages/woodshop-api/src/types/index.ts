@@ -1,3 +1,5 @@
+import { WoodshopClientRequestConfig } from "../client/Client.resource";
+
 export type HandleGETRequest<
   ResponseDataShape = any,
   Params = Record<string, unknown>
@@ -28,3 +30,8 @@ export type HandleDELETERequest<
     params: Params;
   }
 ) => Promise<ResponseDataShape>;
+
+export type ClientPOSTRequest<T = unknown> = Omit<
+  WoodshopClientRequestConfig<T>,
+  "url" | "method"
+>;

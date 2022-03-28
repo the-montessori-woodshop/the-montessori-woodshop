@@ -35,16 +35,17 @@
   "homepage": "https://github.com/the-montessori-woodshop/the-montessori-woodshop#readme",
   "devDependencies": {
     "@cloudflare/workers-types": "^3.4.0",
-    "@cloudflare/wrangler": "^1.19.8",
+    "@cloudflare/wrangler": "^1.19.11",
     "@esbuild-plugins/node-modules-polyfill": "^0.1.4",
-    "esbuild": "^0.14.26",
+    "esbuild": "^0.14.27",
     "esbuild-plugin-alias": "^0.2.1",
-    "prisma": "3.10.0",
+    "prisma": "3.11.0",
     "typescript": "next"
   },
   "dependencies": {
-    "@prisma/client": "3.10.0",
-    "itty-router": "^2.5.2"
+    "@prisma/client": "3.11.0",
+    "ajv": "^8.11.0",
+    "itty-router": "2.4.0"
   },
   "installConfig": {
     "hoistingLimits": "workspaces"

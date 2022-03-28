@@ -14,17 +14,19 @@ model Post {
   title     String
   content   String?
   published Boolean @default(false)
-  author    User?   @relation(fields: [authorId], references: [id])
-  authorId  Int?
+  author    User    @relation(fields: [authorId], references: [id])
+  authorId  String
 }
 
 model User {
-  id        Int      @id @default(autoincrement())
-  name      String?
-  email     String?  @unique
-  createdAt DateTime @default(now()) @map(name: "created_at")
-  updatedAt DateTime @updatedAt @map(name: "updated_at")
-  posts     Post[]
+  id         String   @id @default(uuid())
+  username   String   @unique
+  first_name String
+  last_name  String
+  email      String?  @unique
+  created_at DateTime @default(now()) @map(name: "created_at")
+  updated_at DateTime @updatedAt @map(name: "updated_at")
+  posts      Post[]
 
   @@map(name: "users")
 }
@@ -34,6 +36,6 @@ model Image {
   title      String
   url        String
   service_id String
-  create_at  DateTime @default(now())
+  created_at DateTime @default(now())
   updated_at DateTime @updatedAt
 }

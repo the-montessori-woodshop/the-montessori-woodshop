@@ -122,13 +122,11 @@ export default function App() {
           </SideNavSection>
           <SideNavSection>
             <SideNavList>
-              <SideNavListItem>
-                <SideNavListItemContent>
-                  <Icon cxTitle="sign-out" cxSize={32}>
-                    <SignOut />
-                  </Icon>
-                </SideNavListItemContent>
-              </SideNavListItem>
+              <SideNavListItemLink to="/auth/logout">
+                <Icon cxTitle="logout" cxSize={32}>
+                  <SignOut />
+                </Icon>
+              </SideNavListItemLink>
             </SideNavList>
           </SideNavSection>
         </SideNav>

@@ -1,6 +1,6 @@
-import { Post, PrismaClient } from "@prisma/client";
+import { PrismaClient } from "@prisma/client";
 
-import { HandlePOSTRequest } from "../../types/index";
+import { HandlePOSTRequest } from "../../types";
 import { handleRoute } from "../../utils/handleRoute";
 import { postUploadFileToCFImages } from "../cloudflare/cloudflare.request.postUploadFileToCFImages";
 import { POST_NewImageApiResponse } from "./image.model";

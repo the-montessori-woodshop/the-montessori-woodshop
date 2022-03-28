@@ -33,4 +33,7 @@ build()
   .then(() => {})
   .catch((err) => {
     process.exit(1);
+  })
+  .finally(() => {
+    console.log("Api built successfully.");
   });

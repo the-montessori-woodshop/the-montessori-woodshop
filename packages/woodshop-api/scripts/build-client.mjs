@@ -37,4 +37,7 @@ buildClient()
   })
   .catch((err) => {
     process.exit(1);
+  })
+  .finally(() => {
+    console.log("Api Client built successfully.");
   });
