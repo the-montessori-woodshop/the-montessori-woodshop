@@ -17,7 +17,7 @@ export default function Login() {
     <div className="bg">
       <div className="card">
         <img
-          src="/logo-512x512-transparent.png"
+          src="https://imagedelivery.net/2IBxNTNwVZBsFPqW0HdTRQ/078e5b66-3ad2-4c25-e68a-ea2246042300/public"
           alt="woodshop-logo"
           height={128}
           width={128}

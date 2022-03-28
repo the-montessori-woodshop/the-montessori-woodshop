@@ -14,8 +14,9 @@ import {
   ImageGallery,
   SignOut,
 } from "@woodshop/icons";
+import { authenticator } from "~/services/auth.server";
 import { FC } from "react";
-import { NavLink, NavLinkProps, Outlet } from "remix";
+import { LoaderFunction, NavLink, NavLinkProps, Outlet } from "remix";
 import styled from "styled-components";
 
 const SContent = styled.main`
@@ -25,6 +26,12 @@ const SContent = styled.main`
   display: flex;
   flex-direction: column;
 `;
+
+export const loader: LoaderFunction = async ({ request }) => {
+  return authenticator.isAuthenticated(request, {
+    failureRedirect: "/login",
+  });
+};
 
 const SideNavListItemLink: FC<NavLinkProps> = ({ children, ...restProps }) => {
   return (
