@@ -1,5 +1,6 @@
 import { Router } from "itty-router";
 
+import { authenticate } from "../../middleware/middleware.authenticate";
 import { handleDeleteImage } from "./image.request.deleteImage";
 import { handleGetImageById } from "./image.request.getImageById";
 import { handleGetImages } from "./image.request.getImages";
@@ -9,9 +10,11 @@ import { handlePostNewImage } from "./image.request.postNewImage";
 export const ImageRouter = Router({ base: "/api/image" });
 
 ImageRouter
-  // Image
+  // Auth
+  .all("*", authenticate)
+  // Images
   .get("/", handleGetImages)
   .post("/", handlePostNewImage)
-  .get("/:id", handleGetImageById)
   .patch("/:id", handlePatchImage)
-  .delete("/:id", handleDeleteImage);
+  .delete("/:id", handleDeleteImage)
+  .get("/:id", handleGetImageById);

@@ -1,5 +1,6 @@
 import { Router } from "itty-router";
 
+import { authenticate } from "../../middleware/middleware.authenticate";
 import { handleCreateOrUpdateUser } from "./user.request.postCreateOrUpdateUser";
 
 // import { handleGetPostById } from "./post.getPostById";
@@ -10,7 +11,9 @@ export const UserRouter = Router({ base: "/api/user" });
 
 UserRouter
   // User
+  .get("*", authenticate)
+  .post("*", authenticate)
   // .get("/", handleGetPosts)
   // .post("/", handlePostNewPost)
   // .get("/:id", handleGetPostById)
-  .post("/upsert", handleCreateOrUpdateUser);
+  .POST("/upsert", handleCreateOrUpdateUser);

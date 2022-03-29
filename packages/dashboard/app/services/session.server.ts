@@ -2,7 +2,7 @@
 import { createCookieSessionStorage } from "remix";
 
 // export the whole sessionStorage object
-export let sessionStorage = createCookieSessionStorage({
+export let woodshopSessionStorage = createCookieSessionStorage({
   cookie: {
     name: "_session", // use any name you want here
     sameSite: "lax", // this helps with CSRF
@@ -14,4 +14,5 @@ export let sessionStorage = createCookieSessionStorage({
 });
 
 // you can also export the methods individually for your own usage
-export let { getSession, commitSession, destroySession } = sessionStorage;
+export let { getSession, commitSession, destroySession } =
+  woodshopSessionStorage;

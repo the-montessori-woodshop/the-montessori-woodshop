@@ -19,14 +19,15 @@ model Post {
 }
 
 model User {
-  id         String   @id @default(uuid())
-  username   String   @unique
-  first_name String
-  last_name  String
-  email      String?  @unique
-  created_at DateTime @default(now()) @map(name: "created_at")
-  updated_at DateTime @updatedAt @map(name: "updated_at")
-  posts      Post[]
+  id             String   @id @default(uuid())
+  username       String   @unique
+  first_name     String
+  last_name      String
+  email          String?  @unique
+  last_logged_in DateTime @default(now())
+  created_at     DateTime @default(now()) @map(name: "created_at")
+  updated_at     DateTime @updatedAt @map(name: "updated_at")
+  posts          Post[]
 
   @@map(name: "users")
 }

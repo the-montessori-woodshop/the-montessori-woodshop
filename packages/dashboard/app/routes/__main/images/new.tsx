@@ -1,3 +1,4 @@
+import { POST_NewImageApiResponse } from "@woodshop/api/client";
 import {
   Button,
   ButtonGroup,
@@ -8,11 +9,11 @@ import {
   makeRem,
 } from "@woodshop/components";
 import { Close } from "@woodshop/icons";
-import api from "~/api/index";
 import { ImagePaneContent } from "~/components/ImagePaneContent";
 import { ImagesGridEditContent } from "~/components/ImagesGridEditContent";
 import { ImagesGridEditTitle } from "~/components/ImagesGridEditTitle";
 import { PageTitle } from "~/components/PageTitle";
+import { api } from "~/services/api";
 import { useCallback } from "react";
 import {
   ActionFunction,
@@ -23,7 +24,10 @@ import {
 } from "remix";
 
 export const action: ActionFunction = async ({ request }) => {
-  const response = await api.image.createNewImage(request);
+  const response = await api.postFormData<POST_NewImageApiResponse>(
+    "/image",
+    request
+  );
   return redirect(`/images/${response.data.id}`);
 };
 

@@ -18,12 +18,13 @@ import {
   useLoaderData,
   NavLink,
 } from "remix";
-import api, { ApiResponse } from "~/api/index";
 import { ImagesGrid } from "~/components/ImagesGrid";
 import { ImagesGridNav } from "~/components/ImagesGridNav";
 import { ImagesGridMainTitle } from "~/components/ImagesGridMainTitle";
 import { ImagesGridMainContent } from "~/components/ImagesGridMainContent";
 import clsx from "clsx";
+import { api, WoodshopClientResponse } from "~/services/api";
+import { GET_ImagesApiResponse } from "@woodshop/api/client";
 
 const SDiv3 = styled.div`
   display: flex;
@@ -64,14 +65,18 @@ const SLi = styled.li`
   margin: ${makeRem(16)};
 `;
 
-export const loader: LoaderFunction = async () => {
-  const images = await api.image.getImages();
-  return images;
+export const loader: LoaderFunction = async ({ request }) => {
+  const response = await api.get<GET_ImagesApiResponse>({
+    ...request,
+    url: "/image",
+  });
+  return response;
 };
 
 export default function ImageGalleryRoute() {
   const navigate = useNavigate();
-  const { data } = useLoaderData<ApiResponse<typeof api.image.getImages>>();
+  const { data } =
+    useLoaderData<WoodshopClientResponse<GET_ImagesApiResponse>>();
 
   const createNewImage = useCallback(() => navigate("new"), [navigate]);
 

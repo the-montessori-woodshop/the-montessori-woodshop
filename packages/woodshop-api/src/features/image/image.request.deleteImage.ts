@@ -15,7 +15,7 @@ export const deleteImage: HandleDELETERequest<
 
   try {
     await prisma.$connect();
-    const image = await prisma.image.delete({
+    await prisma.image.delete({
       where: {
         id: Number(request.params.id)
       }

@@ -23,9 +23,10 @@ export const createOrUpdateUser: HandlePOSTRequest<
         email: requestData.email || undefined
       },
       update: {
-        username: requestData.username
+        last_logged_in: new Date()
       },
       create: {
+        email: requestData.email,
         username: requestData.username,
         first_name: "",
         last_name: ""
@@ -33,27 +34,8 @@ export const createOrUpdateUser: HandlePOSTRequest<
     });
     return user;
   } catch (error) {
-    // @ts-ignore
-    throw new Error(error);
+    throw new Error(error as string);
   }
 };
 
 export const handleCreateOrUpdateUser = handleRoute(createOrUpdateUser);
-
-// export const handleCreateOrUpdateUser =
-//   handleAndValidateRoute<POST_CreateOrUpdateUserApiRequest>({
-//     method: createOrUpdateUser,
-//     schema: {
-//       type: "object",
-//       required: ["username", "email"],
-//       properties: {
-//         username: {
-//           type: "string"
-//         },
-//         email: {
-//           type: "string"
-//         }
-//       },
-//       additionalProperties: false
-//     }
-//   });

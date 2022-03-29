@@ -3,16 +3,13 @@
   "version": "1.0.0",
   "description": "The supporting API and Database Schema for The Montessori Woodshop storefront",
   "scripts": {
-    "client:build": "NODE_ENV=production yarn node ./scripts/build-client.mjs && tsc -p tsconfig.client.json",
-    "client:dev": "NODE_ENV=development yarn node ./scripts/build-client.mjs & tsc -p tsconfig.client.json",
     "publish": "wrangler publish",
-    "api:build": "yarn generate && yarn node ./scripts/build.js",
-    "build": "yarn api:build & yarn client:build",
+    "build": "yarn generate && yarn node ./scripts/build.js",
     "generate": "PRISMA_CLIENT_ENGINE_TYPE=dataproxy && prisma generate",
     "migrate-dev": "prisma migrate dev",
     "migrate": "prisma migrate status && prisma migrate deploy",
     "push": "prisma push",
-    "dev": "yarn client:dev & wrangler dev --ip 127.0.0.1 --port 8888"
+    "dev": "wrangler dev --ip 127.0.0.1 --port 8888"
   },
   "main": "dist/worker/worker.js",
   "exports": {
@@ -37,15 +34,16 @@
     "@cloudflare/workers-types": "^3.4.0",
     "@cloudflare/wrangler": "^1.19.11",
     "@esbuild-plugins/node-modules-polyfill": "^0.1.4",
+    "@types/itty-router-extras": "^0.4.0",
     "esbuild": "^0.14.27",
     "esbuild-plugin-alias": "^0.2.1",
-    "prisma": "3.11.0",
+    "prisma": "3.11.1",
     "typescript": "next"
   },
   "dependencies": {
-    "@prisma/client": "3.11.0",
-    "ajv": "^8.11.0",
-    "itty-router": "2.4.0"
+    "@prisma/client": "3.11.1",
+    "itty-router": "2.4.0",
+    "jose": "^4.6.0"
   },
   "installConfig": {
     "hoistingLimits": "workspaces"

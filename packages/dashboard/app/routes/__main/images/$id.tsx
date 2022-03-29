@@ -1,4 +1,11 @@
 import {
+  GET_ImageByIdApiParams,
+  GET_ImageByIdApiResponse,
+  PATCH_ImagesApiParams,
+  PATCH_ImagesApiRequest,
+  PATCH_ImagesApiResponse,
+} from "@woodshop/api/client";
+import {
   Button,
   ButtonGroup,
   DescriptionList,
@@ -11,11 +18,11 @@ import {
   makeRem,
 } from "@woodshop/components";
 import { Close, Copy } from "@woodshop/icons";
-import api, { ApiResponse } from "~/api/index";
 import { ImagePaneContent } from "~/components/ImagePaneContent";
 import { ImagesGridEditContent } from "~/components/ImagesGridEditContent";
 import { ImagesGridEditTitle } from "~/components/ImagesGridEditTitle";
 import { PageTitle } from "~/components/PageTitle";
+import { WoodshopClientResponse, api } from "~/services/api";
 import { dateFactory } from "~/utils/date-factory";
 import { useCallback, useEffect } from "react";
 import {
@@ -30,14 +37,18 @@ import {
 } from "remix";
 import styled from "styled-components";
 
-type LoaderData = ApiResponse<typeof api.image.getImageById>;
+export const loader: LoaderFunction = async ({ params, request }) => {
+  const response = await api.get<
+    GET_ImageByIdApiResponse,
+    GET_ImageByIdApiParams
+  >({
+    ...request,
+    url: "/image/:id",
+    params: {
+      id: params.id,
+    },
+  });
 
-export const loader: LoaderFunction = async ({ params }) => {
-  if (!params.id) {
-    throw new Error("Paramater ID doesn't edist");
-  }
-
-  const response = await api.image.getImageById(params.id);
   if (!response.data?.id) {
     return redirect("../images");
   }
@@ -45,21 +56,28 @@ export const loader: LoaderFunction = async ({ params }) => {
 };
 
 export const action: ActionFunction = async ({ request }) => {
-  const formData = await request.formData();
-  const id = formData.get("id") as string;
+  try {
+    const formData = await request.formData();
 
-  const title = formData.get("title") as string;
-  if (id && title) {
-    try {
-      const response = await api.image.updateImage(id, {
-        title,
-      });
-      return redirect(`/images/${response.data.id}`);
-    } catch (error) {
-      console.error(error);
-    }
+    const response = await api.update<
+      PATCH_ImagesApiResponse,
+      PATCH_ImagesApiRequest,
+      PATCH_ImagesApiParams
+    >({
+      url: "/image/:id",
+      method: "PATCH",
+      params: {
+        id: formData.get("id") as string,
+      },
+      body: {
+        title: formData.get("title") as string,
+      },
+    });
+    return redirect(`/images/${response.data.id}`);
+  } catch (error) {
+    console.log(error);
+    throw new Error(error as string);
   }
-  return null;
 };
 
 const SDiv = styled.div`
@@ -81,7 +99,8 @@ const SImg = styled.img`
 export default function ImagesIdPage() {
   const navigate = useNavigate();
   const transition = useTransition();
-  const { data } = useLoaderData<LoaderData>();
+  const { data } =
+    useLoaderData<WoodshopClientResponse<PATCH_ImagesApiResponse>>();
 
   const close = useCallback(() => {
     navigate("../");

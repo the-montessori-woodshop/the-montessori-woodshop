@@ -1,16 +1,27 @@
-import api from "~/api/index";
+import {
+  DELETE_ImageApiParams,
+  DELETE_ImageApiResponse,
+} from "@woodshop/api/client";
+import { api } from "~/services/api";
 import { ActionFunction, redirect } from "remix";
 
 export const action: ActionFunction = async ({ request }) => {
   const formData = await request.formData();
-  const id = formData.get("id") as string;
-  if (id) {
-    try {
-      await api.image.delete(id);
+  try {
+    const response = await api.delete<
+      DELETE_ImageApiResponse,
+      DELETE_ImageApiParams
+    >({
+      url: "/image/:id",
+      params: {
+        id: formData.get("id") as string,
+      },
+    });
+
+    if (response.response.statusText === "OK") {
       return redirect("/images");
-    } catch (error) {
-      console.error(error);
     }
+  } catch (error) {
+    throw new Error(error as string);
   }
-  return null;
 };
