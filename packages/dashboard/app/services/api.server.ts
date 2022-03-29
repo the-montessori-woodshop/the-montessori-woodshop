@@ -1,3 +1,4 @@
+import { authenticator } from "./auth.server";
 import { getSession } from "./session.server";
 
 export type ClientConfig = {
@@ -39,7 +40,7 @@ export type WoodshopClientGETRequestConfig<TParams = undefined> =
       }
     : Omit<RequestInit, "method"> & {
         url: ClientRequestRoutes;
-        params: never;
+        params?: never;
       };
 export type WOodshopClientDELETERequestConfig<TParams = undefined> =
   WoodshopClientGETRequestConfig<TParams>;
@@ -86,12 +87,12 @@ export class WoodshopClient {
     requestHeaders: HeadersInit | undefined
   ): Promise<HeadersInit> {
     const headers = new Headers(requestHeaders);
-    const session = await getSession();
-    const key = session.get(headers.get("cookie"));
-    console.log(key);
-    // if (key) {
-    //   headers.append("Authorization", `Bearer ${key}`);
-    // }
+
+    const session = await getSession(headers.get("cookie"));
+    const key = await session.get(authenticator.sessionKey);
+    if (key.accessToken) {
+      headers.append("Authorization", `Bearer ${key.accessToken}`);
+    }
     return headers;
   }
 
@@ -239,7 +240,6 @@ export class WoodshopClient {
         data,
       };
     } catch (error) {
-      console.log(error);
       throw new Error(error as string);
     }
   }

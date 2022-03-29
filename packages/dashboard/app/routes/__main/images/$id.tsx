@@ -22,7 +22,7 @@ import { ImagePaneContent } from "~/components/ImagePaneContent";
 import { ImagesGridEditContent } from "~/components/ImagesGridEditContent";
 import { ImagesGridEditTitle } from "~/components/ImagesGridEditTitle";
 import { PageTitle } from "~/components/PageTitle";
-import { WoodshopClientResponse, api } from "~/services/api";
+import { WoodshopClientResponse, api } from "~/services/api.server";
 import { dateFactory } from "~/utils/date-factory";
 import { useCallback, useEffect } from "react";
 import {
@@ -42,7 +42,7 @@ export const loader: LoaderFunction = async ({ params, request }) => {
     GET_ImageByIdApiResponse,
     GET_ImageByIdApiParams
   >({
-    ...request,
+    headers: request.headers,
     url: "/image/:id",
     params: {
       id: params.id,
@@ -66,6 +66,7 @@ export const action: ActionFunction = async ({ request }) => {
     >({
       url: "/image/:id",
       method: "PATCH",
+      headers: request.headers,
       params: {
         id: formData.get("id") as string,
       },

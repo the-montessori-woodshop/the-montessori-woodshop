@@ -2,7 +2,7 @@ import {
   DELETE_ImageApiParams,
   DELETE_ImageApiResponse,
 } from "@woodshop/api/client";
-import { api } from "~/services/api";
+import { api } from "~/services/api.server";
 import { ActionFunction, redirect } from "remix";
 
 export const action: ActionFunction = async ({ request }) => {
@@ -13,6 +13,7 @@ export const action: ActionFunction = async ({ request }) => {
       DELETE_ImageApiParams
     >({
       url: "/image/:id",
+      headers: request.headers,
       params: {
         id: formData.get("id") as string,
       },

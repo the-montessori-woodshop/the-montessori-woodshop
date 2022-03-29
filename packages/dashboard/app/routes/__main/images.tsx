@@ -23,7 +23,7 @@ import { ImagesGridNav } from "~/components/ImagesGridNav";
 import { ImagesGridMainTitle } from "~/components/ImagesGridMainTitle";
 import { ImagesGridMainContent } from "~/components/ImagesGridMainContent";
 import clsx from "clsx";
-import { api, WoodshopClientResponse } from "~/services/api";
+import { api, WoodshopClientResponse } from "~/services/api.server";
 import { GET_ImagesApiResponse } from "@woodshop/api/client";
 
 const SDiv3 = styled.div`
@@ -67,7 +67,7 @@ const SLi = styled.li`
 
 export const loader: LoaderFunction = async ({ request }) => {
   const response = await api.get<GET_ImagesApiResponse>({
-    ...request,
+    headers: request.headers,
     url: "/image",
   });
   return response;

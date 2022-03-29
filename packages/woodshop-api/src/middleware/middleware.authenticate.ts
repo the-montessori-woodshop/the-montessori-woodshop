@@ -1,9 +1,9 @@
 // import { jwtVerify } from "jose";
 
 export const authenticate = (request: Request) => {
-  console.log("Authenticating....");
+  console.log("Authenticating....", request.headers.get("Authorization"));
   // @ts-ignore
-  // console.log(JSON.stringify(request, null, 4));
+  // console.log(JSON.stringify(request.headers.get(), null, 4));
   // console.log
   // var jwtCheck = jwt({
   //   secret: jwks.expressJwtSecret({

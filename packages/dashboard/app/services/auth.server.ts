@@ -7,7 +7,7 @@ import {
 import { Authenticator } from "remix-auth";
 import { Auth0Strategy } from "remix-auth-auth0";
 
-import { api } from "./api";
+import { api } from "./api.server";
 import { woodshopSessionStorage } from "./session.server";
 
 const AUTH0_CALLBACK_URL = "http://localhost:8788/auth/callback";
@@ -27,10 +27,6 @@ let auth0Strategy = new Auth0Strategy(
     domain: AUTH0_DOMAIN,
   },
   async ({ accessToken, refreshToken, extraParams, profile }) => {
-    // await woodshopSessionStorage.setItem(accessToken);
-
-    console.log(accessToken);
-
     const user = await api.post<
       POST_CreateOrUpdateUserApiResponse,
       POST_CreateOrUpdateUserApiRequest
@@ -42,7 +38,10 @@ let auth0Strategy = new Auth0Strategy(
       },
     });
 
-    return user;
+    return {
+      ...user,
+      accessToken,
+    };
   }
 );
 

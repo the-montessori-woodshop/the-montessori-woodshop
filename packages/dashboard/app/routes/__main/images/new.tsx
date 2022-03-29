@@ -13,7 +13,7 @@ import { ImagePaneContent } from "~/components/ImagePaneContent";
 import { ImagesGridEditContent } from "~/components/ImagesGridEditContent";
 import { ImagesGridEditTitle } from "~/components/ImagesGridEditTitle";
 import { PageTitle } from "~/components/PageTitle";
-import { api } from "~/services/api";
+import { api } from "~/services/api.server";
 import { useCallback } from "react";
 import {
   ActionFunction,
