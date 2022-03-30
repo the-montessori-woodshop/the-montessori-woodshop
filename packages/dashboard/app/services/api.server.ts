@@ -10,6 +10,10 @@ export type ClientRequestRoutes =
   | "/user/:id"
   | "/user/upsert"
 
+  // Posts
+  | "/post"
+  | "/post/:id"
+
   // Images
   | "/image"
   | "/image/:id";
@@ -33,18 +37,22 @@ export type WoodshopClientResponse<ResponseData> = {
   response: Response;
 };
 
-export type WoodshopClientGETRequestConfig<TParams = undefined> =
-  TParams extends Record<string, unknown>
-    ? Omit<RequestInit, "method"> & {
-        url: ClientRequestRoutes;
-        params: Partial<TParams>;
-        headers: Headers;
-      }
-    : Omit<RequestInit, "method"> & {
-        url: ClientRequestRoutes;
-        params?: never;
-        headers: Headers;
-      };
+export type WoodshopClientGETRequestConfig<
+  TParams = undefined,
+  TSearch = Record<string, unknown>
+> = TParams extends Record<string, unknown>
+  ? Omit<RequestInit, "method"> & {
+      url: ClientRequestRoutes;
+      params: Partial<TParams>;
+      headers: Headers;
+      search?: TSearch;
+    }
+  : Omit<RequestInit, "method"> & {
+      url: ClientRequestRoutes;
+      params?: never;
+      headers: Headers;
+      search?: TSearch;
+    };
 export type WOodshopClientDELETERequestConfig<TParams = undefined> =
   WoodshopClientGETRequestConfig<TParams>;
 
@@ -70,21 +78,29 @@ export class WoodshopClient {
     this.config = { ...defaultConfig, ...config };
   }
 
-  private getUrl(
+  private getUrl<TSearch = Record<string, unknown>>(
     url: ClientRequestRoutes,
-    params?: Record<string, unknown>
+    params?: Record<string, unknown>,
+    search?: TSearch
   ): string {
-    if (!params) {
-      return `${this.config.baseUrl}${url}`;
+    let newUrl = `${this.config.baseUrl}${url}`;
+
+    if (params) {
+      newUrl = Object.entries(params).reduce<string>((accum, [key, value]) => {
+        return accum.replace(`:${key}`, value as string);
+      }, url);
     }
 
-    const newUrl = Object.entries(params).reduce<string>(
-      (accum, [key, value]) => {
-        return accum.replace(`:${key}`, value as string);
-      },
-      url
-    );
-    return `${this.config.baseUrl}${newUrl}`;
+    if (search) {
+      const entiresToString = Object.entries(search).map(([key, value]) => [
+        key,
+        `${value}`,
+      ]);
+      const searchParams = new URLSearchParams(entiresToString).toString();
+      newUrl = `${newUrl}?${searchParams}`;
+    }
+
+    return newUrl;
   }
 
   private async getAuthorizationHeader(
@@ -107,14 +123,19 @@ export class WoodshopClient {
     };
   }
 
-  async get<FetchResponse, FetchParams = undefined>({
+  async get<
+    FetchResponse,
+    FetchParams = undefined,
+    FetchSearch = Record<string, unknown>
+  >({
     url,
     params,
     headers,
-  }: WoodshopClientGETRequestConfig<FetchParams>): Promise<
+    search,
+  }: WoodshopClientGETRequestConfig<FetchParams, FetchSearch>): Promise<
     WoodshopClientResponse<FetchResponse>
   > {
-    const fetchUrl = this.getUrl(url, params);
+    const fetchUrl = this.getUrl<FetchSearch>(url, params, search);
     const fetchHeaders = await this.getAuthorizationHeader(headers);
     const config = {
       headers: fetchHeaders,
@@ -210,7 +231,6 @@ export class WoodshopClient {
   > {
     const fetchUrl = this.getUrl(url);
     const authHeader = await this.getAuthorizationHeader(headers);
-    console.log(authHeader);
     const config = {
       headers: {
         ...authHeader,
@@ -230,7 +250,6 @@ export class WoodshopClient {
         data,
       };
     } catch (error) {
-      console.log(error);
       throw new Error(error as string);
     }
   }

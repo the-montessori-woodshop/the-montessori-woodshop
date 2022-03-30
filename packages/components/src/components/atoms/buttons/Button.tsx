@@ -53,6 +53,10 @@ const SButtonCSS = css`
     &:active {
       transform: scale(0.98);
     }
+
+    &${cxSize["large"]} {
+      min-width: ${makeRem(144)};
+    }
   }
 
   &${cxVariant["contained"]} {
@@ -107,7 +111,6 @@ const SButtonCSS = css`
     height: ${makeRem(44)};
     font-size: ${makeRem(16)};
     font-weight: 600;
-    min-width: ${makeRem(144)};
   }
 
   &${cxSize["small"]} {

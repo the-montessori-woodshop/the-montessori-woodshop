@@ -16,6 +16,7 @@ export default function BlogEditorLayout() {
           </TopNavList>
         </TopNavSection>
       </TopNav>
+      blog editor layout
       <Outlet />
     </>
   );

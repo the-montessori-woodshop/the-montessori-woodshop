@@ -1,4 +1,4 @@
-import { POST_NewImageApiResponse } from "@woodshop/api/client";
+import type { POST_NewImageApiResponse } from "@woodshop/api";
 import {
   Button,
   ButtonGroup,
@@ -12,6 +12,7 @@ import { Close } from "@woodshop/icons";
 import { ImagePaneContent } from "~/components/ImagePaneContent";
 import { ImagesGridEditContent } from "~/components/ImagesGridEditContent";
 import { ImagesGridEditTitle } from "~/components/ImagesGridEditTitle";
+import { PageHeader } from "~/components/PageHeader";
 import { PageTitle } from "~/components/PageTitle";
 import { api } from "~/services/api.server";
 import { useCallback } from "react";
@@ -42,19 +43,21 @@ export default function ImagesNew() {
   return (
     <>
       <ImagesGridEditTitle>
-        <PageTitle>Upload new image</PageTitle>
-        <Button
-          onClick={close}
-          style={{
-            position: "absolute",
-            right: makeRem(24),
-            top: makeRem(32),
-          }}
-        >
-          <Icon cxTitle="close-panel" cxSize={32}>
-            <Close />
-          </Icon>
-        </Button>
+        <PageHeader>
+          <PageTitle>Upload new image</PageTitle>
+          <Button
+            onClick={close}
+            style={{
+              position: "absolute",
+              right: makeRem(24),
+              top: makeRem(32),
+            }}
+          >
+            <Icon cxTitle="close-panel" cxSize={36}>
+              <Close />
+            </Icon>
+          </Button>
+        </PageHeader>
       </ImagesGridEditTitle>
       <ImagesGridEditContent>
         <ImagePaneContent>

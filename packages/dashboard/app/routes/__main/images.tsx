@@ -6,6 +6,8 @@ import {
   TopNavListItem,
   TopNavSection,
   makeRem,
+  ButtonGroup,
+  ButtonContent,
 } from "@woodshop/components";
 import { Copy, PlusSquare } from "@woodshop/icons";
 import { PageTitle } from "~/components/PageTitle";
@@ -17,6 +19,7 @@ import {
   useNavigate,
   useLoaderData,
   NavLink,
+  Link,
 } from "remix";
 import { ImagesGrid } from "~/components/ImagesGrid";
 import { ImagesGridNav } from "~/components/ImagesGridNav";
@@ -25,16 +28,7 @@ import { ImagesGridMainContent } from "~/components/ImagesGridMainContent";
 import clsx from "clsx";
 import { api, WoodshopClientResponse } from "~/services/api.server";
 import type { GET_ImagesApiResponse } from "@woodshop/api";
-
-const SDiv3 = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-`;
-
-const SDiv4 = styled.div`
-  padding: 0 ${makeRem(32)};
-`;
+import { PageHeader } from "~/components/PageHeader";
 
 const SDiv5 = styled.div`
   display: flex;
@@ -73,11 +67,8 @@ export const loader: LoaderFunction = async ({ request }) => {
 };
 
 export default function ImageGalleryRoute() {
-  const navigate = useNavigate();
   const { data } =
     useLoaderData<WoodshopClientResponse<GET_ImagesApiResponse>>();
-
-  const createNewImage = useCallback(() => navigate("new"), [navigate]);
 
   return (
     <ImagesGrid>
@@ -91,23 +82,22 @@ export default function ImageGalleryRoute() {
         </TopNav>
       </ImagesGridNav>
       <ImagesGridMainTitle>
-        <SDiv3>
+        <PageHeader>
           <PageTitle>Images</PageTitle>
-          <SDiv4>
-            <SDiv5>
-              <Button>
-                <Icon cxTitle="share">
-                  <Copy />
-                </Icon>
-              </Button>
-              <Button onClick={createNewImage}>
-                <Icon cxTitle="add a new image">
-                  <PlusSquare />
-                </Icon>
-              </Button>
-            </SDiv5>
-          </SDiv4>
-        </SDiv3>
+          <SDiv5>
+            <ButtonGroup cxLayout="inline">
+              <Link to="new">
+                <ButtonContent
+                  cxVariant="contained"
+                  cxColor="primary"
+                  cxSize="small"
+                >
+                  New Image
+                </ButtonContent>
+              </Link>
+            </ButtonGroup>
+          </SDiv5>
+        </PageHeader>
       </ImagesGridMainTitle>
       <ImagesGridMainContent>
         <SUl>
