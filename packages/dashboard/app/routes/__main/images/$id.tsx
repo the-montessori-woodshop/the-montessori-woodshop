@@ -1,10 +1,10 @@
-import {
+import type {
   GET_ImageByIdApiParams,
   GET_ImageByIdApiResponse,
   PATCH_ImagesApiParams,
   PATCH_ImagesApiRequest,
   PATCH_ImagesApiResponse,
-} from "@woodshop/api/client";
+} from "@woodshop/api";
 import {
   Button,
   ButtonGroup,

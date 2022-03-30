@@ -13,11 +13,11 @@ export const patchImage: HandlePATCHRequest<
   PATCH_ImagesApiParams
 > = async (request) => {
   if (!request.params.id) throw new Error(":id is required.");
-  const prisma = new PrismaClient({
-    errorFormat: "pretty"
-  });
 
   try {
+    const prisma = new PrismaClient({
+      errorFormat: "pretty"
+    });
     await prisma.$connect();
     const data = await request.json<PATCH_ImagesApiRequest>();
     const image = await prisma.image.update({
@@ -28,6 +28,7 @@ export const patchImage: HandlePATCHRequest<
     });
     return image;
   } catch (error) {
+    console.log(error);
     // @ts-ignore
     throw new Error(error);
   }

@@ -24,7 +24,7 @@ import { ImagesGridMainTitle } from "~/components/ImagesGridMainTitle";
 import { ImagesGridMainContent } from "~/components/ImagesGridMainContent";
 import clsx from "clsx";
 import { api, WoodshopClientResponse } from "~/services/api.server";
-import { GET_ImagesApiResponse } from "@woodshop/api/client";
+import type { GET_ImagesApiResponse } from "@woodshop/api";
 
 const SDiv3 = styled.div`
   display: flex;
@@ -47,8 +47,7 @@ const SImg = styled.img`
   object-fit: cover;
   border-radius: ${makeRem(4)};
   transition: all 0.15s ease-in-out;
-
-  &.active {
+  s &.active {
     box-shadow: 0 2px 14px 5px var(--color-secondary);
     border: ${makeRem(2)} solid var(--color-secondary);
     transform: scale(1.1);
@@ -113,7 +112,7 @@ export default function ImageGalleryRoute() {
       <ImagesGridMainContent>
         <SUl>
           {data.map((img) => (
-            <SLi key={img.service_id}>
+            <SLi key={img.id}>
               <NavLink to={`./${img.id}`}>
                 {({ isActive }) => (
                   <SImg

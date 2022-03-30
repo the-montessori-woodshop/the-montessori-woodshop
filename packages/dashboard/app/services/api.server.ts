@@ -16,6 +16,7 @@ export type ClientRequestRoutes =
 
 type MutateBase = Omit<RequestInit, "url" | "method" | "body"> & {
   url: ClientRequestRoutes;
+  headers: Headers;
 };
 export type WoodshopClientPOSTRequestConfig<TRequest = undefined> =
   TRequest extends Record<string, unknown> | FormData
@@ -37,10 +38,12 @@ export type WoodshopClientGETRequestConfig<TParams = undefined> =
     ? Omit<RequestInit, "method"> & {
         url: ClientRequestRoutes;
         params: Partial<TParams>;
+        headers: Headers;
       }
     : Omit<RequestInit, "method"> & {
         url: ClientRequestRoutes;
         params?: never;
+        headers: Headers;
       };
 export type WOodshopClientDELETERequestConfig<TParams = undefined> =
   WoodshopClientGETRequestConfig<TParams>;
@@ -53,6 +56,7 @@ export type WoodshopClientUPDATERequestConfig<
   body: TRequest;
   params: Partial<TParams>;
   method: "PUT" | "PATCH";
+  headers: Headers;
 };
 
 const defaultConfig: ClientConfig = {
@@ -83,18 +87,24 @@ export class WoodshopClient {
     return `${this.config.baseUrl}${newUrl}`;
   }
 
-  private async getHeaders(
-    requestHeaders: HeadersInit | undefined
-  ): Promise<HeadersInit> {
-    const headers = new Headers(requestHeaders);
-    if (!headers.get("Authorization")) {
-      const session = await getSession(headers.get("cookie"));
-      const key = await session.get(authenticator.sessionKey);
-      if (key?.accessToken) {
-        headers.append("Authorization", `Bearer ${key.accessToken}`);
-      }
+  private async getAuthorizationHeader(
+    requestHeaders: Headers
+  ): Promise<Record<"authorization", string>> {
+    if (requestHeaders.get("authorization")) {
+      return {
+        authorization: `${requestHeaders.get("authorization")}`,
+      };
     }
-    return headers;
+    const session = await getSession(requestHeaders.get("cookie"));
+    const key = await session.get(authenticator.sessionKey);
+    if (key?.accessToken) {
+      return {
+        authorization: `Bearer ${key.accessToken}`,
+      };
+    }
+    return {
+      authorization: `Bearer no-token`,
+    };
   }
 
   async get<FetchResponse, FetchParams = undefined>({
@@ -104,9 +114,8 @@ export class WoodshopClient {
   }: WoodshopClientGETRequestConfig<FetchParams>): Promise<
     WoodshopClientResponse<FetchResponse>
   > {
-    // @ts-ignore
     const fetchUrl = this.getUrl(url, params);
-    const fetchHeaders = await this.getHeaders(headers);
+    const fetchHeaders = await this.getAuthorizationHeader(headers);
     const config = {
       headers: fetchHeaders,
       method: "GET",
@@ -134,9 +143,9 @@ export class WoodshopClient {
     WoodshopClientResponse<FetchResponse>
   > {
     const fetchUrl = this.getUrl(url, params);
-    const fetchHeaders = await this.getHeaders(headers);
+    const fetchHeader = await this.getAuthorizationHeader(headers);
     const config = {
-      headers: fetchHeaders,
+      headers: fetchHeader,
       method: "DELETE",
     };
 
@@ -160,20 +169,22 @@ export class WoodshopClient {
     FetchParams
   >({
     url,
-    headers,
     method,
+    headers,
     body,
     params,
   }: WoodshopClientUPDATERequestConfig<FetchRequest, FetchParams>): Promise<
     WoodshopClientResponse<FetchResponse>
   > {
-    // @ts-ignore
     const fetchUrl = this.getUrl(url, params);
-    const fetchHeaders = await this.getHeaders(headers);
+    const authHeader = await this.getAuthorizationHeader(headers);
     const config: RequestInit = {
-      headers: fetchHeaders,
+      headers: {
+        ...authHeader,
+        "Content-type": "application/json",
+      },
       method,
-      body: body instanceof FormData ? body : JSON.stringify(body),
+      body: JSON.stringify(body),
     };
 
     try {
@@ -198,11 +209,15 @@ export class WoodshopClient {
     WoodshopClientResponse<FetchResponse>
   > {
     const fetchUrl = this.getUrl(url);
-    const fetchHeaders = await this.getHeaders(headers);
+    const authHeader = await this.getAuthorizationHeader(headers);
+    console.log(authHeader);
     const config = {
-      headers: fetchHeaders,
+      headers: {
+        ...authHeader,
+        "Content-type": "application/json",
+      },
       method: "POST",
-      body: body instanceof FormData ? body : JSON.stringify(body),
+      body: JSON.stringify(body),
     };
 
     try {
@@ -225,10 +240,11 @@ export class WoodshopClient {
     request: Request
   ): Promise<WoodshopClientResponse<FetchResponse>> {
     const fetchUrl = this.getUrl(url);
-    const fetchHeaders = await this.getHeaders(request.headers);
+    const authHeader = await this.getAuthorizationHeader(request.headers);
+    request.headers.append("Authorization", authHeader.authorization);
     const config = {
       ...request,
-      headers: fetchHeaders,
+      headers: request.headers,
       method: "POST",
     };
 

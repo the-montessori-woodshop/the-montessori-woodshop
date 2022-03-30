@@ -1,33 +1,37 @@
-// const jwt = require("jsonwebtoken");
-// const jsksRsa = require("jwks-rsa");
-
-// const jwksClient = new jsksRsa.JwksClient({
-//   jwksUri: "https://dev-3afbf-wy.us.auth0.com/.well-known/jwks.json",
-//   cache: true,
-//   rateLimit: true,
-//   jwksRequestsPerMinute: 5
-// });
-
 const AUTH0_ISSUER = "https://dev-3afbf-wy.us.auth0.com/";
 const AUTH0_AUDIENCE = "https://api.woodshop.themontessoriwoodshop.com";
 
 import { parseJwt } from "@cfworker/jwt";
+import { PrismaClient } from "@prisma/client";
 
 export const authenticate = async (request: Request) => {
-  const authHeader = request.headers.get("Authorization")?.split(" ");
+  const authHeader = request.headers.get("authorization")?.split(" ");
   if (authHeader?.[0] !== "Bearer") {
-    throw new Error("Incorrectly formatted authorization header.");
+    throw new Error("Unauthorized. Malformed bearer token");
   }
   if (!authHeader?.[1]) {
-    throw new Error("Token not provided.");
+    throw new Error("Unauthorized. Malformed request.");
   }
   const jwt = authHeader?.[1];
-  console.log(jwt);
 
   const result = await parseJwt(jwt, AUTH0_ISSUER, AUTH0_AUDIENCE);
   if (!result.valid) {
-    throw new Error(result.reason);
-  } else {
-    console.log(result.payload); // { iss, sub, aud, iat, exp, ...claims }
+    throw new Error("Unauthorized. Token is not valid.");
+  }
+
+  const prisma = new PrismaClient({
+    errorFormat: "pretty"
+  });
+  await prisma.$connect();
+
+  try {
+    const user = await prisma.user.findUnique({
+      where: {
+        username: result.payload.sub
+      }
+    });
+    request.user = user;
+  } catch (error) {
+    throw new Error("Verification error:  do not match.");
   }
 };

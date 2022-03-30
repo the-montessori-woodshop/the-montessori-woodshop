@@ -4,13 +4,19 @@ import {
   TypographyCopy,
   TypographyHeading,
 } from "@woodshop/components";
-import { Form, LinksFunction } from "remix";
+import { authenticator } from "~/services/auth.server";
+import { Form, LinksFunction, LoaderFunction } from "remix";
 
 import stylesUrl from "../styles/login.route.css";
 
 export const links: LinksFunction = () => {
   return [{ rel: "stylesheet", href: stylesUrl }];
 };
+
+export const loader: LoaderFunction = async ({ request }) =>
+  authenticator.isAuthenticated(request, {
+    successRedirect: "/",
+  });
 
 export default function Login() {
   return (

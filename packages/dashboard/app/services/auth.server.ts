@@ -1,9 +1,9 @@
 // Create an instance of the authenticator, pass a generic with what your
 
-import {
+import type {
   POST_CreateOrUpdateUserApiRequest,
   POST_CreateOrUpdateUserApiResponse,
-} from "@woodshop/api/client";
+} from "@woodshop/api";
 import { Authenticator } from "remix-auth";
 import { Auth0Strategy } from "remix-auth-auth0";
 
@@ -31,7 +31,7 @@ let auth0Strategy = new Auth0Strategy(
   async ({ accessToken, refreshToken, extraParams, profile }) => {
     try {
       const headers = new Headers();
-      headers.append(`Authorization`, `Bearer ${accessToken}`);
+      headers.append(`authorization`, `Bearer ${accessToken}`);
 
       const user = await api.post<
         POST_CreateOrUpdateUserApiResponse,
