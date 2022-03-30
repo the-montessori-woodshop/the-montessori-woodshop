@@ -4,14 +4,14 @@ import { PageContent } from "~/components/PageContent";
 import { PageHeader } from "~/components/PageHeader";
 import { PageTitle } from "~/components/PageTitle";
 
-export default function BlogIndexPage() {
+export default function BlogDraftsPage() {
   return (
     <PageContainer>
       <PageHeader>
-        <PageTitle>All Posts</PageTitle>
+        <PageTitle>Drafts</PageTitle>
         <BlogNewPostButton />
       </PageHeader>
-      <PageContent>test</PageContent>
+      <PageContent>drafted articles</PageContent>
     </PageContainer>
   );
 }

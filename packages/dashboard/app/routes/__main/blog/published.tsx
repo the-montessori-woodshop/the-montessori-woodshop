@@ -8,10 +8,10 @@ export default function BlogIndexPage() {
   return (
     <PageContainer>
       <PageHeader>
-        <PageTitle>All Posts</PageTitle>
+        <PageTitle>Published</PageTitle>
         <BlogNewPostButton />
       </PageHeader>
-      <PageContent>test</PageContent>
+      <PageContent>published articles</PageContent>
     </PageContainer>
   );
 }

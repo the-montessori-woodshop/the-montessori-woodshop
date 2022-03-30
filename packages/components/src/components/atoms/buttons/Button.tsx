@@ -1,4 +1,4 @@
-import { styled } from "@linaria/react";
+import { css } from "@linaria/core";
 import clsx from "clsx";
 import React from "react";
 
@@ -18,13 +18,17 @@ const cxColor = makeClass<CXColor>([
 ]);
 const cxSize = makeClass<CXSize>(["large", "small"]);
 
-export type ButtonProps = JSX.IntrinsicElements["button"] & {
+type ButtonBaseProps = {
   cxVariant?: CXVariant;
   cxColor?: CXColor;
   cxSize?: CXSize;
 };
 
-const SButton = styled.button`
+export type ButtonProps = JSX.IntrinsicElements["button"] & ButtonBaseProps;
+export type ButtonLinkProps = JSX.IntrinsicElements["a"] & ButtonBaseProps;
+export type ButtonContentProps = JSX.IntrinsicElements["div"] & ButtonBaseProps;
+
+const SButtonCSS = css`
   border: 0;
   background: 0;
   margin: 0;
@@ -40,7 +44,6 @@ const SButton = styled.button`
   font-size: ${makeRem(16)};
 
   &${cxVariant["contained"]}, &${cxVariant["text"]} {
-    min-width: ${makeRem(144)};
     padding-left: ${makeRem(36)};
     padding-right: ${makeRem(36)};
     border-radius: ${makeRem(8)};
@@ -104,6 +107,7 @@ const SButton = styled.button`
     height: ${makeRem(44)};
     font-size: ${makeRem(16)};
     font-weight: 600;
+    min-width: ${makeRem(144)};
   }
 
   &${cxSize["small"]} {
@@ -126,13 +130,62 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     ref
   ) {
     return (
-      <SButton
+      <button
         ref={ref}
-        className={clsx(className, cxVariant, cxSize, cxColor)}
+        className={clsx(className, SButtonCSS, cxVariant, cxSize, cxColor)}
         {...restProps}
       >
         {children}
-      </SButton>
+      </button>
+    );
+  }
+);
+
+export const ButtonContent = React.forwardRef<
+  HTMLDivElement,
+  ButtonContentProps
+>(function ButtonLink(
+  {
+    cxVariant,
+    cxColor = "primary",
+    cxSize = "large",
+    className,
+    children,
+    ...restProps
+  },
+  ref
+) {
+  return (
+    <div
+      ref={ref}
+      className={clsx(className, SButtonCSS, cxVariant, cxSize, cxColor)}
+      {...restProps}
+    >
+      {children}
+    </div>
+  );
+});
+
+export const ButtonLink = React.forwardRef<HTMLAnchorElement, ButtonLinkProps>(
+  function ButtonLink(
+    {
+      cxVariant,
+      cxColor = "primary",
+      cxSize = "large",
+      className,
+      children,
+      ...restProps
+    },
+    ref
+  ) {
+    return (
+      <a
+        ref={ref}
+        className={clsx(className, SButtonCSS, cxVariant, cxSize, cxColor)}
+        {...restProps}
+      >
+        {children}
+      </a>
     );
   }
 );
