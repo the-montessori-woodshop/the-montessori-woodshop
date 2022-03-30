@@ -10,8 +10,8 @@ async function build() {
   const mode = process.env.NODE_ENV?.toLowerCase() ?? "development";
 
   await esbuild.build({
-    entryPoints: ["./src/worker/index.ts"],
-    outfile: "./dist/worker/worker.js",
+    entryPoints: ["./src/handler.ts"],
+    outfile: "./dist/worker.js",
     bundle: true,
     minify: mode === "production",
     sourcemap: mode !== "production",

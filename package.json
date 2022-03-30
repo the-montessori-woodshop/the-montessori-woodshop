@@ -44,7 +44,8 @@
   },
   "resolutions": {
     "axios": "workspace:./packages/axios-fetch",
-    "postcss": "8"
+    "postcss": "8",
+    "jose": "4.6.0"
   },
   "dependencies": {
     "eslint": "^8.11.0",

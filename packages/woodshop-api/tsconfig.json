@@ -7,15 +7,20 @@
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
     "isolatedModules": true,
-    "noEmit": true,
-    "lib": ["esnext", "WebWorker"],
+    "noEmit": false,
+    "lib": ["esnext"],
     "resolveJsonModule": true,
     "preserveConstEnums": true,
     "sourceMap": true,
     "alwaysStrict": true,
     "strict": true,
     "outDir": "dist",
-    "types": ["@cloudflare/workers-types"]
+    "types": ["@cloudflare/workers-types"],
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "skipLibCheck": true,
+    "incremental": true
   },
-  "include": ["src"]
+  "include": ["src"],
+  "exclude": ["node_modules", "dist", "test"]
 }

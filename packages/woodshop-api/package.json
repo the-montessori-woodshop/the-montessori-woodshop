@@ -4,20 +4,22 @@
   "description": "The supporting API and Database Schema for The Montessori Woodshop storefront",
   "scripts": {
     "publish": "wrangler publish",
-    "build": "yarn generate && yarn node ./scripts/build.js",
+    "types": "tsc --project tsconfig.types.json",
+    "build": "yarn generate && yarn node ./scripts/build.js && yarn types",
     "generate": "PRISMA_CLIENT_ENGINE_TYPE=dataproxy && prisma generate",
     "migrate-dev": "prisma migrate dev",
     "migrate": "prisma migrate status && prisma migrate deploy",
     "push": "prisma push",
-    "dev": "wrangler dev --ip 127.0.0.1 --port 8888"
+    "dev": "wrangler dev --ip 127.0.0.1 --port 8888 & yarn types --watch"
   },
-  "main": "dist/worker/worker.js",
+  "main": "dist/worker.js",
+  "types": "dist/types/index.d.ts",
   "exports": {
-    ".": "./dist/worker/worker.js",
-    "./client": {
-      "types": "./dist/client/client/index.d.ts",
-      "import": "./dist/client/client.js",
-      "default": "./dist/client/client.js"
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/worker.js",
+      "require": "./dist/worker.js",
+      "default": "./dist/worker.js"
     }
   },
   "repository": {
@@ -34,16 +36,15 @@
     "@cloudflare/workers-types": "^3.4.0",
     "@cloudflare/wrangler": "^1.19.11",
     "@esbuild-plugins/node-modules-polyfill": "^0.1.4",
-    "@types/itty-router-extras": "^0.4.0",
     "esbuild": "^0.14.27",
     "esbuild-plugin-alias": "^0.2.1",
     "prisma": "3.11.1",
     "typescript": "next"
   },
   "dependencies": {
+    "@cfworker/jwt": "^1.12.2",
     "@prisma/client": "3.11.1",
-    "itty-router": "2.4.0",
-    "jose": "^4.6.0"
+    "itty-router": "2.4.0"
   },
   "installConfig": {
     "hoistingLimits": "workspaces"

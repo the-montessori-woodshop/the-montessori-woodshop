@@ -87,11 +87,12 @@ export class WoodshopClient {
     requestHeaders: HeadersInit | undefined
   ): Promise<HeadersInit> {
     const headers = new Headers(requestHeaders);
-
-    const session = await getSession(headers.get("cookie"));
-    const key = await session.get(authenticator.sessionKey);
-    if (key.accessToken) {
-      headers.append("Authorization", `Bearer ${key.accessToken}`);
+    if (!headers.get("Authorization")) {
+      const session = await getSession(headers.get("cookie"));
+      const key = await session.get(authenticator.sessionKey);
+      if (key?.accessToken) {
+        headers.append("Authorization", `Bearer ${key.accessToken}`);
+      }
     }
     return headers;
   }
@@ -214,6 +215,7 @@ export class WoodshopClient {
         data,
       };
     } catch (error) {
+      console.log(error);
       throw new Error(error as string);
     }
   }

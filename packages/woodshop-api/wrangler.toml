@@ -8,7 +8,7 @@ account_id = "68fa4421d84bfcddbd9311a7d57aa419"
 workers_dev = true
 
 [build]
-command = "yarn api:build"
+command = "yarn build"
 
 [build.upload]
 format = "service-worker"
@@ -17,3 +17,8 @@ format = "service-worker"
 workers_dev = false
 zone_id = 'ebeb335a5410105683a9e7bc11251d1c'
 route = "https://api.woodshop.themontessoriwoodshop.com/*"
+
+# [secrets]
+# AUTH0_JWKS_URI
+# AUTH0_AUDIENCE
+# AUTH0_ISSUER

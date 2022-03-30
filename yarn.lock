@@ -1775,6 +1775,31 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@cfworker/base64url@npm:^1.12.2":
+  version: 1.12.2
+  resolution: "@cfworker/base64url@npm:1.12.2"
+  checksum: e9cac1dcb2e5a561eeaa62959f8ac8d2f2de10c6b9d252fb5bc730dd8096e862ec6a80aec774c8767d7cf0350db43c7ff98ba7a00f5c6c985b47702f05c37da0
+  languageName: node
+  linkType: hard
+
+"@cfworker/jwt@npm:^1.12.2":
+  version: 1.12.2
+  resolution: "@cfworker/jwt@npm:1.12.2"
+  dependencies:
+    "@cfworker/base64url": ^1.12.2
+    "@cfworker/worker-types": ^1.12.1
+    "@cloudflare/workers-types": ^2.2.2
+  checksum: 095b7c33f04e4425d29757801fbfa2a725dea9d0b4337f959060d3ad1a8eee640d727e6761d26943698d6912acf32575dbfdc7c7176c837052d42d33b0a677ab
+  languageName: node
+  linkType: hard
+
+"@cfworker/worker-types@npm:^1.12.1":
+  version: 1.12.1
+  resolution: "@cfworker/worker-types@npm:1.12.1"
+  checksum: 674bc91b41d7f4f97beb4da690aea1ad559d79f407a46091e318156e72899012b0913d8f731a87618d950071f637b33e00caad095da0ff9245387b08103bf02d
+  languageName: node
+  linkType: hard
+
 "@cloudflare/kv-asset-handler@npm:^0.1.3":
   version: 0.1.3
   resolution: "@cloudflare/kv-asset-handler@npm:0.1.3"
@@ -1797,6 +1822,13 @@ __metadata:
   version: 3.4.0
   resolution: "@cloudflare/workers-types@npm:3.4.0"
   checksum: 03294ec6ce0494dc0e8a07fa9c2eb1edee674538d8bbf2bf21bbb4e05b23759e8d12bab6e938f558f0ea8d258b9f348145131b2a33816a6a62429f69bb927070
+  languageName: node
+  linkType: hard
+
+"@cloudflare/workers-types@npm:^2.2.2":
+  version: 2.2.2
+  resolution: "@cloudflare/workers-types@npm:2.2.2"
+  checksum: 22e29a260c4fbab7c0adef8a89d9d14771847edbe6744f7219af47300d9ad348985564a575f63a8d80d2c44ead740a513b410f577d9a7b4145540ec2435d3ca8
   languageName: node
   linkType: hard
 
@@ -5830,15 +5862,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/itty-router-extras@npm:^0.4.0":
-  version: 0.4.0
-  resolution: "@types/itty-router-extras@npm:0.4.0"
-  dependencies:
-    itty-router: ^2.3.10
-  checksum: 615c0de94e8a06d4db33262d2bb9a348ffb76aaad4a6ebf103771fae42d0458879815c1c604a601b7e95e553f11a662b780125a8054e101cd7fe124278a4d1a3
-  languageName: node
-  linkType: hard
-
 "@types/json-schema@npm:*, @types/json-schema@npm:^7.0.4, @types/json-schema@npm:^7.0.5, @types/json-schema@npm:^7.0.8, @types/json-schema@npm:^7.0.9":
   version: 7.0.9
   resolution: "@types/json-schema@npm:7.0.9"
@@ -6971,15 +6994,14 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@woodshop/api@workspace:packages/woodshop-api"
   dependencies:
+    "@cfworker/jwt": ^1.12.2
     "@cloudflare/workers-types": ^3.4.0
     "@cloudflare/wrangler": ^1.19.11
     "@esbuild-plugins/node-modules-polyfill": ^0.1.4
     "@prisma/client": 3.11.1
-    "@types/itty-router-extras": ^0.4.0
     esbuild: ^0.14.27
     esbuild-plugin-alias: ^0.2.1
     itty-router: 2.4.0
-    jose: ^4.6.0
     prisma: 3.11.1
     typescript: next
   languageName: unknown
@@ -17075,13 +17097,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"itty-router@npm:^2.3.10":
-  version: 2.6.0
-  resolution: "itty-router@npm:2.6.0"
-  checksum: ca4f6921b97c9597f0c900fca68b9c07072a6654995066f6a41d659e5c63d68ba30413458dfe56d5374a24d2976aa41701578fd505107388ffa2828ba355c929
-  languageName: node
-  linkType: hard
-
 "jake@npm:^10.6.1":
   version: 10.8.2
   resolution: "jake@npm:10.8.2"
@@ -17686,13 +17701,6 @@ __metadata:
     "@sideway/formula": ^3.0.0
     "@sideway/pinpoint": ^2.0.0
   checksum: eaf62f6c02f2edb1042f1ab04fc23a5918a2cb8f54bec84c6e1033624d8a462c10ae9518af55a3ba84f1793960450d58094eda308e7ef93c17edd4e3c8ef31d5
-  languageName: node
-  linkType: hard
-
-"jose@npm:^4.6.0":
-  version: 4.6.0
-  resolution: "jose@npm:4.6.0"
-  checksum: 7f48cb030c9e8586e825ad5cc71e792f7b71b420afd3c45913e0719fd4abe6a756179c732604d42fbbb53c64b63f78818669599eeef11c988c0c34dd1178fe43
   languageName: node
   linkType: hard
 

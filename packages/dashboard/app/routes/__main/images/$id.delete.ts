@@ -1,7 +1,7 @@
-import {
+import type {
   DELETE_ImageApiParams,
   DELETE_ImageApiResponse,
-} from "@woodshop/api/client";
+} from "@woodshop/api";
 import { api } from "~/services/api.server";
 import { ActionFunction, redirect } from "remix";
 
