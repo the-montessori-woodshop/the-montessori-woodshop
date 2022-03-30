@@ -7,4 +7,7 @@ export const PageHeader = styled.header`
   align-items: center;
   width: 100%;
   height: ${makeRem(80)};
+  margin-top: ${makeRem(16)};
+  padding-left: ${makeRem(32)};
+  padding-right: ${makeRem(32)};
 `;
