@@ -1,3 +1,3 @@
-export default function BlogEditorIndex() {
-  return <>Blog editor index page</>;
-}
+import { LoaderFunction, redirect } from "remix";
+
+export const loader: LoaderFunction = () => redirect("/blog/editor/new");
