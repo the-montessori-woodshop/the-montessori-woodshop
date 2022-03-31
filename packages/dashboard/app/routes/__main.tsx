@@ -6,6 +6,8 @@ import {
   SideNavListItemContent,
   SideNavLogo,
   SideNavSection,
+  TopNav,
+  TopNavSection,
 } from "@woodshop/components";
 import {
   Comment,
@@ -14,6 +16,7 @@ import {
   ImageGallery,
   SignOut,
 } from "@woodshop/icons";
+import { TopNavBreadcrumb } from "~/components/TopNavBreadcrumb";
 import { authenticator } from "~/services/auth.server";
 import { FC } from "react";
 import { LoaderFunction, NavLink, NavLinkProps, Outlet } from "remix";
@@ -101,6 +104,11 @@ export default function LayoutRoute() {
         </SideNavSection>
       </SideNav>
       <SContent>
+        <TopNav>
+          <TopNavSection>
+            <TopNavBreadcrumb />
+          </TopNavSection>
+        </TopNav>
         <Outlet />
       </SContent>
     </>

@@ -9,6 +9,7 @@ import {
   makeRem,
 } from "@woodshop/components";
 import { Close } from "@woodshop/icons";
+import { Breadcrumb } from "~/components/Breadcrumb";
 import { ImagePaneContent } from "~/components/ImagePaneContent";
 import { ImagesGridEditContent } from "~/components/ImagesGridEditContent";
 import { ImagesGridEditTitle } from "~/components/ImagesGridEditTitle";
@@ -23,6 +24,12 @@ import {
   useNavigate,
   useTransition,
 } from "remix";
+
+export const handle = {
+  breadcrumb: () => {
+    return <Breadcrumb to="/images/new">New</Breadcrumb>;
+  },
+};
 
 export const action: ActionFunction = async ({ request }) => {
   const response = await api.postFormData<POST_NewImageApiResponse>(

@@ -18,11 +18,14 @@ import {
   makeRem,
 } from "@woodshop/components";
 import { Close, Copy } from "@woodshop/icons";
+import { Breadcrumb } from "~/components/Breadcrumb";
 import { ImagePaneContent } from "~/components/ImagePaneContent";
 import { ImagesGridEditContent } from "~/components/ImagesGridEditContent";
 import { ImagesGridEditTitle } from "~/components/ImagesGridEditTitle";
+import { PageHeader } from "~/components/PageHeader";
 import { PageTitle } from "~/components/PageTitle";
 import { WoodshopClientResponse, api } from "~/services/api.server";
+import { UseMatchesMatch } from "~/types/useMatches";
 import { dateFactory } from "~/utils/date-factory";
 import { useCallback, useEffect } from "react";
 import {
@@ -36,6 +39,16 @@ import {
   useTransition,
 } from "remix";
 import styled from "styled-components";
+
+export const handle = {
+  breadcrumb: (match: UseMatchesMatch) => {
+    return (
+      <Breadcrumb to={`/images/${match?.params.id}`}>
+        {match?.params.id}
+      </Breadcrumb>
+    );
+  },
+};
 
 export const loader: LoaderFunction = async ({ params, request }) => {
   const response = await api.get<
@@ -112,19 +125,21 @@ export default function ImagesIdPage() {
   return (
     <>
       <ImagesGridEditTitle>
-        <PageTitle>{data?.title}</PageTitle>
-        <Button
-          onClick={close}
-          style={{
-            position: "absolute",
-            right: makeRem(24),
-            top: makeRem(32),
-          }}
-        >
-          <Icon cxTitle="close-panel" cxSize={32}>
-            <Close />
-          </Icon>
-        </Button>
+        <PageHeader>
+          <PageTitle>{data?.title}</PageTitle>
+          <Button
+            onClick={close}
+            style={{
+              position: "absolute",
+              right: makeRem(24),
+              top: makeRem(32),
+            }}
+          >
+            <Icon cxTitle="close-panel" cxSize={32}>
+              <Close />
+            </Icon>
+          </Button>
+        </PageHeader>
       </ImagesGridEditTitle>
       <ImagesGridEditContent>
         <ImagePaneContent>

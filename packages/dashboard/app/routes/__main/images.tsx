@@ -1,34 +1,21 @@
-import {
-  Button,
-  Icon,
-  TopNav,
-  TopNavList,
-  TopNavListItem,
-  TopNavSection,
-  makeRem,
-  ButtonGroup,
-  ButtonContent,
-} from "@woodshop/components";
-import { Copy, PlusSquare } from "@woodshop/icons";
+import { makeRem, ButtonGroup, ButtonContent } from "@woodshop/components";
 import { PageTitle } from "~/components/PageTitle";
-import { useCallback } from "react";
 import styled from "styled-components";
 import {
   type LoaderFunction,
   Outlet,
-  useNavigate,
   useLoaderData,
   NavLink,
   Link,
 } from "remix";
 import { ImagesGrid } from "~/components/ImagesGrid";
-import { ImagesGridNav } from "~/components/ImagesGridNav";
 import { ImagesGridMainTitle } from "~/components/ImagesGridMainTitle";
 import { ImagesGridMainContent } from "~/components/ImagesGridMainContent";
 import clsx from "clsx";
 import { api, WoodshopClientResponse } from "~/services/api.server";
 import type { GET_ImagesApiResponse } from "@woodshop/api";
 import { PageHeader } from "~/components/PageHeader";
+import { Breadcrumb } from "~/components/Breadcrumb";
 
 const SDiv5 = styled.div`
   display: flex;
@@ -58,6 +45,16 @@ const SLi = styled.li`
   margin: ${makeRem(16)};
 `;
 
+export const handle = {
+  breadcrumb: () => {
+    return (
+      <Breadcrumb to="/images" end>
+        Images
+      </Breadcrumb>
+    );
+  },
+};
+
 export const loader: LoaderFunction = async ({ request }) => {
   const response = await api.get<GET_ImagesApiResponse>({
     headers: request.headers,
@@ -72,15 +69,6 @@ export default function ImageGalleryRoute() {
 
   return (
     <ImagesGrid>
-      <ImagesGridNav>
-        <TopNav>
-          <TopNavSection>
-            <TopNavList>
-              <TopNavListItem>Image Gallery</TopNavListItem>
-            </TopNavList>
-          </TopNavSection>
-        </TopNav>
-      </ImagesGridNav>
       <ImagesGridMainTitle>
         <PageHeader>
           <PageTitle>Images</PageTitle>

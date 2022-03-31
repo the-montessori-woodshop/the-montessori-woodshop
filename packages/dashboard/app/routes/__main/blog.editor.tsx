@@ -1,13 +1,9 @@
-import {
-  TopNav,
-  TopNavList,
-  TopNavListItem,
-  TopNavSection,
-  makeRem,
-} from "@woodshop/components";
+import { makeRem } from "@woodshop/components";
+import { Breadcrumb, BreadcrumbSeparator } from "~/components/Breadcrumb";
 import { MarkdownRenderer } from "~/components/MarkdownRenderer";
 import { MarkdownRendererProvider } from "~/components/MarkdownRenderer.context";
-import { Outlet } from "remix";
+import { UseMatchesMatch } from "~/types/useMatches";
+import { Outlet, useMatches } from "remix";
 import styled from "styled-components";
 
 const EditorLayout = styled.div`
@@ -36,28 +32,39 @@ const EditorLayoutPreview = styled.div`
   }
 `;
 
+export const handle = {
+  breadcrumb: (data: UseMatchesMatch) => {
+    return (
+      <>
+        <Breadcrumb to="/blog" end>
+          Blog
+        </Breadcrumb>
+        <BreadcrumbSeparator />
+        {data.params?.id === "new" ? (
+          <Breadcrumb to="/blog/editor/new">New</Breadcrumb>
+        ) : (
+          <Breadcrumb to={`/blog/editor/${data.params?.id}`}>
+            Edit {data.params?.id}
+          </Breadcrumb>
+        )}
+      </>
+    );
+  },
+};
+
 export default function BlogEditorLayout() {
   return (
-    <>
-      <TopNav>
-        <TopNavSection>
-          <TopNavList>
-            <TopNavListItem>Blog Editor</TopNavListItem>
-          </TopNavList>
-        </TopNavSection>
-      </TopNav>
-      <EditorLayout>
-        <MarkdownRendererProvider>
-          <EditorLayoutContent>
-            <Outlet />
-          </EditorLayoutContent>
-          <EditorLayoutPreview>
-            <ELayoutPreviewCard>
-              <MarkdownRenderer />
-            </ELayoutPreviewCard>
-          </EditorLayoutPreview>
-        </MarkdownRendererProvider>
-      </EditorLayout>
-    </>
+    <EditorLayout>
+      <MarkdownRendererProvider>
+        <EditorLayoutContent>
+          <Outlet />
+        </EditorLayoutContent>
+        <EditorLayoutPreview>
+          <ELayoutPreviewCard>
+            <MarkdownRenderer />
+          </ELayoutPreviewCard>
+        </EditorLayoutPreview>
+      </MarkdownRendererProvider>
+    </EditorLayout>
   );
 }

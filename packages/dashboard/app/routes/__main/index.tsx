@@ -1,18 +1,21 @@
-import {
-  TopNav,
-  TopNavList,
-  TopNavListItem,
-  TopNavSection,
-} from "@woodshop/components";
+import { Breadcrumb } from "~/components/Breadcrumb";
+import { Outlet } from "remix";
+
+export const handle = {
+  breadcrumb: () => {
+    return (
+      <Breadcrumb to="/" end>
+        Dashboard
+      </Breadcrumb>
+    );
+  },
+};
 
 export default function Index() {
   return (
-    <TopNav>
-      <TopNavSection>
-        <TopNavList>
-          <TopNavListItem>Dashboard</TopNavListItem>
-        </TopNavList>
-      </TopNavSection>
-    </TopNav>
+    <div>
+      dashboard layout
+      <Outlet />
+    </div>
   );
 }

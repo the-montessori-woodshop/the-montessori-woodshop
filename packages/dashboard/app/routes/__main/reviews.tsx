@@ -1,21 +1,20 @@
-import {
-  TopNav,
-  TopNavList,
-  TopNavListItem,
-  TopNavSection,
-} from "@woodshop/components";
+import { Breadcrumb } from "~/components/Breadcrumb";
 import { Outlet } from "remix";
 
-export default function ReviewsRoute() {
+export const handle = {
+  breadcrumb: () => {
+    return (
+      <Breadcrumb to="/reviews" end>
+        Reviews
+      </Breadcrumb>
+    );
+  },
+};
+
+export default function ReviewsLayout() {
   return (
     <div>
-      <TopNav>
-        <TopNavSection>
-          <TopNavList>
-            <TopNavListItem>Product Reviews</TopNavListItem>
-          </TopNavList>
-        </TopNavSection>
-      </TopNav>
+      reviews layout
       <Outlet />
     </div>
   );

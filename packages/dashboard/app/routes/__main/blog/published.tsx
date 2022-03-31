@@ -4,11 +4,13 @@ import type {
 } from "@woodshop/api";
 import { BlogNewPostButton } from "~/components/BlogNewPostButton";
 import { BlogPostList } from "~/components/BlogPostsList";
+import { Breadcrumb } from "~/components/Breadcrumb";
 import { PageContainer } from "~/components/PageContainer";
 import { PageContent } from "~/components/PageContent";
 import { PageHeader } from "~/components/PageHeader";
 import { PageTitle } from "~/components/PageTitle";
 import { WoodshopClientResponse, api } from "~/services/api.server";
+import { UseMatchesMatch } from "~/types/useMatches";
 import { LoaderFunction, useLoaderData } from "remix";
 
 export const loader: LoaderFunction = async ({ request }) => {
@@ -26,6 +28,16 @@ export const loader: LoaderFunction = async ({ request }) => {
     });
     return response;
   } catch (error) {}
+};
+
+export const handle = {
+  breadcrumb: (data: UseMatchesMatch) => {
+    return (
+      <Breadcrumb to="/blog/published" end>
+        Published
+      </Breadcrumb>
+    );
+  },
 };
 
 export default function BlogIndexPage() {
