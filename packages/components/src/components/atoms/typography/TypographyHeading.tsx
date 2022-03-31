@@ -18,33 +18,33 @@ const SHeading = styled.h1`
   margin: 3rem 0 1.38rem;
 `;
 
-const CSS_H1 = css`
+export const CSS_H1 = css`
   margin-top: 0;
   font-size: 3.052rem;
   font-weight: bold;
 `;
-const CSS_H2 = css`
+export const CSS_H2 = css`
   font-size: 2.441rem;
 `;
-const CSS_H3 = css`
+export const CSS_H3 = css`
   font-size: 1.953rem;
   font-weight: bold;
 `;
-const CSS_H4 = css`
+export const CSS_H4 = css`
   font-size: 1.563rem;
 `;
-const CSS_H5 = css`
+export const CSS_H5 = css`
   font-size: 1.25rem;
 `;
-const CSS_H6 = css`
+export const CSS_H6 = css`
   font-size: 1rem;
 `;
-const CSS_STitle1 = css`
+export const CSS_STitle1 = css`
   font-family: var(--font-family);
   color: var(--color-textPrimary);
   font-size: 1.25rem;
 `;
-const CSS_STitle2 = css`
+export const CSS_STitle2 = css`
   font-family: var(--font-family);
   color: var(--color-textPrimary);
   font-size: 1rem;

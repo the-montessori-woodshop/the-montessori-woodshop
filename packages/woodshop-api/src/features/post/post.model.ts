@@ -10,5 +10,5 @@ export type GET_PostsApiSearchParams = {
   published: boolean;
 };
 
-export type POST_NewPostByIdApiRequest = Omit<Post, "id">;
+export type POST_NewPostByIdApiRequest = Omit<Post, "id" | "authorId">;
 export type POST_NewPostByIdApiResponse = Post;

@@ -1,5 +1,21 @@
-import { GET_PostByIdApiParams, GET_PostByIdApiResponse } from "@woodshop/api";
-import { Tab, TabText, Tablist, makeRem } from "@woodshop/components";
+import {
+  GET_PostByIdApiParams,
+  GET_PostByIdApiResponse,
+  POST_NewPostByIdApiRequest,
+  POST_NewPostByIdApiResponse,
+} from "@woodshop/api";
+import {
+  Button,
+  ButtonGroup,
+  Icon,
+  Tab,
+  TabText,
+  Tablist,
+  makeRem,
+} from "@woodshop/components";
+import { Disk, Floppy } from "@woodshop/icons";
+import { Chip } from "~/components/Chip";
+import { ChipText } from "~/components/ChipText";
 import { PageContainer } from "~/components/PageContainer";
 import { PageContent } from "~/components/PageContent";
 import { PageHeader } from "~/components/PageHeader";
@@ -7,6 +23,8 @@ import { PageTitle } from "~/components/PageTitle";
 import { WoodshopClientResponse, api } from "~/services/api.server";
 import { forwardRef } from "react";
 import {
+  ActionFunction,
+  Form,
   LoaderFunction,
   NavLink,
   NavLinkProps,
@@ -63,6 +81,38 @@ export const loader: LoaderFunction = async ({ request, params }) => {
   }
 };
 
+export const action: ActionFunction = async ({ request }) => {
+  const formData = await request.formData();
+  const content = formData.get("content") as string;
+  const id = formData.get("id") as string;
+  if (id === "new") {
+    try {
+      const res = await api.post<
+        POST_NewPostByIdApiResponse,
+        POST_NewPostByIdApiRequest
+      >({
+        url: "/post",
+        headers: request.headers,
+        body: {
+          content: content || "",
+          published: false,
+          title: "",
+        },
+      });
+      return redirect(`/blog/editor/${res.data.id}`);
+    } catch (error) {
+      console.error(error);
+      return null;
+    }
+  }
+  try {
+    // const res = await api.update({
+    //   url: "/post/:id",
+    // })
+  } catch (error) {}
+  return null;
+};
+
 export default function Route() {
   const params = useParams<GET_PostByIdApiParams>();
   const loaderData =
@@ -72,39 +122,77 @@ export default function Route() {
   console.log(loaderData);
 
   return (
-    <PageContainer>
-      <PageHeader>
-        <PageTitle>Click to edit new post title...</PageTitle>
-      </PageHeader>
-      <PageContent>
-        <SDiv2>content</SDiv2>
-      </PageContent>
-      <PageContent
-        style={{
-          position: "relative",
-          top: makeRem(42 / 2),
-        }}
-      >
-        <Tablist
-          ariaLabel="testing"
-          cxLayout="horizontal"
-          cxVariant="contained"
-          cxSize="sm"
+    <Form
+      method="post"
+      style={{
+        display: "inherit",
+        flex: "inherit",
+        height: "100%",
+        flexDirection: "inherit",
+      }}
+    >
+      <input type="hidden" name="id" value={params.id} />
+      <PageContainer>
+        <PageHeader>
+          <PageTitle
+            style={{
+              whiteSpace: "nowrap",
+              textOverflow: "ellipsis",
+              overflow: "hidden",
+            }}
+          >
+            Click to edit new post title...
+          </PageTitle>
+          <ButtonGroup
+            cxLayout="inline"
+            style={{
+              marginLeft: makeRem(32),
+            }}
+          >
+            <Chip
+              cxVariant={!loaderData?.data?.published ? "draft" : "published"}
+            >
+              <ChipText>
+                {!loaderData?.data?.published ? "draft" : "published"}
+              </ChipText>
+            </Chip>
+            <Button type="submit">
+              <Icon cxTitle="save" accessibility="actionable" cxSize={32}>
+                <Floppy />
+              </Icon>
+            </Button>
+          </ButtonGroup>
+        </PageHeader>
+        <PageContent>
+          <SDiv2>content</SDiv2>
+        </PageContent>
+        <PageContent
+          style={{
+            position: "relative",
+            top: makeRem(42 / 2),
+          }}
         >
-          <TabLink to={`/blog/editor/${params.id}`} end>
-            <TabText>Editor</TabText>
-          </TabLink>
-          <TabLink to="./meta">
-            <TabText>Meta</TabText>
-          </TabLink>
-          <TabLink to="./actions">
-            <TabText>Actions</TabText>
-          </TabLink>
-        </Tablist>
-      </PageContent>
-      <SDiv>
-        <Outlet />
-      </SDiv>
-    </PageContainer>
+          <Tablist
+            ariaLabel="testing"
+            cxLayout="horizontal"
+            cxVariant="contained"
+            cxSize="sm"
+          >
+            <TabLink to={`/blog/editor/${params.id}`} end>
+              <TabText>Editor</TabText>
+            </TabLink>
+            <TabLink to="./meta">
+              <TabText>Meta</TabText>
+            </TabLink>
+            <TabLink to="./actions">
+              <TabText>Actions</TabText>
+            </TabLink>
+          </Tablist>
+        </PageContent>
+        <SDiv>
+          <Outlet />
+        </SDiv>
+      </PageContainer>
+    </Form>
   );
 }

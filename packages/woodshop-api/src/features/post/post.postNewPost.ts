@@ -10,17 +10,24 @@ import {
 export const postNewPost: HandlePOSTRequest<
   POST_NewPostByIdApiResponse
 > = async (request) => {
-  const data = await request.json<POST_NewPostByIdApiRequest>();
-  const prisma = new PrismaClient({
-    errorFormat: "pretty"
-  });
+  if (!request.user) {
+    throw new Error("Not Authorized.");
+  }
+
   try {
+    const data = await request.json<POST_NewPostByIdApiRequest>();
+
+    const prisma = new PrismaClient({
+      errorFormat: "pretty"
+    });
+
     await prisma.$connect();
     const post = await prisma.post.create({
       data: {
         title: data.title,
         content: data.content,
-        published: data.published
+        published: data.published,
+        authorId: request.user.id
       }
     });
     return post;

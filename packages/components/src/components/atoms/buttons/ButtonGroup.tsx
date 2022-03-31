@@ -21,6 +21,7 @@ const SButtonGroup = styled.div`
 
   &${cxLayout["inline"]}, &${cxLayout["inline-fill"]} {
     display: flex;
+    align-items: center;
 
     ${cxOrder["reversed"]} {
       flex-direction: row-reverse;
