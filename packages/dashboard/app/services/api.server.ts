@@ -88,7 +88,7 @@ export class WoodshopClient {
     if (params) {
       newUrl = Object.entries(params).reduce<string>((accum, [key, value]) => {
         return accum.replace(`:${key}`, value as string);
-      }, url);
+      }, newUrl);
     }
 
     if (search) {
@@ -136,6 +136,7 @@ export class WoodshopClient {
     WoodshopClientResponse<FetchResponse>
   > {
     const fetchUrl = this.getUrl<FetchSearch>(url, params, search);
+    console.log(fetchUrl);
     const fetchHeaders = await this.getAuthorizationHeader(headers);
     const config = {
       headers: fetchHeaders,

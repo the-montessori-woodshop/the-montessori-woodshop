@@ -14,7 +14,7 @@
     "api:push": "yarn workspace @woodshop/api push",
     "api:build": "yarn workspace @woodshop/api build",
     "components-dev": "yarn workspace @woodshop/components storybook",
-    "clean": "rimraf ./packages/**/node_modules && rimraf node_modules"
+    "clean": "npx rimraf ./packages/**/node_modules && npx rimraf node_modules"
   },
   "workspaces": {
     "packages": [

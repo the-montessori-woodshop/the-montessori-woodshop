@@ -25,7 +25,7 @@ export default function BlogRoute() {
       <BlogLayout>
         <BlogLayoutSide>
           <BlogNav>
-            <BlogNavItem to="./">
+            <BlogNavItem to="/blog" end>
               <BlogNavItemContent>all posts</BlogNavItemContent>
             </BlogNavItem>
             <BlogNavItem to="./published">

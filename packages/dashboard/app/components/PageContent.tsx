@@ -3,6 +3,9 @@ import styled from "styled-components";
 
 export const PageContent = styled.div`
   padding: 0 ${makeRem(32)};
-  flex: 1;
-  overflow-y: auto;
+
+  &.main {
+    flex: 1;
+    overflow-y: auto;
+  }
 `;

@@ -5,6 +5,8 @@ import {
   TopNavSection,
   makeRem,
 } from "@woodshop/components";
+import { MarkdownRenderer } from "~/components/MarkdownRenderer";
+import { MarkdownRendererProvider } from "~/components/MarkdownRenderer.context";
 import { Outlet } from "remix";
 import styled from "styled-components";
 
@@ -45,14 +47,16 @@ export default function BlogEditorLayout() {
         </TopNavSection>
       </TopNav>
       <EditorLayout>
-        <EditorLayoutContent>
-          <Outlet />
-        </EditorLayoutContent>
-        <EditorLayoutPreview>
-          <ELayoutPreviewCard>
-            <div style={{ height: "10000px" }} />
-          </ELayoutPreviewCard>
-        </EditorLayoutPreview>
+        <MarkdownRendererProvider>
+          <EditorLayoutContent>
+            <Outlet />
+          </EditorLayoutContent>
+          <EditorLayoutPreview>
+            <ELayoutPreviewCard>
+              <MarkdownRenderer />
+            </ELayoutPreviewCard>
+          </EditorLayoutPreview>
+        </MarkdownRendererProvider>
       </EditorLayout>
     </>
   );
