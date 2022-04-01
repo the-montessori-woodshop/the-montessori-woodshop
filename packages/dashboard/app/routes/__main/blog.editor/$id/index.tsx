@@ -17,16 +17,16 @@ export default function BlogEditorPageIndex() {
         name="title"
         label="Title"
         placeholder="Title of the blog post"
-        // key={data?.title}
         defaultValue={data?.title}
+        key={data?.title}
       />
       <FormFieldTextarea
         id="prompt"
         name="prompt"
         label="Prompt"
         placeholder="Introductory text of the blog post for quick previews"
-        // key={data?.title}
-        // defaultValue={data?.title}
+        key={data?.title}
+        defaultValue={data?.title}
       />
     </FormFieldGroup>
   );

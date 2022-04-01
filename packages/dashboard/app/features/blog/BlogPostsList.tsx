@@ -1,16 +1,16 @@
-import { GET_PostsApiResponse } from "@woodshop/api";
+import type { GET_PostsApiResponse } from "@woodshop/api";
 import { Illustration } from "@woodshop/components";
 import { SearchingFoundNothing } from "@woodshop/illustrations";
 import { FC } from "react";
 
-import { StateEmtpy } from "./StateEmpty";
+import { StateEmtpy } from "../../components/StateEmpty";
+import { BlogTable } from "./BlogTable";
 
 export type BlogPostListProps = {
   data: GET_PostsApiResponse;
 };
 
 export const BlogPostList: FC<BlogPostListProps> = ({ data }) => {
-  console.log(data);
   if (!data) {
     return null;
   }
@@ -26,5 +26,5 @@ export const BlogPostList: FC<BlogPostListProps> = ({ data }) => {
       </StateEmtpy>
     );
   }
-  return null;
+  return <BlogTable data={data} />;
 };

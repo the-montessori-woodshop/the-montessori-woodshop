@@ -1,11 +1,15 @@
-import {
-  BlogLayout,
-  BlogLayoutMain,
-  BlogLayoutSide,
-} from "~/components/BlogLayout";
-import { BlogNav, BlogNavItem, BlogNavItemContent } from "~/components/BlogNav";
 import { Breadcrumb } from "~/components/Breadcrumb";
 import { Outlet } from "remix";
+import {
+  BlogLayout,
+  BlogLayoutSide,
+  BlogLayoutMain,
+} from "~/features/blog/BlogLayout";
+import {
+  BlogNav,
+  BlogNavItem,
+  BlogNavItemContent,
+} from "~/features/blog/BlogNav";
 
 export const handle = {
   breadcrumb: () => {

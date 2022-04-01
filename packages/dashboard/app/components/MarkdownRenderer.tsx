@@ -1,7 +1,7 @@
 import MarkdownIt from "markdown-it";
 import { FC } from "react";
+import { BlogContent } from "~/features/blog/BlogContent";
 
-import { BlogContent } from "./BlogContent";
 import { useMarkdownRendererContext } from "./MarkdownRenderer.context";
 
 const md = new MarkdownIt();
