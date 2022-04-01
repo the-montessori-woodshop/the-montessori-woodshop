@@ -1,11 +1,11 @@
-import { GET_PostsApiResponse } from "@woodshop/api";
+import type { GET_PostsApiResponse } from "@woodshop/api";
 import { BlogNewPostButton } from "~/components/BlogNewPostButton";
 import { BlogPostList } from "~/components/BlogPostsList";
 import { PageContainer } from "~/components/PageContainer";
 import { PageContent } from "~/components/PageContent";
 import { PageHeader } from "~/components/PageHeader";
 import { PageTitle } from "~/components/PageTitle";
-import { WoodshopClientResponse, api } from "~/services/api.server";
+import { api } from "~/services/api.server";
 import { LoaderFunction, useLoaderData } from "remix";
 
 export const loader: LoaderFunction = async ({ request }) => {
@@ -19,8 +19,7 @@ export const loader: LoaderFunction = async ({ request }) => {
 };
 
 export default function BlogIndexPage() {
-  const { data } =
-    useLoaderData<WoodshopClientResponse<GET_PostsApiResponse>>();
+  const data = useLoaderData<GET_PostsApiResponse>();
 
   return (
     <PageContainer>

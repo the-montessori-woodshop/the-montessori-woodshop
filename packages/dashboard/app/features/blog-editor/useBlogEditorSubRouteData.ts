@@ -1,0 +1,12 @@
+import { GET_PostByIdApiResponse } from "@woodshop/api";
+import { useMatches } from "remix";
+
+export const useBlogEditorSubRouteData = () => {
+  const matches = useMatches();
+  console.log(matches);
+  const data = matches.find(
+    (match) => match.id === "routes/__main/blog.editor/$id"
+  )?.data;
+
+  return data as GET_PostByIdApiResponse;
+};

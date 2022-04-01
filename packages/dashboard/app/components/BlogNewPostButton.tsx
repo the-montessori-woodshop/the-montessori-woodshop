@@ -1,13 +1,20 @@
-import { ButtonContent } from "@woodshop/components";
+import { Button } from "@woodshop/components";
 import { FC } from "react";
-import { Link } from "remix";
+import { useFetcher } from "remix";
 
 export const BlogNewPostButton: FC = () => {
+  const fetcher = useFetcher();
+
   return (
-    <Link to="/blog/editor">
-      <ButtonContent cxVariant="contained" cxColor="primary" cxSize="small">
+    <fetcher.Form method="post" action="/blog/new">
+      <Button
+        cxVariant="contained"
+        cxColor="primary"
+        cxSize="small"
+        type="submit"
+      >
         New Post
-      </ButtonContent>
-    </Link>
+      </Button>
+    </fetcher.Form>
   );
 };

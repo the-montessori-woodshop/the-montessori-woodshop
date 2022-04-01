@@ -12,7 +12,7 @@ import { ImagesGrid } from "~/components/ImagesGrid";
 import { ImagesGridMainTitle } from "~/components/ImagesGridMainTitle";
 import { ImagesGridMainContent } from "~/components/ImagesGridMainContent";
 import clsx from "clsx";
-import { api, WoodshopClientResponse } from "~/services/api.server";
+import { api } from "~/services/api.server";
 import type { GET_ImagesApiResponse } from "@woodshop/api";
 import { PageHeader } from "~/components/PageHeader";
 import { Breadcrumb } from "~/components/Breadcrumb";
@@ -64,8 +64,7 @@ export const loader: LoaderFunction = async ({ request }) => {
 };
 
 export default function ImageGalleryRoute() {
-  const { data } =
-    useLoaderData<WoodshopClientResponse<GET_ImagesApiResponse>>();
+  const data = useLoaderData<GET_ImagesApiResponse>();
 
   return (
     <ImagesGrid>

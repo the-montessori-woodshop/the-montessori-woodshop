@@ -1,3 +1,3 @@
 import { LoaderFunction, redirect } from "remix";
 
-export const loader: LoaderFunction = () => redirect("/blog/editor/new");
+export const loader: LoaderFunction = () => redirect("/blog");

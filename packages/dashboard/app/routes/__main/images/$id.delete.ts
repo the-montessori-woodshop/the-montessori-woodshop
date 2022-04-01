@@ -8,7 +8,7 @@ import { ActionFunction, redirect } from "remix";
 export const action: ActionFunction = async ({ request }) => {
   const formData = await request.formData();
   try {
-    const response = await api.delete<
+    const data = await api.delete<
       DELETE_ImageApiResponse,
       DELETE_ImageApiParams
     >({
@@ -19,7 +19,7 @@ export const action: ActionFunction = async ({ request }) => {
       },
     });
 
-    if (response.response.statusText === "OK") {
+    if (data) {
       return redirect("/images");
     }
   } catch (error) {

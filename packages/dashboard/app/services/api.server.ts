@@ -31,12 +31,6 @@ export type WoodshopClientPOSTRequestConfig<TRequest = undefined> =
         body: RequestInit["body"];
       };
 
-export type WoodshopClientResponse<ResponseData> = {
-  config: RequestInit;
-  data: ResponseData;
-  response: Response;
-};
-
 export type WoodshopClientGETRequestConfig<
   TParams = undefined,
   TSearch = Record<string, unknown>
@@ -132,9 +126,10 @@ export class WoodshopClient {
     params,
     headers,
     search,
-  }: WoodshopClientGETRequestConfig<FetchParams, FetchSearch>): Promise<
-    WoodshopClientResponse<FetchResponse>
-  > {
+  }: WoodshopClientGETRequestConfig<
+    FetchParams,
+    FetchSearch
+  >): Promise<FetchResponse> {
     const fetchUrl = this.getUrl<FetchSearch>(url, params, search);
     console.log(fetchUrl);
     const fetchHeaders = await this.getAuthorizationHeader(headers);
@@ -146,12 +141,7 @@ export class WoodshopClient {
     try {
       const response = await fetch(fetchUrl, config);
       const data = await response.json<FetchResponse>();
-
-      return {
-        response,
-        config,
-        data,
-      };
+      return data;
     } catch (error) {
       throw new Error(error as string);
     }
@@ -161,9 +151,7 @@ export class WoodshopClient {
     url,
     params,
     headers,
-  }: WOodshopClientDELETERequestConfig<FetchParams>): Promise<
-    WoodshopClientResponse<FetchResponse>
-  > {
+  }: WOodshopClientDELETERequestConfig<FetchParams>): Promise<FetchResponse> {
     const fetchUrl = this.getUrl(url, params);
     const fetchHeader = await this.getAuthorizationHeader(headers);
     const config = {
@@ -174,12 +162,7 @@ export class WoodshopClient {
     try {
       const response = await fetch(fetchUrl, config);
       const data = await response.json<FetchResponse>();
-
-      return {
-        response,
-        config,
-        data,
-      };
+      return data;
     } catch (error) {
       throw new Error(error as string);
     }
@@ -195,9 +178,10 @@ export class WoodshopClient {
     headers,
     body,
     params,
-  }: WoodshopClientUPDATERequestConfig<FetchRequest, FetchParams>): Promise<
-    WoodshopClientResponse<FetchResponse>
-  > {
+  }: WoodshopClientUPDATERequestConfig<
+    FetchRequest,
+    FetchParams
+  >): Promise<FetchResponse> {
     const fetchUrl = this.getUrl(url, params);
     const authHeader = await this.getAuthorizationHeader(headers);
     const config: RequestInit = {
@@ -212,12 +196,7 @@ export class WoodshopClient {
     try {
       const response = await fetch(fetchUrl, config);
       const data = await response.json<FetchResponse>();
-
-      return {
-        response,
-        config,
-        data,
-      };
+      return data;
     } catch (error) {
       throw new Error(error as string);
     }
@@ -227,9 +206,7 @@ export class WoodshopClient {
     url,
     body,
     headers,
-  }: WoodshopClientPOSTRequestConfig<FetchRequest>): Promise<
-    WoodshopClientResponse<FetchResponse>
-  > {
+  }: WoodshopClientPOSTRequestConfig<FetchRequest>): Promise<FetchResponse> {
     const fetchUrl = this.getUrl(url);
     const authHeader = await this.getAuthorizationHeader(headers);
     const config = {
@@ -244,12 +221,7 @@ export class WoodshopClient {
     try {
       const response = await fetch(fetchUrl, config);
       const data = await response.json<FetchResponse>();
-
-      return {
-        response,
-        config,
-        data,
-      };
+      return data;
     } catch (error) {
       throw new Error(error as string);
     }
@@ -258,7 +230,7 @@ export class WoodshopClient {
   async postFormData<FetchResponse>(
     url: ClientRequestRoutes,
     request: Request
-  ): Promise<WoodshopClientResponse<FetchResponse>> {
+  ): Promise<FetchResponse> {
     const fetchUrl = this.getUrl(url);
     const authHeader = await this.getAuthorizationHeader(request.headers);
     request.headers.append("Authorization", authHeader.authorization);
@@ -271,12 +243,7 @@ export class WoodshopClient {
     try {
       const response = await fetch(fetchUrl, config);
       const data = await response.json<FetchResponse>();
-
-      return {
-        response,
-        config,
-        data,
-      };
+      return data;
     } catch (error) {
       throw new Error(error as string);
     }

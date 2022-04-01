@@ -32,11 +32,11 @@ export const handle = {
 };
 
 export const action: ActionFunction = async ({ request }) => {
-  const response = await api.postFormData<POST_NewImageApiResponse>(
+  const data = await api.postFormData<POST_NewImageApiResponse>(
     "/image",
     request
   );
-  return redirect(`/images/${response.data.id}`);
+  return redirect(`/images/${data.id}`);
 };
 
 export default function ImagesNew() {

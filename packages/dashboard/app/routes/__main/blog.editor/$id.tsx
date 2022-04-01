@@ -1,8 +1,9 @@
 import {
   GET_PostByIdApiParams,
   GET_PostByIdApiResponse,
-  POST_NewPostByIdApiRequest,
-  POST_NewPostByIdApiResponse,
+  PATCH_UpdatePostByIdApiParams,
+  PATCH_UpdatePostByIdApiRequest,
+  PATCH_UpdatePostByIdApiResponse,
 } from "@woodshop/api";
 import {
   Button,
@@ -11,16 +12,17 @@ import {
   Tab,
   TabText,
   Tablist,
+  TypographyCopy,
   makeRem,
 } from "@woodshop/components";
-import { Disk, Floppy } from "@woodshop/icons";
+import { Floppy } from "@woodshop/icons";
 import { Chip } from "~/components/Chip";
 import { ChipText } from "~/components/ChipText";
 import { PageContainer } from "~/components/PageContainer";
 import { PageContent } from "~/components/PageContent";
 import { PageHeader } from "~/components/PageHeader";
 import { PageTitle } from "~/components/PageTitle";
-import { WoodshopClientResponse, api } from "~/services/api.server";
+import { api } from "~/services/api.server";
 import { forwardRef } from "react";
 import {
   ActionFunction,
@@ -47,37 +49,32 @@ const TabLink = forwardRef<HTMLAnchorElement, NavLinkProps>(function TabLink(
 });
 
 const SDiv2 = styled.div`
-  height: ${makeRem(160)};
+  max-height: ${makeRem(160)};
 `;
 
 const SDiv = styled.div`
   flex: 1;
   width: 100%;
-  background: var(--color-grey2);
+  background: var(--color-grey1);
   border-top: ${makeRem(1)} solid var(--color-grey3);
   padding: ${makeRem(40)} ${makeRem(32)};
 `;
 
 export const loader: LoaderFunction = async ({ request, params }) => {
   try {
-    if (params.id !== "new") {
-      const res = await api.get<GET_PostByIdApiResponse, GET_PostByIdApiParams>(
-        {
-          url: "/post/:id",
-          headers: request.headers,
-          params: {
-            id: params.id,
-          },
-        }
-      );
-      if (!res.data) {
-        return redirect("/blog/editor/new");
-      }
-      return res;
+    const data = await api.get<GET_PostByIdApiResponse, GET_PostByIdApiParams>({
+      url: "/post/:id",
+      headers: request.headers,
+      params: {
+        id: params.id,
+      },
+    });
+    if (!data) {
+      return redirect("/blog");
     }
-    return null;
+    return data;
   } catch (error) {
-    return redirect("/blog/editor/new");
+    return redirect("/blog");
   }
 };
 
@@ -85,45 +82,39 @@ export const action: ActionFunction = async ({ request }) => {
   const formData = await request.formData();
   const content = formData.get("content") as string;
   const id = formData.get("id") as string;
-  if (id === "new") {
-    try {
-      const res = await api.post<
-        POST_NewPostByIdApiResponse,
-        POST_NewPostByIdApiRequest
-      >({
-        url: "/post",
-        headers: request.headers,
-        body: {
-          content: content || "",
-          published: false,
-          title: "",
-        },
-      });
-      return redirect(`/blog/editor/${res.data.id}`);
-    } catch (error) {
-      console.error(error);
-      return null;
-    }
-  }
+  const title = formData.get("title") as string;
+
   try {
-    // const res = await api.update({
-    //   url: "/post/:id",
-    // })
+    const data = await api.update<
+      PATCH_UpdatePostByIdApiResponse,
+      PATCH_UpdatePostByIdApiRequest,
+      PATCH_UpdatePostByIdApiParams
+    >({
+      url: "/post/:id",
+      method: "PATCH",
+      params: {
+        id,
+      },
+      headers: request.headers,
+      body: {
+        content,
+        title,
+        published: false,
+      },
+    });
+    console.log(data);
+    return redirect(`/blog/editor/${data.id}`);
   } catch (error) {}
   return null;
 };
 
 export default function Route() {
   const params = useParams<GET_PostByIdApiParams>();
-  const loaderData =
-    useLoaderData<
-      WoodshopClientResponse<GET_PostByIdApiResponse | undefined>
-    >();
-  console.log(loaderData);
+  const data = useLoaderData<GET_PostByIdApiResponse>();
 
   return (
     <Form
-      method="post"
+      method="patch"
       style={{
         display: "inherit",
         flex: "inherit",
@@ -141,7 +132,7 @@ export default function Route() {
               overflow: "hidden",
             }}
           >
-            Click to edit new post title...
+            {data?.title}
           </PageTitle>
           <ButtonGroup
             cxLayout="inline"
@@ -149,12 +140,8 @@ export default function Route() {
               marginLeft: makeRem(32),
             }}
           >
-            <Chip
-              cxVariant={!loaderData?.data?.published ? "draft" : "published"}
-            >
-              <ChipText>
-                {!loaderData?.data?.published ? "draft" : "published"}
-              </ChipText>
+            <Chip cxVariant={!data?.published ? "draft" : "published"}>
+              <ChipText>{!data?.published ? "draft" : "published"}</ChipText>
             </Chip>
             <Button type="submit">
               <Icon cxTitle="save" accessibility="actionable" cxSize={32}>
@@ -164,7 +151,12 @@ export default function Route() {
           </ButtonGroup>
         </PageHeader>
         <PageContent>
-          <SDiv2>content</SDiv2>
+          <SDiv2>
+            <TypographyCopy cxVariant="caption">
+              No prompt has been written yet. Open the "Meta" tab to add a
+              prompt.
+            </TypographyCopy>
+          </SDiv2>
         </PageContent>
         <PageContent
           style={{
@@ -179,6 +171,9 @@ export default function Route() {
             cxSize="sm"
           >
             <TabLink to={`/blog/editor/${params.id}`} end>
+              <TabText>Details</TabText>
+            </TabLink>
+            <TabLink to="./editor" end>
               <TabText>Editor</TabText>
             </TabLink>
             <TabLink to="./meta">

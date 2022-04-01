@@ -3,7 +3,7 @@ import { Breadcrumb, BreadcrumbSeparator } from "~/components/Breadcrumb";
 import { MarkdownRenderer } from "~/components/MarkdownRenderer";
 import { MarkdownRendererProvider } from "~/components/MarkdownRenderer.context";
 import { UseMatchesMatch } from "~/types/useMatches";
-import { Outlet, useMatches } from "remix";
+import { Outlet } from "remix";
 import styled from "styled-components";
 
 const EditorLayout = styled.div`

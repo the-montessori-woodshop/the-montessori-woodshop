@@ -9,7 +9,7 @@ import { PageContainer } from "~/components/PageContainer";
 import { PageContent } from "~/components/PageContent";
 import { PageHeader } from "~/components/PageHeader";
 import { PageTitle } from "~/components/PageTitle";
-import { WoodshopClientResponse, api } from "~/services/api.server";
+import { api } from "~/services/api.server";
 import { UseMatchesMatch } from "~/types/useMatches";
 import { LoaderFunction, useLoaderData } from "remix";
 
@@ -41,8 +41,7 @@ export const handle = {
 };
 
 export default function BlogIndexPage() {
-  const { data } =
-    useLoaderData<WoodshopClientResponse<GET_PostsApiResponse>>();
+  const data = useLoaderData<GET_PostsApiResponse>();
 
   return (
     <PageContainer>

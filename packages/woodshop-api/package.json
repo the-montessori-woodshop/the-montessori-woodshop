@@ -5,7 +5,7 @@
   "scripts": {
     "publish": "wrangler publish",
     "types": "tsc --project tsconfig.types.json",
-    "build": "yarn generate && yarn node ./scripts/build.js && yarn types",
+    "build": "yarn node ./scripts/build.js && yarn types",
     "generate": "PRISMA_CLIENT_ENGINE_TYPE=dataproxy && prisma generate",
     "migrate-dev": "prisma migrate dev",
     "migrate": "prisma migrate status && prisma migrate deploy",

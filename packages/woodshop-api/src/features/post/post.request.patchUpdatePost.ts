@@ -1,23 +1,23 @@
 import { PrismaClient } from "@prisma/client";
 
-import { HandlePUTRequest } from "../../types/index";
+import { HandlePATCHRequest } from "../../types/index";
 import { handleRoute } from "../../utils/handleRoute";
 import {
-  PUT_UpdatePostByIdApiParams,
-  PUT_UpdatePostByIdApiRequest,
-  PUT_UpdatePostByIdApiResponse
+  PATCH_UpdatePostByIdApiParams,
+  PATCH_UpdatePostByIdApiRequest,
+  PATCH_UpdatePostByIdApiResponse
 } from "./post.model";
 
-export const postNewPost: HandlePUTRequest<
-  PUT_UpdatePostByIdApiResponse,
-  PUT_UpdatePostByIdApiParams
+export const updatePost: HandlePATCHRequest<
+  PATCH_UpdatePostByIdApiResponse,
+  PATCH_UpdatePostByIdApiParams
 > = async (request) => {
   if (!request.user) {
     throw new Error("Not Authorized.");
   }
 
   try {
-    const data = await request.json<PUT_UpdatePostByIdApiRequest>();
+    const data = await request.json<PATCH_UpdatePostByIdApiRequest>();
 
     const prisma = new PrismaClient({
       errorFormat: "pretty"
@@ -26,9 +26,7 @@ export const postNewPost: HandlePUTRequest<
     await prisma.$connect();
     const post = await prisma.post.create({
       data: {
-        title: data.title,
-        content: data.content,
-        published: data.published,
+        ...data,
         authorId: request.user.id
       }
     });
@@ -38,4 +36,4 @@ export const postNewPost: HandlePUTRequest<
   }
 };
 
-export const handlePostNewPost = handleRoute(postNewPost);
+export const handleUpdatePost = handleRoute(updatePost);

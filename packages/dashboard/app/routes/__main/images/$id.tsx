@@ -24,7 +24,7 @@ import { ImagesGridEditContent } from "~/components/ImagesGridEditContent";
 import { ImagesGridEditTitle } from "~/components/ImagesGridEditTitle";
 import { PageHeader } from "~/components/PageHeader";
 import { PageTitle } from "~/components/PageTitle";
-import { WoodshopClientResponse, api } from "~/services/api.server";
+import { api } from "~/services/api.server";
 import { UseMatchesMatch } from "~/types/useMatches";
 import { dateFactory } from "~/utils/date-factory";
 import { useCallback, useEffect } from "react";
@@ -51,10 +51,7 @@ export const handle = {
 };
 
 export const loader: LoaderFunction = async ({ params, request }) => {
-  const response = await api.get<
-    GET_ImageByIdApiResponse,
-    GET_ImageByIdApiParams
-  >({
+  const data = await api.get<GET_ImageByIdApiResponse, GET_ImageByIdApiParams>({
     headers: request.headers,
     url: "/image/:id",
     params: {
@@ -62,17 +59,17 @@ export const loader: LoaderFunction = async ({ params, request }) => {
     },
   });
 
-  if (!response.data?.id) {
+  if (!data?.id) {
     return redirect("../images");
   }
-  return response;
+  return data;
 };
 
 export const action: ActionFunction = async ({ request }) => {
   try {
     const formData = await request.formData();
 
-    const response = await api.update<
+    const data = await api.update<
       PATCH_ImagesApiResponse,
       PATCH_ImagesApiRequest,
       PATCH_ImagesApiParams
@@ -87,7 +84,7 @@ export const action: ActionFunction = async ({ request }) => {
         title: formData.get("title") as string,
       },
     });
-    return redirect(`/images/${response.data.id}`);
+    return redirect(`/images/${data.id}`);
   } catch (error) {
     console.log(error);
     throw new Error(error as string);
@@ -113,8 +110,7 @@ const SImg = styled.img`
 export default function ImagesIdPage() {
   const navigate = useNavigate();
   const transition = useTransition();
-  const { data } =
-    useLoaderData<WoodshopClientResponse<PATCH_ImagesApiResponse>>();
+  const data = useLoaderData<PATCH_ImagesApiResponse>();
 
   const close = useCallback(() => {
     navigate("../");
