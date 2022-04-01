@@ -40,13 +40,9 @@ export const handle = {
           Blog
         </Breadcrumb>
         <BreadcrumbSeparator />
-        {data.params?.id === "new" ? (
-          <Breadcrumb to="/blog/editor/new">New</Breadcrumb>
-        ) : (
-          <Breadcrumb to={`/blog/editor/${data.params?.id}`}>
-            Edit {data.params?.id}
-          </Breadcrumb>
-        )}
+        <Breadcrumb to={`/blog/editor/${data.params?.id}`}>
+          {data.params?.id}
+        </Breadcrumb>
       </>
     );
   },

@@ -18,7 +18,7 @@ export const action: ActionFunction = async ({ request }) => {
       body: {
         content: "",
         published: false,
-        title: "",
+        title: "New post",
       },
     });
     return redirect(`/blog/editor/${data.id}`);

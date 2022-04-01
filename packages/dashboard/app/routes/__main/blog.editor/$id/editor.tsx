@@ -1,5 +1,7 @@
 import { makeRem } from "@woodshop/components";
+import { Breadcrumb } from "~/components/Breadcrumb";
 import { useMarkdownRendererContext } from "~/components/MarkdownRenderer.context";
+import { UseMatchesMatch } from "~/types/useMatches";
 import styled from "styled-components";
 
 const SDiv = styled.div`
@@ -21,6 +23,18 @@ const STextarea = styled.textarea`
     outline: none;
   }
 `;
+
+export const handle = {
+  breadcrumb: (data: UseMatchesMatch) => {
+    return (
+      <>
+        <Breadcrumb to={`/blog/editor/${data.params?.id}/editor`} end>
+          Editor
+        </Breadcrumb>
+      </>
+    );
+  },
+};
 
 export default function Page() {
   const { setMarkdownSource } = useMarkdownRendererContext();

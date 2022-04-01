@@ -1,17 +1,21 @@
-import type { GET_PostByIdApiResponse } from "@woodshop/api";
-import {
-  FormFieldGroup,
-  FormFieldText,
-  FormFieldTextarea,
-  TypographyCopy,
-} from "@woodshop/components";
+import { Breadcrumb } from "~/components/Breadcrumb";
 import { useBlogEditorSubRouteData } from "~/features/blog-editor/useBlogEditorSubRouteData";
-import { useMatches } from "remix";
+import { UseMatchesMatch } from "~/types/useMatches";
+
+export const handle = {
+  breadcrumb: (data: UseMatchesMatch) => {
+    return (
+      <>
+        <Breadcrumb to={`/blog/editor/${data.params?.id}/meta`} end>
+          Meta
+        </Breadcrumb>
+      </>
+    );
+  },
+};
 
 export default function BlogEditorPageIndex() {
   const data = useBlogEditorSubRouteData();
-
-  console.log(data);
 
   return <div>{JSON.stringify(data, null, 4)}</div>;
 }
