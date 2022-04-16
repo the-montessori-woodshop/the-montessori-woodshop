@@ -10,9 +10,7 @@ import { respondWith } from "../utils/responder";
 const router = Router({ base: "/api" });
 
 const errorHandler = (error) => {
-  console.log("ERROR HANDLER", error.message, error.status);
-  console.log("ERROR!!!");
-  console.log(error);
+  console.log("ERROR HANDLER", error.message, error.feature, error.raw.message);
   if (error instanceof ApiError) {
     return respondWith.error({
       error: error.raw as string,

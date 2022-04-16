@@ -1,8 +1,8 @@
 import { HandlePATCHRequest } from "../../types/index";
 import { ApiError } from "../../utils/error.api";
+import { FeatureError } from "../../utils/error.feature";
 import { handleRoute } from "../../utils/handleRoute";
 import { initPrisma } from "../../utils/initPrisma";
-import { logger } from "../../utils/logger/index";
 import { verifyUserExists } from "../../utils/verifyUserExists";
 import {
   PATCH_UpdatePostByIdApiParams,
@@ -30,8 +30,11 @@ export const updatePost: HandlePATCHRequest<
     });
     return post;
   } catch (error) {
-    // throw new Error(error);
-    throw new ApiError("Unable to update post", error);
+    throw new FeatureError({
+      message: "Unable to update post",
+      feature: "PatchUpdatePost",
+      error
+    });
   }
 };
 
