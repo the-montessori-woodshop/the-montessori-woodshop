@@ -1,6 +1,7 @@
 import { Post, PrismaClient } from "@prisma/client";
 
 import { HandleDELETERequest } from "../../types/index";
+import { ApiError } from "../../utils/error.api";
 import { handleRoute } from "../../utils/handleRoute";
 import { DELETE_ImageApiParams, DELETE_ImageApiResponse } from "./image.model";
 
@@ -24,8 +25,7 @@ export const deleteImage: HandleDELETERequest<
       message: "Successfully deleted"
     };
   } catch (error) {
-    // @ts-ignore
-    throw new Error(error);
+    throw new ApiError("Error when deleting image", error);
   }
 };
 

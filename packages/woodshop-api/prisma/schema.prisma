@@ -10,12 +10,16 @@ datasource db {
 }
 
 model Post {
-  id        Int     @id @default(autoincrement())
-  title     String
-  content   String?
-  published Boolean @default(false)
-  author    User    @relation(fields: [authorId], references: [id])
-  authorId  String
+  id                Int      @id @default(autoincrement())
+  title             String
+  banner_img_url    String
+  thumbnail_img_url String
+  prompt            String
+  content           String?
+  date_published    DateTime
+  published         Boolean  @default(false)
+  author            User     @relation(fields: [authorId], references: [id])
+  authorId          String
 }
 
 model User {

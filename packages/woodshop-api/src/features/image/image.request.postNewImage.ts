@@ -1,6 +1,7 @@
 import { PrismaClient } from "@prisma/client";
 
 import { HandlePOSTRequest } from "../../types";
+import { ApiError } from "../../utils/error.api";
 import { handleRoute } from "../../utils/handleRoute";
 import { postUploadFileToCFImages } from "../cloudflare/cloudflare.request.postUploadFileToCFImages";
 import { POST_NewImageApiResponse } from "./image.model";
@@ -30,7 +31,7 @@ export const postNewImage: HandlePOSTRequest<POST_NewImageApiResponse> = async (
     });
     return image;
   } catch (error) {
-    throw new Error(error as string);
+    throw new ApiError("Unable to create new image", error);
   }
 };
 

@@ -15,7 +15,9 @@ export const loader: LoaderFunction = async ({ request }) => {
       url: "/post",
     });
     return response;
-  } catch (error) {}
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 export default function BlogIndexPage() {

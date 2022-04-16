@@ -131,7 +131,6 @@ export class WoodshopClient {
     FetchSearch
   >): Promise<FetchResponse> {
     const fetchUrl = this.getUrl<FetchSearch>(url, params, search);
-    console.log(fetchUrl);
     const fetchHeaders = await this.getAuthorizationHeader(headers);
     const config = {
       headers: fetchHeaders,
@@ -221,8 +220,10 @@ export class WoodshopClient {
     try {
       const response = await fetch(fetchUrl, config);
       const data = await response.json<FetchResponse>();
+      console.log(data);
       return data;
     } catch (error) {
+      console.log(error);
       throw new Error(error as string);
     }
   }

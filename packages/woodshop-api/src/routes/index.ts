@@ -3,13 +3,33 @@ import { Router } from "itty-router";
 import { ImageRouter } from "../features/image/image.route";
 import { PostRouter } from "../features/post/post.route";
 import { UserRouter } from "../features/user/user.route";
+import { ApiError } from "../utils/error.api";
+import { AuthenticationError } from "../utils/error.auth";
+import { respondWith } from "../utils/responder";
 
 const router = Router({ base: "/api" });
 
-const errorHandler = (error: { message: string; status: number }) =>
-  new Response(error.message || "Server Error", {
-    status: error.status || 500
+const errorHandler = (error) => {
+  console.log("ERROR HANDLER", error.message, error.status);
+  console.log("ERROR!!!");
+  console.log(error);
+  if (error instanceof ApiError) {
+    return respondWith.error({
+      error: error.raw as string,
+      message: error.message
+    });
+  }
+  if (error instanceof AuthenticationError) {
+    return respondWith.unauthorized({
+      message: error.message
+    });
+  }
+  return respondWith.error({
+    // @ts-ignore
+    error: error.message,
+    message: "Unhandled error."
   });
+};
 
 router
   // Router

@@ -13,4 +13,4 @@ PostRouter
   .get("/", handleGetPosts)
   .post("/", authenticate, handlePostNewPost)
   .get("/:id", handleGetPostById)
-  .patch("/:id", handleUpdatePost);
+  .patch("/:id", authenticate, handleUpdatePost);

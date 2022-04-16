@@ -17,6 +17,10 @@ export const action: ActionFunction = async ({ request }) => {
       headers: request.headers,
       body: {
         content: "",
+        banner_img_url: "",
+        thumbnail_img_url: "",
+        date_published: new Date(),
+        prompt: "",
         published: false,
         title: "New post",
       },

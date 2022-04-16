@@ -1,6 +1,7 @@
 import { Post, PrismaClient } from "@prisma/client";
 
 import { HandlePATCHRequest } from "../../types/index";
+import { ApiError } from "../../utils/error.api";
 import { handleRoute } from "../../utils/handleRoute";
 import {
   PATCH_ImagesApiParams,
@@ -28,9 +29,7 @@ export const patchImage: HandlePATCHRequest<
     });
     return image;
   } catch (error) {
-    console.log(error);
-    // @ts-ignore
-    throw new Error(error);
+    throw new ApiError("Error when patching image", error);
   }
 };
 

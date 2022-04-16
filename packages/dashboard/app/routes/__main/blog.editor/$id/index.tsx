@@ -8,8 +8,6 @@ import { useBlogEditorSubRouteData } from "~/features/blog-editor/useBlogEditorS
 export default function BlogEditorPageIndex() {
   const data = useBlogEditorSubRouteData();
 
-  console.log(data);
-
   return (
     <FormFieldGroup>
       <FormFieldText
@@ -18,7 +16,6 @@ export default function BlogEditorPageIndex() {
         label="Title"
         placeholder="Title of the blog post"
         defaultValue={data?.title}
-        key={data?.title}
       />
       <FormFieldTextarea
         id="prompt"
@@ -26,7 +23,6 @@ export default function BlogEditorPageIndex() {
         label="Prompt"
         placeholder="Introductory text of the blog post for quick previews"
         key={data?.title}
-        defaultValue={data?.title}
       />
     </FormFieldGroup>
   );

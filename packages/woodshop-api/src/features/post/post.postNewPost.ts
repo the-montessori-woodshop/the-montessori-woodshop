@@ -24,9 +24,7 @@ export const postNewPost: HandlePOSTRequest<
     await prisma.$connect();
     const post = await prisma.post.create({
       data: {
-        title: data.title,
-        content: data.content,
-        published: data.published,
+        ...data,
         authorId: request.user.id
       }
     });

@@ -1,6 +1,7 @@
 import { PrismaClient } from "@prisma/client";
 
 import { HandlePOSTRequest } from "../../types/index";
+import { ApiError } from "../../utils/error.api";
 import { handleRoute } from "../../utils/handleRoute";
 import {
   POST_CreateOrUpdateUserApiRequest,
@@ -34,7 +35,7 @@ export const createOrUpdateUser: HandlePOSTRequest<
     });
     return user;
   } catch (error) {
-    throw new Error(error as string);
+    throw new ApiError("Unable to update user", error);
   }
 };
 

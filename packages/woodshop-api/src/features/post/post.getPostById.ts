@@ -1,6 +1,7 @@
 import { PrismaClient } from "@prisma/client";
 
 import { HandleGETRequest } from "../../types/index";
+import { ApiError } from "../../utils/error.api";
 import { handleRoute } from "../../utils/handleRoute";
 import { GET_PostByIdApiParams, GET_PostByIdApiResponse } from "./post.model";
 
@@ -22,8 +23,7 @@ export const getPostById: HandleGETRequest<
     });
     return post;
   } catch (error) {
-    // @ts-ignore
-    throw new Error(error);
+    throw new ApiError("Could not retrieve post", error);
   }
 };
 

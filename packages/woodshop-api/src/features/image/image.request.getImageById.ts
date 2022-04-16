@@ -1,6 +1,7 @@
 import { PrismaClient } from "@prisma/client";
 
 import { HandleGETRequest } from "../../types/index";
+import { ApiError } from "../../utils/error.api";
 import { handleRoute } from "../../utils/handleRoute";
 import {
   GET_ImageByIdApiParams,
@@ -25,8 +26,7 @@ export const getImageById: HandleGETRequest<
     });
     return image;
   } catch (error) {
-    // @ts-ignore
-    throw new Error(error);
+    throw new ApiError("Error when retrieving image", error);
   }
 };
 
