@@ -8,8 +8,11 @@ type MarkdownRendererContextType = {
 const MarkdownRendererContext =
   React.createContext<MarkdownRendererContextType | null>(null);
 
-export const MarkdownRendererProvider: FC = ({ children }) => {
-  const [markdownSource, setMarkdownSource] = useState("");
+export const MarkdownRendererProvider: FC<{ initMarkdownSource: string }> = ({
+  children,
+  initMarkdownSource,
+}) => {
+  const [markdownSource, setMarkdownSource] = useState(initMarkdownSource);
 
   const value = useMemo(
     () => ({

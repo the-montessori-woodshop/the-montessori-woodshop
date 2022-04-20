@@ -1,6 +1,7 @@
 import { makeRem } from "@woodshop/components";
 import { Breadcrumb } from "~/components/Breadcrumb";
 import { useMarkdownRendererContext } from "~/components/MarkdownRenderer.context";
+import { useBlogEditorSubRouteData } from "~/features/blog-editor/useBlogEditorSubRouteData";
 import { UseMatchesMatch } from "~/types/useMatches";
 import styled from "styled-components";
 
@@ -38,11 +39,13 @@ export const handle = {
 
 export default function Page() {
   const { setMarkdownSource } = useMarkdownRendererContext();
+  const data = useBlogEditorSubRouteData();
 
   return (
     <SDiv>
       <STextarea
         name="content"
+        defaultValue={data?.content || ""}
         onChange={(e) => setMarkdownSource(e.target.value)}
       />
     </SDiv>

@@ -1,5 +1,4 @@
 import { HandlePATCHRequest } from "../../types/index";
-import { ApiError } from "../../utils/error.api";
 import { FeatureError } from "../../utils/error.feature";
 import { getPrisma } from "../../utils/getPrisma";
 import { handleRoute } from "../../utils/handleRoute";
