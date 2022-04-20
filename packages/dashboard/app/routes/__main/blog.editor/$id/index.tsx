@@ -22,7 +22,7 @@ export default function BlogEditorPageIndex() {
         name="prompt"
         label="Prompt"
         placeholder="Introductory text of the blog post for quick previews"
-        key={data?.title}
+        key={data?.prompt}
       />
     </FormFieldGroup>
   );

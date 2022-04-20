@@ -1,10 +1,10 @@
 import { Router } from "itty-router";
 
 import { authenticate } from "../../middleware/middleware.authenticate";
-import { handleGetPosts } from "./post.getAllPosts";
-import { handleGetPostById } from "./post.getPostById";
-import { handlePostNewPost } from "./post.postNewPost";
+import { handleGetPosts } from "./post.request.getAllPosts";
+import { handleGetPostById } from "./post.request.getPostById";
 import { handleUpdatePost } from "./post.request.patchUpdatePost";
+import { handlePostNewPost } from "./post.request.postNewPost";
 
 export const PostRouter = Router({ base: "/api/post" });
 

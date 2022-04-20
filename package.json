@@ -51,6 +51,6 @@
     "eslint": "^8.11.0",
     "prettier": "^2.6.0",
     "rimraf": "^3.0.2",
-    "typescript": "next"
+    "typescript": "4.6.3"
   }
 }

@@ -1,8 +1,5 @@
 import { RouteHandler } from "itty-router";
 
-import { ApiError } from "./error.api";
-import { AuthenticationError } from "./error.auth";
-import { logger } from "./logger/index";
 import { respondWith } from "./responder";
 
 export const handleRoute = (fn: any) => {

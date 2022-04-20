@@ -80,9 +80,14 @@ export const loader: LoaderFunction = async ({ request, params }) => {
 
 export const action: ActionFunction = async ({ request }) => {
   const formData = await request.formData();
-  const content = formData.get("content") as string;
   const id = formData.get("id") as string;
-  const title = formData.get("title") as string;
+
+  const formDataObject = Object.fromEntries(formData.entries());
+  const body = Object.fromEntries(
+    Object.entries(formDataObject).filter(
+      ([key, value]) => Boolean(value) && key !== "id"
+    )
+  ) as unknown as PATCH_UpdatePostByIdApiRequest;
 
   try {
     const data = await api.update<
@@ -96,13 +101,8 @@ export const action: ActionFunction = async ({ request }) => {
         id,
       },
       headers: request.headers,
-      body: {
-        content,
-        title,
-        published: false,
-      },
+      body: body,
     });
-    console.log(data);
     return redirect(`/blog/editor/${data.id}`);
   } catch (error) {}
   return null;

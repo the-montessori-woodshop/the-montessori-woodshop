@@ -1,9 +1,10 @@
 import { HandlePATCHRequest } from "../../types/index";
 import { ApiError } from "../../utils/error.api";
 import { FeatureError } from "../../utils/error.feature";
+import { getPrisma } from "../../utils/getPrisma";
 import { handleRoute } from "../../utils/handleRoute";
-import { initPrisma } from "../../utils/initPrisma";
 import { verifyUserExists } from "../../utils/verifyUserExists";
+import { postLogger } from "./post.log";
 import {
   PATCH_UpdatePostByIdApiParams,
   PATCH_UpdatePostByIdApiRequest,
@@ -15,10 +16,12 @@ export const updatePost: HandlePATCHRequest<
   PATCH_UpdatePostByIdApiParams
 > = async (request) => {
   verifyUserExists(request);
+  postLogger.setLocation("patchUpdatePost");
 
   try {
     const data = await request.json<PATCH_UpdatePostByIdApiRequest>();
-    const prisma = await initPrisma();
+    const prisma = await getPrisma();
+    postLogger.info(`Patching post...`, request.params.id, data);
     const post = await prisma.post.update({
       where: {
         id: Number(request.params.id)
@@ -28,6 +31,7 @@ export const updatePost: HandlePATCHRequest<
         authorId: request.user?.id
       }
     });
+    postLogger.info(`Patching post ...successful!`, request.params.id, post);
     return post;
   } catch (error) {
     throw new FeatureError({

@@ -2,7 +2,7 @@
   "compilerOptions": {
     "target": "esnext",
     "module": "commonjs",
-    "moduleResolution": "Node12",
+    "moduleResolution": "Node",
     "esModuleInterop": true,
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
@@ -21,6 +21,6 @@
     "skipLibCheck": true,
     "incremental": true
   },
-  "include": ["src", "request.d.ts"],
+  "include": ["src", "types"],
   "exclude": ["node_modules", "dist", "test"]
 }
