@@ -16,6 +16,7 @@ export * from "./inputs/InputCheckbox";
 export * from "./inputs/InputRadio";
 export * from "./inputs/InputSearch";
 export * from "./inputs/InputFile";
+export * from "./inputs/Fieldset";
 
 export * from "./typography/TypographyCopy";
 export * from "./typography/TypographyHeading";

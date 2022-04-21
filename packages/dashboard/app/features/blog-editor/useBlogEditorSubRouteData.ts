@@ -1,4 +1,4 @@
-import { GET_PostByIdApiResponse } from "@woodshop/api";
+import { Post } from "@woodshop/api";
 import { useMatches } from "remix";
 
 export const useBlogEditorSubRouteData = () => {
@@ -7,5 +7,5 @@ export const useBlogEditorSubRouteData = () => {
     (match) => match.id === "routes/__main/blog.editor/$id"
   )?.data;
 
-  return data as GET_PostByIdApiResponse;
+  return data as Post;
 };

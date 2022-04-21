@@ -1,9 +1,6 @@
 /theme
 lib
-dist
+dist/*
+!dist/fonts
 .typescript.cache
-
-css/*
-!css/bitter.css
-!css/open-sans.css
 storybook-static

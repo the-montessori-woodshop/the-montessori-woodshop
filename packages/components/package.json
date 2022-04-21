@@ -1,42 +1,46 @@
 {
   "name": "@woodshop/components",
   "version": "1.0.0",
-  "main": "dist/index.mjs",
+  "main": "dist/index.cjs",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
+  "sideEffects": false,
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
-      "default": "./dist/index.mjs",
-      "import": "./dist/index.mjs",
-      "node": "./dist/index.mjs",
-      "require": "./dist/index.mjs"
+      "main": "./dist/index.cjs",
+      "module": "./dist/index.mjs",
+      "types": "./dist/index.d.ts"
     },
-    "./fonts/*": "./fonts/*",
-    "./css": {
-      "default": "./dist/index.css",
+    "./font/*": {
+      "import": "./dist/fonts/*",
+      "require": "./dist/fonts/*"
+    },
+    "./styles": {
       "import": "./dist/index.css",
-      "node": "./dist/index.css",
       "require": "./dist/index.css"
     }
   },
   "scripts": {
     "types": "tsc",
-    "bundle": "yarn node ./scripts/build.js",
-    "build": "yarn bundle && yarn types",
-    "build:npm": "npm run bundle && npm run types",
-    "dev": "yarn bundle --watch --watch & tsc --watch",
+    "format": "prettier --write 'src/**/*.{ts,tsx}'",
+    "dev": "yarn node --loader ts-node/esm ./scripts/build.dev.ts & yarn types --watch & yarn storybook",
+    "build": "yarn node --loader ts-node/esm ./scripts/build.prod.ts & yarn types",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "serve-storybook": "wrangler dev",
     "deploy-storybook": "wrangler publish"
   },
   "devDependencies": {
-    "@babel/core": "^7.17.8",
+    "@babel/core": "^7.17.9",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
+    "@babel/preset-typescript": "^7.16.7",
     "@cloudflare/wrangler": "^1.19.11",
     "@linaria/babel-preset": "^3.0.0-beta.15",
+    "@linaria/esbuild": "^3.0.0-beta.15",
+    "@linaria/rollup": "^3.0.0-beta.15",
+    "@linaria/shaker": "^3.0.0-beta.15",
     "@linaria/webpack-loader": "^3.0.0-beta.16",
-    "@mdx-js/react": "^2.1.0",
     "@storybook/addon-actions": "^6.4.19",
     "@storybook/addon-docs": "^6.4.19",
     "@storybook/addon-essentials": "^6.4.19",
@@ -46,6 +50,7 @@
     "@storybook/node-logger": "^6.4.19",
     "@storybook/preset-create-react-app": "^4.1.0",
     "@storybook/react": "^6.4.19",
+    "@types/node": "^17.0.25",
     "@types/react": "^17.0.42",
     "@types/react-dom": "^17.0.14",
     "@typescript-eslint/eslint-plugin": "^5.16.0",
@@ -60,6 +65,7 @@
     "react-dom": "^17.0.2",
     "rollup": "^2.70.1",
     "sass": "^1.49.9",
+    "ts-node": "^10.7.0",
     "typescript": "^4.6.2",
     "webpack": "^5.70.0"
   },
@@ -72,23 +78,13 @@
     "react-dom": "^17.0.2"
   },
   "dependencies": {
+    "@linaria/core": "^3.0.0-beta.15",
     "@linaria/react": "^3.0.0-beta.15",
     "@woodshop/icons": "^1.0.0",
     "@woodshop/illustrations": "^1.0.0",
+    "@yarnpkg/esbuild-plugin-pnp": "^3.0.0-rc.2",
     "framer-motion": "^6.2.8",
     "polished": "^4.1.4",
     "react-scripts": "^5.0.0"
-  },
-  "eslintConfig": {
-    "overrides": [
-      {
-        "files": [
-          "**/*.stories.*"
-        ],
-        "rules": {
-          "import/no-anonymous-default-export": "off"
-        }
-      }
-    ]
   }
 }

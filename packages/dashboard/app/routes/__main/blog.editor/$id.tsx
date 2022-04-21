@@ -183,8 +183,7 @@ export default function Route() {
             <PageContent>
               <SDiv2>
                 <TypographyCopy cxVariant="caption">
-                  No prompt has been written yet. Open the "Meta" tab to add a
-                  prompt.
+                  {data.prompt || "-- --"}
                 </TypographyCopy>
               </SDiv2>
             </PageContent>
@@ -206,11 +205,14 @@ export default function Route() {
                 <TabLink to="./editor" end>
                   <TabText>Editor</TabText>
                 </TabLink>
-                <TabLink to="./meta">
-                  <TabText>Meta</TabText>
+                <TabLink to="./seo">
+                  <TabText>SEO</TabText>
                 </TabLink>
                 <TabLink to="./actions">
                   <TabText>Actions</TabText>
+                </TabLink>
+                <TabLink to="./images">
+                  <TabText>Images</TabText>
                 </TabLink>
               </Tablist>
             </PageContent>
