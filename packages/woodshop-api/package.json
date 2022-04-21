@@ -10,7 +10,7 @@
     "migrate-dev": "prisma migrate dev",
     "migrate": "prisma migrate status && prisma migrate deploy",
     "push": "prisma push",
-    "dev": "wrangler dev --ip 127.0.0.1 --port 8888"
+    "dev": "wrangler dev --ip 127.0.0.1 --port 8888 & yarn types --watch"
   },
   "main": "dist/worker.js",
   "types": "dist/types/index.d.ts",

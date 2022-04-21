@@ -3,7 +3,7 @@ import type {
   POST_NewPostByIdApiResponse,
 } from "@woodshop/api";
 import { api } from "~/services/api.server";
-import type { ActionFunction, LoaderFunction} from "remix";
+import type { ActionFunction, LoaderFunction } from "remix";
 import { redirect } from "remix";
 
 export const loader: LoaderFunction = async () => redirect("/blog");
@@ -17,12 +17,6 @@ export const action: ActionFunction = async ({ request }) => {
       url: "/post",
       headers: request.headers,
       body: {
-        content: "",
-        banner_img_url: "",
-        thumbnail_img_url: "",
-        date_published: new Date(),
-        prompt: "",
-        published: false,
         title: "New post",
       },
     });

@@ -23,7 +23,7 @@ export default function BlogEditorPageIndex() {
         label="Prompt"
         placeholder="Introductory text of the blog post for quick previews"
         key={data.prompt}
-        defaultValue={data.prompt}
+        defaultValue={data.prompt || ""}
       />
       <FormFieldText
         id="banner_img_url"

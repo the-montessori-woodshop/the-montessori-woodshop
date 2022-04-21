@@ -3,7 +3,7 @@ import {
   TypographyHeading,
   makeRem,
 } from "@woodshop/components";
-import type { FC } from "react";
+import type { FC, ReactNode } from "react";
 import { forwardRef } from "react";
 import type { NavLinkProps } from "remix";
 import { NavLink } from "remix";
@@ -20,10 +20,10 @@ export const BreadcrumbSeparator: FC = () => {
   );
 };
 
-export const BreadcrumbText: FC<{ isActive?: boolean }> = ({
-  isActive = false,
-  children,
-}) => {
+export const BreadcrumbText: FC<{
+  isActive?: boolean;
+  children: ReactNode;
+}> = ({ isActive = false, children }) => {
   return (
     <TypographyHeading
       cxNode="div"
@@ -39,16 +39,17 @@ export const BreadcrumbText: FC<{ isActive?: boolean }> = ({
   );
 };
 
-export const Breadcrumb = forwardRef<HTMLAnchorElement, NavLinkProps>(
-  function Breadcrumb({ children, ...restProps }, ref) {
-    return (
-      <TopNavListItem>
-        <NavLink {...restProps} ref={ref}>
-          {({ isActive }) => (
-            <BreadcrumbText isActive={isActive}>{children}</BreadcrumbText>
-          )}
-        </NavLink>
-      </TopNavListItem>
-    );
-  }
-);
+export const Breadcrumb = forwardRef<
+  HTMLAnchorElement,
+  NavLinkProps & { children: ReactNode }
+>(function Breadcrumb({ children, ...restProps }, ref) {
+  return (
+    <TopNavListItem>
+      <NavLink {...restProps} ref={ref}>
+        {({ isActive }) => (
+          <BreadcrumbText isActive={isActive}>{children}</BreadcrumbText>
+        )}
+      </NavLink>
+    </TopNavListItem>
+  );
+});

@@ -1,4 +1,4 @@
-import type { FC } from "react";
+import type { FC, ReactNode } from "react";
 import React, { useContext, useMemo, useState } from "react";
 
 type MarkdownRendererContextType = {
@@ -9,10 +9,10 @@ type MarkdownRendererContextType = {
 const MarkdownRendererContext =
   React.createContext<MarkdownRendererContextType | null>(null);
 
-export const MarkdownRendererProvider: FC<{ initMarkdownSource: string }> = ({
-  children,
-  initMarkdownSource,
-}) => {
+export const MarkdownRendererProvider: FC<{
+  initMarkdownSource: string;
+  children: ReactNode;
+}> = ({ children, initMarkdownSource }) => {
   const [markdownSource, setMarkdownSource] = useState(initMarkdownSource);
 
   const value = useMemo(

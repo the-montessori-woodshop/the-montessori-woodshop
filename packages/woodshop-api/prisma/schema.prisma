@@ -10,16 +10,16 @@ datasource db {
 }
 
 model Post {
-  id                  Int      @id @default(autoincrement())
+  id                  Int       @id @default(autoincrement())
   title               String
   banner_img_url      String
   banner_img_alt      String?
   thumbnail_img_url   String?
   prompt              String?
   content             String?
-  date_published      DateTime
-  published           Boolean  @default(false)
-  author              User     @relation(fields: [authorId], references: [id])
+  date_published      DateTime?
+  published           Boolean   @default(false)
+  author              User      @relation(fields: [authorId], references: [id])
   authorId            String
   // Open Graph
   og_type             String?

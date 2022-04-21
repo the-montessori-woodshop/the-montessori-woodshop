@@ -18,8 +18,8 @@ import {
 } from "@woodshop/icons";
 import { TopNavBreadcrumb } from "~/components/TopNavBreadcrumb";
 import { authenticator } from "~/services/auth.server";
-import type { FC } from "react";
-import type { LoaderFunction, NavLinkProps} from "remix";
+import type { FC, ReactNode } from "react";
+import type { LoaderFunction, NavLinkProps } from "remix";
 import { NavLink, Outlet } from "remix";
 import styled from "styled-components";
 
@@ -37,7 +37,10 @@ export const loader: LoaderFunction = async ({ request }) => {
   });
 };
 
-const SideNavListItemLink: FC<NavLinkProps> = ({ children, ...restProps }) => {
+const SideNavListItemLink: FC<NavLinkProps & { children: ReactNode }> = ({
+  children,
+  ...restProps
+}) => {
   return (
     <SideNavListItem>
       <NavLink

@@ -26,6 +26,7 @@ import { PageContent } from "~/components/PageContent";
 import { PageHeader } from "~/components/PageHeader";
 import { PageTitle } from "~/components/PageTitle";
 import { api } from "~/services/api.server";
+import type { ReactNode } from "react";
 import { forwardRef } from "react";
 import type { ActionFunction, LoaderFunction, NavLinkProps } from "remix";
 import {
@@ -38,10 +39,10 @@ import {
 } from "remix";
 import styled from "styled-components";
 
-const TabLink = forwardRef<HTMLAnchorElement, NavLinkProps>(function TabLink(
-  { children, ...restProps },
-  ref
-) {
+const TabLink = forwardRef<
+  HTMLAnchorElement,
+  NavLinkProps & { children: ReactNode }
+>(function TabLink({ children, ...restProps }, ref) {
   return (
     <NavLink {...restProps} ref={ref}>
       {({ isActive }) => <Tab isActive={isActive}>{children}</Tab>}
