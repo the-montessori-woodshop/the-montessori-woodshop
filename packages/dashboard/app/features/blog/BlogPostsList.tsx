@@ -1,7 +1,7 @@
 import type { GET_PostsApiResponse } from "@woodshop/api";
 import { Illustration } from "@woodshop/components";
 import { SearchingFoundNothing } from "@woodshop/illustrations";
-import { FC } from "react";
+import type { FC } from "react";
 
 import { StateEmtpy } from "../../components/StateEmpty";
 import { BlogTable } from "./BlogTable";

@@ -1,5 +1,5 @@
 import { Button } from "@woodshop/components";
-import { FC } from "react";
+import type { FC } from "react";
 import { useFetcher } from "remix";
 
 export const BlogNewPostButton: FC = () => {

@@ -1,6 +1,7 @@
-import { makeRem, TypographyCopy } from "@woodshop/components";
-import { forwardRef, ReactNode } from "react";
-import { TableHeaderProps } from "react-table";
+import { TypographyCopy, makeRem } from "@woodshop/components";
+import type { ReactNode } from "react";
+import { forwardRef } from "react";
+import type { TableHeaderProps } from "react-table";
 import styled from "styled-components";
 
 export const TableHead = styled.div`

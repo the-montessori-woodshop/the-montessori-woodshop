@@ -2,7 +2,7 @@ import { makeRem } from "@woodshop/components";
 import { Breadcrumb } from "~/components/Breadcrumb";
 import { useMarkdownRendererContext } from "~/components/MarkdownRenderer.context";
 import { useBlogEditorSubRouteData } from "~/features/blog-editor/useBlogEditorSubRouteData";
-import { UseMatchesMatch } from "~/types/useMatches";
+import type { UseMatchesMatch } from "~/types/useMatches";
 import styled from "styled-components";
 
 const SDiv = styled.div`

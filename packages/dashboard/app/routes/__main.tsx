@@ -18,8 +18,9 @@ import {
 } from "@woodshop/icons";
 import { TopNavBreadcrumb } from "~/components/TopNavBreadcrumb";
 import { authenticator } from "~/services/auth.server";
-import { FC } from "react";
-import { LoaderFunction, NavLink, NavLinkProps, Outlet } from "remix";
+import type { FC } from "react";
+import type { LoaderFunction, NavLinkProps} from "remix";
+import { NavLink, Outlet } from "remix";
 import styled from "styled-components";
 
 const SContent = styled.main`

@@ -1,8 +1,8 @@
-import {
-  TypographyHeading,
+import type {
   TypographyHeadingElement,
   TypographyHeadingProps,
 } from "@woodshop/components";
+import { TypographyHeading } from "@woodshop/components";
 import { forwardRef } from "react";
 
 export const PageTitle = forwardRef<

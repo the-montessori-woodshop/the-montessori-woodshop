@@ -3,8 +3,10 @@ import {
   TypographyHeading,
   makeRem,
 } from "@woodshop/components";
-import { FC, forwardRef } from "react";
-import { NavLink, NavLinkProps } from "remix";
+import type { FC } from "react";
+import { forwardRef } from "react";
+import type { NavLinkProps } from "remix";
+import { NavLink } from "remix";
 
 export const BreadcrumbSeparator: FC = () => {
   return (

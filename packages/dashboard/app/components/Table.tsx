@@ -1,9 +1,11 @@
 import { useCallback, useMemo } from "react";
-import { useTable, useBlockLayout, UseTableRowProps } from "react-table";
-import { FixedSizeList } from "react-window";
+import type { UseTableRowProps } from "react-table";
+import { useBlockLayout, useTable } from "react-table";
 import AutoSizer from "react-virtualized-auto-sizer";
-import { TableHead, TableHeadTH } from "./TableHead";
+import { FixedSizeList } from "react-window";
+
 import { TableBodyTDContent, TableBodyTR } from "./TableBodyRow";
+import { TableHead, TableHeadTH } from "./TableHead";
 
 export type TableRowClickHandler<T extends Object> = (
   row: UseTableRowProps<T>["original"]

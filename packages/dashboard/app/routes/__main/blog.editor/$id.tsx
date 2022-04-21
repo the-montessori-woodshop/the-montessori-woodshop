@@ -1,4 +1,4 @@
-import {
+import type {
   GET_PostByIdApiParams,
   GET_PostByIdApiResponse,
   PATCH_UpdatePostByIdApiParams,
@@ -27,13 +27,10 @@ import { PageHeader } from "~/components/PageHeader";
 import { PageTitle } from "~/components/PageTitle";
 import { api } from "~/services/api.server";
 import { forwardRef } from "react";
-import { useState } from "react";
+import type { ActionFunction, LoaderFunction, NavLinkProps } from "remix";
 import {
-  ActionFunction,
   Form,
-  LoaderFunction,
   NavLink,
-  NavLinkProps,
   Outlet,
   redirect,
   useLoaderData,
@@ -136,7 +133,6 @@ export const action: ActionFunction = async ({ request }) => {
 export default function Route() {
   const params = useParams<GET_PostByIdApiParams>();
   const data = useLoaderData<Post>();
-  const [postContent, setPostContent] = useState(data);
 
   return (
     <MarkdownRendererProvider initMarkdownSource={data?.content || ""}>

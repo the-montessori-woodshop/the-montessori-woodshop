@@ -5,23 +5,37 @@
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "sideEffects": false,
+  "files": [
+    "dist"
+  ],
   "exports": {
     ".": {
-      "main": "./dist/index.cjs",
-      "module": "./dist/index.mjs",
-      "types": "./dist/index.d.ts"
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "node": "./dist/index.cjs",
+      "require": "./dist/index.cjs"
     },
-    "./font/*": {
-      "import": "./dist/fonts/*",
-      "require": "./dist/fonts/*"
+    "./font/bitter": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/fonts/bitter.css",
+      "node": "./dist/fonts/bitter.css",
+      "require": "./dist/fonts/bitter.css"
+    },
+    "./font/open-sans": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/fonts/open-sans.css",
+      "node": "./dist/fonts/open-sans.css",
+      "require": "./dist/fonts/open-sans.css"
     },
     "./styles": {
+      "types": "./dist/index.d.ts",
       "import": "./dist/index.css",
+      "node": "./dist/index.css",
       "require": "./dist/index.css"
     }
   },
   "scripts": {
-    "types": "tsc --project tsconfig.types.json",
+    "types": "tsc",
     "format": "prettier --write 'src/**/*.{ts,tsx}'",
     "dev": "yarn node --loader ts-node/esm ./scripts/build.dev.ts & yarn types --watch & yarn storybook",
     "build": "yarn node --loader ts-node/esm ./scripts/build.prod.ts & yarn types",

@@ -5,7 +5,8 @@ import { PageContent } from "~/components/PageContent";
 import { PageHeader } from "~/components/PageHeader";
 import { PageTitle } from "~/components/PageTitle";
 import { api } from "~/services/api.server";
-import { LoaderFunction, useLoaderData } from "remix";
+import type { LoaderFunction} from "remix";
+import { useLoaderData } from "remix";
 import { BlogNewPostButton } from "~/features/blog/BlogNewPostButton";
 
 export const loader: LoaderFunction = async ({ request }) => {

@@ -11038,7 +11038,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "dashboard@workspace:packages/dashboard"
   dependencies:
+    "@babel/core": ^7.17.9
     "@cloudflare/workers-types": ^3.6.0
+    "@linaria/core": ^3.0.0-beta.15
+    "@linaria/react": ^3.0.0-beta.15
     "@remix-run/cloudflare-pages": ^1.4.1
     "@remix-run/dev": ^1.4.1
     "@remix-run/eslint-config": ^1.4.1
@@ -11058,8 +11061,10 @@ __metadata:
     cross-env: ^7.0.3
     eslint: ^8.13.0
     form-data: ^4.0.0
+    framer-motion: ^6.3.0
     markdown-it: ^12.3.2
     npm-run-all: ^4.1.5
+    polished: ^4.2.2
     react: ^17.0.2
     react-dom: ^17.0.2
     react-is: ^17.0.2

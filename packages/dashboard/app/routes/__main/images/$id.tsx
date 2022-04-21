@@ -25,13 +25,14 @@ import { ImagesGridEditTitle } from "~/components/ImagesGridEditTitle";
 import { PageHeader } from "~/components/PageHeader";
 import { PageTitle } from "~/components/PageTitle";
 import { api } from "~/services/api.server";
-import { UseMatchesMatch } from "~/types/useMatches";
+import type { UseMatchesMatch } from "~/types/useMatches";
 import { dateFactory } from "~/utils/date-factory";
 import { useCallback, useEffect } from "react";
-import {
+import type {
   ActionFunction,
+  LoaderFunction} from "remix";
+import {
   Form,
-  LoaderFunction,
   redirect,
   useFormAction,
   useLoaderData,

@@ -1,17 +1,18 @@
 // @ts-ignore
-import stylesUrl from "@woodshop/components/css";
-import fontBitterUrl from "@woodshop/components/fonts/bitter.css";
-import fontOpenSansUrl from "@woodshop/components/fonts/open-sans.css";
+import fontBitterUrl from "@woodshop/components/font/bitter";
+// @ts-ignore
+import fontOpenSansUrl from "@woodshop/components/font/open-sans";
+// @ts-ignore
+import stylesUrl from "@woodshop/components/styles";
 import {
   Links,
-  LinksFunction,
   LiveReload,
   Meta,
   Outlet,
   Scripts,
   ScrollRestoration,
 } from "remix";
-import type { MetaFunction } from "remix";
+import type { LinksFunction, MetaFunction } from "remix";
 
 import rootUrl from "./root.css";
 

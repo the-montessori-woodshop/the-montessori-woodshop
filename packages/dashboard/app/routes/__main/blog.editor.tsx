@@ -1,7 +1,5 @@
-import { makeRem } from "@woodshop/components";
 import { Breadcrumb, BreadcrumbSeparator } from "~/components/Breadcrumb";
-import { MarkdownRendererProvider } from "~/components/MarkdownRenderer.context";
-import { UseMatchesMatch } from "~/types/useMatches";
+import type { UseMatchesMatch } from "~/types/useMatches";
 import { Outlet } from "remix";
 import styled from "styled-components";
 

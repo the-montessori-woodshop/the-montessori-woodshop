@@ -1,5 +1,6 @@
 import { TypographyCopy, TypographyHeading } from "@woodshop/components";
-import { ReactNode, forwardRef } from "react";
+import type { ReactNode } from "react";
+import { forwardRef } from "react";
 import styled from "styled-components";
 
 export type StateEmtpyPrps = {

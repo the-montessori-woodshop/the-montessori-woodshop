@@ -1,5 +1,5 @@
 import { Breadcrumb } from "~/components/Breadcrumb";
-import { UseMatchesMatch } from "~/types/useMatches";
+import type { UseMatchesMatch } from "~/types/useMatches";
 
 export const handle = {
   breadcrumb: (data: UseMatchesMatch) => {

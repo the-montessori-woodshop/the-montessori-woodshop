@@ -1,4 +1,5 @@
-import React, { FC, useContext, useMemo, useState } from "react";
+import type { FC } from "react";
+import React, { useContext, useMemo, useState } from "react";
 
 type MarkdownRendererContextType = {
   markdownSource: string;

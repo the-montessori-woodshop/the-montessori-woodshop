@@ -5,7 +5,8 @@ import {
   TypographyHeading,
 } from "@woodshop/components";
 import { authenticator } from "~/services/auth.server";
-import { Form, LinksFunction, LoaderFunction } from "remix";
+import type { LinksFunction, LoaderFunction } from "remix";
+import { Form } from "remix";
 
 import stylesUrl from "../styles/login.route.css";
 

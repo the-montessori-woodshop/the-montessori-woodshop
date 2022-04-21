@@ -1,7 +1,9 @@
 import { TypographyCopy, makeRem } from "@woodshop/components";
 import clsx from "clsx";
-import React, { ReactNode, forwardRef } from "react";
-import { NavLink, NavLinkProps } from "remix";
+import type { ReactNode} from "react";
+import React, { forwardRef } from "react";
+import type { NavLinkProps } from "remix";
+import { NavLink } from "remix";
 import styled from "styled-components";
 
 export const BlogNav = styled.ul``;

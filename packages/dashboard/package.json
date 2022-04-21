@@ -5,7 +5,7 @@
   "license": "",
   "sideEffects": false,
   "scripts": {
-    "postinstall": "remix setup cloudflare-pages",
+    "lint": "yarn eslint --ext .tsx,.ts ./app --fix",
     "build": "cross-env NODE_ENV=production remix build",
     "dev:remix": "cross-env NODE_ENV=development remix watch",
     "dev:wrangler": "cross-env NODE_ENV=development wrangler pages dev ./public",
@@ -13,6 +13,8 @@
     "start": "cross-env NODE_ENV=production npm run dev:wrangler"
   },
   "dependencies": {
+    "@linaria/core": "^3.0.0-beta.15",
+    "@linaria/react": "^3.0.0-beta.15",
     "@remix-run/cloudflare-pages": "^1.4.1",
     "@remix-run/react": "^1.4.1",
     "@remix-run/server-runtime": "^1.4.1",
@@ -22,7 +24,9 @@
     "@woodshop/illustrations": "workspace:^",
     "clsx": "^1.1.1",
     "form-data": "^4.0.0",
+    "framer-motion": "^6.3.0",
     "markdown-it": "^12.3.2",
+    "polished": "^4.2.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-is": "^17.0.2",
@@ -35,6 +39,7 @@
     "styled-components": "5.3.5"
   },
   "devDependencies": {
+    "@babel/core": "^7.17.9",
     "@cloudflare/workers-types": "^3.6.0",
     "@remix-run/dev": "^1.4.1",
     "@remix-run/eslint-config": "^1.4.1",

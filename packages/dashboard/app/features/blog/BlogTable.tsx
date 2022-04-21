@@ -1,7 +1,9 @@
 import type { GET_PostsApiResponse, Post } from "@woodshop/api";
-import { FC, useCallback, useMemo } from "react";
-import { Column } from "react-table";
-import { Table, TableRowClickHandler } from "~/components/Table";
+import type { FC} from "react";
+import { useCallback, useMemo } from "react";
+import type { Column } from "react-table";
+import type { TableRowClickHandler } from "~/components/Table";
+import { Table } from "~/components/Table";
 import { Chip } from "~/components/Chip";
 import { ChipText } from "~/components/ChipText";
 import { useNavigate } from "remix";

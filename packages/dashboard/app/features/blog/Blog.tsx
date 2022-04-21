@@ -1,12 +1,8 @@
 import type { Post } from "@woodshop/api";
-import {
-  TypographyCopy,
-  TypographyHeading,
-  makeRem,
-} from "@woodshop/components";
+import { TypographyHeading, makeRem } from "@woodshop/components";
 import { dateFactory } from "~/utils/date-factory";
 import MarkdownIt from "markdown-it";
-import { FC } from "react";
+import type { FC } from "react";
 import styled from "styled-components";
 
 const md = new MarkdownIt();

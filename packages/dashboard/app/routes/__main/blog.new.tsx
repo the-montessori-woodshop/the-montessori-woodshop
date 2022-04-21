@@ -1,9 +1,10 @@
-import {
+import type {
   POST_NewPostByIdApiRequest,
   POST_NewPostByIdApiResponse,
 } from "@woodshop/api";
 import { api } from "~/services/api.server";
-import { ActionFunction, LoaderFunction, redirect } from "remix";
+import type { ActionFunction, LoaderFunction} from "remix";
+import { redirect } from "remix";
 
 export const loader: LoaderFunction = async () => redirect("/blog");
 

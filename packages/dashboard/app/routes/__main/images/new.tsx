@@ -17,8 +17,9 @@ import { PageHeader } from "~/components/PageHeader";
 import { PageTitle } from "~/components/PageTitle";
 import { api } from "~/services/api.server";
 import { useCallback } from "react";
+import type {
+  ActionFunction} from "remix";
 import {
-  ActionFunction,
   Form,
   redirect,
   useNavigate,

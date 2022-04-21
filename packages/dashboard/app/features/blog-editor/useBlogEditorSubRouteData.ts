@@ -1,4 +1,4 @@
-import { Post } from "@woodshop/api";
+import type { Post } from "@woodshop/api";
 import { useMatches } from "remix";
 
 export const useBlogEditorSubRouteData = () => {
