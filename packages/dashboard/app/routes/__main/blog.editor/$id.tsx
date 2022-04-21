@@ -4,6 +4,7 @@ import {
   PATCH_UpdatePostByIdApiParams,
   PATCH_UpdatePostByIdApiRequest,
   PATCH_UpdatePostByIdApiResponse,
+  Post,
 } from "@woodshop/api";
 import {
   Button,
@@ -26,6 +27,7 @@ import { PageHeader } from "~/components/PageHeader";
 import { PageTitle } from "~/components/PageTitle";
 import { api } from "~/services/api.server";
 import { forwardRef } from "react";
+import { useState } from "react";
 import {
   ActionFunction,
   Form,
@@ -133,7 +135,8 @@ export const action: ActionFunction = async ({ request }) => {
 
 export default function Route() {
   const params = useParams<GET_PostByIdApiParams>();
-  const data = useLoaderData<GET_PostByIdApiResponse>();
+  const data = useLoaderData<Post>();
+  const [postContent, setPostContent] = useState(data);
 
   return (
     <MarkdownRendererProvider initMarkdownSource={data?.content || ""}>
@@ -219,7 +222,7 @@ export default function Route() {
       </EditorLayoutContent>
       <EditorLayoutPreview>
         <ELayoutPreviewCard>
-          <MarkdownRenderer data={data} />
+          <MarkdownRenderer post={data} />
         </ELayoutPreviewCard>
       </EditorLayoutPreview>
     </MarkdownRendererProvider>

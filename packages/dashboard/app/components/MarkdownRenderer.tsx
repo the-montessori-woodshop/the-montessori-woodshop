@@ -1,5 +1,5 @@
-import { GET_PostByIdApiResponse } from "@woodshop/api";
-import { BlogContent } from "~/features/blog/BlogContent";
+import { Post } from "@woodshop/api";
+import { Blog } from "~/features/blog/Blog";
 import MarkdownIt from "markdown-it";
 import { FC } from "react";
 
@@ -7,18 +7,10 @@ import { useMarkdownRendererContext } from "./MarkdownRenderer.context";
 
 const md = new MarkdownIt();
 
-export const MarkdownRenderer: FC<{ blogPost: GET_PostByIdApiResponse }> = ({
-  blogPost,
+export const MarkdownRenderer: FC<{ post: Post }> = ({
+  post: { content, ...restPost },
 }) => {
   const { markdownSource } = useMarkdownRendererContext();
 
-  return (
-    <BlogContent>
-      <div
-        dangerouslySetInnerHTML={{
-          __html: md.render(markdownSource),
-        }}
-      />
-    </BlogContent>
-  );
+  return <Blog {...restPost} content={markdownSource} />;
 };
