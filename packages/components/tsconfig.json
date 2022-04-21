@@ -75,5 +75,5 @@
     "babel.config.cjs",
     ".eslintrc.cjs"
   ],
-  "exclude": ["alerts-toasts"]
+  "exclude": ["alerts-toasts", "dist"]
 }

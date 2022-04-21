@@ -21,7 +21,7 @@
     }
   },
   "scripts": {
-    "types": "tsc",
+    "types": "tsc --project tsconfig.types.json",
     "format": "prettier --write 'src/**/*.{ts,tsx}'",
     "dev": "yarn node --loader ts-node/esm ./scripts/build.dev.ts & yarn types --watch & yarn storybook",
     "build": "yarn node --loader ts-node/esm ./scripts/build.prod.ts & yarn types",

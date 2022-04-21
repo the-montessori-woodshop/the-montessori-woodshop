@@ -9,8 +9,9 @@ import React, {
 } from "react";
 import { forwardRef } from "react";
 
-import { Icon, TypographyCopy } from "../../atoms";
+import { Icon } from "../../atoms/icons-illustrations/Icon";
 import { InputFile } from "../../atoms/inputs/InputFile";
+import { TypographyCopy } from "../../atoms/typography/TypographyCopy";
 
 const SLabel = styled.label`
   position: relative;

@@ -1,11 +1,8 @@
 import React, { forwardRef, memo, useMemo } from "react";
 
-import {
-  InputLabel,
-  InputRadio,
-  InputRadioProps,
-  InputWrapper
-} from "../../atoms";
+import { InputLabel } from "../../atoms/inputs/InputLabel";
+import { InputRadio, InputRadioProps } from "../../atoms/inputs/InputRadio";
+import { InputWrapper } from "../../atoms/inputs/InputWrapper";
 
 export type FormFieldRadioProps = Omit<InputRadioProps, "id"> & {
   id: string;

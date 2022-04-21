@@ -1,7 +1,10 @@
 import React from "react";
 import { forwardRef } from "react";
 
-import { TypographyCopy, TypographyCopyProps } from "../../atoms";
+import {
+  TypographyCopy,
+  TypographyCopyProps
+} from "../../atoms/typography/TypographyCopy";
 
 export const TabText = forwardRef<HTMLDivElement, TypographyCopyProps>(
   function TabText({ style, children, ...restProps }, ref) {

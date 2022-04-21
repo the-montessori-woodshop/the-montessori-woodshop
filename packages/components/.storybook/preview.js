@@ -1,3 +1,5 @@
+import { globals } from "../src/theme/theme.globals";
+
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
   controls: {
@@ -7,3 +9,17 @@ export const parameters = {
     }
   }
 };
+
+export const decorators = [
+  (Story) => (
+    <div
+      className={globals}
+      style={{
+        height: "100%",
+        width: "100%"
+      }}
+    >
+      <Story />
+    </div>
+  )
+];

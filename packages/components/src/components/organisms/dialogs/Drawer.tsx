@@ -3,7 +3,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { rgba } from "polished";
 import React, { FC, ReactNode, forwardRef, memo } from "react";
 
-import { useDevice } from "../../utils/useDevice";
+import { useDevice } from "../../../utils/useDevice";
 import { Dialog, DialogRef, useDialogContext } from "./Dialog";
 
 export type DrawerProps = {

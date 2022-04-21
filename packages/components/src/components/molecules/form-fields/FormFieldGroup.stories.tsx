@@ -1,7 +1,7 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import React from "react";
 
-import { Fieldset } from "../../atoms";
+import { Fieldset } from "../../atoms/inputs/Fieldset";
 import { FormFieldEmail } from "./FormFieldEmail";
 import { FormFieldGroup } from "./FormFieldGroup";
 import { FormFieldPassword } from "./FormFieldPassword";

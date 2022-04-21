@@ -110,13 +110,13 @@ const SButtonCSS = css`
   &${cxSize["large"]} {
     height: ${makeRem(44)};
     font-size: ${makeRem(16)};
-    font-weight: 600;
+    font-weight: 500;
   }
 
   &${cxSize["small"]} {
     height: ${makeRem(32)};
     font-size: ${makeRem(12)};
-    font-weight: 600;
+    font-weight: 500;
   }
 `;
 

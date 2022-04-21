@@ -2,7 +2,7 @@ import { css } from "@linaria/core";
 
 import { makeRem } from "./theme.utils";
 
-export default css`
+export const globals = css`
   :global() {
     :root {
       /* Font & Typography */

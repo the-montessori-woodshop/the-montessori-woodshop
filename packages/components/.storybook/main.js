@@ -10,7 +10,7 @@ module.exports = {
   core: {
     builder: "webpack5"
   },
-  staticDirs: ["./public"],
+  staticDirs: [path.resolve(__dirname, "./public")],
   webpackFinal: (config) => {
     config.module.rules.push({
       test: /\.(ts|js|tsx|jsx)$/,
@@ -22,7 +22,7 @@ module.exports = {
             sourceMap: process.env.NODE_ENV !== "production",
             extension: ".css",
             babelOptions: {
-              configFile: path.resolve(__dirname, "./babel.config.js")
+              configFile: path.resolve(__dirname, "../babel.config.cjs")
             }
           }
         }
