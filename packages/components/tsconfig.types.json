@@ -6,5 +6,6 @@
     "declarationDir": "./dist",
     "outDir": "./dist",
     "emitDeclarationOnly": true
-  }
+  },
+  "include": ["src/index.ts"]
 }
