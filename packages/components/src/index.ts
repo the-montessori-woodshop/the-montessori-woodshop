@@ -39,10 +39,12 @@ export * from "./components/organisms/top-nav";
 
 // 4. Templates
 export * from "./components/templates/page-section";
+export * from "./components/templates/blog";
 
 // Utils
 export * from "./utils/useDetectOutsideClick";
 export * from "./utils/useDevice";
+export * from "./utils/date-factory";
 
 // Theme
 export * from "./theme/theme.globals";

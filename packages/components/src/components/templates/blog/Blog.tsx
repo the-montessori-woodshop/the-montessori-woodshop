@@ -1,9 +1,12 @@
+import { styled } from "@linaria/react";
 import type { Post } from "@woodshop/api";
-import { TypographyHeading, makeRem } from "@woodshop/components";
-import { dateFactory } from "~/utils/date-factory";
 import MarkdownIt from "markdown-it";
 import type { FC } from "react";
-import styled from "styled-components";
+import React from "react";
+
+import { makeRem } from "../../../theme/theme.utils";
+import { dateFactory } from "../../../utils/date-factory";
+import { TypographyHeading } from "../../atoms/typography/TypographyHeading";
 
 const md = new MarkdownIt();
 
@@ -87,7 +90,7 @@ export const Blog: FC<Post> = ({
   date_published,
   title,
   banner_img_url,
-  content,
+  content
 }) => {
   return (
     <BlogContainer>
@@ -102,7 +105,7 @@ export const Blog: FC<Post> = ({
             color: "var(--color-grey5)",
             height: makeRem(44),
             display: "inline-block",
-            borderBottom: `${makeRem(1)} solid var(--color-grey4)`,
+            borderBottom: `${makeRem(1)} solid var(--color-grey4)`
           }}
         >
           {date_published ? dateFactory(date_published, "longDate") : "-- --"}
@@ -116,7 +119,7 @@ export const Blog: FC<Post> = ({
       </BlogHeader>
       <BlogContent
         dangerouslySetInnerHTML={{
-          __html: md.render(content || ""),
+          __html: md.render(content || "")
         }}
       />
     </BlogContainer>

@@ -8,24 +8,24 @@ import { nodeExternalsPlugin } from "esbuild-node-externals";
 
 const __dirname = url.fileURLToPath(new URL(".", import.meta.url));
 
-const repoRoot = path.resolve(__dirname, "../");
-
 type OutputFormats = "esm" | "cjs";
 const formats: OutputFormats[] = ["esm", "cjs"];
 
 function esbuildConfig({
+  rootDir,
   outputFormat,
   isProd,
   watch
 }: {
+  rootDir: string;
   outputFormat: OutputFormats;
   isProd: boolean;
   watch: boolean;
 }) {
   esbuild
     .build({
-      entryPoints: [path.resolve(repoRoot, "./src/index.ts")],
-      outdir: path.resolve(repoRoot, "./dist"),
+      entryPoints: [path.resolve(rootDir, "./src/index.ts")],
+      outdir: path.resolve(rootDir, "./dist"),
       outExtension: {
         ".js": outputFormat === "cjs" ? ".cjs" : ".mjs"
       },
@@ -53,7 +53,7 @@ function esbuildConfig({
       format: outputFormat === "esm" ? "esm" : "cjs",
       target: "esnext",
       jsx: "transform",
-      tsconfig: path.resolve(repoRoot, "./tsconfig.json"),
+      tsconfig: path.resolve(rootDir, "./tsconfig.json"),
       allowOverwrite: true,
       plugins: [
         pnpPlugin(),
@@ -64,7 +64,7 @@ function esbuildConfig({
           sourceMap: isProd,
           displayName: !isProd,
           babelOptions: {
-            configFile: path.resolve(repoRoot, "./babel.config.cjs")
+            configFile: path.resolve(__dirname, "../babel.config.cjs")
           }
         })
       ]
@@ -89,13 +89,16 @@ function esbuildConfig({
 
 export const build = ({
   isProd,
+  rootDir,
   watch = false
 }: {
+  rootDir: string;
   isProd: boolean;
   watch?: boolean;
 }) => {
   formats.forEach((format) =>
     esbuildConfig({
+      rootDir,
       outputFormat: format,
       isProd,
       watch

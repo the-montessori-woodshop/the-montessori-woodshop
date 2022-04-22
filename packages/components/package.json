@@ -37,24 +37,15 @@
   "scripts": {
     "types": "tsc",
     "format": "prettier --write 'src/**/*.{ts,tsx}'",
-    "dev": "yarn node --loader ts-node/esm ./scripts/build.dev.ts & yarn types --watch & yarn storybook",
-    "build": "yarn node --loader ts-node/esm ./scripts/build.prod.ts & yarn types",
+    "dev": "yarn node ./scripts/build.dev.mjs & yarn types --watch & yarn storybook",
+    "build": "yarn node ./scripts/build.prod.mjs & yarn types",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "serve-storybook": "wrangler dev",
     "deploy-storybook": "wrangler publish"
   },
   "devDependencies": {
-    "@babel/core": "^7.17.9",
-    "@babel/preset-env": "^7.16.11",
-    "@babel/preset-react": "^7.16.7",
-    "@babel/preset-typescript": "^7.16.7",
     "@cloudflare/wrangler": "^1.19.12",
-    "@linaria/babel-preset": "^3.0.0-beta.15",
-    "@linaria/esbuild": "^3.0.0-beta.15",
-    "@linaria/rollup": "^3.0.0-beta.15",
-    "@linaria/shaker": "^3.0.0-beta.15",
-    "@linaria/webpack-loader": "^3.0.0-beta.16",
     "@storybook/addon-actions": "^6.4.22",
     "@storybook/addon-docs": "^6.4.22",
     "@storybook/addon-essentials": "^6.4.22",
@@ -98,9 +89,11 @@
   "dependencies": {
     "@linaria/core": "^3.0.0-beta.15",
     "@linaria/react": "^3.0.0-beta.15",
+    "@woodshop/builder": "workspace:^",
     "@woodshop/icons": "^1.0.0",
     "@woodshop/illustrations": "^1.0.0",
     "framer-motion": "^6.3.0",
+    "markdown-it": "^13.0.0",
     "polished": "^4.2.2",
     "react": "17.0.2",
     "react-dom": "17.0.2"

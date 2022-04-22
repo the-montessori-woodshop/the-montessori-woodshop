@@ -7220,7 +7220,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@woodshop/builder@^1.0.0, @woodshop/builder@workspace:packages/builder":
+"@woodshop/builder@^1.0.0, @woodshop/builder@workspace:^, @woodshop/builder@workspace:packages/builder":
   version: 0.0.0-use.local
   resolution: "@woodshop/builder@workspace:packages/builder"
   dependencies:
@@ -7247,6 +7247,7 @@ __metadata:
     rollup-plugin-postcss: ^4.0.2
     rollup-plugin-scss: ^3.0.0
     sass: ^1.50.1
+    ts-node: ^10.7.0
     tslib: ^2.3.1
     typescript: ^4.6.3
   languageName: unknown
@@ -7282,6 +7283,7 @@ __metadata:
     "@types/react-dom": 17.0.9
     "@typescript-eslint/eslint-plugin": ^5.20.0
     "@typescript-eslint/parser": ^5.20.0
+    "@woodshop/builder": "workspace:^"
     "@woodshop/icons": ^1.0.0
     "@woodshop/illustrations": ^1.0.0
     "@yarnpkg/esbuild-plugin-pnp": ^3.0.0-rc.2
@@ -7292,6 +7294,7 @@ __metadata:
     eslint-plugin-react: ^7.29.4
     eslint-plugin-storybook: ^0.5.11
     framer-motion: ^6.3.0
+    markdown-it: ^13.0.0
     polished: ^4.2.2
     react: 17.0.2
     react-dom: 17.0.2
@@ -12029,7 +12032,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"entities@npm:^3.0.1":
+"entities@npm:^3.0.1, entities@npm:~3.0.1":
   version: 3.0.1
   resolution: "entities@npm:3.0.1"
   checksum: aaf7f12033f0939be91f5161593f853f2da55866db55ccbf72f45430b8977e2b79dbd58c53d0fdd2d00bd7d313b75b0968d09f038df88e308aa97e39f9456572
@@ -18475,6 +18478,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"linkify-it@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "linkify-it@npm:4.0.0"
+  dependencies:
+    uc.micro: ^1.0.1
+  checksum: 40b7b02482ecf2f9f7a4b1e276ed75028ba4e356c1ee3af88457d08e04692dfa0ebaa93ccfd6ef09ae072927d640b47a3ba5a2a62ceb0918619f4cedc36b3f9b
+  languageName: node
+  linkType: hard
+
 "listr-input@npm:^0.2.1":
   version: 0.2.1
   resolution: "listr-input@npm:0.2.1"
@@ -19039,6 +19051,21 @@ __metadata:
   bin:
     markdown-it: bin/markdown-it.js
   checksum: 890555711c1c00fa03b936ca2b213001a3b9b37dea140d8445ae4130ce16628392aad24b12e2a0a9935336ca5951f2957a38f4e5309a2e38eab44e25ff32a41e
+  languageName: node
+  linkType: hard
+
+"markdown-it@npm:^13.0.0":
+  version: 13.0.0
+  resolution: "markdown-it@npm:13.0.0"
+  dependencies:
+    argparse: ^2.0.1
+    entities: ~3.0.1
+    linkify-it: ^4.0.0
+    mdurl: ^1.0.1
+    uc.micro: ^1.0.5
+  bin:
+    markdown-it: bin/markdown-it.js
+  checksum: aa355b3f08928c746bda88c19602152d8af70d5eee3caca61a66065e1878bdd2074b2d73947b6ed5dcc6f975a9560b6c026044c4d80cd861d5d5d6757093eaba
   languageName: node
   linkType: hard
 
@@ -25516,12 +25543,6 @@ __metadata:
   checksum: 4e820444cb79727bb302d94dafe07999cce18b6026e4866583466821b3d246403034bc46085e1f4b63ec99491b637540a7c74fb2a66c5c4287700ec357d8af86
   languageName: node
   linkType: hard
-
-"scripts-ce2b56@workspace:packages/components/scripts":
-  version: 0.0.0-use.local
-  resolution: "scripts-ce2b56@workspace:packages/components/scripts"
-  languageName: unknown
-  linkType: soft
 
 "scrypt-kdf@npm:^2.0.1":
   version: 2.0.1

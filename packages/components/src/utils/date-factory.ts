@@ -8,7 +8,7 @@ const longDays = [
   "Wednesday",
   "Thursday",
   "Friday",
-  "Saturday",
+  "Saturday"
 ];
 
 export type dateFormatTypes =
@@ -66,7 +66,7 @@ export const time: DateFn = (date) => {
   const formattedTime = date.toLocaleString("en-US", {
     hour: "numeric",
     minute: "numeric",
-    hour12: true,
+    hour12: true
   });
   return formattedTime;
 };
@@ -128,7 +128,7 @@ const dateFnMap: {
   shortDateAndTime,
   dateAndTime,
   longDateAndTime,
-  downloadTimeStamp,
+  downloadTimeStamp
 };
 
 const isDate = (date: Date): boolean => {

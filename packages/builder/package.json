@@ -2,8 +2,13 @@
   "name": "@woodshop/builder",
   "version": "1.0.0",
   "description": "Webpack builds to be used throughout different projects for different reasons",
-  "main": "./rollup.config.cjs",
-  "module": "./rollup.config.cjs",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "/dist/index.d.ts",
+  "type": "module",
+  "scripts": {
+    "build": "yarn tsc"
+  },
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/machineq/asset-tracker.git"
@@ -38,6 +43,7 @@
     "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-scss": "^3.0.0",
     "sass": "^1.50.1",
+    "ts-node": "^10.7.0",
     "tslib": "^2.3.1",
     "typescript": "^4.6.3"
   }
