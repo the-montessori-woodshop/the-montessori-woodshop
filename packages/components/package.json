@@ -45,6 +45,7 @@
     "deploy-storybook": "wrangler publish"
   },
   "devDependencies": {
+    "@babel/core": "^7.17.9",
     "@cloudflare/wrangler": "^1.19.12",
     "@storybook/addon-actions": "^6.4.22",
     "@storybook/addon-docs": "^6.4.22",
@@ -63,17 +64,13 @@
     "@woodshop/builder": "workspace:^",
     "@yarnpkg/esbuild-plugin-pnp": "^3.0.0-rc.2",
     "babel-loader": "^8.2.5",
-    "clsx": "^1.1.1",
-    "esbuild": "^0.14.37",
-    "eslint": "8.13.0",
+    "esbuild": "^0.14.38",
+    "eslint": "8.14.0",
     "eslint-plugin-react": "^7.29.4",
     "eslint-plugin-storybook": "^0.5.11",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-scripts": "^5.0.1",
-    "rollup": "^2.70.2",
-    "sass": "^1.50.1",
-    "ts-node": "^10.7.0",
     "typescript": "^4.6.3",
     "webpack": "^5.72.0"
   },
@@ -84,6 +81,7 @@
     "@woodshop/illustrations": "workspace:^",
     "clsx": "^1.1.1",
     "framer-motion": "^6.2.6",
+    "markdown-it": "^13.0.0",
     "react": "17.0.2",
     "react-dom": "17.0.2"
   },
@@ -92,9 +90,9 @@
     "@linaria/react": "^3.0.0-beta.15",
     "@woodshop/icons": "workspace:^",
     "@woodshop/illustrations": "workspace:^",
-    "framer-motion": "^6.3.0",
+    "clsx": "^1.1.1",
+    "framer-motion": "^6.3.1",
     "markdown-it": "^13.0.0",
-    "polished": "^4.2.2",
     "react": "17.0.2",
     "react-dom": "17.0.2"
   }

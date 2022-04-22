@@ -1,6 +1,5 @@
 import { css } from "@linaria/core";
 import { AnimatePresence, motion } from "framer-motion";
-import { rgba } from "polished";
 import React, { FC, ReactNode, forwardRef, memo } from "react";
 
 import { useDevice } from "../../../utils/useDevice";
@@ -15,7 +14,7 @@ const CSSDrawerContent = css`
   top: 0;
   bottom: 0;
   background: var(--color-white);
-  box-shadow: -6px 0 8px 5px ${rgba("#5f5a5a", 0.34)};
+  box-shadow: -6px 0 8px 5px rgba(95, 90, 90, 0.34);
   display: flex;
   flex-direction: column;
   z-index: 10000;

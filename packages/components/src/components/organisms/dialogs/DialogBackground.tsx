@@ -1,7 +1,6 @@
 import { css } from "@linaria/core";
 import clsx from "clsx";
 import { AnimatePresence, motion } from "framer-motion";
-import { rgba } from "polished";
 import React, { FC } from "react";
 
 import { DialogContextType } from "./Dialog";
@@ -15,7 +14,7 @@ const CSSDialogBackground = css`
   top: 0;
   bottom: 0;
   z-index: 10000;
-  background: ${rgba("#5f5a5a", 0.77)};
+  background: rgba(95, 90, 90, 0.77);
 `;
 
 export const DialogBackground: FC<DialogBackgroundProps> = ({
