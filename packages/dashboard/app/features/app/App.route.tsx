@@ -19,8 +19,8 @@ import {
 } from "@woodshop/icons";
 import { TopNavBreadcrumb } from "components/TopNavBreadcrumb";
 
-import { createRouteLinkStyles } from "../routes/routes.createRouteLinkStyles";
-import type { RemixFeatureRoute } from "../routes/routes.types";
+import { createRouteLinkStyles } from "../_routes/routes.createRouteLinkStyles";
+import type { RemixFeatureRoute } from "../_routes/routes.types";
 import routeStyles from "./App.css";
 import { SideNavListItemLink } from "./AppSideNavListItem";
 

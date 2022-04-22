@@ -8,8 +8,8 @@ import { ImagesGridMainTitle } from "components/ImagesGridMainTitle";
 import { PageHeader } from "components/PageHeader";
 import { PageTitle } from "components/PageTitle";
 
-import { createRouteLinkStyles } from "../routes/routes.createRouteLinkStyles";
-import type { RemixFeatureRoute } from "../routes/routes.types";
+import { createRouteLinkStyles } from "../_routes/routes.createRouteLinkStyles";
+import type { RemixFeatureRoute } from "../_routes/routes.types";
 import routeStyles from "./AppImages.css";
 
 export const AppImages: RemixFeatureRoute = () => {

@@ -26,7 +26,7 @@ import { PageContent } from "~/components/page/PageContent";
 import { PageHeader } from "~/components/page/PageHeader";
 import { PageTitle } from "~/components/page/PageTitle";
 import { TabLink } from "~/components/tab/TabLink";
-import { createRouteLinkStyles } from "~/features/routes/routes.createRouteLinkStyles";
+import { createRouteLinkStyles } from "~/features/_routes/routes.createRouteLinkStyles";
 import { api } from "~/services/api.server";
 import type { ActionFunction, LoaderFunction } from "remix";
 import { Form, Outlet, redirect, useLoaderData, useParams } from "remix";

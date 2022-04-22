@@ -6,8 +6,8 @@ import {
   TypographyHeading,
 } from "@woodshop/components";
 
-import { createRouteLinkStyles } from "../routes/routes.createRouteLinkStyles";
-import type { RemixFeatureRoute } from "../routes/routes.types";
+import { createRouteLinkStyles } from "../_routes/routes.createRouteLinkStyles";
+import type { RemixFeatureRoute } from "../_routes/routes.types";
 import routeStyles from "./Login.css";
 
 export const LoginRoute: RemixFeatureRoute = () => {

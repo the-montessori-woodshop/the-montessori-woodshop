@@ -16,8 +16,8 @@ import { PageHeader } from "~/components/page/PageHeader";
 import { PageTitle } from "~/components/page/PageTitle";
 import { useCallback } from "react";
 
-import { createRouteLinkStyles } from "../routes/routes.createRouteLinkStyles";
-import type { RemixFeatureRoute } from "../routes/routes.types";
+import { createRouteLinkStyles } from "../_routes/routes.createRouteLinkStyles";
+import type { RemixFeatureRoute } from "../_routes/routes.types";
 import routeStyles from "./AppImagesNew.css";
 
 export const AppImagesNewRoute: RemixFeatureRoute = () => {
