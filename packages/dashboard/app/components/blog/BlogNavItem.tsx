@@ -1,6 +1,6 @@
 import type { NavLinkProps } from "@remix-run/react";
 import { NavLink } from "@remix-run/react";
-import { createComponentStyle } from "~/utils/createComponentStyle";
+import { createComponentStyle } from "~/components/utils/createComponentStyle";
 import type { ReactNode } from "react";
 import React, { forwardRef } from "react";
 

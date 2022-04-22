@@ -1,4 +1,4 @@
-import { createComponentStyle } from "~/utils/createComponentStyle";
+import { createComponentStyle } from "~/components/utils/createComponentStyle";
 import clsx from "clsx";
 import { forwardRef } from "react";
 

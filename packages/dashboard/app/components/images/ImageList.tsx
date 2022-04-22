@@ -1,4 +1,4 @@
-import { createComponentStyle } from "~/utils/createComponentStyle";
+import { createComponentStyle } from "~/components/utils/createComponentStyle";
 import clsx from "clsx";
 import type { ReactNode } from "react";
 import { forwardRef } from "react";
