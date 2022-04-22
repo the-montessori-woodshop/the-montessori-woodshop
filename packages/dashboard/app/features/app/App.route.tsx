@@ -1,4 +1,3 @@
-import { TopNavBreadcrumb } from "_components/TopNavBreadcrumb";
 import { Outlet } from "@remix-run/react";
 import {
   Icon,
@@ -18,6 +17,7 @@ import {
   ImageGallery,
   SignOut,
 } from "@woodshop/icons";
+import { TopNavBreadcrumb } from "components/TopNavBreadcrumb";
 
 import { createRouteLinkStyles } from "../routes/routes.createRouteLinkStyles";
 import type { RemixFeatureRoute } from "../routes/routes.types";

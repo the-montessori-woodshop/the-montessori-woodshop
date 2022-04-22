@@ -1,13 +1,7 @@
-import { BlogNavItem } from "~/components/blog/BlogNavItem";
-import { BlogNavItemContent } from "~/components/blog/BlogNavItemContent";
 import { Breadcrumb } from "~/components/Breadcrumb";
-import type { LinksFunction } from "remix";
-import { Outlet } from "remix";
+import { AppBlog } from "~/features/app.blog";
 
-export const links: LinksFunction = () => [
-  BlogNavItem.links,
-  BlogNavItemContent.links,
-];
+export const links = AppBlog.links;
 
 export const handle = {
   breadcrumb: () => {
@@ -19,25 +13,4 @@ export const handle = {
   },
 };
 
-export default function BlogRoute() {
-  return (
-    <div className="blog-layout">
-      <article>
-        <ul>
-          <BlogNavItem to="/blog" end>
-            <BlogNavItemContent>all posts</BlogNavItemContent>
-          </BlogNavItem>
-          <BlogNavItem to="./published">
-            <BlogNavItemContent>published</BlogNavItemContent>
-          </BlogNavItem>
-          <BlogNavItem to="./drafts">
-            <BlogNavItemContent>drafts</BlogNavItemContent>
-          </BlogNavItem>
-        </ul>
-      </article>
-      <main>
-        <Outlet />
-      </main>
-    </div>
-  );
-}
+export default AppBlog;

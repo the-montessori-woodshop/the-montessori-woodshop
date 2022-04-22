@@ -1,10 +1,5 @@
-import { Outlet } from "remix";
+import { AppReviewsIndexRoute } from "~/features/app.reviews.index";
 
-export default function ReviewsPage() {
-  return (
-    <div>
-      ReviewsPage
-      <Outlet />
-    </div>
-  );
-}
+export const links = AppReviewsIndexRoute.links;
+
+export default AppReviewsIndexRoute;
