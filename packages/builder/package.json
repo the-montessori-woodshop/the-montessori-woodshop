@@ -2,9 +2,9 @@
   "name": "@woodshop/builder",
   "version": "1.0.0",
   "description": "Webpack builds to be used throughout different projects for different reasons",
-  "main": "./dist/index.js",
-  "module": "./dist/index.js",
-  "types": "/dist/index.d.ts",
+  "main": "./index.js",
+  "module": "./index.js",
+  "types": "/index.d.ts",
   "type": "module",
   "scripts": {
     "build": "yarn tsc"

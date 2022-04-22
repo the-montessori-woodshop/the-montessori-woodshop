@@ -7,21 +7,8 @@ import esbuild from "esbuild";
 import { nodeExternalsPlugin } from "esbuild-node-externals";
 
 const __dirname = url.fileURLToPath(new URL(".", import.meta.url));
-
-type OutputFormats = "esm" | "cjs";
-const formats: OutputFormats[] = ["esm", "cjs"];
-
-function esbuildConfig({
-  rootDir,
-  outputFormat,
-  isProd,
-  watch
-}: {
-  rootDir: string;
-  outputFormat: OutputFormats;
-  isProd: boolean;
-  watch: boolean;
-}) {
+const formats = ["esm", "cjs"];
+function esbuildConfig({ rootDir, outputFormat, isProd, watch }) {
   esbuild
     .build({
       entryPoints: [path.resolve(rootDir, "./src/index.ts")],
@@ -29,18 +16,6 @@ function esbuildConfig({
       outExtension: {
         ".js": outputFormat === "cjs" ? ".cjs" : ".mjs"
       },
-      bundle: true,
-      /**
-       * Code splitting isn't working. It will destroy pure exports
-       * https://github.com/evanw/esbuild/issues/16
-       */
-      // splitting: isProd && outputFormat === "esm",
-      /**
-       * Minification is unnecessary since the app bundler will
-       * minify any code. Minification also strips out PURE
-       * statements for dead code elimination
-       */
-      // minify: isProd,
       watch: watch
         ? {
             onRebuild(error, result) {
@@ -50,6 +25,7 @@ function esbuildConfig({
           }
         : false,
       sourcemap: true,
+      bundle: true,
       format: outputFormat === "esm" ? "esm" : "cjs",
       target: "esnext",
       jsx: "transform",
@@ -57,14 +33,14 @@ function esbuildConfig({
       allowOverwrite: true,
       plugins: [
         pnpPlugin(),
-        nodeExternalsPlugin(),
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-ignore
+        nodeExternalsPlugin({
+          packagePath: path.resolve(rootDir, "./package.json")
+        }),
         linaria.default({
           sourceMap: isProd,
           displayName: !isProd,
           babelOptions: {
-            configFile: path.resolve(__dirname, "../babel.config.cjs")
+            configFile: path.resolve(__dirname, "./babel.config.cjs")
           }
         })
       ]
@@ -86,16 +62,7 @@ function esbuildConfig({
       }
     });
 }
-
-export const build = ({
-  isProd,
-  rootDir,
-  watch = false
-}: {
-  rootDir: string;
-  isProd: boolean;
-  watch?: boolean;
-}) => {
+export const build = ({ isProd, rootDir, watch = false }) => {
   formats.forEach((format) =>
     esbuildConfig({
       rootDir,

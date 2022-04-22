@@ -1,6 +1,6 @@
+import { styled } from "@linaria/react";
 import clsx from "clsx";
 import React, { forwardRef, memo } from "react";
-import styled from "styled-components";
 
 import {
   makeClass,

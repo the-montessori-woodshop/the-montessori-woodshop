@@ -17,13 +17,13 @@
     },
     "./font/bitter": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/fonts/bitter.css",
-      "node": "./dist/fonts/bitter.css",
-      "require": "./dist/fonts/bitter.css"
+      "import": "./dist-fonts/bitter.css",
+      "node": "./dist-fonts/bitter.css",
+      "require": "./dist-fonts/bitter.css"
     },
     "./font/open-sans": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/fonts/open-sans.css",
+      "import": "./dist-fonts/open-sans.css",
       "node": "./dist/fonts/open-sans.css",
       "require": "./dist/fonts/open-sans.css"
     },
@@ -60,6 +60,7 @@
     "@types/react-dom": "17.0.9",
     "@typescript-eslint/eslint-plugin": "^5.20.0",
     "@typescript-eslint/parser": "^5.20.0",
+    "@woodshop/builder": "workspace:^",
     "@yarnpkg/esbuild-plugin-pnp": "^3.0.0-rc.2",
     "babel-loader": "^8.2.5",
     "clsx": "^1.1.1",
@@ -79,8 +80,8 @@
   "peerDependencies": {
     "@linaria/core": "^3.0.0-beta.15",
     "@linaria/react": "^3.0.0-beta.15",
-    "@woodshop/icons": "^1.0.0",
-    "@woodshop/illustrations": "^1.0.0",
+    "@woodshop/icons": "workspace:^",
+    "@woodshop/illustrations": "workspace:^",
     "clsx": "^1.1.1",
     "framer-motion": "^6.2.6",
     "react": "17.0.2",
@@ -89,9 +90,8 @@
   "dependencies": {
     "@linaria/core": "^3.0.0-beta.15",
     "@linaria/react": "^3.0.0-beta.15",
-    "@woodshop/builder": "workspace:^",
-    "@woodshop/icons": "^1.0.0",
-    "@woodshop/illustrations": "^1.0.0",
+    "@woodshop/icons": "workspace:^",
+    "@woodshop/illustrations": "workspace:^",
     "framer-motion": "^6.3.0",
     "markdown-it": "^13.0.0",
     "polished": "^4.2.2",
