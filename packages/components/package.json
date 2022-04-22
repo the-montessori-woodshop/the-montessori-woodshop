@@ -35,7 +35,7 @@
     }
   },
   "scripts": {
-    "types": "tsc",
+    "types": "tsc --project tsconfig.types.json",
     "format": "prettier --write 'src/**/*.{ts,tsx}'",
     "dev": "yarn node ./scripts/build.dev.mjs & yarn types --watch & yarn storybook",
     "build": "yarn node ./scripts/build.prod.mjs & yarn types",
