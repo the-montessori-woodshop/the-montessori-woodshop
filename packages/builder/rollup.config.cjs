@@ -5,7 +5,6 @@ const rollupJson = require("@rollup/plugin-json");
 const rollupNodeResolve = require("@rollup/plugin-node-resolve");
 const esbuild = require("rollup-plugin-esbuild");
 const rollupExternals = require("rollup-plugin-node-externals");
-const rollupSummary = require("rollup-plugin-summary");
 const rollupScss = require("rollup-plugin-scss");
 const autoprefixer = require("autoprefixer");
 const sass = require("sass");
@@ -55,7 +54,6 @@ module.exports = function ({
       excludeExternalDependenciesFromBundle
         ? rollupExternals.externals()
         : rollupNodeResolve.nodeResolve(),
-      rollupSummary(),
       rollupScss({
         output: path.resolve(rootDir, "./css/styles.css"),
         processor: () => postcss([autoprefixer()]),

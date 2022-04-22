@@ -1,6 +1,6 @@
 import type { FC } from "react";
 
-import { Chip } from "./chip/Chip";
+import { Chip } from "./Chip";
 
 export const PostCardChip: FC<{ published: boolean | undefined }> = ({
   published,

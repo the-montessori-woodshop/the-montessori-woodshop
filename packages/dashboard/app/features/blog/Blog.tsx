@@ -105,7 +105,7 @@ export const Blog: FC<Post> = ({
             borderBottom: `${makeRem(1)} solid var(--color-grey4)`,
           }}
         >
-          {dateFactory(date_published, "longDate")}
+          {date_published ? dateFactory(date_published, "longDate") : "-- --"}
         </TypographyHeading>
         <BlogHeaderTitle>
           <TypographyHeading cxVariant="h1" cxNode="h1">

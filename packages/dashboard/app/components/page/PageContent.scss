@@ -1,0 +1,10 @@
+@import "../../styles/utils";
+
+.page-content {
+  padding: 0 makeRem(32);
+
+  &.main {
+    flex: 1;
+    overflow-y: auto;
+  }
+}
