@@ -1,14 +1,13 @@
 const path = require("path");
 module.exports = {
   stories: ["../src/**/*.stories.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],
-  addons: [
-    "@storybook/addon-links",
-    "@storybook/addon-essentials",
-    "@storybook/preset-create-react-app"
-  ],
+  addons: ["@storybook/addon-links", "@storybook/addon-essentials"],
   framework: "@storybook/react",
   core: {
     builder: "webpack5"
+  },
+  reactOptions: {
+    fastRefresh: true
   },
   staticDirs: [path.resolve(__dirname, "./public")],
   webpackFinal: (config) => {
@@ -22,7 +21,7 @@ module.exports = {
             sourceMap: process.env.NODE_ENV !== "production",
             extension: ".css",
             babelOptions: {
-              configFile: path.resolve(__dirname, "../babel.config.cjs")
+              configFile: path.resolve(__dirname, "./babel.config.js")
             }
           }
         }
