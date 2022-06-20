@@ -1,4 +1,4 @@
-import { Image } from "@prisma/client/edge";
+import { Image } from "@prisma/client";
 
 export type POST_NewImageApiRequest = FormData;
 export type POST_NewImageApiResponse = Image;

@@ -1,4 +1,4 @@
-import { User } from "@prisma/client/edge";
+import { User } from "@prisma/client";
 
 export type POST_CreateOrUpdateUserApiRequest = Pick<
   User,

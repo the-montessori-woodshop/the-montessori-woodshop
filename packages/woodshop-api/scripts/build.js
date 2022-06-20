@@ -21,8 +21,12 @@ async function build() {
     },
     plugins: [
       NodeModulesPolyfillPlugin(),
+      // enable data proxy for production
       alias({
-        "@prisma/client": require.resolve("@prisma/client")
+        "@prisma/client":
+          process.env.NODE_ENV !== "production"
+            ? require.resolve("@prisma/client")
+            : require.resolve("@prisma/client/edge")
       })
     ],
     inject: ["./process-env.shim.js"]
