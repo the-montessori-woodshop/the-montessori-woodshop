@@ -1,0 +1,19 @@
+@import "../../styles/utils";
+
+.blog-nav-item-content {
+  height: makeRem(54);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 makeRem(16);
+  border-radius: makeRem(4);
+  text-transform: capitalize;
+
+  &.active {
+    background: var(--color-grey3);
+
+    * {
+      font-weight: 600 !important;
+    }
+  }
+}

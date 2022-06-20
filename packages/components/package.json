@@ -76,8 +76,8 @@
     "webpack": "^5.73.0"
   },
   "peerDependencies": {
-    "@linaria/core": "^3.0.0-beta.15",
-    "@linaria/react": "^3.0.0-beta.15",
+    "@linaria/core": "^3.0.0-beta.19",
+    "@linaria/react": "^3.0.0-beta.19",
     "@woodshop/icons": "workspace:^",
     "@woodshop/illustrations": "workspace:^",
     "clsx": "^1.1.1",
@@ -87,8 +87,8 @@
     "react-dom": "18.2.0"
   },
   "dependencies": {
-    "@linaria/core": "^3.0.0-beta.15",
-    "@linaria/react": "^3.0.0-beta.15",
+    "@linaria/core": "^3.0.0-beta.19",
+    "@linaria/react": "^3.0.0-beta.19",
     "@woodshop/icons": "workspace:^",
     "@woodshop/illustrations": "workspace:^",
     "clsx": "^1.1.1",
