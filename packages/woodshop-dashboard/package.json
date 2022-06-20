@@ -5,12 +5,11 @@
   "license": "",
   "sideEffects": false,
   "scripts": {
-    "postinstall": "remix setup cloudflare",
     "lint": "yarn eslint --ext .tsx,.ts ./app --fix",
-    "build": "cross-env NODE_ENV=production remix build",
-    "dev:remix": "cross-env NODE_ENV=development remix watch",
+    "build": "remix build",
+    "dev:remix": "remix watch",
     "dev:wrangler": "cross-env NODE_ENV=development wrangler pages dev ./public",
-    "dev": "cross-env NODE_ENV=development remix build && yarn dev:remix & yarn dev:wrangler",
+    "dev": "remix build && yarn dev:remix & yarn dev:wrangler",
     "start": "cross-env NODE_ENV=production npm run dev:wrangler"
   },
   "dependencies": {

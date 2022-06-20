@@ -2,12 +2,6 @@ node_modules
 
 /.cache
 /functions/\[\[path\]\].js
+/functions/\[\[path\]\].js.map
 /public/build
-
-.yarn/*
-!.yarn/cache
-!.yarn/patches
-!.yarn/plugins
-!.yarn/releases
-!.yarn/sdks
-!.yarn/versions
+.env

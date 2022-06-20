@@ -3,8 +3,9 @@ import * as build from "@remix-run/dev/server-build";
 
 const handleRequest = createPagesFunctionHandler({
   build,
+  // eslint-disable-next-line no-undef
   mode: process.env.NODE_ENV,
-  getLoadContext: context => context.env
+  getLoadContext: (context) => context.env,
 });
 
 export function onRequest(context) {
