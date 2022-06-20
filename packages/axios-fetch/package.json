@@ -16,7 +16,7 @@
   },
   "homepage": "https://axios-http.com",
   "dependencies": {
-    "follow-redirects": "^1.14.9"
+    "follow-redirects": "^1.15.1"
   },
   "devDependencies": {
     "typescript": "^4.7.4"
