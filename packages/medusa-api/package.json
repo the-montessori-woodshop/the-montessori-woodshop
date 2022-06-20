@@ -16,9 +16,9 @@
     "seed": "yarn medusa seed -f ./data/seed.json"
   },
   "dependencies": {
-    "@babel/cli": "^7.17.6",
-    "@babel/core": "^7.17.9",
-    "@babel/preset-typescript": "^7.16.7",
+    "@babel/cli": "^7.17.10",
+    "@babel/core": "^7.18.5",
+    "@babel/preset-typescript": "^7.17.12",
     "@medusajs/medusa": "^1.2.1",
     "@medusajs/medusa-cli": "^1.2.1",
     "babel-preset-medusa-package": "^1.1.19",

@@ -19,7 +19,7 @@
     "follow-redirects": "^1.14.9"
   },
   "devDependencies": {
-    "typescript": "^4.6.3"
+    "typescript": "^4.7.4"
   },
   "browser": {
     "./lib/adapters/http.js": "./lib/adapters/xhr.js"
