@@ -30,7 +30,7 @@
   },
   "homepage": "https://github.com/machineq/asset-tracker#readme",
   "peerDependencies": {
-    "react": "17.0.2"
+    "react": "18.2.0"
   },
   "devDependencies": {
     "@svgr/cli": "^6.2.1",
