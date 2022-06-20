@@ -3,6 +3,7 @@ const respond = <T>(body: T, statusCode: number) => {
   const headers: ResponseInit["headers"] = {
     "Content-type": "application/json; charset=utf-8"
   };
+  console.log();
   return new Response(serializedBody, {
     headers,
     status: statusCode
