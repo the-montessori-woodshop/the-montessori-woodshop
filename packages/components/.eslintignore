@@ -1,1 +1,3 @@
-./alerts-toasts
+.eslintrc.cjs
+babel.config.cjs
+dist/**

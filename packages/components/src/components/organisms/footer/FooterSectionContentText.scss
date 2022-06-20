@@ -1,9 +1,0 @@
-@import "../../../styles/index.scss";
-
-@include makeClass("eLUMc3") {
-  color: var(--color-white);
-
-  & + & {
-    margin-top: makeRem(16);
-  }
-}

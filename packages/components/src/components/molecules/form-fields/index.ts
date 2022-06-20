@@ -9,6 +9,7 @@ export * from "./FormFieldRadioBoxText";
 export * from "./FormFieldCheckbox";
 export * from "./FormFieldEmail";
 export * from "./FormFieldPassword";
+export * from "./FormFieldImageDropzone";
 
 // Grouping
 export * from "./FormFieldGroup";

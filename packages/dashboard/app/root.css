@@ -1,0 +1,21 @@
+body {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+}
+html {
+  height: 100%;
+}
+
+ul,
+li {
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+}

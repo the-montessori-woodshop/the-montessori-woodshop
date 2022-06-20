@@ -1,12 +1,9 @@
-import React, { forwardRef, memo, useMemo } from "react";
+import React, { forwardRef, useMemo } from "react";
 
-import {
-  InputHelp,
-  InputLabel,
-  InputText,
-  InputTextProps,
-  InputWrapper
-} from "../../atoms";
+import { InputHelp } from "../../atoms/inputs/InputHelp";
+import { InputLabel } from "../../atoms/inputs/InputLabel";
+import { InputText, InputTextProps } from "../../atoms/inputs/InputText";
+import { InputWrapper } from "../../atoms/inputs/InputWrapper";
 
 export type FormFieldTextProps = Omit<InputTextProps, "id" | "css"> & {
   id: string;
@@ -19,7 +16,7 @@ export type FormFieldTextProps = Omit<InputTextProps, "id" | "css"> & {
  * An opinonated implementation of the various Input components
  * to render text fields
  */
-const FormFieldTextFC = forwardRef<HTMLInputElement, FormFieldTextProps>(
+export const FormFieldText = forwardRef<HTMLInputElement, FormFieldTextProps>(
   function FormFieldTextFC({ id, label, error, help, ...restInputProps }, ref) {
     const Label = useMemo(() => {
       if (label) {
@@ -41,5 +38,3 @@ const FormFieldTextFC = forwardRef<HTMLInputElement, FormFieldTextProps>(
     );
   }
 );
-
-export const FormFieldText = memo(FormFieldTextFC);

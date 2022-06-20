@@ -1,9 +1,12 @@
 import React, { forwardRef, memo, useMemo } from "react";
 
-import { InputHelp } from "../../atoms/InputHelp";
-import { InputLabel } from "../../atoms/InputLabel";
-import { InputPassword, InputPasswordProps } from "../../atoms/InputPassword";
-import { InputWrapper } from "../../atoms/InputWrapper";
+import { InputHelp } from "../../atoms/inputs/InputHelp";
+import { InputLabel } from "../../atoms/inputs/InputLabel";
+import {
+  InputPassword,
+  InputPasswordProps
+} from "../../atoms/inputs/InputPassword";
+import { InputWrapper } from "../../atoms/inputs/InputWrapper";
 
 export type FormFieldPasswordProps = Omit<
   InputPasswordProps,

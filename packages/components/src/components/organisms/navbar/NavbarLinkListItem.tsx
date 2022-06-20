@@ -1,18 +1,27 @@
-import "./NavbarLinkListItem.scss";
-
+import { styled } from "@linaria/react";
 import React, { forwardRef } from "react";
 
-import { makeClass } from "../../../theme";
+import { makeRem } from "../../../theme/theme.utils";
 
 export type NavbarLinkListItemProps = JSX.IntrinsicElements["li"];
+
+const SNavbarLinkListItem = styled.li`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  & + & {
+    margin-left: ${makeRem(44)};
+  }
+`;
 
 export const NavbarLinkListItem = forwardRef<
   HTMLLIElement,
   NavbarLinkListItemProps
->(function NavbarLinkListItem({ children, className, ...props }, ref) {
+>(function NavbarLinkListItem({ children, ...props }, ref) {
   return (
-    <li className={makeClass(className, "XXvYRD")} {...props} ref={ref}>
+    <SNavbarLinkListItem {...props} ref={ref}>
       {children}
-    </li>
+    </SNavbarLinkListItem>
   );
 });

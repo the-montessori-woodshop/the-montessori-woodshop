@@ -9,15 +9,63 @@ datasource db {
   shadowDatabaseUrl = env("WOODSHOP_API_SHADOW_DATABASE_URL")
 }
 
-model Log {
-  id      String @id @default(dbgenerated())
-  level   Level
-  message String
-  meta    Json
+model Post {
+  id                  Int       @id @default(autoincrement())
+  title               String
+  banner_img_url      String
+  banner_img_alt      String?
+  thumbnail_img_url   String?
+  prompt              String?
+  content             String?
+  date_published      DateTime?
+  published           Boolean   @default(false)
+  author              User      @relation(fields: [authorId], references: [id])
+  authorId            String
+  // Open Graph
+  og_type             String?
+  og_title            String?
+  og_img_url          String?
+  og_image            String?
+  og_description      String?
+  og_article_author   String?
+  og_article_section  String?
+  og_article_tag      String[]
+  // JSON LD
+  ld_url              String?
+  ld_headline         String?
+  ld_image_url        String?
+  ld_date_published   String?
+  ld_date_modified    String?
+  ld_author_name      String?
+  ld_publisher        String?
+  ld_logo_url         String?
+  // Twitter
+  twitter_title       String?
+  twitter_site        String?
+  twitter_description String?
+  twitter_image_url   String?
+  twitter_image_alt   String?
 }
 
-enum Level {
-  Info
-  Warn
-  Error
+model User {
+  id             String   @id @default(uuid())
+  username       String   @unique
+  first_name     String
+  last_name      String
+  email          String?  @unique
+  last_logged_in DateTime @default(now())
+  created_at     DateTime @default(now()) @map(name: "created_at")
+  updated_at     DateTime @updatedAt @map(name: "updated_at")
+  posts          Post[]
+
+  @@map(name: "users")
+}
+
+model Image {
+  id         Int      @id @default(autoincrement())
+  title      String
+  url        String
+  service_id String
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
 }

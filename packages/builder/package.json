@@ -2,8 +2,13 @@
   "name": "@woodshop/builder",
   "version": "1.0.0",
   "description": "Webpack builds to be used throughout different projects for different reasons",
-  "main": "./rollup.config.cjs",
-  "module": "./rollup.config.cjs",
+  "main": "./index.js",
+  "module": "./index.js",
+  "types": "/index.d.ts",
+  "type": "module",
+  "scripts": {
+    "build": "yarn tsc"
+  },
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/machineq/asset-tracker.git"
@@ -15,19 +20,30 @@
   },
   "homepage": "https://github.com/machineq/asset-tracker#readme",
   "dependencies": {
+    "@babel/core": "^7.17.9",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
+    "@babel/preset-typescript": "^7.16.7",
+    "@linaria/babel-preset": "^3.0.0-beta.15",
+    "@linaria/core": "^3.0.0-beta.15",
+    "@linaria/esbuild": "^3.0.0-beta.15",
+    "@linaria/rollup": "^3.0.0-beta.15",
+    "@linaria/shaker": "^3.0.0-beta.15",
+    "@rollup/plugin-babel": "^5.3.1",
     "@rollup/plugin-json": "^4.1.0",
-    "@rollup/plugin-node-resolve": "^13.1.3",
-    "autoprefixer": "^10.4.2",
-    "esbuild": "^0.14.25",
-    "postcss": "^8.4.8",
-    "rollup": "^2.70.0",
-    "rollup-plugin-esbuild": "^4.8.2",
+    "@rollup/plugin-node-resolve": "^13.2.1",
+    "autoprefixer": "^10.4.4",
+    "esbuild": "^0.14.38",
+    "esbuild-node-externals": "^1.4.1",
+    "postcss": "^8.4.12",
+    "rollup": "^2.70.2",
+    "rollup-plugin-css-only": "^3.1.0",
+    "rollup-plugin-esbuild": "^4.9.1",
     "rollup-plugin-node-externals": "^4.0.0",
     "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-scss": "^3.0.0",
-    "rollup-plugin-summary": "^1.3.0",
-    "sass": "^1.49.9",
+    "sass": "^1.50.1",
     "tslib": "^2.3.1",
-    "typescript": "^4.6.2"
+    "typescript": "^4.6.3"
   }
 }

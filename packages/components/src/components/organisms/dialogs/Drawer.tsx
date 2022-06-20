@@ -1,16 +1,25 @@
-import "./Drawer.scss";
-
+import { css } from "@linaria/core";
 import { AnimatePresence, motion } from "framer-motion";
 import React, { FC, ReactNode, forwardRef, memo } from "react";
 
-import { makeClass } from "../../../theme";
-import { useDevice } from "../../utils/useDevice";
+import { useDevice } from "../../../utils/useDevice";
 import { Dialog, DialogRef, useDialogContext } from "./Dialog";
 
 export type DrawerProps = {
   children: ReactNode;
   openWidth?: number;
 };
+const CSSDrawerContent = css`
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  background: var(--color-white);
+  box-shadow: -6px 0 8px 5px rgba(95, 90, 90, 0.34);
+  display: flex;
+  flex-direction: column;
+  z-index: 10000;
+`;
+
 const DrawerContent: FC<DrawerProps> = ({ children, openWidth = 300 }) => {
   const { isOpen } = useDialogContext();
   const device = useDevice();
@@ -19,7 +28,7 @@ const DrawerContent: FC<DrawerProps> = ({ children, openWidth = 300 }) => {
     <AnimatePresence>
       {isOpen && (
         <motion.div
-          className={makeClass(undefined, "r3p75np")}
+          className={CSSDrawerContent}
           style={{
             width: device === "desktop" ? `${openWidth}px` : "100%"
           }}

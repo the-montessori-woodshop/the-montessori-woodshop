@@ -1,6 +1,7 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import React from "react";
 
+import { Fieldset } from "../../atoms/inputs/Fieldset";
 import { FormFieldEmail } from "./FormFieldEmail";
 import { FormFieldGroup } from "./FormFieldGroup";
 import { FormFieldPassword } from "./FormFieldPassword";
@@ -57,4 +58,37 @@ InlineFillAndStacked.args = {
       </FormFieldGroup>
     </FormFieldGroup>
   )
+};
+
+export const WithLegend = () => {
+  return (
+    <>
+      <Fieldset cxLegend="A grouping of elements" cxDisplayLegend>
+        <FormFieldGroup>
+          <FormFieldGroup cxLayout="inline-fill">
+            <FormFieldEmail id="email" label="Email address" />
+            <FormFieldPassword id="password" label="Password" />
+            <FormFieldPassword id="confirm-password" label="Confirm Password" />
+          </FormFieldGroup>
+          <FormFieldGroup cxLayout="stacked">
+            <FormFieldEmail id="email" label="Email address" />
+            <FormFieldPassword id="password" label="Password" />
+          </FormFieldGroup>
+        </FormFieldGroup>
+      </Fieldset>
+      <Fieldset cxLegend="A second grouping of elements" cxDisplayLegend>
+        <FormFieldGroup>
+          <FormFieldGroup cxLayout="inline-fill">
+            <FormFieldEmail id="email" label="Email address" />
+            <FormFieldPassword id="password" label="Password" />
+            <FormFieldPassword id="confirm-password" label="Confirm Password" />
+          </FormFieldGroup>
+          <FormFieldGroup cxLayout="stacked">
+            <FormFieldEmail id="email" label="Email address" />
+            <FormFieldPassword id="password" label="Password" />
+          </FormFieldGroup>
+        </FormFieldGroup>
+      </Fieldset>
+    </>
+  );
 };

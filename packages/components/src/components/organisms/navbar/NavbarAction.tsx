@@ -1,17 +1,30 @@
-import "./NavbarAction.scss";
-
+import { styled } from "@linaria/react";
 import React, { forwardRef } from "react";
 
-import { makeClass } from "../../../theme";
+import { makeRem } from "../../../theme";
 
 export type NavbarActionProps = JSX.IntrinsicElements["button"];
 
+const SNavbarAction = styled.button`
+  border: 0;
+  background: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  height: ${makeRem(44)};
+  width: ${makeRem(44)};
+  margin-left: ${makeRem(12)};
+`;
+
 export const NavbarAction = forwardRef<HTMLButtonElement, NavbarActionProps>(
-  function NavbarAction({ children, className, ...props }, ref) {
+  function NavbarAction({ children, ...props }, ref) {
     return (
-      <button className={makeClass(className, "LBhMGJ")} {...props} ref={ref}>
+      <SNavbarAction {...props} ref={ref}>
         {children}
-      </button>
+      </SNavbarAction>
     );
   }
 );

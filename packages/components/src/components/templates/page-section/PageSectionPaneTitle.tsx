@@ -1,27 +1,28 @@
-import "./PageSectionPaneTitle.scss";
-
+import { styled } from "@linaria/react";
 import React, { forwardRef } from "react";
 
-import { makeClass } from "../../../theme";
-import { TypographyHeading } from "../../atoms/TypographyHeading";
+import { TypographyHeading } from "../../atoms/typography/TypographyHeading";
 
 export type PageSectionPaneTitleProps = JSX.IntrinsicElements["div"];
+
+const SPageSectionPaneTitle = styled.div`
+  text-align: inherit;
+
+  & > h2 {
+    text-align: inherit;
+    font-weight: bold;
+  }
+`;
 
 export const PageSectionPaneTitle = forwardRef<
   HTMLDivElement,
   PageSectionPaneTitleProps
->(function PageSectionPaneTitle({ className, children, ...restProps }, ref) {
+>(function PageSectionPaneTitle({ children, ...restProps }, ref) {
   return (
-    <div {...restProps} className={makeClass(className, "LQv47VE2")} ref={ref}>
-      <TypographyHeading
-        cxVariant="h2"
-        cxNode="h2"
-        style={{
-          fontWeight: "bold"
-        }}
-      >
+    <SPageSectionPaneTitle {...restProps} ref={ref}>
+      <TypographyHeading cxVariant="h2" cxNode="h2">
         {children}
       </TypographyHeading>
-    </div>
+    </SPageSectionPaneTitle>
   );
 });

@@ -2,16 +2,15 @@
   "name": "@woodshop/icons",
   "version": "1.0.0",
   "main": "dist/index.cjs",
-  "module": "dist/index.js",
+  "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "sideEffects": false,
-  "type": "module",
   "scripts": {
     "generate": "yarn svgr --config-file=svgr.config.cjs svg",
     "docs": "yarn node ./scripts/create-docs.mjs && prettier --write ./ICONS.md",
     "types": "yarn tsc",
-    "bundle": "rollup --config rollup.config.cjs & yarn types",
-    "build": "yarn bundle"
+    "bundle": "yarn node ./scripts/build.prod.mjs",
+    "build": "yarn bundle & yarn types"
   },
   "targets": {
     "types": false
@@ -31,19 +30,18 @@
   },
   "homepage": "https://github.com/machineq/asset-tracker#readme",
   "peerDependencies": {
-    "react": "^17.0.2"
+    "react": "17.0.2"
   },
   "devDependencies": {
     "@svgr/cli": "^6.2.1",
     "@types/fs-extra": "^9.0.13",
-    "@types/prettier": "^2.4.4",
-    "@types/react": "^17.0.39",
-    "@types/react-dom": "^17.0.13",
+    "@types/prettier": "^2.6.0",
+    "@types/react": "17.0.24",
+    "@types/react-dom": "17.0.9",
     "@woodshop/builder": "^1.0.0",
-    "fs-extra": "^10.0.1",
-    "prettier": "^2.5.1",
-    "react": "^17.0.2",
-    "rollup": "^2.70.0",
-    "typescript": "^4.6.2"
+    "fs-extra": "^10.1.0",
+    "prettier": "^2.6.2",
+    "react": "17.0.2",
+    "typescript": "^4.6.3"
   }
 }

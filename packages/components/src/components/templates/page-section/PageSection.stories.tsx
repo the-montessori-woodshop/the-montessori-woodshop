@@ -1,6 +1,6 @@
 import React from "react";
 
-import { TypographyCopy } from "../../atoms/TypographyCopy";
+import { TypographyCopy } from "../../atoms/typography/TypographyCopy";
 import { PageSection } from "./PageSection";
 import { PageSectionPane } from "./PageSectionPane";
 import { PageSectionPaneContent } from "./PageSectionPaneContent";

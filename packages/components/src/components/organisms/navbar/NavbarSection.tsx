@@ -1,12 +1,22 @@
-import "./NavbarSection.scss";
-
+import { styled } from "@linaria/react";
+import clsx from "clsx";
 import React, { forwardRef } from "react";
-
-import { makeClass } from "../../../theme";
 
 export type NavbarSectionProps = JSX.IntrinsicElements["div"] & {
   cxMain?: boolean;
 };
+enum ClassNameEnum {
+  expand = "expand"
+}
+
+const SDiv = styled.div`
+  display: flex;
+  align-items: center;
+
+  &.expand {
+    flex: 1;
+  }
+`;
 
 export const NavbarSection = forwardRef<HTMLDivElement, NavbarSectionProps>(
   function NavbarSection(
@@ -14,15 +24,15 @@ export const NavbarSection = forwardRef<HTMLDivElement, NavbarSectionProps>(
     ref
   ) {
     return (
-      <div
-        className={makeClass(className, "MyRiqFV", {
-          expand: cxMain
+      <SDiv
+        className={clsx(className, {
+          [ClassNameEnum.expand]: cxMain
         })}
         {...props}
         ref={ref}
       >
         {children}
-      </div>
+      </SDiv>
     );
   }
 );

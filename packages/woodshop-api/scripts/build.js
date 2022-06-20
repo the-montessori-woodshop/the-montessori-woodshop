@@ -10,7 +10,7 @@ async function build() {
   const mode = process.env.NODE_ENV?.toLowerCase() ?? "development";
 
   await esbuild.build({
-    entryPoints: ["./src/index.ts"],
+    entryPoints: ["./src/handler.ts"],
     outfile: "./dist/worker.js",
     bundle: true,
     minify: mode === "production",
@@ -33,4 +33,7 @@ build()
   .then(() => {})
   .catch((err) => {
     process.exit(1);
+  })
+  .finally(() => {
+    console.log("Api built successfully.");
   });
