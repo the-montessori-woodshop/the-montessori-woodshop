@@ -1,4 +1,4 @@
-import { Post, PrismaClient } from "@prisma/client";
+import { Post, PrismaClient } from "@prisma/client/edge";
 
 import { HandlePATCHRequest } from "../../types/index";
 import { ApiError } from "../../utils/error.api";

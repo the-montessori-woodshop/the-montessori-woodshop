@@ -2,7 +2,8 @@ const AUTH0_ISSUER = "https://dev-3afbf-wy.us.auth0.com/";
 const AUTH0_AUDIENCE = "https://api.woodshop.themontessoriwoodshop.com";
 
 import { parseJwt } from "@cfworker/jwt";
-import { PrismaClient } from "@prisma/client";
+import { PrismaClient } from "@prisma/client/edge";
+
 import { AuthenticationError } from "../utils/error.auth";
 
 export const authenticate = async (request: Request) => {

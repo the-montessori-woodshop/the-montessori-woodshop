@@ -1,4 +1,4 @@
-import { PrismaClient } from "@prisma/client";
+import { PrismaClient } from "@prisma/client/edge";
 
 import { HandleGETRequest } from "../../types/index";
 import { ApiError } from "../../utils/error.api";
