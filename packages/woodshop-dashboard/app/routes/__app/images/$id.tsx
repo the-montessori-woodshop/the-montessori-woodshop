@@ -51,7 +51,7 @@ export const links: LinksFunction = () => [
   ImagesGridEditContent.links,
   PageHeader.links,
   PageTitle.links,
-  createRouteLinkStyles(pageStyles),
+  ...createRouteLinkStyles(pageStyles),
 ];
 
 export const handle = {

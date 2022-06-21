@@ -48,4 +48,4 @@ LoginRoute.loader = async ({ request }) =>
   authenticator.isAuthenticated(request, {
     successRedirect: "/",
   });
-LoginRoute.links = () => [createRouteLinkStyles(routeStyles)];
+LoginRoute.links = () => createRouteLinkStyles(routeStyles);

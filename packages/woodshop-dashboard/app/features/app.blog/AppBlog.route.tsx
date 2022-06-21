@@ -31,5 +31,5 @@ export const AppBlog: RemixFeatureRoute = () => {
 AppBlog.links = () => [
   BlogNavItem.links,
   BlogNavItemContent.links,
-  createRouteLinkStyles(routeStyles),
+  ...createRouteLinkStyles(routeStyles),
 ];

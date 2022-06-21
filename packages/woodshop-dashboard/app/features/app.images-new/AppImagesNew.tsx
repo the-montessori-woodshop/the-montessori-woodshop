@@ -92,5 +92,5 @@ AppImagesNewRoute.links = () => [
   ImagesGridEditTitle.links,
   PageHeader.links,
   PageTitle.links,
-  createRouteLinkStyles(routeStyles),
+  ...createRouteLinkStyles(routeStyles),
 ];

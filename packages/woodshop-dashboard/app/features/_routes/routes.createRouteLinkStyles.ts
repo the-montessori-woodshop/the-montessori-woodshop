@@ -1,7 +1,8 @@
-export const createRouteLinkStyles = (styles: string) => {
-  console.log(styles);
-  return {
-    rel: "stylesheet",
-    href: styles,
-  };
+export const createRouteLinkStyles = (...args: string[]) => {
+  return args.map((styles) => {
+    return {
+      rel: "stylesheet",
+      href: styles,
+    };
+  });
 };

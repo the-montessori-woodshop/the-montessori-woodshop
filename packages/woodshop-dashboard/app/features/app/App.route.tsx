@@ -18,4 +18,4 @@ export const AppRoute: RemixFeatureRoute = () => {
   );
 };
 
-AppRoute.links = () => [createRouteLinkStyles(AppRouteStyles)];
+AppRoute.links = () => createRouteLinkStyles(AppRouteStyles);

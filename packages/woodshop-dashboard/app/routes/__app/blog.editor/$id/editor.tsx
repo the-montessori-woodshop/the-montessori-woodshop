@@ -7,7 +7,7 @@ import type { UseMatchesMatch } from "~/types/useMatches";
 
 import styles from "./editor.css";
 
-export const links: LinksFunction = () => [createRouteLinkStyles(styles)];
+export const links: LinksFunction = () => [...createRouteLinkStyles(styles)];
 
 export const handle = {
   breadcrumb: (data: UseMatchesMatch) => {

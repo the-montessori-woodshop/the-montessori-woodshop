@@ -12,4 +12,4 @@ export const AppIndex: RemixFeatureRoute = () => {
     </div>
   );
 };
-AppIndex.links = () => [createRouteLinkStyles(routeStyles)];
+AppIndex.links = () => [...createRouteLinkStyles(routeStyles)];

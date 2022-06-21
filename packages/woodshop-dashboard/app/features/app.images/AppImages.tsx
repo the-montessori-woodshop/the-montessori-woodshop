@@ -60,5 +60,5 @@ export const AppImages: RemixFeatureRoute = () => {
 AppImages.links = () => [
   PageHeader.links,
   PageTitle.links,
-  createRouteLinkStyles(routeStyles),
+  ...createRouteLinkStyles(routeStyles),
 ];

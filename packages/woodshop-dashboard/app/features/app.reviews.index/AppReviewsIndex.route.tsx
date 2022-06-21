@@ -12,4 +12,4 @@ export const AppReviewsIndexRoute: RemixFeatureRoute = () => {
     </div>
   );
 };
-AppReviewsIndexRoute.links = () => [createRouteLinkStyles(routeStyles)];
+AppReviewsIndexRoute.links = () => [...createRouteLinkStyles(routeStyles)];
