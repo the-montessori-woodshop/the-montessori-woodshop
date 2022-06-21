@@ -42,7 +42,7 @@ jobs:
 
 
   deploy_woodshop_storefront:
-    name: Storefront - Push to repository
+    name: Woodshop Storefront - Build and deploy
     runs-on: ubuntu-latest
     environment: production
     steps:
@@ -53,15 +53,15 @@ jobs:
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
 
-  deploy_storybook:
+  deploy_woodshop_storybook:
     runs-on: ubuntu-latest
-    name: Storybook - Build & deploy
+    name: Woodshop Storybook - Build & deploy
     environment: production
     steps:
       - uses: actions/checkout@v2
       - name: Install
         run: yarn install --immutable
       - name: Build
-        run: yarn components-build
+        run: yarn workspace @woodshop/components build
       - name: Deploy
         run: CF_ACCOUNT_ID=${{ secrets.CF_ACCOUNT_ID }} CF_API_TOKEN=${{ secrets.CF_API_TOKEN }} yarn workspace @woodshop/components wrangler publish --env production
