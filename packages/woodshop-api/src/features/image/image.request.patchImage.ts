@@ -1,7 +1,6 @@
-import { Post, PrismaClient } from "@prisma/client";
-
 import { HandlePATCHRequest } from "../../types/index";
 import { ApiError } from "../../utils/error.api";
+import { prisma } from "../../utils/getPrisma";
 import { handleRoute } from "../../utils/handleRoute";
 import {
   PATCH_ImagesApiParams,
@@ -16,10 +15,6 @@ export const patchImage: HandlePATCHRequest<
   if (!request.params.id) throw new Error(":id is required.");
 
   try {
-    const prisma = new PrismaClient({
-      errorFormat: "pretty"
-    });
-    await prisma.$connect();
     const data = await request.json<PATCH_ImagesApiRequest>();
     const image = await prisma.image.update({
       where: {

@@ -1,6 +1,5 @@
-import { PrismaClient } from "@prisma/client";
-
 import { HandlePOSTRequest } from "../../types/index";
+import { prisma } from "../../utils/getPrisma";
 import { handleRoute } from "../../utils/handleRoute";
 import {
   POST_NewPostByIdApiRequest,
@@ -17,11 +16,6 @@ export const postNewPost: HandlePOSTRequest<
   try {
     const data = await request.json<POST_NewPostByIdApiRequest>();
 
-    const prisma = new PrismaClient({
-      errorFormat: "pretty"
-    });
-
-    await prisma.$connect();
     const post = await prisma.post.create({
       data: {
         ...data,

@@ -1,22 +1,19 @@
-import { PrismaClient } from "@prisma/client";
+import { PrismaClient } from "@prisma/client/edge";
 
-export const getPrisma = async () => {
-  const prisma = new PrismaClient({
-    errorFormat: "pretty",
-    log: [
-      {
-        emit: "stdout",
-        level: "error"
-      },
-      {
-        emit: "stdout",
-        level: "info"
-      },
-      {
-        emit: "stdout",
-        level: "warn"
-      }
-    ]
-  });
-  return prisma;
-};
+export const prisma = new PrismaClient({
+  errorFormat: "pretty",
+  log: [
+    {
+      emit: "stdout",
+      level: "error"
+    },
+    {
+      emit: "stdout",
+      level: "info"
+    },
+    {
+      emit: "stdout",
+      level: "warn"
+    }
+  ]
+});

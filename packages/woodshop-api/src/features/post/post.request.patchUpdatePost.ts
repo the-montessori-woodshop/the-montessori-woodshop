@@ -1,6 +1,6 @@
 import { HandlePATCHRequest } from "../../types/index";
 import { FeatureError } from "../../utils/error.feature";
-import { getPrisma } from "../../utils/getPrisma";
+import { prisma } from "../../utils/getPrisma";
 import { handleRoute } from "../../utils/handleRoute";
 import { verifyUserExists } from "../../utils/verifyUserExists";
 import { postLogger } from "./post.log";
@@ -19,7 +19,6 @@ export const updatePost: HandlePATCHRequest<
 
   try {
     const data = await request.json<PATCH_UpdatePostByIdApiRequest>();
-    const prisma = await getPrisma();
     postLogger.info(`Patching post...`, request.params.id, data);
     const post = await prisma.post.update({
       where: {

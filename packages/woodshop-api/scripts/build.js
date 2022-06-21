@@ -1,7 +1,7 @@
 require("./env");
 
 const esbuild = require("esbuild");
-const alias = require("esbuild-plugin-alias");
+// const alias = require("esbuild-plugin-alias");
 const {
   NodeModulesPolyfillPlugin
 } = require("@esbuild-plugins/node-modules-polyfill");
@@ -19,16 +19,7 @@ async function build() {
       "process.env.NODE_ENV": JSON.stringify(mode),
       __dirname: JSON.stringify(__dirname)
     },
-    plugins: [
-      NodeModulesPolyfillPlugin(),
-      // enable data proxy for production
-      alias({
-        "@prisma/client":
-          process.env.NODE_ENV !== "production"
-            ? require.resolve("@prisma/client")
-            : require.resolve("@prisma/client/edge")
-      })
-    ],
+    plugins: [NodeModulesPolyfillPlugin()],
     inject: ["./process-env.shim.js"]
   });
 }
