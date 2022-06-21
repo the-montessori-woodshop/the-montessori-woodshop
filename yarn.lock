@@ -2802,7 +2802,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cloudflare/workers-types@npm:3.13.0, @cloudflare/workers-types@npm:^3.10.0, @cloudflare/workers-types@npm:^3.13.0":
+"@cloudflare/workers-types@npm:3.13.0, @cloudflare/workers-types@npm:^3.13.0":
   version: 3.13.0
   resolution: "@cloudflare/workers-types@npm:3.13.0"
   checksum: bd4b8c354f7bfed4cc24407d86ff4a686a1076a8637f5a483a0b107ccda6094cecdb70a5eb5308401014f82838fd796885d60832d1e3671bacf5d3ff5760585b
@@ -4648,7 +4648,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@linaria/react@npm:^3.0.0-beta.19":
+"@linaria/react@npm:^3.0.0-beta.19, @linaria/react@npm:^3.0.0-beta.22":
   version: 3.0.0-beta.22
   resolution: "@linaria/react@npm:3.0.0-beta.22"
   dependencies:
@@ -9631,7 +9631,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-dom@npm:17.0.17, @types/react-dom@npm:^17.0.17":
+"@types/react-dom@npm:17.0.17":
   version: 17.0.17
   resolution: "@types/react-dom@npm:17.0.17"
   dependencies:
@@ -9707,7 +9707,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:17.0.47, @types/react@npm:^17.0.45":
+"@types/react@npm:17.0.47":
   version: 17.0.47
   resolution: "@types/react@npm:17.0.47"
   dependencies:
@@ -18238,7 +18238,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint@npm:8.18.0, eslint@npm:^8.15.0, eslint@npm:^8.18.0, eslint@npm:^8.6.0":
+"eslint@npm:8.18.0, eslint@npm:^8.18.0, eslint@npm:^8.6.0":
   version: 8.18.0
   resolution: "eslint@npm:8.18.0"
   dependencies:
@@ -27224,28 +27224,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"my-remix-app-b3dbce@workspace:packages/my-remix-app":
-  version: 0.0.0-use.local
-  resolution: "my-remix-app-b3dbce@workspace:packages/my-remix-app"
-  dependencies:
-    "@cloudflare/workers-types": ^3.10.0
-    "@remix-run/cloudflare": ^1.6.0
-    "@remix-run/cloudflare-pages": ^1.6.0
-    "@remix-run/dev": ^1.6.0
-    "@remix-run/eslint-config": ^1.6.0
-    "@remix-run/react": ^1.6.0
-    "@types/react": ^17.0.45
-    "@types/react-dom": ^17.0.17
-    cross-env: ^7.0.3
-    eslint: ^8.15.0
-    npm-run-all: ^4.1.5
-    react: ^17.0.2
-    react-dom: ^17.0.2
-    typescript: ^4.6.4
-    wrangler: beta
-  languageName: unknown
-  linkType: soft
-
 "mz@npm:^2.4.0":
   version: 2.7.0
   resolution: "mz@npm:2.7.0"
@@ -31515,7 +31493,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-dom@npm:*, react-dom@npm:^17.0.2":
+"react-dom@npm:*":
   version: 17.0.2
   resolution: "react-dom@npm:17.0.2"
   dependencies:
@@ -32037,7 +32015,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react@npm:*, react@npm:^17.0.2":
+"react@npm:*":
   version: 17.0.2
   resolution: "react@npm:17.0.2"
   dependencies:
@@ -34479,6 +34457,8 @@ __metadata:
   resolution: "storefront@workspace:packages/woodshop-storefront"
   dependencies:
     "@cloudflare/workers-types": 3.13.0
+    "@linaria/core": ^3.0.0-beta.22
+    "@linaria/react": ^3.0.0-beta.22
     "@medusajs/medusa-js": 1.2.2
     "@remix-run/cloudflare": ^1.6.0
     "@remix-run/cloudflare-pages": ^1.6.0
@@ -34491,9 +34471,11 @@ __metadata:
     "@woodshop/components": "workspace:^"
     "@woodshop/icons": "workspace:^"
     "@woodshop/illustrations": "workspace:^"
+    clsx: ^1.1.1
     cross-env: 7.0.3
     eslint: ^8.18.0
     framer-motion: ^6.3.12
+    markdown-it: ^13.0.1
     react: 18.2.0
     react-dom: 18.2.0
     react-is: 18.2.0
@@ -36475,7 +36457,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:4.7.4, typescript@npm:^4.5.4, typescript@npm:^4.6.4, typescript@npm:^4.7.4":
+"typescript@npm:4.7.4, typescript@npm:^4.5.4, typescript@npm:^4.7.4":
   version: 4.7.4
   resolution: "typescript@npm:4.7.4"
   bin:
@@ -36495,7 +36477,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@4.7.4#~builtin<compat/typescript>, typescript@patch:typescript@^4.5.4#~builtin<compat/typescript>, typescript@patch:typescript@^4.6.4#~builtin<compat/typescript>, typescript@patch:typescript@^4.7.4#~builtin<compat/typescript>":
+"typescript@patch:typescript@4.7.4#~builtin<compat/typescript>, typescript@patch:typescript@^4.5.4#~builtin<compat/typescript>, typescript@patch:typescript@^4.7.4#~builtin<compat/typescript>":
   version: 4.7.4
   resolution: "typescript@patch:typescript@npm%3A4.7.4#~builtin<compat/typescript>::version=4.7.4&hash=bda367"
   bin:

@@ -5,6 +5,8 @@
   "description": "The Montessori Woodshop's storefront.",
   "license": "Apache-2.0",
   "dependencies": {
+    "@linaria/core": "^3.0.0-beta.22",
+    "@linaria/react": "^3.0.0-beta.22",
     "@medusajs/medusa-js": "1.2.2",
     "@remix-run/cloudflare": "^1.6.0",
     "@remix-run/cloudflare-pages": "^1.6.0",
@@ -12,7 +14,9 @@
     "@woodshop/components": "workspace:^",
     "@woodshop/icons": "workspace:^",
     "@woodshop/illustrations": "workspace:^",
+    "clsx": "^1.1.1",
     "framer-motion": "^6.3.12",
+    "markdown-it": "^13.0.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-is": "18.2.0",

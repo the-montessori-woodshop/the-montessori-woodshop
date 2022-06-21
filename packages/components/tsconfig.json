@@ -22,18 +22,13 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noImplicitReturns": true,
-    "noEmit": false,
-    "emitDeclarationOnly": true,
-    "declaration": true,
-    "declarationMap": true,
-    "declarationDir": "dist/",
     "downlevelIteration": true,
     "skipDefaultLibCheck": true,
     "strict": true,
     "allowSyntheticDefaultImports": true,
     "skipLibCheck": true,
     "sourceMap": true,
-    "outDir": "./dist"
+    "noEmit": true
   },
   "include": ["src/**/*.ts", "src/**/*.tsx", ".eslintrc.js", "rollup.config.js"]
 }

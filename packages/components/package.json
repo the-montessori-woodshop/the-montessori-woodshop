@@ -2,32 +2,27 @@
   "name": "@woodshop/components",
   "version": "1.0.0",
   "main": "dist/index.cjs",
-  "module": "dist/index.mjs",
+  "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "sideEffects": false,
   "files": [
-    "dist"
+    "dist",
+    "fonts"
   ],
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/index.mjs",
+      "import": "./dist/index.js",
       "node": "./dist/index.cjs",
       "require": "./dist/index.cjs"
     },
-    "./font/bitter": {
+    "./fonts/*": {
       "types": "./dist/index.d.ts",
-      "import": "./dist-fonts/bitter.css",
-      "node": "./dist-fonts/bitter.css",
-      "require": "./dist-fonts/bitter.css"
+      "import": "./fonts/*",
+      "node": "./fonts/*",
+      "require": "./fonts/*"
     },
-    "./font/open-sans": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist-fonts/open-sans.css",
-      "node": "./dist/fonts/open-sans.css",
-      "require": "./dist/fonts/open-sans.css"
-    },
-    "./styles": {
+    "./css": {
       "types": "./dist/index.d.ts",
       "import": "./dist/index.css",
       "node": "./dist/index.css",

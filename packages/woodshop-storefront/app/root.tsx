@@ -1,16 +1,21 @@
-import fontBitterUrl from "@woodshop/components/css/bitter.css";
-import fontOpenSansUrl from "@woodshop/components/css/open-sans.css";
-import stylesUrl from "@woodshop/components/css/styles.css";
-import themeUrl from "@woodshop/components/css/theme.css";
+import type { LinksFunction, MetaFunction } from "@remix-run/cloudflare";
+import {
+  Links,
+  LiveReload,
+  Meta,
+  Outlet,
+  Scripts,
+  ScrollRestoration,
+} from "@remix-run/react";
+import stylesUrl from "@woodshop/components/css";
+import fontBitterUrl from "@woodshop/components/fonts/bitter.css";
+import fontOpenSansUrl from "@woodshop/components/fonts/open-sans.css";
 import { Footer } from "~/features/Footer";
 import { Header } from "~/features/Header";
-import type { LinksFunction, MetaFunction } from "@remix-run/cloudflare";
-import { Links, LiveReload, Meta, Outlet, Scripts, ScrollRestoration } from "@remix-run/react";
 
 export const links: LinksFunction = () => {
   return [
     { rel: "stylesheet", href: stylesUrl },
-    { rel: "stylesheet", href: themeUrl },
     { rel: "stylesheet", href: fontBitterUrl },
     { rel: "stylesheet", href: fontOpenSansUrl },
   ];
