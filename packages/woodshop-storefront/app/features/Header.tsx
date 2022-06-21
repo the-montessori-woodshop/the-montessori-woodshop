@@ -7,7 +7,8 @@ import {
   makeRem,
 } from "@woodshop/components";
 import { NavbarLink } from "~/components/NavbarLink";
-import { FC, memo, useMemo } from "react";
+import type { FC} from "react";
+import { memo, useMemo } from "react";
 import { Link } from "remix";
 import styled from "styled-components";
 

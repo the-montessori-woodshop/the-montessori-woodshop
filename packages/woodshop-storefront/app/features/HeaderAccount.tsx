@@ -10,7 +10,8 @@ import {
   useDialogRef,
 } from "@woodshop/components";
 import { UserCircle } from "@woodshop/icons";
-import React, { FC, useCallback } from "react";
+import type { FC} from "react";
+import React, { useCallback } from "react";
 import { useNavigate } from "remix";
 
 export const HeaderAccount: FC = () => {

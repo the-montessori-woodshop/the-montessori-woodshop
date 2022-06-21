@@ -6,15 +6,16 @@
   "license": "Apache-2.0",
   "dependencies": {
     "@medusajs/medusa-js": "1.2.2",
-    "@remix-run/cloudflare": "1.6.0",
+    "@remix-run/cloudflare": "^1.6.0",
+    "@remix-run/cloudflare-pages": "^1.6.0",
     "@remix-run/react": "^1.6.0",
     "@woodshop/components": "workspace:^",
     "@woodshop/icons": "workspace:^",
     "@woodshop/illustrations": "workspace:^",
+    "framer-motion": "^6.3.12",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-is": "18.2.0",
-    "remix": "1.6.0",
     "styled-components": "5.3.5"
   },
   "devDependencies": {

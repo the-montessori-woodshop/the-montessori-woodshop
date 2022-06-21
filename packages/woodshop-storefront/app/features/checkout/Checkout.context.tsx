@@ -1,5 +1,7 @@
-import { WizardContextType, useWizardContext } from "~/components/wizard";
-import React, { FC, useContext, useMemo } from "react";
+import type { WizardContextType} from "~/components/wizard";
+import { useWizardContext } from "~/components/wizard";
+import type { FC} from "react";
+import React, { useContext, useMemo } from "react";
 
 import { useCheckoutWizardContext } from "./checkout.useCheckoutWizardContex";
 import { CheckoutWizardSteps } from "./checkout.utils";

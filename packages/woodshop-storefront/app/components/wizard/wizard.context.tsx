@@ -1,13 +1,7 @@
-import React, {
-  MouseEventHandler,
-  ReactElement,
-  useCallback,
-  useContext,
-  useRef,
-  useState,
-} from "react";
+import type { MouseEventHandler, ReactElement } from "react";
+import React, { useCallback, useContext, useRef, useState } from "react";
 
-import { WizardDirection } from "./wizard.utils";
+import type { WizardDirection } from "./wizard.utils";
 
 /**
  * We use any here as the default type argument because

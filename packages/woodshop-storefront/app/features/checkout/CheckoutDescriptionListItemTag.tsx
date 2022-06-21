@@ -1,5 +1,5 @@
 import { TypographyCopy, makeRem } from "@woodshop/components";
-import { FC } from "react";
+import type { FC } from "react";
 import styled from "styled-components";
 
 export const Sdt = styled.dt`

@@ -1,6 +1,7 @@
 import { Button, Icon, TypographyCopy, makeRem } from "@woodshop/components";
 import { Pencil } from "@woodshop/icons";
-import { FC, memo } from "react";
+import type { FC} from "react";
+import { memo } from "react";
 import styled from "styled-components";
 
 export const SDd = styled.dd`

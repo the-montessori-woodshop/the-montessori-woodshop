@@ -10,7 +10,7 @@ import {
   makeRem,
 } from "@woodshop/components";
 import { CheckmarkCircle } from "@woodshop/icons";
-import { FC } from "react";
+import type { FC } from "react";
 
 import { CheckoutOverview } from "./CheckoutOverview";
 import { CheckoutStepWrapper } from "./CheckoutStepWrapper";

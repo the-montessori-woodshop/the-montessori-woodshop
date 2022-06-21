@@ -1,5 +1,5 @@
 import { Box, BoxContent } from "@woodshop/components";
-import { FC } from "react";
+import type { FC } from "react";
 
 import { CheckoutDescriptionList } from "./CheckoutDescriptionList";
 import { CheckoutDescriptionListItem } from "./CheckoutDescriptionListItem";

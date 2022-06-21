@@ -1,6 +1,6 @@
 import { Button, Illustration } from "@woodshop/components";
 import { UnboxAlert } from "@woodshop/illustrations";
-import { FC } from "react";
+import type { FC } from "react";
 
 import { EmptyState } from "./EmptyState";
 import { EmptyStateSubtitle } from "./EmptyStateSubtitle";

@@ -8,7 +8,7 @@ import {
   TypographyCopy,
   makeRem,
 } from "@woodshop/components";
-import { FC } from "react";
+import type { FC } from "react";
 import styled from "styled-components";
 
 import { useCheckoutWizardContext } from "./checkout.useCheckoutWizardContex";

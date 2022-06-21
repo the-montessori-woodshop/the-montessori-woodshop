@@ -1,4 +1,4 @@
-import { RemixNavLinkProps } from "@remix-run/react/components";
+import type { RemixNavLinkProps } from "@remix-run/react/components";
 import { NavbarLinkListItemText } from "@woodshop/components";
 import { forwardRef } from "react";
 import { NavLink } from "remix";

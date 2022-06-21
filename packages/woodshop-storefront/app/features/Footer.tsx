@@ -5,7 +5,8 @@ import {
   FooterSectionContentText,
   FooterSectionTitle,
 } from "@woodshop/components";
-import { FC, memo, useMemo } from "react";
+import type { FC} from "react";
+import { memo, useMemo } from "react";
 import { useLocation } from "remix";
 
 import { useIsCheckout } from "./useIsCheckout";

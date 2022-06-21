@@ -6,14 +6,14 @@ import { Footer } from "~/features/Footer";
 import { Header } from "~/features/Header";
 import {
   Links,
-  LinksFunction,
   LiveReload,
   Meta,
   Outlet,
   Scripts,
   ScrollRestoration,
 } from "remix";
-import type { MetaFunction } from "remix";
+import type { MetaFunction ,
+  LinksFunction} from "remix";
 
 export const links: LinksFunction = () => {
   return [

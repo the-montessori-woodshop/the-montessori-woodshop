@@ -1,5 +1,6 @@
 import { Button, TypographyCopy, makeRem } from "@woodshop/components";
-import { FC, MouseEventHandler, memo, useMemo } from "react";
+import type { FC, MouseEventHandler} from "react";
+import { memo, useMemo } from "react";
 import styled from "styled-components";
 
 import { useCheckoutWizardContext } from "./checkout.useCheckoutWizardContex";

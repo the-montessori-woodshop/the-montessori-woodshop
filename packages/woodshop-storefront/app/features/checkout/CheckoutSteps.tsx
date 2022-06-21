@@ -1,8 +1,8 @@
 import { WizardBodyMotion, WizardProvider } from "~/components/wizard";
-import { FC } from "react";
+import type { FC } from "react";
 
 import { useCheckoutWizardContext } from "./checkout.useCheckoutWizardContex";
-import { CheckoutWizardSteps } from "./checkout.utils";
+import type { CheckoutWizardSteps } from "./checkout.utils";
 import { CheckoutStepAddress } from "./CheckoutStepAddress";
 import { CheckoutStepPayment } from "./CheckoutStepPayment";
 import { CheckoutStepReview } from "./CheckoutStepReview";

@@ -8,7 +8,8 @@ import {
 } from "@woodshop/components";
 import { ShoppingCart } from "@woodshop/icons";
 import { EmptyCart } from "~/components/EmptyCart";
-import { FC, memo } from "react";
+import type { FC} from "react";
+import { memo } from "react";
 
 export const HeaderCart: FC = memo(function HeaderCart() {
   const { dialogRef, handleOpen } = useDialogRef();

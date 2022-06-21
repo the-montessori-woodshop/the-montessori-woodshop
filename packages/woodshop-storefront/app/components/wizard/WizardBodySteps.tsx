@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { FC } from "react";
+import type { FC } from "react";
 import styled from "styled-components";
 
 import { useWizardContext } from "./wizard.context";

@@ -8,7 +8,8 @@ import {
 import { RouteWrapper } from "~/components/RouteWrapper";
 import { CheckoutSummary } from "~/features/checkout/CheckoutSummary";
 import { getPageTitle } from "~/utils/getPageTitle";
-import { MetaFunction, Outlet } from "remix";
+import type { MetaFunction} from "remix";
+import { Outlet } from "remix";
 
 export const meta: MetaFunction = () => {
   return { title: getPageTitle("Checkout") };

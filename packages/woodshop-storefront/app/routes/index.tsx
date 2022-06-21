@@ -9,11 +9,12 @@ import {
   TypographyCopy,
   TypographyHeading,
 } from "@woodshop/components";
+import type {
+  MetaFunction} from "remix";
 import {
   type LoaderFunction,
   useLoaderData,
-  Outlet,
-  MetaFunction,
+  Outlet
 } from "remix";
 import { medusaClient } from "~/clients/medusa-client";
 import { RouteWrapper } from "~/components/RouteWrapper";

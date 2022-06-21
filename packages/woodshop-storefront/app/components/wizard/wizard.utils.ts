@@ -1,4 +1,4 @@
-import { Transition } from "framer-motion";
+import type { Transition } from "framer-motion";
 
 export type WizardDirection = "forward" | "back";
 

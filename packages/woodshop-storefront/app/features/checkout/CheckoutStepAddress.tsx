@@ -8,7 +8,7 @@ import {
   FormFieldGroup,
   FormFieldText,
 } from "@woodshop/components";
-import { FC } from "react";
+import type { FC } from "react";
 
 import { useCheckoutWizardContext } from "./checkout.useCheckoutWizardContex";
 import { CheckoutNextButton } from "./CheckoutNextButton";

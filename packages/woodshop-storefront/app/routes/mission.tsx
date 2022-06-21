@@ -1,5 +1,6 @@
 import { getPageTitle } from "~/utils/getPageTitle";
-import { MetaFunction, Outlet } from "remix";
+import type { MetaFunction} from "remix";
+import { Outlet } from "remix";
 
 export const meta: MetaFunction = () => {
   return { title: getPageTitle("Mission") };

@@ -2802,7 +2802,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cloudflare/workers-types@npm:3.13.0, @cloudflare/workers-types@npm:^3.13.0":
+"@cloudflare/workers-types@npm:3.13.0, @cloudflare/workers-types@npm:^3.10.0, @cloudflare/workers-types@npm:^3.13.0":
   version: 3.13.0
   resolution: "@cloudflare/workers-types@npm:3.13.0"
   checksum: bd4b8c354f7bfed4cc24407d86ff4a686a1076a8637f5a483a0b107ccda6094cecdb70a5eb5308401014f82838fd796885d60832d1e3671bacf5d3ff5760585b
@@ -9631,7 +9631,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-dom@npm:17.0.17":
+"@types/react-dom@npm:17.0.17, @types/react-dom@npm:^17.0.17":
   version: 17.0.17
   resolution: "@types/react-dom@npm:17.0.17"
   dependencies:
@@ -9707,7 +9707,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:17.0.47":
+"@types/react@npm:17.0.47, @types/react@npm:^17.0.45":
   version: 17.0.47
   resolution: "@types/react@npm:17.0.47"
   dependencies:
@@ -18238,7 +18238,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint@npm:8.18.0, eslint@npm:^8.18.0, eslint@npm:^8.6.0":
+"eslint@npm:8.18.0, eslint@npm:^8.15.0, eslint@npm:^8.18.0, eslint@npm:^8.6.0":
   version: 8.18.0
   resolution: "eslint@npm:8.18.0"
   dependencies:
@@ -19576,6 +19576,26 @@ __metadata:
     "@emotion/is-prop-valid":
       optional: true
   checksum: 2333b296a109ec0ef86421453f66a92b63e07930a491102f1007bbe48f40594d8c51a96ca937f8f3f013ba658147049bf1fa9feebc44487b8e7617bb674fb254
+  languageName: node
+  linkType: hard
+
+"framer-motion@npm:^6.3.12":
+  version: 6.3.12
+  resolution: "framer-motion@npm:6.3.12"
+  dependencies:
+    "@emotion/is-prop-valid": ^0.8.2
+    framesync: 6.0.1
+    hey-listen: ^1.0.8
+    popmotion: 11.0.3
+    style-value-types: 5.0.0
+    tslib: ^2.1.0
+  peerDependencies:
+    react: ">=16.8 || ^17.0.0 || ^18.0.0"
+    react-dom: ">=16.8 || ^17.0.0 || ^18.0.0"
+  dependenciesMeta:
+    "@emotion/is-prop-valid":
+      optional: true
+  checksum: 98d731c4eff21b7b9c442b29be361e27ccc067361047c24f9533be36d6116ff1994cab7b637d4659391fd0db9af3bf6f92fd1144bb4473257a5dc59d55a46a91
   languageName: node
   linkType: hard
 
@@ -27204,6 +27224,28 @@ __metadata:
   languageName: node
   linkType: hard
 
+"my-remix-app-b3dbce@workspace:packages/my-remix-app":
+  version: 0.0.0-use.local
+  resolution: "my-remix-app-b3dbce@workspace:packages/my-remix-app"
+  dependencies:
+    "@cloudflare/workers-types": ^3.10.0
+    "@remix-run/cloudflare": ^1.6.0
+    "@remix-run/cloudflare-pages": ^1.6.0
+    "@remix-run/dev": ^1.6.0
+    "@remix-run/eslint-config": ^1.6.0
+    "@remix-run/react": ^1.6.0
+    "@types/react": ^17.0.45
+    "@types/react-dom": ^17.0.17
+    cross-env: ^7.0.3
+    eslint: ^8.15.0
+    npm-run-all: ^4.1.5
+    react: ^17.0.2
+    react-dom: ^17.0.2
+    typescript: ^4.6.4
+    wrangler: beta
+  languageName: unknown
+  linkType: soft
+
 "mz@npm:^2.4.0":
   version: 2.7.0
   resolution: "mz@npm:2.7.0"
@@ -31473,7 +31515,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-dom@npm:*":
+"react-dom@npm:*, react-dom@npm:^17.0.2":
   version: 17.0.2
   resolution: "react-dom@npm:17.0.2"
   dependencies:
@@ -31995,7 +32037,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react@npm:*":
+"react@npm:*, react@npm:^17.0.2":
   version: 17.0.2
   resolution: "react@npm:17.0.2"
   dependencies:
@@ -32617,13 +32659,6 @@ __metadata:
     "@remix-run/react": ^1.0.0
     "@remix-run/server-runtime": ^1.0.0
   checksum: 530257052d226a86849e8c5277ff633aa9e114d8043a6a42231582013a4d2ecfe0bbda5faecd0f2f63707878b265e291313a6796e8bd9fc26c7aec470b96eb16
-  languageName: node
-  linkType: hard
-
-"remix@npm:1.6.0":
-  version: 1.6.0
-  resolution: "remix@npm:1.6.0"
-  checksum: 53c26281d295acfcca158bcbe1ef02fea74177db400ac3f7c3b16dbf9e5c43a79578ea62533de30b8a77aba0afdac407361929893bda9f09ad84f817741e4c2f
   languageName: node
   linkType: hard
 
@@ -34445,7 +34480,8 @@ __metadata:
   dependencies:
     "@cloudflare/workers-types": 3.13.0
     "@medusajs/medusa-js": 1.2.2
-    "@remix-run/cloudflare": 1.6.0
+    "@remix-run/cloudflare": ^1.6.0
+    "@remix-run/cloudflare-pages": ^1.6.0
     "@remix-run/dev": 1.6.0
     "@remix-run/eslint-config": ^1.6.0
     "@remix-run/react": ^1.6.0
@@ -34457,10 +34493,10 @@ __metadata:
     "@woodshop/illustrations": "workspace:^"
     cross-env: 7.0.3
     eslint: ^8.18.0
+    framer-motion: ^6.3.12
     react: 18.2.0
     react-dom: 18.2.0
     react-is: 18.2.0
-    remix: 1.6.0
     styled-components: 5.3.5
     typescript: 4.7.4
     wrangler: pages
@@ -36439,7 +36475,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:4.7.4, typescript@npm:^4.5.4, typescript@npm:^4.7.4":
+"typescript@npm:4.7.4, typescript@npm:^4.5.4, typescript@npm:^4.6.4, typescript@npm:^4.7.4":
   version: 4.7.4
   resolution: "typescript@npm:4.7.4"
   bin:
@@ -36459,7 +36495,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@4.7.4#~builtin<compat/typescript>, typescript@patch:typescript@^4.5.4#~builtin<compat/typescript>, typescript@patch:typescript@^4.7.4#~builtin<compat/typescript>":
+"typescript@patch:typescript@4.7.4#~builtin<compat/typescript>, typescript@patch:typescript@^4.5.4#~builtin<compat/typescript>, typescript@patch:typescript@^4.6.4#~builtin<compat/typescript>, typescript@patch:typescript@^4.7.4#~builtin<compat/typescript>":
   version: 4.7.4
   resolution: "typescript@patch:typescript@npm%3A4.7.4#~builtin<compat/typescript>::version=4.7.4&hash=bda367"
   bin:

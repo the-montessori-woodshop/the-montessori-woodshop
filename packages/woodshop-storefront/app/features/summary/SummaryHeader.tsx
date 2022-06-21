@@ -3,7 +3,8 @@ import {
   PageLayoutPaneHeader,
   PageLayoutPaneHeaderTitle,
 } from "~/components/page-layout";
-import { FC, memo } from "react";
+import type { FC} from "react";
+import { memo } from "react";
 import styled from "styled-components";
 
 const SPageLayoutPaneHeader = styled(PageLayoutPaneHeader)`

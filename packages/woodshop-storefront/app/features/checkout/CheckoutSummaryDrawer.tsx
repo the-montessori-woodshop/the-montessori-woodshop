@@ -11,7 +11,7 @@ import {
 } from "@woodshop/components";
 import { ShoppingCart } from "@woodshop/icons";
 import { PageLayoutPaneHeaderTitle } from "~/components/page-layout";
-import { FC } from "react";
+import type { FC } from "react";
 import styled from "styled-components";
 
 import { SummaryHeader } from "../summary";

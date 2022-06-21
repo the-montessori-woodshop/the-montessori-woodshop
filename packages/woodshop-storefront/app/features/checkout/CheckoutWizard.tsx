@@ -1,8 +1,8 @@
 import { WizardProvider } from "~/components/wizard";
-import { FC } from "react";
+import type { FC } from "react";
 
 import { CheckoutProvider } from "./Checkout.context";
-import { CheckoutWizardSteps } from "./checkout.utils";
+import type { CheckoutWizardSteps } from "./checkout.utils";
 
 export const CheckoutWizard: FC = ({ children }) => {
   return (

@@ -1,5 +1,4 @@
-import { getPageTitle } from "~/utils/getPageTitle";
-import { MetaFunction, Outlet } from "remix";
+import { Outlet } from "@remix-run/react";
 
 export default function ShopIndex() {
   return (
