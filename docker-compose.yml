@@ -37,18 +37,18 @@ services:
 
   redis:
     image: redis
-    container_name: redis
+    container_name: medusa_redis
     expose:
       - 6379
     env_file:
       - ./.env
 
-  admin:
-    image: admin
-    container_name: admin
+  medusa_admin:
+    image: medusa_admin
+    container_name: medusa_admin
     build:
-      context: ../woodshop-admin
-      dockerfile: ../woodshop-admin/Dockerfile
+      context: ./
+      dockerfile: ./packages/medusa-admin/Dockerfile
     env_file:
       - ./.env
     ports:

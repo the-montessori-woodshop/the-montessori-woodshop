@@ -6,9 +6,9 @@
     "publish": "wrangler publish",
     "types": "tsc --project tsconfig.types.json",
     "build": "yarn node ./scripts/build.js && yarn types",
-    "generate-dev": "dotenv -e ../../.env -- prisma generate",
+    "generate:dev": "dotenv -e ../../.env -- prisma generate",
     "generate": "prisma generate --data-proxy",
-    "migrate-dev": "prisma migrate dev",
+    "migrate:dev": "prisma migrate dev",
     "migrate": "WOODSHOP_API_DATABASE_URL=\"$WOODSHOP_API_MIGRATE_DATABASE_URL\" prisma migrate deploy",
     "push": "prisma push",
     "dev": "wrangler dev --ip 127.0.0.1 --port 8888 & yarn types --watch"
