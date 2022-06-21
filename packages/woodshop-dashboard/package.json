@@ -55,6 +55,6 @@
     "wrangler": "beta"
   },
   "engines": {
-    "node": ">=14"
+    "node": ">=17.3.0"
   }
 }

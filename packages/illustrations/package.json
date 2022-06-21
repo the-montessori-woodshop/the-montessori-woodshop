@@ -1,19 +1,17 @@
 {
   "name": "@woodshop/illustrations",
   "version": "1.0.0",
+  "type": "module",
+  "sideEffects": false,
   "main": "dist/index.cjs",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
-  "sideEffects": false,
   "scripts": {
     "generate": "yarn svgr --config-file=svgr.config.cjs svg",
     "docs": "yarn node ./scripts/create-docs.mjs && prettier --write ./ICONS.md",
     "types": "yarn tsc --project tsconfig.types.json",
     "bundle": "rollup --config rollup.config.js",
     "build": "yarn bundle & yarn types"
-  },
-  "targets": {
-    "types": false
   },
   "files": [
     "dist/**/*",

@@ -4,6 +4,22 @@
   "version": "1.0.0",
   "description": "The Montessori Woodshop's storefront.",
   "license": "Apache-2.0",
+  "engines": {
+    "node": ">=17.3.0"
+  },
+  "resolutions": {
+    "axios": "workspace:./packages/axios-fetch",
+    "postcss": "8"
+  },
+  "scripts": {
+    "lint": "yarn eslint --ext .tsx,.ts ./app --fix",
+    "build": "remix build",
+    "dev:remix": "remix watch",
+    "dev:wrangler": "cross-env NODE_ENV=development wrangler pages dev ./public",
+    "dev": "remix build && yarn dev:remix & yarn dev:wrangler",
+    "start": "cross-env NODE_ENV=production npm run dev:wrangler",
+    "mod": "remix migrate --migration replace-remix-imports"
+  },
   "dependencies": {
     "@linaria/core": "^3.0.0-beta.22",
     "@linaria/react": "^3.0.0-beta.22",
@@ -33,27 +49,5 @@
     "eslint": "^8.18.0",
     "typescript": "4.7.4",
     "wrangler": "pages"
-  },
-  "workspaces": {
-    "packages": [
-      "packages/**"
-    ]
-  },
-  "engines": {
-    "node": ">=17.3.0"
-  },
-  "resolutions": {
-    "axios": "workspace:./packages/axios-fetch",
-    "postcss": "8"
-  },
-  "scripts": {
-    "lint": "yarn eslint --ext .tsx,.ts ./app --fix",
-    "build": "remix build",
-    "dev:remix": "remix watch",
-    "dev:wrangler": "cross-env NODE_ENV=development wrangler pages dev ./public",
-    "dev": "remix build && yarn dev:remix & yarn dev:wrangler",
-    "start": "cross-env NODE_ENV=production npm run dev:wrangler",
-    "mod": "remix migrate --migration replace-remix-imports"
-  },
-  "packageManager": "yarn@3.2.0"
+  }
 }
