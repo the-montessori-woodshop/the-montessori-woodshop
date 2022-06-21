@@ -1,3 +1,4 @@
+import { useNavigate } from "@remix-run/react";
 import {
   Button,
   Drawer,
@@ -6,13 +7,11 @@ import {
   Icon,
   NavbarAction,
   TypographyCopy,
-  TypographyHeading,
   useDialogRef,
 } from "@woodshop/components";
 import { UserCircle } from "@woodshop/icons";
-import type { FC} from "react";
+import type { FC } from "react";
 import React, { useCallback } from "react";
-import { useNavigate } from "@remix-run/react";
 
 export const HeaderAccount: FC = () => {
   const { dialogRef, handleOpen, handleClose } = useDialogRef();
@@ -22,7 +21,7 @@ export const HeaderAccount: FC = () => {
     // logic if the user has been signed in or not
     navigate("/auth/sign-in");
     handleClose();
-  }, []);
+  }, [handleClose, navigate]);
 
   return (
     <>

@@ -1,4 +1,4 @@
-import { WizardBodyMotion, WizardProvider } from "~/components/wizard";
+import { WizardBodyMotion } from "~/components/wizard";
 import type { FC } from "react";
 
 import { useCheckoutWizardContext } from "./checkout.useCheckoutWizardContex";

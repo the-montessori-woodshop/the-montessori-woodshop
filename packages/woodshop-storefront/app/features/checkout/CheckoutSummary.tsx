@@ -1,4 +1,4 @@
-import { FC, forwardRef } from "react";
+import { forwardRef } from "react";
 
 import { Summary, SummaryBody, SummaryHeader } from "../summary";
 

@@ -1,5 +1,5 @@
 import { Button, TypographyCopy, makeRem } from "@woodshop/components";
-import type { FC, MouseEventHandler} from "react";
+import type { FC, MouseEventHandler } from "react";
 import { memo, useMemo } from "react";
 import styled from "styled-components";
 
@@ -41,7 +41,7 @@ const CheckoutBreadcrumb: FC<{
             {children}
           </SText>
         ),
-        []
+        [children, isActive]
       )}
     </SButton>
   );
@@ -84,7 +84,7 @@ export const CheckoutBreadcrumbs: FC = () => {
             ? "forward"
             : "back",
       }),
-    [stepName]
+    [goToStep, stepName]
   );
 
   const goToReview = useMemo(
@@ -93,7 +93,7 @@ export const CheckoutBreadcrumbs: FC = () => {
         stepName: "review",
         direction: "forward",
       }),
-    [stepName]
+    [goToStep]
   );
 
   return (

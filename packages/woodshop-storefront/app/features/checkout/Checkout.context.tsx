@@ -1,10 +1,8 @@
-import type { WizardContextType} from "~/components/wizard";
-import { useWizardContext } from "~/components/wizard";
-import type { FC} from "react";
+import type { WizardContextType } from "~/components/wizard";
+import type { FC } from "react";
 import React, { useContext, useMemo } from "react";
 
 import { useCheckoutWizardContext } from "./checkout.useCheckoutWizardContex";
-import { CheckoutWizardSteps } from "./checkout.utils";
 
 type CheckoutContextType = WizardContextType & {};
 
@@ -17,7 +15,7 @@ export const CheckoutProvider: FC = ({ children }) => {
     () => ({
       ...wizardControls,
     }),
-    []
+    [wizardControls]
   );
 
   return (
