@@ -1,9 +1,6 @@
-import { createComponentStyle } from "~/components/utils/createComponentStyle";
 import clsx from "clsx";
 import type { ReactNode } from "react";
 import { forwardRef } from "react";
-
-import styles from "./ImagesGridMainContent.css";
 
 export type ImagesGridMainContentProps = JSX.IntrinsicElements["div"] & {
   children?: ReactNode;
@@ -19,5 +16,3 @@ export const ImagesGridMainContent = forwardRef<
     </div>
   );
 });
-
-ImagesGridMainContent.links = createComponentStyle(styles);

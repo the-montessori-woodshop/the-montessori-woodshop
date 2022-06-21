@@ -1,4 +1,4 @@
-import { Breadcrumb } from "~/components/Breadcrumb";
+import { Breadcrumb } from "~/components/breadcrumb/Breadcrumb";
 import type { UseMatchesMatch } from "~/types/useMatches";
 
 export const handle = {

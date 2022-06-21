@@ -1,4 +1,4 @@
-import { Breadcrumb } from "~/components/Breadcrumb";
+import { Breadcrumb } from "~/components/breadcrumb/Breadcrumb";
 import { AppReviews } from "~/features/app.reviews";
 
 export const links = AppReviews.links;

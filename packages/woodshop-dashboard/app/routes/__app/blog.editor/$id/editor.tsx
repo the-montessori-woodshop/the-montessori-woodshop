@@ -1,5 +1,5 @@
 import type { LinksFunction } from "@remix-run/cloudflare";
-import { Breadcrumb } from "~/components/Breadcrumb";
+import { Breadcrumb } from "~/components/breadcrumb/Breadcrumb";
 import { useMarkdownRendererContext } from "~/components/MarkdownRenderer.context";
 import { createRouteLinkStyles } from "~/features/_routes/routes.createRouteLinkStyles";
 import { useBlogEditorSubRouteData } from "~/features/blog-editor/useBlogEditorSubRouteData";

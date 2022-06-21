@@ -1,5 +1,5 @@
 import { Fieldset, FormFieldGroup, FormFieldText } from "@woodshop/components";
-import { Breadcrumb } from "~/components/Breadcrumb";
+import { Breadcrumb } from "~/components/breadcrumb/Breadcrumb";
 import { useBlogEditorSubRouteData } from "~/features/blog-editor/useBlogEditorSubRouteData";
 import type { UseMatchesMatch } from "~/types/useMatches";
 

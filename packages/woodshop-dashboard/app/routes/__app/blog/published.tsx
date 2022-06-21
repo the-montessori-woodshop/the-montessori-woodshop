@@ -6,7 +6,7 @@ import type {
 } from "@woodshop/api";
 import { BlogNewPostButton } from "~/components/blog/BlogNewPostButton";
 import { BlogPostList } from "~/components/blog/BlogPostsList";
-import { Breadcrumb } from "~/components/Breadcrumb";
+import { Breadcrumb } from "~/components/breadcrumb/Breadcrumb";
 import { PageContainer } from "~/components/page/PageContainer";
 import { PageContent } from "~/components/page/PageContent";
 import { PageHeader } from "~/components/page/PageHeader";

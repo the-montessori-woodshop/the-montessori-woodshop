@@ -1,7 +1,7 @@
 import type { ActionFunction } from "@remix-run/cloudflare";
 import { redirect } from "@remix-run/cloudflare";
 import type { POST_NewImageApiResponse } from "@woodshop/api";
-import { Breadcrumb } from "~/components/Breadcrumb";
+import { Breadcrumb } from "~/components/breadcrumb/Breadcrumb";
 import { AppImagesNewRoute } from "~/features/app.images-new";
 import { api } from "~/services/api.server";
 

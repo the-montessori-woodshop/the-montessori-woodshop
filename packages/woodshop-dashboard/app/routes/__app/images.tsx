@@ -1,8 +1,8 @@
 import { LoaderFunction } from "@remix-run/cloudflare";
-import { Breadcrumb } from "~/components/Breadcrumb";
-import { api } from "~/services/api.server";
 import type { GET_ImagesApiResponse } from "@woodshop/api";
+import { Breadcrumb } from "~/components/breadcrumb/Breadcrumb";
 import { AppImages } from "~/features/app.images";
+import { api } from "~/services/api.server";
 
 export const links = AppImages.links;
 

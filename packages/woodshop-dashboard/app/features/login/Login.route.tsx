@@ -5,6 +5,7 @@ import {
   TypographyCopy,
   TypographyHeading,
 } from "@woodshop/components";
+import { authenticator } from "~/services/auth.server";
 
 import { createRouteLinkStyles } from "../_routes/routes.createRouteLinkStyles";
 import type { RemixFeatureRoute } from "../_routes/routes.types";
@@ -42,7 +43,9 @@ export const LoginRoute: RemixFeatureRoute = () => {
   );
 };
 
-LoginRoute.links = () => [
-  createRouteLinkStyles(routeStyles),
-  // createRouteLinkStyles(routeStyleMap),
-];
+export default LoginRoute;
+LoginRoute.loader = async ({ request }) =>
+  authenticator.isAuthenticated(request, {
+    successRedirect: "/",
+  });
+LoginRoute.links = () => [createRouteLinkStyles(routeStyles)];

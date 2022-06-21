@@ -1,4 +1,7 @@
-import { Breadcrumb, BreadcrumbSeparator } from "~/components/Breadcrumb";
+import {
+  Breadcrumb,
+  BreadcrumbSeparator,
+} from "~/components/breadcrumb/Breadcrumb";
 import { AppBlogEditorRoute } from "~/features/app.blog-editor";
 import type { UseMatchesMatch } from "~/types/useMatches";
 

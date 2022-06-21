@@ -3,9 +3,9 @@ import { TopNavList } from "@woodshop/components";
 import type { FC } from "react";
 import { Fragment } from "react";
 
-import { BreadcrumbSeparator } from "./Breadcrumb";
+import { BreadcrumbSeparator } from "../breadcrumb/Breadcrumb";
 
-export const TopNavBreadcrumb: FC = () => {
+export const NavHeaderBreadcrumb: FC = () => {
   const matches = useMatches();
   return (
     <TopNavList

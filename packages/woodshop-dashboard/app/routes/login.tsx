@@ -1,12 +1,6 @@
 import { LoginRoute } from "~/features/login";
-import { authenticator } from "~/services/auth.server";
-import type { LoaderFunction } from "@remix-run/cloudflare";
 
 export const links = LoginRoute.links;
-
-export const loader: LoaderFunction = async ({ request }) =>
-  authenticator.isAuthenticated(request, {
-    successRedirect: "/",
-  });
+export const loader = LoginRoute.loader;
 
 export default LoginRoute;

@@ -32,7 +32,7 @@ import {
   makeRem,
 } from "@woodshop/components";
 import { Close, Copy } from "@woodshop/icons";
-import { Breadcrumb } from "~/components/Breadcrumb";
+import { Breadcrumb } from "~/components/breadcrumb/Breadcrumb";
 import { ImagePaneContent } from "~/components/images/ImagePaneContent";
 import { ImagesGridEditContent } from "~/components/images/ImagesGridEditContent";
 import { ImagesGridEditTitle } from "~/components/images/ImagesGridEditTitle";

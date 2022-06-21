@@ -4,7 +4,7 @@ import { BlogNavItemContent } from "~/components/blog/BlogNavItemContent";
 
 import { createRouteLinkStyles } from "../_routes/routes.createRouteLinkStyles";
 import type { RemixFeatureRoute } from "../_routes/routes.types";
-import routeStyles from "./AppBlogEditorRoute.css";
+import routeStyles from "./AppBlogEditor.css";
 
 export const AppBlogEditorRoute: RemixFeatureRoute = () => {
   return (
