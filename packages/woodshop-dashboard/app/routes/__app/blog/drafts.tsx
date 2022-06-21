@@ -1,3 +1,5 @@
+import type { LoaderFunction } from "@remix-run/cloudflare";
+import { useLoaderData } from "@remix-run/react";
 import type {
   GET_PostsApiResponse,
   GET_PostsApiSearchParams,
@@ -11,8 +13,6 @@ import { PageHeader } from "~/components/PageHeader";
 import { PageTitle } from "~/components/PageTitle";
 import { api } from "~/services/api.server";
 import type { UseMatchesMatch } from "~/types/useMatches";
-import type { LoaderFunction } from "remix";
-import { useLoaderData } from "remix";
 
 export const loader: LoaderFunction = async ({ request }) => {
   try {

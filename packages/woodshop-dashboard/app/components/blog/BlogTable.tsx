@@ -6,7 +6,7 @@ import { Table } from "~/components/Table";
 import type { FC } from "react";
 import { useCallback, useMemo } from "react";
 import type { Column } from "react-table";
-import { useNavigate } from "remix";
+import { useNavigate } from "@remix-run/react";
 
 export const BlogTable: FC<{ data: GET_PostsApiResponse }> = ({ data }) => {
   const navigate = useNavigate();

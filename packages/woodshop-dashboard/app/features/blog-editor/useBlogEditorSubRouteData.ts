@@ -1,5 +1,5 @@
 import type { Post } from "@woodshop/api";
-import { useMatches } from "remix";
+import { useMatches } from "@remix-run/react";
 
 export const useBlogEditorSubRouteData = () => {
   const matches = useMatches();

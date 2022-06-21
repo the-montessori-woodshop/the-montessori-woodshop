@@ -1,7 +1,7 @@
 import { TopNavList } from "@woodshop/components";
 import type { FC } from "react";
 import { Fragment } from "react";
-import { useMatches } from "remix";
+import { useMatches } from "@remix-run/react";
 
 import { BreadcrumbSeparator } from "./Breadcrumb";
 

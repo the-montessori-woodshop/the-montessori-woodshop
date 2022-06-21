@@ -1,6 +1,6 @@
 import { LoginRoute } from "~/features/login";
 import { authenticator } from "~/services/auth.server";
-import type { LoaderFunction } from "remix";
+import type { LoaderFunction } from "@remix-run/cloudflare";
 
 export const links = LoginRoute.links;
 

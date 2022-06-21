@@ -5,8 +5,8 @@ import {
 } from "@woodshop/components";
 import type { FC, ReactNode } from "react";
 import { forwardRef } from "react";
-import type { NavLinkProps } from "remix";
-import { NavLink } from "remix";
+import type { NavLinkProps } from "@remix-run/react";
+import { NavLink } from "@remix-run/react";
 
 export const BreadcrumbSeparator: FC = () => {
   return (

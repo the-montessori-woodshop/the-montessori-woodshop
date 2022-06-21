@@ -3,7 +3,7 @@ import type { POST_NewImageApiResponse } from "@woodshop/api";
 import { Breadcrumb } from "~/components/Breadcrumb";
 import { AppImagesNewRoute } from "~/features/app.images-new";
 import { api } from "~/services/api.server";
-import { redirect } from "remix";
+import { redirect } from "@remix-run/cloudflare";
 
 export const links = AppImagesNewRoute.links;
 

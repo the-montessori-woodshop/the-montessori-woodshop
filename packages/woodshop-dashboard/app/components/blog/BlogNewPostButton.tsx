@@ -1,6 +1,6 @@
 import { Button } from "@woodshop/components";
 import type { FC } from "react";
-import { useFetcher } from "remix";
+import { useFetcher } from "@remix-run/react";
 
 export const BlogNewPostButton: FC = () => {
   const fetcher = useFetcher();

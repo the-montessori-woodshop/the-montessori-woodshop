@@ -3,8 +3,8 @@ import type {
   DELETE_ImageApiResponse,
 } from "@woodshop/api";
 import { api } from "~/services/api.server";
-import type { ActionFunction } from "remix";
-import { redirect } from "remix";
+import type { ActionFunction } from "@remix-run/cloudflare";
+import { redirect } from "@remix-run/cloudflare";
 
 export const action: ActionFunction = async ({ request }) => {
   const formData = await request.formData();

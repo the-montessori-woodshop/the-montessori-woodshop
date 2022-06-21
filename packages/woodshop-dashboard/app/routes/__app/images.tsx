@@ -1,4 +1,4 @@
-import { type LoaderFunction } from "remix";
+import { LoaderFunction } from "@remix-run/cloudflare";
 import { Breadcrumb } from "~/components/Breadcrumb";
 import { api } from "~/services/api.server";
 import type { GET_ImagesApiResponse } from "@woodshop/api";

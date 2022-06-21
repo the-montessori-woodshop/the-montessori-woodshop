@@ -3,8 +3,8 @@ import type {
   POST_NewPostByIdApiResponse,
 } from "@woodshop/api";
 import { api } from "~/services/api.server";
-import type { ActionFunction, LoaderFunction } from "remix";
-import { redirect } from "remix";
+import type { ActionFunction, LoaderFunction } from "@remix-run/cloudflare";
+import { redirect } from "@remix-run/cloudflare";
 
 export const loader: LoaderFunction = async () => redirect("/blog");
 
