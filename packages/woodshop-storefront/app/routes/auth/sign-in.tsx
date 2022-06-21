@@ -13,8 +13,8 @@ import { SignInWithApple } from "~/components/SignInWithApple";
 import { SignInWithFacebook } from "~/components/SignInWithFacebook";
 import { SignInWithGoogle } from "~/components/SignInWithGoogle";
 import { getPageTitle } from "~/utils/getPageTitle";
-import type { MetaFunction } from "remix";
-import { Link } from "remix";
+import type { MetaFunction } from "@remix-run/cloudflare";
+import { Link } from "@remix-run/react";
 
 export const meta: MetaFunction = () => {
   return { title: getPageTitle("Sign in") };

@@ -9,7 +9,7 @@ import {
 import { NavbarLink } from "~/components/NavbarLink";
 import type { FC} from "react";
 import { memo, useMemo } from "react";
-import { Link } from "remix";
+import { Link } from "@remix-run/react";
 import styled from "styled-components";
 
 import { CheckoutSummaryDrawer } from "./checkout/CheckoutSummaryDrawer";

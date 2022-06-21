@@ -1,4 +1,4 @@
-import { useLocation } from "remix";
+import { useLocation } from "@remix-run/react";
 
 /**
  * Hook to determine if the route includes

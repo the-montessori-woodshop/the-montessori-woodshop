@@ -1,6 +1,6 @@
 import { getPageTitle } from "~/utils/getPageTitle";
-import type { MetaFunction} from "remix";
-import { Outlet } from "remix";
+import type { MetaFunction } from "@remix-run/cloudflare";
+import { Outlet } from "@remix-run/react";
 
 export const meta: MetaFunction = () => {
   return { title: getPageTitle("Mission") };

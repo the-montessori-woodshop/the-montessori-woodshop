@@ -4,16 +4,8 @@ import stylesUrl from "@woodshop/components/css/styles.css";
 import themeUrl from "@woodshop/components/css/theme.css";
 import { Footer } from "~/features/Footer";
 import { Header } from "~/features/Header";
-import {
-  Links,
-  LiveReload,
-  Meta,
-  Outlet,
-  Scripts,
-  ScrollRestoration,
-} from "remix";
-import type { MetaFunction ,
-  LinksFunction} from "remix";
+import type { LinksFunction, MetaFunction } from "@remix-run/cloudflare";
+import { Links, LiveReload, Meta, Outlet, Scripts, ScrollRestoration } from "@remix-run/react";
 
 export const links: LinksFunction = () => {
   return [

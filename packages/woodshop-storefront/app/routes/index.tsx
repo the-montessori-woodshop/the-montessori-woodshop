@@ -9,13 +9,9 @@ import {
   TypographyCopy,
   TypographyHeading,
 } from "@woodshop/components";
-import type {
-  MetaFunction} from "remix";
-import {
-  type LoaderFunction,
-  useLoaderData,
-  Outlet
-} from "remix";
+import type { MetaFunction } from "@remix-run/cloudflare";
+import { LoaderFunction } from "@remix-run/cloudflare";
+import { Outlet, useLoaderData } from "@remix-run/react";
 import { medusaClient } from "~/clients/medusa-client";
 import { RouteWrapper } from "~/components/RouteWrapper";
 import { getPageTitle } from "~/utils/getPageTitle";

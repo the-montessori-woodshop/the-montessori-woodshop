@@ -7,7 +7,7 @@ import {
 } from "@woodshop/components";
 import type { FC} from "react";
 import { memo, useMemo } from "react";
-import { useLocation } from "remix";
+import { useLocation } from "@remix-run/react";
 
 import { useIsCheckout } from "./useIsCheckout";
 

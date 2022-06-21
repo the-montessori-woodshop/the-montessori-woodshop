@@ -6937,7 +6937,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@remix-run/dev@npm:1.6.0, @remix-run/dev@npm:^1.6.0":
+"@remix-run/dev@npm:^1.6.0":
   version: 1.6.0
   resolution: "@remix-run/dev@npm:1.6.0"
   dependencies:
@@ -34482,7 +34482,7 @@ __metadata:
     "@medusajs/medusa-js": 1.2.2
     "@remix-run/cloudflare": ^1.6.0
     "@remix-run/cloudflare-pages": ^1.6.0
-    "@remix-run/dev": 1.6.0
+    "@remix-run/dev": ^1.6.0
     "@remix-run/eslint-config": ^1.6.0
     "@remix-run/react": ^1.6.0
     "@types/react": 17.0.47

@@ -12,7 +12,7 @@ import {
 import { UserCircle } from "@woodshop/icons";
 import type { FC} from "react";
 import React, { useCallback } from "react";
-import { useNavigate } from "remix";
+import { useNavigate } from "@remix-run/react";
 
 export const HeaderAccount: FC = () => {
   const { dialogRef, handleOpen, handleClose } = useDialogRef();
