@@ -27,9 +27,6 @@
     "url": "https://github.com/machineq/asset-tracker/issues"
   },
   "homepage": "https://github.com/machineq/asset-tracker#readme",
-  "peerDependencies": {
-    "react": "18.2.0"
-  },
   "devDependencies": {
     "@svgr/cli": "^6.2.1",
     "@types/fs-extra": "^9.0.13",
@@ -39,8 +36,11 @@
     "@woodshop/builder": "^1.0.0",
     "fs-extra": "^10.1.0",
     "prettier": "^2.7.1",
-    "react": "18.2.0",
     "rollup": "^2.75.7",
     "typescript": "^4.7.4"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   }
 }
