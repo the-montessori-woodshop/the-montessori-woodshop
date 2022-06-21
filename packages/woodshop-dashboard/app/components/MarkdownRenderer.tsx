@@ -1,5 +1,5 @@
 import type { Post } from "@woodshop/api";
-import { Blog } from "~/features/blog/Blog";
+import { Blog } from "@woodshop/components";
 import type { FC } from "react";
 
 import { useMarkdownRendererContext } from "./MarkdownRenderer.context";

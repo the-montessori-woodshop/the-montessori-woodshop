@@ -1,4 +1,7 @@
-export const createRouteLinkStyles = (styles: string) => ({
-  rel: "stylesheet",
-  href: styles,
-});
+export const createRouteLinkStyles = (styles: string) => {
+  console.log(styles);
+  return {
+    rel: "stylesheet",
+    href: styles,
+  };
+};

@@ -7,12 +7,9 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
-// @ts-ignore
-import fontBitterUrl from "@woodshop/components/font/bitter";
-// @ts-ignore
-import fontOpenSansUrl from "@woodshop/components/font/open-sans";
-// @ts-ignore
-import stylesUrl from "@woodshop/components/styles";
+import stylesUrl from "@woodshop/components/css";
+import fontBitterUrl from "@woodshop/components/fonts/bitter.css";
+import fontOpenSansUrl from "@woodshop/components/fonts/open-sans.css";
 
 import rootUrl from "./root.css";
 

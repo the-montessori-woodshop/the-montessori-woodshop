@@ -1,7 +1,7 @@
+import { useMatches } from "@remix-run/react";
 import { TopNavList } from "@woodshop/components";
 import type { FC } from "react";
 import { Fragment } from "react";
-import { useMatches } from "@remix-run/react";
 
 import { BreadcrumbSeparator } from "./Breadcrumb";
 
@@ -17,7 +17,7 @@ export const TopNavBreadcrumb: FC = () => {
         .filter((match) => match.handle && match.handle.breadcrumb)
         .map((match, index, arr) => (
           <Fragment key={index}>
-            {match.handle.breadcrumb(match)}
+            {match.handle?.breadcrumb(match)}
             {index !== arr.length - 1 && <BreadcrumbSeparator />}
           </Fragment>
         ))}

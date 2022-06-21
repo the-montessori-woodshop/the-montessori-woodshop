@@ -1,13 +1,13 @@
+import type { LoaderFunction } from "@remix-run/cloudflare";
+import { useLoaderData } from "@remix-run/react";
 import type { GET_PostsApiResponse } from "@woodshop/api";
 import { BlogNewPostButton } from "~/components/blog/BlogNewPostButton";
 import { BlogPostList } from "~/components/blog/BlogPostsList";
-import { PageContainer } from "~/components/PageContainer";
-import { PageContent } from "~/components/PageContent";
-import { PageHeader } from "~/components/PageHeader";
-import { PageTitle } from "~/components/PageTitle";
+import { PageContainer } from "~/components/page/PageContainer";
+import { PageContent } from "~/components/page/PageContent";
+import { PageHeader } from "~/components/page/PageHeader";
+import { PageTitle } from "~/components/page/PageTitle";
 import { api } from "~/services/api.server";
-import type { LoaderFunction } from "@remix-run/cloudflare";
-import { useLoaderData } from "@remix-run/react";
 
 export const loader: LoaderFunction = async ({ request }) => {
   try {

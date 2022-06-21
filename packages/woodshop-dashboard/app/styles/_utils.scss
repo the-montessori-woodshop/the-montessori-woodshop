@@ -1,3 +1,3 @@
 @function makeRem($size) {
-  @return #{$size / 16}rem;
+  @return #{calc($size / 16)}rem;
 }

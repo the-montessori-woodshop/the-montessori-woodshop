@@ -17,7 +17,7 @@ import {
   ImageGallery,
   SignOut,
 } from "@woodshop/icons";
-import { TopNavBreadcrumb } from "components/TopNavBreadcrumb";
+import { TopNavBreadcrumb } from "~/components/TopNavBreadcrumb";
 
 import { createRouteLinkStyles } from "../_routes/routes.createRouteLinkStyles";
 import type { RemixFeatureRoute } from "../_routes/routes.types";

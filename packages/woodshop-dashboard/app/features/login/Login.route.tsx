@@ -8,7 +8,7 @@ import {
 
 import { createRouteLinkStyles } from "../_routes/routes.createRouteLinkStyles";
 import type { RemixFeatureRoute } from "../_routes/routes.types";
-import routeStyles from "./Login.css";
+import routeStyles from "./Login.route.css";
 
 export const LoginRoute: RemixFeatureRoute = () => {
   return (
@@ -42,4 +42,7 @@ export const LoginRoute: RemixFeatureRoute = () => {
   );
 };
 
-LoginRoute.links = () => [createRouteLinkStyles(routeStyles)];
+LoginRoute.links = () => [
+  createRouteLinkStyles(routeStyles),
+  // createRouteLinkStyles(routeStyleMap),
+];

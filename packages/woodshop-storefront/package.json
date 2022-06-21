@@ -13,9 +13,8 @@
     "build": "remix build",
     "dev:remix": "remix watch",
     "dev:wrangler": "cross-env NODE_ENV=development wrangler pages dev ./public",
-    "dev": "remix build && yarn dev:remix & yarn dev:wrangler",
-    "start": "cross-env NODE_ENV=production npm run dev:wrangler",
-    "mod": "remix migrate --migration replace-remix-imports"
+    "dev": "remix build && yarn dev:remix & yarn dev:wrangler & yarn css",
+    "start": "cross-env NODE_ENV=production npm run dev:wrangler"
   },
   "dependencies": {
     "@linaria/core": "^3.0.0-beta.22",

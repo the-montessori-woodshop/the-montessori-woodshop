@@ -1,10 +1,10 @@
+import type { ActionFunction, LoaderFunction } from "@remix-run/cloudflare";
+import { redirect } from "@remix-run/cloudflare";
 import type {
   POST_NewPostByIdApiRequest,
   POST_NewPostByIdApiResponse,
 } from "@woodshop/api";
 import { api } from "~/services/api.server";
-import type { ActionFunction, LoaderFunction } from "@remix-run/cloudflare";
-import { redirect } from "@remix-run/cloudflare";
 
 export const loader: LoaderFunction = async () => redirect("/blog");
 
@@ -16,6 +16,7 @@ export const action: ActionFunction = async ({ request }) => {
     >({
       url: "/post",
       headers: request.headers,
+      // @ts-ignore
       body: {
         title: "New post",
       },

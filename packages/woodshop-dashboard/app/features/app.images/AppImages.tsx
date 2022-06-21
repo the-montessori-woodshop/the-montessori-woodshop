@@ -1,12 +1,12 @@
 import { Link, NavLink, Outlet, useLoaderData } from "@remix-run/react";
 import type { GET_ImagesApiResponse } from "@woodshop/api";
 import { ButtonContent, ButtonGroup } from "@woodshop/components";
+import { ImagesGrid } from "~/components/images/ImagesGrid";
+import { ImagesGridMainContent } from "~/components/images/ImagesGridMainContent";
+import { ImagesGridMainTitle } from "~/components/images/ImagesGridMainTitle";
+import { PageHeader } from "~/components/page/PageHeader";
+import { PageTitle } from "~/components/page/PageTitle";
 import clsx from "clsx";
-import { ImagesGrid } from "components/ImagesGrid";
-import { ImagesGridMainContent } from "components/ImagesGridMainContent";
-import { ImagesGridMainTitle } from "components/ImagesGridMainTitle";
-import { PageHeader } from "components/PageHeader";
-import { PageTitle } from "components/PageTitle";
 
 import { createRouteLinkStyles } from "../_routes/routes.createRouteLinkStyles";
 import type { RemixFeatureRoute } from "../_routes/routes.types";
