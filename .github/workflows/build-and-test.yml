@@ -15,10 +15,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Pull Submodules
-        run: git submodule update --init --recursive
       - name: Install
-        run: yarn install
+        run: yarn install --immutable
       - name: Build
         run: yarn build:medusa-admin
   # build_medusa_api:
