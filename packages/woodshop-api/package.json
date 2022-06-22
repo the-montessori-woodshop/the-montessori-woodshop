@@ -8,8 +8,8 @@
     "types": "tsc --project tsconfig.types.json",
     "build": "yarn node ./scripts/build.js && yarn types",
     "generate": "./scripts/generate.sh",
-    "migrate-dev": "./scripts/migrate-dev.sh",
-    "migrate": "./scripts/migrate.sh",
+    "migrate:dev": "./scripts/migrate-dev.sh",
+    "migrate:ci": "yarn prisma migrate deploy",
     "push": "prisma push",
     "dev": "wrangler dev --ip 127.0.0.1 --port 8888 & yarn types --watch"
   },
