@@ -8944,7 +8944,6 @@ __metadata:
     "@types/react-dom": 17.0.17
     "@typescript-eslint/eslint-plugin": ^5.28.0
     "@typescript-eslint/parser": ^5.28.0
-    "@woodshop/api": "workspace:^"
     "@woodshop/builder": "workspace:^"
     "@woodshop/icons": "workspace:^"
     "@woodshop/illustrations": "workspace:^"
