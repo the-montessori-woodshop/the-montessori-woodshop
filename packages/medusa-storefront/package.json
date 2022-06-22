@@ -1,8 +1,8 @@
 {
   "private": true,
-  "name": "@woodshop/storefront",
+  "name": "medusa-storefront",
   "version": "1.0.0",
-  "description": "The Montessori Woodshop's storefront.",
+  "description": "The Montessori Woodshop's web store.",
   "license": "Apache-2.0",
   "engines": {
     "node": ">=17.3.0"

@@ -13,7 +13,7 @@ services:
 
   # Medusa
   - type: web
-    name: medusa-api
+    name: medusa_api
     env: docker
     plan: starter
     dockerfilePath: ./packages/medusa-api/Dockerfile

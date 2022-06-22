@@ -39,26 +39,6 @@ jobs:
           CF_API_TOKEN=${{ secrets.CF_API_TOKEN }}
           yarn workspace @woodshop/api wrangler publish --env production
 
-  deploy_woodshop_storefront:
-    name: Build and deploy | @woodshop/storefront
-    runs-on: ubuntu-latest
-    environment: production
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Install
-        run: yarn install --immutable
-      - name: Build
-        run: yarn build:woodshop-storefront
-      - name: Deploy to Cloudflare Pages
-        uses: cloudflare/pages-action@1
-        with:
-          apiToken: ${{ secrets.CF_API_TOKEN }}
-          accountId: ${{ secrets.CF_ACCOUNT_ID }}
-          gitHubToken: ${{ secrets.API_TOKEN_GITHUB }}
-          projectName: woodshop-storefront
-          directory: packages/woodshop-storefront/public
-
   deploy_woodshop_dashboard:
     name: Build and deploy | @woodshop/dashboard
     runs-on: ubuntu-latest
@@ -98,6 +78,26 @@ jobs:
           gitHubToken: ${{ secrets.API_TOKEN_GITHUB }}
           projectName: woodshop-components
           directory: packages/components/storybook-static
+
+  deploy_medusa_storefront:
+    name: Build and deploy | medusa-storefront
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Install
+        run: yarn install --immutable
+      - name: Build
+        run: yarn build:medusa-storefront
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/pages-action@1
+        with:
+          apiToken: ${{ secrets.CF_API_TOKEN }}
+          accountId: ${{ secrets.CF_ACCOUNT_ID }}
+          gitHubToken: ${{ secrets.API_TOKEN_GITHUB }}
+          projectName: medusa-storefront
+          directory: packages/medusa-storefront/public
 
   deploy_medusa_admin:
     name: Build and deploy | medusa-admin
