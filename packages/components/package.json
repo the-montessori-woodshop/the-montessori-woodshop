@@ -39,7 +39,6 @@
   },
   "devDependencies": {
     "@babel/core": "^7.18.5",
-    "@cloudflare/wrangler": "^1.19.12",
     "@storybook/addon-actions": "^6.5.9",
     "@storybook/addon-docs": "^6.5.9",
     "@storybook/addon-essentials": "^6.5.9",
@@ -64,7 +63,8 @@
     "require-from-string": "^2.0.2",
     "rollup": "^2.75.7",
     "typescript": "^4.7.4",
-    "webpack": "^5.73.0"
+    "webpack": "^5.73.0",
+    "wrangler": "^2.0.15"
   },
   "peerDependencies": {
     "@linaria/core": "^3.0.0-beta.19",
