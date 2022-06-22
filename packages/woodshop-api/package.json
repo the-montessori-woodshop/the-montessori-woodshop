@@ -4,7 +4,7 @@
   "description": "The supporting API and Database Schema for The Montessori Woodshop storefront",
   "scripts": {
     "setup": "yarn generate && yarn migrate-dev",
-    "publish": "wrangler publish",
+    "deploy": "yarn generate && wrangler publish --env production",
     "types": "tsc --project tsconfig.types.json",
     "build": "yarn node ./scripts/build.js && yarn types",
     "generate": "./scripts/generate.sh",

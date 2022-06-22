@@ -20,7 +20,7 @@ jobs:
         run: yarn install --immutable
       - name: Migrate Woodshop Database
         run:
-          WOODSHOP_API_DATABASE_URL=${{secrets.WOODSHOP_API_DATABASE_URL}}
+          WOODSHOP_API_DATABASE_URL=${{ secrets.WOODSHOP_API_DATABASE_URL }}
           yarn migrate:woodshop-api
 
   deploy_woodshop_api:
@@ -39,7 +39,7 @@ jobs:
         run: 
           CF_ACCOUNT_ID=${{ secrets.CF_ACCOUNT_ID }}
           CF_API_TOKEN=${{ secrets.CF_API_TOKEN_WORKERS }}
-          yarn workspace @woodshop/api wrangler publish --env production
+          yarn workspace @woodshop/api deploy
 
   deploy_woodshop_dashboard:
     name: Build and deploy | @woodshop/dashboard
