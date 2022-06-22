@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "storefront",
+  "name": "@woodshop/storefront",
   "version": "1.0.0",
   "description": "The Montessori Woodshop's storefront.",
   "license": "Apache-2.0",

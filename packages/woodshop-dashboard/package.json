@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "dashboard",
+  "name": "@woodshop/dashboard",
   "description": "The Montessori Woodshop's dashboard.",
   "license": "Apache-2.0",
   "engines": {
