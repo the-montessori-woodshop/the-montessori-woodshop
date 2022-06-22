@@ -10,15 +10,6 @@ on:
   workflow_dispatch:
 
 jobs:
-  build_components:
-    name: Build & test - @woodshop/components
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Install
-        run: yarn install --immutable
-      - name: Build
-        run: yarn build:components
   build_medusa_admin:
     name: Build & test - medusa-admin
     runs-on: ubuntu-latest
@@ -37,6 +28,15 @@ jobs:
         run: yarn install --immutable
       - name: Build
         run: yarn build:medusa-api
+  build_woodshop_components:
+    name: Build & test - @woodshop/components
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install
+        run: yarn install --immutable
+      - name: Build
+        run: yarn build:components
   build_woodshop_api:
     name: Build & test - @woodshop/api
     runs-on: ubuntu-latest
