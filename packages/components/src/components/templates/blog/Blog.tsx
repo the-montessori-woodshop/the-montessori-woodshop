@@ -1,5 +1,4 @@
 import { styled } from "@linaria/react";
-import type { Post } from "@woodshop/api";
 import MarkdownIt from "markdown-it";
 import type { FC } from "react";
 import React from "react";
@@ -86,7 +85,14 @@ export const BlogContent = styled.div`
   }
 `;
 
-export const Blog: FC<Post> = ({
+export type BlogProps = {
+  date_published: Date | null;
+  title: string;
+  banner_img_url: string;
+  content: string | null;
+};
+
+export const Blog: FC<BlogProps> = ({
   date_published,
   title,
   banner_img_url,

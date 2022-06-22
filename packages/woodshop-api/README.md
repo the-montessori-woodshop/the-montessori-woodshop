@@ -56,3 +56,44 @@ This creates a development migration against the DEV database. This is necessary
 ### Deploy a migration - `yarn migrate`
 
 This will run all of the migrations against the DB. This should be used when running these commands in CI.
+
+## Deployment
+
+There are 2 github actions for deploying the API.
+
+1. `migrate_woodshop_api`
+2. `deploy_woodshop_api`
+
+Migration is run first and uses a Github Action secret that is added to the shell, `WOODSHOP_API_DATABASE_URL` to connect to the DB via the `External Connection String` provided from render. The migrations are run and then the deploy step is run. This step does not need to have any environment variables added to `wrangler` since we're only interacting with Prisma and our PostgresDB at the moment.
+
+However, when deploying, we use the `wrangler` CLI to be able to deploy it to the Cloudflare network. Since we're doing this, we cannot use Environment Variables the way we usually do. When deploying, we need to make sure that we have variables added to `wrangler` and more specifically the wrangler production environment.
+
+Once those variables are added, the script will deploy to Cloudflare without any issues.
+
+> NOTE - We currently don't have a development environment. If we did then we would also have to add some CI steps for development as well as add some wrangler secrets for DEV
+
+### Helpful Recipes Scripts
+
+To see all of the variables added in general, run
+
+```bash
+wrangler secret list --env production
+```
+
+To see all of the variables added for _**production**_, run
+
+```bash
+wrangler secret list --env production
+```
+
+To add a secret to wrangler, run
+
+```bash
+wrangler secret put ENV_VAR
+```
+
+To add a secret to the production environment in wrangler, run
+
+```bash
+wrangler secret put ENV_VAR --env production
+```

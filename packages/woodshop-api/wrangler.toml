@@ -2,27 +2,23 @@ compatibility_date = "2022-01-05"
 compatibility_flags = []
 
 name = "woodshop-api"
-type = "javascript"
-usage_model = ''
-account_id = "68fa4421d84bfcddbd9311a7d57aa419"
 workers_dev = true
-
-[build]
-command = "yarn build"
-
-[build.upload]
-format = "service-worker"
+main = "src/handler.ts"
+tsconfig = "./tsconfig.json"
+minify = false
+node_compat = true
+# [ secrets ] #
+# WOODSHOP_API_DATABASE_URL
+# WOODSHOP_API_MIGRATE_DATABASE_URL
+# WOODSHOP_API_SHADOW_DATABASE_URL
 
 [env.production]
 workers_dev = false
-zone_id = 'ebeb335a5410105683a9e7bc11251d1c'
 route = "https://api.woodshop.themontessoriwoodshop.com/*"
+# [ env.production.secrets ] #
+# WOODSHOP_API_DATABASE_URL
 
 # [secrets]
 # AUTH0_JWKS_URI
 # AUTH0_AUDIENCE
 # AUTH0_ISSUER
-
-# WOODSHOP_API_DATABASE_URL
-# WOODSHOP_API_SHADOW_DATABASE_URL
-# WOODSHOP_API_MIGRATE_DATABASE_URL
