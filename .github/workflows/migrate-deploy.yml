@@ -35,8 +35,8 @@ jobs:
         run: yarn install --immutable
       - name: Build & Deploy to Cloudflare Workers
         run: 
-          CF_ACCOUNT_ID=${{ secrets.CF_ACCOUNT_ID }}
-          CF_API_TOKEN=${{ secrets.CF_API_TOKEN_WORKERS }}
+          CLOUDFLARE_ACCOUNT_ID=${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN=${{ secrets.CLOUDFLARE_API_TOKEN_WORKERS }}
           yarn workspace @woodshop/api ci:deploy
 
   deploy_woodshop_dashboard:
@@ -53,8 +53,8 @@ jobs:
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/pages-action@1
         with:
-          apiToken: ${{ secrets.CF_API_TOKEN_PAGES }}
-          accountId: ${{ secrets.CF_ACCOUNT_ID }}
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN_PAGES }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           gitHubToken: ${{ secrets.API_TOKEN_GITHUB }}
           projectName: woodshop-dashboard
           directory: packages/woodshop-dashboard/public
@@ -73,8 +73,8 @@ jobs:
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/pages-action@1
         with:
-          apiToken: ${{ secrets.CF_API_TOKEN_PAGES }}
-          accountId: ${{ secrets.CF_ACCOUNT_ID }}
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN_PAGES }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           gitHubToken: ${{ secrets.API_TOKEN_GITHUB }}
           projectName: woodshop-components
           directory: packages/components/storybook-static
@@ -93,8 +93,8 @@ jobs:
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/pages-action@1
         with:
-          apiToken: ${{ secrets.CF_API_TOKEN_PAGES }}
-          accountId: ${{ secrets.CF_ACCOUNT_ID }}
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN_PAGES }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           gitHubToken: ${{ secrets.API_TOKEN_GITHUB }}
           projectName: medusa-storefront
           directory: packages/medusa-storefront/public
@@ -113,8 +113,8 @@ jobs:
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/pages-action@1
         with:
-          apiToken: ${{ secrets.CF_API_TOKEN_PAGES }}
-          accountId: ${{ secrets.CF_ACCOUNT_ID }}
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN_PAGES }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           gitHubToken: ${{ secrets.API_TOKEN_GITHUB }}
           projectName: medusa-admin
           directory: packages/medusa-admin/public

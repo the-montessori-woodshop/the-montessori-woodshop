@@ -2,11 +2,10 @@ compatibility_date = "2022-01-05"
 compatibility_flags = []
 
 name = "woodshop-api"
-type = "javascript"
 usage_model = ''
 account_id = "68fa4421d84bfcddbd9311a7d57aa419"
-zone_id = 'ebeb335a5410105683a9e7bc11251d1c'
 workers_dev = true
+usage_model = "bundled"
 # [ secrets ] #
 # WOODSHOP_API_DATABASE_URL
 # WOODSHOP_API_MIGRATE_DATABASE_URL
