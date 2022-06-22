@@ -1,7 +1,6 @@
-import { PrismaClient } from "@prisma/client";
-
 import { HandlePOSTRequest } from "../../types/index";
 import { ApiError } from "../../utils/error.api";
+import { prisma } from "../../utils/getPrisma";
 import { handleRoute } from "../../utils/handleRoute";
 import {
   POST_CreateOrUpdateUserApiRequest,
@@ -11,12 +10,7 @@ import {
 export const createOrUpdateUser: HandlePOSTRequest<
   POST_CreateOrUpdateUserApiResponse
 > = async (request) => {
-  const prisma = new PrismaClient({
-    errorFormat: "pretty"
-  });
-
   try {
-    await prisma.$connect();
     const requestData = await request.json<POST_CreateOrUpdateUserApiRequest>();
 
     const user = await prisma.user.upsert({

@@ -14,7 +14,8 @@
     "api:push": "yarn workspace @woodshop/api push",
     "api:build": "yarn workspace @woodshop/api build",
     "components-dev": "yarn workspace @woodshop/components storybook",
-    "clean": "npx rimraf ./packages/**/node_modules && npx rimraf node_modules"
+    "clean": "npx rimraf ./packages/**/node_modules/",
+    "run:medusa": "docker compose up -d medusa_admin medusa_api"
   },
   "workspaces": {
     "packages": [
@@ -48,9 +49,9 @@
     "jose": "4.6.0"
   },
   "dependencies": {
-    "eslint": "^8.14.0",
-    "prettier": "^2.6.2",
+    "eslint": "^8.18.0",
+    "prettier": "^2.7.1",
     "rimraf": "^3.0.2",
-    "typescript": "4.6.3"
+    "typescript": "4.7.4"
   }
 }

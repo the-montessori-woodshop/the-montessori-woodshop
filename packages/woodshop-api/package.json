@@ -3,12 +3,13 @@
   "version": "1.0.0",
   "description": "The supporting API and Database Schema for The Montessori Woodshop storefront",
   "scripts": {
+    "setup": "yarn generate && yarn migrate-dev",
     "publish": "wrangler publish",
     "types": "tsc --project tsconfig.types.json",
     "build": "yarn node ./scripts/build.js && yarn types",
-    "generate": "PRISMA_CLIENT_ENGINE_TYPE=dataproxy && prisma generate",
-    "migrate-dev": "prisma migrate dev",
-    "migrate": "prisma migrate status && prisma migrate deploy",
+    "generate": "./scripts/generate.sh",
+    "migrate-dev": "./scripts/migrate-dev.sh",
+    "migrate": "./scripts/migrate.sh",
     "push": "prisma push",
     "dev": "wrangler dev --ip 127.0.0.1 --port 8888 & yarn types --watch"
   },
@@ -33,17 +34,18 @@
   },
   "homepage": "https://github.com/the-montessori-woodshop/the-montessori-woodshop#readme",
   "devDependencies": {
-    "@cloudflare/workers-types": "^3.7.1",
+    "@cloudflare/workers-types": "^3.13.0",
     "@cloudflare/wrangler": "^1.19.12",
     "@esbuild-plugins/node-modules-polyfill": "^0.1.4",
-    "esbuild": "^0.14.38",
+    "dotenv-cli": "^5.1.0",
+    "esbuild": "^0.14.46",
     "esbuild-plugin-alias": "^0.2.1",
-    "prisma": "3.12.0",
-    "typescript": "^4.6.3"
+    "prisma": "3.15.2",
+    "typescript": "^4.7.4"
   },
   "dependencies": {
-    "@cfworker/jwt": "^1.12.2",
-    "@prisma/client": "3.12.0",
+    "@cfworker/jwt": "^4.0.2",
+    "@prisma/client": "3.15.2",
     "itty-router": "2.6.1"
   },
   "installConfig": {

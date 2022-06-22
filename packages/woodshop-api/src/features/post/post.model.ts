@@ -1,4 +1,4 @@
-import { Post as PrismaPost } from "@prisma/client";
+import { Post as PrismaPost } from "@prisma/client/edge";
 
 export type Post = PrismaPost;
 

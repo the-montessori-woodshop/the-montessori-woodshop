@@ -91,12 +91,14 @@ export const NavbarLinkList = forwardRef<HTMLUListElement, NavbarLinkListProps>(
         bodyRef.current = bodyElement[0];
       }
 
-      if (bodyRef.current && isOpen) {
+      if (bodyRef?.current && isOpen) {
         // bodyRef.current.style.setProperty("pointer-events", "none");
       }
 
       return () => {
-        bodyRef.current = null;
+        if (bodyRef?.current) {
+          bodyRef.current = null;
+        }
       };
     }, [isOpen]);
 
