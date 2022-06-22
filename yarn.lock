@@ -12474,7 +12474,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cron-schedule@npm:^3.0.4":
+"cron-schedule@npm:*, cron-schedule@npm:^3.0.4":
   version: 3.0.6
   resolution: "cron-schedule@npm:3.0.6"
   checksum: 5f6bee86397f5098602588d7acda799c474452145bf1e767319a54e8827e02224585dd231c9e39fd66ffb308def775bf5581ebb1065b12a8e2c2fe91884d44d8
