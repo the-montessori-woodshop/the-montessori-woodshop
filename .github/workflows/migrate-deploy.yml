@@ -34,7 +34,10 @@ jobs:
       - name: Install
         run: yarn install --immutable
       - name: Build & Deploy to Cloudflare Workers
-        run: yarn workspace @woodshop/api ci:deploy
+        run: 
+          CF_ACCOUNT_ID=${{ secrets.CF_ACCOUNT_ID }}
+          CF_API_TOKEN=${{ secrets.CF_API_TOKEN_WORKERS }}
+          yarn workspace @woodshop/api ci:deploy
 
   deploy_woodshop_dashboard:
     name: Build and deploy | @woodshop/dashboard
