@@ -9,7 +9,7 @@
   "sideEffects": false,
   "scripts": {
     "lint": "yarn eslint --ext .tsx,.ts ./app --fix",
-    "build": "remix build",
+    "build": "yarn css && remix build",
     "dev:remix": "remix watch",
     "dev:wrangler": "cross-env NODE_ENV=development wrangler pages dev ./public",
     "dev": "yarn css && remix build && yarn dev:remix & yarn dev:wrangler & yarn css --watch",
