@@ -57,7 +57,7 @@ jobs:
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           gitHubToken: ${{ secrets.API_TOKEN_GITHUB }}
           projectName: woodshop-dashboard
-          directory: packages/woodshop-dashboard/public
+          directory: packages/woodshop-dashboard
 
   deploy_components:
     name: Build and deploy | @woodshop/components
@@ -97,7 +97,7 @@ jobs:
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           gitHubToken: ${{ secrets.API_TOKEN_GITHUB }}
           projectName: medusa-storefront
-          directory: packages/medusa-storefront/public
+          directory: packages/medusa-storefront
 
   deploy_medusa_admin:
     name: Build and deploy | medusa-admin

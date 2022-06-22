@@ -12,7 +12,7 @@
     "dev:migrate": "./scripts/migrate-dev.sh",
     "ci:generate": "prisma generate --data-proxy",
     "ci:migrate": "yarn ci:generate && yarn prisma migrate deploy",
-    "ci:deploy": "yarn ci:generate && wrangler publish --env production"
+    "ci:deploy": "yarn ci:generate && wrangler publish ./src/handler.ts --env production"
   },
   "main": "dist/worker.js",
   "types": "dist/types/index.d.ts",

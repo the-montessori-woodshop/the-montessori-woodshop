@@ -9,12 +9,6 @@ workers_dev = true
 # WOODSHOP_API_MIGRATE_DATABASE_URL
 # WOODSHOP_API_SHADOW_DATABASE_URL
 
-[build]
-command = "yarn build"
-
-[build.upload]
-format = "service-worker"
-
 [env.production]
 workers_dev = false
 route = "https://api.woodshop.themontessoriwoodshop.com/*"
