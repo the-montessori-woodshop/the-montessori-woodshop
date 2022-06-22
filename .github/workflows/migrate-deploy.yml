@@ -36,7 +36,7 @@ jobs:
       - name: Deploy to Cloudflare Workers
         run: 
           CF_ACCOUNT_ID=${{ secrets.CF_ACCOUNT_ID }}
-          CF_API_TOKEN=${{ secrets.CF_API_TOKEN }}
+          CF_API_TOKEN=${{ secrets.CF_API_TOKEN_WORKERS }}
           yarn workspace @woodshop/api wrangler publish --env production
 
   deploy_woodshop_dashboard:
@@ -53,7 +53,7 @@ jobs:
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/pages-action@1
         with:
-          apiToken: ${{ secrets.CF_API_TOKEN }}
+          apiToken: ${{ secrets.CF_API_TOKEN_PAGES }}
           accountId: ${{ secrets.CF_ACCOUNT_ID }}
           gitHubToken: ${{ secrets.API_TOKEN_GITHUB }}
           projectName: woodshop-dashboard
@@ -73,7 +73,7 @@ jobs:
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/pages-action@1
         with:
-          apiToken: ${{ secrets.CF_API_TOKEN }}
+          apiToken: ${{ secrets.CF_API_TOKEN_PAGES }}
           accountId: ${{ secrets.CF_ACCOUNT_ID }}
           gitHubToken: ${{ secrets.API_TOKEN_GITHUB }}
           projectName: woodshop-components
@@ -93,7 +93,7 @@ jobs:
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/pages-action@1
         with:
-          apiToken: ${{ secrets.CF_API_TOKEN }}
+          apiToken: ${{ secrets.CF_API_TOKEN_PAGES }}
           accountId: ${{ secrets.CF_ACCOUNT_ID }}
           gitHubToken: ${{ secrets.API_TOKEN_GITHUB }}
           projectName: medusa-storefront
@@ -113,7 +113,7 @@ jobs:
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/pages-action@1
         with:
-          apiToken: ${{ secrets.CF_API_TOKEN }}
+          apiToken: ${{ secrets.CF_API_TOKEN_PAGES }}
           accountId: ${{ secrets.CF_ACCOUNT_ID }}
           gitHubToken: ${{ secrets.API_TOKEN_GITHUB }}
           projectName: medusa-admin
