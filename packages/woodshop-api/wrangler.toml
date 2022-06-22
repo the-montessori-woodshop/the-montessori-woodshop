@@ -2,7 +2,6 @@ compatibility_date = "2022-01-05"
 compatibility_flags = []
 
 name = "woodshop-api"
-usage_model = 'bundled'
 account_id = "68fa4421d84bfcddbd9311a7d57aa419"
 workers_dev = true
 # [ secrets ] #
