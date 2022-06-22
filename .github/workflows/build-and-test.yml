@@ -16,7 +16,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Install
-        run: yarn install
+        run: yarn install --immutable
       - name: Build
         run: yarn build:components
   build_medusa_admin:
@@ -25,7 +25,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Install
-        run: yarn install
+        run: yarn install --immutable
       - name: Build
         run: yarn build:medusa-admin
   build_medusa_api:
@@ -34,7 +34,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Install
-        run: yarn install
+        run: yarn install --immutable
       - name: Build
         run: yarn build:medusa-api
   build_woodshop_api:
@@ -43,7 +43,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Install
-        run: yarn install
+        run: yarn install --immutable
       - name: Build
         run: yarn build:woodshop-api
   build_woodshop_dashboard:
@@ -52,7 +52,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Install
-        run: yarn install
+        run: yarn install --immutable
       - name: Build
         run: yarn build:woodshop-dashboard
   build_woodshop_storefront:
@@ -61,6 +61,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Install
-        run: yarn install
+        run: yarn install --immutable
       - name: Build
         run: yarn build:woodshop-storefront
