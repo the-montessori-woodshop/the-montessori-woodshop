@@ -11,56 +11,56 @@ on:
 
 jobs:
   build_components:
-    name: Build & test `@woodshop/components`
+    name: Build & test - @woodshop/components
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: Install
-        run: yarn install --immutable
+        run: yarn install
       - name: Build
         run: yarn build:components
   build_medusa_admin:
-    name: Build & test `medusa-admin`
+    name: Build & test - medusa-admin
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: Install
-        run: yarn install --immutable
+        run: yarn install
       - name: Build
         run: yarn build:medusa-admin
   build_medusa_api:
-    name: Build & test `medusa-api`
+    name: Build & test - medusa-api
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: Install
-        run: yarn install --immutable
+        run: yarn install
       - name: Build
         run: yarn build:medusa-api
   build_woodshop_api:
-    name: Build & test `@woodshop/api`
+    name: Build & test - @woodshop/api
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: Install
-        run: yarn install --immutable
+        run: yarn install
       - name: Build
         run: yarn build:woodshop-api
   build_woodshop_dashboard:
-    name: Build & test `@woodshop/dashboard`
+    name: Build & test - @woodshop/dashboard
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: Install
-        run: yarn install --immutable
+        run: yarn install
       - name: Build
         run: yarn build:woodshop-dashboard
   build_woodshop_storefront:
-    name: Build & test `@woodshop/storefront`
+    name: Build & test - @woodshop/storefront
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: Install
-        run: yarn install --immutable
+        run: yarn install
       - name: Build
         run: yarn build:woodshop-storefront
