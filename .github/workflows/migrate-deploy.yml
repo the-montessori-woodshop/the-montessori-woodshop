@@ -38,6 +38,7 @@ jobs:
       - name: Deploy to Cloudflare Workers
         run: 
           CF_ACCOUNT_ID=${{ secrets.CF_ACCOUNT_ID }}
+          WOODSHOP_API_DATABASE_URL=${{ secrets.WOODSHOP_API_DATABASE_URL }}
           CF_API_TOKEN=${{ secrets.CF_API_TOKEN_WORKERS }}
           yarn workspace @woodshop/api deploy
 
