@@ -21,7 +21,7 @@ jobs:
       - name: Migrate Woodshop Database
         run:
           WOODSHOP_API_DATABASE_URL=${{ secrets.WOODSHOP_API_DATABASE_URL }}
-          yarn migrate:woodshop-api
+          yarn workspace @woodshop/api ci:migrate
 
   deploy_woodshop_api:
     runs-on: ubuntu-latest
@@ -38,9 +38,9 @@ jobs:
       - name: Deploy to Cloudflare Workers
         run: 
           CF_ACCOUNT_ID=${{ secrets.CF_ACCOUNT_ID }}
-          WOODSHOP_API_DATABASE_URL=${{ secrets.WOODSHOP_API_DATABASE_URL }}
           CF_API_TOKEN=${{ secrets.CF_API_TOKEN_WORKERS }}
-          yarn workspace @woodshop/api deploy
+          WOODSHOP_API_DATABASE_URL=${{ secrets.WOODSHOP_API_DATABASE_URL }}
+          yarn workspace @woodshop/api ci:deploy
 
   deploy_woodshop_dashboard:
     name: Build and deploy | @woodshop/dashboard

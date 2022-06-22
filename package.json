@@ -13,7 +13,6 @@
     "build:medusa-storefront": "yarn workspaces foreach -ptRv --from medusa-storefront run build",
     "build:woodshop-api": "yarn workspaces foreach -ptRv --from @woodshop/api run build",
     "build:woodshop-dashboard": "yarn workspaces foreach -ptRv --from @woodshop/dashboard run build",
-    "migrate:woodshop-api": "yarn workspace @woodshop/api migrate:ci",
     "api:dev": "yarn workspace @woodshop/api dev",
     "api:migrate-dev": "yarn workspace @woodshop/api migrate:dev",
     "api:migrate": "yarn workspace @woodshop/api migrate:ci",

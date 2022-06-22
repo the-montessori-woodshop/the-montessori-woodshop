@@ -3,15 +3,16 @@
   "version": "1.0.0",
   "description": "The supporting API and Database Schema for The Montessori Woodshop storefront",
   "scripts": {
-    "setup": "yarn generate && yarn migrate-dev",
-    "deploy": "yarn generate && wrangler publish --env production",
+    "setup": "yarn generate:dev && yarn migrate-dev",
     "types": "tsc --project tsconfig.types.json",
     "build": "yarn node ./scripts/build.js && yarn types",
-    "generate": "./scripts/generate.sh",
-    "migrate:dev": "./scripts/migrate-dev.sh",
-    "migrate:ci": "yarn generate && yarn prisma migrate deploy",
     "push": "prisma push",
-    "dev": "wrangler dev --ip 127.0.0.1 --port 8888 & yarn types --watch"
+    "dev": "wrangler dev --ip 127.0.0.1 --port 8888 & yarn types --watch",
+    "dev:generate:": "./scripts/generate.sh",
+    "dev:migrate": "./scripts/migrate-dev.sh",
+    "ci:generate": "prisma generate --data-proxy",
+    "ci:migrate": "yarn ci:generate && yarn prisma migrate deploy",
+    "ci:deploy": "yarn ci:generate && wrangler publish --env production"
   },
   "main": "dist/worker.js",
   "types": "dist/types/index.d.ts",
