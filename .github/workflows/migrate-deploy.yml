@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - ci/update-ghactions
   workflow_dispatch:
 
 jobs:
