@@ -97,7 +97,7 @@ jobs:
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           gitHubToken: ${{ secrets.API_TOKEN_GITHUB }}
           projectName: medusa-storefront
-          directory: ./packages/medusa-storefront
+          directory: packages/medusa-storefront/public
 
   # deploy_medusa_admin:
   #   name: Build and deploy | medusa-admin

@@ -1,9 +1,10 @@
-compatibility_date = "2022-01-05"
+compatibility_date = "2022-06-23"
 
 name = "woodshop-api"
 workers_dev = true
 main = "src/index.ts"
 node_compat = true
+account_id = "68fa4421d84bfcddbd9311a7d57aa419"
 # [ secrets ] #
 # WOODSHOP_API_DATABASE_URL
 # WOODSHOP_API_MIGRATE_DATABASE_URL

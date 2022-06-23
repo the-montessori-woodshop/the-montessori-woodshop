@@ -4,7 +4,8 @@ generator client {
 
 datasource db {
   provider          = "postgresql"
-  url               = env("WOODSHOP_API_DATABASE_URL")
+  // url               = env("WOODSHOP_API_DATABASE_URL")
+  url               = "prisma://aws-us-east-1.prisma-data.com/?api_key=zMyE0SevEfclgRG9O4gTCxZ6UNfcnpTa1WRfPrWmfB57pmqgDMMRMn4jAmw6EX-T"
   shadowDatabaseUrl = env("WOODSHOP_API_SHADOW_DATABASE_URL")
 }
 
