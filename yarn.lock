@@ -8967,7 +8967,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@woodshop/icons@1.0.0, @woodshop/icons@workspace:^, @woodshop/icons@workspace:packages/icons":
+"@woodshop/icons@workspace:^, @woodshop/icons@workspace:packages/icons":
   version: 0.0.0-use.local
   resolution: "@woodshop/icons@workspace:packages/icons"
   dependencies:
@@ -8987,7 +8987,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@woodshop/illustrations@1.0.0, @woodshop/illustrations@workspace:^, @woodshop/illustrations@workspace:packages/illustrations":
+"@woodshop/illustrations@workspace:^, @woodshop/illustrations@workspace:packages/illustrations":
   version: 0.0.0-use.local
   resolution: "@woodshop/illustrations@workspace:packages/illustrations"
   dependencies:
@@ -21743,9 +21743,9 @@ __metadata:
     "@types/react": 17.0.47
     "@types/react-dom": 17.0.17
     "@types/styled-components": 5.1.25
-    "@woodshop/components": 1.0.0
-    "@woodshop/icons": 1.0.0
-    "@woodshop/illustrations": 1.0.0
+    "@woodshop/components": "workspace:^"
+    "@woodshop/icons": "workspace:^"
+    "@woodshop/illustrations": "workspace:^"
     clsx: ^1.1.1
     cross-env: 7.0.3
     eslint: ^8.18.0
