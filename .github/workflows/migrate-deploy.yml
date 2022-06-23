@@ -53,7 +53,7 @@ jobs:
       - name: Deploy to Cloudflare Pages
         run:
           CLOUDFLARE_ACCOUNT_ID=${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          CLOUDFLARE_API_TOKEN=${{ secrets.CLOUDFLARE_API_TOKEN_WORKERS }}
+          CLOUDFLARE_API_TOKEN=${{ secrets.CLOUDFLARE_API_TOKEN_PAGES }}
           cd packages/woodshop-dashboard && yarn wrangler pages publish . --project-name=woodshop-dashboard
 
   # deploy_components:
@@ -90,7 +90,7 @@ jobs:
       - name: Deploy to Cloudflare Pages
         run:
           CLOUDFLARE_ACCOUNT_ID=${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          CLOUDFLARE_API_TOKEN=${{ secrets.CLOUDFLARE_API_TOKEN_WORKERS }}
+          CLOUDFLARE_API_TOKEN=${{ secrets.CLOUDFLARE_API_TOKEN_PAGES }}
           cd packages/medusa-storefront && yarn wrangler pages publish . --project-name=medusa-storefront
 
   # deploy_medusa_admin:
