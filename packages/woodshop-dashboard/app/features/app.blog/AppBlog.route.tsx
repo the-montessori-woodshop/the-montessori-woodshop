@@ -2,9 +2,7 @@ import { Outlet } from "@remix-run/react";
 import { BlogNavItem } from "~/components/blog/BlogNavItem";
 import { BlogNavItemContent } from "~/components/blog/BlogNavItemContent";
 
-import { createRouteLinkStyles } from "../_routes/routes.createRouteLinkStyles";
 import type { RemixFeatureRoute } from "../_routes/routes.types";
-import routeStyles from "./AppBlog.css";
 
 export const AppBlog: RemixFeatureRoute = () => {
   return (
@@ -28,8 +26,4 @@ export const AppBlog: RemixFeatureRoute = () => {
     </div>
   );
 };
-AppBlog.links = () => [
-  BlogNavItem.links,
-  BlogNavItemContent.links,
-  ...createRouteLinkStyles(routeStyles),
-];
+AppBlog.links = () => [];

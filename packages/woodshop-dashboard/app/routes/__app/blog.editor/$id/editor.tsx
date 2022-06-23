@@ -1,13 +1,10 @@
 import type { LinksFunction } from "@remix-run/cloudflare";
 import { Breadcrumb } from "~/components/breadcrumb/Breadcrumb";
 import { useMarkdownRendererContext } from "~/components/MarkdownRenderer.context";
-import { createRouteLinkStyles } from "~/features/_routes/routes.createRouteLinkStyles";
 import { useBlogEditorSubRouteData } from "~/features/blog-editor/useBlogEditorSubRouteData";
 import type { UseMatchesMatch } from "~/types/useMatches";
 
-import styles from "./editor.css";
-
-export const links: LinksFunction = () => [...createRouteLinkStyles(styles)];
+export const links: LinksFunction = () => [];
 
 export const handle = {
   breadcrumb: (data: UseMatchesMatch) => {

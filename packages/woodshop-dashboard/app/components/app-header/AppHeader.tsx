@@ -1,9 +1,6 @@
-import { createComponentStyle } from "~/components/utils/createComponentStyle";
 import clsx from "clsx";
 import type { ReactNode } from "react";
 import { forwardRef } from "react";
-
-import styles from "./AppHeader.css";
 
 export type AppHeaderProps = JSX.IntrinsicElements["header"] & {
   children?: ReactNode;
@@ -22,5 +19,3 @@ export const AppHeader = forwardRef<HTMLElement, AppHeaderProps>(
     );
   }
 );
-
-AppHeader.links = createComponentStyle(styles);

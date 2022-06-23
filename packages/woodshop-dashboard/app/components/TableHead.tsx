@@ -1,36 +1,36 @@
-import { TypographyCopy, makeRem } from "@woodshop/components";
+import { TypographyCopy } from "@woodshop/components";
+import clsx from "clsx";
 import type { ReactNode } from "react";
 import { forwardRef } from "react";
 import type { TableHeaderProps } from "react-table";
-import styled from "styled-components";
 
-export const TableHead = styled.div`
-  padding: 0 ${makeRem(16)};
-  height: ${makeRem(36)};
-  background: var(--color-grey2);
-  align-items: center;
+export type TableHeadProps = JSX.IntrinsicElements["div"];
 
-  & > * {
-    height: 100%;
+export const TableHead = forwardRef<HTMLDivElement, TableHeadProps>(
+  function TableHead({ className, children, ...restProps }, ref) {
+    return (
+      <div
+        {...restProps}
+        ref={ref}
+        className={clsx(className, "g0oETy8", "table-head")}
+      >
+        {children}
+      </div>
+    );
   }
-`;
-
-const STableHeadTH = styled.div`
-  height: 100%;
-`;
-const STableHeadTHContent = styled.div`
-  display: flex;
-  align-items: center;
-  height: inherit;
-`;
+);
 
 export const TableHeadTH = forwardRef<
   HTMLDivElement,
   TableHeaderProps & { children: ReactNode }
->(function TableHeadTH({ children, ...restProps }, ref) {
+>(function TableHeadTH({ children, className, ...restProps }, ref) {
   return (
-    <STableHeadTH {...restProps} ref={ref}>
-      <STableHeadTHContent>
+    <div
+      {...restProps}
+      ref={ref}
+      className={clsx(className, "g0oETy8", "table-head-th")}
+    >
+      <div className={clsx("g0oETy8", "table-head-th-content")}>
         <TypographyCopy
           cxVariant="caption"
           style={{
@@ -40,7 +40,7 @@ export const TableHeadTH = forwardRef<
         >
           {children}
         </TypographyCopy>
-      </STableHeadTHContent>
-    </STableHeadTH>
+      </div>
+    </div>
   );
 });

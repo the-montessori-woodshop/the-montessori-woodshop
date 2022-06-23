@@ -1,4 +1,3 @@
-import { createComponentStyle } from "~/components/utils/createComponentStyle";
 import clsx from "clsx";
 import type { ReactNode } from "react";
 import { forwardRef } from "react";
@@ -19,5 +18,3 @@ export const ImagesGridEditTitle = forwardRef<
     </div>
   );
 });
-
-ImagesGridEditTitle.links = createComponentStyle(styles);

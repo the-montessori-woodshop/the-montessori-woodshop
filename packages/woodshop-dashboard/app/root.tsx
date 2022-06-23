@@ -8,11 +8,11 @@ import {
   ScrollRestoration,
 } from "@remix-run/react";
 // @ts-ignore
-import stylesUrl from "@woodshop/components/css";
+import themeUrl from "@woodshop/components/css";
 import fontBitterUrl from "@woodshop/components/fonts/bitter.css";
 import fontOpenSansUrl from "@woodshop/components/fonts/open-sans.css";
 
-import rootUrl from "./root.css";
+import addStylesUrl from "./styles.css";
 
 export const meta: MetaFunction = () => ({
   charset: "utf-8",
@@ -22,8 +22,8 @@ export const meta: MetaFunction = () => ({
 
 export const links: LinksFunction = () => {
   return [
-    { rel: "stylesheet", href: stylesUrl },
-    { rel: "stylesheet", href: rootUrl },
+    { rel: "stylesheet", href: themeUrl },
+    { rel: "stylesheet", href: addStylesUrl },
     { rel: "stylesheet", href: fontBitterUrl },
     { rel: "stylesheet", href: fontOpenSansUrl },
   ];

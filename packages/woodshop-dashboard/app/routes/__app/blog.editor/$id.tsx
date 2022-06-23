@@ -29,21 +29,9 @@ import { PageContent } from "~/components/page/PageContent";
 import { PageHeader } from "~/components/page/PageHeader";
 import { PageTitle } from "~/components/page/PageTitle";
 import { TabLink } from "~/components/tab/TabLink";
-import { createRouteLinkStyles } from "~/features/_routes/routes.createRouteLinkStyles";
 import { api } from "~/services/api.server";
 
-import pageStyles from "./$id.css";
-
-export const links: LinksFunction = () => [
-  Chip.links,
-  ChipText.links,
-  PageContainer.links,
-  PageContent.links,
-  PageHeader.links,
-  PageTitle.links,
-  ...createRouteLinkStyles(pageStyles),
-];
-
+export const links: LinksFunction = () => [];
 export const loader: LoaderFunction = async ({ request, params }) => {
   try {
     const data = await api.get<GET_PostByIdApiResponse, GET_PostByIdApiParams>({

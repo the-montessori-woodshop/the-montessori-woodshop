@@ -8,9 +8,7 @@ import { PageHeader } from "~/components/page/PageHeader";
 import { PageTitle } from "~/components/page/PageTitle";
 import clsx from "clsx";
 
-import { createRouteLinkStyles } from "../_routes/routes.createRouteLinkStyles";
 import type { RemixFeatureRoute } from "../_routes/routes.types";
-import routeStyles from "./AppImages.css";
 
 export const AppImages: RemixFeatureRoute = () => {
   const data = useLoaderData<GET_ImagesApiResponse>();
@@ -57,8 +55,4 @@ export const AppImages: RemixFeatureRoute = () => {
   );
 };
 
-AppImages.links = () => [
-  PageHeader.links,
-  PageTitle.links,
-  ...createRouteLinkStyles(routeStyles),
-];
+AppImages.links = () => [];

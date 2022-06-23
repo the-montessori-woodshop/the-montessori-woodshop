@@ -1,5 +1,4 @@
 import { TypographyCopy } from "@woodshop/components";
-import { createComponentStyle } from "~/components/utils/createComponentStyle";
 import clsx from "clsx";
 import type { ReactNode } from "react";
 import { forwardRef } from "react";
@@ -23,5 +22,3 @@ export const ChipText = forwardRef<HTMLDivElement, ChipTextProps>(
     );
   }
 );
-
-ChipText.links = createComponentStyle(styles);
