@@ -4,7 +4,7 @@ import { useBlockLayout, useTable } from "react-table";
 import AutoSizer from "react-virtualized-auto-sizer";
 import { FixedSizeList } from "react-window";
 
-import { TableBodyTDContent, TableBodyTR } from "./TableBodyRow";
+import styles from "./Table.css";
 import { TableHead, TableHeadTH } from "./TableHead";
 
 export type TableRowClickHandler<T extends Object> = (
@@ -57,25 +57,25 @@ export function Table<T extends Object>({
       const row = rows[index];
       prepareRow(row);
       return (
-        <TableBodyTR
+        <div
           {...row.getRowProps({
             style: {
               ...style,
               background: index % 2 ? "var(--color-grey1)" : "transparent",
             },
           })}
-          className="tr"
+          className="tr table-body-tr"
           onClick={handleRowClick(row.original as T)}
         >
           {row.cells.map((cell, i) => {
             const { key, ...restCellProps } = cell.getCellProps();
             return (
               <div key={key} {...restCellProps} className="td">
-                <TableBodyTDContent>{cell.render("Cell")}</TableBodyTDContent>
+                <div className="table-body-td">{cell.render("Cell")}</div>
               </div>
             );
           })}
-        </TableBodyTR>
+        </div>
       );
     },
     [handleRowClick, prepareRow, rows]
