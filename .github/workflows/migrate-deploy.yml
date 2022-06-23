@@ -56,25 +56,25 @@ jobs:
           CLOUDFLARE_API_TOKEN=${{ secrets.CLOUDFLARE_API_TOKEN_WORKERS }}
           cd packages/woodshop-dashboard && yarn wrangler pages publish . --project-name=woodshop-dashboard
 
-  deploy_components:
-    name: Build and deploy | @woodshop/components
-    runs-on: ubuntu-latest
-    environment: production
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Install
-        run: yarn install --immutable
-      - name: Build
-        run: yarn build:components
-      - name: Deploy to Cloudflare Pages
-        uses: cloudflare/pages-action@1
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN_PAGES }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          gitHubToken: ${{ secrets.API_TOKEN_GITHUB }}
-          projectName: woodshop-components
-          directory: packages/components/storybook-static
+  # deploy_components:
+  #   name: Build and deploy | @woodshop/components
+  #   runs-on: ubuntu-latest
+  #   environment: production
+  #   steps:
+  #     - name: Checkout
+  #       uses: actions/checkout@v2
+  #     - name: Install
+  #       run: yarn install --immutable
+  #     - name: Build
+  #       run: yarn build:components
+  #     - name: Deploy to Cloudflare Pages
+  #       uses: cloudflare/pages-action@1
+  #       with:
+  #         apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN_PAGES }}
+  #         accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+  #         gitHubToken: ${{ secrets.API_TOKEN_GITHUB }}
+  #         projectName: woodshop-components
+  #         directory: packages/components/storybook-static
 
   deploy_medusa_storefront:
     name: Build and deploy | medusa-storefront
