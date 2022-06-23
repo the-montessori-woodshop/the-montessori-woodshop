@@ -1,6 +1,6 @@
-import { HandlePATCHRequest } from "../../types/index";
 import { FeatureError } from "../../utils/error.feature";
 import { prisma } from "../../utils/getPrisma";
+import { HandlePATCHRequest } from "../../utils/handler.model";
 import { handleRoute } from "../../utils/handleRoute";
 import { verifyUserExists } from "../../utils/verifyUserExists";
 import { postLogger } from "./post.log";

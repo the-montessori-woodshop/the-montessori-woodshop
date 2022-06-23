@@ -1,6 +1,6 @@
-import { HandleGETRequest } from "../../types/index";
 import { ApiError } from "../../utils/error.api";
 import { prisma } from "../../utils/getPrisma";
+import { HandleGETRequest } from "../../utils/handler.model";
 import { handleRoute } from "../../utils/handleRoute";
 import { parseUrlSearchParams } from "../../utils/parseUrlSearchParams";
 import { GET_PostsApiResponse, GET_PostsApiSearchParams } from "./post.model";

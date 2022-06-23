@@ -1,4 +1,4 @@
-import { HandlePOSTRequest } from "../../types/index";
+import { HandlePOSTRequest } from "../../utils/handler.model";
 import { handleRoute } from "../../utils/handleRoute";
 import { CF_GetImageUploadUrlResponse } from "./cloudflare.model";
 

@@ -1,11 +1,8 @@
 compatibility_date = "2022-01-05"
-compatibility_flags = []
 
 name = "woodshop-api"
 workers_dev = true
-main = "src/handler.ts"
-tsconfig = "./tsconfig.json"
-minify = false
+main = "src/index.ts"
 node_compat = true
 # [ secrets ] #
 # WOODSHOP_API_DATABASE_URL

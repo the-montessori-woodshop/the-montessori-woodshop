@@ -1,5 +1,5 @@
-import { HandlePOSTRequest } from "../../types/index";
 import { prisma } from "../../utils/getPrisma";
+import { HandlePOSTRequest } from "../../utils/handler.model";
 import { handleRoute } from "../../utils/handleRoute";
 import {
   POST_NewPostByIdApiRequest,
