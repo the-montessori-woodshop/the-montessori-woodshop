@@ -22961,38 +22961,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"my-remix-app-b3dbce@workspace:packages/my-remix-app":
-  version: 0.0.0-use.local
-  resolution: "my-remix-app-b3dbce@workspace:packages/my-remix-app"
-  dependencies:
-    "@cloudflare/workers-types": ^3.10.0
-    "@linaria/core": ^3.0.0-beta.22
-    "@linaria/react": ^3.0.0-beta.22
-    "@remix-run/cloudflare": ^1.6.1
-    "@remix-run/cloudflare-pages": ^1.6.1
-    "@remix-run/dev": ^1.6.1
-    "@remix-run/eslint-config": ^1.6.1
-    "@remix-run/react": ^1.6.1
-    "@types/react": ^17.0.45
-    "@types/react-dom": ^17.0.17
-    "@woodshop/components": 1.0.0
-    "@woodshop/icons": "workspace:^"
-    "@woodshop/illustrations": "workspace:^"
-    clsx: ^1.1.1
-    cross-env: ^7.0.3
-    eslint: ^8.15.0
-    framer-motion: ^6.3.13
-    markdown-it: ^13.0.1
-    npm-run-all: ^4.1.5
-    react: 18.2.0
-    react-dom: 18.2.0
-    react-is: ^18.2.0
-    styled-components: ^5.3.5
-    typescript: ^4.6.4
-    wrangler: beta
-  languageName: unknown
-  linkType: soft
-
 "mz@npm:^2.4.0":
   version: 2.7.0
   resolution: "mz@npm:2.7.0"
@@ -31825,6 +31793,70 @@ __metadata:
   languageName: node
   linkType: hard
 
+"woodshop-test-2-da05d6@workspace:packages/woodshop-test-2":
+  version: 0.0.0-use.local
+  resolution: "woodshop-test-2-da05d6@workspace:packages/woodshop-test-2"
+  dependencies:
+    "@cloudflare/workers-types": ^3.10.0
+    "@linaria/core": ^3.0.0-beta.22
+    "@linaria/react": ^3.0.0-beta.22
+    "@remix-run/cloudflare": ^1.6.1
+    "@remix-run/cloudflare-pages": ^1.6.1
+    "@remix-run/dev": ^1.6.1
+    "@remix-run/eslint-config": ^1.6.1
+    "@remix-run/react": ^1.6.1
+    "@types/react": ^17.0.45
+    "@types/react-dom": ^17.0.17
+    "@woodshop/components": 1.0.0
+    "@woodshop/icons": "workspace:^"
+    "@woodshop/illustrations": "workspace:^"
+    clsx: ^1.1.1
+    cross-env: ^7.0.3
+    eslint: ^8.15.0
+    framer-motion: ^6.3.13
+    markdown-it: ^13.0.1
+    npm-run-all: ^4.1.5
+    react: 18.2.0
+    react-dom: 18.2.0
+    react-is: ^18.2.0
+    styled-components: ^5.3.5
+    typescript: ^4.6.4
+    wrangler: 2.0.15
+  languageName: unknown
+  linkType: soft
+
+"woodshop-test-754515@workspace:packages/woodshop-test":
+  version: 0.0.0-use.local
+  resolution: "woodshop-test-754515@workspace:packages/woodshop-test"
+  dependencies:
+    "@cloudflare/workers-types": ^3.10.0
+    "@linaria/core": ^3.0.0-beta.22
+    "@linaria/react": ^3.0.0-beta.22
+    "@remix-run/cloudflare": ^1.6.1
+    "@remix-run/cloudflare-pages": ^1.6.1
+    "@remix-run/dev": ^1.6.1
+    "@remix-run/eslint-config": ^1.6.1
+    "@remix-run/react": ^1.6.1
+    "@types/react": ^17.0.45
+    "@types/react-dom": ^17.0.17
+    "@woodshop/components": 1.0.0
+    "@woodshop/icons": "workspace:^"
+    "@woodshop/illustrations": "workspace:^"
+    clsx: ^1.1.1
+    cross-env: ^7.0.3
+    eslint: ^8.15.0
+    framer-motion: ^6.3.13
+    markdown-it: ^13.0.1
+    npm-run-all: ^4.1.5
+    react: 18.2.0
+    react-dom: 18.2.0
+    react-is: ^18.2.0
+    styled-components: ^5.3.5
+    typescript: ^4.6.4
+    wrangler: 2.0.15
+  languageName: unknown
+  linkType: soft
+
 "word-wrap@npm:^1.2.3, word-wrap@npm:~1.2.3":
   version: 1.2.3
   resolution: "word-wrap@npm:1.2.3"
@@ -31865,7 +31897,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"wrangler@npm:^2.0.15":
+"wrangler@npm:2.0.15, wrangler@npm:^2.0.15":
   version: 2.0.15
   resolution: "wrangler@npm:2.0.15"
   dependencies:
@@ -31888,32 +31920,6 @@ __metadata:
     wrangler: bin/wrangler.js
     wrangler2: bin/wrangler.js
   checksum: 2f4c890a6c569649e5827f2c9a26c1397d7ed0c6ccac227a72d043858ae03ba7b14f7fca40371f65c2413e89f39f44af4aba76fae89bc0685f9f21ba84d886fa
-  languageName: node
-  linkType: hard
-
-"wrangler@npm:beta":
-  version: 0.0.0-49cf17e
-  resolution: "wrangler@npm:0.0.0-49cf17e"
-  dependencies:
-    "@cloudflare/kv-asset-handler": ^0.2.0
-    "@esbuild-plugins/node-globals-polyfill": ^0.1.1
-    "@esbuild-plugins/node-modules-polyfill": ^0.1.4
-    blake3-wasm: ^2.1.5
-    esbuild: 0.14.34
-    fsevents: ~2.3.2
-    miniflare: ^2.5.1
-    nanoid: ^3.3.3
-    path-to-regexp: ^6.2.0
-    selfsigned: ^2.0.1
-    semiver: ^1.1.0
-    xxhash-wasm: ^1.0.1
-  dependenciesMeta:
-    fsevents:
-      optional: true
-  bin:
-    wrangler: bin/wrangler.js
-    wrangler2: bin/wrangler.js
-  checksum: e1a7e950489cd912c7b41642f3978958e4bdbac997ef0631fb2ae3f295d54971e589ce09969b44e06ca4686b77b9d626e8ce0c1e860ff30efd9e4fa4bc8209e6
   languageName: node
   linkType: hard
 

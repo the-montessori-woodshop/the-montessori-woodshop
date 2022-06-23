@@ -1,3 +1,5 @@
+import type { MetaFunction } from "@remix-run/cloudflare";
+import { Link } from "@remix-run/react";
 import {
   Box,
   Button,
@@ -13,8 +15,6 @@ import { SignInWithApple } from "~/components/SignInWithApple";
 import { SignInWithFacebook } from "~/components/SignInWithFacebook";
 import { SignInWithGoogle } from "~/components/SignInWithGoogle";
 import { getPageTitle } from "~/utils/getPageTitle";
-import type { MetaFunction } from "@remix-run/cloudflare";
-import { Link } from "@remix-run/react";
 
 export const meta: MetaFunction = () => {
   return { title: getPageTitle("Sign in") };
@@ -27,7 +27,7 @@ export default function AuthSignIn() {
         Login
       </TypographyHeading>
       <Box
-        cxTitle="Use these common providers"
+        // cxTitle="Use these common providers"
         style={{
           maxWidth: "500px",
         }}
@@ -39,7 +39,7 @@ export default function AuthSignIn() {
         </ButtonGroup>
       </Box>
       <Box
-        cxTitle="Use your email address"
+        // cxTitle="Use your email address"
         style={{
           maxWidth: "500px",
         }}
