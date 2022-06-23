@@ -9,6 +9,7 @@
   },
   "sideEffects": false,
   "scripts": {
+    "install": "yarn install",
     "lint": "yarn eslint --ext .tsx,.ts ./app --fix",
     "build": "remix build",
     "dev:remix": "remix watch",
