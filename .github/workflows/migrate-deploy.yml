@@ -39,25 +39,25 @@ jobs:
   #         CLOUDFLARE_API_TOKEN=${{ secrets.CLOUDFLARE_API_TOKEN_WORKERS }}
   #         yarn workspace @woodshop/api ci:deploy
 
-  # deploy_woodshop_dashboard:
-  #   name: Build and deploy | @woodshop/dashboard
-  #   runs-on: ubuntu-latest
-  #   environment: production
-  #   steps:
-  #     - name: Checkout
-  #       uses: actions/checkout@v2
-  #     - name: Install
-  #       run: yarn install --immutable
-  #     - name: Build
-  #       run: yarn build:woodshop-dashboard
-  #     - name: Deploy to Cloudflare Pages
-  #       uses: cloudflare/pages-action@1
-  #       with:
-  #         apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN_PAGES }}
-  #         accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-  #         gitHubToken: ${{ secrets.API_TOKEN_GITHUB }}
-  #         projectName: woodshop-dashboard
-  #         directory: packages/woodshop-dashboard
+  deploy_woodshop_dashboard:
+    name: Build and deploy | @woodshop/dashboard
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Install
+        run: yarn install --immutable
+      - name: Build
+        run: yarn build:woodshop-dashboard
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/pages-action@1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN_PAGES }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          gitHubToken: ${{ secrets.API_TOKEN_GITHUB }}
+          projectName: woodshop-dashboard
+          directory: packages/woodshop-dashboard/public
 
   # deploy_components:
   #   name: Build and deploy | @woodshop/components
@@ -79,25 +79,25 @@ jobs:
   #         projectName: woodshop-components
   #         directory: packages/components/storybook-static
 
-  deploy_medusa_storefront:
-    name: Build and deploy | medusa-storefront
-    runs-on: ubuntu-latest
-    environment: production
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Install
-        run: yarn install --immutable
-      - name: Build
-        run: yarn build:medusa-storefront
-      - name: Deploy to Cloudflare Pages
-        uses: cloudflare/pages-action@1
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN_PAGES }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          gitHubToken: ${{ secrets.API_TOKEN_GITHUB }}
-          projectName: medusa-storefront
-          directory: packages/medusa-storefront/public
+  # deploy_medusa_storefront:
+  #   name: Build and deploy | medusa-storefront
+  #   runs-on: ubuntu-latest
+  #   environment: production
+  #   steps:
+  #     - name: Checkout
+  #       uses: actions/checkout@v2
+  #     - name: Install
+  #       run: yarn install --immutable
+  #     - name: Build
+  #       run: yarn build:medusa-storefront
+  #     - name: Deploy to Cloudflare Pages
+  #       uses: cloudflare/pages-action@1
+  #       with:
+  #         apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN_PAGES }}
+  #         accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+  #         gitHubToken: ${{ secrets.API_TOKEN_GITHUB }}
+  #         projectName: medusa-storefront
+  #         directory: packages/medusa-storefront/public
 
   # deploy_medusa_admin:
   #   name: Build and deploy | medusa-admin
