@@ -19,10 +19,9 @@ jobs:
         run: yarn install --immutable
       - name: Migrate Woodshop Database
         run:
-          WOODSHOP_API_DATABASE_URL=${{ secrets.WOODSHOP_API_MIGRATE_DATABASE_URL }}
-          prisma generate --data-proxy &&
-          WOODSHOP_API_DATABASE_URL=${{ secrets.WOODSHOP_API_MIGRATE_DATABASE_URL }}
-          prisma migrate deploy
+          WOODSHOP_API_DATABASE_URL=${{ secrets.WOODSHOP_API_DATABASE_URL }}
+          yarn prisma generate --data-proxy &&
+          yarn prisma migrate deploy
 
   deploy_woodshop_api:
     runs-on: ubuntu-latest
