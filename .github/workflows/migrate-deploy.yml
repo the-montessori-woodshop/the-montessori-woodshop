@@ -58,7 +58,7 @@ jobs:
           cd packages/woodshop-dashboard && 
           CLOUDFLARE_ACCOUNT_ID=${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           CLOUDFLARE_API_TOKEN=${{ secrets.CLOUDFLARE_API_TOKEN_PAGES }}
-          npx wrangler pages publish ./public --project-name=woodshop-dashboard
+          yarn ci:publish
       # - name: Deploy to Cloudflare Pages
       #   uses: cloudflare/pages-action@1
       #   with:

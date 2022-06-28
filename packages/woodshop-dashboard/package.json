@@ -16,7 +16,8 @@
     "dev": "remix build && yarn dev:remix & yarn dev:wrangler & yarn dev:styles",
     "dev:remix": "remix watch",
     "dev:wrangler": "cross-env NODE_ENV=development wrangler pages dev ./public",
-    "dev:styles": "yarn node ./scripts/styles-dev.mjs & yarn scss --watch --embed-source-map"
+    "dev:styles": "yarn node ./scripts/styles-dev.mjs & yarn scss --watch --embed-source-map",
+    "ci:publish": "yarn wrangler pages publish ./public --project-name=woodshop-dashboard"
   },
   "dependencies": {
     "@linaria/core": "^3.0.0-beta.22",
