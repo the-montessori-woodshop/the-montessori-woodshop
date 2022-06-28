@@ -5,7 +5,7 @@
   "main": "build/index.js",
   "scripts": {
     "build": "remix build",
-    "ci:deploy": "npm run build && wrangler publish --env production",
+    "ci:deploy": "wrangler publish",
     "dev:remix": "remix watch",
     "dev:wrangler": "wrangler dev",
     "dev": "yarn dev:remix & yarn dev:wrangler"
