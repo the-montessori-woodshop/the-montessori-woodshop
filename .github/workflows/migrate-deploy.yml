@@ -10,7 +10,7 @@ on:
 jobs:
   migrate_woodshop_api:
     runs-on: ubuntu-latest
-    name: Migrate - @woodshop/api
+    name: Migrate | @woodshop/api
     environment: migrate
     steps:
       - name: Checkout
