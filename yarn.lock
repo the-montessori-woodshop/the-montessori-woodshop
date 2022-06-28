@@ -5528,6 +5528,24 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@remix-run/server-runtime@npm:^1.6.1":
+  version: 1.6.1
+  resolution: "@remix-run/server-runtime@npm:1.6.1"
+  dependencies:
+    "@types/cookie": ^0.4.0
+    "@web3-storage/multipart-parser": ^1.0.0
+    cookie: ^0.4.1
+    jsesc: ^3.0.1
+    react-router-dom: ^6.2.2
+    set-cookie-parser: ^2.4.8
+    source-map: ^0.7.3
+  peerDependencies:
+    react: ">=16.8"
+    react-dom: ">=16.8"
+  checksum: 1900d4530c2f1260189e49d7b096e916248b441dce34e3f49f7b937d72ee263e7f91d722c2d93027df7aa9acbac453aa68d095a4dafe5eb5ad35ce48e4d8e98e
+  languageName: node
+  linkType: hard
+
 "@rollup/plugin-json@npm:^4.1.0":
   version: 4.1.0
   resolution: "@rollup/plugin-json@npm:4.1.0"
@@ -8803,6 +8821,7 @@ __metadata:
     "@remix-run/dev": ^1.6.0
     "@remix-run/eslint-config": ^1.6.0
     "@remix-run/react": ^1.6.0
+    "@remix-run/server-runtime": ^1.6.1
     "@types/markdown-it": ^12.2.3
     "@types/react": 17.0.47
     "@types/react-dom": 17.0.17

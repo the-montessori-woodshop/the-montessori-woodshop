@@ -12,7 +12,7 @@ import themeUrl from "@woodshop/components/css";
 import fontBitterUrl from "@woodshop/components/fonts/bitter.css";
 import fontOpenSansUrl from "@woodshop/components/fonts/open-sans.css";
 
-import addStylesUrl from "./styles.css";
+import appStylesUrl from "./styles.css";
 
 export const meta: MetaFunction = () => ({
   charset: "utf-8",
@@ -23,7 +23,7 @@ export const meta: MetaFunction = () => ({
 export const links: LinksFunction = () => {
   return [
     { rel: "stylesheet", href: themeUrl },
-    { rel: "stylesheet", href: addStylesUrl },
+    { rel: "stylesheet", href: appStylesUrl },
     { rel: "stylesheet", href: fontBitterUrl },
     { rel: "stylesheet", href: fontOpenSansUrl },
   ];

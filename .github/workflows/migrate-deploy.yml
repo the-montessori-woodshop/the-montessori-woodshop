@@ -42,6 +42,9 @@ jobs:
   deploy_woodshop_dashboard:
     name: Build and deploy | @woodshop/dashboard
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
     environment: production
     steps:
       - name: Checkout
@@ -50,16 +53,21 @@ jobs:
         run: yarn install --immutable
       - name: Build
         run: yarn build:woodshop-dashboard
-      - name: Set PWD
-        run: cd packages/dashboard
       - name: Deploy to Cloudflare Pages
-        uses: cloudflare/pages-action@1
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN_PAGES }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          gitHubToken: ${{ secrets.API_TOKEN_GITHUB }}
-          projectName: woodshop-dashboard
-          directory: ./public
+        run:
+          CLOUDFLARE_ACCOUNT_ID=${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN=${{ secrets.CLOUDFLARE_API_TOKEN_PAGES }}
+          cd packages/woodshop-dashboard
+          yarn build
+          wrangler pages publish ./public --project-name=woodshop-dashboard
+      # - name: Deploy to Cloudflare Pages
+      #   uses: cloudflare/pages-action@1
+      #   with:
+      #     apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN_PAGES }}
+      #     accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      #     gitHubToken: ${{ secrets.API_TOKEN_GITHUB }}
+      #     projectName: woodshop-dashboard
+      #     directory: packages/woodshop-dashboard/public
 
   # deploy_components:
   #   name: Build and deploy | @woodshop/components
