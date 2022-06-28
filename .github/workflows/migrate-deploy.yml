@@ -50,6 +50,8 @@ jobs:
         run: yarn install --immutable
       - name: Build
         run: yarn build:woodshop-dashboard
+      - name: Set PWD
+        run: cd packages/dashboard
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/pages-action@1
         with:
@@ -57,7 +59,7 @@ jobs:
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           gitHubToken: ${{ secrets.API_TOKEN_GITHUB }}
           projectName: woodshop-dashboard
-          directory: packages/woodshop-dashboard/public
+          directory: public
 
   # deploy_components:
   #   name: Build and deploy | @woodshop/components
