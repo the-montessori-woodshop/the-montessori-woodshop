@@ -1,0 +1,15 @@
+name = "site-woodshop-dashboard"
+compatibility_date = "2022-06-28"
+
+# route = ""
+workers_dev = true
+main = "./build/index.js"
+
+[site]
+bucket = "./public"
+
+[env.production]
+workers_dev = true
+
+
+

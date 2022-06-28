@@ -1,0 +1,26 @@
+import { useMatches } from "@remix-run/react";
+import { TopNavList } from "@woodshop/components";
+import type { FC } from "react";
+import { Fragment } from "react";
+
+import { BreadcrumbSeparator } from "../breadcrumb/Breadcrumb";
+
+export const NavHeaderBreadcrumb: FC = () => {
+  const matches = useMatches();
+  return (
+    <TopNavList
+      style={{
+        display: "flex",
+      }}
+    >
+      {matches
+        .filter((match) => match.handle && match.handle.breadcrumb)
+        .map((match, index, arr) => (
+          <Fragment key={index}>
+            {match.handle?.breadcrumb(match)}
+            {index !== arr.length - 1 && <BreadcrumbSeparator />}
+          </Fragment>
+        ))}
+    </TopNavList>
+  );
+};

@@ -1,0 +1,9 @@
+@import "../../styles/utils";
+
+.app-header {
+  height: makeRem(100);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 makeRem(24);
+}
