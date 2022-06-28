@@ -26,15 +26,15 @@
     "@cloudflare/workers-types": "^3.13.0",
     "@esbuild-plugins/node-modules-polyfill": "^0.1.4",
     "dotenv-cli": "^5.1.0",
-    "esbuild": "^0.14.46",
+    "esbuild": "^0.14.47",
     "esbuild-plugin-alias": "^0.2.1",
-    "prisma": "3.15.2",
+    "prisma": "4.0.0",
     "typescript": "^4.7.4",
     "wrangler": "2.0.15"
   },
   "dependencies": {
     "@cfworker/jwt": "^4.0.2",
-    "@prisma/client": "3.15.2",
+    "@prisma/client": "4.0.0",
     "itty-router": "2.6.1"
   }
 }
