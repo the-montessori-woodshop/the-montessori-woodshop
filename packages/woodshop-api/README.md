@@ -97,3 +97,9 @@ To add a secret to the production environment in wrangler, run
 ```bash
 wrangler secret put ENV_VAR --env production
 ```
+
+## Gotchas
+
+- The dev migration scripts are inside of a scripts folder and run as shell scripts so proper env variable replacement can happen when trying to migrate the development data proxy DB connection. Using them inline in side of the package.json wasn't working so this was a better alternative
+- The `build` command isn't actually building anything in ESBuild. Instead it is proxy-ing the build to the Wrangler API in order to make sure that wrangler can own as much of the process as possible. In wrangler, defining the `main` key is a way to tell wrangler where the worker request starts. In this case, its in the `src/index.ts` file. However, the `build` step is actually running the `build and deploy` "methods" or concepts for the worker. If it fails, then it fails either the build or the deploy steps that are both handled by wrangler.
+- The commented out lines in the `wrangler.toml` file are for the secrets that should be added to wrangler. See above

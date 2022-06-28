@@ -5,14 +5,11 @@
   "scripts": {
     "setup": "yarn dev:generate & yarn dev:migrate",
     "types": "tsc --project tsconfig.types.json",
-    "build": "yarn ci:deploy --dry-run",
+    "build": "wrangler publish --env production --dry-run",
     "push": "prisma push",
     "dev": "wrangler dev --ip 127.0.0.1 --port 8888",
     "dev:generate": "./scripts/generate.sh",
-    "dev:migrate": "./scripts/migrate-dev.sh",
-    "ci:generate": "prisma generate --data-proxy",
-    "ci:migrate": "yarn ci:generate && yarn prisma migrate deploy",
-    "ci:deploy": "yarn ci:generate && wrangler publish --env production"
+    "dev:migrate": "./scripts/migrate-dev.sh"
   },
   "types": "dist/index.types.d.ts",
   "repository": {

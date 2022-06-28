@@ -1,9 +1,0 @@
-@import "../../styles/utils";
-
-.edit-content {
-  grid-area: edit-content;
-  width: makeRem(600);
-  border-left: makeRem(1) solid var(--color-grey2);
-  background: var(--color-grey1);
-  position: relative;
-}
