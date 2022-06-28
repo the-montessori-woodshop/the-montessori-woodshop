@@ -13,8 +13,8 @@
     "styles": "yarn node ./scripts/styles.mjs",
     "start": "cross-env NODE_ENV=production npm run dev:wrangler",
     "scss": "sass app/styles.scss:app/styles.css",
-    "dev": "remix build && yarn dev:remix & yarn dev:wrangler & yarn dev:styles",
-    "dev:remix": "remix watch",
+    "dev": "yarn dev:remix & yarn dev:wrangler & yarn dev:styles",
+    "dev:remix": "cross-env NODE_ENV=development remix build & remix watch",
     "dev:wrangler": "cross-env NODE_ENV=development wrangler pages dev ./public",
     "dev:styles": "yarn node ./scripts/styles-dev.mjs & yarn scss --watch --embed-source-map"
   },

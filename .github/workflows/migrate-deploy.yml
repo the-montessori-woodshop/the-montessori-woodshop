@@ -20,8 +20,8 @@ jobs:
       - name: Migrate Woodshop Database
         run:
           cd packages/woodshop-api &&
-          yarn prisma generate --data-proxy &&
           WOODSHOP_API_DATABASE_URL=${{ secrets.WOODSHOP_API_DATABASE_URL }}
+          yarn prisma generate --data-proxy &&
           yarn prisma migrate deploy
 
   deploy_woodshop_api:
