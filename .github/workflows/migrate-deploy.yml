@@ -59,7 +59,7 @@ jobs:
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           gitHubToken: ${{ secrets.API_TOKEN_GITHUB }}
           projectName: woodshop-dashboard
-          directory: public
+          directory: ./public
 
   # deploy_components:
   #   name: Build and deploy | @woodshop/components
