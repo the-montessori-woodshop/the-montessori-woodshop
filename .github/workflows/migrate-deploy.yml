@@ -8,26 +8,26 @@ on:
   workflow_dispatch:
 
 jobs:
-  migrate_woodshop_api:
-    runs-on: ubuntu-latest
-    name: Migrate - @woodshop/api
-    environment: migrate
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Install
-        run: yarn install --immutable
-      - name: Migrate Woodshop Database
-        run:
-          cd packages/woodshop-api &&
-          yarn prisma generate --data-proxy &&
-          WOODSHOP_API_DATABASE_URL=${{ secrets.WOODSHOP_API_DATABASE_URL }}
-          yarn prisma migrate deploy
+  # migrate_woodshop_api:
+  #   runs-on: ubuntu-latest
+  #   name: Migrate - @woodshop/api
+  #   environment: migrate
+  #   steps:
+  #     - name: Checkout
+  #       uses: actions/checkout@v2
+  #     - name: Install
+  #       run: yarn install --immutable
+  #     - name: Migrate Woodshop Database
+  #       run:
+  #         cd packages/woodshop-api &&
+  #         yarn prisma generate --data-proxy &&
+  #         WOODSHOP_API_DATABASE_URL=${{ secrets.WOODSHOP_API_DATABASE_URL }}
+  #         yarn prisma migrate deploy
 
   deploy_woodshop_api:
     runs-on: ubuntu-latest
     name: Deploy - @woodshop/api
-    needs: migrate_woodshop_api
+    # needs: migrate_woodshop_api
     environment: production
     steps:
       - name: Checkout
@@ -40,7 +40,7 @@ jobs:
           yarn prisma generate --data-proxy &&
           CLOUDFLARE_ACCOUNT_ID=${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           CLOUDFLARE_API_TOKEN=${{ secrets.CLOUDFLARE_API_TOKEN_WORKERS }}
-          wrangler publish --env production
+          yarn wrangler publish --env production
 
   deploy_woodshop_dashboard:
     name: Deploy | @woodshop/dashboard
