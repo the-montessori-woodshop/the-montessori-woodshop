@@ -7,7 +7,7 @@ import { handleCreateOrUpdateUser } from "./user.request.postCreateOrUpdateUser"
 // import { handleGetPosts } from "./post.getPosts";
 // import { handlePostNewPost } from "./post.postNewPost";
 
-export const UserRouter = Router({ base: "/api/user" });
+export const UserRouter = Router({ base: "/user" });
 
 UserRouter
   // User

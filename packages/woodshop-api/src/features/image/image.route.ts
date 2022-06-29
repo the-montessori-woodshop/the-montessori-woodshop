@@ -7,7 +7,7 @@ import { handleGetImages } from "./image.request.getImages";
 import { handlePatchImage } from "./image.request.patchImage";
 import { handlePostNewImage } from "./image.request.postNewImage";
 
-export const ImageRouter = Router({ base: "/api/image" });
+export const ImageRouter = Router({ base: "/image" });
 
 ImageRouter
   // Auth

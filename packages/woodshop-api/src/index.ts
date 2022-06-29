@@ -5,7 +5,7 @@ import { PostRouter } from "./features/post/post.route";
 import { UserRouter } from "./features/user/user.route";
 import { handleError } from "./utils/handleError";
 
-const router = Router({ base: "/" });
+const router = Router();
 
 // Router
 router

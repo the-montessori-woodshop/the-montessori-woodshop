@@ -6,7 +6,7 @@ import { handleGetPostById } from "./post.request.getPostById";
 import { handleUpdatePost } from "./post.request.patchUpdatePost";
 import { handlePostNewPost } from "./post.request.postNewPost";
 
-export const PostRouter = Router({ base: "/api/post" });
+export const PostRouter = Router({ base: "/post" });
 
 PostRouter
   // Post
