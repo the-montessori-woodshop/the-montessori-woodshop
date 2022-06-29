@@ -10,7 +10,8 @@ node_compat = true
 # WOODSHOP_API_SHADOW_DATABASE_URL
 
 [env.production]
-route = "https://api.woodshop.themontessoriwoodshop.com/*"
+workers_dev = false
+route = "api.woodshop.themontessoriwoodshop.com/*"
 # [ env.production.secrets ] #
 # WOODSHOP_API_DATABASE_URL
 
