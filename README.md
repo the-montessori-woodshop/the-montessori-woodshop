@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://themontessoriwoodshop.com">
-    <img alt="Medusa" src="./packages/storefront/public/logo-512x512-transparent.png" width="300"/>
+    <img alt="Medusa" src="./packages/medusa-storefront/public/logo-512x512-transparent.png" width="300"/>
   </a>
 </p>
 <h1 align="center">
@@ -8,12 +8,14 @@
 </h1>
 
 <h4 align="center">
-  <a href="https://themontessoriwoodshop.com">Website</a> |
-  <a href="https://docs.themontessoriwoodshop.com">Components</a>
+  <a href="https://themontessoriwoodshop.com">Storefront</a> |
+  <a href="https://components.themontessoriwoodshop.com">Components</a> |
+  <a href="https://admin.themontessoriwoodshop.com">Admin</a> | 
+  <a href="https://dashboard.themontessoriwoodshop.com">Dashboard</a>
 </h4>
 
 <p align="center">
-The Montessori Woodshop is a family owned and operated woodshop that specializes in hand made montessori style furniture and toys.
+The Montessori Woodshop is a family owned and operated woodshop that specializes in hand made montessori style furniture and toys that puts an extreme focus on craftsmanship, sustainability, and generational sustainability.
 </p>
 <p align="center">
   <!-- <a href="https://github.com/medusajs/medusa/blob/master/LICENSE">
@@ -32,6 +34,150 @@ The Montessori Woodshop is a family owned and operated woodshop that specializes
     <img src="https://img.shields.io/twitter/follow/medusajs.svg?label=Follow%20@medusajs" alt="Follow @medusajs" />
   </a> -->
 </p>
+
+## Getting Started
+
+- TBD
+
+## Environment Variables
+
+| Category   | Name                                                                      | Platforms                           |
+| ---------- | ------------------------------------------------------------------------- | ----------------------------------- |
+| Build      | [`NODE_ENV`](#nodeenv)                                                    | Used for build time development     |
+| Admin      | [`GATSBY_MEDUSA_BACKEND_URL`](#GATSBY_MEDUSA_BACKEND_URL)                 | API URL for access                  |
+| Medusa     | [`JWT_SECRET`](#JWT_SECRET)                                               | Secret for authentication           |
+| Medusa     | [`COOKIE_SECRET`](#COOKIE_SECRET)                                         | Secret for cookie transmission      |
+| Medusa     | [`MEDUSA_PORT`](#MEDUSA_PORT)                                             | API Port for access                 |
+| Medusa     | [`MEDUSA_ADMIN_CORS`](#MEDUSA_ADMIN_CORS)                                 | URL of Admin Application            |
+| Medusa     | [`MEDUSA_STORE_CORS`](#MEDUSA_STORE_CORS)                                 | URL of Storefront Application       |
+| Medusa     | [`MEDUSA_REDIS_HOST`](#MEDUSA_REDIS_HOST)                                 | Redis URL                           |
+| Medusa     | [`MEDUSA_REDIS_PORT`](#MEDUSA_REDIS_PORT)                                 | Redis Port                          |
+| Medusa     | [`MEDUSA_STRIPE_API_KEY`](#MEDUSA_STRIPE_API_KEY)                         | Secret for Stripe Access            |
+| Medusa     | [`MEDUSA_STRIPE_WEBHOOK_SECRET`](#MEDUSA_STRIPE_WEBHOOK_SECRET)           | Secrete for Stripe Webhook Access   |
+| Medusa     | [`MEDUSA_CLOUDFLARE_IMAGE_API_TOKEN`](#MEDUSA_CLOUDFLARE_IMAGE_API_TOKEN) | Token to upload images to CF        |
+| Cloudflare | [`CLOUDFLARE_ACCOUNT_ID`](#CLOUDFLARE_ACCOUNT_ID)                         | Token used for CI deployments to CF |
+| Cloudflare | [`CLOUDFLARE_API_TOKEN_WORKERS`](#CLOUDFLARE_API_TOKEN_WORKERS)           | Token used for CI deployments to CF |
+| Cloudflare | [`CLOUDFLARE_API_TOKEN_PAGES`](#CLOUDFLARE_API_TOKEN_PAGES)               | Token used for CI deployments to CF |
+| API        | [`WOODSHOP_API_DATABASE_URL`](#WOODSHOP_API_DATABASE_URL)                 | URL of Database\*                   |
+| API        | [`WOODSHOP_API_MIGRATE_DATABASE_URL`](#WOODSHOP_API_MIGRATE_DATABASE_URL) | Migration URL when developing       |
+| API        | [`WOODSHOP_API_SHADOW_DATABASE_URL`](#WOODSHOP_API_SHADOW_DATABASE_URL)   | Shadow URL when developing          |
+
+### `NODE_ENV`
+
+Should be set to either `development` or `production`. This tells the application at build time what target it's building for. This can be set either in the `.env` file or on the path of the process will be using it. The later is the most important.
+
+#### Packages Used
+
+- [`medusa-admin`](./packages/medusa-admin/README.md)
+- [`@woodshop/api`](./packages/woodshop-api/README.md)
+
+#### Platforms
+
+- Github Actions (migrate)
+- Github Actions (deploy)
+
+### `GATSBY_MEDUSA_BACKEND_URL`
+
+#### Packages Used
+
+- [`medusa-admin`](./packages/medusa-admin/README.md)
+
+#### Platforms
+
+- Github Actions (deploy)
+
+### `JWT_SECRET`
+
+### `MEDUSA_PORT`
+
+### `MEDUSA_ADMIN_CORS`
+
+### `MEDUSA_STORE_CORS`
+
+### `MEDUSA_REDIS_HOST`
+
+### `MEDUSA_REDIS_PORT`
+
+### `MEDUSA_STRIPE_API_KEY`
+
+### `MEDUSA_STRIPE_WEBHOOK_SECRET`
+
+### `MEDUSA_CLOUDFLARE_IMAGE_API_TOKEN`
+
+This token is created on the Cloudflare dashboard and is then used with the Medusa API to enhance the admin function for how images are stored.
+
+#### Packages Used
+
+- [`medusa-api`](./packages/medusa-api/README.md)
+
+#### Platforms
+
+- Render
+
+### `CLOUDFLARE_ACCOUNT_ID`
+
+This is the token that is used to tell wrangler what account it should be targeting when running wrangler commands. This can go on the path of the process that is executed from yarn / npm scripts.
+
+#### Packages Used
+
+- [`@woodshop/api`](./packages/woodshop-api/README.md)
+- [`@woodshop/dashboard`](./packages/woodshop-dashboard/README.md) (Remix)
+- [`@woodshop/components`](./packages/components/README.md) (Storybook)
+- [`medusa-admin`](./packages/medusa-admin/README.md) (Gatsby)
+- [`medusa-storefront`](./packages/medusa-storefront/README.md) (Remix)
+
+#### Platforms
+
+- Github Actions (deploy)
+
+### `CLOUDFLARE_API_TOKEN_WORKERS`
+
+This is the token that is used to use with the wrangler CLI to upload cloudflare workers assets to the Cloudflare network.
+
+#### Packages Used
+
+- [`@woodshop/api`](./packages/woodshop-api/README.md)
+
+#### Platforms
+
+- Github Actions (deploy)
+
+### `CLOUDFLARE_API_TOKEN_PAGES`
+
+This is the token that is used to use the direct upload feature of angular to deploy static assets and function folders to cloudflare pages. This token is used in Github Actions and included on the path of the script that is used to kick off of the wrangler CLI.
+
+#### Packages Used
+
+- [`@woodshop/dashboard`](./packages/woodshop-dashboard/README.md) (Remix)
+- [`@woodshop/components`](./packages/components/README.md) (Storybook)
+- [`medusa-admin`](./packages/medusa-admin/README.md) (Gatsby)
+- [`medusa-storefront`](./packages/medusa-storefront/README.md) (Remix)
+
+#### Platforms
+
+- Github Actions (deploy)
+
+### `WOODSHOP_API_DATABASE_URL`
+
+This URL is the environment variable that is used to tell Prisma where it should be connecting to the DB. This is a single environment variable that changes depending upon how it's used and where it is used. Since we're only using this database in the serverless environment, we need to make sure it is added to wrangler and that's done a little differently than putting it on the path of the process.
+
+However, this is also needed when migrating the DB in CI so this should also go on the path when running the migrate commands
+
+#### Packages Used
+
+- [`@woodshop/api`](./packages/woodshop-api/README.md)
+
+#### Platforms
+
+- Github Actions (migrate)
+- Wrangler (development)
+- Wrangler (production)
+
+### `WOODSHOP_API_MIGRATE_DATABASE_URL`
+
+This URL is used only when developing locally. Since (as of this moment) the local workflow is using the Prisma data proxy, we cannot use the data proxy URL to migrate the DB. Instead we must use the external query string of the
+
+### `WOODSHOP_API_SHADOW_DATABASE_URL`
 
 # Deployment
 

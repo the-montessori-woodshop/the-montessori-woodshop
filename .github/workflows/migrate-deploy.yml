@@ -108,7 +108,7 @@ jobs:
         run: yarn install --immutable
       - name: Build
         run:
-          GATSBY_MEDUSA_BACKEND_URL=https://api.store.themontessoriwoodshop.com
+          GATSBY_MEDUSA_BACKEND_URL=https://store.themontessoriwoodshop.com
           yarn build:medusa-admin
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/pages-action@1
