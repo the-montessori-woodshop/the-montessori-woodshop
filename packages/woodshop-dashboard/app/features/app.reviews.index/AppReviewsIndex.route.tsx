@@ -1,8 +1,6 @@
 import { Outlet } from "@remix-run/react";
 
-import { createRouteLinkStyles } from "../_routes/routes.createRouteLinkStyles";
 import type { RemixFeatureRoute } from "../_routes/routes.types";
-import routeStyles from "./AppReviewsIndex.css";
 
 export const AppReviewsIndexRoute: RemixFeatureRoute = () => {
   return (
@@ -12,4 +10,4 @@ export const AppReviewsIndexRoute: RemixFeatureRoute = () => {
     </div>
   );
 };
-AppReviewsIndexRoute.links = () => [...createRouteLinkStyles(routeStyles)];
+AppReviewsIndexRoute.links = () => [];

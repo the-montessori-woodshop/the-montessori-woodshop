@@ -1,6 +1,6 @@
-import { HandlePATCHRequest } from "../../types/index";
 import { ApiError } from "../../utils/error.api";
 import { prisma } from "../../utils/getPrisma";
+import { HandlePATCHRequest } from "../../utils/handler.model";
 import { handleRoute } from "../../utils/handleRoute";
 import {
   PATCH_ImagesApiParams,

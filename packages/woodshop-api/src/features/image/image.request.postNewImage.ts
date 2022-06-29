@@ -1,6 +1,6 @@
-import { HandlePOSTRequest } from "../../types";
 import { ApiError } from "../../utils/error.api";
 import { prisma } from "../../utils/getPrisma";
+import { HandlePOSTRequest } from "../../utils/handler.model";
 import { handleRoute } from "../../utils/handleRoute";
 import { postUploadFileToCFImages } from "../cloudflare/cloudflare.request.postUploadFileToCFImages";
 import { POST_NewImageApiResponse } from "./image.model";

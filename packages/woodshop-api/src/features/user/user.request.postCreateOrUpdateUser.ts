@@ -1,8 +1,8 @@
-import { HandlePOSTRequest } from "../../types/index";
 import { ApiError } from "../../utils/error.api";
 import { prisma } from "../../utils/getPrisma";
+import type { HandlePOSTRequest } from "../../utils/handler.model";
 import { handleRoute } from "../../utils/handleRoute";
-import {
+import type {
   POST_CreateOrUpdateUserApiRequest,
   POST_CreateOrUpdateUserApiResponse
 } from "./user.model";

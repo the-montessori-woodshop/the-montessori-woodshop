@@ -1,4 +1,3 @@
-import { createComponentStyle } from "~/components/utils/createComponentStyle";
 import clsx from "clsx";
 import { forwardRef } from "react";
 
@@ -22,5 +21,3 @@ export const Chip = forwardRef<HTMLDivElement, ChipProps>(function Chip(
     </div>
   );
 });
-
-Chip.links = createComponentStyle(styles);

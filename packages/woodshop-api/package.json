@@ -5,25 +5,14 @@
   "scripts": {
     "setup": "yarn dev:generate & yarn dev:migrate",
     "types": "tsc --project tsconfig.types.json",
-    "build": "yarn ci:deploy --dry-run && yarn types",
+    "build": "wrangler publish --env production --dry-run",
     "push": "prisma push",
-    "dev": "wrangler dev --ip 127.0.0.1 --port 8888 & yarn types --watch",
-    "dev:generate": "./scripts/generate.sh",
-    "dev:migrate": "./scripts/migrate-dev.sh",
-    "ci:generate": "prisma generate --data-proxy",
-    "ci:migrate": "yarn ci:generate && yarn prisma migrate deploy",
-    "ci:deploy": "yarn ci:generate && wrangler publish --env production"
+    "migrate": "./scripts/migrate.sh",
+    "dev": "wrangler dev --ip 127.0.0.1 --port 8888",
+    "dev:generate": "./scripts/generate-dev.sh",
+    "dev:migrate": "./scripts/migrate-dev.sh"
   },
-  "main": "dist/worker.js",
-  "types": "dist/types/index.d.ts",
-  "exports": {
-    ".": {
-      "types": "./dist/types/index.d.ts",
-      "import": "./dist/worker.js",
-      "require": "./dist/worker.js",
-      "default": "./dist/worker.js"
-    }
-  },
+  "types": "dist/index.types.d.ts",
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/the-montessori-woodshop/the-montessori-woodshop.git"
@@ -38,18 +27,15 @@
     "@cloudflare/workers-types": "^3.13.0",
     "@esbuild-plugins/node-modules-polyfill": "^0.1.4",
     "dotenv-cli": "^5.1.0",
-    "esbuild": "^0.14.46",
+    "esbuild": "^0.14.47",
     "esbuild-plugin-alias": "^0.2.1",
-    "prisma": "3.15.2",
+    "prisma": "4.0.0",
     "typescript": "^4.7.4",
-    "wrangler": "^2.0.15"
+    "wrangler": "2.0.15"
   },
   "dependencies": {
     "@cfworker/jwt": "^4.0.2",
-    "@prisma/client": "3.15.2",
+    "@prisma/client": "4.0.0",
     "itty-router": "2.6.1"
-  },
-  "installConfig": {
-    "hoistingLimits": "workspaces"
   }
 }

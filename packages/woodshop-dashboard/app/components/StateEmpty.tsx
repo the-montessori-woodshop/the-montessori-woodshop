@@ -1,28 +1,23 @@
 import { TypographyCopy, TypographyHeading } from "@woodshop/components";
+import clsx from "clsx";
 import type { ReactNode } from "react";
 import { forwardRef } from "react";
-import styled from "styled-components";
 
-export type StateEmtpyPrps = {
+import styles from "./StateEmtpy.css";
+
+export type StateEmtpyPrps = JSX.IntrinsicElements["div"] & {
   title: string;
   description: string;
   children: ReactNode;
 };
 
-const SDiv = styled.div`
-  text-align: center;
-  * {
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 65ch;
-  }
-`;
-
 export const StateEmtpy = forwardRef<HTMLDivElement, StateEmtpyPrps>(
-  function StateEmpty({ children, title, description, ...restProps }, ref) {
+  function StateEmpty(
+    { children, title, className, description, ...restProps },
+    ref
+  ) {
     return (
-      <SDiv {...restProps}>
-        {/* @ts-ignore */}
+      <div {...restProps} className={clsx(className, "TKizo7F7045")}>
         {children}
         <div>
           <TypographyHeading
@@ -36,7 +31,7 @@ export const StateEmtpy = forwardRef<HTMLDivElement, StateEmtpyPrps>(
           </TypographyHeading>
           <TypographyCopy>{description}</TypographyCopy>
         </div>
-      </SDiv>
+      </div>
     );
   }
 );

@@ -1,4 +1,3 @@
-import { createComponentStyle } from "~/components/utils/createComponentStyle";
 import clsx from "clsx";
 import type { ReactNode } from "react";
 import { forwardRef } from "react";
@@ -22,4 +21,3 @@ export const PageHeader = forwardRef<HTMLElement, PageHeaderProps>(
     );
   }
 );
-PageHeader.links = createComponentStyle(styles);

@@ -38,21 +38,11 @@ import { ImagesGridEditContent } from "~/components/images/ImagesGridEditContent
 import { ImagesGridEditTitle } from "~/components/images/ImagesGridEditTitle";
 import { PageHeader } from "~/components/page/PageHeader";
 import { PageTitle } from "~/components/page/PageTitle";
-import { createRouteLinkStyles } from "~/features/_routes/routes.createRouteLinkStyles";
 import { api } from "~/services/api.server";
 import type { UseMatchesMatch } from "~/types/useMatches";
 import { useCallback, useEffect } from "react";
 
 import pageStyles from "./$id.css";
-
-export const links: LinksFunction = () => [
-  ImagePaneContent.links,
-  ImagesGridEditContent.links,
-  ImagesGridEditContent.links,
-  PageHeader.links,
-  PageTitle.links,
-  ...createRouteLinkStyles(pageStyles),
-];
 
 export const handle = {
   breadcrumb: (match: UseMatchesMatch) => {

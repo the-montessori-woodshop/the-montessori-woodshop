@@ -1,5 +1,11 @@
 {
   "extends": "./tsconfig.json",
-  "include": ["src/types/index.ts"],
+  "include": ["src/index.types.ts"],
+  "compilerOptions": {
+    "noEmit": false,
+    "outDir": "dist",
+    "declaration": true,
+    "emitDeclarationOnly": true
+  },
   "exclude": ["node_modules", "dist", "test"]
 }

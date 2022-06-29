@@ -1,4 +1,3 @@
-import { createComponentStyle } from "~/components/utils/createComponentStyle";
 import clsx from "clsx";
 import type { ReactNode } from "react";
 import { forwardRef } from "react";
@@ -18,5 +17,3 @@ export const ImagesGridNav = forwardRef<HTMLDivElement, ImagesGridNavProps>(
     );
   }
 );
-
-ImagesGridNav.links = createComponentStyle(styles);

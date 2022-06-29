@@ -5,8 +5,6 @@ import { Breadcrumb } from "~/components/breadcrumb/Breadcrumb";
 import { AppImagesNewRoute } from "~/features/app.images-new";
 import { api } from "~/services/api.server";
 
-export const links = AppImagesNewRoute.links;
-
 export const handle = {
   breadcrumb: () => {
     return <Breadcrumb to="/images/new">New</Breadcrumb>;

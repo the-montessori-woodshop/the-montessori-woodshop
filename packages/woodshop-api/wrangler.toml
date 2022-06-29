@@ -1,11 +1,8 @@
-compatibility_date = "2022-01-05"
-compatibility_flags = []
+compatibility_date = "2022-06-23"
 
 name = "woodshop-api"
+main = "src/index.ts"
 workers_dev = true
-main = "src/handler.ts"
-tsconfig = "./tsconfig.json"
-minify = false
 node_compat = true
 # [ secrets ] #
 # WOODSHOP_API_DATABASE_URL
@@ -13,7 +10,6 @@ node_compat = true
 # WOODSHOP_API_SHADOW_DATABASE_URL
 
 [env.production]
-workers_dev = false
 route = "https://api.woodshop.themontessoriwoodshop.com/*"
 # [ env.production.secrets ] #
 # WOODSHOP_API_DATABASE_URL

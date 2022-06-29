@@ -1,6 +1,6 @@
-import { HandleDELETERequest } from "../../types/index";
 import { ApiError } from "../../utils/error.api";
 import { prisma } from "../../utils/getPrisma";
+import { HandleDELETERequest } from "../../utils/handler.model";
 import { handleRoute } from "../../utils/handleRoute";
 import { DELETE_ImageApiParams, DELETE_ImageApiResponse } from "./image.model";
 

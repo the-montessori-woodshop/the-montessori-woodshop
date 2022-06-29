@@ -1,5 +1,4 @@
 import { TypographyCopy } from "@woodshop/components";
-import { createComponentStyle } from "~/components/utils/createComponentStyle";
 import clsx from "clsx";
 import React, { forwardRef } from "react";
 
@@ -28,5 +27,3 @@ export const BlogNavItemContent = forwardRef<
     </div>
   );
 });
-
-BlogNavItemContent.links = createComponentStyle(styles);

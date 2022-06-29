@@ -5,8 +5,6 @@ import {
 import { AppBlogEditorRoute } from "~/features/app.blog-editor";
 import type { UseMatchesMatch } from "~/types/useMatches";
 
-export const links = AppBlogEditorRoute.links;
-
 export const handle = {
   breadcrumb: (data: UseMatchesMatch) => {
     return (

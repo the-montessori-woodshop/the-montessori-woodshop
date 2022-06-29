@@ -7,9 +7,7 @@ import {
 } from "@woodshop/components";
 import { authenticator } from "~/services/auth.server";
 
-import { createRouteLinkStyles } from "../_routes/routes.createRouteLinkStyles";
 import type { RemixFeatureRoute } from "../_routes/routes.types";
-import routeStyles from "./Login.route.css";
 
 export const LoginRoute: RemixFeatureRoute = () => {
   return (
@@ -44,8 +42,8 @@ export const LoginRoute: RemixFeatureRoute = () => {
 };
 
 export default LoginRoute;
+
 LoginRoute.loader = async ({ request }) =>
   authenticator.isAuthenticated(request, {
     successRedirect: "/",
   });
-LoginRoute.links = () => createRouteLinkStyles(routeStyles);
