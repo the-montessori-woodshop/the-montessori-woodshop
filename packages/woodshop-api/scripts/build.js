@@ -10,9 +10,11 @@ async function build() {
   const mode = process.env.NODE_ENV?.toLowerCase() ?? "development";
 
   await esbuild.build({
-    entryPoints: ["./src/handler.ts"],
+    entryPoints: ["./src/index.ts"],
+    mainFields: ["browser", "module", "main"],
     outfile: "./dist/worker.js",
     bundle: true,
+    platform: "neutral",
     minify: mode === "production",
     sourcemap: mode !== "production",
     define: {
@@ -27,6 +29,7 @@ async function build() {
 build()
   .then(() => {})
   .catch((err) => {
+    console.log(err);
     process.exit(1);
   })
   .finally(() => {

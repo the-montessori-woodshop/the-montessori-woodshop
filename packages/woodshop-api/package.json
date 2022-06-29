@@ -5,7 +5,8 @@
   "scripts": {
     "setup": "yarn dev:generate & yarn dev:migrate",
     "types": "tsc --project tsconfig.types.json",
-    "build": "wrangler publish --env production --dry-run",
+    "build": "yarn node ./scripts/build.js",
+    "ci:build": "wrangler publish --env production --dry-run",
     "push": "prisma push",
     "dev": "wrangler dev --ip 127.0.0.1 --port 8888",
     "dev:generate": "./scripts/generate.sh",

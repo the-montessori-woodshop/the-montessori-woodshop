@@ -32999,14 +32999,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"woodshop-worker@workspace:packages/woodshop-worker":
-  version: 0.0.0-use.local
-  resolution: "woodshop-worker@workspace:packages/woodshop-worker"
-  dependencies:
-    wrangler: 2.0.15
-  languageName: unknown
-  linkType: soft
-
 "word-wrap@npm:^1.2.3, word-wrap@npm:~1.2.3":
   version: 1.2.3
   resolution: "word-wrap@npm:1.2.3"
