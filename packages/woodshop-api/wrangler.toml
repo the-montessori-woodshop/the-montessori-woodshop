@@ -14,6 +14,5 @@ node_compat = true
 
 [env.production]
 workers_dev = false
-route = "api.themontessoriwoodshop.com/*"
 # [ env.production.secrets ] #
 # WOODSHOP_API_DATABASE_URL
