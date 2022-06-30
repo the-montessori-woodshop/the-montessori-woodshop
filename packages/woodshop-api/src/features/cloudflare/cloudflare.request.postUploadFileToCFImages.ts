@@ -1,9 +1,7 @@
+import { envVar } from "../../utils/envVar";
 import { HandlePOSTRequest } from "../../utils/handler.model";
 import { handleRoute } from "../../utils/handleRoute";
 import { CF_ImageApiUploadResponse } from "./cloudflare.model";
-
-const CF_ACCOUNT_ID = "68fa4421d84bfcddbd9311a7d57aa419";
-const CF_IMAGE_API_TOKEN = "LDQmG3OPnuf8e7XRhvp3OJFC49-0L1klY4WPJ0sn";
 
 export const postUploadFileToCFImages: HandlePOSTRequest<
   CF_ImageApiUploadResponse
@@ -13,12 +11,14 @@ export const postUploadFileToCFImages: HandlePOSTRequest<
     body.delete("title");
 
     const cfRes = await fetch(
-      `https://api.cloudflare.com/client/v4/accounts/${CF_ACCOUNT_ID}/images/v1`,
+      `https://api.cloudflare.com/client/v4/accounts/${envVar(
+        "CLOUDFLARE_ACCOUNT_ID"
+      )}/images/v1`,
       {
         ...request,
         method: "POST",
         headers: {
-          Authorization: `Bearer ${CF_IMAGE_API_TOKEN}`
+          Authorization: `Bearer ${envVar("CLOUDFLARE_IMAGE_API_TOKEN")}`
         },
         body
       }
