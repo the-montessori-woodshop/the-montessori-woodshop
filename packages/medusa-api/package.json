@@ -10,7 +10,6 @@
     "dev": "yarn build --watch && medusa start",
     "start": "medusa start",
     "migrate": "medusa migrations run",
-    "serve": "yarn medusa migrations run && yarn medusa start",
     "version": "yarn medusa version",
     "seed": "yarn medusa seed -f ./seed/seed.json"
   },

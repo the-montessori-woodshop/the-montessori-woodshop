@@ -17,8 +17,10 @@ module.exports = {
     {
       resolve: `medusa-file-cloudflare-images`,
       options: {
-        accountId: process.env.CF_ACCOUNT_ID,
-        apiToken: process.env.CF_IMAGE_API_TOKEN,
+        accountId: process.env.CLOUDFLARE_ACCOUNT_ID,
+        apiToken: process.env.CLOUDFLARE_IMAGE_API_TOKEN,
+        devRoute: "/medusa/dev",
+        prodRoute: "/medusa/prod",
       },
     },
     // Uncomment to add Stripe support.
