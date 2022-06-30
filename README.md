@@ -104,15 +104,18 @@ Should be set to either `development` or `production`. This tells the applicatio
 
 ### `MEDUSA_CLOUDFLARE_IMAGE_API_TOKEN`
 
-This token is created on the Cloudflare dashboard and is then used with the Medusa API to enhance the admin function for how images are stored.
+This token is created on the Cloudflare dashboard and is then used with the Medusa API to enhance the admin function for how images are stored. This is also used for the woodshop api to manage images that are going to be used inside of the blog and website.
 
 #### Packages Used
 
 - [`medusa-api`](./packages/medusa-api/README.md)
+- [`@woodshop/api`](./packages/woodshop-api/README.md)
 
 #### Platforms
 
+- `.env`
 - Render
+- Wrangler
 
 ### `CLOUDFLARE_ACCOUNT_ID`
 

@@ -63,7 +63,7 @@ class CloudflareImagesService extends FileService {
     this.apiToken = options.apiToken;
   }
 
-  private cfUrl(): string {
+  private cloudflareApiUrl(): string {
     if (!this.accountId) {
       throw new Error("Must include a cloudflare account ID");
     }
@@ -75,10 +75,10 @@ class CloudflareImagesService extends FileService {
    */
   // @ts-ignore
   async upload(file: UploadFile) {
-    const url = this.cfUrl();
+    const url = this.cloudflareApiUrl();
 
     const image = createReadStream(file.path);
-    var data = new FormData();
+    const data = new FormData();
     data.append("file", image);
 
     const uploadRequest = fetch(url, {
@@ -117,7 +117,7 @@ class CloudflareImagesService extends FileService {
    */
   // @ts-ignore
   delete(fileUrl: string) {
-    const requestUrl = this.cfUrl();
+    const requestUrl = this.cloudflareApiUrl();
     const fileUrlSearchParams = new URL(fileUrl).searchParams;
     const imageId = fileUrlSearchParams.get(ImageParams.CF_IMAGE_ID);
 

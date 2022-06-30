@@ -19,8 +19,6 @@ module.exports = {
       options: {
         accountId: process.env.CLOUDFLARE_ACCOUNT_ID,
         apiToken: process.env.CLOUDFLARE_IMAGE_API_TOKEN,
-        devRoute: "/medusa/dev",
-        prodRoute: "/medusa/prod",
       },
     },
     // Uncomment to add Stripe support.
