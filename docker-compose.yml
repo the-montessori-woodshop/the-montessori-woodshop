@@ -33,10 +33,11 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
       POSTGRES_DB: woodshop_db
+      POSTGRES_HOST_AUTH_METHOD: trust
 
   redis:
     image: redis
-    container_name: medusa_redis
+    container_name: redis
     expose:
       - 6379
     env_file:
