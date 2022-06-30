@@ -8,8 +8,8 @@ type Options = {
   baseUrl?: string;
   version?: string;
   accountId: string;
-  accountHash: string;
   apiToken: string;
+  accountHash?: string;
   serveFromCloudflareDomain?: string;
 };
 
