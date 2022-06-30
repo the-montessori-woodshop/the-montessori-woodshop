@@ -52,12 +52,13 @@ The Montessori Woodshop is a family owned and operated woodshop that specializes
 | Medusa     | [`MEDUSA_STORE_CORS`](#MEDUSA_STORE_CORS)                                 | URL of Storefront Application       |
 | Medusa     | [`MEDUSA_REDIS_HOST`](#MEDUSA_REDIS_HOST)                                 | Redis URL                           |
 | Medusa     | [`MEDUSA_REDIS_PORT`](#MEDUSA_REDIS_PORT)                                 | Redis Port                          |
-| Medusa     | [`MEDUSA_STRIPE_API_KEY`](#MEDUSA_STRIPE_API_KEY)                         | Secret for Stripe Access            |
-| Medusa     | [`MEDUSA_STRIPE_WEBHOOK_SECRET`](#MEDUSA_STRIPE_WEBHOOK_SECRET)           | Secrete for Stripe Webhook Access   |
-| Medusa     | [`MEDUSA_CLOUDFLARE_IMAGE_API_TOKEN`](#MEDUSA_CLOUDFLARE_IMAGE_API_TOKEN) | Token to upload images to CF        |
+| Medusa     | [`STRIPE_API_KEY`](#STRIPE_API_KEY)                                       | Secret for Stripe Access            |
+| Medusa     | [`STRIPE_WEBHOOK_SECRET`](#STRIPE_WEBHOOK_SECRET)                         | Secrete for Stripe Webhook Access   |
 | Cloudflare | [`CLOUDFLARE_ACCOUNT_ID`](#CLOUDFLARE_ACCOUNT_ID)                         | Token used for CI deployments to CF |
 | Cloudflare | [`CLOUDFLARE_API_TOKEN_WORKERS`](#CLOUDFLARE_API_TOKEN_WORKERS)           | Token used for CI deployments to CF |
 | Cloudflare | [`CLOUDFLARE_API_TOKEN_PAGES`](#CLOUDFLARE_API_TOKEN_PAGES)               | Token used for CI deployments to CF |
+| Cloudflare | [`CLOUDFLARE_IMAGE_API_TOKEN`](#MEDUSA_CLOUDFLARE_IMAGE_API_TOKEN)        | Token to upload images to CF        |
+| Cloudflare | [`CLOUDFLARE_IMAGE_ACCOUNT_HASH`](#MEDUSA_CLOUDFLARE_IMAGE_ACCOUNT_HASH)  | Account ID of CF Images Account     |
 | API        | [`WOODSHOP_API_DATABASE_URL`](#WOODSHOP_API_DATABASE_URL)                 | URL of Database\*                   |
 | API        | [`WOODSHOP_API_MIGRATE_DATABASE_URL`](#WOODSHOP_API_MIGRATE_DATABASE_URL) | Migration URL when developing       |
 | API        | [`WOODSHOP_API_SHADOW_DATABASE_URL`](#WOODSHOP_API_SHADOW_DATABASE_URL)   | Shadow URL when developing          |
@@ -98,24 +99,9 @@ Should be set to either `development` or `production`. This tells the applicatio
 
 ### `MEDUSA_REDIS_PORT`
 
-### `MEDUSA_STRIPE_API_KEY`
+### `STRIPE_API_KEY`
 
-### `MEDUSA_STRIPE_WEBHOOK_SECRET`
-
-### `MEDUSA_CLOUDFLARE_IMAGE_API_TOKEN`
-
-This token is created on the Cloudflare dashboard and is then used with the Medusa API to enhance the admin function for how images are stored. This is also used for the woodshop api to manage images that are going to be used inside of the blog and website.
-
-#### Packages Used
-
-- [`medusa-api`](./packages/medusa-api/README.md)
-- [`@woodshop/api`](./packages/woodshop-api/README.md)
-
-#### Platforms
-
-- `.env`
-- Render
-- Wrangler
+### `STRIPE_WEBHOOK_SECRET`
 
 ### `CLOUDFLARE_ACCOUNT_ID`
 
@@ -159,6 +145,35 @@ This is the token that is used to use the direct upload feature of angular to de
 #### Platforms
 
 - Github Actions (deploy)
+
+### `CLOUDFLARE_IMAGE_API_TOKEN`
+
+This token is created on the Cloudflare dashboard and is then used with the Medusa API to enhance the admin function for how images are stored. This is also used for the woodshop api to manage images that are going to be used inside of the blog and website.
+
+#### Packages Used
+
+- [`medusa-api`](./packages/medusa-api/README.md)
+- [`@woodshop/api`](./packages/woodshop-api/README.md)
+
+#### Platforms
+
+- `.env`
+- Render
+- Wrangler
+
+### `CLOUDFLARE_IMAGE_ACCOUNT_HASH`
+
+This is the account hash of your Cloudflare images account. You can view it by going to the images section of your Cloudflare Dashboard and viewing the `Account Hash` section under `Developer Resources`
+
+#### Packages Used
+
+- [`medusa-api`](./packages/medusa-api/README.md)
+
+#### Platforms
+
+- `.env`
+- Render
+- Wrangler
 
 ### `WOODSHOP_API_DATABASE_URL`
 
