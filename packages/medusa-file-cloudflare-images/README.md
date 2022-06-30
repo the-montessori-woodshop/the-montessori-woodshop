@@ -83,6 +83,7 @@ module.exports = {
 - Your `Account hash` will be under `Developer Resources` in the Images section of your Cloudflare Dashboard.
 - If you forget your `account hash`, the plugin will throw an error to help you get back on your feet.
 - The images are automatically served via `https://` so don't worry about adding that to your domain. Just write it as you see it in the Websites section of your Cloudflare Dashboard.
+- If you only include the `accountHash`, this plugin will ignore the custom domain all together and serve it using the provided image delivery URL once it's done uploading. You will need to include the `serveFromCloudflareDomain` domain string as well as the `accountHash`
 
 ## Gotchas / Errors
 

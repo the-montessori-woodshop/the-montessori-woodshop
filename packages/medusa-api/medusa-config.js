@@ -21,8 +21,8 @@ module.exports = {
         apiToken: process.env.CLOUDFLARE_IMAGE_API_TOKEN,
         // automatically served over HTTPs. No other option to
         // write it as you would see it in the websites tab of your cloudflare dashboard
-        accountHash: process.env.CLOUDFLARE_IMAGE_ACCOUNT_HASH,
         serveFromCloudflareDomain: "themontessoriwoodshop.com",
+        accountHash: process.env.CLOUDFLARE_IMAGE_ACCOUNT_HASH,
       },
     },
     // Uncomment to add Stripe support.
