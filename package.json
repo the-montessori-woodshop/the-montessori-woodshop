@@ -1,0 +1,63 @@
+{
+  "name": "the-montessori-woodshop",
+  "version": "1.0.0",
+  "description": "Monorepo for the montessori woodshop medusa + next-js online store",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "dev": "yarn workspace storefront dev",
+    "build": "yarn workspaces foreach -ptiv run build",
+    "build:components": "yarn workspaces foreach -ptRv --from @woodshop/components run build && yarn workspace @woodshop/components build-storybook",
+    "build:medusa-api": "yarn workspaces foreach -ptRv --from medusa-api run build",
+    "build:medusa-admin": "yarn workspaces foreach -ptRv --from medusa-admin run build",
+    "build:medusa-storefront": "yarn workspaces foreach -ptRv --from medusa-storefront run build",
+    "build:woodshop-api": "yarn workspaces foreach -ptRv --from @woodshop/api run build",
+    "build:woodshop-dashboard": "yarn workspaces foreach -ptRv --from @woodshop/dashboard run build",
+    "api:dev": "yarn workspace @woodshop/api dev",
+    "api:migrate-dev": "yarn workspace @woodshop/api migrate:dev",
+    "api:migrate": "yarn workspace @woodshop/api migrate:ci",
+    "api:push": "yarn workspace @woodshop/api push",
+    "api:build": "yarn workspace @woodshop/api build",
+    "components-dev": "yarn workspace @woodshop/components storybook",
+    "clean": "npx rimraf ./packages/**/node_modules/",
+    "run:medusa": "docker compose up -d medusa_admin medusa_api",
+    "admin:update": "git subtree pull --prefix=packages/medusa-admin medusa-admin master --squash"
+  },
+  "workspaces": {
+    "packages": [
+      "packages/**"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/the-montessori-woodshop/the-montessori-woodshop.git"
+  },
+  "keywords": [
+    "medusa",
+    "nextjs",
+    "montessori",
+    "woodshop",
+    "monorepo"
+  ],
+  "author": "Drew DeCarme",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/the-montessori-woodshop/the-montessori-woodshop/issues"
+  },
+  "homepage": "https://github.com/the-montessori-woodshop/the-montessori-woodshop#readme",
+  "packageManager": "yarn@3.2.0",
+  "engines": {
+    "node": "17.3.0"
+  },
+  "resolutions": {
+    "axios": "0.27.2",
+    "postcss": "8",
+    "jose": "4.6.0"
+  },
+  "dependencies": {
+    "eslint": "^8.18.0",
+    "prettier": "^2.7.1",
+    "rimraf": "^3.0.2",
+    "typescript": "4.7.4"
+  }
+}

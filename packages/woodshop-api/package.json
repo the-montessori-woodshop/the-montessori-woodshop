@@ -1,0 +1,41 @@
+{
+  "name": "@woodshop/api",
+  "version": "1.0.0",
+  "description": "The supporting API and Database Schema for The Montessori Woodshop storefront",
+  "scripts": {
+    "setup": "yarn dev:generate & yarn dev:migrate",
+    "types": "tsc --project tsconfig.types.json",
+    "build": "wrangler publish --env production --dry-run",
+    "push": "prisma push",
+    "migrate": "./scripts/migrate.sh",
+    "dev": "wrangler dev --ip 127.0.0.1 --port 8888",
+    "dev:generate": "./scripts/generate-dev.sh",
+    "dev:migrate": "./scripts/migrate-dev.sh"
+  },
+  "types": "dist/index.types.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/the-montessori-woodshop/the-montessori-woodshop.git"
+  },
+  "author": "Drew DeCarme (drew@themontessoriwoodshop.com)",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/the-montessori-woodshop/the-montessori-woodshop/issues"
+  },
+  "homepage": "https://github.com/the-montessori-woodshop/the-montessori-woodshop#readme",
+  "devDependencies": {
+    "@cloudflare/workers-types": "^3.13.0",
+    "@esbuild-plugins/node-modules-polyfill": "^0.1.4",
+    "dotenv-cli": "^5.1.0",
+    "esbuild": "^0.14.47",
+    "esbuild-plugin-alias": "^0.2.1",
+    "prisma": "4.0.0",
+    "typescript": "^4.7.4",
+    "wrangler": "2.0.15"
+  },
+  "dependencies": {
+    "@cfworker/jwt": "^4.0.2",
+    "@prisma/client": "4.0.0",
+    "itty-router": "2.6.1"
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "name": "@woodshop/builder",
+  "version": "1.0.0",
+  "description": "Webpack builds to be used throughout different projects for different reasons",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/the-montessori-woodshop/the-montessori-woodshop.git"
+  },
+  "author": "Drew DeCarme (drew@themontessoriwoodshop.com)",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/woodshop/asset-tracker/issues"
+  },
+  "homepage": "https://github.com/woodshop/asset-tracker#readme",
+  "type": "module",
+  "sideEffects": false,
+  "main": "./rollup.config-esbuild.cjs",
+  "module": "./rollup.config-esbuild.cjs",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./rollup.config-esbuild.cjs",
+      "require": "./rollup.config-esbuild.cjs"
+    },
+    "./esbuild": {
+      "import": "./rollup.config-esbuild.cjs",
+      "require": "./rollup.config-esbuild.cjs"
+    },
+    "./linaria": {
+      "import": "./rollup.config-linaria.cjs",
+      "require": "./rollup.config-linaria.cjs"
+    },
+    "./babel": {
+      "import": "./babel.config.cjs",
+      "require": "./babel.config.cjs"
+    }
+  },
+  "dependencies": {
+    "@babel/core": "^7.18.6",
+    "@babel/preset-env": "^7.18.6",
+    "@babel/preset-react": "^7.18.6",
+    "@babel/preset-typescript": "^7.18.6",
+    "@linaria/babel-preset": "^3.0.0-beta.19",
+    "@linaria/core": "^3.0.0-beta.19",
+    "@linaria/esbuild": "^3.0.0-beta.19",
+    "@linaria/rollup": "^3.0.0-beta.19",
+    "@linaria/shaker": "^3.0.0-beta.19",
+    "@linaria/webpack-loader": "^3.0.0-beta.16",
+    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-typescript": "^8.3.3",
+    "esbuild": "^0.14.47",
+    "rollup": "^2.75.7",
+    "rollup-plugin-css-only": "^3.1.0",
+    "rollup-plugin-esbuild": "^4.9.1",
+    "rollup-plugin-node-externals": "^4.1.0",
+    "tslib": "^2.4.0",
+    "typescript": "^4.7.4"
+  },
+  "devDependencies": {
+    "@types/babel__core": "^7.1.19",
+    "@types/babel__preset-env": "^7.9.2"
+  }
+}

@@ -1,0 +1,46 @@
+version: "3.8"
+services:
+  medusa_api:
+    image: medusa_api
+    container_name: medusa_api
+    build:
+      context: ./
+      dockerfile: ./packages/medusa-api/Dockerfile
+    depends_on:
+      - medusa_db
+      - redis
+    ports:
+      - "9000:9000"
+    env_file:
+      - ./.env
+
+  medusa_db:
+    image: postgres:14
+    container_name: medusa_db
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: medusa_db
+
+  woodshop_db:
+    image: postgres:14
+    container_name: woodshop_db
+    ports:
+      - "5434:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: woodshop_db
+      POSTGRES_HOST_AUTH_METHOD: trust
+
+  redis:
+    image: redis
+    container_name: redis
+    expose:
+      - 6379
+    env_file:
+      - ./.env
+
+

@@ -1,0 +1,18 @@
+compatibility_date = "2022-06-23"
+
+name = "woodshop-api"
+main = "src/index.ts"
+workers_dev = true
+node_compat = true
+# [ secrets ] #
+# WOODSHOP_API_DATABASE_URL
+# WOODSHOP_API_MIGRATE_DATABASE_URL
+# WOODSHOP_API_SHADOW_DATABASE_URL
+# AUTH0_JWKS_URI
+# AUTH0_AUDIENCE
+# AUTH0_ISSUER
+
+[env.production]
+workers_dev = false
+# [ env.production.secrets ] #
+# WOODSHOP_API_DATABASE_URL

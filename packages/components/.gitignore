@@ -1,0 +1,6 @@
+/theme
+lib
+dist/*
+!dist/fonts
+.typescript.cache
+storybook-static

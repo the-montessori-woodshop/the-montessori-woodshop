@@ -1,0 +1,14 @@
+compatibility_date = "2022-02-17"
+compatibility_flags = []
+
+name = "woodshop-docs"
+type = "webpack"
+usage_model = ''
+account_id = "68fa4421d84bfcddbd9311a7d57aa419"
+workers_dev = true
+site = { bucket = "./storybook-static", entry-point = "workers-site" }
+
+[env.production]
+workers_dev = false
+zone_id = 'ebeb335a5410105683a9e7bc11251d1c'
+route = "https://docs.themontessoriwoodshop.com/*"

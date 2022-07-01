@@ -1,0 +1,49 @@
+{
+  "private": true,
+  "name": "medusa-storefront",
+  "version": "1.0.0",
+  "description": "The Montessori Woodshop's web store.",
+  "license": "Apache-2.0",
+  "engines": {
+    "node": ">=17.3.0"
+  },
+  "sideEffects": false,
+  "scripts": {
+    "lint": "yarn eslint --ext .tsx,.ts ./app --fix",
+    "build": "cross-env NODE_ENV=production remix build",
+    "dev:remix": "cross-env NODE_ENV=development remix watch",
+    "dev:wrangler": "cross-env NODE_ENV=development wrangler pages dev ./public",
+    "dev": "remix build && yarn dev:remix & yarn dev:wrangler",
+    "start": "cross-env NODE_ENV=production npm run dev:wrangler"
+  },
+  "dependencies": {
+    "@linaria/core": "^3.0.0-beta.22",
+    "@linaria/react": "^3.0.0-beta.22",
+    "@medusajs/medusa-js": "1.2.2",
+    "@remix-run/cloudflare": "^1.6.1",
+    "@remix-run/cloudflare-pages": "^1.6.1",
+    "@remix-run/react": "^1.6.1",
+    "@woodshop/components": "workspace:^",
+    "@woodshop/icons": "workspace:^",
+    "@woodshop/illustrations": "workspace:^",
+    "clsx": "^1.1.1",
+    "framer-motion": "^6.3.16",
+    "markdown-it": "^13.0.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-is": "18.2.0",
+    "styled-components": "5.3.5"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "3.13.0",
+    "@remix-run/dev": "^1.6.1",
+    "@remix-run/eslint-config": "^1.6.1",
+    "@types/react": "17.0.47",
+    "@types/react-dom": "17.0.17",
+    "@types/styled-components": "5.1.25",
+    "cross-env": "7.0.3",
+    "eslint": "^8.18.0",
+    "typescript": "4.7.4",
+    "wrangler": "^2.0.15"
+  }
+}

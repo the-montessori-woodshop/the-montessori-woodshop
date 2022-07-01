@@ -1,0 +1,55 @@
+name: Build & Test
+
+on:
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build_medusa_api:
+    name: medusa-api
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install
+        run: yarn install --immutable
+      - name: Build
+        run: yarn build:medusa-api
+  build_medusa_storefront:
+    name: medusa-storefront
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install
+        run: yarn install --immutable
+      - name: Build
+        run: yarn build:medusa-storefront
+  build_woodshop_components:
+    name: "@woodshop/components"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install
+        run: yarn install --immutable
+      - name: Build
+        run: yarn build:components
+  build_woodshop_api:
+    name: "@woodshop/api"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install
+        run: yarn install --immutable
+      - name: Build
+        run: yarn build:woodshop-api
+  build_woodshop_dashboard:
+    name: "@woodshop/dashboard"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install
+        run: yarn install --immutable
+      - name: Build
+        run: yarn build:woodshop-dashboard
+
