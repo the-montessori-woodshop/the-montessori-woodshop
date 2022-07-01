@@ -6,6 +6,7 @@ import { Logger } from "./logger";
 const log = new Logger({ location: "handleError" });
 
 export const handleError = (error: ApiError | AuthenticationError) => {
+  console.log(error);
   if (error instanceof AuthenticationError) {
     log.error(error.message, error);
     return respondWith.unauthorized({

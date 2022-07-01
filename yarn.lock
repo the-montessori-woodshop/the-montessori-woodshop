@@ -7428,6 +7428,7 @@ __metadata:
     "@woodshop/illustrations": "workspace:^"
     clsx: ^1.1.1
     cross-env: ^7.0.3
+    dotenv-cli: ^5.1.0
     eslint: ^8.18.0
     framer-motion: ^6.3.16
     glob: ^8.0.3

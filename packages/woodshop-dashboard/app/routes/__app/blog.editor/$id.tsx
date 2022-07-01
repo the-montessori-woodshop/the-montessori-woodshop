@@ -29,7 +29,7 @@ import { PageContent } from "~/components/page/PageContent";
 import { PageHeader } from "~/components/page/PageHeader";
 import { PageTitle } from "~/components/page/PageTitle";
 import { TabLink } from "~/components/tab/TabLink";
-import { api } from "~/services/api.server";
+import { api } from "~/features/api/api.server";
 
 export const links: LinksFunction = () => [];
 export const loader: LoaderFunction = async ({ request, params }) => {

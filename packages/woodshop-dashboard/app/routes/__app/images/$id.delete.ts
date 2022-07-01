@@ -1,10 +1,10 @@
+import type { ActionFunction } from "@remix-run/cloudflare";
+import { redirect } from "@remix-run/cloudflare";
 import type {
   DELETE_ImageApiParams,
   DELETE_ImageApiResponse,
 } from "@woodshop/api";
-import { api } from "~/services/api.server";
-import type { ActionFunction } from "@remix-run/cloudflare";
-import { redirect } from "@remix-run/cloudflare";
+import { api } from "~/features/api/api.server";
 
 export const action: ActionFunction = async ({ request }) => {
   const formData = await request.formData();

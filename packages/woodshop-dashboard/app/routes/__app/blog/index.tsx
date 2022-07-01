@@ -7,7 +7,7 @@ import { PageContainer } from "~/components/page/PageContainer";
 import { PageContent } from "~/components/page/PageContent";
 import { PageHeader } from "~/components/page/PageHeader";
 import { PageTitle } from "~/components/page/PageTitle";
-import { api } from "~/services/api.server";
+import { api } from "~/features/api/api.server";
 
 export const loader: LoaderFunction = async ({ request }) => {
   try {

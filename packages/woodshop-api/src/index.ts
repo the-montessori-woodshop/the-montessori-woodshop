@@ -20,6 +20,9 @@ addEventListener("fetch", (event) =>
       // success
       .handle(event.request)
       // error
-      .catch(handleError)
+      .catch((error) => {
+        console.log(error);
+        return handleError(error);
+      })
   )
 );

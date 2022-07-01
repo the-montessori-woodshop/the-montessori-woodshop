@@ -12,7 +12,7 @@ export const createOrUpdateUser: HandlePOSTRequest<
 > = async (request) => {
   try {
     const requestData = await request.json<POST_CreateOrUpdateUserApiRequest>();
-
+    console.log(requestData);
     const user = await prisma.user.upsert({
       where: {
         email: requestData.email || undefined
