@@ -11,10 +11,11 @@ COPY yarn.lock                                  .
 COPY .yarn                                      ./.yarn
 COPY package.json                               ./package.json
 
-COPY packages/axios-fetch                       ./packages/axios-fetch
 COPY packages/medusa-api                        ./packages/medusa-api
 COPY packages/medusa-file-cloudflare-images     ./packages/medusa-file-cloudflare-images
 COPY packages/medusa-api/entrypoint.sh          ./entrypoint.sh
+
+RUN npm install --global @medusajs/medusa-cli@latest
 
 RUN yarn install
 RUN yarn build

@@ -11,7 +11,6 @@ COPY yarn.lock                                  .
 COPY .yarn                                      ./.yarn
 COPY package.json                               ./package.json
 
-COPY packages/axios-fetch                       ./packages/axios-fetch
 COPY packages/medusa-admin                      ./packages/medusa-admin
 
 # Remove some files so workspaces can build fresh every time

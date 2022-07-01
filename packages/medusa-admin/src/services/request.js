@@ -1,3 +1,4 @@
+import fetchAdapter from "@vespaiach/axios-fetch-adapter"
 import axios from "axios"
 
 let baseURL = "http://localhost:9000"
@@ -12,7 +13,7 @@ if (process.env.GATSBY_MEDUSA_BACKEND_URL) {
   baseURL = process.env.GATSBY_MEDUSA_BACKEND_URL
 }
 
-const client = axios.create({ baseURL })
+const client = axios.create({ baseURL, adapter: fetchAdapter })
 
 export default function medusaRequest(method, path = "", payload = {}) {
   const options = {
