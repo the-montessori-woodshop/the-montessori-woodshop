@@ -7,15 +7,6 @@ on:
   workflow_dispatch:
 
 jobs:
-  build_medusa_admin:
-    name: medusa-admin
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Install
-        run: yarn install --immutable
-      - name: Build
-        run: yarn build:medusa-admin
   build_medusa_api:
     name: medusa-api
     runs-on: ubuntu-latest

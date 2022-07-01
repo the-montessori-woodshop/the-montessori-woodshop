@@ -96,25 +96,3 @@ jobs:
           CLOUDFLARE_ACCOUNT_ID=${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           CLOUDFLARE_API_TOKEN=${{ secrets.CLOUDFLARE_API_TOKEN_PAGES }}
           yarn wrangler pages publish ./public --project-name=medusa-storefront --commit-dirty=true
-
-  deploy_medusa_admin:
-    name: Deploy | medusa-admin
-    runs-on: ubuntu-latest
-    environment: production
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Install
-        run: yarn install --immutable
-      - name: Build
-        run:
-          GATSBY_MEDUSA_BACKEND_URL=https://store.themontessoriwoodshop.com
-          yarn build:medusa-admin
-      - name: Deploy to Cloudflare Pages
-        uses: cloudflare/pages-action@1
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN_PAGES }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          gitHubToken: ${{ secrets.API_TOKEN_GITHUB }}
-          projectName: medusa-admin
-          directory: packages/medusa-admin/public
