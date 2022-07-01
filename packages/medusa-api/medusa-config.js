@@ -5,7 +5,9 @@ require("dotenv").config({
 
 module.exports = {
   projectConfig: {
-    // redis_url: `redis://${process.env.MEDUSA_REDIS_HOST}:${process.env.MEDUSA_REDIS_PORT}`,
+    jwt_secret: process.env.JWT_SECRET,
+    cookie_secret: process.env.COOKIE_SECRET,
+    redis_url: `redis://${process.env.MEDUSA_REDIS_HOST}:${process.env.MEDUSA_REDIS_PORT}`,
     database_url: process.env.MEDUSA_DATABASE_URL,
     database_type: "postgres",
     store_cors: process.env.MEDUSA_STORE_CORS,
