@@ -100,6 +100,20 @@ export class BaseError extends Error {
     this.code = code;
     this.data = data || undefined;
   }
+
+  logError() {
+    const { logError, ...restValues } = this;
+
+    console.log(
+      JSON.stringify({
+        status_code: this.code,
+        error_code: this.name,
+        message: this.message,
+        data: this.data,
+        stack: this.stack?.toString()
+      })
+    );
+  }
 }
 
 export class AuthenticationError extends BaseError {
@@ -240,6 +254,7 @@ export const handleError = (
       break;
   }
 
+  err.logError();
   const serializedBody = JSON.stringify(body, (_key, value) => {
     if (typeof value !== "undefined") return value;
   });
