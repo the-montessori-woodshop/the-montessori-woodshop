@@ -1,6 +1,6 @@
 import { prisma } from "../../utils/getPrisma";
 import type { HandlePOSTRequest } from "../../utils/handle.model";
-import { ApiError } from "../../utils/handleError";
+import { InternalServerError } from "../../utils/handleError";
 import { handleRoute } from "../../utils/handleRoute";
 import type {
   POST_CreateOrUpdateUserApiRequest,
@@ -28,11 +28,7 @@ export const createOrUpdateUser: HandlePOSTRequest<
     });
     return user;
   } catch (error) {
-    throw new ApiError({
-      code: 400,
-      message: "Unable to update user",
-      error
-    });
+    throw new InternalServerError("Unable to update user");
   }
 };
 

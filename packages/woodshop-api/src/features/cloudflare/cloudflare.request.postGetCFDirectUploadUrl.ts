@@ -1,5 +1,5 @@
 import { HandlePOSTRequest } from "../../utils/handle.model";
-import { ApiError } from "../../utils/handleError";
+import { NotFoundError } from "../../utils/handleError";
 import { handleRoute } from "../../utils/handleRoute";
 import { CF_GetImageUploadUrlResponse } from "./cloudflare.model";
 
@@ -22,11 +22,7 @@ export const postGetCFDirectUploadUrl: HandlePOSTRequest<
     const data = await res.json<CF_GetImageUploadUrlResponse>();
     return data;
   } catch (error) {
-    throw new ApiError({
-      code: 400,
-      message: "Cannot retrieve imaged upload url",
-      error
-    });
+    throw new NotFoundError("Cannot retrieve imaged upload url");
   }
 };
 

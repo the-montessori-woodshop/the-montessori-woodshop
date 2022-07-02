@@ -1,6 +1,6 @@
 import { prisma } from "../../utils/getPrisma";
 import { HandleGETRequest } from "../../utils/handle.model";
-import { ApiError } from "../../utils/handleError";
+import { InternalServerError } from "../../utils/handleError";
 import { handleRoute } from "../../utils/handleRoute";
 import { parseUrlSearchParams } from "../../utils/parseUrlSearchParams";
 import { GET_PostsApiResponse, GET_PostsApiSearchParams } from "./post.model";
@@ -17,11 +17,7 @@ export const getPosts: HandleGETRequest<GET_PostsApiResponse> = async ({
     });
     return posts;
   } catch (error) {
-    throw new ApiError({
-      code: 400,
-      message: "Unable to get posts",
-      error
-    });
+    throw new InternalServerError("Unable to fetch posts");
   }
 };
 

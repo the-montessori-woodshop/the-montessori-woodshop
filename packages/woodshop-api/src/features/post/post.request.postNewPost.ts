@@ -1,6 +1,9 @@
 import { prisma } from "../../utils/getPrisma";
 import { HandlePOSTRequest } from "../../utils/handle.model";
-import { ApiError } from "../../utils/handleError";
+import {
+  AuthorizationError,
+  InternalServerError
+} from "../../utils/handleError";
 import { handleRoute } from "../../utils/handleRoute";
 import {
   POST_NewPostByIdApiRequest,
@@ -11,10 +14,7 @@ export const postNewPost: HandlePOSTRequest<
   POST_NewPostByIdApiResponse
 > = async (request) => {
   if (!request.user) {
-    throw new ApiError({
-      code: 401,
-      message: "Not Authorized"
-    });
+    throw new AuthorizationError("User cannot be found");
   }
 
   try {
@@ -28,11 +28,7 @@ export const postNewPost: HandlePOSTRequest<
     });
     return post;
   } catch (error) {
-    throw new ApiError({
-      code: 400,
-      message: "Unable to create new post.",
-      error
-    });
+    throw new InternalServerError("Unable to create new post.");
   }
 };
 

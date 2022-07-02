@@ -1,6 +1,6 @@
 import { prisma } from "../../utils/getPrisma";
 import { HandleGETRequest } from "../../utils/handle.model";
-import { ApiError } from "../../utils/handleError";
+import { MissingParamError, NotFoundError } from "../../utils/handleError";
 import { handleRoute } from "../../utils/handleRoute";
 import {
   GET_ImageByIdApiParams,
@@ -11,7 +11,7 @@ export const getImageById: HandleGETRequest<
   GET_ImageByIdApiResponse,
   GET_ImageByIdApiParams
 > = async ({ params: { id } }) => {
-  if (!id) throw new Error(":id is required.");
+  if (!id) throw new MissingParamError("id");
 
   try {
     const image = await prisma.image.findUnique({
@@ -21,11 +21,7 @@ export const getImageById: HandleGETRequest<
     });
     return image;
   } catch (error) {
-    throw new ApiError({
-      code: 400,
-      message: "Error when retrieving image",
-      error
-    });
+    throw new NotFoundError("Error when retrieving image");
   }
 };
 

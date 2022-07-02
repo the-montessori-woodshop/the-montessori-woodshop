@@ -1,3 +1,5 @@
+import { ErrorResponse } from "./responder";
+
 type HTTPErrorCodes =
   | 400
   | 401
@@ -71,7 +73,7 @@ export const httpErrors: { [key in HTTPErrorCodes]: string } = {
   429: "TooManyRequests",
   431: "RequestHeaderFieldsTooLarge",
   451: "UnavailableForLegalReasons",
-  500: "InternalServerError",
+  500: "InternalInternalServerError",
   501: "NotImplemented",
   502: "BadGateway",
   503: "ServiceUnavailable",
@@ -85,52 +87,167 @@ export const httpErrors: { [key in HTTPErrorCodes]: string } = {
   511: "NetworkAuthenticationRequired"
 };
 
-export class ApiError extends Error {
+export class BaseError extends Error {
   code: HTTPErrorCodes;
-  data: Record<string, unknown> | null;
-  error: any;
-  reason: string;
+  data?: Record<string, unknown>;
 
-  constructor({
-    code,
-    message,
-    data = undefined,
-    error
-  }: {
-    code: HTTPErrorCodes;
-    message: string;
-    data?: Record<string, unknown>;
-    error?: any;
-  }) {
-    super(error);
-    this.reason = message;
+  constructor(
+    code: HTTPErrorCodes,
+    message: Error["message"],
+    data?: Record<string, unknown>
+  ) {
+    super(message);
     this.code = code;
-    this.data = data || null;
+    this.data = data || undefined;
   }
 }
 
-export const handleError = ({
-  code,
-  error,
-  reason,
-  ...restError
-}: ApiError) => {
-  console.log(code, restError, restError);
-  const serializedBody = JSON.stringify(
-    {
-      status: httpErrors[code],
-      ...restError,
-      message: reason
-    },
-    (_key, value) => {
-      if (value !== null) return value;
-    }
-  );
+export class AuthenticationError extends BaseError {
+  constructor(message: Error["message"], data?: BaseError["data"]) {
+    super(401, message, data);
+    this.name = "authentication_error";
+  }
+}
+
+export class AuthorizationError extends BaseError {
+  constructor(message: Error["message"], data?: BaseError["data"]) {
+    super(401, `Unauthorized: ${message}`, data);
+    this.name = "authorization_error";
+  }
+}
+
+export class ValidationError extends BaseError {
+  constructor(message: Error["message"], data?: BaseError["data"]) {
+    super(400, `Invalid: ${message}`, data);
+    this.name = "validation_error";
+  }
+}
+export class PayloadValidationError extends ValidationError {
+  constructor(data: Record<string, string>) {
+    super(`Invalid payload`, data);
+  }
+}
+export class MissingParamError extends ValidationError {
+  constructor(param: string) {
+    super(`Missing Param: Param of :${param} is required`);
+  }
+}
+
+export class NotFoundError extends BaseError {
+  constructor(message: Error["message"], data?: BaseError["data"]) {
+    super(404, `Not found: ${message}`, data);
+    this.name = "validation_error";
+  }
+}
+
+export class InternalServerError extends BaseError {
+  constructor(message: Error["message"], data?: BaseError["data"]) {
+    super(500, `Server error: ${message}`, data);
+    this.name = "server_error";
+  }
+}
+
+export class CustomError extends BaseError {
+  constructor({
+    message,
+    code,
+    name,
+    data
+  }: {
+    message: Error["message"];
+    code: HTTPErrorCodes;
+    name?: string;
+    data?: BaseError["data"];
+  }) {
+    super(code, message, data);
+    this.name = name || "error";
+  }
+}
+
+export class UnknownError extends BaseError {
+  constructor() {
+    super(500, "An unknown error occurred.");
+    this.name = "unknown_error";
+  }
+}
+
+export type ApiErrorResponse = {
+  error_type: string;
+  message: string;
+  data?: Record<string, unknown>;
+};
+
+export const handleError = (
+  err:
+    | AuthenticationError
+    | AuthorizationError
+    | ValidationError
+    | NotFoundError
+    | InternalServerError
+    | CustomError
+) => {
+  let body: ApiErrorResponse;
+  switch (true) {
+    case err instanceof AuthenticationError:
+    case err instanceof AuthorizationError:
+      body = {
+        error_type: err.name,
+        message: err.message,
+        data: err.data
+      };
+      break;
+
+    case err instanceof ValidationError:
+    case err instanceof MissingParamError:
+      body = {
+        error_type: err.name,
+        message: err.message,
+        data: err.data
+      };
+      break;
+
+    case err instanceof NotFoundError:
+      body = {
+        error_type: err.name,
+        message: err.message,
+        data: err.data
+      };
+      break;
+
+    case err instanceof InternalServerError:
+      body = {
+        error_type: err.name,
+        message: err.message,
+        data: err.data
+      };
+      break;
+
+    case err instanceof CustomError:
+      body = {
+        error_type: err.name,
+        message: err.message,
+        data: err.data
+      };
+      break;
+
+    case err instanceof UnknownError:
+    default:
+      body = {
+        error_type: err.name,
+        message: err.message,
+        data: err.data
+      };
+      break;
+  }
+
+  const serializedBody = JSON.stringify(body, (_key, value) => {
+    if (typeof value !== "undefined") return value;
+  });
   const headers: ResponseInit["headers"] = {
     "Content-type": "application/json; charset=utf-8"
   };
   return new Response(serializedBody, {
     headers,
-    status: code
+    status: err.code
   });
 };
