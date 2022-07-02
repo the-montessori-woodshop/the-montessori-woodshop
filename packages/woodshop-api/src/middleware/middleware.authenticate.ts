@@ -1,4 +1,4 @@
-const WOODSHOP_AUTH0_API_ISSUER = "dev-hvidaktf.us.auth0.com";
+const WOODSHOP_AUTH0_API_DOMAIN = "https://dev-hvidaktf.us.auth0.com/";
 const WOODSHOP_AUTH0_AUDIENCE = "http://localhost:9000";
 
 import { parseJwt } from "@cfworker/jwt";
@@ -19,7 +19,7 @@ export const authenticate = async (request: Request) => {
 
   const result = await parseJwt(
     jwt,
-    WOODSHOP_AUTH0_API_ISSUER,
+    WOODSHOP_AUTH0_API_DOMAIN,
     WOODSHOP_AUTH0_AUDIENCE
     // envVar("WOODSHOP_AUTH0_API_ISSUER"),
     // envVar("WOODSHOP_AUTH0_AUDIENCE")

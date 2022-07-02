@@ -105,13 +105,17 @@ export class BaseError extends Error {
     const { logError, ...restValues } = this;
 
     console.error(
-      JSON.stringify({
-        status_code: this.code,
-        error_code: this.name,
-        message: this.message,
-        data: this.data,
-        stack: this.stack?.toString()
-      })
+      JSON.stringify(
+        {
+          status_code: this.code,
+          error_code: this.name,
+          message: this.message,
+          data: this.data,
+          stack: this.stack?.toString()
+        },
+        null,
+        4
+      )
     );
   }
 }
