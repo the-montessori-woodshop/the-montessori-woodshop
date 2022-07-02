@@ -28,4 +28,4 @@ export const deleteImage: HandleDELETERequest<
   }
 };
 
-export const handleDeleteImage = handleRoute(deleteImage, "201");
+export const handleDeleteImage = handleRoute(deleteImage, 201);
