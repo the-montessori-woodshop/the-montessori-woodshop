@@ -1,11 +1,10 @@
-import { AuthenticationError } from "./error.auth";
-// import { logger } from "./logger";
+import { ApiError } from "./handleError";
 
 export const verifyUserExists = (request: Request) => {
   if (!request.user) {
-    // logger.error(
-    //   "Cannot find user on the request. This route is most likely has not been passed through the authentication middleware."
-    // );
-    throw new AuthenticationError("Unauthorized. User cannot be found.");
+    throw new ApiError({
+      code: 401,
+      message: "Unauthorized. User cannot be found."
+    });
   }
 };

@@ -1,5 +1,6 @@
 import { envVar } from "../../utils/envVar";
-import { HandlePOSTRequest } from "../../utils/handler.model";
+import { HandlePOSTRequest } from "../../utils/handle.model";
+import { ApiError } from "../../utils/handleError";
 import { handleRoute } from "../../utils/handleRoute";
 import { CF_ImageApiUploadResponse } from "./cloudflare.model";
 
@@ -26,7 +27,11 @@ export const postUploadFileToCFImages: HandlePOSTRequest<
     const cfResponse = await cfRes.json<CF_ImageApiUploadResponse>();
     return cfResponse;
   } catch (error) {
-    throw new Error(error as string);
+    throw new ApiError({
+      code: 400,
+      message: "Error when uploading an image to cloudflare",
+      error
+    });
   }
 };
 

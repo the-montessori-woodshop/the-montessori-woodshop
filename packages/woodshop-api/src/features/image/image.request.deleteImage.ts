@@ -1,6 +1,6 @@
-import { ApiError } from "../../utils/error.api";
 import { prisma } from "../../utils/getPrisma";
-import { HandleDELETERequest } from "../../utils/handler.model";
+import { HandleDELETERequest } from "../../utils/handle.model";
+import { ApiError } from "../../utils/handleError";
 import { handleRoute } from "../../utils/handleRoute";
 import { DELETE_ImageApiParams, DELETE_ImageApiResponse } from "./image.model";
 
@@ -20,8 +20,12 @@ export const deleteImage: HandleDELETERequest<
       message: "Successfully deleted"
     };
   } catch (error) {
-    throw new ApiError("Error when deleting image", error);
+    throw new ApiError({
+      code: 400,
+      message: "Error when deleting image",
+      error
+    });
   }
 };
 
-export const handleDeleteImage = handleRoute(deleteImage);
+export const handleDeleteImage = handleRoute(deleteImage, "201");

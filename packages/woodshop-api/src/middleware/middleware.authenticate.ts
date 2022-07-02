@@ -3,17 +3,23 @@ const WOODSHOP_AUTH0_AUDIENCE = "http://localhost:9000";
 
 import { parseJwt } from "@cfworker/jwt";
 
-import { envVar } from "../utils/envVar";
-import { AuthenticationError } from "../utils/error.auth";
 import { prisma } from "../utils/getPrisma";
+// import { envVar } from "../utils/envVar";
+import { ApiError } from "../utils/handleError";
 
 export const authenticate = async (request: Request) => {
   const authHeader = request.headers.get("authorization")?.split(" ");
   if (authHeader?.[0] !== "Bearer") {
-    throw new AuthenticationError("Unauthorized. Malformed bearer token");
+    throw new ApiError({
+      code: 401,
+      message: "Malformed bearer token"
+    });
   }
   if (!authHeader?.[1]) {
-    throw new AuthenticationError("Unauthorized. Malformed request.");
+    throw new ApiError({
+      code: 401,
+      message: "Malformed request."
+    });
   }
   const jwt = authHeader?.[1];
 
@@ -25,7 +31,10 @@ export const authenticate = async (request: Request) => {
     // envVar("WOODSHOP_AUTH0_AUDIENCE")
   );
   if (!result.valid) {
-    throw new AuthenticationError("Unauthorized. Token is not valid.");
+    throw new ApiError({
+      code: 401,
+      message: "Token is not valid."
+    });
   }
 
   try {
@@ -36,6 +45,9 @@ export const authenticate = async (request: Request) => {
     });
     request.user = user;
   } catch (error) {
-    throw new AuthenticationError("Verification error", error);
+    throw new ApiError({
+      code: 500,
+      message: "User verification error."
+    });
   }
 };

@@ -1,6 +1,6 @@
-import { FeatureError } from "../../utils/error.feature";
 import { prisma } from "../../utils/getPrisma";
-import { HandlePATCHRequest } from "../../utils/handler.model";
+import { HandlePATCHRequest } from "../../utils/handle.model";
+import { ApiError } from "../../utils/handleError";
 import { handleRoute } from "../../utils/handleRoute";
 import { verifyUserExists } from "../../utils/verifyUserExists";
 import { postLogger } from "./post.log";
@@ -32,9 +32,9 @@ export const updatePost: HandlePATCHRequest<
     postLogger.info(`Patching post ...successful!`, request.params.id, post);
     return post;
   } catch (error) {
-    throw new FeatureError({
+    throw new ApiError({
+      code: 400,
       message: "Unable to update post",
-      feature: "PatchUpdatePost",
       error
     });
   }
