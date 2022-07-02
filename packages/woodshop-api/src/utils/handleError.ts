@@ -172,7 +172,7 @@ export class UnknownError extends BaseError {
 }
 
 export type ApiErrorResponse = {
-  error_type: string;
+  error_code: string;
   message: string;
   data?: Record<string, unknown>;
 };
@@ -191,7 +191,7 @@ export const handleError = (
     case err instanceof AuthenticationError:
     case err instanceof AuthorizationError:
       body = {
-        error_type: err.name,
+        error_code: err.name,
         message: err.message,
         data: err.data
       };
@@ -200,7 +200,7 @@ export const handleError = (
     case err instanceof ValidationError:
     case err instanceof MissingParamError:
       body = {
-        error_type: err.name,
+        error_code: err.name,
         message: err.message,
         data: err.data
       };
@@ -208,7 +208,7 @@ export const handleError = (
 
     case err instanceof NotFoundError:
       body = {
-        error_type: err.name,
+        error_code: err.name,
         message: err.message,
         data: err.data
       };
@@ -216,7 +216,7 @@ export const handleError = (
 
     case err instanceof InternalServerError:
       body = {
-        error_type: err.name,
+        error_code: err.name,
         message: err.message,
         data: err.data
       };
@@ -224,7 +224,7 @@ export const handleError = (
 
     case err instanceof CustomError:
       body = {
-        error_type: err.name,
+        error_code: err.name,
         message: err.message,
         data: err.data
       };
@@ -233,7 +233,7 @@ export const handleError = (
     case err instanceof UnknownError:
     default:
       body = {
-        error_type: err.name,
+        error_code: err.name,
         message: err.message,
         data: err.data
       };
