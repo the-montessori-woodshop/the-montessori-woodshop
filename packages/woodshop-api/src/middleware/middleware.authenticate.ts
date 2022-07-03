@@ -1,10 +1,6 @@
-const WOODSHOP_AUTH0_API_DOMAIN = "https://dev-hvidaktf.us.auth0.com/";
-const WOODSHOP_AUTH0_AUDIENCE = "http://localhost:9000";
-
 import { parseJwt } from "@cfworker/jwt";
 
 import { prisma } from "../utils/getPrisma";
-// import { envVar } from "../utils/envVar";
 import { AuthenticationError, AuthorizationError } from "../utils/handleError";
 
 export const authenticate = async (request: Request) => {
@@ -19,10 +15,8 @@ export const authenticate = async (request: Request) => {
 
   const result = await parseJwt(
     jwt,
-    WOODSHOP_AUTH0_API_DOMAIN,
+    WOODSHOP_AUTH0_API_ISSUER,
     WOODSHOP_AUTH0_AUDIENCE
-    // envVar("WOODSHOP_AUTH0_API_ISSUER"),
-    // envVar("WOODSHOP_AUTH0_AUDIENCE")
   );
   if (!result.valid) {
     throw new AuthorizationError("Invalid token.");

@@ -1,4 +1,3 @@
-import { envVar } from "../../utils/envVar";
 import { HandlePOSTRequest } from "../../utils/handle.model";
 import { InternalServerError } from "../../utils/handleError";
 import { handleRoute } from "../../utils/handleRoute";
@@ -12,14 +11,12 @@ export const postUploadFileToCFImages: HandlePOSTRequest<
     body.delete("title");
 
     const cfRes = await fetch(
-      `https://api.cloudflare.com/client/v4/accounts/${envVar(
-        "CLOUDFLARE_ACCOUNT_ID"
-      )}/images/v1`,
+      `https://api.cloudflare.com/client/v4/accounts/${CLOUDFLARE_ACCOUNT_ID}/images/v1`,
       {
         ...request,
         method: "POST",
         headers: {
-          Authorization: `Bearer ${envVar("CLOUDFLARE_IMAGE_API_TOKEN")}`
+          Authorization: `Bearer ${CLOUDFLARE_IMAGE_API_TOKEN}`
         },
         body
       }
