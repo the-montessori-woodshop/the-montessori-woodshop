@@ -1,4 +1,4 @@
-type LoggerOptions = {
+export type LoggerOptions = {
   type: "json" | "plain";
   level: "error" | "warn" | "info" | "verbose" | "debug" | "silly";
   location: string | null;
@@ -15,32 +15,32 @@ const loggerLevels: { [key in LoggerOptions["level"]]: number } = {
 
 export class Logger {
   type: LoggerOptions["type"];
-  level: LoggerOptions["level"];
-  location: LoggerOptions["location"];
+  level: number;
+  location: string;
 
   constructor(options?: Partial<LoggerOptions>) {
     this.type = options?.type || "json";
-    this.level = options?.level || "info";
-    this.location = options?.location || null;
+    this.level = loggerLevels[options?.level || "info"];
+    this.location = options?.location || "general";
   }
 
   private write({
     level,
     message,
-    stack,
     payload
   }: {
     message: string;
     level: LoggerOptions["level"];
-    stack?: string;
     payload?: any[];
   }) {
+    if (this.shouldLog(level)) {
+      return;
+    }
     if (this.type === "json") {
       const jsonMessage = JSON.stringify({
         message,
         level,
         time: new Date(),
-        stack: stack || null,
         location: this.location,
         payload: payload || null
       });
@@ -57,35 +57,33 @@ export class Logger {
   }
 
   private shouldLog(level: LoggerOptions["level"]) {
-    if (this.level <= level) {
+    if (this.level <= loggerLevels[level]) {
       return true;
     }
     return false;
   }
 
-  error(message: string, error: Error) {
-    if (!this.shouldLog("error")) return;
-    this.write({ level: "error", message, stack: error.stack });
+  error(message: string, ...payload: any[]) {
+    this.write({ level: "error", message, payload });
   }
   info(message: string, ...payload: any[]) {
-    if (!this.shouldLog("info")) return;
     this.write({ level: "info", message, payload });
   }
-  warn(message: string, payload: Record<string, unknown>) {
-    if (!this.shouldLog("warn")) return;
+  warn(message: string, ...payload: any[]) {
+    this.write({ level: "warn", message, payload });
   }
-  verbose(message: string, payload: Record<string, unknown>) {
-    if (!this.shouldLog("verbose")) return;
+  verbose(message: string, ...payload: any[]) {
+    this.write({ level: "verbose", message, payload });
   }
-  debug(message: string, payload: Record<string, unknown>) {
-    if (!this.shouldLog("debug")) return;
+  debug(message: string, ...payload: any[]) {
+    this.write({ level: "debug", message, payload });
   }
-  silly(message: string, payload: Record<string, unknown>) {
-    if (!this.shouldLog("silly")) return;
-    // this.write();
-  }
-
-  setLocation(location: string) {
-    this.location = location;
+  silly(message: string, ...payload: any[]) {
+    this.write({ level: "silly", message, payload });
   }
 }
+
+export const log = new Logger({
+  level: LOG_LEVEL || "info",
+  type: LOG_TYPE || "json"
+});

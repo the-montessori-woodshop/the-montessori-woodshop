@@ -1,4 +1,5 @@
-import { ErrorResponse } from "./responder";
+import { log } from "./logger";
+log.location = "error";
 
 type HTTPErrorCodes =
   | 400
@@ -90,6 +91,13 @@ export const httpErrors: { [key in HTTPErrorCodes]: string } = {
 export class BaseError extends Error {
   code: HTTPErrorCodes;
   data?: Record<string, unknown>;
+  log: {
+    status_code: number;
+    error_code: string;
+    message: string;
+    data: Record<string, unknown> | undefined;
+    stack: string | undefined;
+  };
 
   constructor(
     code: HTTPErrorCodes,
@@ -99,24 +107,13 @@ export class BaseError extends Error {
     super(message);
     this.code = code;
     this.data = data || undefined;
-  }
-
-  logError() {
-    const { logError, ...restValues } = this;
-
-    console.error(
-      JSON.stringify(
-        {
-          status_code: this.code,
-          error_code: this.name,
-          message: this.message,
-          data: this.data,
-          stack: this.stack?.toString()
-        },
-        null,
-        4
-      )
-    );
+    this.log = {
+      status_code: this.code,
+      error_code: this.name,
+      message: this.message,
+      data: this.data,
+      stack: this.stack?.toString()
+    };
   }
 }
 
@@ -258,7 +255,7 @@ export const handleError = (
       break;
   }
 
-  err.logError();
+  log.error(err.message, err.log);
   const serializedBody = JSON.stringify(body, (_key, value) => {
     if (typeof value !== "undefined") return value;
   });
