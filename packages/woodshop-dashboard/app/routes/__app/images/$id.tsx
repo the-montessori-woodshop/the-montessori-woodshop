@@ -38,7 +38,7 @@ import { ImagesGridEditContent } from "~/components/images/ImagesGridEditContent
 import { ImagesGridEditTitle } from "~/components/images/ImagesGridEditTitle";
 import { PageHeader } from "~/components/page/PageHeader";
 import { PageTitle } from "~/components/page/PageTitle";
-import { api } from "~/services/api.server";
+import { api } from "~/features/api/api.server";
 import type { UseMatchesMatch } from "~/types/useMatches";
 import { useCallback, useEffect } from "react";
 

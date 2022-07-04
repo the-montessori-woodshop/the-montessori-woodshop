@@ -15,7 +15,7 @@
     "scss": "sass app/styles.scss:app/styles.css",
     "dev": "yarn dev:remix & yarn dev:wrangler & yarn dev:styles",
     "dev:remix": "cross-env NODE_ENV=development remix build & remix watch",
-    "dev:wrangler": "cross-env NODE_ENV=development wrangler pages dev ./public",
+    "dev:wrangler": "./scripts/wrangler-dev.sh",
     "dev:styles": "yarn node ./scripts/styles-dev.mjs & yarn scss --watch --embed-source-map"
   },
   "dependencies": {
@@ -53,6 +53,7 @@
     "@types/react-virtualized-auto-sizer": "^1.0.1",
     "@types/react-window": "^1.8.5",
     "cross-env": "^7.0.3",
+    "dotenv-cli": "^5.1.0",
     "eslint": "^8.18.0",
     "glob": "^8.0.3",
     "glob-watcher": "^5.0.5",

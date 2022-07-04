@@ -1,5 +1,5 @@
 import { Breadcrumb } from "~/components/breadcrumb/Breadcrumb";
-import { AppBlog } from "~/features/app.blog";
+import { AppBlog } from "~/features/blog";
 
 export const handle = {
   breadcrumb: () => {

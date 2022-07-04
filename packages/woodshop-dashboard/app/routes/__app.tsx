@@ -1,13 +1,5 @@
-import type { LoaderFunction } from "@remix-run/cloudflare";
-import { AppRoute } from "~/features/app";
-import { authenticator } from "~/services/auth.server";
+import { AppRouteLayout } from "~/features/app/App.route-layout";
 
-export const links = AppRoute.links;
+export const loader = AppRouteLayout.loader;
 
-export const loader: LoaderFunction = async ({ request }) => {
-  return authenticator.isAuthenticated(request, {
-    failureRedirect: "/login",
-  });
-};
-
-export default AppRoute;
+export default AppRouteLayout;

@@ -1,14 +1,4 @@
-import { Breadcrumb } from "~/components/breadcrumb/Breadcrumb";
-import { AppIndex } from "~/features/app.index";
+import { AppRouteIndex } from "~/features/app/App.route-index";
 
-export const handle = {
-  breadcrumb: () => {
-    return (
-      <Breadcrumb to="/" end>
-        Dashboard
-      </Breadcrumb>
-    );
-  },
-};
-
-export default AppIndex;
+export const handle = AppRouteIndex.handle;
+export default AppRouteIndex;

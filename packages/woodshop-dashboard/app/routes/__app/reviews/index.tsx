@@ -1,3 +1,3 @@
-import { AppReviewsIndexRoute } from "~/features/app.reviews.index";
+import { AppReviewsIndexRoute } from "~/features/reviews/AppReviewsIndex.route";
 
 export default AppReviewsIndexRoute;

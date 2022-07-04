@@ -1,8 +1,8 @@
-import { LoaderFunction } from "@remix-run/cloudflare";
+import type { LoaderFunction } from "@remix-run/cloudflare";
 import type { GET_ImagesApiResponse } from "@woodshop/api";
 import { Breadcrumb } from "~/components/breadcrumb/Breadcrumb";
-import { AppImages } from "~/features/app.images";
-import { api } from "~/services/api.server";
+import { api } from "~/features/api/api.server";
+import { AppImages } from "~/features/images";
 
 export const handle = {
   breadcrumb: () => {

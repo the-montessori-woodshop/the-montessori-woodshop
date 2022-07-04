@@ -1,24 +1,25 @@
-const AUTH0_ISSUER = "https://dev-3afbf-wy.us.auth0.com/";
-const AUTH0_AUDIENCE = "https://api.woodshop.themontessoriwoodshop.com";
-
 import { parseJwt } from "@cfworker/jwt";
 
-import { AuthenticationError } from "../utils/error.auth";
 import { prisma } from "../utils/getPrisma";
+import { AuthenticationError, AuthorizationError } from "../utils/handleError";
 
 export const authenticate = async (request: Request) => {
   const authHeader = request.headers.get("authorization")?.split(" ");
   if (authHeader?.[0] !== "Bearer") {
-    throw new AuthenticationError("Unauthorized. Malformed bearer token");
+    throw new AuthorizationError("Malformed token.");
   }
   if (!authHeader?.[1]) {
-    throw new AuthenticationError("Unauthorized. Malformed request.");
+    throw new AuthorizationError("Malformed request.");
   }
   const jwt = authHeader?.[1];
 
-  const result = await parseJwt(jwt, AUTH0_ISSUER, AUTH0_AUDIENCE);
+  const result = await parseJwt(
+    jwt,
+    WOODSHOP_AUTH0_API_ISSUER,
+    WOODSHOP_AUTH0_AUDIENCE
+  );
   if (!result.valid) {
-    throw new AuthenticationError("Unauthorized. Token is not valid.");
+    throw new AuthorizationError("Invalid token.");
   }
 
   try {
@@ -29,6 +30,6 @@ export const authenticate = async (request: Request) => {
     });
     request.user = user;
   } catch (error) {
-    throw new AuthenticationError("Verification error:  do not match.", error);
+    throw new AuthenticationError("Cannot verify user.");
   }
 };

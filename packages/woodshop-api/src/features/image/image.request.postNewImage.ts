@@ -1,6 +1,9 @@
-import { ApiError } from "../../utils/error.api";
 import { prisma } from "../../utils/getPrisma";
-import { HandlePOSTRequest } from "../../utils/handler.model";
+import { HandlePOSTRequest } from "../../utils/handle.model";
+import {
+  InternalServerError,
+  PayloadValidationError
+} from "../../utils/handleError";
 import { handleRoute } from "../../utils/handleRoute";
 import { postUploadFileToCFImages } from "../cloudflare/cloudflare.request.postUploadFileToCFImages";
 import { POST_NewImageApiResponse } from "./image.model";
@@ -13,8 +16,11 @@ export const postNewImage: HandlePOSTRequest<POST_NewImageApiResponse> = async (
 
     const body = await request.formData();
     const imgTitle = body.get("title") as string | null;
+
     if (!imgTitle) {
-      throw new Error("An image title is required");
+      throw new PayloadValidationError({
+        imgTitle: "An image title is required"
+      });
     }
 
     const image = await prisma.image.create({
@@ -26,7 +32,7 @@ export const postNewImage: HandlePOSTRequest<POST_NewImageApiResponse> = async (
     });
     return image;
   } catch (error) {
-    throw new ApiError("Unable to create new image", error);
+    throw new InternalServerError("Unable to create new image");
   }
 };
 

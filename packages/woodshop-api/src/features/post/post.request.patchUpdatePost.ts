@@ -1,6 +1,6 @@
-import { FeatureError } from "../../utils/error.feature";
 import { prisma } from "../../utils/getPrisma";
-import { HandlePATCHRequest } from "../../utils/handler.model";
+import { HandlePATCHRequest } from "../../utils/handle.model";
+import { InternalServerError } from "../../utils/handleError";
 import { handleRoute } from "../../utils/handleRoute";
 import { verifyUserExists } from "../../utils/verifyUserExists";
 import { postLogger } from "./post.log";
@@ -32,11 +32,7 @@ export const updatePost: HandlePATCHRequest<
     postLogger.info(`Patching post ...successful!`, request.params.id, post);
     return post;
   } catch (error) {
-    throw new FeatureError({
-      message: "Unable to update post",
-      feature: "PatchUpdatePost",
-      error
-    });
+    throw new InternalServerError("Unable to update post");
   }
 };
 

@@ -1,6 +1,6 @@
-import { ApiError } from "../../utils/error.api";
 import { prisma } from "../../utils/getPrisma";
-import { HandlePATCHRequest } from "../../utils/handler.model";
+import { HandlePATCHRequest } from "../../utils/handle.model";
+import { InternalServerError } from "../../utils/handleError";
 import { handleRoute } from "../../utils/handleRoute";
 import {
   PATCH_ImagesApiParams,
@@ -24,7 +24,7 @@ export const patchImage: HandlePATCHRequest<
     });
     return image;
   } catch (error) {
-    throw new ApiError("Error when patching image", error);
+    throw new InternalServerError("Unable to update image");
   }
 };
 

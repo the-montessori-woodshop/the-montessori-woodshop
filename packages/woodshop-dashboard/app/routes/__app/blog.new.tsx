@@ -4,7 +4,7 @@ import type {
   POST_NewPostByIdApiRequest,
   POST_NewPostByIdApiResponse,
 } from "@woodshop/api";
-import { api } from "~/services/api.server";
+import { api } from "~/features/api/api.server";
 
 export const loader: LoaderFunction = async () => redirect("/blog");
 
