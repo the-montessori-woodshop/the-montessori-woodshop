@@ -41,26 +41,33 @@ The Montessori Woodshop is a family owned and operated woodshop that specializes
 
 ## Environment Variables
 
-| Category   | Name                                                                      | Platforms                           |
-| ---------- | ------------------------------------------------------------------------- | ----------------------------------- |
-| Build      | [`NODE_ENV`](#nodeenv)                                                    | Used for build time development     |
-| Admin      | [`GATSBY_MEDUSA_BACKEND_URL`](#GATSBY_MEDUSA_BACKEND_URL)                 | API URL for access                  |
-| Medusa     | [`JWT_SECRET`](#JWT_SECRET)                                               | Secret for authentication           |
-| Medusa     | [`COOKIE_SECRET`](#COOKIE_SECRET)                                         | Secret for cookie transmission      |
-| Medusa     | [`MEDUSA_PORT`](#MEDUSA_PORT)                                             | API Port for access                 |
-| Medusa     | [`MEDUSA_ADMIN_CORS`](#MEDUSA_ADMIN_CORS)                                 | URL of Admin Application            |
-| Medusa     | [`MEDUSA_STORE_CORS`](#MEDUSA_STORE_CORS)                                 | URL of Storefront Application       |
-| Medusa     | [`MEDUSA_REDIS_HOST`](#MEDUSA_REDIS_HOST)                                 | Redis URL                           |
-| Medusa     | [`MEDUSA_REDIS_PORT`](#MEDUSA_REDIS_PORT)                                 | Redis Port                          |
-| Medusa     | [`MEDUSA_STRIPE_API_KEY`](#MEDUSA_STRIPE_API_KEY)                         | Secret for Stripe Access            |
-| Medusa     | [`MEDUSA_STRIPE_WEBHOOK_SECRET`](#MEDUSA_STRIPE_WEBHOOK_SECRET)           | Secrete for Stripe Webhook Access   |
-| Medusa     | [`MEDUSA_CLOUDFLARE_IMAGE_API_TOKEN`](#MEDUSA_CLOUDFLARE_IMAGE_API_TOKEN) | Token to upload images to CF        |
-| Cloudflare | [`CLOUDFLARE_ACCOUNT_ID`](#CLOUDFLARE_ACCOUNT_ID)                         | Token used for CI deployments to CF |
-| Cloudflare | [`CLOUDFLARE_API_TOKEN_WORKERS`](#CLOUDFLARE_API_TOKEN_WORKERS)           | Token used for CI deployments to CF |
-| Cloudflare | [`CLOUDFLARE_API_TOKEN_PAGES`](#CLOUDFLARE_API_TOKEN_PAGES)               | Token used for CI deployments to CF |
-| API        | [`WOODSHOP_API_DATABASE_URL`](#WOODSHOP_API_DATABASE_URL)                 | URL of Database\*                   |
-| API        | [`WOODSHOP_API_MIGRATE_DATABASE_URL`](#WOODSHOP_API_MIGRATE_DATABASE_URL) | Migration URL when developing       |
-| API        | [`WOODSHOP_API_SHADOW_DATABASE_URL`](#WOODSHOP_API_SHADOW_DATABASE_URL)   | Shadow URL when developing          |
+| Category   | Name                                                                                | Platforms                           |
+| ---------- | ----------------------------------------------------------------------------------- | ----------------------------------- |
+| Build      | [`NODE_ENV`](#nodeenv)                                                              | Used for build time development     |
+| Admin      | [`GATSBY_MEDUSA_BACKEND_URL`](#GATSBY_MEDUSA_BACKEND_URL)                           | API URL for access                  |
+| Medusa     | [`JWT_SECRET`](#JWT_SECRET)                                                         | Secret for authentication           |
+| Medusa     | [`COOKIE_SECRET`](#COOKIE_SECRET)                                                   | Secret for cookie transmission      |
+| Medusa     | [`MEDUSA_PORT`](#MEDUSA_PORT)                                                       | API Port for access                 |
+| Medusa     | [`MEDUSA_ADMIN_CORS`](#MEDUSA_ADMIN_CORS)                                           | URL of Admin Application            |
+| Medusa     | [`MEDUSA_STORE_CORS`](#MEDUSA_STORE_CORS)                                           | URL of Storefront Application       |
+| Medusa     | [`MEDUSA_REDIS_HOST`](#MEDUSA_REDIS_HOST)                                           | Redis URL                           |
+| Medusa     | [`MEDUSA_REDIS_PORT`](#MEDUSA_REDIS_PORT)                                           | Redis Port                          |
+| Medusa     | [`MEDUSA_STRIPE_API_KEY`](#MEDUSA_STRIPE_API_KEY)                                   | Secret for Stripe Access            |
+| Medusa     | [`MEDUSA_STRIPE_WEBHOOK_SECRET`](#MEDUSA_STRIPE_WEBHOOK_SECRET)                     | Secrete for Stripe Webhook Access   |
+| Medusa     | [`CLOUDFLARE_IMAGE_API_TOKEN`](#CLOUDFLARE_IMAGE_API_TOKEN)                         | Token to upload images to CF        |
+| Medusa     | [`CLOUDFLARE_IMAGE_HASH`](#CLOUDFLARE_IMAGE_HASH)                                   | Image account hash                  |
+| Cloudflare | [`CLOUDFLARE_ACCOUNT_ID`](#CLOUDFLARE_ACCOUNT_ID)                                   | Token used for CI deployments to CF |
+| Cloudflare | [`CLOUDFLARE_API_TOKEN_WORKERS`](#CLOUDFLARE_API_TOKEN_WORKERS)                     | Token used for CI deployments to CF |
+| Cloudflare | [`CLOUDFLARE_API_TOKEN_PAGES`](#CLOUDFLARE_API_TOKEN_PAGES)                         | Token used for CI deployments to CF |
+| Auth0      | [`WOODSHOP_AUTH0_API_ISSUER`](#WOODSHOP_AUTH0_API_ISSUER)                           | Issuer of ID                        |
+| API        | [`WOODSHOP_API_DATABASE_URL`](#WOODSHOP_API_DATABASE_URL)                           | URL of Database\*                   |
+| API        | [`WOODSHOP_API_MIGRATE_DATABASE_URL`](#WOODSHOP_API_MIGRATE_DATABASE_URL)           | Migration URL when developing       |
+| Auth0      | [`WOODSHOP_AUTH0_AUDIENCE`](#WOODSHOP_AUTH0_AUDIENCE)                               | Audience of the API                 |
+| Auth0      | [`WOODSHOP_AUTH0_DASHBOARD_CALLBACK_URL`](#WOODSHOP_AUTH0_DASHBOARD_CALLBACK_URL)   | Callback URL after Code Grant       |
+| Auth0      | [`WOODSHOP_AUTH0_DASHBOARD_DOMAIN`](#WOODSHOP_AUTH0_DASHBOARD_DOMAIN)               | Domain of code grant                |
+| Auth0      | [`WOODSHOP_AUTH0_DASHBOARD_CLIENT_ID`](#WOODSHOP_AUTH0_DASHBOARD_CLIENT_ID)         | Auth0 Client ID                     |
+| Auth0      | [`WOODSHOP_AUTH0_DASHBOARD_CLIENT_SECRET`](#WOODSHOP_AUTH0_DASHBOARD_CLIENT_SECRET) | Auth0 Client Secret                 |
+| Auth0      | [`WOODSHOP_AUTH0_API_ISSUER`](#WOODSHOP_AUTH0_API_ISSUER)                           | Issuer of ID                        |
 
 ### `NODE_ENV`
 
@@ -102,7 +109,7 @@ Should be set to either `development` or `production`. This tells the applicatio
 
 ### `MEDUSA_STRIPE_WEBHOOK_SECRET`
 
-### `MEDUSA_CLOUDFLARE_IMAGE_API_TOKEN`
+### `CLOUDFLARE_IMAGE_API_TOKEN`
 
 This token is created on the Cloudflare dashboard and is then used with the Medusa API to enhance the admin function for how images are stored. This is also used for the woodshop api to manage images that are going to be used inside of the blog and website.
 
@@ -116,6 +123,16 @@ This token is created on the Cloudflare dashboard and is then used with the Medu
 - `.env`
 - Render
 - Wrangler
+
+### `CLOUDFLARE_IMAGE_ACCOUNT_HASH`
+
+#### Packages Used
+
+- [`medusa-api`](./packages/medusa-api/README.md)
+
+#### Platforms
+
+- Render
 
 ### `CLOUDFLARE_ACCOUNT_ID`
 
@@ -181,6 +198,58 @@ However, this is also needed when migrating the DB in CI so this should also go 
 This URL is used only when developing locally. Since (as of this moment) the local workflow is using the Prisma data proxy, we cannot use the data proxy URL to migrate the DB. Instead we must use the external query string of the
 
 ### `WOODSHOP_API_SHADOW_DATABASE_URL`
+
+### `WOODSHOP_AUTH0_AUDIENCE`
+
+#### Packages Used
+
+#### Platforms
+
+### `WOODSHOP_AUTH0_DASHBOARD_CALLBACK_URL`
+
+#### Packages Used
+
+#### Platforms
+
+- Pages EnvVars
+
+### `WOODSHOP_AUTH0_DASHBOARD_CALLBACK_URL`
+
+#### Packages Used
+
+#### Platforms
+
+- Pages EnvVars
+
+### `WOODSHOP_AUTH0_DASHBOARD_DOMAIN`
+
+#### Packages Used
+
+#### Platforms
+
+- Pages EnvVars
+
+### `WOODSHOP_AUTH0_DASHBOARD_CLIENT_ID`
+
+#### Packages Used
+
+#### Platforms
+
+- Pages EnvVars
+
+### `WOODSHOP_AUTH0_DASHBOARD_CLIENT_SECRET`
+
+#### Packages Used
+
+#### Platforms
+
+- Pages EnvVars
+
+### `WOODSHOP_AUTH0_API_ISSUER`
+
+#### Packages Used
+
+#### Platforms
 
 # Deployment
 
