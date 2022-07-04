@@ -1,0 +1,9 @@
+declare global {
+  var WOODSHOP_AUTH0_AUDIENCE: string;
+  var WOODSHOP_AUTH0_DASHBOARD_CALLBACK_URL: string;
+  var WOODSHOP_AUTH0_DASHBOARD_DOMAIN: string;
+  var WOODSHOP_AUTH0_DASHBOARD_CLIENT_ID: string;
+  var WOODSHOP_AUTH0_DASHBOARD_CLIENT_SECRET: string;
+  var WOODSHOP_API_URL: string;
+}
+export {};

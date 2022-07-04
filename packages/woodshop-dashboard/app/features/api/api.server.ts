@@ -63,9 +63,7 @@ export type WoodshopClientUPDATERequestConfig<
 };
 
 const defaultConfig: ClientConfig = {
-  // @todo
-  // need to figure out a way for this to be dynamic
-  baseUrl: "http://127.0.0.1:8888",
+  baseUrl: WOODSHOP_API_URL,
 };
 
 export class WoodshopClient {
@@ -222,8 +220,9 @@ export class WoodshopClient {
 
     try {
       const response = await fetch(fetchUrl, config);
-      const data = await response.json<FetchResponse>();
-      return data;
+      console.log(await response.text());
+      // const data = await response.json<FetchResponse>();
+      // return data;
     } catch (error) {
       throw new Error(error as string);
     }

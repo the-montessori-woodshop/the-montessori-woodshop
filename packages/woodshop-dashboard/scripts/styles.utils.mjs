@@ -7,7 +7,8 @@ export const scssFilesGlob = resolve(__dirname, "../app/**/*.scss");
 export const scssFilesOutputLocation = resolve(__dirname, "../app/styles.scss");
 
 export const getImportStatementFromFilePath = (filePath) => {
-  const location = filePath.split("woodshop-dashboard/app")[1];
+  const rootDir = __dirname.split("/scripts")[0];
+  const location = filePath.split(`${rootDir}/app`)[1];
   const relLocation = `.${location}`;
   const im = `@import "${relLocation}";\n`;
   return im;

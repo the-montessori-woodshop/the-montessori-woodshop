@@ -13,7 +13,7 @@
     "styles:compile": "sass app/styles.scss:app/styles.css",
     "dev": "yarn dev:wrangler & yarn dev:remix",
     "dev:remix": "remix watch",
-    "dev:wrangler": "cross-env NODE_ENV=development wrangler dev ./build/index.js",
+    "dev:wrangler": "cross-env NODE_ENV=development wrangler dev ./build/index.js --port 8788",
     "dev:styles": "yarn styles:create && styles:compile --watch --embed-source-map"
   },
   "dependencies": {
