@@ -43,8 +43,8 @@ export const LoginRoute: RemixFeatureUIRoute = () => {
 
 export default LoginRoute;
 
-LoginRoute.loader = async ({ request, env }) => {
-  console.log(env);
+LoginRoute.loader = async ({ request, context }) => {
+  console.log(JSON.stringify(request, null, 4));
   return authenticator.isAuthenticated(request, {
     successRedirect: "/",
   });
