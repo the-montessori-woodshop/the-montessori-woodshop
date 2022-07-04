@@ -5,6 +5,9 @@ main = "src/index.ts"
 workers_dev = true
 node_compat = true
 # [ secrets ] #
+[ vars ]
+LOG_LEVEL = "verbose"
+LOG_TYPE = "json"
 # WOODSHOP_API_DATABASE_URL
 # WOODSHOP_API_MIGRATE_DATABASE_URL
 # WOODSHOP_API_SHADOW_DATABASE_URL
@@ -15,6 +18,11 @@ node_compat = true
 
 [env.production]
 workers_dev = false
+
+[ env.production.vars ]
+LOG_LEVEL = "debug"
+LOG_TYPE = "json"
+
 # [ env.production.secrets ] #
 # WOODSHOP_API_DATABASE_URL
 # WOODSHOP_AUTH0_AUDIENCE
