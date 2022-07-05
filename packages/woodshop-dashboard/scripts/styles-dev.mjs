@@ -5,12 +5,11 @@ import watch from "glob-watcher";
 import {
   getImportStatementFromFilePath,
   scssFilesGlob,
+  scssFilesGlobIgnore,
   scssFilesOutputLocation,
 } from "./styles.utils.mjs";
 
-var watcher = watch([scssFilesGlob, "!./app/styles.scss"], {
-  ignoreInitial: true,
-});
+var watcher = watch([scssFilesGlob, scssFilesGlobIgnore]);
 
 // Listen for other events
 // No async completion available because this is the raw chokidar instance

@@ -2,8 +2,6 @@ import clsx from "clsx";
 import type { ReactNode } from "react";
 import { forwardRef } from "react";
 
-import styles from "./AppHeaderItem.css";
-
 export type AppHeaderItemProps = JSX.IntrinsicElements["div"] & {
   children?: ReactNode;
 };

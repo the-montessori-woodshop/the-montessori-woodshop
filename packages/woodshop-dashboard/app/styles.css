@@ -52,69 +52,6 @@
   text-transform: uppercase;
 }
 
-.img-list {
-  display: flex;
-}
-.img-list > li {
-  width: 25%;
-}
-
-.img-list-item {
-  padding: 1rem;
-}
-
-.img-list-item-content {
-  height: 10rem;
-}
-
-.img-pane {
-  width: 31.25rem;
-  border-left: 0.0625rem solid var(--color-grey2);
-  background: var(--color-grey1);
-  position: relative;
-}
-
-.img-pane-content {
-  padding: 0 2rem;
-}
-
-.images-grid {
-  display: grid;
-  grid-template-areas: "nav nav" "main-title edit-title" "main-content edit-content";
-  overflow: hidden;
-  grid-template-columns: 1fr auto;
-}
-
-.edit-content {
-  grid-area: edit-content;
-  width: 37.5rem;
-  border-left: 0.0625rem solid var(--color-grey2);
-  background: var(--color-grey1);
-  position: relative;
-}
-
-.edit-title {
-  grid-area: edit-title;
-  width: 37.5rem;
-  border-left: 0.0625rem solid var(--color-grey2);
-  background: var(--color-grey1);
-  position: relative;
-}
-
-.main-title {
-  grid-area: main-title;
-}
-
-.grid-nav {
-  grid-area: nav;
-}
-
-.main-content {
-  grid-area: main-content;
-  overflow: auto;
-  padding: 0 2rem;
-}
-
 .page-container {
   flex: 1;
   display: flex;
@@ -149,6 +86,12 @@
   margin-right: auto;
   max-width: 65ch;
 }
+.TKizo7F7045 .action {
+  margin-top: 2rem;
+}
+.TKizo7F7045 .action a {
+  display: inline-flex;
+}
 
 .table-body-tr {
   height: 100%;
@@ -180,7 +123,7 @@
   height: inherit;
 }
 
-.content {
+.gDI1gHS1kS.content {
   flex: 1;
   height: 100%;
   width: 100%;
@@ -355,7 +298,27 @@ ul.list li img.active {
   transform: scale(1.1);
 }
 
-.content {
+.d8leh8P.container {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+}
+.d8leh8P.header {
+  width: 100%;
+  height: 5.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+}
+.d8leh8P.body {
+  flex: 1;
+  padding-top: 2rem;
+  width: 100%;
+}
+
+.content-2 {
   max-height: 10rem;
 }
 
@@ -404,21 +367,6 @@ ul.list li img.active {
   outline: none;
 }
 
-.pane-container {
-  display: flex;
-  margin-top: 1rem;
-  padding-bottom: 1rem;
-  border-bottom: 0.0625rem solid var(--color-grey3);
-}
-.pane-container img {
-  width: 30%;
-  height: auto;
-  margin-right: 1rem;
-  border-radius: 0.25rem;
-  object-fit: contain;
-  object-position: top;
-}
-
 body {
   height: 100%;
   display: flex;
@@ -441,3 +389,13 @@ ul {
 li {
   list-style-type: none;
 }
+
+.rgy3g1.empty {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: column;
+}
+
+/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,23 @@
+.d8leh8P {
+  &.container {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+  }
+
+  &.header {
+    width: 100%;
+    height: makeRem(84);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 makeRem(32);
+  }
+
+  &.body {
+    flex: 1;
+    padding-top: makeRem(32);
+    width: 100%;
+  }
+}

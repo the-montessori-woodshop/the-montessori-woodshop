@@ -17,5 +17,5 @@
       "~/*": ["./app/*"]
     }
   },
-  "include": ["remix.env.d.ts", "**/*.ts", "**/*.tsx", "types"]
+  "include": ["remix.env.d.ts", "**/*.ts", "**/*.tsx", "types", "src"]
 }

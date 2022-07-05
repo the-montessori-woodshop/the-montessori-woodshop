@@ -3,17 +3,16 @@ import clsx from "clsx";
 import type { ReactNode } from "react";
 import { forwardRef } from "react";
 
-import styles from "./StateEmtpy.css";
-
 export type StateEmtpyPrps = JSX.IntrinsicElements["div"] & {
   title: string;
   description: string;
   children: ReactNode;
+  Action?: ReactNode;
 };
 
 export const StateEmtpy = forwardRef<HTMLDivElement, StateEmtpyPrps>(
   function StateEmpty(
-    { children, title, className, description, ...restProps },
+    { children, title, className, description, Action, ...restProps },
     ref
   ) {
     return (
@@ -31,6 +30,7 @@ export const StateEmtpy = forwardRef<HTMLDivElement, StateEmtpyPrps>(
           </TypographyHeading>
           <TypographyCopy>{description}</TypographyCopy>
         </div>
+        {Action && <div className="action">{Action}</div>}
       </div>
     );
   }
