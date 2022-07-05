@@ -1,5 +1,3 @@
-// Create an instance of the authenticator, pass a generic with what your
-
 import type {
   POST_CreateOrUpdateUserApiRequest,
   POST_CreateOrUpdateUserApiResponse,
