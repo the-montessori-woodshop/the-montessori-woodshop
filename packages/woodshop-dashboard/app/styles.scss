@@ -17,6 +17,8 @@
 @import "./features/blog/AppBlog.scss";
 @import "./features/images-new/ImagesNew.route.scss";
 @import "./features/images/Images.route-index.scss";
+@import "./features/images/images.route-layout.scss";
+@import "./features/images/ImagesEmpty.scss";
 @import "./features/page/Page.scss";
 @import "./features/reviews/AppReviews.scss";
 @import "./features/reviews/AppReviewsIndex.scss";
@@ -24,5 +26,3 @@
 @import "./routes/__app/blog.editor/$id/editor.scss";
 @import "./styles/_utils.scss";
 @import "./styles/root.scss";
-@import "./features/images/ImagesEmpty.scss";
-@import "./features/images/images.route-layout.scss";
