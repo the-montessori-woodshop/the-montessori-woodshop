@@ -30,7 +30,7 @@ services = [
 ]
 [env.production.vars]
 WOODSHOP_API_URL="https://api.themontessoriwoodshop.com"
-WOODSHOP_AUTH0_DASHBOARD_CALLBACK_URL = "https://api.themontessoriwoodshop.com/callback"
+WOODSHOP_AUTH0_DASHBOARD_CALLBACK_URL = "https://dashboard.themontessoriwoodshop.com/callback"
 
 # [env.production.secrets]
 # WOODSHOP_AUTH0_DASHBOARD_CALLBACK_URL
