@@ -1,4 +1,11 @@
-import React, { FC, memo, useCallback, useEffect, useRef } from "react";
+import React, {
+  FC,
+  ReactElement,
+  memo,
+  useCallback,
+  useEffect,
+  useRef
+} from "react";
 
 import { ResponsiveDevices } from "../../../theme/theme.types";
 import { breakpointMap as bm } from "../../../theme/theme.utils";
@@ -7,6 +14,7 @@ export type ResponseiveProps = {
   atOrLessThan?: Exclude<ResponsiveDevices, "mobile">;
   atOrGreaterThan?: Exclude<ResponsiveDevices, "mobile">;
   only?: ResponsiveDevices;
+  children: ReactElement;
 };
 
 export const MediaQuery: FC<ResponseiveProps> = memo(function MediaQuery({

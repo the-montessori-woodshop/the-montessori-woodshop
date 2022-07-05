@@ -1,5 +1,5 @@
 import { styled } from "@linaria/react";
-import React, { forwardRef, memo } from "react";
+import React, { ReactNode, forwardRef, memo } from "react";
 
 import { TypographyCopy } from "../../atoms/typography/TypographyCopy";
 
@@ -8,7 +8,7 @@ const SDt = styled.dt`
     white-space: nowrap;
   }
 `;
-export type DescriptionListItemTagProos = Record<string, unknown>;
+export type DescriptionListItemTagProos = { children: ReactNode };
 
 export const DescriptionListItemTagFC = forwardRef<
   HTMLElement,
