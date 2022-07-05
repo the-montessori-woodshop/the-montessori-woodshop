@@ -139,7 +139,7 @@ export class WoodshopClient {
     };
 
     try {
-      const response = await fetch(fetchUrl, config);
+      const response = await API.fetch(fetchUrl, config);
       const data = await response.json<FetchResponse>();
       return data;
     } catch (error) {
@@ -160,7 +160,7 @@ export class WoodshopClient {
     };
 
     try {
-      const response = await fetch(fetchUrl, config);
+      const response = await API.fetch(fetchUrl, config);
       const data = await response.json<FetchResponse>();
       return data;
     } catch (error) {
@@ -194,7 +194,7 @@ export class WoodshopClient {
     };
 
     try {
-      const response = await fetch(fetchUrl, config);
+      const response = await API.fetch(fetchUrl, config);
       const data = await response.json<FetchResponse>();
       return data;
     } catch (error) {
@@ -219,10 +219,9 @@ export class WoodshopClient {
     };
 
     try {
-      const response = await fetch(fetchUrl, config);
-      console.log(await response.text());
-      // const data = await response.json<FetchResponse>();
-      // return data;
+      const response = await API.fetch(fetchUrl, config);
+      const data = await response.json<FetchResponse>();
+      return data;
     } catch (error) {
       throw new Error(error as string);
     }
@@ -242,7 +241,7 @@ export class WoodshopClient {
     };
 
     try {
-      const response = await fetch(fetchUrl, config);
+      const response = await API.fetch(fetchUrl, config);
       const data = await response.json<FetchResponse>();
       return data;
     } catch (error) {

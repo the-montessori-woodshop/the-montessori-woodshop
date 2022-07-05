@@ -5,5 +5,6 @@ declare global {
   var WOODSHOP_AUTH0_DASHBOARD_CLIENT_ID: string;
   var WOODSHOP_AUTH0_DASHBOARD_CLIENT_SECRET: string;
   var WOODSHOP_API_URL: string;
+  var API: Fetcher;
 }
 export {};
