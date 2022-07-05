@@ -1,4 +1,4 @@
-import React, { FC, useContext, useMemo } from "react";
+import React, { FC, ReactNode, useContext, useMemo } from "react";
 
 type TablistContextContextType = {
   cxSize: CXSize;
@@ -11,6 +11,7 @@ export type CXSize = "sm" | "lg";
 
 export type TablistContextProviderProps = {
   cxSize: CXSize;
+  children: ReactNode;
 };
 
 export const TablistContextProvider: FC<TablistContextProviderProps> = ({

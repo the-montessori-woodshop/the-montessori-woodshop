@@ -6,7 +6,7 @@ import { Dialog, DialogRef, useDialogContext } from "./Dialog";
 export type ModalProps = {
   children: ReactNode;
 };
-const ModalContent: FC = ({ children }) => {
+const ModalContent: FC<ModalProps> = ({ children }) => {
   const { isOpen } = useDialogContext();
 
   return (

@@ -25,10 +25,10 @@
   },
   "homepage": "https://github.com/the-montessori-woodshop/the-montessori-woodshop#readme",
   "devDependencies": {
-    "@cloudflare/workers-types": "^3.13.0",
+    "@cloudflare/workers-types": "^3.14.0",
     "@esbuild-plugins/node-modules-polyfill": "^0.1.4",
-    "dotenv-cli": "^5.1.0",
-    "esbuild": "^0.14.47",
+    "dotenv-cli": "^6.0.0",
+    "esbuild": "^0.14.48",
     "esbuild-plugin-alias": "^0.2.1",
     "prisma": "4.0.0",
     "typescript": "^4.7.4",

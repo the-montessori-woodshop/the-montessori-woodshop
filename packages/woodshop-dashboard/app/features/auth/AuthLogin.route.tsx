@@ -7,7 +7,7 @@ import {
 } from "@woodshop/components";
 import type { RemixFeatureUIRoute } from "~/types/routes.types";
 
-import { authenticator, setAuth0Strategy } from "./auth.server";
+import { authenticator } from "./auth.server";
 
 export const LoginRoute: RemixFeatureUIRoute = () => {
   return (
@@ -43,16 +43,7 @@ export const LoginRoute: RemixFeatureUIRoute = () => {
 
 export default LoginRoute;
 
-/**
- * Loads the Auth0 Strategy when the user navigates to the login page
- * 1. Grabs and sets the environment variables from the context into the strategy
- * 2. Set's the authenticator to use the auth0 strategy
- * 3. Check's to see if the user is authenticated or not
- */
-LoginRoute.loader = async ({ request, context }) => {
-  const auth0Strategy = setAuth0Strategy(context);
-  authenticator.use(auth0Strategy);
-  return authenticator.isAuthenticated(request, {
+LoginRoute.loader = async ({ request, context }) =>
+  authenticator.isAuthenticated(request, {
     successRedirect: "/",
   });
-};

@@ -1,0 +1,40 @@
+compatibility_date = "2022-06-23"
+
+name = "woodshop-dashboard"
+main = "./build/index.js"
+workers_dev = true
+services = [
+  { binding = "API", service = "woodshop-api", environment = "production" }
+]
+[vars]
+WOODSHOP_API_URL="https://woodshop-api-development.drewdecarme.workers.dev"
+WOODSHOP_AUTH0_DASHBOARD_CALLBACK_URL = "http://localhost:8788/callback"
+# [secrets]
+# WOODSHOP_AUTH0_DASHBOARD_DOMAIN
+# WOODSHOP_AUTH0_DASHBOARD_CLIENT_ID
+# WOODSHOP_AUTH0_DASHBOARD_CLIENT_SECRET
+# WOODSHOP_AUTH0_AUDIENCE
+
+[site]
+bucket = "./public"
+
+[build]
+command = "yarn build"
+
+
+
+[env.production]
+workers_dev = false
+services = [
+  { binding = "API", service = "woodshop-api-production", environment = "production" }
+]
+[env.production.vars]
+WOODSHOP_API_URL="https://api.themontessoriwoodshop.com"
+WOODSHOP_AUTH0_DASHBOARD_CALLBACK_URL = "https://api.themontessoriwoodshop.com/callback"
+
+# [env.production.secrets]
+# WOODSHOP_AUTH0_DASHBOARD_CALLBACK_URL
+# WOODSHOP_AUTH0_DASHBOARD_DOMAIN
+# WOODSHOP_AUTH0_DASHBOARD_CLIENT_ID
+# WOODSHOP_AUTH0_DASHBOARD_CLIENT_SECRET
+# WOODSHOP_AUTH0_AUDIENCE
