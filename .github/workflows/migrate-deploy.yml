@@ -52,7 +52,7 @@ jobs:
         run: yarn install --immutable
       - name: Build
         run: yarn build:woodshop-dashboard
-      - name: Deploy to Cloudflare Pages
+      - name: Deploy to Cloudflare Workers
         run:
           cd packages/woodshop-dashboard && 
           CLOUDFLARE_ACCOUNT_ID=${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
