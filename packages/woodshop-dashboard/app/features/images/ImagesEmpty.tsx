@@ -4,7 +4,7 @@ import { ImageAdd } from "@woodshop/illustrations";
 import { StateEmtpy } from "~/components/StateEmpty";
 import type { FC } from "react";
 
-export const ImagesIndexEmpty: FC = () => {
+export const ImagesEmpty: FC = () => {
   return (
     <>
       <StateEmtpy
@@ -18,7 +18,7 @@ export const ImagesIndexEmpty: FC = () => {
           </Link>
         }
       >
-        <Illustration cxTitle="add an image" cxSize={400}>
+        <Illustration cxTitle="add an image" cxSize={300}>
           <ImageAdd />
         </Illustration>
       </StateEmtpy>

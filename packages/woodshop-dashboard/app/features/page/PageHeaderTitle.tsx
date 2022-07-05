@@ -14,7 +14,15 @@ export const PageHeaderTitle = forwardRef<
   PageHeaderTitleProps
 >(function PageHeaderTitle({ className, children, ...restProps }, ref) {
   return (
-    <TypographyHeading {...restProps} cxNode="h2" cxVariant="h3" ref={ref}>
+    <TypographyHeading
+      {...restProps}
+      cxNode="h2"
+      cxVariant="h3"
+      ref={ref}
+      style={{
+        margin: 0,
+      }}
+    >
       {children}
     </TypographyHeading>
   );
