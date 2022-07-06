@@ -256,7 +256,7 @@
 
 .nzKztTNu.layout {
   display: flex;
-  border-top: 1px solid var(--color-grey2);
+  border-top: 1px solid var(--color-grey3);
   height: 100%;
 }
 .nzKztTNu.main {
@@ -265,10 +265,10 @@
   position: relative;
 }
 .nzKztTNu.pane {
-  border-left: 1px solid var(--color-grey2);
+  border-left: 1px solid var(--color-grey3);
   height: 100%;
-  width: 25rem;
-  background: var(--color-grey1);
+  width: 26.25rem;
+  background: var(--color-grey2);
   padding: 2rem;
 }
 

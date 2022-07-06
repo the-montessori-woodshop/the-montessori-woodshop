@@ -22,7 +22,7 @@ import {
   dateFactory,
   makeRem,
 } from "@woodshop/components";
-import { Copy, Pencil } from "@woodshop/icons";
+import { Copy, Pencil, Trash } from "@woodshop/icons";
 import { Breadcrumb } from "~/components/breadcrumb/Breadcrumb";
 import { api } from "~/features/api/api.server";
 import type { RemixFeatureUIRoute } from "~/types/routes.types";
@@ -45,22 +45,45 @@ export const ImagesEntityRoute: RemixFeatureUIRoute = () => {
         <TypographyHeading
           cxVariant="h4"
           cxNode="div"
+          title={data.title}
           style={{
             fontWeight: 600,
             margin: 0,
+            textOverflow: "ellipsis",
+            overflow: "hidden",
+            whiteSpace: "nowrap",
+            paddingRight: makeRem(16),
           }}
         >
           {data.title}
         </TypographyHeading>
-        <ButtonGroup>
+        <ButtonGroup cxLayout="inline">
           <Button
             style={{
-              border: "1px solid var(--color-grey3)",
+              border: "1px solid var(--color-grey4)",
               borderRadius: makeRem(4),
             }}
           >
-            <Icon cxTitle="edit image" accessibility="actionable">
+            <Icon
+              cxTitle="edit image"
+              accessibility="actionable"
+              cxTitleId="edit-image"
+            >
               <Pencil />
+            </Icon>
+          </Button>
+          <Button
+            style={{
+              border: "1px solid var(--color-grey4)",
+              borderRadius: makeRem(4),
+            }}
+          >
+            <Icon
+              cxTitle="delete image"
+              accessibility="actionable"
+              cxTitleId="delete-iamge"
+            >
+              <Trash />
             </Icon>
           </Button>
         </ButtonGroup>
@@ -74,6 +97,7 @@ export const ImagesEntityRoute: RemixFeatureUIRoute = () => {
           ref={inputRef}
           style={{
             cursor: "pointer",
+            background: "var(--color-white)",
           }}
         />
       </div>
