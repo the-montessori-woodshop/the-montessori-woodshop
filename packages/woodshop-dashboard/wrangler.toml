@@ -7,7 +7,7 @@ services = [
   { binding = "API", service = "woodshop-api", environment = "production" }
 ]
 [vars]
-WOODSHOP_API_URL="http://127.0.0.1:8888"
+WOODSHOP_API_URL="https://woodshop-api-development.drewdecarme.workers.dev"
 WOODSHOP_AUTH0_DASHBOARD_CALLBACK_URL = "http://localhost:8788/callback"
 # [secrets]
 # WOODSHOP_AUTH0_DASHBOARD_DOMAIN
@@ -17,9 +17,6 @@ WOODSHOP_AUTH0_DASHBOARD_CALLBACK_URL = "http://localhost:8788/callback"
 
 [site]
 bucket = "./public"
-
-
-
 
 
 [env.production]

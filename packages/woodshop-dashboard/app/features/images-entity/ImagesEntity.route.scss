@@ -1,6 +1,17 @@
 .LNm9OUO {
   &.img {
+    width: 100%;
+    border-radius: makeRem(4);
+    height: auto;
   }
-  &.title {
+  &.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: makeRem(16);
+    margin-bottom: makeRem(32);
+  }
+  &.copy {
+    margin-bottom: makeRem(32);
   }
 }

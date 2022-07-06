@@ -172,6 +172,22 @@
   padding: 1.5rem;
 }
 
+.LNm9OUO.img {
+  width: 100%;
+  border-radius: 0.25rem;
+  height: auto;
+}
+.LNm9OUO.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+.LNm9OUO.copy {
+  margin-bottom: 2rem;
+}
+
 .lmO0A93k.container {
   display: flex;
   flex-direction: column;
@@ -185,6 +201,49 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
+}
+
+.JqEdN.list {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  overflow: auto;
+  right: 0;
+}
+.JqEdN ul {
+  display: grid;
+  width: 100%;
+  padding: 2.25rem;
+  gap: 2.25rem;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-rows: repeat(auto-fill, 220px);
+}
+.JqEdN ul li a {
+  width: 100%;
+  display: block;
+  position: relative;
+  border: 2px solid transparent;
+  height: 10rem;
+}
+.JqEdN ul li a.active::before {
+  content: "";
+  position: absolute;
+  border-radius: 0.5rem;
+  top: -0.25rem;
+  left: -0.25rem;
+  bottom: -0.25rem;
+  right: -0.25rem;
+  border: 0.125rem solid var(--color-primary);
+}
+.JqEdN ul li img {
+  border-radius: 0.5rem;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  padding: 0.125rem;
+  position: relative;
 }
 
 .YPRm2Dbg4mD.container {
@@ -201,8 +260,9 @@
   height: 100%;
 }
 .nzKztTNu.main {
+  display: flex;
   flex: 1;
-  height: 100%;
+  position: relative;
 }
 .nzKztTNu.pane {
   border-left: 1px solid var(--color-grey2);
@@ -222,9 +282,9 @@
 
 .d8leh8P.container {
   display: flex;
-  height: 100%;
   width: 100%;
   flex-direction: column;
+  flex: 1;
 }
 .d8leh8P.header {
   width: 100%;

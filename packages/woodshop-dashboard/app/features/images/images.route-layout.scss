@@ -5,8 +5,9 @@
     height: 100%;
   }
   &.main {
+    display: flex;
     flex: 1;
-    height: 100%;
+    position: relative;
   }
   &.pane {
     border-left: 1px solid var(--color-grey2);

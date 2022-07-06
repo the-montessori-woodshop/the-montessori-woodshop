@@ -1,12 +1,13 @@
 import { Link, Outlet, useLoaderData } from "@remix-run/react";
 import type { GET_ImagesApiResponse } from "@woodshop/api";
-import { Button, ButtonContent } from "@woodshop/components";
+import { ButtonContent } from "@woodshop/components";
 import { Breadcrumb } from "~/components/breadcrumb";
 import { api } from "~/features/api";
 import { Page, PageBody, PageHeader, PageHeaderTitle } from "~/features/page";
 import type { RemixFeatureUIRoute } from "~/types/routes.types";
 import clsx from "clsx";
 
+import { ImageList } from "./ImageList";
 import { ImagesEmpty } from "./ImagesEmpty";
 
 export const ImagesRouteLayout: RemixFeatureUIRoute = () => {
@@ -25,7 +26,7 @@ export const ImagesRouteLayout: RemixFeatureUIRoute = () => {
       <PageBody>
         <div className={clsx("nzKztTNu", "layout")}>
           <div className={clsx("nzKztTNu", "main")}>
-            {data.length === 0 ? <ImagesEmpty /> : <pre>{data.length}</pre>}
+            {data.length === 0 ? <ImagesEmpty /> : <ImageList images={data} />}
           </div>
           <div className={clsx("nzKztTNu", "pane")}>
             <Outlet />

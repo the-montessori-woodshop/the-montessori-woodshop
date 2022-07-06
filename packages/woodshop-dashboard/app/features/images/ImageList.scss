@@ -1,0 +1,51 @@
+.JqEdN {
+  &.list {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    overflow: auto;
+    right: 0;
+  }
+
+  ul {
+    display: grid;
+    width: 100%;
+    padding: makeRem(36);
+    gap: makeRem(36);
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-rows: repeat(auto-fill, 220px);
+
+    li {
+      a {
+        width: 100%;
+        display: block;
+        position: relative;
+        border: 2px solid transparent;
+        height: makeRem(160);
+
+        &.active {
+          &::before {
+            content: "";
+            position: absolute;
+            border-radius: makeRem(8);
+            top: makeRem(-4);
+            left: makeRem(-4);
+            bottom: makeRem(-4);
+            right: makeRem(-4);
+            border: makeRem(2) solid var(--color-primary);
+          }
+        }
+      }
+      img {
+        border-radius: makeRem(8);
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        padding: makeRem(2);
+        position: relative;
+      }
+    }
+  }
+}
