@@ -27,6 +27,7 @@ export const ImagesEntityRoute: RemixFeatureUIRoute = () => {
         <PageHeaderTitle>{data.title}</PageHeaderTitle>
       </PageHeader>
       <PageBody>
+        <div></div>
         <pre>{JSON.stringify(data, null, 4)}</pre>
       </PageBody>
     </>

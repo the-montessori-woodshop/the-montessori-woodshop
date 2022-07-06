@@ -1,5 +1,6 @@
-import { Outlet, useLoaderData } from "@remix-run/react";
+import { Link, Outlet, useLoaderData } from "@remix-run/react";
 import type { GET_ImagesApiResponse } from "@woodshop/api";
+import { Button, ButtonContent } from "@woodshop/components";
 import { Breadcrumb } from "~/components/breadcrumb";
 import { api } from "~/features/api";
 import { Page, PageBody, PageHeader, PageHeaderTitle } from "~/features/page";
@@ -15,15 +16,16 @@ export const ImagesRouteLayout: RemixFeatureUIRoute = () => {
     <Page>
       <PageHeader>
         <PageHeaderTitle>Images</PageHeaderTitle>
+        <Link to="./new">
+          <ButtonContent cxVariant="contained" cxColor="primary" cxSize="small">
+            New Image
+          </ButtonContent>
+        </Link>
       </PageHeader>
       <PageBody>
         <div className={clsx("nzKztTNu", "layout")}>
           <div className={clsx("nzKztTNu", "main")}>
-            {data.length === 0 ? (
-              <ImagesEmpty />
-            ) : (
-              <pre>{JSON.stringify(data, null, 4)}</pre>
-            )}
+            {data.length === 0 ? <ImagesEmpty /> : <pre>{data.length}</pre>}
           </div>
           <div className={clsx("nzKztTNu", "pane")}>
             <Outlet />

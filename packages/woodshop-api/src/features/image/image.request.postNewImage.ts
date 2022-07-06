@@ -11,18 +11,18 @@ import { POST_NewImageApiResponse } from "./image.model";
 export const postNewImage: HandlePOSTRequest<POST_NewImageApiResponse> = async (
   request
 ) => {
+  const cfImagesResponse = await postUploadFileToCFImages(request.clone());
+
+  const body = await request.formData();
+  const imgTitle = body.get("title") as string | null;
+
+  if (!imgTitle) {
+    throw new PayloadValidationError({
+      imgTitle: "An image title is required"
+    });
+  }
+
   try {
-    const cfImagesResponse = await postUploadFileToCFImages(request.clone());
-
-    const body = await request.formData();
-    const imgTitle = body.get("title") as string | null;
-
-    if (!imgTitle) {
-      throw new PayloadValidationError({
-        imgTitle: "An image title is required"
-      });
-    }
-
     const image = await prisma.image.create({
       data: {
         service_id: cfImagesResponse.result.id,
@@ -32,7 +32,9 @@ export const postNewImage: HandlePOSTRequest<POST_NewImageApiResponse> = async (
     });
     return image;
   } catch (error) {
-    throw new InternalServerError("Unable to create new image");
+    throw new InternalServerError("Error when trying to add the image", {
+      error
+    });
   }
 };
 

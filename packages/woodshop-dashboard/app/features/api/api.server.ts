@@ -118,6 +118,20 @@ export class WoodshopClient {
     };
   }
 
+  private async handleResponse<JsonResponse>(res: Response) {
+    if (!res.ok) {
+      try {
+        const jsonError = await res.json<JsonResponse>();
+        throw jsonError;
+      } catch (error) {
+        const textError = await res.text();
+        throw textError;
+      }
+    }
+    const data = await res.json<JsonResponse>();
+    return data;
+  }
+
   async get<
     FetchResponse,
     FetchParams = undefined,
@@ -137,14 +151,8 @@ export class WoodshopClient {
       headers: fetchHeaders,
       method: "GET",
     };
-
-    try {
-      const response = await API.fetch(fetchUrl, config);
-      const data = await response.json<FetchResponse>();
-      return data;
-    } catch (error) {
-      throw new Error(error as string);
-    }
+    const res = await API.fetch(fetchUrl, config);
+    return this.handleResponse<FetchResponse>(res);
   }
 
   async delete<FetchResponse, FetchParams = undefined>({
@@ -158,14 +166,8 @@ export class WoodshopClient {
       headers: fetchHeader,
       method: "DELETE",
     };
-
-    try {
-      const response = await API.fetch(fetchUrl, config);
-      const data = await response.json<FetchResponse>();
-      return data;
-    } catch (error) {
-      throw new Error(error as string);
-    }
+    const res = await API.fetch(fetchUrl, config);
+    return this.handleResponse<FetchResponse>(res);
   }
 
   async update<
@@ -192,14 +194,8 @@ export class WoodshopClient {
       method,
       body: JSON.stringify(body),
     };
-
-    try {
-      const response = await API.fetch(fetchUrl, config);
-      const data = await response.json<FetchResponse>();
-      return data;
-    } catch (error) {
-      throw new Error(error as string);
-    }
+    const res = await API.fetch(fetchUrl, config);
+    return this.handleResponse<FetchResponse>(res);
   }
 
   async post<FetchResponse, FetchRequest = unknown>({
@@ -217,36 +213,19 @@ export class WoodshopClient {
       method: "POST",
       body: JSON.stringify(body),
     };
-
-    try {
-      const response = await API.fetch(fetchUrl, config);
-      const data = await response.json<FetchResponse>();
-      return data;
-    } catch (error) {
-      throw new Error(error as string);
-    }
+    const res = await API.fetch(fetchUrl, config);
+    return this.handleResponse<FetchResponse>(res);
   }
 
-  async postFormData<FetchResponse>(
+  async postMultipartFormData<FetchResponse>(
     url: ClientRequestRoutes,
     request: Request
   ): Promise<FetchResponse> {
     const fetchUrl = this.getUrl(url);
     const authHeader = await this.getAuthorizationHeader(request.headers);
     request.headers.append("Authorization", authHeader.authorization);
-    const config = {
-      ...request,
-      headers: request.headers,
-      method: "POST",
-    };
-
-    try {
-      const response = await API.fetch(fetchUrl, config);
-      const data = await response.json<FetchResponse>();
-      return data;
-    } catch (error) {
-      throw new Error(error as string);
-    }
+    const res = await API.fetch(fetchUrl, request);
+    return this.handleResponse<FetchResponse>(res);
   }
 }
 
