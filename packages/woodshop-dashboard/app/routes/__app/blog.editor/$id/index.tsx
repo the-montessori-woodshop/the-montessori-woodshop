@@ -3,7 +3,7 @@ import {
   FormFieldText,
   FormFieldTextarea,
 } from "@woodshop/components";
-import { useBlogEditorSubRouteData } from "~/features/blog-editor/useBlogEditorSubRouteData";
+import { useBlogEditorSubRouteData } from "~/features/blog-editor-entity/useBlogEditorSubRouteData";
 
 export default function BlogEditorPageIndex() {
   const data = useBlogEditorSubRouteData();
@@ -30,15 +30,15 @@ export default function BlogEditorPageIndex() {
         name="banner_img_url"
         label="Banner image URL"
         key={data.banner_img_url}
-        defaultValue={data.banner_img_url}
+        defaultValue={data.banner_img_url || ""}
       />
-      {/* <FormFieldText
+      <FormFieldText
         id="banner_img_alt"
         name="banner_img_alt"
         label="Banner image alt text"
         key={data.banner_img_alt}
-        defaultValue={data.banner_img_alt}
-      /> */}
+        defaultValue={data.banner_img_alt || ""}
+      />
     </FormFieldGroup>
   );
 }

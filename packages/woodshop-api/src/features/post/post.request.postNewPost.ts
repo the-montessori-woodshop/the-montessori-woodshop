@@ -1,10 +1,11 @@
 import { prisma } from "../../utils/getPrisma";
 import { HandlePOSTRequest } from "../../utils/handle.model";
 import {
-  AuthorizationError,
-  InternalServerError
+  InternalServerError,
+  PayloadValidationError
 } from "../../utils/handleError";
 import { handleRoute } from "../../utils/handleRoute";
+import { log } from "../../utils/logger";
 import {
   POST_NewPostByIdApiRequest,
   POST_NewPostByIdApiResponse
@@ -13,22 +14,30 @@ import {
 export const postNewPost: HandlePOSTRequest<
   POST_NewPostByIdApiResponse
 > = async (request) => {
-  if (!request.user) {
-    throw new AuthorizationError("User cannot be found");
+  const reqData = await request.json<POST_NewPostByIdApiRequest>();
+  if (!reqData.userId && !request.user) {
+    throw new PayloadValidationError({
+      userId: "User ID is required"
+    });
   }
 
   try {
-    const data = await request.json<POST_NewPostByIdApiRequest>();
-
     const post = await prisma.post.create({
       data: {
-        ...data,
-        authorId: request.user.id
+        ...reqData.post,
+        author: {
+          connect: {
+            id: request.user?.id || reqData.userId
+          }
+        },
+        banner_img_alt: "",
+        banner_img_url: ""
       }
     });
     return post;
   } catch (error) {
-    throw new InternalServerError("Unable to create new post.");
+    log.error("Error when creating the post in the DB", error);
+    throw new InternalServerError("Unable to create new post.", { error });
   }
 };
 

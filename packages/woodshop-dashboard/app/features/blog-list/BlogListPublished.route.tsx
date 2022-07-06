@@ -4,9 +4,8 @@ import type {
   GET_PostsApiSearchParams,
 } from "@woodshop/api";
 import { Breadcrumb } from "~/components/breadcrumb";
-import { PageHeader } from "~/components/page/PageHeader";
 import { api } from "~/features/api/api.server";
-import { Page, PageBody, PageHeaderTitle } from "~/features/page";
+import { Page, PageBody, PageHeader, PageHeaderTitle } from "~/features/page";
 import type { RemixFeatureUIRoute } from "~/types/routes.types";
 import type { UseMatchesMatch } from "~/types/useMatches";
 

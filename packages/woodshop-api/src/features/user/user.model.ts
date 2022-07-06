@@ -6,3 +6,5 @@ export type POST_CreateOrUpdateUserApiRequest = Pick<
 >;
 
 export type POST_CreateOrUpdateUserApiResponse = User;
+
+export type GET_GetUsers = User[];

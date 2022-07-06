@@ -1,8 +1,7 @@
 import { useLoaderData } from "@remix-run/react";
 import type { GET_PostsApiResponse } from "@woodshop/api";
-import { PageHeader } from "~/components/page/PageHeader";
 import { api } from "~/features/api/api.server";
-import { Page, PageBody, PageHeaderTitle } from "~/features/page";
+import { Page, PageBody, PageHeader, PageHeaderTitle } from "~/features/page";
 import type { RemixFeatureUIRoute } from "~/types/routes.types";
 
 import { BlogNewPostButton } from "./BlogNewPostButton";

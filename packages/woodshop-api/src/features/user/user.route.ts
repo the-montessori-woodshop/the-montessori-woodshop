@@ -1,17 +1,14 @@
 import { Router } from "itty-router";
 
 import { authenticate } from "../../middleware/middleware.authenticate";
+import { handleGetUsers } from "./user.request.getUsers";
 import { handleCreateOrUpdateUser } from "./user.request.postCreateOrUpdateUser";
-
-// import { handleGetPostById } from "./post.getPostById";
-// import { handleGetPosts } from "./post.getPosts";
-// import { handlePostNewPost } from "./post.postNewPost";
 
 export const UserRouter = Router({ base: "/user" });
 
 UserRouter
   // User
-  .get("*", authenticate)
+  .get("*", authenticate, handleGetUsers)
   .post("*", authenticate)
   // .get("/", handleGetPosts)
   // .post("/", handlePostNewPost)

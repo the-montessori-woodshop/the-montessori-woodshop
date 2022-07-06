@@ -32,32 +32,6 @@
   text-transform: uppercase;
 }
 
-.page-container {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
-.page-content {
-  padding: 0 2rem;
-}
-.page-content.main {
-  flex: 1;
-  overflow-y: auto;
-}
-
-.page-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  height: 5rem;
-  margin-top: 1rem;
-  padding-left: 2rem;
-  padding-right: 2rem;
-}
-
 .TKizo7F7045 {
   text-align: center;
 }
@@ -126,6 +100,60 @@
   background: var(--color-white);
   max-width: 60ch;
   text-align: center;
+}
+
+.wmtbNX.title {
+  display: flex;
+  align-items: center;
+}
+.wmtbNX.title > *:not(:last-child) {
+  margin-right: 2rem !important;
+}
+.wmtbNX.main {
+  display: flex;
+  height: 100%;
+}
+.wmtbNX.pane {
+  width: 37.5rem;
+  height: 100%;
+}
+.wmtbNX.pane-form {
+  height: 100%;
+  flex: inherit;
+  flex-direction: inherit;
+}
+.wmtbNX.pane-tabs {
+  position: relative;
+  top: 1.3125rem;
+  padding: 0 1rem;
+  z-index: 100;
+}
+.wmtbNX.pane-content {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-top: 0.0625rem solid var(--color-grey3);
+  padding: 2.5rem 2rem;
+}
+.wmtbNX.preview {
+  flex: 1;
+  height: 100%;
+  background: var(--color-grey2);
+  border-left: 0.0625rem solid var(--color-grey3);
+  border-top: 0.0625rem solid var(--color-grey3);
+  overflow-y: auto;
+  margin-top: 2.625rem;
+}
+.wmtbNX.preview-card {
+  margin: 1.5rem;
+  background: var(--color-white);
+  box-shadow: 0 2px 14px 5px rgba(228, 228, 228, 0.5);
+  border-radius: 0.25rem;
+}
+
+.content-2 {
+  max-height: 10rem;
 }
 
 .editor-layout {
@@ -294,37 +322,6 @@
 .d8leh8P.body {
   flex: 1;
   width: 100%;
-}
-
-.content-2 {
-  max-height: 10rem;
-}
-
-.outlet {
-  flex: 1;
-  width: 100%;
-  background: var(--color-grey1);
-  border-top: 0.0625rem solid var(--color-grey3);
-  padding: 2.5rem 2rem;
-}
-
-.layout-content {
-  width: 37.5rem;
-  height: 100%;
-}
-
-.editor-layout {
-  flex: 1;
-  height: 100%;
-  background: var(--color-grey1);
-  border-left: 0.0625rem solid var(--color-grey3);
-  overflow-y: auto;
-}
-.editor-layout > .card {
-  margin: 1.5rem;
-  background: var(--color-white);
-  box-shadow: 0 2px 14px 5px rgba(228, 228, 228, 0.5);
-  border-radius: 0.25rem;
 }
 
 .editor-container {

@@ -1,7 +1,7 @@
 import type { LinksFunction } from "@remix-run/cloudflare";
 import { Breadcrumb } from "~/components/breadcrumb/Breadcrumb";
 import { useMarkdownRendererContext } from "~/components/MarkdownRenderer.context";
-import { useBlogEditorSubRouteData } from "~/features/blog-editor/useBlogEditorSubRouteData";
+import { useBlogEditorSubRouteData } from "~/features/blog-editor-entity/useBlogEditorSubRouteData";
 import type { UseMatchesMatch } from "~/types/useMatches";
 
 export const links: LinksFunction = () => [];

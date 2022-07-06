@@ -4,7 +4,7 @@ import type { UseMatchesMatch } from "~/types/useMatches";
 
 import type { RemixFeatureUIRoute } from "../../types/routes.types";
 
-export const BlogEditorRouteLayout: RemixFeatureUIRoute = () => {
+export const BlogEditorEntityRoute: RemixFeatureUIRoute = () => {
   return (
     <div>
       <Outlet />
@@ -12,7 +12,7 @@ export const BlogEditorRouteLayout: RemixFeatureUIRoute = () => {
   );
 };
 
-BlogEditorRouteLayout.handle = {
+BlogEditorEntityRoute.handle = {
   breadcrumb: (data: UseMatchesMatch) => {
     return (
       <>

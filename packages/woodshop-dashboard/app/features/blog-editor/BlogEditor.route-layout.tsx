@@ -5,11 +5,7 @@ import type { UseMatchesMatch } from "~/types/useMatches";
 import type { RemixFeatureUIRoute } from "../../types/routes.types";
 
 export const BlogEditorRouteLayout: RemixFeatureUIRoute = () => {
-  return (
-    <div>
-      <Outlet />
-    </div>
-  );
+  return <Outlet />;
 };
 
 BlogEditorRouteLayout.handle = {

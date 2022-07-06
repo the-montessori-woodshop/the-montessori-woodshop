@@ -2,16 +2,14 @@
 @import "./components/app-header/AppHeaderItem.scss";
 @import "./components/chip/Chip.scss";
 @import "./components/chip/ChipText.scss";
-@import "./components/page/PageContainer.scss";
-@import "./components/page/PageContent.scss";
-@import "./components/page/PageHeader.scss";
 @import "./components/StateEmpty.scss";
 @import "./components/Table.scss";
 @import "./components/TableHead.scss";
 @import "./features/app/App.route-index.scss";
 @import "./features/app/App.route-layout.scss";
 @import "./features/auth/AuthLogin.scss";
-@import "./features/blog-editor/AppBlogEditor.scss";
+@import "./features/blog-editor-entity/BlogEditorEntity.route-layout.scss";
+@import "./features/blog-editor/BlogEditor.route-layout.scss";
 @import "./features/blog-list/BlogList.route-layout.scss";
 @import "./features/blog-list/BlogNavItem.scss";
 @import "./features/blog-list/BlogNavItemContent.scss";
@@ -22,7 +20,6 @@
 @import "./features/images/images.route-layout.scss";
 @import "./features/images/ImagesEmpty.scss";
 @import "./features/page/Page.scss";
-@import "./routes/__app/blog.editor/$id.scss";
 @import "./routes/__app/blog.editor/$id/editor.scss";
 @import "./styles/_utils.scss";
 @import "./styles/root.scss";
