@@ -1,0 +1,17 @@
+.SwrfUfnbJj {
+  &.layout {
+    display: grid;
+    grid-template-columns: makeRem(300) 1fr;
+    grid-template-rows: 1fr;
+    height: 100%;
+    width: 100%;
+
+    & > article {
+      display: flex;
+      flex-direction: column;
+      background: var(--color-grey2);
+      width: 100%;
+      padding: makeRem(24) makeRem(32);
+    }
+  }
+}

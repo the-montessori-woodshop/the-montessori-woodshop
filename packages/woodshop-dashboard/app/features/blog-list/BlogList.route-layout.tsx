@@ -1,12 +1,14 @@
 import { Outlet } from "@remix-run/react";
-import { BlogNavItem } from "~/components/blog/BlogNavItem";
-import { BlogNavItemContent } from "~/components/blog/BlogNavItemContent";
+import { Breadcrumb } from "~/components/breadcrumb";
+import type { RemixFeatureUIRoute } from "~/types/routes.types";
+import clsx from "clsx";
 
-import type { RemixFeatureUIRoute } from "../../types/routes.types";
+import { BlogNavItem } from "./BlogNavItem";
+import { BlogNavItemContent } from "./BlogNavItemContent";
 
-export const AppBlog: RemixFeatureUIRoute = () => {
+export const BlogListRouteLayout: RemixFeatureUIRoute = () => {
   return (
-    <div className="blog-layout">
+    <div className={clsx("SwrfUfnbJj", "layout")}>
       <article>
         <ul>
           <BlogNavItem to="/blog" end>
@@ -25,4 +27,14 @@ export const AppBlog: RemixFeatureUIRoute = () => {
       </main>
     </div>
   );
+};
+
+BlogListRouteLayout.handle = {
+  breadcrumb: () => {
+    return (
+      <Breadcrumb to="/blog" end>
+        Blog
+      </Breadcrumb>
+    );
+  },
 };

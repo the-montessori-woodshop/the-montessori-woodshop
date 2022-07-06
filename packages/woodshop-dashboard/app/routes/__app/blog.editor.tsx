@@ -1,24 +1,5 @@
-import {
-  Breadcrumb,
-  BreadcrumbSeparator,
-} from "~/components/breadcrumb/Breadcrumb";
-import { AppBlogEditorRoute } from "~/features/blog-editor/AppBlogEditor.route";
-import type { UseMatchesMatch } from "~/types/useMatches";
+import { BlogEditorRouteLayout } from "~/features/blog-editor/BlogEditor.route-layout";
 
-export const handle = {
-  breadcrumb: (data: UseMatchesMatch) => {
-    return (
-      <>
-        <Breadcrumb to="/blog" end>
-          Blog
-        </Breadcrumb>
-        <BreadcrumbSeparator />
-        <Breadcrumb to={`/blog/editor/${data.params?.id}`}>
-          {data.params?.id}
-        </Breadcrumb>
-      </>
-    );
-  },
-};
+export const handle = BlogEditorRouteLayout.handle;
 
-export default AppBlogEditorRoute;
+export default BlogEditorRouteLayout;

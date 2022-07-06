@@ -1,7 +1,5 @@
 @import "./components/app-header/AppHeader.scss";
 @import "./components/app-header/AppHeaderItem.scss";
-@import "./components/blog/BlogNavItem.scss";
-@import "./components/blog/BlogNavItemContent.scss";
 @import "./components/chip/Chip.scss";
 @import "./components/chip/ChipText.scss";
 @import "./components/page/PageContainer.scss";
@@ -14,7 +12,9 @@
 @import "./features/app/App.route-layout.scss";
 @import "./features/auth/AuthLogin.scss";
 @import "./features/blog-editor/AppBlogEditor.scss";
-@import "./features/blog/AppBlog.scss";
+@import "./features/blog-list/BlogList.route-layout.scss";
+@import "./features/blog-list/BlogNavItem.scss";
+@import "./features/blog-list/BlogNavItemContent.scss";
 @import "./features/images-entity/ImagesEntity.route.scss";
 @import "./features/images-new/ImagesNew.route.scss";
 @import "./features/images/ImageList.scss";
@@ -22,8 +22,6 @@
 @import "./features/images/images.route-layout.scss";
 @import "./features/images/ImagesEmpty.scss";
 @import "./features/page/Page.scss";
-@import "./features/reviews/AppReviews.scss";
-@import "./features/reviews/AppReviewsIndex.scss";
 @import "./routes/__app/blog.editor/$id.scss";
 @import "./routes/__app/blog.editor/$id/editor.scss";
 @import "./styles/_utils.scss";

@@ -1,14 +1,5 @@
-import { Breadcrumb } from "~/components/breadcrumb/Breadcrumb";
-import { AppReviews } from "~/features/reviews";
+import { ReviewsRouteLayout } from "~/features/reviews/Reviews.route-layout";
 
-export const handle = {
-  breadcrumb: () => {
-    return (
-      <Breadcrumb to="/reviews" end>
-        Reviews
-      </Breadcrumb>
-    );
-  },
-};
+export const handle = ReviewsRouteLayout.handle;
 
-export default AppReviews;
+export default ReviewsRouteLayout;

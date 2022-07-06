@@ -42,7 +42,6 @@ ImagesRouteLayout.loader = async ({ request }) => {
     headers: request.headers,
     url: "/image",
   });
-  console.log(response);
   return response;
 };
 

@@ -1,10 +1,9 @@
 import type { GET_PostsApiResponse } from "@woodshop/api";
 import { Illustration } from "@woodshop/components";
 import { SearchingFoundNothing } from "@woodshop/illustrations";
+import { StateEmtpy } from "~/components/StateEmpty";
+import { BlogTable } from "~/features/blog-list/BlogPostListTable";
 import type { FC } from "react";
-
-import { StateEmtpy } from "../StateEmpty";
-import { BlogTable } from "./BlogTable";
 
 export type BlogPostListProps = {
   data: GET_PostsApiResponse;

@@ -1,4 +1,3 @@
-import type { LinksFunction } from "@remix-run/cloudflare";
 import type { ActionFunction, LoaderFunction } from "@remix-run/cloudflare";
 import { redirect } from "@remix-run/cloudflare";
 import { Form, Outlet, useLoaderData, useParams } from "@remix-run/react";
@@ -31,7 +30,6 @@ import { PageTitle } from "~/components/page/PageTitle";
 import { TabLink } from "~/components/tab/TabLink";
 import { api } from "~/features/api/api.server";
 
-export const links: LinksFunction = () => [];
 export const loader: LoaderFunction = async ({ request, params }) => {
   try {
     const data = await api.get<GET_PostByIdApiResponse, GET_PostByIdApiParams>({

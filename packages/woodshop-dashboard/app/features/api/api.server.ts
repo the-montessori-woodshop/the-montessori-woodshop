@@ -214,6 +214,7 @@ export class WoodshopClient {
       body: JSON.stringify(body),
     };
     const res = await API.fetch(fetchUrl, config);
+    console.log("HERE!");
     return this.handleResponse<FetchResponse>(res);
   }
 

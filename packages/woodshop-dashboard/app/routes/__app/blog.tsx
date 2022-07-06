@@ -1,14 +1,5 @@
-import { Breadcrumb } from "~/components/breadcrumb/Breadcrumb";
-import { AppBlog } from "~/features/blog";
+import { BlogListRouteLayout } from "~/features/blog-list/BlogList.route-layout";
 
-export const handle = {
-  breadcrumb: () => {
-    return (
-      <Breadcrumb to="/blog" end>
-        Blog
-      </Breadcrumb>
-    );
-  },
-};
+export const handle = BlogListRouteLayout.handle;
 
-export default AppBlog;
+export default BlogListRouteLayout;
