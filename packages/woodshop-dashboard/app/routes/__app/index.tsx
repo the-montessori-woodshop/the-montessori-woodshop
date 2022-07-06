@@ -1,3 +1,5 @@
-import { AppRouteIndex } from "~/features/app/App.route-index";
+import { DashboardRouteLayout } from "~/features/dashboard/Dashboard.route-layout";
 
-export default AppRouteIndex;
+export const handle = DashboardRouteLayout.handle;
+
+export default DashboardRouteLayout;
