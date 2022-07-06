@@ -1,0 +1,16 @@
+.lmO0A93k {
+  &.container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  &.main {
+    flex: 1;
+  }
+  &.footer {
+    height: makeRem(80);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+}

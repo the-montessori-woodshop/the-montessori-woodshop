@@ -10,7 +10,10 @@ export type GET_PostsApiSearchParams = {
   published: boolean;
 };
 
-export type POST_NewPostByIdApiRequest = Omit<Post, "id" | "authorId">;
+export type POST_NewPostByIdApiRequest = {
+  post: Omit<Post, "id" | "authorId">;
+  userId?: string;
+};
 export type POST_NewPostByIdApiResponse = Post;
 
 export type PATCH_UpdatePostByIdApiResponse = Post;

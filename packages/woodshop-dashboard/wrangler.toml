@@ -18,16 +18,14 @@ WOODSHOP_AUTH0_DASHBOARD_CALLBACK_URL = "http://localhost:8788/callback"
 [site]
 bucket = "./public"
 
-[build]
-command = "yarn build"
-
-
 
 [env.production]
 workers_dev = false
 services = [
   { binding = "API", service = "woodshop-api-production", environment = "production" }
 ]
+[env.production.build]
+command = "yarn build"
 [env.production.vars]
 WOODSHOP_API_URL="https://api.themontessoriwoodshop.com"
 WOODSHOP_AUTH0_DASHBOARD_CALLBACK_URL = "https://dashboard.themontessoriwoodshop.com/callback"

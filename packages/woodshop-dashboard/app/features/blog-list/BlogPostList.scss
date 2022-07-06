@@ -1,0 +1,31 @@
+.mU7l8h {
+  &.list {
+    padding: makeRem(32);
+  }
+
+  &.item {
+    display: flex;
+    align-items: center;
+    height: makeRem(140);
+    padding: makeRem(24) makeRem(16);
+    border-bottom: 1px solid var(--color-grey3);
+    background: transparent;
+    transition: all 0.15s ease-in-out;
+
+    &:hover {
+      background: var(--color-grey2);
+    }
+
+    & > * {
+      margin: 0 makeRem(16);
+    }
+
+    img {
+      width: makeRem(160);
+      height: auto;
+      max-height: 100%;
+      object-fit: cover;
+      border-radius: makeRem(4);
+    }
+  }
+}

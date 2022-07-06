@@ -5,4 +5,11 @@
     margin-right: auto;
     max-width: 65ch;
   }
+
+  .action {
+    margin-top: makeRem(32);
+    a {
+      display: inline-flex;
+    }
+  }
 }

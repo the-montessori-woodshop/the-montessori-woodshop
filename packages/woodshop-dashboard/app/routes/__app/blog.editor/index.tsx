@@ -1,4 +1,3 @@
-import type { LoaderFunction } from "@remix-run/cloudflare";
-import { redirect } from "@remix-run/cloudflare";
+import { BlogEditorRouteIndexResource } from "~/features/blog-editor/BlogEditor.route-index-resource";
 
-export const loader: LoaderFunction = () => redirect("/blog");
+export const loader = BlogEditorRouteIndexResource.loader;

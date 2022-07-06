@@ -30,6 +30,6 @@ export const authenticate = async (request: Request) => {
     });
     request.user = user;
   } catch (error) {
-    throw new AuthenticationError("Cannot verify user.");
+    throw new AuthenticationError("Cannot verify user.", { error });
   }
 };

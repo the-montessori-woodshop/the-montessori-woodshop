@@ -1,3 +1,5 @@
+import type { NavLinkProps } from "@remix-run/react";
+import { NavLink } from "@remix-run/react";
 import {
   TopNavListItem,
   TypographyHeading,
@@ -5,8 +7,6 @@ import {
 } from "@woodshop/components";
 import type { FC, ReactNode } from "react";
 import { forwardRef } from "react";
-import type { NavLinkProps } from "@remix-run/react";
-import { NavLink } from "@remix-run/react";
 
 export const BreadcrumbSeparator: FC = () => {
   return (
@@ -45,7 +45,13 @@ export const Breadcrumb = forwardRef<
 >(function Breadcrumb({ children, ...restProps }, ref) {
   return (
     <TopNavListItem>
-      <NavLink {...restProps} ref={ref}>
+      <NavLink
+        {...restProps}
+        ref={ref}
+        style={{
+          whiteSpace: "nowrap",
+        }}
+      >
         {({ isActive }) => (
           <BreadcrumbText isActive={isActive}>{children}</BreadcrumbText>
         )}

@@ -11,6 +11,7 @@
     "migrate": "./scripts/migrate.sh",
     "dev": "wrangler dev --ip 127.0.0.1 --port 8888",
     "dev:generate": "./scripts/generate-dev.sh",
+    "dev:push": "./scripts/push-dev.sh",
     "dev:migrate": "./scripts/migrate-dev.sh"
   },
   "types": "dist/index.types.d.ts",

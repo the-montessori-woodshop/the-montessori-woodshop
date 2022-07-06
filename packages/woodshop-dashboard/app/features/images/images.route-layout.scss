@@ -1,0 +1,19 @@
+.nzKztTNu {
+  &.layout {
+    display: flex;
+    border-top: 1px solid var(--color-grey3);
+    height: 100%;
+  }
+  &.main {
+    display: flex;
+    flex: 1;
+    position: relative;
+  }
+  &.pane {
+    border-left: 1px solid var(--color-grey3);
+    height: 100%;
+    width: makeRem(420);
+    background: var(--color-grey2);
+    padding: makeRem(32);
+  }
+}

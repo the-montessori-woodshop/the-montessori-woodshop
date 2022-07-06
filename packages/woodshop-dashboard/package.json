@@ -8,13 +8,15 @@
   },
   "scripts": {
     "lint": "yarn eslint --ext .tsx,.ts ./app --fix",
-    "build": "yarn styles:compile --no-source-map && NODE_ENV=production remix build",
+    "build": "yarn styles --no-source-map && NODE_ENV=production remix build",
+    "styles": "yarn styles:create && yarn styles:compile",
     "styles:create": "yarn node ./scripts/styles.mjs",
+    "styles:watch-add": "yarn node ./scripts/styles-dev.mjs",
     "styles:compile": "sass app/styles.scss:app/styles.css",
-    "dev": "yarn dev:wrangler & yarn dev:remix",
+    "dev": "yarn styles && yarn dev:wrangler & yarn dev:remix",
     "dev:remix": "remix watch",
     "dev:wrangler": "cross-env NODE_ENV=development wrangler dev ./build/index.js --port 8788",
-    "dev:styles": "yarn styles:create && styles:compile --watch --embed-source-map"
+    "dev:styles": "yarn styles:watch-add & yarn styles:compile --watch"
   },
   "dependencies": {
     "@linaria/core": "^3.0.0-beta.22",

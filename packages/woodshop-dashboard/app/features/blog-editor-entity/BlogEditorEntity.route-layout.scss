@@ -1,0 +1,63 @@
+.wmtbNX {
+  &.title {
+    display: flex;
+    align-items: center;
+
+    & > *:not(:last-child) {
+      margin-right: makeRem(32) !important;
+    }
+  }
+
+  &.main {
+    display: flex;
+    height: 100%;
+  }
+
+  &.pane {
+    width: makeRem(600);
+    height: 100%;
+
+    &-form {
+      height: 100%;
+      flex: inherit;
+      flex-direction: inherit;
+    }
+
+    &-tabs {
+      position: relative;
+      top: makeRem(21);
+      padding: 0 makeRem(16);
+      z-index: 100;
+    }
+
+    &-content {
+      flex: 1;
+      width: 100%;
+      height: 100%;
+      position: relative;
+      border-top: makeRem(1) solid var(--color-grey3);
+      padding: makeRem(40) makeRem(32);
+    }
+  }
+
+  &.preview {
+    flex: 1;
+    height: 100%;
+    background: var(--color-grey2);
+    border-left: makeRem(1) solid var(--color-grey3);
+    border-top: makeRem(1) solid var(--color-grey3);
+    overflow-y: auto;
+    margin-top: makeRem(42);
+
+    &-card {
+      margin: makeRem(24);
+      background: var(--color-white);
+      box-shadow: 0 2px 14px 5px rgba(228, 228, 228, 0.5);
+      border-radius: makeRem(4);
+    }
+  }
+}
+
+.content-2 {
+  max-height: makeRem(160);
+}

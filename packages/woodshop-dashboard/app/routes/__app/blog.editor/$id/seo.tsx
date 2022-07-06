@@ -1,6 +1,6 @@
 import { Fieldset, FormFieldGroup, FormFieldText } from "@woodshop/components";
 import { Breadcrumb } from "~/components/breadcrumb/Breadcrumb";
-import { useBlogEditorSubRouteData } from "~/features/blog-editor/useBlogEditorSubRouteData";
+import { useBlogEditorSubRouteData } from "~/features/blog-editor-entity/useBlogEditorSubRouteData";
 import type { UseMatchesMatch } from "~/types/useMatches";
 
 export const handle = {
