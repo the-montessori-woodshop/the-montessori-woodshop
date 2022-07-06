@@ -365,4 +365,30 @@ li {
   list-style-type: none;
 }
 
+.mU7l8h.list {
+  padding: 2rem;
+}
+.mU7l8h.item {
+  display: flex;
+  align-items: center;
+  height: 8.75rem;
+  padding: 1.5rem 1rem;
+  border-bottom: 1px solid var(--color-grey3);
+  background: transparent;
+  transition: all 0.15s ease-in-out;
+}
+.mU7l8h.item:hover {
+  background: var(--color-grey2);
+}
+.mU7l8h.item > * {
+  margin: 0 1rem;
+}
+.mU7l8h.item img {
+  width: 10rem;
+  height: auto;
+  max-height: 100%;
+  object-fit: cover;
+  border-radius: 0.25rem;
+}
+
 /*# sourceMappingURL=styles.css.map */

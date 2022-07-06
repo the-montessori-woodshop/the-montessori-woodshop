@@ -1,8 +1,9 @@
+import { Link } from "@remix-run/react";
 import type { GET_PostsApiResponse } from "@woodshop/api";
-import { Illustration } from "@woodshop/components";
+import { Illustration, TypographyCopy } from "@woodshop/components";
 import { SearchingFoundNothing } from "@woodshop/illustrations";
 import { StateEmtpy } from "~/components/StateEmpty";
-import { BlogTable } from "~/features/blog-list/BlogPostListTable";
+import clsx from "clsx";
 import type { FC } from "react";
 
 export type BlogPostListProps = {
@@ -25,5 +26,36 @@ export const BlogPostList: FC<BlogPostListProps> = ({ data }) => {
       </StateEmtpy>
     );
   }
-  return <BlogTable data={data} />;
+  return (
+    <ul className={clsx("mU7l8h", "list")}>
+      {data.map((post) => {
+        return (
+          <li key={post.id}>
+            <Link to={`./editor/${post.id}`} className={clsx("mU7l8h", "item")}>
+              <img
+                src={
+                  post.banner_img_url ||
+                  "https://imagedelivery.net/2IBxNTNwVZBsFPqW0HdTRQ/ecbef0e9-a73d-4335-81f1-1781fa293600/public"
+                }
+                alt={post.banner_img_alt || post.id.toString()}
+              />
+              <div>
+                <TypographyCopy
+                  cxVariant="body1"
+                  style={{
+                    fontWeight: 600,
+                  }}
+                >
+                  {post.title}
+                </TypographyCopy>
+                <TypographyCopy cxVariant="body2" cxColor="textSecondary">
+                  {post.prompt}
+                </TypographyCopy>
+              </div>
+            </Link>
+          </li>
+        );
+      })}
+    </ul>
+  );
 };

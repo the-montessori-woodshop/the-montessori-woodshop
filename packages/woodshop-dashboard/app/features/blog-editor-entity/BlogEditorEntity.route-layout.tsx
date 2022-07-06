@@ -40,12 +40,7 @@ export const BlogEditorEntityRouteLayout: RemixFeatureUIRoute = () => {
             <ChipText>{!data?.published ? "draft" : "published"}</ChipText>
           </Chip>
         </div>
-        <ButtonGroup
-          cxLayout="inline"
-          style={{
-            marginLeft: makeRem(32),
-          }}
-        >
+        <ButtonGroup cxLayout="inline">
           <Button
             type="submit"
             style={{
