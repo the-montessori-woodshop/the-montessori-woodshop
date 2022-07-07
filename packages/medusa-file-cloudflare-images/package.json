@@ -19,7 +19,7 @@
   ],
   "devDependencies": {
     "@swc/cli": "^0.1.57",
-    "@swc/core": "^1.2.208",
+    "@swc/core": "^1.2.210",
     "@types/formidable": "^2.0.5",
     "chokidar": "^3.5.3",
     "client-sessions": "^0.8.0",
