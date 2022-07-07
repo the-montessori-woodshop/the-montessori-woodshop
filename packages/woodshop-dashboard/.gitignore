@@ -9,4 +9,5 @@ node_modules
 
 
 /app/**/*.css.map
-
+/app/styles.scss
+/app/styles.css
