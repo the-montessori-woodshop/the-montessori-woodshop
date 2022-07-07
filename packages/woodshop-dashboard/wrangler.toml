@@ -31,7 +31,6 @@ WOODSHOP_API_URL="https://api.themontessoriwoodshop.com"
 WOODSHOP_AUTH0_DASHBOARD_CALLBACK_URL = "https://dashboard.themontessoriwoodshop.com/callback"
 
 # [env.production.secrets]
-# WOODSHOP_AUTH0_DASHBOARD_CALLBACK_URL
 # WOODSHOP_AUTH0_DASHBOARD_DOMAIN
 # WOODSHOP_AUTH0_DASHBOARD_CLIENT_ID
 # WOODSHOP_AUTH0_DASHBOARD_CLIENT_SECRET
